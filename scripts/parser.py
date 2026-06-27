@@ -5,160 +5,42 @@ import os
 import sys
 import re
 import json
-import subprocess
-import xml.etree.ElementTree as ET
 import requests
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ==========================================================================
-# 终极黑魔法：利用 GitHub Releases 作为 100% 稳定且免费的视频直链分发存储
+# AGE 动漫 M3U8 视频直链嗅探解析器
 # ==========================================================================
-class GitHubReleaseUploader:
-    def __init__(self, repo_full_name, token):
-        self.repo = repo_full_name
-        self.token = token
-        # 配置系统环境变量，使得 gh 命令行工具能自动登录并使用 write 权限
-        os.environ["GITHUB_TOKEN"] = token
-
-    def upload_file(self, local_path, rename_to):
+class AgeM3u8Sniffer:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+    }
+    
+    @classmethod
+    def sniff_m3u8_link(cls, parse_url):
         """
-        利用 actions 自带的 gh 命令行客户端，将视频极速上传到仓库的 releases 中
+        请求 AGE 的解析页面，正则嗅探出其中的 m3u8 直链
         """
-        # 1. 确保 local_path 存在
-        if not os.path.exists(local_path):
-            print(f"[GH-Release 异常] 待上传的本地视频文件不存在: {local_path}")
-            return None
-
-        # 2. 对上传视频重命名为规范化安全格式 (防止含有特殊路径字符)
-        # 去掉空格和特殊字符，防止 URL 拼接后被手机浏览器转义导致无法播放
-        safe_name = re.sub(r'[\s\[\]【】\(\)]', '_', rename_to)
-        safe_name = re.sub(r'_+', '_', safe_name).strip('_')
-        
-        dir_name = os.path.dirname(local_path)
-        new_local_path = os.path.join(dir_name, safe_name)
-        os.rename(local_path, new_local_path)
-        
-        print(f"[GH-Release] 开始将规范重命名后的视频上传: {safe_name}")
-
-        # 3. 创建 Release (如果不存在的话，notes 留空，--clobber 防止冲突)
-        tag = "latest-videos"
-        create_cmd = ["gh", "release", "create", tag, "--title", "云端点播番剧托管(请勿删除)", "--notes", "此处存放最近 14 天点播的番剧直链，Actions 会自动循环清理", "--repo", self.repo]
-        # 即使已存在也会报错，直接忽略报错
-        subprocess.run(create_cmd, capture_output=True)
-
-        # 4. 调用 gh 命令行工具上传附件到指定 Release 中
-        upload_cmd = ["gh", "release", "upload", tag, new_local_path, "--clobber", "--repo", self.repo]
-        print(f"[GH-Release] 执行上传命令: {' '.join(upload_cmd)}")
-        
-        result = subprocess.run(upload_cmd, capture_output=True, text=True)
-        if result.returncode == 0:
-            # 5. 拼装 GitHub 官方高速 CDN 播放直链
-            play_url = f"https://github.com/{self.repo}/releases/download/{tag}/{safe_name}"
-            print(f"[GH-Release 成功] 视频直链: {play_url}")
-            return play_url
-        else:
-            print(f"[GH-Release 失败] 退出码: {result.returncode}, 错误信息: {result.stderr}")
-            return None
-
-    def clean_old_releases_assets(self, retention_days=7):
-        """
-        扫描当前 Releases 下的 Assets，自动删除 7 天前上传的番剧附件，防止项目体积无限膨胀
-        """
-        tag = "latest-videos"
-        view_cmd = ["gh", "release", "view", tag, "--json", "assets", "--repo", self.repo]
-        print(f"[GH-Release 清理] 开始扫描 {tag} 中超过 {retention_days} 天的番剧附件...")
-        
+        print(f"[嗅探解析] 正在请求解析源网址: {parse_url}")
         try:
-            result = subprocess.run(view_cmd, capture_output=True, text=True)
-            if result.returncode != 0:
-                print(f"[GH-Release 清理] 获取 assets 列表失败: {result.stderr}")
-                return
+            res = requests.get(parse_url, headers=cls.headers, verify=False, timeout=12)
+            if res.status_code == 200:
+                # 正则匹配符合 m3u8 地址的各种 url 表达式
+                m3u8_matches = re.findall(r'["\'](https?://[^"\']+\.m3u8[^"\']*)["\']', res.text)
+                if m3u8_matches:
+                    real_m3u8 = m3u8_matches[0].replace("\\/", "/") # 处理转义斜杠
+                    print(f"[嗅探成功] 捕获到底层 m3u8 真实播放流: {real_m3u8}")
+                    return real_m3u8
                 
-            data = json.loads(result.stdout)
-            assets = data.get("assets", [])
-            
-            import datetime
-            
-            now = datetime.datetime.now(datetime.timezone.utc)
-            deleted_count = 0
-            
-            for asset in assets:
-                dt_str = asset["createdAt"].replace('Z', '+00:00')
-                created_at = datetime.datetime.fromisoformat(dt_str)
-                age = now - created_at
-                
-                if age.days >= retention_days:
-                    asset_name = asset["name"]
-                    print(f"[GH-Release 自动过期删除] 移除老番附件: {asset_name} (已存放 {age.days} 天)")
-                    
-                    delete_cmd = ["gh", "release", "delete-asset", tag, asset_name, "-y", "--repo", self.repo]
-                    subprocess.run(delete_cmd, capture_output=True)
-                    deleted_count += 1
-            
-            print(f"[GH-Release 清理完成] 共清理了 {deleted_count} 个过期视频")
+                print("[警告] 解析页面加载成功，但未能提取到 .m3u8 字符串")
+                return None
+            print(f"[解析异常] 服务器返回状态码: {res.status_code}")
+            return None
         except Exception as e:
-            print(f"[GH-Release 清理异常] 清理过期附件出错: {e}")
-
-# ==========================================================================
-# Aria2 命令行极速下载封装
-# ==========================================================================
-def run_aria2_download(download_url, download_dir):
-    """调用 aria2c 进行种子直链/磁力下载"""
-    os.makedirs(download_dir, exist_ok=True)
-    dht_path = os.path.join(download_dir, "dht.dat")
-    dht6_path = os.path.join(download_dir, "dht6.dat")
-    
-    # 提前在本地创建空文件占位，防止 Aria2 校验找不到文件抛出 exception 异常
-    try:
-        with open(dht_path, 'a') as f:
-            pass
-        with open(dht6_path, 'a') as f:
-            pass
-    except Exception as e:
-        print(f"[警告] 预创 DHT 文件失败: {e}")
-
-    cmd = [
-        "aria2c",
-        "--no-conf=true",                # 不读取系统配置，防止权限污染
-        "--dht-file-path", dht_path,      # 将 DHT 路由表重定向到临时目录中
-        "--dht-file-path6", dht6_path,
-        "--seed-time=0",                 # 下载完成立即退出
-        "--bt-stop-timeout=120",         # 2分钟无速度超时
-        "--max-connection-per-server=16",
-        "--split=16",
-        "-d", download_dir,
-        download_url
-    ]
-    print(f"[Aria2 启动] 命令: {' '.join(cmd)}")
-    try:
-        result = subprocess.run(cmd, stdout=sys.stdout, stderr=sys.stderr, timeout=480)
-        if result.returncode == 0:
-            print("[Aria2 下载成功] 视频已顺利保存到本地缓存目录")
-            return True
-        else:
-            print(f"[Aria2 退出] 错误码: {result.returncode}")
-            return False
-    except subprocess.TimeoutExpired:
-        print("[Aria2 超时] 任务下载超过 8 分钟被强制退出")
-        return False
-    except Exception as e:
-        print(f"[Aria2 异常] 执行出错: {e}")
-        return False
-
-def get_largest_video_file(directory):
-    """遍历目录寻找体积最大的视频文件"""
-    video_extensions = ('.mp4', '.mkv', '.avi', '.mov', '.webm')
-    largest_file = None
-    max_size = 0
-    
-    for root, _, files in os.walk(directory):
-        for f in files:
-            if f.lower().endswith(video_extensions):
-                fp = os.path.join(root, f)
-                sz = os.path.getsize(fp)
-                if sz > max_size:
-                    max_size = sz
-                    largest_file = fp
-    return largest_file
+            print(f"[解析出错] 请求发生异常: {e}")
+            return None
 
 # ==========================================================================
 # 动漫元数据提取规则 (标题解析器)
@@ -210,23 +92,14 @@ def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     sub_path = os.path.join(base_dir, "subscription.json")
     dl_path = os.path.join(base_dir, "downloaded.json")
+    
+    # API 接口 Host
+    AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+    }
 
-    # 读取 Actions 内置的特权 GITHUB_TOKEN 与当前仓库名
-    gh_token = os.environ.get("GITHUB_TOKEN")
-    gh_repo = os.environ.get("GITHUB_REPOSITORY")
-
-    if not gh_token or not gh_repo:
-        print("[错误] 未能在环境变量中读取到 GITHUB_TOKEN 或 GITHUB_REPOSITORY")
-        return
-
-    # 初始化 GitHub Release 上传器
-    uploader = GitHubReleaseUploader(gh_repo, gh_token)
-
-    # 1. 判断启动模式
-    payload_name = os.environ.get("PAYLOAD_NAME")
-    payload_keyword = os.environ.get("PAYLOAD_KEYWORD")
-    payload_torrent = os.environ.get("PAYLOAD_TORRENT")
-
+    # 1. 加载播放列表历史
     downloaded = []
     if os.path.exists(dl_path):
         try:
@@ -236,202 +109,186 @@ def main():
             print(f"[警告] 读取 downloaded.json 失败: {e}")
 
     # ==========================================================================
-    # 核心优化：如果是点播模式，直接利用 GitHub Releases 闪电上传
+    # 判定启动模式：前台点播 (PAYLOAD) 或是 后台定时跟更 (Cron)
     # ==========================================================================
+    payload_name = os.environ.get("PAYLOAD_NAME")
+    payload_torrent = os.environ.get("PAYLOAD_TORRENT") # 此时前端传递过来的是集数的 epVal，即加密参数
+    
+    # 1. 实时点播模式
     if payload_name and payload_torrent:
-        print(f"[启动模式] 实时精确点播: 《{payload_name}》")
-        print(f"[点播链接] {payload_torrent}")
+        # 当由网页一键点播时，我们需要解析出真实的 m3u8 并立即存入
+        print(f"[启动模式] 实时点播嗅探: 《{payload_name}》")
         
-        temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
-        if os.path.exists(temp_download_dir):
-            import shutil
-            shutil.rmtree(temp_download_dir)
+        # 拼接解析源
+        # 优先使用直链(zj)解析接口
+        # 为了保证通用，如果 epVal 没有前缀则手动补齐
+        parse_base = "https://jx.wuzhoupai.com:8443/m3u8/?url="
+        if "http" in payload_torrent:
+            parse_url = payload_torrent
+        else:
+            parse_url = parse_base + payload_torrent
 
-        if run_aria2_download(payload_torrent, temp_download_dir):
-            video_file = get_largest_video_file(temp_download_dir)
-            if video_file:
-                # 重新规划 Release 中的安全文件名 (防止含特殊符号导致下载失败)
-                season, episode = parse_anime_title(payload_keyword or payload_name)
-                ext = video_file.split('.')[-1].lower()
-                safe_video_name = f"{payload_name}_{season}{episode}.{ext}"
-                
-                # 上传至本仓库 Releases
-                play_url = uploader.upload_file(video_file, safe_video_name)
-                if play_url:
-                    import time
-                    record = {
-                        "title": payload_keyword or f"{payload_name} - {season}{episode}",
-                        "link": payload_torrent,
-                        "url": play_url,
-                        "anime": payload_name,
-                        "season": season,
-                        "episode": episode,
-                        "timestamp": int(time.time())
-                    }
-                    downloaded.insert(0, record)
-                    
-                    formatted_downloads = [d for d in downloaded if isinstance(d, dict)]
-                    with open(dl_path, 'w', encoding='utf-8') as f:
-                        json.dump(formatted_downloads, f, indent=2)
-                    print(f"[完成] 点播视频已极速上传至本仓库 Release 附件中")
-            import shutil
-            shutil.rmtree(temp_download_dir)
-            
-        # 点播结束前自动执行 7 天过期文件清理
-        uploader.clean_old_releases_assets(retention_days=7)
+        real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(parse_url)
+        play_url = real_m3u8 if real_m3u8 else parse_url # 提取失败则回退至解析页网页，确保能播
+        
+        # 写入下载库
+        season, episode = parse_anime_title(payload_name)
+        import time
+        record = {
+            "title": payload_name,
+            "link": payload_torrent,
+            "url": play_url,
+            "anime": payload_name.split('-')[0].strip(),
+            "season": season,
+            "episode": episode,
+            "timestamp": int(time.time())
+        }
+        # 去重
+        downloaded = [d for d in downloaded if d.get("title") != payload_name]
+        downloaded.insert(0, record)
+        
+        with open(dl_path, 'w', encoding='utf-8') as f:
+            json.dump(downloaded, f, indent=2, ensure_ascii=False)
+        print("[完成] 实时点播番剧的 m3u8 直链已成功嗅探并更新回库！")
         return
 
-    # 定时批量常驻订阅检测
+    # 2. 定时跟更模式
     print("[启动模式] Cron 定时批量运行")
     if not os.path.exists(sub_path):
         print("[通知] 配置文件 subscription.json 缺失")
         return
     with open(sub_path, 'r', encoding='utf-8') as f:
-        target_jobs = json.load(f)
+        subscriptions = json.load(f)
 
-    if not target_jobs:
-        print("[通知] 订阅列表为空")
+    if not subscriptions:
+        print("[通知] 订阅列表为空，无需更番嗅探")
         return
-
-    # 2. 拉取最新 Mikan RSS
-    rss_url = "https://mikanani.me/RSS/Classic"
-    print(f"[通知] 开始拉取 RSS 源: {rss_url}")
-    try:
-        res = requests.get(rss_url, timeout=20)
-        res.raise_for_status()
-        xml_content = res.content
-    except Exception as e:
-        print(f"[错误] 拉取 RSS 失败: {e}")
-        return
-
-    try:
-        root = ET.fromstring(xml_content)
-        items = root.findall('.//item')
-    except Exception as e:
-        print(f"[错误] 解析 XML 失败: {e}")
-        return
-
-    print(f"[通知] 成功解析出 {len(items)} 条种子资源")
 
     new_success_records = []
 
-    # 3. 定时匹配
-    for item in items:
-        title = item.find('title').text
-        link = item.find('link').text
-        enclosure_node = item.find('enclosure')
-        torrent_link = enclosure_node.attrib.get('url') if enclosure_node is not None else link
-
-        for job in target_jobs:
-            if job['keyword'].lower() not in title.lower():
+    for sub in subscriptions:
+        name = sub["name"]
+        print(f"\n[跟更检测] 开始检索订阅动漫: {name}")
+        
+        # 2.1 搜索该动漫
+        search_url = f"{AGE_API_BASE}search?query={requests.utils.quote(name)}&page=1"
+        try:
+            res = requests.get(search_url, headers=headers, verify=False, timeout=10)
+            res_data = res.json()
+            videos = res_data.get("data", {}).get("videos", [])
+            if not videos:
+                print(f"[搜索落空] 动漫库中未查到该订阅: {name}")
                 continue
-            if job.get('subgroup') and job['subgroup'].lower() not in title.lower():
-                continue
-            if job.get('quality') and job['quality'].lower() not in title.lower():
-                continue
-
-            already_downloaded = False
+                
+            # 取最相关的第一个 AID
+            AID = videos[0]["id"]
+            latest_ep_name = videos[0]["uptodate"] # 最新更新集数标签，例如 "第12集"
+            
+            # 2.2 判断是否已经提取过该最新集数
+            record_title = f"{name} - {latest_ep_name}"
+            already_exists = False
             for d in downloaded:
-                if isinstance(d, dict) and (d.get("link") == torrent_link or d.get("link") == link):
-                    already_downloaded = True
+                if d.get("title") == record_title:
+                    already_exists = True
                     break
-            
-            if already_downloaded:
-                continue
-
-            season, episode = parse_anime_title(title)
-            anime_name = job['name']
-            
-            print(f"\n[定时匹配成功] 下载番剧: {title}")
-            temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
-            
-            if os.path.exists(temp_download_dir):
-                import shutil
-                shutil.rmtree(temp_download_dir)
-
-            if run_aria2_download(torrent_link, temp_download_dir):
-                video_file = get_largest_video_file(temp_download_dir)
-                if video_file:
-                    ext = video_file.split('.')[-1].lower()
-                    safe_video_name = f"{anime_name}_{season}{episode}.{ext}"
                     
-                    play_url = uploader.upload_file(video_file, safe_video_name)
-                    if play_url:
-                        import time
-                        record = {
-                            "title": f"{anime_name} - {season}{episode}",
-                            "link": torrent_link,
-                            "url": play_url,
-                            "anime": anime_name,
-                            "season": season,
-                            "episode": episode,
-                            "timestamp": int(time.time())
-                        }
-                        downloaded.insert(0, record)
-                        new_success_records.append(record)
-                        
-                import shutil
-                shutil.rmtree(temp_download_dir)
-                break
-
-    # 4. 回写状态数据
-    if new_success_records:
-        formatted_downloads = [d for d in downloaded if isinstance(d, dict)]
-        with open(dl_path, 'w', encoding='utf-8') as f:
-            json.dump(formatted_downloads, f, indent=2)
-        print(f"[完成] 本次共定时下载了 {len(new_success_records)} 个视频")
-
-    # 5. 按照动漫大类聚合今日更新流，生成缓存最新资源列表
-    anime_groups = {}
-    for item in items:
-        t_title = item.find('title').text
-        t_link = item.find('link').text
-        
-        t_pubDate = ""
-        torrent_node = item.find('{https://mikanani.me/0.1/}torrent')
-        if torrent_node is not None:
-            pub_date_node = torrent_node.find('{https://mikanani.me/0.1/}pubDate')
-            t_pubDate = pub_date_node.text if pub_date_node is not None else ""
+            if already_exists:
+                print(f"[无须更新] 《{name}》的最新集数 {latest_ep_name} 已在播放库中，跳过。")
+                continue
+                
+            # 2.3 拉取该动漫详情以获得最新的播放线路及参数
+            detail_url = f"{AGE_API_BASE}detail/{AID}"
+            res_det = requests.get(detail_url, headers=headers, verify=False, timeout=10)
+            det_data = res_det.json()
             
-        t_enclosure = item.find('enclosure')
-        t_downloadUrl = t_enclosure.attrib.get('url') if t_enclosure is not None else t_link
-        
-        t_season, t_episode = parse_anime_title(t_title)
-        
-        subgroup_match = re.search(r'\[(.*?(?:字幕组|字幕社|社|組|LoliHouse|Lilith-raws|Raw))\]', t_title, re.IGNORECASE)
-        t_subgroup = subgroup_match.group(1) if subgroup_match else "其它"
-        
-        t_clean = t_title
-        t_clean = re.sub(r'\[.*?\]|【.*?】', '', t_clean)
-        t_clean = re.sub(r'\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*', '', t_clean)
-        t_clean = t_clean.strip(" -/\\")
-        guess_name = t_clean[:25] if t_clean else "未分类新番"
-        
-        if guess_name not in anime_groups:
-            anime_groups[guess_name] = {
-                "anime": guess_name,
-                "latest_time": t_pubDate,
-                "episodes": []
+            playlist = det_data.get("video", {}).get("playlists", {})
+            player_jx = det_data.get("player_jx", {"vip": "", "zj": ""})
+            player_vip = det_data.get("player_vip", "")
+            
+            if not playlist:
+                print(f"[详情空缺] 无法获取播放线路: {name}")
+                continue
+                
+            # 优先挑出 m3u8 或者是直链线路
+            # ffm3u8, bfzym3u8, wjm3u8, lzm3u8, sdm3u8 等
+            selected_line = ""
+            for line in playlist.keys():
+                if "m3u8" in line.lower() or "直链" in line:
+                    selected_line = line
+                    break
+            if not selected_line:
+                selected_line = list(playlist.keys())[0]
+                
+            eps = playlist[selected_line]
+            if not eps:
+                print(f"[集数为空] 线路下没有集数: {selected_line}")
+                continue
+                
+            # 获取最新集数的参数 (即最后一项)
+            latest_ep_data = eps[-1]
+            ep_title = latest_ep_data[0]
+            ep_val = latest_ep_data[1]
+            
+            # 判断是否是 VIP 线路
+            is_vip = False
+            if isinstance(player_vip, str):
+                is_vip = selected_line in player_vip.split(",")
+            elif isinstance(player_vip, list):
+                is_vip = selected_line in player_vip
+                
+            # 拼接解析源
+            parse_base = player_jx["vip"] if is_vip else player_jx["zj"]
+            if not parse_base:
+                parse_base = "https://jx.wuzhoupai.com:8443/m3u8/?url="
+                
+            parse_url = parse_base + ep_val
+            
+            # 2.4 进行 m3u8 直链嗅探
+            real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(parse_url)
+            play_url = real_m3u8 if real_m3u8 else parse_url
+            
+            # 2.5 写入播放记录
+            season, episode = parse_anime_title(ep_title)
+            import time
+            record = {
+                "title": f"{name} - {ep_title}",
+                "link": ep_val,
+                "url": play_url,
+                "anime": name,
+                "season": season,
+                "episode": ep_title,
+                "timestamp": int(time.time())
             }
+            # 过滤重复，写回库
+            downloaded = [d for d in downloaded if d.get("title") != record["title"]]
+            downloaded.insert(0, record)
+            new_success_records.append(record)
             
-        anime_groups[guess_name]["episodes"].append({
-            "title": t_title,
-            "link": t_downloadUrl,
-            "pubDate": t_pubDate,
-            "season": t_season,
-            "episode": t_episode,
-            "subgroup": t_subgroup
-        })
+        except Exception as e:
+            print(f"[异常中断] 检测 《{name}》 时发生错误: {e}")
+            continue
 
-    latest_updates = list(anime_groups.values())[:45]
-        
-    latest_json_path = os.path.join(base_dir, "latest_rss.json")
-    with open(latest_json_path, 'w', encoding='utf-8') as f:
-        json.dump(latest_updates, f, indent=2, ensure_ascii=False)
-    print(f"[最新发布流] 成功更新 latest_rss.json 共 {len(latest_updates)} 部动漫")
+    # 3. 回写状态数据
+    if new_success_records:
+        with open(dl_path, 'w', encoding='utf-8') as f:
+            json.dump(downloaded, f, indent=2, ensure_ascii=False)
+        print(f"[完成] 定时嗅探已成功获取并回写了 {len(new_success_records)} 个最新集数直链！")
+    else:
+        print("[完成] 本次未检测到任何新集数发布，已跳过。")
 
-    # 执行 7 天过期文件清理
-    uploader.clean_old_releases_assets(retention_days=7)
+    # 4. 生成今日新番的最新大类缓存文件 (供前端极速载入，无需 ऑल origins 中继)
+    # 我们也可以把 AGE 今日更新也直接写入 latest_rss.json
+    try:
+        print("[最新发布流] 正在拉取最新的 AGE 每日新番更新供网页离线缓存...")
+        res = requests.get(f"{AGE_API_BASE}home-list", headers=headers, verify=False, timeout=10)
+        data = res.json()
+        if data and data.get("latest"):
+            latest_json_path = os.path.join(base_dir, "latest_rss.json")
+            with open(latest_json_path, 'w', encoding='utf-8') as f:
+                json.dump(data["latest"], f, indent=2, ensure_ascii=False)
+            print("[最新发布流] 成功写入最新 45 部 AGE 更新缓存！")
+    except Exception as e:
+        print(f"[最新发布流异常] 写入失败: {e}")
 
 if __name__ == '__main__':
     main()
