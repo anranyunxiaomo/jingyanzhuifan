@@ -39,13 +39,6 @@ jobs:
 
       - name: Run parser, download and upload
         env:
-          # S3 云存储凭证 (加密保存在 Secrets 中)
-          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
-          S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
-          S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
-          S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          S3_PUBLIC_URL: ${{ secrets.S3_PUBLIC_URL }}
-          
           # 前端一键点播实时负载参数 (若为定时触发，则为空值)
           PAYLOAD_NAME: ${{ github.event.client_payload.name }}
           PAYLOAD_KEYWORD: ${{ github.event.client_payload.keyword }}
@@ -59,12 +52,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 检查是否有下载历史被更新
-          if [ -n "$(git status -s downloaded.json)" ]; then
-            git add downloaded.json
-            git commit -m "chore: 自动同步番剧下载历史 [skip ci]"
+          # 检查是否有下载历史或最新资源被更新
+          if [ -n "$(git status -s downloaded.json latest_rss.json)" ]; then
+            git add downloaded.json latest_rss.json
+            git commit -m "chore: 自动同步番剧下载历史与最新资源 [skip ci]"
             git push
-            echo "[成功] 已成功向仓库推送最新下载历史数据"
+            echo "[成功] 已成功向仓库推送最新状态数据"
           else
-            echo "[通知] 无下载历史更新，无需提交"
+            echo "[通知] 无任何状态更新，无需提交"
           fi

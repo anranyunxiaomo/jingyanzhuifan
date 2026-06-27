@@ -67,15 +67,36 @@
       <!-- TAB 2: 点播下载 -->
       <section id="view-subscriptions" class="view-section">
         <div class="section-header">
-          <h2>点播与订阅</h2>
-          <button id="btn-add-sub" class="btn-primary-action">
-            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            一键点播
+          <h2>最新番剧更新流</h2>
+          <button id="btn-refresh-rss" class="btn-icon" title="刷新最新资源">
+            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
           </button>
         </div>
+
+        <!-- 搜索过滤最新资源 -->
+        <div class="search-box-wrapper card-glass">
+          <input type="text" id="input-rss-search" placeholder="🔍 检索最新发布的番剧或集数...">
+        </div>
+
+        <!-- 最新番剧列表 -->
+        <div id="latest-rss-list" class="list-container latest-feed-list" style="max-height: 380px; overflow-y: auto;">
+          <div class="empty-state">
+            <p>加载最新番剧资源中...</p>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 32px;">
+          <h2>我的常驻订阅</h2>
+          <button id="btn-add-sub" class="btn-primary-action">
+            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            常驻点播
+          </button>
+        </div>
+        
+        <!-- 用户现有的订阅列表 -->
         <div id="subscription-list" class="list-container">
           <div class="empty-state">
-            <p>请先在“设置”中配置 GitHub 个人令牌 (PAT)</p>
+            <p>正在拉取订阅中...</p>
           </div>
         </div>
       </section>

@@ -22,15 +22,13 @@ class FileUploader:
         file_name = os.path.basename(file_path)
         print(f"[直链转换] 尝试上传 {file_name} 到主通道 transfer.sh...")
         
-        # 针对特殊字符进行转义，确保传输接口正常
         encoded_name = requests.utils.quote(file_name)
         url = f"https://transfer.sh/{encoded_name}"
         
         try:
-            # 开启 identity 头部解决解压问题
             headers = {"Accept-Encoding": "identity"}
             with open(file_path, 'rb') as f:
-                res = requests.put(url, data=f, headers=headers, timeout=300) # 限时 5 分钟
+                res = requests.put(url, data=f, headers=headers, timeout=300)
             
             if res.status_code == 200:
                 play_url = res.text.strip()
@@ -47,7 +45,7 @@ class FileUploader:
     def upload_to_pixeldrain(file_path):
         """
         备用通道：上传到 pixeldrain.com
-        单个文件最大 20GB，无流量限制，对中国大陆网络非常稳定
+        单个文件最大 20GB，对中国大陆网络非常稳定
         """
         file_name = os.path.basename(file_path)
         print(f"[直链转换] 尝试上传 {file_name} 到备用通道 pixeldrain...")
@@ -62,7 +60,6 @@ class FileUploader:
             res_data = res.json()
             if res.status_code == 201 or res_data.get("success"):
                 file_id = res_data.get("id")
-                # 拼装公网视频直链 (支持 Streaming 播放)
                 play_url = f"https://pixeldrain.com/api/file/{file_id}"
                 print(f"[直链转换成功] 备用通道返回链接: {play_url}")
                 return play_url
@@ -76,14 +73,11 @@ class FileUploader:
     @classmethod
     def upload(cls, file_path):
         """双通道安全上传器"""
-        # 1. 优先尝试主通道 transfer.sh
         play_url = cls.upload_to_transfersh(file_path)
         if play_url:
             return play_url
             
         print("[警告] 主通道上传失败，正在切换到备用通道...")
-        
-        # 2. 备用通道 pixeldrain
         play_url = cls.upload_to_pixeldrain(file_path)
         if play_url:
             return play_url
@@ -95,14 +89,12 @@ class FileUploader:
 # Aria2 命令行极速下载封装
 # ==========================================================================
 def run_aria2_download(magnet_link, download_dir):
-    """
-    调用 aria2c 进行磁力链接极速下载
-    """
+    """调用 aria2c 进行磁力链接下载"""
     os.makedirs(download_dir, exist_ok=True)
     cmd = [
         "aria2c",
-        "--seed-time=0",               # 下载完成立即退出做种
-        "--bt-stop-timeout=120",       # 2分钟无新数据传输则超时退出
+        "--seed-time=0",
+        "--bt-stop-timeout=120",
         "--max-connection-per-server=16",
         "--split=16",
         "-d", download_dir,
@@ -110,7 +102,6 @@ def run_aria2_download(magnet_link, download_dir):
     ]
     print(f"[Aria2 启动] 命令: {' '.join(cmd)}")
     try:
-        # 设定单任务最长 8 分钟下载时间限制
         result = subprocess.run(cmd, stdout=sys.stdout, stderr=sys.stderr, timeout=480)
         if result.returncode == 0:
             print("[Aria2 下载成功] 视频已顺利保存到本地缓存目录")
@@ -158,7 +149,7 @@ def parse_anime_title(title):
         match = re.search(p, title, re.IGNORECASE)
         if match:
             s_num = match.group(1)
-            cn_map = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
+            cn_map = {"开设": 1, "一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
             if s_num in cn_map:
                 s_val = cn_map[s_num]
             else:
@@ -169,7 +160,7 @@ def parse_anime_title(title):
     # 2. 提取集数
     episode_patterns = [
         r'\[(\d+)\]',
-        r'(?:EP|Ep|Episode|第)\s*(\d+)\s*(?:话|集|v|x|\s)',
+        r'(?:EP|Ep|Episode|第)\s*(\d+)\s*(?:话|集|v|x|v\d+|-).*',
         r'\s+-\s+(\d+)\s+',
         r'\s+(\d+)\s+(?:1080[pP]|720[pP])',
         r'[^0-9](\d{2})[^0-9]'
@@ -285,21 +276,17 @@ def main():
             print(f"\n[点播下载匹配] 正在云端下载番剧: {title}")
             temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
             
-            # 清理可能残留的临时目录
             if os.path.exists(temp_download_dir):
                 import shutil
                 shutil.rmtree(temp_download_dir)
 
             # 调用 Aria2 下载
             if run_aria2_download(link, temp_download_dir):
-                # 获取最大的视频文件
                 video_file = get_largest_video_file(temp_download_dir)
                 if video_file:
-                    # 转换公网直链 (双通道上传中继)
                     play_url = FileUploader.upload(video_file)
                     
                     if play_url:
-                        # 记录成功到下载历史
                         import time
                         record = {
                             "title": f"{anime_name} - {season}{episode}",
@@ -313,7 +300,6 @@ def main():
                         downloaded.insert(0, record)
                         new_success_records.append(record)
                         
-                # 清理临时文件释放 Actions 虚拟机磁盘空间
                 import shutil
                 shutil.rmtree(temp_download_dir)
                 break
@@ -327,9 +313,45 @@ def main():
         
         with open(dl_path, 'w', encoding='utf-8') as f:
             json.dump(formatted_downloads, f, indent=2)
-        print(f"[完成] 本次共成功下载并转换了 {len(new_success_records)} 个直链链接")
+        print(f"[完成] 本次共成功下载并上传了 {len(new_success_records)} 个直链链接")
     else:
         print("[完成] 本次未下载转换任何视频链接")
+
+    # ==========================================================================
+    # 5. 提取最新 50 条 RSS 种子记录，提供给前端做“最新番剧更新流”展示
+    # ==========================================================================
+    latest_updates = []
+    for item in items[:50]:
+        t_title = item.find('title').text
+        t_link = item.find('link').text
+        t_pubDate = item.find('pubDate').text if item.find('pubDate') is not None else ""
+        
+        t_season, t_episode = parse_anime_title(t_title)
+        
+        # 粗略提取字幕组名字 (e.g. 提取 "[桜都字幕组]" 中的字幕组名称)
+        subgroup_match = re.search(r'\[(.*?(?:字幕组|字幕社|社|組|LoliHouse|Lilith-raws|Raw))\]', t_title, re.IGNORECASE)
+        t_subgroup = subgroup_match.group(1) if subgroup_match else ""
+        
+        # 精简出洁净的番剧中/英文名备选
+        t_clean = t_title
+        t_clean = re.sub(r'\[.*?\]|【.*?】', '', t_clean) # 删方括号
+        t_clean = re.sub(r'\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*', '', t_clean) # 删后缀和集数
+        t_clean = t_clean.strip(" -/\\")
+        
+        latest_updates.append({
+            "title": t_title,
+            "link": t_link,
+            "pubDate": t_pubDate,
+            "season": t_season,
+            "episode": t_episode,
+            "subgroup": t_subgroup,
+            "guess_name": t_clean[:25] # 限制长度作为备用
+        })
+        
+    latest_json_path = os.path.join(base_dir, "latest_rss.json")
+    with open(latest_json_path, 'w', encoding='utf-8') as f:
+        json.dump(latest_updates, f, indent=2, ensure_ascii=False)
+    print(f"[最新发布流] 成功写入/更新 latest_rss.json 共 {len(latest_updates)} 条")
 
 if __name__ == '__main__':
     main()
