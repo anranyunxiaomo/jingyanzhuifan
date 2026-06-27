@@ -10,80 +10,93 @@ import xml.etree.ElementTree as ET
 import requests
 
 # ==========================================================================
-# 免费公网文件直链中继 (主通道 Transfer.sh + 备用通道 Pixeldrain)
+# 终极黑魔法：利用 GitHub Releases 作为 100% 稳定且免费的视频直链分发存储
 # ==========================================================================
-class FileUploader:
-    @staticmethod
-    def upload_to_transfersh(file_path):
+class GitHubReleaseUploader:
+    def __init__(self, repo_full_name, token):
+        self.repo = repo_full_name
+        self.token = token
+        # 配置系统环境变量，使得 gh 命令行工具能自动登录并使用 write 权限
+        os.environ["GITHUB_TOKEN"] = token
+
+    def upload_file(self, local_path, rename_to):
         """
-        主通道：上传到 transfer.sh
-        单个文件最大 10GB，有效期 14 天，支持流媒体在线播放
+        利用 actions 自带的 gh 命令行客户端，将视频极速上传到仓库的 releases 中
         """
-        file_name = os.path.basename(file_path)
-        print(f"[直链转换] 尝试上传 {file_name} 到主通道 transfer.sh...")
-        
-        encoded_name = requests.utils.quote(file_name)
-        url = f"https://transfer.sh/{encoded_name}"
-        
-        try:
-            headers = {"Accept-Encoding": "identity"}
-            with open(file_path, 'rb') as f:
-                res = requests.put(url, data=f, headers=headers, timeout=300)
-            
-            if res.status_code == 200:
-                play_url = res.text.strip()
-                print(f"[直链转换成功] 主通道返回链接: {play_url}")
-                return play_url
-            
-            print(f"[主通道失败] 服务器返回状态码: {res.status_code}")
-            return None
-        except Exception as e:
-            print(f"[主通道异常] 发生错误: {e}")
+        # 1. 确保 local_path 存在
+        if not os.path.exists(local_path):
+            print(f"[GH-Release 异常] 待上传的本地视频文件不存在: {local_path}")
             return None
 
-    @staticmethod
-    def upload_to_pixeldrain(file_path):
-        """
-        备用通道：上传到 pixeldrain.com
-        单个文件最大 20GB，对中国大陆网络非常稳定
-        """
-        file_name = os.path.basename(file_path)
-        print(f"[直链转换] 尝试上传 {file_name} 到备用通道 pixeldrain...")
-        url = "https://pixeldrain.com/api/file"
+        # 2. 对上传视频重命名为规范化安全格式 (防止含有特殊路径字符)
+        # 去掉空格和特殊字符，防止 URL 拼接后被手机浏览器转义导致无法播放
+        safe_name = re.sub(r'[\s\[\]【】\(\)]', '_', rename_to)
+        safe_name = re.sub(r'_+', '_', safe_name).strip('_')
         
-        try:
-            headers = {"Accept-Encoding": "identity"}
-            with open(file_path, 'rb') as f:
-                files = {"file": f}
-                res = requests.post(url, files=files, headers=headers, timeout=300)
-            
-            res_data = res.json()
-            if res.status_code == 201 or res_data.get("success"):
-                file_id = res_data.get("id")
-                play_url = f"https://pixeldrain.com/api/file/{file_id}"
-                print(f"[直链转换成功] 备用通道返回链接: {play_url}")
-                return play_url
-            
-            print(f"[备用通道失败] 服务器返回: {res_data}")
-            return None
-        except Exception as e:
-            print(f"[备用通道异常] 发生错误: {e}")
+        dir_name = os.path.dirname(local_path)
+        new_local_path = os.path.join(dir_name, safe_name)
+        os.rename(local_path, new_local_path)
+        
+        print(f"[GH-Release] 开始将规范重命名后的视频上传: {safe_name}")
+
+        # 3. 创建 Release (如果不存在的话，notes 留空，--clobber 防止冲突)
+        tag = "latest-videos"
+        create_cmd = ["gh", "release", "create", tag, "--title", "云端点播番剧托管(请勿删除)", "--notes", "此处存放最近 14 天点播的番剧直链，Actions 会自动循环清理", "--repo", self.repo]
+        # 即使已存在也会报错，直接忽略报错
+        subprocess.run(create_cmd, capture_output=True)
+
+        # 4. 调用 gh 命令行工具上传附件到指定 Release 中
+        upload_cmd = ["gh", "release", "upload", tag, new_local_path, "--clobber", "--repo", self.repo]
+        print(f"[GH-Release] 执行上传命令: {' '.join(upload_cmd)}")
+        
+        result = subprocess.run(upload_cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            # 5. 拼装 GitHub 官方高速 CDN 播放直链
+            play_url = f"https://github.com/{self.repo}/releases/download/{tag}/{safe_name}"
+            print(f"[GH-Release 成功] 视频直链: {play_url}")
+            return play_url
+        else:
+            print(f"[GH-Release 失败] 退出码: {result.returncode}, 错误信息: {result.stderr}")
             return None
 
-    @classmethod
-    def upload(cls, file_path):
-        """双通道安全上传器"""
-        play_url = cls.upload_to_transfersh(file_path)
-        if play_url:
-            return play_url
+    def clean_old_releases_assets(self, retention_days=7):
+        """
+        扫描当前 Releases 下的 Assets，自动删除 7 天前上传的番剧附件，防止项目体积无限膨胀
+        """
+        tag = "latest-videos"
+        view_cmd = ["gh", "release", "view", tag, "--json", "assets", "--repo", self.repo]
+        print(f"[GH-Release 清理] 开始扫描 {tag} 中超过 {retention_days} 天的番剧附件...")
+        
+        try:
+            result = subprocess.run(view_cmd, capture_output=True, text=True)
+            if result.returncode != 0:
+                print(f"[GH-Release 清理] 获取 assets 列表失败: {result.stderr}")
+                return
+                
+            data = json.loads(result.stdout)
+            assets = data.get("assets", [])
             
-        print("[警告] 主通道上传失败，正在切换到备用通道...")
-        play_url = cls.upload_to_pixeldrain(file_path)
-        if play_url:
-            return play_url
+            import datetime
             
-        print("[错误] 所有上传直链通道均已失效，放弃本次上传")
-        return None
+            now = datetime.datetime.now(datetime.timezone.utc)
+            deleted_count = 0
+            
+            for asset in assets:
+                dt_str = asset["createdAt"].replace('Z', '+00:00')
+                created_at = datetime.datetime.fromisoformat(dt_str)
+                age = now - created_at
+                
+                if age.days >= retention_days:
+                    asset_name = asset["name"]
+                    print(f"[GH-Release 自动过期删除] 移除老番附件: {asset_name} (已存放 {age.days} 天)")
+                    
+                    delete_cmd = ["gh", "release", "delete-asset", tag, asset_name, "-y", "--repo", self.repo]
+                    subprocess.run(delete_cmd, capture_output=True)
+                    deleted_count += 1
+            
+            print(f"[GH-Release 清理完成] 共清理了 {deleted_count} 个过期视频")
+        except Exception as e:
+            print(f"[GH-Release 清理异常] 清理过期附件出错: {e}")
 
 # ==========================================================================
 # Aria2 命令行极速下载封装
@@ -198,10 +211,21 @@ def main():
     sub_path = os.path.join(base_dir, "subscription.json")
     dl_path = os.path.join(base_dir, "downloaded.json")
 
+    # 读取 Actions 内置的特权 GITHUB_TOKEN 与当前仓库名
+    gh_token = os.environ.get("GITHUB_TOKEN")
+    gh_repo = os.environ.get("GITHUB_REPOSITORY")
+
+    if not gh_token or not gh_repo:
+        print("[错误] 未能在环境变量中读取到 GITHUB_TOKEN 或 GITHUB_REPOSITORY")
+        return
+
+    # 初始化 GitHub Release 上传器
+    uploader = GitHubReleaseUploader(gh_repo, gh_token)
+
     # 1. 判断启动模式
     payload_name = os.environ.get("PAYLOAD_NAME")
     payload_keyword = os.environ.get("PAYLOAD_KEYWORD")
-    payload_torrent = os.environ.get("PAYLOAD_TORRENT") # 前端传来直链
+    payload_torrent = os.environ.get("PAYLOAD_TORRENT")
 
     downloaded = []
     if os.path.exists(dl_path):
@@ -212,13 +236,12 @@ def main():
             print(f"[警告] 读取 downloaded.json 失败: {e}")
 
     # ==========================================================================
-    # 核心安全优化：如果前端传来精确的种子文件直链，云端直接下载，跳过所有匹配
+    # 核心优化：如果是点播模式，直接利用 GitHub Releases 闪电上传
     # ==========================================================================
     if payload_name and payload_torrent:
         print(f"[启动模式] 实时精确点播: 《{payload_name}》")
         print(f"[点播链接] {payload_torrent}")
         
-        # 直接使用 aria2c 下载种子直链
         temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
         if os.path.exists(temp_download_dir):
             import shutil
@@ -227,11 +250,15 @@ def main():
         if run_aria2_download(payload_torrent, temp_download_dir):
             video_file = get_largest_video_file(temp_download_dir)
             if video_file:
-                # 转换直链中继
-                play_url = FileUploader.upload(video_file)
+                # 重新规划 Release 中的安全文件名 (防止含特殊符号导致下载失败)
+                season, episode = parse_anime_title(payload_keyword or payload_name)
+                ext = video_file.split('.')[-1].lower()
+                safe_video_name = f"{payload_name}_{season}{episode}.{ext}"
+                
+                # 上传至本仓库 Releases
+                play_url = uploader.upload_file(video_file, safe_video_name)
                 if play_url:
                     import time
-                    season, episode = parse_anime_title(payload_keyword or payload_name)
                     record = {
                         "title": payload_keyword or f"{payload_name} - {season}{episode}",
                         "link": payload_torrent,
@@ -243,13 +270,15 @@ def main():
                     }
                     downloaded.insert(0, record)
                     
-                    # 写入 downloaded.json
                     formatted_downloads = [d for d in downloaded if isinstance(d, dict)]
                     with open(dl_path, 'w', encoding='utf-8') as f:
                         json.dump(formatted_downloads, f, indent=2)
-                    print(f"[完成] 点播视频下载并上传直链成功")
+                    print(f"[完成] 点播视频已极速上传至本仓库 Release 附件中")
             import shutil
             shutil.rmtree(temp_download_dir)
+            
+        # 点播结束前自动执行 7 天过期文件清理
+        uploader.clean_old_releases_assets(retention_days=7)
         return
 
     # 定时批量常驻订阅检测
@@ -301,7 +330,6 @@ def main():
             if job.get('quality') and job['quality'].lower() not in title.lower():
                 continue
 
-            # 过滤重复
             already_downloaded = False
             for d in downloaded:
                 if isinstance(d, dict) and (d.get("link") == torrent_link or d.get("link") == link):
@@ -321,11 +349,13 @@ def main():
                 import shutil
                 shutil.rmtree(temp_download_dir)
 
-            # 调用 Aria2 下载真正的种子直链
             if run_aria2_download(torrent_link, temp_download_dir):
                 video_file = get_largest_video_file(temp_download_dir)
                 if video_file:
-                    play_url = FileUploader.upload(video_file)
+                    ext = video_file.split('.')[-1].lower()
+                    safe_video_name = f"{anime_name}_{season}{episode}.{ext}"
+                    
+                    play_url = uploader.upload_file(video_file, safe_video_name)
                     if play_url:
                         import time
                         record = {
@@ -351,15 +381,12 @@ def main():
             json.dump(formatted_downloads, f, indent=2)
         print(f"[完成] 本次共定时下载了 {len(new_success_records)} 个视频")
 
-    # ==========================================================================
     # 5. 按照动漫大类聚合今日更新流，生成缓存最新资源列表
-    # ==========================================================================
     anime_groups = {}
     for item in items:
         t_title = item.find('title').text
         t_link = item.find('link').text
         
-        # 提取正确的 pubDate 时间
         t_pubDate = ""
         torrent_node = item.find('{https://mikanani.me/0.1/}torrent')
         if torrent_node is not None:
@@ -389,7 +416,7 @@ def main():
             
         anime_groups[guess_name]["episodes"].append({
             "title": t_title,
-            "link": t_downloadUrl, # 保存种子文件直链
+            "link": t_downloadUrl,
             "pubDate": t_pubDate,
             "season": t_season,
             "episode": t_episode,
@@ -402,6 +429,9 @@ def main():
     with open(latest_json_path, 'w', encoding='utf-8') as f:
         json.dump(latest_updates, f, indent=2, ensure_ascii=False)
     print(f"[最新发布流] 成功更新 latest_rss.json 共 {len(latest_updates)} 部动漫")
+
+    # 执行 7 天过期文件清理
+    uploader.clean_old_releases_assets(retention_days=7)
 
 if __name__ == '__main__':
     main()
