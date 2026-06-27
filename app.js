@@ -235,10 +235,14 @@ async function searchGlobalBangumi() {
       guessName = guessName.trim() || query;
       const animeName = guessName.substring(0, 20);
 
+      // 提取种子直链
+      const enclosure = item.getElementsByTagName("enclosure")[0];
+      const downloadUrl = enclosure?.getAttribute("url") || link;
+
       if (!groups[animeName]) {
         groups[animeName] = [];
       }
-      groups[animeName].push({ title, link, pubDate, season, episode, subgroup });
+      groups[animeName].push({ title, link, pubDate, season, episode, subgroup, downloadUrl });
     }
 
     resultsContainer.innerHTML = '';
@@ -282,9 +286,8 @@ async function searchGlobalBangumi() {
           e.stopPropagation();
           const job = {
             name: animeName,
-            keyword: ep.title, // 用种子的全名作为唯一匹配标识，100% 精确下载
-            subgroup: '',
-            quality: ''
+            keyword: ep.title,
+            torrent_url: ep.downloadUrl
           };
           if (confirm(`确认立即点播此集番剧吗？\n《${animeName}》 - ${ep.season}${ep.episode}\n${ep.title}`)) {
             triggerActionsDownload(job);

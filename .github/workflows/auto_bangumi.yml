@@ -38,11 +38,10 @@ jobs:
 
       - name: Run parser, download and upload
         env:
-          # 前端一键点播实时负载参数 (若为定时触发，则为空值)
+          # 前端一键点播实时负载参数
           PAYLOAD_NAME: ${{ github.event.client_payload.name }}
           PAYLOAD_KEYWORD: ${{ github.event.client_payload.keyword }}
-          PAYLOAD_SUBGROUP: ${{ github.event.client_payload.subgroup }}
-          PAYLOAD_QUALITY: ${{ github.event.client_payload.quality }}
+          PAYLOAD_TORRENT: ${{ github.event.client_payload.torrent_url }}
         run: |
           python scripts/parser.py
 

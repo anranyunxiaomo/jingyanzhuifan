@@ -88,8 +88,8 @@ class FileUploader:
 # ==========================================================================
 # Aria2 命令行极速下载封装
 # ==========================================================================
-def run_aria2_download(magnet_link, download_dir):
-    """调用 aria2c 进行磁力链接下载"""
+def run_aria2_download(download_url, download_dir):
+    """调用 aria2c 进行种子直链/磁力下载"""
     os.makedirs(download_dir, exist_ok=True)
     cmd = [
         "aria2c",
@@ -98,7 +98,7 @@ def run_aria2_download(magnet_link, download_dir):
         "--max-connection-per-server=16",
         "--split=16",
         "-d", download_dir,
-        magnet_link
+        download_url
     ]
     print(f"[Aria2 启动] 命令: {' '.join(cmd)}")
     try:
@@ -183,35 +183,11 @@ def main():
     sub_path = os.path.join(base_dir, "subscription.json")
     dl_path = os.path.join(base_dir, "downloaded.json")
 
-    # 1. 判断启动模式 (实时点播 payload 注入 vs 定时 cron 批量检测)
+    # 1. 判断启动模式
     payload_name = os.environ.get("PAYLOAD_NAME")
     payload_keyword = os.environ.get("PAYLOAD_KEYWORD")
-    payload_subgroup = os.environ.get("PAYLOAD_SUBGROUP")
-    payload_quality = os.environ.get("PAYLOAD_QUALITY")
+    payload_torrent = os.environ.get("PAYLOAD_TORRENT") # 前端传来直链
 
-    target_jobs = []
-
-    if payload_name and payload_keyword:
-        print(f"[启动模式] 前端实时点播: 《{payload_name}》 (关键字: {payload_keyword})")
-        target_jobs.append({
-            "name": payload_name,
-            "keyword": payload_keyword,
-            "subgroup": payload_subgroup or "",
-            "quality": payload_quality or "1080p"
-        })
-    else:
-        print("[启动模式] Cron 定时批量运行")
-        if not os.path.exists(sub_path):
-            print("[通知] 配置文件 subscription.json 缺失")
-            return
-        with open(sub_path, 'r', encoding='utf-8') as f:
-            target_jobs = json.load(f)
-
-    if not target_jobs:
-        print("[通知] 任务列表为空，结束流程")
-        return
-
-    # 加载已下载历史
     downloaded = []
     if os.path.exists(dl_path):
         try:
@@ -219,6 +195,59 @@ def main():
                 downloaded = json.load(f)
         except Exception as e:
             print(f"[警告] 读取 downloaded.json 失败: {e}")
+
+    # ==========================================================================
+    # 核心安全优化：如果前端传来精确的种子文件直链，云端直接下载，跳过所有匹配
+    # ==========================================================================
+    if payload_name and payload_torrent:
+        print(f"[启动模式] 实时精确点播: 《{payload_name}》")
+        print(f"[点播链接] {payload_torrent}")
+        
+        # 直接使用 aria2c 下载种子直链
+        temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
+        if os.path.exists(temp_download_dir):
+            import shutil
+            shutil.rmtree(temp_download_dir)
+
+        if run_aria2_download(payload_torrent, temp_download_dir):
+            video_file = get_largest_video_file(temp_download_dir)
+            if video_file:
+                # 转换直链中继
+                play_url = FileUploader.upload(video_file)
+                if play_url:
+                    import time
+                    season, episode = parse_anime_title(payload_keyword or payload_name)
+                    record = {
+                        "title": payload_keyword or f"{payload_name} - {season}{episode}",
+                        "link": payload_torrent,
+                        "url": play_url,
+                        "anime": payload_name,
+                        "season": season,
+                        "episode": episode,
+                        "timestamp": int(time.time())
+                    }
+                    downloaded.insert(0, record)
+                    
+                    # 写入 downloaded.json
+                    formatted_downloads = [d for d in downloaded if isinstance(d, dict)]
+                    with open(dl_path, 'w', encoding='utf-8') as f:
+                        json.dump(formatted_downloads, f, indent=2)
+                    print(f"[完成] 点播视频下载并上传直链成功")
+            import shutil
+            shutil.rmtree(temp_download_dir)
+        return
+
+    # 定时批量常驻订阅检测
+    print("[启动模式] Cron 定时批量运行")
+    if not os.path.exists(sub_path):
+        print("[通知] 配置文件 subscription.json 缺失")
+        return
+    with open(sub_path, 'r', encoding='utf-8') as f:
+        target_jobs = json.load(f)
+
+    if not target_jobs:
+        print("[通知] 订阅列表为空")
+        return
 
     # 2. 拉取最新 Mikan RSS
     rss_url = "https://mikanani.me/RSS/Classic"
@@ -242,13 +271,14 @@ def main():
 
     new_success_records = []
 
-    # 3. 循环匹配，下载并转换直链
+    # 3. 定时匹配
     for item in items:
         title = item.find('title').text
         link = item.find('link').text
+        enclosure_node = item.find('enclosure')
+        torrent_link = enclosure_node.attrib.get('url') if enclosure_node is not None else link
 
         for job in target_jobs:
-            # 规则匹配
             if job['keyword'].lower() not in title.lower():
                 continue
             if job.get('subgroup') and job['subgroup'].lower() not in title.lower():
@@ -256,41 +286,36 @@ def main():
             if job.get('quality') and job['quality'].lower() not in title.lower():
                 continue
 
-            # 避免重复下载
+            # 过滤重复
             already_downloaded = False
             for d in downloaded:
-                if isinstance(d, dict) and d.get("link") == link:
-                    already_downloaded = True
-                    break
-                elif isinstance(d, str) and d == link:
+                if isinstance(d, dict) and (d.get("link") == torrent_link or d.get("link") == link):
                     already_downloaded = True
                     break
             
             if already_downloaded:
                 continue
 
-            # 匹配成功！
             season, episode = parse_anime_title(title)
             anime_name = job['name']
             
-            print(f"\n[点播下载匹配] 正在云端下载番剧: {title}")
+            print(f"\n[定时匹配成功] 下载番剧: {title}")
             temp_download_dir = os.path.join(base_dir, "temp_aria2_downloads")
             
             if os.path.exists(temp_download_dir):
                 import shutil
                 shutil.rmtree(temp_download_dir)
 
-            # 调用 Aria2 下载
-            if run_aria2_download(link, temp_download_dir):
+            # 调用 Aria2 下载真正的种子直链
+            if run_aria2_download(torrent_link, temp_download_dir):
                 video_file = get_largest_video_file(temp_download_dir)
                 if video_file:
                     play_url = FileUploader.upload(video_file)
-                    
                     if play_url:
                         import time
                         record = {
                             "title": f"{anime_name} - {season}{episode}",
-                            "link": link,
+                            "link": torrent_link,
                             "url": play_url,
                             "anime": anime_name,
                             "season": season,
@@ -306,44 +331,40 @@ def main():
 
     # 4. 回写状态数据
     if new_success_records:
-        formatted_downloads = []
-        for d in downloaded:
-            if isinstance(d, dict):
-                formatted_downloads.append(d)
-        
+        formatted_downloads = [d for d in downloaded if isinstance(d, dict)]
         with open(dl_path, 'w', encoding='utf-8') as f:
             json.dump(formatted_downloads, f, indent=2)
-        print(f"[完成] 本次共成功下载并上传了 {len(new_success_records)} 个直链链接")
-    else:
-        print("[完成] 本次未下载转换任何视频链接")
+        print(f"[完成] 本次共定时下载了 {len(new_success_records)} 个视频")
 
     # ==========================================================================
-    # 5. 按照“番剧中文名 (动漫大类)”进行深度聚合，限制前 45 部最活跃的动漫
+    # 5. 按照动漫大类聚合今日更新流，生成缓存最新资源列表
     # ==========================================================================
     anime_groups = {}
     for item in items:
         t_title = item.find('title').text
         t_link = item.find('link').text
-        # Mikan RSS 的 pubDate 节点存放在命名空间节点 torrent 内部
+        
+        # 提取正确的 pubDate 时间
         t_pubDate = ""
         torrent_node = item.find('{https://mikanani.me/0.1/}torrent')
         if torrent_node is not None:
             pub_date_node = torrent_node.find('{https://mikanani.me/0.1/}pubDate')
             t_pubDate = pub_date_node.text if pub_date_node is not None else ""
+            
+        t_enclosure = item.find('enclosure')
+        t_downloadUrl = t_enclosure.attrib.get('url') if t_enclosure is not None else t_link
         
         t_season, t_episode = parse_anime_title(t_title)
         
         subgroup_match = re.search(r'\[(.*?(?:字幕组|字幕社|社|組|LoliHouse|Lilith-raws|Raw))\]', t_title, re.IGNORECASE)
         t_subgroup = subgroup_match.group(1) if subgroup_match else "其它"
         
-        # 洁净中英文名猜测
         t_clean = t_title
         t_clean = re.sub(r'\[.*?\]|【.*?】', '', t_clean)
         t_clean = re.sub(r'\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*', '', t_clean)
         t_clean = t_clean.strip(" -/\\")
         guess_name = t_clean[:25] if t_clean else "未分类新番"
         
-        # 填充进动漫大类
         if guess_name not in anime_groups:
             anime_groups[guess_name] = {
                 "anime": guess_name,
@@ -353,20 +374,19 @@ def main():
             
         anime_groups[guess_name]["episodes"].append({
             "title": t_title,
-            "link": t_link,
+            "link": t_downloadUrl, # 保存种子文件直链
             "pubDate": t_pubDate,
             "season": t_season,
             "episode": t_episode,
             "subgroup": t_subgroup
         })
 
-    # 取前 45 部动漫进行输出缓存
     latest_updates = list(anime_groups.values())[:45]
         
     latest_json_path = os.path.join(base_dir, "latest_rss.json")
     with open(latest_json_path, 'w', encoding='utf-8') as f:
         json.dump(latest_updates, f, indent=2, ensure_ascii=False)
-    print(f"[最新发布流] 成功归类并更新 latest_rss.json 共 {len(latest_updates)} 部动漫")
+    print(f"[最新发布流] 成功更新 latest_rss.json 共 {len(latest_updates)} 部动漫")
 
 if __name__ == '__main__':
     main()
