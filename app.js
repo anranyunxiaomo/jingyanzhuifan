@@ -219,7 +219,8 @@ async function searchGlobalBangumi() {
       const item = items[i];
       const title = item.getElementsByTagName("title")[0]?.textContent || '';
       const link = item.getElementsByTagName("link")[0]?.textContent || '';
-      const pubDate = item.getElementsByTagName("pubDate")[0]?.textContent || '';
+      const pubDateNode = item.getElementsByTagName("torrent:pubDate")[0] || item.getElementsByTagName("pubDate")[0];
+      const pubDate = pubDateNode?.textContent || '';
       
       // 解析季度集数
       const { season, episode } = parseMetadataFromTitle(title);
@@ -268,7 +269,7 @@ async function searchGlobalBangumi() {
         
         item.innerHTML = `
           <div class="rss-feed-info">
-            <span class="episode-name" title="${ep.title}">${ep.season}${ep.episode} - ${ep.title}</span>
+            <span class="episode-name" title="${ep.title}">${(ep.season && ep.episode) ? (ep.season + ep.episode + " - ") : ""}${ep.title}</span>
             <div class="rss-feed-meta">
               <span>🕒 ${epTime}发布</span>
               ${subgroupTag}
@@ -421,7 +422,7 @@ function renderRssList(list) {
       
       item.innerHTML = `
         <div class="rss-feed-info">
-          <span class="episode-name" title="${ep.title}">${ep.season}${ep.episode} - ${ep.title}</span>
+          <span class="episode-name" title="${ep.title}">${(ep.season && ep.episode) ? (ep.season + ep.episode + " - ") : ""}${ep.title}</span>
           <div class="rss-feed-meta">
             <span>🕒 ${epTime}</span>
             ${subgroupHtml}

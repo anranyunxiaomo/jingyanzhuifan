@@ -324,7 +324,12 @@ def main():
     for item in items:
         t_title = item.find('title').text
         t_link = item.find('link').text
-        t_pubDate = item.find('pubDate').text if item.find('pubDate') is not None else ""
+        # Mikan RSS 的 pubDate 节点存放在命名空间节点 torrent 内部
+        t_pubDate = ""
+        torrent_node = item.find('{https://mikanani.me/0.1/}torrent')
+        if torrent_node is not None:
+            pub_date_node = torrent_node.find('{https://mikanani.me/0.1/}pubDate')
+            t_pubDate = pub_date_node.text if pub_date_node is not None else ""
         
         t_season, t_episode = parse_anime_title(t_title)
         
