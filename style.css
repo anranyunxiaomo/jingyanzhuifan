@@ -1,54 +1,57 @@
 /* ==========================================================================
-   Design System & CSS Custom Properties (Apple Minimal & Dark Tech)
+   Design System & CSS Custom Properties (Apple Warm Light Minimalist 2026)
    ========================================================================== */
 :root {
-  --color-bg-base: #0c0c0e;
-  --color-bg-card: rgba(22, 22, 26, 0.65);
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-bg-base: #f5f5f7;
+  --color-bg-card: rgba(255, 255, 255, 0.8);
+  --color-border: rgba(0, 0, 0, 0.06);
   
-  --color-text-primary: #f5f5f7;
-  --color-text-secondary: #8e8e93;
-  --color-accent: #2f80ed;
-  --color-accent-hover: #1e60bd;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #86868b;
+  --color-accent: #0071e3;
+  --color-accent-hover: #005bb7;
   
-  --color-success: #30d158;
-  --color-danger: #ff453a;
+  --color-success: #34c759;
+  --color-danger: #ff3b30;
 
-  --blur-radius: 24px;
-  --ease-spring: cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-normal: all 0.3s var(--ease-spring);
+  --blur-radius: 20px;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: all 0.35s var(--ease-spring);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 /* ==========================================================================
-   Reset & Base Styles
+   Reset & Mobile Base Styles
    ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Display", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: var(--color-bg-base);
   color: var(--color-text-primary);
-  line-height: 1.5;
+  line-height: 1.4;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
   position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 背景流动光影 */
+/* 明亮流动光影 */
 .ambient-glow {
   position: absolute;
-  top: -10%;
+  top: -15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 150vw;
-  height: 60vh;
-  background: radial-gradient(circle, rgba(47, 128, 237, 0.06) 0%, rgba(12, 12, 14, 0) 75%);
+  width: 120vw;
+  height: 50vh;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.04) 0%, rgba(245, 245, 247, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -63,17 +66,17 @@ body {
   width: 100%;
   position: relative;
   z-index: 1;
-  padding-top: env(safe-area-inset-top, 20px);
-  padding-bottom: env(safe-area-inset-bottom, 20px);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* 头部 Header */
+/* Header */
 .app-header {
-  height: 64px;
+  height: 56px;
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  background: rgba(12, 12, 14, 0.8);
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(var(--blur-radius));
   border-bottom: 1px solid var(--color-border);
 }
@@ -86,15 +89,13 @@ body {
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
 }
 
-/* 连接状态指示器 */
+/* 状态指示器 */
 .status-indicators {
   display: flex;
   gap: 8px;
@@ -109,12 +110,12 @@ body {
 
 .status-dot.red {
   background-color: var(--color-danger);
-  box-shadow: 0 0 8px var(--color-danger);
+  box-shadow: 0 0 6px rgba(255, 59, 48, 0.4);
 }
 
 .status-dot.green {
   background-color: var(--color-success);
-  box-shadow: 0 0 8px var(--color-success);
+  box-shadow: 0 0 6px rgba(52, 199, 89, 0.4);
 }
 
 /* 视口与页面容器 */
@@ -122,15 +123,15 @@ body {
   flex: 1;
   position: relative;
   overflow-y: auto;
-  padding: 24px 20px 84px 20px; /* 留出底部 Tabbar 的高度 */
+  padding: 16px 14px calc(76px + env(safe-area-inset-bottom, 0px)) 14px; /* 完美适配底部 Home 指示条 */
   -webkit-overflow-scrolling: touch;
 }
 
 .view-section {
   display: none;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.4s var(--ease-spring), transform 0.4s var(--ease-spring);
+  transform: translateY(8px);
+  transition: opacity 0.3s var(--ease-spring), transform 0.3s var(--ease-spring);
 }
 
 .view-section.active {
@@ -143,12 +144,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .section-header h2 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -156,31 +158,32 @@ body {
    UI Components & Components Architecture
    ========================================================================== */
 
-/* 毛玻璃卡片 */
+/* 苹果风高透卡片 */
 .card-glass {
   background: var(--color-bg-card);
   backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
   border: 1px solid var(--color-border);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 16px;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
   transition: var(--transition-normal);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--card-shadow);
 }
 
 /* 列表包装器 */
 .list-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 /* 空白状态 */
 .empty-state {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 16px;
   color: var(--color-text-secondary);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* 底部 Tabbar */
@@ -189,9 +192,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: calc(64px + env(safe-area-inset-bottom, 0px));
-  background: rgba(12, 12, 14, 0.85);
+  height: calc(60px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
   border-top: 1px solid var(--color-border);
   display: flex;
   justify-content: space-around;
@@ -207,9 +211,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  width: 80px;
-  height: 64px;
+  gap: 3px;
+  width: 70px;
+  height: 60px;
   font-size: 10px;
   font-weight: 500;
   transition: var(--transition-normal);
@@ -217,49 +221,49 @@ body {
 }
 
 .tab-item.active {
-  color: var(--color-text-primary);
+  color: var(--color-accent);
 }
 
 .tab-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
   transition: var(--transition-normal);
 }
 
 .tab-item.active .tab-icon {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 /* ==========================================================================
    Interactive Buttons & Controls
    ========================================================================== */
 .btn-primary-action {
-  background: var(--color-text-primary);
-  color: var(--color-bg-base);
+  background: var(--color-accent);
+  color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 9999px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   cursor: pointer;
   transition: var(--transition-normal);
 }
 
 .btn-primary-action:active {
-  transform: scale(0.96);
-  opacity: 0.9;
+  transform: scale(0.95);
+  background-color: var(--color-accent-hover);
 }
 
 .btn-icon {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--color-border);
   color: var(--color-text-primary);
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -270,51 +274,53 @@ body {
 
 .btn-icon:active {
   transform: scale(0.92);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .svg-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
 /* ==========================================================================
-   Forms & Inputs Elements
+   Forms & Inputs Elements (解决手机输入法缩放痛点)
    ========================================================================== */
 .settings-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .settings-group h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: var(--color-accent);
 }
 
 .input-row {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 14px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .input-row label {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
+/* 核心适配：输入框字号必须为 16px，防止 iOS 键盘弹起时页面自动缩放 */
 .input-row input, .input-row select {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.02);
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 15px;
+  padding: 10px 12px;
+  font-size: 16px;
   color: var(--color-text-primary);
   outline: none;
   transition: var(--transition-normal);
@@ -323,23 +329,24 @@ body {
 
 .input-row input:focus, .input-row select:focus {
   border-color: var(--color-accent);
-  background: rgba(255, 255, 255, 0.08);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
 }
 
 .settings-tip {
   font-size: 11px;
   color: var(--color-text-secondary);
-  line-height: 1.5;
-  margin-top: 8px;
+  line-height: 1.4;
+  margin-top: 6px;
 }
 
 .btn-submit {
   background: var(--color-accent);
   color: #fff;
   border: none;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-normal);
@@ -347,7 +354,7 @@ body {
 }
 
 .btn-submit:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
   background-color: var(--color-accent-hover);
 }
 
@@ -360,8 +367,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -369,7 +377,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s var(--ease-spring);
-  padding: 20px;
+  padding: 14px;
 }
 
 .modal-overlay.active {
@@ -379,33 +387,34 @@ body {
 
 .modal-content {
   width: 100%;
-  max-width: 640px;
+  max-width: 480px;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-height: 85vh;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  max-height: 80vh;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .btn-close {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.04);
   border: none;
   color: var(--color-text-primary);
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: var(--transition-normal);
 }
@@ -420,7 +429,7 @@ body {
   width: 100%;
   padding-top: 56.25%; /* 16:9 比例 */
   background: #000;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -442,32 +451,33 @@ body {
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--color-border);
-  padding: 16px;
+  padding: 14px;
+  border-radius: 14px;
 }
 
 .sub-info h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .sub-meta {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--color-text-secondary);
 }
 
 .sub-meta span {
   display: inline-block;
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .btn-delete-sub {
   color: var(--color-danger);
-  background: rgba(255, 69, 58, 0.1);
+  background: rgba(255, 59, 48, 0.08);
   border: none;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-normal);
@@ -479,15 +489,16 @@ body {
 
 /* 媒体库文件卡片 */
 .anime-folder-card {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  border-radius: 14px;
 }
 
 .folder-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--color-border);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -496,7 +507,7 @@ body {
 
 .folder-title::after {
   content: '▼';
-  font-size: 10px;
+  font-size: 9px;
   color: var(--color-text-secondary);
   transition: transform 0.3s var(--ease-spring);
 }
@@ -508,29 +519,29 @@ body {
 .episode-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 6px;
+  margin-top: 6px;
 }
 
 .episode-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.01);
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 10px 12px;
   cursor: pointer;
   transition: var(--transition-normal);
 }
 
 .episode-item:active {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.03);
   transform: translateY(1px);
 }
 
 .episode-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   max-width: 80%;
   white-space: nowrap;
@@ -539,25 +550,25 @@ body {
 }
 
 .episode-play-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: rgba(47, 128, 237, 0.15);
+  background: rgba(0, 113, 227, 0.08);
   color: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 /* ==========================================================================
-   iOS Toast Notification Banner Styles
+   iOS Toast Notification Banner Styles (暖白明亮款)
    ========================================================================== */
 .ios-toast-wrapper {
   position: fixed;
-  top: -120px; /* 初始隐藏在屏幕上方 */
-  left: 20px;
-  right: 20px;
+  top: -120px;
+  left: 12px;
+  right: 12px;
   z-index: 1000;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
   pointer-events: none;
@@ -565,7 +576,7 @@ body {
 }
 
 .ios-toast-wrapper.active {
-  transform: translateY(calc(120px + env(safe-area-inset-top, 20px)));
+  transform: translateY(calc(120px + env(safe-area-inset-top, 10px)));
   pointer-events: auto;
   opacity: 1;
 }
@@ -574,16 +585,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  border-radius: 20px;
-  background: rgba(22, 22, 26, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
 .toast-icon {
-  font-size: 24px;
-  margin-right: 14px;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .toast-body {
@@ -591,10 +602,10 @@ body {
 }
 
 .toast-body h4 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   margin-bottom: 2px;
-  color: #fff;
+  color: var(--color-text-primary);
 }
 
 .toast-body p {
@@ -607,13 +618,13 @@ body {
   background: var(--color-accent);
   color: #fff;
   border: none;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 9999px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-normal);
-  margin-left: 14px;
+  margin-left: 10px;
 }
 
 .toast-action-btn:active {
@@ -625,16 +636,20 @@ body {
    RSS Feed & Search Styles (New Releases Flow)
    ========================================================================== */
 .search-box-wrapper {
-  padding: 8px 16px;
-  margin-bottom: 16px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
   border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
 }
 
+/* 强制把搜索框输入字号也设为 16px，防止手机聚焦缩放 */
 .search-box-wrapper input {
   background: none;
   border: none;
   color: var(--color-text-primary);
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
   width: 100%;
 }
@@ -643,21 +658,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.01);
+  background: #fff;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 10px 12px;
   transition: var(--transition-normal);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
 }
 
 .rss-feed-item:active {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .rss-feed-info {
   flex: 1;
   min-width: 0;
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .rss-feed-title {
@@ -667,7 +683,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   text-align: left;
 }
 
@@ -675,24 +691,24 @@ body {
   font-size: 10px;
   color: var(--color-text-secondary);
   display: flex;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
 .rss-tag-subgroup {
-  background: rgba(47, 128, 237, 0.1);
+  background: rgba(0, 113, 227, 0.06);
   color: var(--color-accent);
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 1px 4px;
+  border-radius: 3px;
   font-size: 8px;
   font-weight: 600;
 }
 
 .btn-rss-action {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
-  padding: 6px 12px;
+  background: var(--color-accent);
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
   border-radius: 8px;
   font-size: 11px;
   font-weight: 600;
@@ -702,9 +718,6 @@ body {
 }
 
 .btn-rss-action:active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #fff;
+  background-color: var(--color-accent-hover);
   transform: scale(0.95);
 }
-
