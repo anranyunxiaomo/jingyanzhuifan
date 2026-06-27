@@ -31,39 +31,56 @@ function getPatToken() {
   return localStorage.getItem('gh_pat') || (p1 + p2);
 }
 
+// 带超时控制的 fetch 封装 (默认 3500ms 强制超时，防止卡挂起)
+async function fetchWithTimeout(url, options = {}, timeout = 3500) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  try {
+    const res = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(id);
+    return res;
+  } catch (err) {
+    clearTimeout(id);
+    throw err;
+  }
+}
+
 // ==========================================================================
-// 辅助方法：双通道自动避障 CORS 请求封装
+// 辅助方法：多通道 3.5s 超时自动切通道 CORS 请求封装
 // ==========================================================================
 async function fetchViaProxy(url) {
   const proxies = [
-    // 代理 1: CodeTabs (国内无限制，直接返回 JSON)
+    // 代理 1: CodeTabs (直传)
     async (target) => {
-      const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`);
+      const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CodeTabs 节点失败');
       return await res.json();
     },
-    // 代理 2: AllOrigins (经典 CF 代理，包装 contents 属性)
+    // 代理 2: AllOrigins (包装 contents)
     async (target) => {
-      const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
+      const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('AllOrigins 节点失败');
       const data = await res.json();
       return JSON.parse(data.contents);
     },
-    // 代理 3: CorsProxy.io (轻量直传)
+    // 代理 3: CorsProxy.io
     async (target) => {
-      const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
+      const res = await fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CorsProxy.io 节点失败');
       return await res.json();
     },
-    // 代理 4: ThingProxy (国外备用)
+    // 代理 4: ThingProxy
     async (target) => {
-      const res = await fetch(`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(target)}`);
+      const res = await fetchWithTimeout(`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('ThingProxy 节点失败');
       return await res.json();
     },
-    // 代理 5: Yacdn 代理
+    // 代理 5: Yacdn
     async (target) => {
-      const res = await fetch(`https://yacdn.org/proxy/${encodeURIComponent(target)}`);
+      const res = await fetchWithTimeout(`https://yacdn.org/proxy/${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('Yacdn 节点失败');
       return await res.json();
     }
@@ -72,14 +89,14 @@ async function fetchViaProxy(url) {
   let lastError = null;
   for (let i = 0; i < proxies.length; i++) {
     try {
-      console.log(`[CORS 路由] 正在尝试第 ${i+1}/${proxies.length} 个跨域代理通道...`);
+      console.log(`[CORS 路由] 正在尝试通道 ${i+1}/${proxies.length}...`);
       return await proxies[i](url);
     } catch (err) {
-      console.warn(`[CORS 路由抖动] 通道 ${i+1} 失败: ${err.message}，尝试下一通道。`);
+      console.warn(`[CORS 路由抖动] 通道 ${i+1} 超时或失败: ${err.message}，尝试下一通道`);
       lastError = err;
     }
   }
-  throw new Error(`CORS 代理服务全部瘫痪，请检查网络后再试 (错误信息: ${lastError?.message})`);
+  throw new Error(`所有代理节点连接超时或被目标非标端口屏蔽，请重试`);
 }
 
 // 页面加载初始化
@@ -321,6 +338,7 @@ async function showAnimeDetail(AID) {
     const data = await fetchViaProxy(detailUrl);
     
     if (!data || !data.video) {
+      detailTitle.innerText = '加载失败';
       detailBody.innerHTML = '<div class="empty-state"><p>❌ 动漫详情载入失败</p></div>';
       return;
     }
@@ -340,7 +358,23 @@ async function showAnimeDetail(AID) {
     state.selectedLine = lines[0];
     renderDetailModalContent(video, lines, playlist);
   } catch (err) {
-    detailBody.innerHTML = `<div class="empty-state"><p>详情载入失败: ${err.message}</p></div>`;
+    detailTitle.innerText = '同步失败 (可重试)';
+    detailBody.innerHTML = `
+      <div class="empty-state" style="padding: 24px 10px; text-align: center;">
+        <p style="color: var(--color-primary); font-weight: bold; margin-bottom: 8px;">⚠️ 线路数据同步超时</p>
+        <p style="font-size: 11px; color: #86868b; line-height: 1.6; margin-bottom: 18px; max-width: 280px; margin-left: auto; margin-right: auto;">
+          因目标源端口限制，公共跨域中继有时会瞬时拥堵。请点击下方按钮重新尝试同步。
+        </p>
+        <button id="btn-retry-sync" class="btn-primary-action" style="margin: 0 auto; display: inline-block; padding: 8px 16px; font-size: 12px; background: #0071e3; border-color: #0071e3;">
+          🔄 重新尝试同步数据
+        </button>
+      </div>
+    `;
+    
+    // 动态绑定重试按钮
+    document.getElementById('btn-retry-sync').addEventListener('click', () => {
+      showAnimeDetail(AID);
+    });
   }
 }
 
