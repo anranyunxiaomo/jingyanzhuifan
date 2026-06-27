@@ -721,3 +721,20 @@ body {
   background-color: var(--color-accent-hover);
   transform: scale(0.95);
 }
+
+/* ==========================================================================
+   Details / Summary Foldering Component Styles
+   ========================================================================== */
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none !important;
+}
+
+details[open] .arrow-indicator {
+  transform: rotate(180deg);
+}
+
+.arrow-indicator {
+  display: inline-block;
+  transition: transform 0.28s var(--ease-spring);
+}

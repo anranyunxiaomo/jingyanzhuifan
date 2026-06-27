@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * AGE Anime PWA - Core Logic (Double CORS Proxies & Settings Preservation)
+ * AGE Anime PWA - Core Logic (Concurrent Sniffing & Folder Playback System)
  * ==========================================================================
  */
 
@@ -10,7 +10,7 @@ const state = {
   latestList: [],       // 首页今日新番列表
   searchList: [],       // 全网搜索结果列表
   historyList: [],      // 追番历史列表
-  downloadedList: [],   // 云端嗅探完成的 m3u8 直链列表
+  downloadedList: [],   // 云端嗅探完成的嵌套大类动漫列表
   currentDetail: null,  // 当前弹窗中加载的动漫详情
   selectedLine: '',     // 当前选中的播放线路
   artPlayerInstance: null
@@ -19,12 +19,12 @@ const state = {
 // AGE API 基础 Host
 const AGE_API_BASE = 'https://ageapi.omwjhz.com:18888/v2/';
 
-// 获取配置的仓库名 (默认: anranyunxiaomo/jingyanzhuifan)
+// 获取配置的仓库名
 function getGhRepo() {
   return localStorage.getItem('gh_repo') || 'anranyunxiaomo/jingyanzhuifan';
 }
 
-// 拼装 GitHub 写入特权凭证
+// 拼装 GitHub 写入凭证
 function getPatToken() {
   const p1 = "gh" + "p_";
   const p2 = atob("Z2h0R2h1TGZUMHd1Z1FLSENHR0F4a3FhaXdlQmh5MXNCcUwx");
@@ -32,18 +32,16 @@ function getPatToken() {
 }
 
 // ==========================================================================
-// 辅助方法：双通道自动避障 CORS 跨域中继请求封装 (AllOrigins + CorsProxy)
+// 辅助方法：双通道自动避障 CORS 请求封装
 // ==========================================================================
 async function fetchViaProxy(url) {
   const proxies = [
-    // 代理通道一: AllOrigins (包装为 contents 属性)
     async (target) => {
       const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('AllOrigins 连接失败');
       const data = await res.json();
       return JSON.parse(data.contents);
     },
-    // 代理通道二: CorsProxy.io (直接穿透返回原始 JSON)
     async (target) => {
       const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CorsProxy.io 连接失败');
@@ -78,7 +76,7 @@ function initUI() {
     document.body.classList.add('pwa-standalone');
   }
 
-  // 修复：重新将本地 localStorage 缓存的 GitHub 配置回显到输入框中
+  // 回显 GitHub 配置
   document.getElementById('input-gh-pat').value = localStorage.getItem('gh_pat') || getPatToken();
   document.getElementById('input-gh-repo').value = getGhRepo();
 }
@@ -120,7 +118,6 @@ function bindEvents() {
   document.getElementById('btn-close-player').addEventListener('click', closePlayer);
 }
 
-// 修复：保存配置函数
 function saveSettings() {
   const patVal = document.getElementById('input-gh-pat').value.trim();
   const repoVal = document.getElementById('input-gh-repo').value.trim();
@@ -180,7 +177,6 @@ async function loadLatestAnime(force = false) {
 
   container.innerHTML = '<div class="empty-state"><p>🔍 正在拉取 AGE 每日更新番剧...</p></div>';
 
-  // 核心优化：优先读取同源下的静态 latest_rss.json 缓存（0 延迟，100% 成功，不通过跨域代理中转）
   try {
     const localRes = await fetch(`./latest_rss.json?t=${Date.now()}`);
     if (localRes.ok) {
@@ -192,7 +188,6 @@ async function loadLatestAnime(force = false) {
     console.warn('[同源缓存读取失效] 正在通过 CORS 代理尝试在线获取...');
   }
 
-  // 备用：通过双代理机制在线请求
   try {
     const data = await fetchViaProxy(`${AGE_API_BASE}home-list`);
     if (data && data.latest) {
@@ -290,7 +285,7 @@ async function searchGlobalAnime() {
 }
 
 // ==========================================================================
-// 模块 3：选集弹窗与线路动态切换
+// 模块 3：选集弹窗与线路动态切换 (集成云端整部并发嗅探机制)
 // ==========================================================================
 async function showAnimeDetail(AID) {
   const detailBody = document.getElementById('detail-modal-body');
@@ -331,8 +326,9 @@ async function showAnimeDetail(AID) {
 function renderDetailModalContent(video, lines, playlist) {
   const detailBody = document.getElementById('detail-modal-body');
   
+  // 详情海报与元数据
   let headerHtml = `
-    <div class="anime-detail-header" style="display: flex; gap: 16px; margin-bottom: 20px;">
+    <div class="anime-detail-header" style="display: flex; gap: 16px; margin-bottom: 16px;">
       <img src="${video.cover}" alt="${video.name}" style="width: 90px; height: 126px; border-radius: 8px; object-fit: cover; box-shadow: var(--shadow-md);" onerror="this.src='https://cdn.aqdstatic.com:966/large/008BrtkLgy1hu7n7adu6oj30k00zk0y7.jpg'">
       <div style="flex: 1; text-align: left; font-size: 13px; color: #515154;">
         <p style="margin: 0 0 4px 0;"><strong>首播:</strong> ${video.premiere || '未知'}</p>
@@ -341,9 +337,18 @@ function renderDetailModalContent(video, lines, playlist) {
         <p style="margin: 0 0 4px 0;"><strong>状态:</strong> ${video.uptodate}</p>
       </div>
     </div>
-    <div style="text-align: left; margin-bottom: 24px;">
+    <div style="text-align: left; margin-bottom: 16px;">
       <h5 style="margin: 0 0 6px 0; font-size: 14px; color: #1d1d1f;">剧情简介</h5>
-      <p style="font-size: 12px; color: #86868b; line-height: 1.5; max-height: 60px; overflow-y: auto; margin: 0;">${video.intro || '暂无简介'}</p>
+      <p style="font-size: 12px; color: #86868b; line-height: 1.5; max-height: 50px; overflow-y: auto; margin: 0;">${video.intro || '暂无简介'}</p>
+    </div>
+  `;
+
+  // 重磅升级：一键整部嗅探入库按钮
+  let actionHtml = `
+    <div style="text-align: left; margin-bottom: 20px;">
+      <button id="btn-sniff-entire" class="btn-primary-action" style="margin: 0; width: 100%; justify-content: center; padding: 10px; font-weight: bold; background: #0071e3; border-color: #0071e3; box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);">
+        ⚡️ 一键整部并发嗅探 M3U8 直链至播放库
+      </button>
     </div>
   `;
 
@@ -359,17 +364,26 @@ function renderDetailModalContent(video, lines, playlist) {
   let episodeContainerHtml = `
     <div style="text-align: left; margin-top: 16px;">
       <h5 style="margin: 0 0 12px 0; font-size: 14px; color: #1d1d1f;">选集播放</h5>
-      <div id="episode-grid-wrapper" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; max-height: 220px; overflow-y: auto; padding: 4px;">
-        <!-- 选集按钮动态填充 -->
+      <div id="episode-grid-wrapper" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; max-height: 180px; overflow-y: auto; padding: 4px;">
+        <!-- 选集按钮 -->
       </div>
     </div>
   `;
 
-  detailBody.innerHTML = headerHtml + lineSelectHtml + episodeContainerHtml;
+  detailBody.innerHTML = headerHtml + actionHtml + lineSelectHtml + episodeContainerHtml;
 
+  // 绑定线路切换
   document.getElementById('select-play-line').addEventListener('change', (e) => {
     state.selectedLine = e.target.value;
     renderEpisodes(playlist);
+  });
+
+  // 绑定一键并发整部嗅探
+  document.getElementById('btn-sniff-entire').addEventListener('click', () => {
+    const AID = state.currentDetail.video.AID || state.currentDetail.AID || video.AID;
+    triggerActionsSniff(video.name, AID);
+    alert(`🎉 已通知云端 Actions 开启最大 15 线程并发嗅探《${video.name}》的全部集数直链！\n\n通常只需等待 15-25 秒即可嗅探完毕。\n请在 20 秒后在“追番历史”中点击刷新，整部动漫的高清免广告直链文件夹将直接生成呈现！`);
+    toggleModal('sub-modal', false);
   });
 
   renderEpisodes(playlist);
@@ -404,7 +418,7 @@ function renderEpisodes(playlist) {
 }
 
 // ==========================================================================
-// 模块 4：播放引擎解析与 IFrame 加载 (结合 Actions 自动后台嗅探)
+// 模块 4：播放引擎解析与双通道播放
 // ==========================================================================
 function playAgeVideo(animeName, lineName, epIndex) {
   const data = state.currentDetail;
@@ -437,17 +451,13 @@ function playAgeVideo(animeName, lineName, epIndex) {
     return;
   }
 
-  // 1. 弹出播放器，以 iframe 进行即时播放响应
+  // 1. 弹出播放器即时播
   playVideo(playTitle, playUrl);
 
-  // 2. 在后台静默发送 repository_dispatch 触发 Actions 的 Python 去嗅探该集真实 m3u8 直链
-  triggerActionsSniff(playTitle, epVal);
-
-  // 3. 写入追番历史记录
+  // 2. 写入本地历史记录
   addPlayHistory(animeName, epName, video.AID || data.AID || 'unknown', lineName, epIndex);
 }
 
-// 通用播放分配核心
 function playVideo(title, playUrl) {
   toggleModal('sub-modal', false);
   toggleModal('player-modal', true);
@@ -501,17 +511,17 @@ function playVideo(title, playUrl) {
   }
 }
 
-// 触发云端自动直链嗅探
-async function triggerActionsSniff(playTitle, epVal) {
+// 触发 Actions 嗅探调度 (支持单集或一键整部嗅探)
+async function triggerActionsSniff(name, epValOrAID) {
   const pat = getPatToken();
   const repo = getGhRepo();
   const url = `https://api.github.com/repos/${repo}/dispatches`;
   const payload = {
     event_type: 'instant_download',
     client_payload: {
-      name: playTitle,
-      keyword: playTitle,
-      torrent_url: epVal
+      name: name,
+      keyword: name,
+      torrent_url: String(epValOrAID)
     }
   };
   
@@ -525,9 +535,9 @@ async function triggerActionsSniff(playTitle, epVal) {
       },
       body: JSON.stringify(payload)
     });
-    console.log("云端直链嗅探通知结果:", res.status);
+    console.log("并发嗅探指令状态:", res.status);
   } catch (err) {
-    console.error("无法拉起云端嗅探:", err);
+    console.error("并发嗅探指令发送异常:", err);
   }
 }
 
@@ -541,13 +551,13 @@ function closePlayer() {
 }
 
 // ==========================================================================
-// 模块 5：云端已缓存 m3u8 直链库 与 本地历史记录的双核驱动渲染
+// 模块 5：云端聚合文件夹直链库 与 本地观看历史的双层渲染
 // ==========================================================================
 async function loadLibraryAndHistory(force = false) {
   const container = document.getElementById('media-list');
   container.innerHTML = '<div class="empty-state"><p>⚡️ 正在加载您的追番足迹...</p></div>';
 
-  // 5.1 获取云端 Actions 嗅探好的真实 M3U8 列表 (同源静态拉取，0.01秒极速到账，100%成功)
+  // 5.1 从云端同源加载聚合直链数据库
   try {
     const res = await fetch(`./downloaded.json?t=${Date.now()}`);
     if (res.ok) {
@@ -557,45 +567,63 @@ async function loadLibraryAndHistory(force = false) {
     console.warn("读取云端直链缓存失败:", err);
   }
 
-  // 5.2 获取手机本地的播放历史足迹
+  // 5.2 获取手机本地历史
   const localHistory = localStorage.getItem('age-history');
   state.historyList = localHistory ? JSON.parse(localHistory) : [];
 
-  // --- 渲染部分 ---
   container.innerHTML = '';
 
-  // 1) 渲染云端 M3U8 原生直链库 (上部)
-  const validDirects = state.downloadedList.filter(item => item && item.url && item.url.includes('.m3u8'));
-  if (validDirects.length > 0) {
+  // 1) 渲染聚合后的直链库 (上部，文件夹式折叠细节)
+  if (state.downloadedList.length > 0) {
     const subHeader = document.createElement('div');
     subHeader.className = 'section-header';
     subHeader.style.marginTop = '0';
-    subHeader.innerHTML = '<h2>🍿 云端极速 M3U8 直链 (Artplayer 原生无广告秒播)</h2>';
+    subHeader.innerHTML = '<h2>🍿 已缓存直链库 (Artplayer 原生无广告秒播)</h2>';
     container.appendChild(subHeader);
 
-    validDirects.forEach((item, index) => {
-      const card = document.createElement('div');
-      card.className = 'sub-card card-glass';
-      card.style.display = 'flex';
-      card.style.justifyContent = 'space-between';
-      card.style.alignItems = 'center';
-      card.style.padding = '12px 16px';
-      card.style.marginBottom = '10px';
-      card.style.borderColor = 'rgba(0,113,227,0.15)';
+    state.downloadedList.forEach((animeItem) => {
+      if (!animeItem.episodes || animeItem.episodes.length === 0) return;
 
-      card.innerHTML = `
-        <div class="sub-info" style="text-align: left; flex: 1;">
-          <h4 style="margin: 0 0 4px 0; font-size: 15px; color: #1d1d1f;">${item.title}</h4>
-          <span style="font-size: 11px; color: #34c759; background: rgba(52,199,89,0.08); padding: 1px 6px; border-radius: 3px;">⚡️ 已嗅探直链</span>
+      const details = document.createElement('details');
+      details.className = 'card-glass';
+      details.style.marginBottom = '12px';
+      details.style.borderRadius = '12px';
+      details.style.overflow = 'hidden';
+      details.style.border = '1px solid rgba(0, 113, 227, 0.12)';
+      details.style.padding = '12px';
+
+      details.innerHTML = `
+        <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; outline: none; list-style: none;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="${animeItem.cover}" style="width: 44px; height: 60px; border-radius: 6px; object-fit: cover; box-shadow: var(--shadow-sm);" onerror="this.src='https://cdn.aqdstatic.com:966/large/008BrtkLgy1hu7n7adu6oj30k00zk0y7.jpg'">
+            <div style="text-align: left;">
+              <h4 style="margin: 0 0 4px 0; font-size: 15px; color: #1d1d1f;">📁 ${animeItem.anime}</h4>
+              <span style="font-size: 11px; color: #34c759; background: rgba(52,199,89,0.08); padding: 1px 6px; border-radius: 4px;">⚡️ 已嗅探 ${animeItem.episodes.length} 个直链</span>
+            </div>
+          </div>
+          <span style="font-size: 14px; color: #86868b;" class="arrow-indicator">▼</span>
+        </summary>
+        <div style="margin-top: 12px; display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 12px;">
+          ${animeItem.episodes.map((ep, idx) => `
+            <button class="btn-rss-action btn-play-direct-ep" data-anime="${animeItem.anime}" data-title="${ep.title}" data-url="${ep.url}" style="margin: 0; padding: 6px 4px; font-size: 12px; text-align: center;">
+              ${ep.title}
+            </button>
+          `).join('')}
         </div>
-        <button class="btn-rss-action btn-play-direct" style="margin: 0; padding: 6px 12px; font-size: 12px; background: #34c759; border-color: #34c759;">原生播放</button>
       `;
 
-      card.querySelector('.btn-play-direct').addEventListener('click', () => {
-        playVideo(item.title, item.url);
+      // 绑定集数播放事件
+      details.querySelectorAll('.btn-play-direct-ep').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const anime = btn.getAttribute('data-anime');
+          const title = btn.getAttribute('data-title');
+          const url = btn.getAttribute('data-url');
+          playVideo(`${anime} - ${title}`, url);
+        });
       });
 
-      container.appendChild(card);
+      container.appendChild(details);
     });
   }
 
@@ -635,8 +663,7 @@ async function loadLibraryAndHistory(force = false) {
     });
   }
 
-  // 兜底提示
-  if (validDirects.length === 0 && state.historyList.length === 0) {
+  if (state.downloadedList.length === 0 && state.historyList.length === 0) {
     container.innerHTML = `
       <div class="empty-state">
         <p>暂无任何播放记录文件。</p>
