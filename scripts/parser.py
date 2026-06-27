@@ -318,40 +318,50 @@ def main():
         print("[完成] 本次未下载转换任何视频链接")
 
     # ==========================================================================
-    # 5. 提取最新 50 条 RSS 种子记录，提供给前端做“最新番剧更新流”展示
+    # 5. 按照“番剧中文名 (动漫大类)”进行深度聚合，限制前 45 部最活跃的动漫
     # ==========================================================================
-    latest_updates = []
-    for item in items[:50]:
+    anime_groups = {}
+    for item in items:
         t_title = item.find('title').text
         t_link = item.find('link').text
         t_pubDate = item.find('pubDate').text if item.find('pubDate') is not None else ""
         
         t_season, t_episode = parse_anime_title(t_title)
         
-        # 粗略提取字幕组名字 (e.g. 提取 "[桜都字幕组]" 中的字幕组名称)
         subgroup_match = re.search(r'\[(.*?(?:字幕组|字幕社|社|組|LoliHouse|Lilith-raws|Raw))\]', t_title, re.IGNORECASE)
-        t_subgroup = subgroup_match.group(1) if subgroup_match else ""
+        t_subgroup = subgroup_match.group(1) if subgroup_match else "其它"
         
-        # 精简出洁净的番剧中/英文名备选
+        # 洁净中英文名猜测
         t_clean = t_title
-        t_clean = re.sub(r'\[.*?\]|【.*?】', '', t_clean) # 删方括号
-        t_clean = re.sub(r'\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*', '', t_clean) # 删后缀和集数
+        t_clean = re.sub(r'\[.*?\]|【.*?】', '', t_clean)
+        t_clean = re.sub(r'\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*', '', t_clean)
         t_clean = t_clean.strip(" -/\\")
+        guess_name = t_clean[:25] if t_clean else "未分类新番"
         
-        latest_updates.append({
+        # 填充进动漫大类
+        if guess_name not in anime_groups:
+            anime_groups[guess_name] = {
+                "anime": guess_name,
+                "latest_time": t_pubDate,
+                "episodes": []
+            }
+            
+        anime_groups[guess_name]["episodes"].append({
             "title": t_title,
             "link": t_link,
             "pubDate": t_pubDate,
             "season": t_season,
             "episode": t_episode,
-            "subgroup": t_subgroup,
-            "guess_name": t_clean[:25] # 限制长度作为备用
+            "subgroup": t_subgroup
         })
+
+    # 取前 45 部动漫进行输出缓存
+    latest_updates = list(anime_groups.values())[:45]
         
     latest_json_path = os.path.join(base_dir, "latest_rss.json")
     with open(latest_json_path, 'w', encoding='utf-8') as f:
         json.dump(latest_updates, f, indent=2, ensure_ascii=False)
-    print(f"[最新发布流] 成功写入/更新 latest_rss.json 共 {len(latest_updates)} 条")
+    print(f"[最新发布流] 成功归类并更新 latest_rss.json 共 {len(latest_updates)} 部动漫")
 
 if __name__ == '__main__':
     main()

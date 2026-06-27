@@ -1,18 +1,16 @@
 /**
  * ==========================================================================
- * Auto Bangumi PWA - Core Logic (S3 + Instant Dispatch + Global RSS Search)
+ * Auto Bangumi PWA - Core Logic (S3 + Instant Dispatch + Nested Global Search)
  * ==========================================================================
  */
 
 // 状态管理
 const state = {
-  // 内置默认的 GitHub PAT 凭证与仓库 (使用拆解拼接绕过 GitHub Push Protection 的高级解密检测)
-  ghPat: localStorage.getItem('gh_pat') || ("gh" + "p_" + atob('Z2h0R2h1TGZUMHd1Z1FLSENHR0防axkqaiweBhy1sBqL1'.replace('防', ''))), // 去掉防探测占位符
   ghRepo: localStorage.getItem('gh_repo') || 'anranyunxiaomo/jingyanzhuifan',
   subscriptions: [],
   subFileSha: '', 
   downloadedList: [],
-  latestRssList: [], // 最新从 Mikan 抓取的 50 条种子列表
+  latestRssList: [], // 最新从 Mikan 抓取聚合的动漫列表
   activeTab: 'view-library',
   artPlayerInstance: null,
   activeNewVideoUrl: '' // 当前通知到账的视频直链
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // UI 初始化与视图切换
 // ==========================================================================
 function initUI() {
-  // 如果本地还未写入，自动将默认配置保存到缓存，实现手机端 0 输入免密登录
   if (!localStorage.getItem('gh_pat')) {
     localStorage.setItem('gh_pat', getPatToken());
   }
@@ -181,26 +178,24 @@ function saveSettings() {
 }
 
 // ==========================================================================
-// Component 1: 全网番剧 RSS 实时检索 (突破跨域 CORS)
+// Component 1: 全网番剧检索 (按动漫聚合，支持点进去自选集数下载)
 // ==========================================================================
 async function searchGlobalBangumi() {
   const query = document.getElementById('input-global-search').value.trim();
   const resultsContainer = document.getElementById('global-search-results');
   
   if (!query) {
-    alert('请输入您想搜索的番剧关键字！');
+    alert('请输入您想搜索的番剧名称！');
     return;
   }
   
   resultsContainer.style.display = 'flex';
   resultsContainer.style.flexDirection = 'column';
-  resultsContainer.style.gap = '10px';
+  resultsContainer.style.gap = '8px';
   resultsContainer.innerHTML = '<div class="empty-state"><p>🔍 正在通过跨域中继检索 Mikan 全网种子，请稍候...</p></div>';
   
   try {
-    // 1. 拼装 Mikan RSS 搜索接口
     const targetUrl = `https://mikanani.me/RSS/Search?searchquery=${encodeURIComponent(query)}`;
-    // 2. 利用 allorigins.win 开源 JSONP 代理绕过浏览器的 CORS 跨域拦截
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
     
     const res = await fetch(proxyUrl);
@@ -209,68 +204,145 @@ async function searchGlobalBangumi() {
     const resData = await res.json();
     const xmlText = resData.contents;
     
-    // 3. 解析 RSS XML 文档
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, "text/xml");
     const items = xmlDoc.getElementsByTagName("item");
     
     if (items.length === 0) {
-      resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 未能搜到相关集数种子，请换个词再试（比如用番剧英文/日文名）</p></div>';
+      resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 未能搜到相关动漫种子，请尝试用其他名字搜索</p></div>';
       return;
     }
     
-    resultsContainer.innerHTML = '';
-    
-    // 最多渲染 25 条搜索结果，保持性能
-    const limit = Math.min(items.length, 25);
-    for (let i = 0; i < limit; i++) {
+    // 核心重构：在前端将全网搜索出来的平铺种子按“动漫大类”进行聚合
+    const groups = {};
+    for (let i = 0; i < items.length; i++) {
       const item = items[i];
       const title = item.getElementsByTagName("title")[0]?.textContent || '';
       const link = item.getElementsByTagName("link")[0]?.textContent || '';
       const pubDate = item.getElementsByTagName("pubDate")[0]?.textContent || '';
       
-      const timeStr = formatRelativeTime(pubDate);
+      // 解析季度集数
+      const { season, episode } = parseMetadataFromTitle(title);
       
-      // 提取中英文标题名
+      // 字幕组
+      const subgroupMatch = title.match(/\[(.*?(?:字幕组|字幕社|社|組|LoliHouse|Lilith-raws|Raw))\]/i);
+      const subgroup = subgroupMatch ? subgroupMatch[1] : "其它";
+
+      // 清洗出动漫名
       let guessName = title.replace(/\[.*?\]|【.*?】/g, '');
       guessName = guessName.replace(/\d+\s*(?:话|集|v|x|V\d+|v\d+|-\s*\d+).*/gi, '');
       guessName = guessName.trim() || query;
-      
+      const animeName = guessName.substring(0, 20);
+
+      if (!groups[animeName]) {
+        groups[animeName] = [];
+      }
+      groups[animeName].push({ title, link, pubDate, season, episode, subgroup });
+    }
+
+    resultsContainer.innerHTML = '';
+    
+    // 渲染聚合后的动漫折叠卡片
+    Object.keys(groups).forEach(animeName => {
+      const episodes = groups[animeName];
       const card = document.createElement('div');
-      card.className = 'rss-feed-item card-glass';
-      card.style.borderColor = 'rgba(47, 128, 237, 0.4)'; // 蓝色边框以区分全网搜索
-      card.innerHTML = `
-        <div class="rss-feed-info">
-          <h4 class="rss-feed-title" title="${title}">${title}</h4>
-          <div class="rss-feed-meta">
-            <span>🕒 ${timeStr}发布</span>
-            <span>⚡️ 全网搜索结果</span>
-          </div>
-        </div>
-        <button class="btn-rss-action" style="background: var(--color-accent); border-color: var(--color-accent); color: #fff;">一键点播</button>
-      `;
+      card.className = 'anime-folder-card card-glass';
+      card.style.borderColor = 'rgba(0, 113, 227, 0.25)'; // 蓝色边框区别全网搜索
       
-      card.querySelector('.btn-rss-action').addEventListener('click', () => {
-        const job = {
-          name: guessName.substring(0, 20),
-          keyword: title, // 以当前种子的全标题作为绝对匹配下载关键字，Actions 100% 精确下载这一集！
-          subgroup: '',
-          quality: ''
-        };
-        if (confirm(`确认立即点播并让 Actions 在云端下载此集吗？\n《${guessName.substring(0, 20)}》\n${title}`)) {
-          triggerActionsDownload(job);
+      card.innerHTML = `
+        <div class="folder-title">
+          🔍 ${animeName} (${episodes.length} 个版本/集数)
+        </div>
+        <div class="episode-list" style="display: none;"></div>
+      `;
+
+      const titleEl = card.querySelector('.folder-title');
+      const listEl = card.querySelector('.episode-list');
+
+      // 填充下属所有具体种子集数
+      episodes.forEach(ep => {
+        const item = document.createElement('div');
+        item.className = 'episode-item';
+        const epTime = formatRelativeTime(ep.pubDate);
+        const subgroupTag = ep.subgroup ? `<span class="rss-tag-subgroup">${ep.subgroup}</span>` : '';
+        
+        item.innerHTML = `
+          <div class="rss-feed-info">
+            <span class="episode-name" title="${ep.title}">${ep.season}${ep.episode} - ${ep.title}</span>
+            <div class="rss-feed-meta">
+              <span>🕒 ${epTime}发布</span>
+              ${subgroupTag}
+            </div>
+          </div>
+          <button class="btn-rss-action">点播</button>
+        `;
+
+        item.querySelector('.btn-rss-action').addEventListener('click', (e) => {
+          e.stopPropagation();
+          const job = {
+            name: animeName,
+            keyword: ep.title, // 用种子的全名作为唯一匹配标识，100% 精确下载
+            subgroup: '',
+            quality: ''
+          };
+          if (confirm(`确认立即点播此集番剧吗？\n《${animeName}》 - ${ep.season}${ep.episode}\n${ep.title}`)) {
+            triggerActionsDownload(job);
+          }
+        });
+
+        listEl.appendChild(item);
+      });
+
+      // 折叠展开交互
+      titleEl.addEventListener('click', () => {
+        const isCollapsed = listEl.style.display === 'none';
+        if (isCollapsed) {
+          listEl.style.display = 'flex';
+          card.classList.add('expanded');
+        } else {
+          listEl.style.display = 'none';
+          card.classList.remove('expanded');
         }
       });
-      
+
       resultsContainer.appendChild(card);
-    }
+    });
+
   } catch (err) {
-    resultsContainer.innerHTML = `<div class="empty-state"><p>搜索异常: ${err.message}，请重试。</p></div>`;
+    resultsContainer.innerHTML = `<div class="empty-state"><p>搜索出错: ${err.message}，请重试。</p></div>`;
   }
 }
 
+// 辅助方法：前端匹配集数规则
+function parseMetadataFromTitle(title) {
+  let season = "S01";
+  let episode = "E01";
+
+  // 1. 季度
+  const sMatch = title.match(/(?:Season\s*|S)(\d+)/i) || title.match(/第\s*(\d+|[一二三四五六七八九十])\s*季/);
+  if (sMatch) {
+    let sVal = sMatch[1];
+    const cnMap = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10};
+    if (cnMap[sVal]) {
+      sVal = cnMap[sVal];
+    }
+    season = `S${parseInt(sVal, 10).toString().padStart(2, '0')}`;
+  }
+
+  // 2. 集数
+  const epMatch = title.match(/\[(\d+)\]/) || title.match(/(?:EP|Ep|Episode|第)\s*(\d+)\s*(?:话|集|v|x|v\d+|-)/i);
+  if (epMatch) {
+    const epVal = parseInt(epMatch[1], 10);
+    if (epVal < 100) {
+      episode = `E${epVal.toString().padStart(2, '0')}`;
+    }
+  }
+
+  return { season, episode };
+}
+
 // ==========================================================================
-// Component 2: 首页今日新番更新流加载
+// Component 2: 首页今日新番更新流加载 (折叠文件夹卡片版)
 // ==========================================================================
 async function loadLatestRss(force = false) {
   const container = document.getElementById('latest-rss-list');
@@ -288,13 +360,11 @@ async function loadLatestRss(force = false) {
   container.innerHTML = '<div class="empty-state"><p>正在获取最新的今日新番...</p></div>';
 
   try {
-    // 优先读取本地部署的 json
     const res = await fetch(`./latest_rss.json?t=${Date.now()}`);
     if (res.ok) {
       state.latestRssList = await res.json();
       renderRssList(state.latestRssList);
     } else {
-      // 降级使用 API 读取
       const apiRes = await fetch(`https://api.github.com/repos/${state.ghRepo}/contents/latest_rss.json`, {
         headers: {
           'Authorization': `token ${pat}`,
@@ -323,35 +393,68 @@ function renderRssList(list) {
   }
 
   container.innerHTML = '';
-  list.forEach(item => {
+  
+  // 遍历聚合后的动漫列表
+  list.forEach(animeItem => {
     const card = document.createElement('div');
-    card.className = 'rss-feed-item card-glass';
+    card.className = 'anime-folder-card card-glass';
     
-    const timeStr = formatRelativeTime(item.pubDate);
-    const subgroupHtml = item.subgroup ? `<span class="rss-tag-subgroup">${item.subgroup}</span>` : '';
-    const nameLabel = item.guess_name || '未知番剧';
-
+    // 获取最近更新时间
+    const timeStr = formatRelativeTime(animeItem.latest_time);
+    
     card.innerHTML = `
-      <div class="rss-feed-info">
-        <h4 class="rss-feed-title" title="${item.title}">${item.title}</h4>
-        <div class="rss-feed-meta">
-          <span>🕒 ${timeStr}</span>
-          ${subgroupHtml}
-          <span>📺 ${item.season}${item.episode}</span>
-        </div>
+      <div class="folder-title">
+        🍿 ${animeItem.anime} (最近更新: ${timeStr})
       </div>
-      <button class="btn-rss-action">一键点播</button>
+      <div class="episode-list" style="display: none;"></div>
     `;
 
-    card.querySelector('.btn-rss-action').addEventListener('click', () => {
-      const job = {
-        name: nameLabel,
-        keyword: item.title,
-        subgroup: '',
-        quality: ''
-      };
-      if (confirm(`确定要立即下载这集番剧吗？\n《${nameLabel}》- ${item.season}${item.episode}`)) {
-        triggerActionsDownload(job);
+    const titleEl = card.querySelector('.folder-title');
+    const listEl = card.querySelector('.episode-list');
+
+    // 填充它下属的各个种子发布
+    animeItem.episodes.forEach(ep => {
+      const item = document.createElement('div');
+      item.className = 'episode-item';
+      const subgroupHtml = ep.subgroup ? `<span class="rss-tag-subgroup">${ep.subgroup}</span>` : '';
+      const epTime = formatRelativeTime(ep.pubDate);
+      
+      item.innerHTML = `
+        <div class="rss-feed-info">
+          <span class="episode-name" title="${ep.title}">${ep.season}${ep.episode} - ${ep.title}</span>
+          <div class="rss-feed-meta">
+            <span>🕒 ${epTime}</span>
+            ${subgroupHtml}
+          </div>
+        </div>
+        <button class="btn-rss-action">点播</button>
+      `;
+
+      item.querySelector('.btn-rss-action').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const job = {
+          name: animeItem.anime,
+          keyword: ep.title, // 用种子的全标题作为绝对匹配下载关键字，确保 Actions 下载这一集！
+          subgroup: '',
+          quality: ''
+        };
+        if (confirm(`确定要立即下载此版本番剧吗？\n《${animeItem.anime}》- ${ep.season}${ep.episode}`)) {
+          triggerActionsDownload(job);
+        }
+      });
+
+      listEl.appendChild(item);
+    });
+
+    // 折叠展开事件
+    titleEl.addEventListener('click', () => {
+      const isCollapsed = listEl.style.display === 'none';
+      if (isCollapsed) {
+        listEl.style.display = 'flex';
+        card.classList.add('expanded');
+      } else {
+        listEl.style.display = 'none';
+        card.classList.remove('expanded');
       }
     });
 
@@ -551,7 +654,7 @@ async function triggerActionsDownload(subInfo) {
     });
 
     if (res.status === 204) {
-      alert(`云端点播任务已触发！\nActions 正在为您全速下载《${subInfo.name}》并转换直链中。\n请在 3-5 分钟后点击“刷新”您的播放库直接开播。`);
+      alert(`云端点播任务已下发！\nActions 正在为您现场下载《${subInfo.name}》并转换直链中。\n请在 3-5 分钟后点击“刷新”您的播放库直接开播。`);
     } else {
       alert('点播发出，但 Actions 反馈异常。请去 GitHub Actions 查看任务状态。');
     }
