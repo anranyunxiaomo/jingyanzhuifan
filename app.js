@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * AGE Anime PWA - Core Logic (Concurrent Sniffing & Folder Playback System)
+ * AGE Anime PWA - Core Logic (Cloud Pre-fetch Details & CORS Mitigation)
  * ==========================================================================
  */
 
@@ -8,6 +8,7 @@
 const state = {
   activeTab: 'view-library',
   latestList: [],       // 首页今日新番列表
+  latestDetailsMap: {}, // 云端打包好的最新 45 部新番详情预加载映射包
   searchList: [],       // 全网搜索结果列表
   historyList: [],      // 追番历史列表
   downloadedList: [],   // 云端嗅探完成的嵌套大类动漫列表
@@ -31,7 +32,9 @@ function getPatToken() {
   return localStorage.getItem('gh_pat') || (p1 + p2);
 }
 
-// 带超时控制的 fetch 封装 (默认 3500ms 强制超时，防止卡挂起)
+// ==========================================================================
+// 辅助方法：多通道 3.5s 超时自动切通道 CORS 请求封装
+// ==========================================================================
 async function fetchWithTimeout(url, options = {}, timeout = 3500) {
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), timeout);
@@ -48,9 +51,6 @@ async function fetchWithTimeout(url, options = {}, timeout = 3500) {
   }
 }
 
-// ==========================================================================
-// 辅助方法：多通道 3.5s 超时自动切通道 CORS 请求封装
-// ==========================================================================
 async function fetchViaProxy(url) {
   const proxies = [
     // 代理 1: CodeTabs (直传)
@@ -204,7 +204,7 @@ function toggleModal(modalId, show) {
 }
 
 // ==========================================================================
-// 模块 1：新番点播 (AGE 每日新番更新加载)
+// 模块 1：新番点播 (静态同源缓存首发加载)
 // ==========================================================================
 async function loadLatestAnime(force = false) {
   const container = document.getElementById('latest-rss-list');
@@ -213,19 +213,24 @@ async function loadLatestAnime(force = false) {
     return;
   }
 
-  container.innerHTML = '<div class="empty-state"><p>🔍 正在拉取 AGE 每日更新番剧...</p></div>';
+  container.innerHTML = '<div class="empty-state"><p>🔍 正在同步最新今日更新番剧数据...</p></div>';
 
+  // 核心优化 1：直接拉取同源的最新更新列表 latest_rss.json
   try {
     const localRes = await fetch(`./latest_rss.json?t=${Date.now()}`);
     if (localRes.ok) {
       state.latestList = await localRes.json();
       renderLatestAnimeList(state.latestList);
+      
+      // 核心优化 2：在后台静默发起同源 latest_details.json 详情映射包的拉取
+      preloadLatestDetails();
       return;
     }
   } catch (e) {
-    console.warn('[同源缓存读取失效] 正在通过 CORS 代理尝试在线获取...');
+    console.warn('[同源列表拉取失效] 正在通过 CORS 代理尝试在线获取...');
   }
 
+  // 备用：代理拉取
   try {
     const data = await fetchViaProxy(`${AGE_API_BASE}home-list`);
     if (data && data.latest) {
@@ -236,6 +241,18 @@ async function loadLatestAnime(force = false) {
     }
   } catch (err) {
     container.innerHTML = `<div class="empty-state"><p>网络加载失败: ${err.message}，点击右上角刷新重试。</p></div>`;
+  }
+}
+
+async function preloadLatestDetails() {
+  try {
+    const res = await fetch(`./latest_details.json?t=${Date.now()}`);
+    if (res.ok) {
+      state.latestDetailsMap = await res.json();
+      console.log(`[同源详情预存] 成功在本地内存载入了 ${Object.keys(state.latestDetailsMap).length} 部今日更新新番详情数据！`);
+    }
+  } catch (err) {
+    console.warn('[同源详情加载失败] 老番或搜索番剧将按需继续通过 CORS 代理在线同步。');
   }
 }
 
@@ -333,6 +350,22 @@ async function showAnimeDetail(AID) {
   detailBody.innerHTML = '<div class="empty-state"><p>🔄 正在同步集数列表及播放线路数据...</p></div>';
   toggleModal('sub-modal', true);
 
+  // 核心突破点：首先检查同源内存预加载包，如果是今日更新的新番，100% 同源秒开，0 延迟免代理！
+  const strAID = String(AID);
+  if (state.latestDetailsMap && state.latestDetailsMap[strAID]) {
+    console.log(`[免代理闪电开] AID ${AID} 成功匹配同源详情预存缓存！`);
+    const data = state.latestDetailsMap[strAID];
+    state.currentDetail = data;
+    const video = data.video;
+    detailTitle.innerText = video.name;
+    const playlist = video.playlists || {};
+    const lines = Object.keys(playlist);
+    state.selectedLine = lines[0] || '';
+    renderDetailModalContent(video, lines, playlist);
+    return;
+  }
+
+  // 备用：如不在预存包中 (属于搜索搜出的陈年老番)，再通过跨域代理请求
   try {
     const detailUrl = `${AGE_API_BASE}detail/${AID}`;
     const data = await fetchViaProxy(detailUrl);
@@ -358,22 +391,34 @@ async function showAnimeDetail(AID) {
     state.selectedLine = lines[0];
     renderDetailModalContent(video, lines, playlist);
   } catch (err) {
-    detailTitle.innerText = '同步失败 (可重试)';
+    detailTitle.innerText = '同步失败 (可重试/云嗅探)';
+    // 如果代理全部瘫痪了，为这部老番也提供一键 Actions 嗅探回仓库的应急按钮！
     detailBody.innerHTML = `
-      <div class="empty-state" style="padding: 24px 10px; text-align: center;">
+      <div class="empty-state" style="padding: 20px 10px; text-align: center;">
         <p style="color: var(--color-primary); font-weight: bold; margin-bottom: 8px;">⚠️ 线路数据同步超时</p>
-        <p style="font-size: 11px; color: #86868b; line-height: 1.6; margin-bottom: 18px; max-width: 280px; margin-left: auto; margin-right: auto;">
-          因目标源端口限制，公共跨域中继有时会瞬时拥堵。请点击下方按钮重新尝试同步。
+        <p style="font-size: 11px; color: #86868b; line-height: 1.6; margin-bottom: 16px; max-width: 320px; margin-left: auto; margin-right: auto;">
+          因目标源端口限制，公共跨域中继连接失败。这属于老番，您可以直接让 Actions 云端发起整部直链嗅探打包回库！
         </p>
-        <button id="btn-retry-sync" class="btn-primary-action" style="margin: 0 auto; display: inline-block; padding: 8px 16px; font-size: 12px; background: #0071e3; border-color: #0071e3;">
-          🔄 重新尝试同步数据
-        </button>
+        <div style="display: flex; flex-direction: column; gap: 8px; max-width: 260px; margin: 0 auto;">
+          <button id="btn-cloud-sniff-fallback" class="btn-primary-action" style="margin: 0; padding: 10px; font-size: 12px; background: #34c759; border-color: #34c759; box-shadow: 0 4px 10px rgba(52, 199, 89, 0.25);">
+            ⚡️ 一键交由云端并发嗅探全集
+          </button>
+          <button id="btn-retry-sync" class="btn-primary-action" style="margin: 0; padding: 8px 10px; font-size: 11px; background: rgba(0,0,0,0.05); border-color: transparent; color: #1d1d1f;">
+            🔄 重新尝试连接代理同步
+          </button>
+        </div>
       </div>
     `;
     
-    // 动态绑定重试按钮
     document.getElementById('btn-retry-sync').addEventListener('click', () => {
       showAnimeDetail(AID);
+    });
+
+    document.getElementById('btn-cloud-sniff-fallback').addEventListener('click', () => {
+      // 老番应急嗅探：直接把 AID 射给 python
+      triggerActionsSniff(`老番点播_${AID}`, AID);
+      alert(`🎉 已向云端 Actions 发送老番全集并发嗅探指令！\n\n请在 25 秒后返回“追番历史”中刷新，整部老番的无广告直链将自动到账！`);
+      toggleModal('sub-modal', false);
     });
   }
 }
@@ -381,7 +426,6 @@ async function showAnimeDetail(AID) {
 function renderDetailModalContent(video, lines, playlist) {
   const detailBody = document.getElementById('detail-modal-body');
   
-  // 详情海报与元数据
   let headerHtml = `
     <div class="anime-detail-header" style="display: flex; gap: 16px; margin-bottom: 16px;">
       <img src="${video.cover}" alt="${video.name}" style="width: 90px; height: 126px; border-radius: 8px; object-fit: cover; box-shadow: var(--shadow-md);" onerror="this.src='https://cdn.aqdstatic.com:966/large/008BrtkLgy1hu7n7adu6oj30k00zk0y7.jpg'">
@@ -398,7 +442,6 @@ function renderDetailModalContent(video, lines, playlist) {
     </div>
   `;
 
-  // 重磅升级：一键整部嗅探入库按钮
   let actionHtml = `
     <div style="text-align: left; margin-bottom: 20px;">
       <button id="btn-sniff-entire" class="btn-primary-action" style="margin: 0; width: 100%; justify-content: center; padding: 10px; font-weight: bold; background: #0071e3; border-color: #0071e3; box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);">
@@ -427,13 +470,11 @@ function renderDetailModalContent(video, lines, playlist) {
 
   detailBody.innerHTML = headerHtml + actionHtml + lineSelectHtml + episodeContainerHtml;
 
-  // 绑定线路切换
   document.getElementById('select-play-line').addEventListener('change', (e) => {
     state.selectedLine = e.target.value;
     renderEpisodes(playlist);
   });
 
-  // 绑定一键并发整部嗅探
   document.getElementById('btn-sniff-entire').addEventListener('click', () => {
     const AID = state.currentDetail.video.AID || state.currentDetail.AID || video.AID;
     triggerActionsSniff(video.name, AID);
@@ -506,10 +547,7 @@ function playAgeVideo(animeName, lineName, epIndex) {
     return;
   }
 
-  // 1. 弹出播放器即时播
   playVideo(playTitle, playUrl);
-
-  // 2. 写入本地历史记录
   addPlayHistory(animeName, epName, video.AID || data.AID || 'unknown', lineName, epIndex);
 }
 
@@ -566,7 +604,6 @@ function playVideo(title, playUrl) {
   }
 }
 
-// 触发 Actions 嗅探调度 (支持单集或一键整部嗅探)
 async function triggerActionsSniff(name, epValOrAID) {
   const pat = getPatToken();
   const repo = getGhRepo();
@@ -606,13 +643,12 @@ function closePlayer() {
 }
 
 // ==========================================================================
-// 模块 5：云端聚合文件夹直链库 与 本地观看历史的双层渲染
+// 模块 5：云端已缓存直链库文件夹 与 本地历史记录
 // ==========================================================================
 async function loadLibraryAndHistory(force = false) {
   const container = document.getElementById('media-list');
   container.innerHTML = '<div class="empty-state"><p>⚡️ 正在加载您的追番足迹...</p></div>';
 
-  // 5.1 从云端同源加载聚合直链数据库
   try {
     const res = await fetch(`./downloaded.json?t=${Date.now()}`);
     if (res.ok) {
@@ -622,13 +658,11 @@ async function loadLibraryAndHistory(force = false) {
     console.warn("读取云端直链缓存失败:", err);
   }
 
-  // 5.2 获取手机本地历史
   const localHistory = localStorage.getItem('age-history');
   state.historyList = localHistory ? JSON.parse(localHistory) : [];
 
   container.innerHTML = '';
 
-  // 1) 渲染聚合后的直链库 (上部，文件夹式折叠细节)
   if (state.downloadedList.length > 0) {
     const subHeader = document.createElement('div');
     subHeader.className = 'section-header';
@@ -667,7 +701,6 @@ async function loadLibraryAndHistory(force = false) {
         </div>
       `;
 
-      // 绑定集数播放事件
       details.querySelectorAll('.btn-play-direct-ep').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
@@ -682,7 +715,6 @@ async function loadLibraryAndHistory(force = false) {
     });
   }
 
-  // 2) 渲染本地观看历史 (下部)
   if (state.historyList.length > 0) {
     const subHeader = document.createElement('div');
     subHeader.className = 'section-header';

@@ -22,29 +22,24 @@ class AgeM3u8Sniffer:
     
     @classmethod
     def sniff_m3u8_link(cls, parse_url):
-        """
-        请求 AGE 的解析页面，正则嗅探出其中的 m3u8 直链
-        """
         try:
             res = requests.get(parse_url, headers=cls.headers, verify=False, timeout=8)
             if res.status_code == 200:
                 m3u8_matches = re.findall(r'["\'](https?://[^"\']+\.m3u8[^"\']*)["\']', res.text)
                 if m3u8_matches:
-                    real_m3u8 = m3u8_matches[0].replace("\\/", "/") # 还原斜杠
+                    real_m3u8 = m3u8_matches[0].replace("\\/", "/")
                     return real_m3u8
             return None
         except Exception:
             return None
 
 # ==========================================================================
-# 动漫元数据提取规则 (标题解析器)
+# 动漫元数据提取规则
 # ==========================================================================
 def parse_anime_title(title):
-    """提取季度和集数元数据"""
     season = "S01"
     episode = "E01"
 
-    # 1. 提取季度
     season_patterns = [
         r'(?:Season\s*|S)(\d+)',
         r'第\s*(\d+|[一二三四五六七八九十])\s*季'
@@ -61,7 +56,6 @@ def parse_anime_title(title):
             season = f"S{s_val:02d}"
             break
 
-    # 2. 提取集数
     episode_patterns = [
         r'\[(\d+)\]',
         r'(?:EP|Ep|Episode|第)\s*(\d+)\s*(?:话|集|v|x|v\d+|-).*',
@@ -79,14 +73,10 @@ def parse_anime_title(title):
 
     return season, episode
 
-# ==========================================================================
-# 线程池单集嗅探单元
-# ==========================================================================
 def sniff_single_episode(ep_data, parse_base):
     ep_title = ep_data[0]
     ep_val = ep_data[1]
     
-    # 拼接解析页 URL
     if "http" in ep_val:
         parse_url = ep_val
     else:
@@ -94,13 +84,24 @@ def sniff_single_episode(ep_data, parse_base):
         
     real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(parse_url)
     play_url = real_m3u8 if real_m3u8 else parse_url
-    
-    print(f"[嗅探完成] 集数: {ep_title} | 播放链接: {play_url[:60]}...")
     return {
         "title": ep_title,
         "url": play_url,
         "timestamp": int(time.time())
     }
+
+# ==========================================================================
+# 线程池并发抓取单部详情任务
+# ==========================================================================
+def fetch_single_detail(aid, api_base, headers):
+    try:
+        url = f"{api_base}detail/{aid}"
+        res = requests.get(url, headers=headers, verify=False, timeout=6)
+        if res.status_code == 200:
+            return aid, res.json()
+    except Exception:
+        pass
+    return aid, None
 
 # ==========================================================================
 # 核心调度逻辑
@@ -115,30 +116,18 @@ def main():
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
     }
 
-    # 加载已缓存列表 (重构为按“动漫大类”聚合的格式)
-    # downloaded.json 结构:
-    # [
-    #   {
-    #     "anime": "名侦探柯南",
-    #     "AID": "20000005",
-    #     "cover": "https://...",
-    #     "episodes": [ {"title": "第1集", "url": "...", "timestamp": ...}, ... ]
-    #   }
-    # ]
     downloaded = []
     if os.path.exists(dl_path):
         try:
             with open(dl_path, 'r', encoding='utf-8') as f:
                 downloaded = json.load(f)
-                # 兼容性修复：如果老数据是平铺数组，直接清空重构
                 if downloaded and not isinstance(downloaded[0], dict) or (downloaded and "episodes" not in downloaded[0]):
-                    print("[兼容提示] 发现旧版平铺数据格式，执行升级重组...")
                     downloaded = []
         except Exception as e:
             print(f"[警告] 读取 downloaded.json 失败: {e}")
 
-    payload_name = os.environ.get("PAYLOAD_NAME") # 此时传递过来的是动漫名 (例如 "莉可丽丝")
-    payload_torrent = os.environ.get("PAYLOAD_TORRENT") # 此时传递过来的是动漫的 AID (例如 "20200062")
+    payload_name = os.environ.get("PAYLOAD_NAME")
+    payload_torrent = os.environ.get("PAYLOAD_TORRENT")
 
     # ==========================================================================
     # 启动模式 1：云端一键整部嗅探入库 (由前台搜索或详情点击触发)
@@ -146,7 +135,6 @@ def main():
     if payload_name and payload_torrent:
         print(f"[启动模式] 实时整部动漫嗅探: 《{payload_name}》 (AID: {payload_torrent})")
         
-        # 1.1 拉取详情获取播放列表线路
         detail_url = f"{AGE_API_BASE}detail/{payload_torrent}"
         try:
             res_det = requests.get(detail_url, headers=headers, verify=False, timeout=12)
@@ -161,7 +149,6 @@ def main():
                 print("[嗅探中止] 无法获取该动漫的播放线路")
                 return
                 
-            # 优先使用直链 m3u8 线路
             selected_line = ""
             for line in playlist.keys():
                 if "m3u8" in line.lower() or "直链" in line:
@@ -173,14 +160,12 @@ def main():
             eps = playlist[selected_line]
             print(f"[嗅探线路] 锁定播放线路: {selected_line} | 总集数: {len(eps)}")
             
-            # 如果是柯南这种上千集的超长篇，限制只嗅探最近的 35 集，防止请求过多被拉黑封锁
             if len(eps) > 35:
                 print(f"[集数超限] 集数达 {len(eps)} 集，将只并发嗅探最近更新的 35 集...")
                 eps_to_sniff = eps[-35:]
             else:
                 eps_to_sniff = eps
 
-            # 判断线路解析前缀
             is_vip = False
             if isinstance(player_vip, str):
                 is_vip = selected_line in player_vip.split(",")
@@ -190,21 +175,18 @@ def main():
             if not parse_base:
                 parse_base = "https://jx.wuzhoupai.com:8443/m3u8/?url="
 
-            # 1.2 高速并发嗅探所有集数的 m3u8 直链
             print(f"[并发调度] 启动多线程并发嗅探，最大线程数: 15...")
             sniffed_episodes = []
             with ThreadPoolExecutor(max_workers=15) as executor:
                 futures = [executor.submit(sniff_single_episode, ep, parse_base) for ep in eps_to_sniff]
                 sniffed_episodes = [f.result() for f in futures]
                 
-            # 1.3 整合打包写回
             record = {
                 "anime": payload_name,
                 "AID": payload_torrent,
                 "cover": cover,
                 "episodes": sniffed_episodes
             }
-            # 移除已有的同名动漫，新点播的置顶
             downloaded = [d for d in downloaded if d.get("anime") != payload_name]
             downloaded.insert(0, record)
             
@@ -246,7 +228,6 @@ def main():
             latest_ep_name = videos[0]["uptodate"]
             cover = videos[0]["cover"]
             
-            # 判断在 downloaded 对应动漫下是否已经嗅探过该集数
             anime_record = None
             for d in downloaded:
                 if d.get("anime") == name:
@@ -254,7 +235,6 @@ def main():
                     break
                     
             if anime_record:
-                # 检查是否已包含最新集数
                 already_exists = False
                 for ep in anime_record["episodes"]:
                     if ep["title"] == latest_ep_name:
@@ -264,7 +244,6 @@ def main():
                     print(f"[无须更新] 《{name}》最新集 {latest_ep_name} 已存在。")
                     continue
             
-            # 如果新集数未曾嗅探，则拉取详情嗅探最新一集
             print(f"[发现更新] 《{name}》有新剧集发布: {latest_ep_name}，开始拉取直链...")
             detail_url = f"{AGE_API_BASE}detail/{AID}"
             res_det = requests.get(detail_url, headers=headers, verify=False, timeout=10)
@@ -289,7 +268,6 @@ def main():
             if not eps:
                 continue
                 
-            # 锁定最新的一集 (最后一项)
             latest_ep_data = eps[-1]
             ep_title = latest_ep_data[0]
             ep_val = latest_ep_data[1]
@@ -305,7 +283,6 @@ def main():
                 
             parse_url = parse_base + ep_val
             
-            # 单集快速嗅探
             real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(parse_url)
             play_url = real_m3u8 if real_m3u8 else parse_url
             
@@ -315,13 +292,10 @@ def main():
                 "timestamp": int(time.time())
             }
             
-            # 整合归档回写
             if anime_record:
-                # 移除旧的同名集数以防万一
                 anime_record["episodes"] = [ep for ep in anime_record["episodes"] if ep["title"] != ep_title]
                 anime_record["episodes"].append(new_ep_record)
             else:
-                # 若是首次出现，创建全新大类
                 downloaded.insert(0, {
                     "anime": name,
                     "AID": str(AID),
@@ -334,23 +308,45 @@ def main():
             print(f"[跟更异常]: {e}")
             continue
 
-    # 保存
     if new_updates_found:
         with open(dl_path, 'w', encoding='utf-8') as f:
             json.dump(downloaded, f, indent=2, ensure_ascii=False)
             
-    # 3. 顺便更新首页的最新更新流静态 json
+    # ==========================================================================
+    # 3. 核心机制：并发拉取今日更新番剧详情并写入 latest_details.json 缓存
+    # ==========================================================================
     try:
-        print("[最新发布流] 正在拉取最新的 AGE 每日更新...")
+        print("[云端详情预存] 正在拉取今日更新新番列表...")
         res = requests.get(f"{AGE_API_BASE}home-list", headers=headers, verify=False, timeout=10)
         data = res.json()
         if data and data.get("latest"):
+            latest_list = data["latest"]
+            
+            # 写入最新首页流缓存
             latest_json_path = os.path.join(base_dir, "latest_rss.json")
             with open(latest_json_path, 'w', encoding='utf-8') as f:
-                json.dump(data["latest"], f, indent=2, ensure_ascii=False)
+                json.dump(latest_list, f, indent=2, ensure_ascii=False)
             print("[最新发布流] 成功写入最新 45 部更新缓存！")
+            
+            # 并发抓取 45 部番剧的详情数据，合成大 map 缓存
+            print(f"[云端详情预存] 开启多线程并发拉取这 {len(latest_list)} 部新番的全部详情...")
+            aids = [str(x["AID"]) for x in latest_list]
+            details_map = {}
+            
+            with ThreadPoolExecutor(max_workers=15) as executor:
+                results = executor.map(lambda aid: fetch_single_detail(aid, AGE_API_BASE, headers), aids)
+                for aid, detail_data in results:
+                    if detail_data:
+                        details_map[aid] = detail_data
+            
+            # 写入 latest_details.json
+            details_json_path = os.path.join(base_dir, "latest_details.json")
+            with open(details_json_path, 'w', encoding='utf-8') as f:
+                json.dump(details_map, f, indent=2, ensure_ascii=False)
+            print(f"[云端详情预存] 成功抓取并写入了 {len(details_map)} 部新番的详情数据包！")
+            
     except Exception as e:
-        print(f"[最新发布流异常] 写入失败: {e}")
+        print(f"[云端详情预存异常] 缓存写入失败: {e}")
 
 if __name__ == '__main__':
     main()
