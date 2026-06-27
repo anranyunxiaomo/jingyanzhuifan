@@ -93,6 +93,16 @@ def run_aria2_download(download_url, download_dir):
     os.makedirs(download_dir, exist_ok=True)
     dht_path = os.path.join(download_dir, "dht.dat")
     dht6_path = os.path.join(download_dir, "dht6.dat")
+    
+    # 提前在本地创建空文件占位，防止 Aria2 校验找不到文件抛出 exception 异常
+    try:
+        with open(dht_path, 'a') as f:
+            pass
+        with open(dht6_path, 'a') as f:
+            pass
+    except Exception as e:
+        print(f"[警告] 预创 DHT 文件失败: {e}")
+
     cmd = [
         "aria2c",
         "--no-conf=true",                # 不读取系统配置，防止权限污染
