@@ -91,10 +91,15 @@ class FileUploader:
 def run_aria2_download(download_url, download_dir):
     """调用 aria2c 进行种子直链/磁力下载"""
     os.makedirs(download_dir, exist_ok=True)
+    dht_path = os.path.join(download_dir, "dht.dat")
+    dht6_path = os.path.join(download_dir, "dht6.dat")
     cmd = [
         "aria2c",
-        "--seed-time=0",
-        "--bt-stop-timeout=120",
+        "--no-conf=true",                # 不读取系统配置，防止权限污染
+        "--dht-file-path", dht_path,      # 将 DHT 路由表重定向到临时目录中
+        "--dht-file-path6", dht6_path,
+        "--seed-time=0",                 # 下载完成立即退出
+        "--bt-stop-timeout=120",         # 2分钟无速度超时
         "--max-connection-per-server=16",
         "--split=16",
         "-d", download_dir,
