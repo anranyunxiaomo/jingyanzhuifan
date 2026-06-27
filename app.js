@@ -54,20 +54,19 @@ async function fetchWithTimeout(url, options = {}, timeout = 3500) {
 
 async function fetchViaProxy(url) {
   const proxies = [
-    // 代理 1: CodeTabs (直传)
+    // 代理 1: AllOrigins raw 直传通道 (由于其将请求透传，国内连接率极高，且天然支持 18888 非标端口与 SSL 忽略)
+    async (target) => {
+      const res = await fetchWithTimeout(`https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('AllOrigins Raw 通道失败');
+      return await res.json();
+    },
+    // 代理 2: CodeTabs (经典直传)
     async (target) => {
       const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CodeTabs 节点失败');
       return await res.json();
     },
-    // 代理 2: AllOrigins (包装 contents)
-    async (target) => {
-      const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
-      if (!res.ok) throw new Error('AllOrigins 节点失败');
-      const data = await res.json();
-      return JSON.parse(data.contents);
-    },
-    // 代理 3: CorsProxy.io
+    // 代理 3: CorsProxy.io (国内备用)
     async (target) => {
       const res = await fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CorsProxy.io 节点失败');
@@ -78,12 +77,6 @@ async function fetchViaProxy(url) {
       const res = await fetchWithTimeout(`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('ThingProxy 节点失败');
       return await res.json();
-    },
-    // 代理 5: Yacdn
-    async (target) => {
-      const res = await fetchWithTimeout(`https://yacdn.org/proxy/${encodeURIComponent(target)}`);
-      if (!res.ok) throw new Error('Yacdn 节点失败');
-      return await res.json();
     }
   ];
 
@@ -93,17 +86,18 @@ async function fetchViaProxy(url) {
       console.log(`[CORS 路由] 正在尝试通道 ${i+1}/${proxies.length}...`);
       return await proxies[i](url);
     } catch (err) {
-      console.warn(`[CORS 路由抖动] 通道 ${i+1} 超时或失败: ${err.message}，尝试下一通道`);
+      console.warn(`[CORS 路由抖动] 通道 ${i+1} 失败: ${err.message}，尝试下一通道`);
       lastError = err;
     }
   }
-  throw new Error(`所有代理节点连接超时或被目标非标端口屏蔽，请重试`);
+  throw new Error(`所有代理节点均超时或被目标 18888 非标端口屏蔽，请重试`);
 }
 
 // 页面加载初始化
 document.addEventListener('DOMContentLoaded', () => {
   initUI();
   bindEvents();
+  preloadLatestDetails(); // 重大升级：DOM加载完在第一顺位立即在后台并发预拉取新番详情，不让其有时间差降级走代理
   loadActiveView();
 });
 
