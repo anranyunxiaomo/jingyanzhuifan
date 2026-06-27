@@ -1,5 +1,33 @@
 [
   {
+    "AID": 20260042,
+    "Href": "/detail/20260042",
+    "NewTitle": "第24集(完结)",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260042.jpg",
+    "Title": "勇者之屑"
+  },
+  {
+    "AID": 20260092,
+    "Href": "/detail/20260092",
+    "NewTitle": "已完结",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260092.jpg",
+    "Title": "主播女孩重度依赖"
+  },
+  {
+    "AID": 20260100,
+    "Href": "/detail/20260100",
+    "NewTitle": "第14集(完结)",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260100.jpg",
+    "Title": "春夏秋冬代行者 春之舞"
+  },
+  {
+    "AID": 20260095,
+    "Href": "/detail/20260095",
+    "NewTitle": "第12集(完结)",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260095.jpg",
+    "Title": "杀手青春"
+  },
+  {
     "AID": 20260223,
     "Href": "/detail/20260223",
     "NewTitle": "第01集",
@@ -54,33 +82,5 @@
     "NewTitle": "第13集(完结)",
     "PicSmall": "https://cdn.aqdstatic.com:966/age/20260074.jpg",
     "Title": "冻结地球"
-  },
-  {
-    "AID": 20260101,
-    "Href": "/detail/20260101",
-    "NewTitle": "第12集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
-    "Title": "神之水滴"
-  },
-  {
-    "AID": 20260073,
-    "Href": "/detail/20260073",
-    "NewTitle": "第13集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
-    "Title": "冰之城墙"
-  },
-  {
-    "AID": 20260098,
-    "Href": "/detail/20260098",
-    "NewTitle": "第12集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260098.jpg",
-    "Title": "关于我转生变成史莱姆这档事 第四季"
-  },
-  {
-    "AID": 20260210,
-    "Href": "/detail/20260210",
-    "NewTitle": "第01集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
-    "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记"
   }
 ]
