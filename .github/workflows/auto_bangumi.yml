@@ -2,13 +2,16 @@ name: Auto Bangumi Cloud
 
 on:
   schedule:
-    # 每小时的第 0 分钟定时触发运行一次
+    # 每小时定时触发运行一次 (检测常规订阅)
     - cron: '0 */1 * * *'
+  repository_dispatch:
+    # 监听网页端发送的一键点播事件，实现秒级响应下载
+    types: [instant_download]
   workflow_dispatch:
-    # 支持在 GitHub 页面上点击手动运行测试
+    # 支持在 GitHub 页面上手动运行测试
 
 permissions:
-  contents: write # 赋予 actions 权限，用于 commit 和 push 状态更新文件
+  contents: write # 赋予 actions 写入权限，用于将下载历史 downloaded.json 自动 push 回仓库
 
 jobs:
   run-sync:
@@ -24,16 +27,30 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install Aria2 Download Utility
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aria2
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install requests boto3
 
-      - name: Run parser and sync
+      - name: Run parser, download and upload
         env:
-          BAIDU_CLIENT_ID: ${{ secrets.BAIDU_CLIENT_ID }}
-          BAIDU_CLIENT_SECRET: ${{ secrets.BAIDU_CLIENT_SECRET }}
-          INITIAL_BAIDU_REFRESH_TOKEN: ${{ secrets.INITIAL_BAIDU_REFRESH_TOKEN }}
+          # S3 云存储凭证 (加密保存在 Secrets 中)
+          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+          S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
+          S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_PUBLIC_URL: ${{ secrets.S3_PUBLIC_URL }}
+          
+          # 前端一键点播实时负载参数 (若为定时触发，则为空值)
+          PAYLOAD_NAME: ${{ github.event.client_payload.name }}
+          PAYLOAD_KEYWORD: ${{ github.event.client_payload.keyword }}
+          PAYLOAD_SUBGROUP: ${{ github.event.client_payload.subgroup }}
+          PAYLOAD_QUALITY: ${{ github.event.client_payload.quality }}
         run: |
           python scripts/parser.py
 
@@ -42,13 +59,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 检查是否有文件改动 (downloaded.json 或 baidu_credentials.json)
-          # git status -s 能够输出简短的状态变更
-          if [ -n "$(git status -s)" ]; then
-            git add downloaded.json baidu_credentials.json
-            git commit -m "chore: 自动同步下载历史与百度云凭证 [skip ci]"
+          # 检查是否有下载历史被更新
+          if [ -n "$(git status -s downloaded.json)" ]; then
+            git add downloaded.json
+            git commit -m "chore: 自动同步番剧下载历史 [skip ci]"
             git push
-            echo "[成功] 已成功向仓库推送最新状态数据"
+            echo "[成功] 已成功向仓库推送最新下载历史数据"
           else
-            echo "[通知] 无任何状态更新，无需提交"
+            echo "[通知] 无下载历史更新，无需提交"
           fi

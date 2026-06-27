@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#0c0c0e">
   <title>番剧助手 - 纯云端 PWA</title>
   
   <link rel="manifest" href="./manifest.json">
@@ -18,7 +18,19 @@
 </head>
 <body>
 
-  <!-- PWA 全屏背景毛玻璃效果 -->
+  <!-- iOS 风格顶部通知 Toast -->
+  <div id="ios-toast" class="ios-toast-wrapper">
+    <div class="ios-toast-content card-glass">
+      <div class="toast-icon">📢</div>
+      <div class="toast-body">
+        <h4 id="toast-title">新番已到账</h4>
+        <p id="toast-desc">您订阅的番剧已有最新一集下载完成，点击立即观看。</p>
+      </div>
+      <button id="btn-toast-action" class="toast-action-btn">观看</button>
+    </div>
+  </div>
+
+  <!-- PWA 全屏背景发光 -->
   <div class="ambient-glow"></div>
 
   <!-- 应用容器 -->
@@ -30,7 +42,6 @@
         <h1 class="logo-text">番剧助手</h1>
         <div class="status-indicators">
           <span id="indicator-github" class="status-dot red" title="GitHub 未连接"></span>
-          <span id="indicator-baidu" class="status-dot red" title="百度网盘 未连接"></span>
         </div>
       </div>
     </header>
@@ -38,28 +49,28 @@
     <!-- 主体视口 -->
     <main class="app-viewport">
       
-      <!-- TAB 1: 媒体库 (默认显示) -->
+      <!-- TAB 1: 播放库 (默认显示) -->
       <section id="view-library" class="view-section active">
         <div class="section-header">
-          <h2>已完成番剧</h2>
-          <button id="btn-refresh-files" class="btn-icon" title="刷新文件列表">
+          <h2>云端播放库</h2>
+          <button id="btn-refresh-files" class="btn-icon" title="刷新视频列表">
             <svg viewBox="0 0 24 24" class="svg-icon"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
           </button>
         </div>
         <div id="media-list" class="list-container">
           <div class="empty-state">
-            <p>请先在“设置”中完成百度网盘授权</p>
+            <p>请先在“设置”中完成 GitHub 配置</p>
           </div>
         </div>
       </section>
 
-      <!-- TAB 2: 追番管理 -->
+      <!-- TAB 2: 点播下载 -->
       <section id="view-subscriptions" class="view-section">
         <div class="section-header">
-          <h2>追番订阅</h2>
+          <h2>点播与订阅</h2>
           <button id="btn-add-sub" class="btn-primary-action">
             <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            添加订阅
+            一键点播
           </button>
         </div>
         <div id="subscription-list" class="list-container">
@@ -78,35 +89,18 @@
         <div class="settings-form">
           <!-- GitHub 配置 -->
           <div class="settings-group card-glass">
-            <h3>GitHub 配置 (存储番剧订阅)</h3>
+            <h3>GitHub 核心配置 (同步中心)</h3>
             <div class="input-row">
-              <label for="input-gh-pat">GitHub PAT (个人令牌)</label>
+              <label for="input-gh-pat">GitHub PAT (个人访问令牌)</label>
               <input type="password" id="input-gh-pat" placeholder="ghp_xxxxxxxxxxxx">
             </div>
             <div class="input-row">
-              <label for="input-gh-repo">仓库名 (格式: username/repo)</label>
+              <label for="input-gh-repo">私有仓库名 (格式: username/repo)</label>
               <input type="text" id="input-gh-repo" placeholder="username/AutoBangumi-cloud">
             </div>
-            <p class="settings-tip">此 Token 仅保存在当前设备本地，直接用于与 GitHub API 通信，用于更新 `subscription.json` 订阅配置。</p>
-          </div>
-
-          <!-- 百度云配置 -->
-          <div class="settings-group card-glass">
-            <h3>百度云配置 (离线与播放)</h3>
-            <div class="input-row">
-              <label for="input-baidu-token">Access Token</label>
-              <input type="password" id="input-baidu-token" placeholder="输入百度网盘 Access Token">
-            </div>
-            <div class="input-row">
-              <label for="input-baidu-dir">下载目录 (默认: /apps/AutoBangumi)</label>
-              <input type="text" id="input-baidu-dir" value="/apps/AutoBangumi" placeholder="/apps/AutoBangumi">
-            </div>
-            <div class="button-row">
-              <a href="https://openapi.baidu.com/oauth/2.0/authorize?response_type=token&client_id=Ay1UpvUJtCHjT3lGD9RLJ5XjkaJSUZzp&redirect_uri=oob&scope=basic,netdisk" target="_blank" class="btn-secondary">
-                获取授权 Token (百度应用模式)
-              </a>
-            </div>
-            <p class="settings-tip">网页播放需要您本地提供 API 令牌以读取目录和视频流。请点击上方按钮授权，复制返回的 `access_token` 填入。</p>
+            <p class="settings-tip">
+              <strong>零配置说明：</strong>本项目不需要您注册或配置任何第三方网盘、S3 存储服务。您仅需在此处提供您的 GitHub PAT（具备 repo 读写权限）和仓库名。PWA 将在本地浏览器直接保存配置，实现 0 Secrets 极速点播。
+            </p>
           </div>
           
           <button id="btn-save-settings" class="btn-submit">保存配置</button>
@@ -123,7 +117,7 @@
       </button>
       <button class="tab-item" data-target="view-subscriptions">
         <svg class="tab-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 7h-3v3h-2v-3H9V9h3V6h2v3h3v2z"/></svg>
-        <span class="tab-label">订阅</span>
+        <span class="tab-label">点播</span>
       </button>
       <button class="tab-item" data-target="view-settings">
         <svg class="tab-icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
@@ -144,35 +138,35 @@
       </div>
     </div>
 
-    <!-- 添加订阅弹窗 -->
+    <!-- 点播番剧弹窗 -->
     <div id="sub-modal" class="modal-overlay">
       <div class="modal-content card-glass form-modal">
         <div class="modal-header">
-          <h3>新增番剧订阅</h3>
+          <h3>新增番剧点播</h3>
           <button id="btn-close-sub-modal" class="btn-close">✕</button>
         </div>
         <div class="modal-body">
           <div class="input-row">
-            <label for="sub-name">番剧译名 (用于建立文件夹)</label>
+            <label for="sub-name">番剧中文名 (用于分类目录)</label>
             <input type="text" id="sub-name" placeholder="例如: 莉可丽丝">
           </div>
           <div class="input-row">
-            <label for="sub-keyword">匹配关键字 (如番剧英文名或常用词)</label>
+            <label for="sub-keyword">检索关键字 (必填，用于在 RSS 中模糊匹配)</label>
             <input type="text" id="sub-keyword" placeholder="例如: Lycoris Recoil">
           </div>
           <div class="input-row">
-            <label for="sub-subgroup">字幕组匹配规则 (留空则匹配全部)</label>
+            <label for="sub-subgroup">发布字幕组 (可选过滤项)</label>
             <input type="text" id="sub-subgroup" placeholder="例如: 桜都字幕组">
           </div>
           <div class="input-row">
-            <label for="sub-quality">分辨率要求 (默认: 1080p)</label>
+            <label for="sub-quality">清晰度过滤 (默认 1080p)</label>
             <select id="sub-quality">
               <option value="1080p">1080p (推荐)</option>
               <option value="720p">720p</option>
               <option value="">不限</option>
             </select>
           </div>
-          <button id="btn-submit-sub" class="btn-submit">确认订阅</button>
+          <button id="btn-submit-sub" class="btn-submit">确认并立即下载</button>
         </div>
       </div>
     </div>

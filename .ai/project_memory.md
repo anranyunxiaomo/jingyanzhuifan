@@ -1,56 +1,53 @@
 # 项目记忆与架构决策 (Project Memory)
 
 ## 📌 项目基本概况
-* **项目名称**：纯云端番剧助手 PWA (基于 GitHub Pages + Actions + 百度云)
-* **核心理念**：本地零常驻进程、零 Docker、零内网穿透。完全利用 GitHub Actions 在云端解析订阅，利用百度云离线下载并远程 API 整理，最终在 PWA 网页播放器中实现直链播放。
+* **项目名称**：纯云端番剧助手 PWA (基于 GitHub Pages + Actions + S3 免费托管)
+* **核心理念**：本地零常驻进程、零运行设备、去网盘依赖。利用 GitHub Actions 现场运行 `aria2c` 进行种子极速下载，自动上传到免费 S3（如 Cloudflare R2），通过 PWA 网页播放器在线点播、接收新片到账通知。
 
 ---
 
-## 🏗️ 架构设计与技术栈
+## 🏗️ 架构设计与技术栈 (S3 点播版)
 
 ```mermaid
 graph TD
-    A[PWA 前端 HTML/CSS/JS] -->|GitHub API| B[subscription.json]
-    C[Mikan RSS] -->|Actions 定期解析| D[scripts/parser.py]
-    B -->|读取番剧配置| D
-    D -->|匹配磁力链接| D
-    D -->|百度云 API clouddl| E[百度网盘离线下载]
-    E -->|离线成功| F[网盘 /apps/AutoBangumi 目录]
-    D -->|定时扫描已完成任务| G[远程 renameFile 整理文件]
-    F -->|直链 HLS/m3u8 播放| A
+    A[PWA 前端 HTML/CSS/JS] -->|1. 点播番剧/写入| B[subscription.json]
+    A -->|2. 发送 repository_dispatch| C[GitHub API]
+    C -->|3. 实时点亮 Actions 实例| D[scripts/parser.py]
+    D -->|4. 云端运行 aria2c 下载磁力| E[Actions 临时磁盘]
+    E -->|5. boto3 上传视频| F[S3 存储桶 Cloudflare R2]
+    F -->|6. 生成公网直链并写入| G[downloaded.json]
+    A -->|7. 比对已下载列表| G
+    A -->|8. 弹窗 iOS 通知横幅| H[提示新番到账直接播放]
 ```
 
 ### 1. 前端 PWA Component
 * **文件**：`index.html`、`style.css`、`app.js`、`manifest.json`
 * **技术**：Vanilla HTML5/CSS3/JS，ArtPlayer.js 播放器，Hls.js 视频流解码库。
-* **设计风格**：Apple Minimal 2026（毛玻璃卡片、自适应暗黑背景、无边界 Standalone 视口体验）。
-* **百度云对接**：前端使用 `method=streaming` 接口获取网盘内视频文件的 HLS 流，直接在网页内渲染播放，免去本地搭建流媒体的门槛。
+* **设计风格**：Apple Minimal 2026（顶部 iOS 横幅 Toast 通知、折叠卡片列表、全屏播放）。
+* **通知机制**：每次刷新时对比最新 `downloaded.json` 直链与 LocalStorage 中的已阅记录，发现未读视频则拉起顶部 Toast 提示：“新片到账”，点击直接开播。
 
 ### 2. 云端 Actions Controller
 * **文件**：`scripts/parser.py`、`.github/workflows/auto_bangumi.yml`
-* **技术**：Python 3.10，`requests` 库，GitHub Actions 工作流。
-* **主要职责**：定时拉取 Mikan RSS -> 标题结构化解析（SXXEXX）-> 下发百度云离线下载任务 -> 远程扫描百度云任务状态并进行文件名重命名整理 -> 回写更新 `downloaded.json` 与 `baidu_credentials.json` 并 commit 推送回仓库。
+* **主要职责**：
+  - 定时或通过 `repository_dispatch` 实时拉起。
+  - 云端安装并配置 `aria2` 下发磁力链接下载。
+  - 使用 `boto3` 将视频上传到指定 S3 桶（如 Cloudflare R2 / Backblaze B2），获取播放直链并回写更新 `downloaded.json`。
+  - **7天过期清理**：每次运行自动扫描存储桶中已存在超过 7 天的文件并将其删除，将空间控制在 10GB 免费限额内。
 
 ---
 
-## 🔑 核心安全与凭证持久化设计
-* 静态密钥（`BAIDU_CLIENT_ID` 和 `BAIDU_CLIENT_SECRET`）属于静态数据，安全存储在 **GitHub Repository Secrets** 中。
-* 动态凭证（`refresh_token` 和 `access_token`）在每次 Actions 运行刷新后会实时改变。
-* **免维护设计**：我们没有采用回写 GitHub Secrets（因为需要 Libsodium 加密且权限过重），而是将刷新后的最新 Token 保存在 **私有仓库的 `baidu_credentials.json` 文件** 中。Actions 每次运行结束时会自动将新 Token 执行 `git commit && git push` 回仓库，实现了 Token 的**永久自我刷新与免人工干预维护**。
-* **安全底线**：**用户必须将 GitHub 仓库设置为 Private (私有仓库)**，防止凭证文件被公网公开。
+## 🔑 S3 安全与凭证配置
+* **安全底线**：**S3 密钥（ENDPOINT, ACCESS_KEY, SECRET_KEY）只存放在 GitHub Secrets 里，前端 PWA 绝对不可见，也无需配置**。PWA 前端只消费 Actions 回写并发布的公开视频直链，从而完美保护用户的云存储安全。
+* **仓库状态**：**请务必使用 Private (私有仓库)** 托管代码，保护您的订阅配置与直链。
 
 ---
 
-## ⚠️ 踩坑记录与避坑指南
+## ⚠️ 避坑记录与优化策略
 
-### 1. 百度网盘跨域 (CORS) 与直链限制
-* **问题**：直接在前端使用百度网盘下载直链会遇到 403 跨域或严重的防盗链限速。
-* **解决**：在网页端必须调用百度网盘的 `streaming` 视频转码流接口（返回 m3u8 地址），百度服务器会自动对视频进行云端切片转码，极速且支持跨域，利用 Hls.js 可以直接流畅播放。
+### 1. 跨域与播放器兼容
+* **问题**：视频直链格式通常有 MKV 和 MP4。Safari 对 MKV (H.265) 解码较弱。
+* **解决**：ArtPlayer.js 中集成了基于 `hls.js` 的流解码。我们建议在点播时，如果字幕组发布了 MP4 1080p 格式，优先点播 MP4（网页兼容性最佳）。同时 Actions 在上传到 S3 时，会根据扩展名设置正确的 `Content-Type`（如 `video/mp4` 或者是 `video/x-matroska`），防止浏览器打开时被误识别为附件下载。
 
-### 2. 百度网盘 clouddl 任务数量限制
-* **问题**：百度网盘对非会员有每日离线任务次数限制（通常是 5~10 次/天）。
-* **解决**：我们的 `downloaded.json` 会永久记录已推送的磁力链接，防止 GitHub Actions 每小时重复向百度推送相同任务，有效保护了非会员额度不被浪费。
-
-### 3. GitHub Actions 触发回写死循环
-* **问题**：GitHub Actions 运行后向仓库提交修改，可能会无限触发 Actions 自身的 push 工作流导致死循环。
-* **解决**：在 actions 的 commit message 中添加了 `[skip ci]` 前缀（如 `git commit -m "... [skip ci]"`），这样 GitHub Actions 在检测到该提交时会主动忽略，避免了死循环。
+### 2. 任务防死锁
+* **问题**：部分老旧种子可能会因为没有 Peer 节点导致 GitHub Actions 在下载时无限挂起直至超时。
+* **解决**：在 Python 的 `aria2c` 命令中加入了 `--bt-stop-timeout=180` 参数。若下载任务在 3 分钟内没有获取到新数据，aria2 将会自动超时退出，防止 Actions 被死锁挂死。
