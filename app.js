@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * AGE Anime PWA - Core Logic (Cloud Pre-fetch Details & CORS Mitigation)
+ * AGE Anime PWA - Core Logic (Cloud Pre-fetch Details & Fallback Cloud Search)
  * ==========================================================================
  */
 
@@ -14,7 +14,8 @@ const state = {
   downloadedList: [],   // 云端嗅探完成的嵌套大类动漫列表
   currentDetail: null,  // 当前弹窗中加载的动漫详情
   selectedLine: '',     // 当前选中的播放线路
-  artPlayerInstance: null
+  artPlayerInstance: null,
+  searchPollTimer: null // 搜索轮询计时器
 };
 
 // AGE API 基础 Host
@@ -215,14 +216,11 @@ async function loadLatestAnime(force = false) {
 
   container.innerHTML = '<div class="empty-state"><p>🔍 正在同步最新今日更新番剧数据...</p></div>';
 
-  // 核心优化 1：直接拉取同源的最新更新列表 latest_rss.json
   try {
     const localRes = await fetch(`./latest_rss.json?t=${Date.now()}`);
     if (localRes.ok) {
       state.latestList = await localRes.json();
       renderLatestAnimeList(state.latestList);
-      
-      // 核心优化 2：在后台静默发起同源 latest_details.json 详情映射包的拉取
       preloadLatestDetails();
       return;
     }
@@ -230,7 +228,6 @@ async function loadLatestAnime(force = false) {
     console.warn('[同源列表拉取失效] 正在通过 CORS 代理尝试在线获取...');
   }
 
-  // 备用：代理拉取
   try {
     const data = await fetchViaProxy(`${AGE_API_BASE}home-list`);
     if (data && data.latest) {
@@ -283,7 +280,7 @@ function renderLatestAnimeList(list) {
 }
 
 // ==========================================================================
-// 模块 2：AGE 全网动漫搜索
+// 模块 2：AGE 全网动漫搜索 (集成云端 Actions 绿色备用搜索通道)
 // ==========================================================================
 async function searchGlobalAnime() {
   const query = document.getElementById('input-global-search').value.trim();
@@ -300,42 +297,85 @@ async function searchGlobalAnime() {
   resultsContainer.innerHTML = '<div class="empty-state"><p>🔍 正在检索 AGE 动漫库，请稍候...</p></div>';
   
   try {
+    // 2.1 优先尝试使用实时 CORS 代理搜索，追求秒级响应
     const url = `${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`;
     const resData = await fetchViaProxy(url);
+    renderSearchResults(resData?.data?.videos || []);
+  } catch (err) {
+    // 2.2 核心容错：若代理全部瘫痪报错，自动降级启动云端 Actions 安全搜索通道！
+    console.warn("[跨域代理全挂] 启动云端 Actions 绿色搜索备用防线...");
+    resultsContainer.innerHTML = `
+      <div class="empty-state" style="padding: 20px 10px;">
+        <p style="color: var(--color-primary); font-weight: bold; margin-bottom: 6px;">⚠️ 代理网关连接超时</p>
+        <p style="font-size: 11px; color: #86868b; margin-bottom: 12px; line-height: 1.5;">
+          已为您自动启用 Actions 云端安全搜索通道。请稍等 15-20 秒，Actions 正在云端进行通畅检索...
+        </p>
+        <div class="spinner-small" style="margin: 0 auto 12px auto; width: 20px; height: 20px; border: 2px solid rgba(0,0,0,0.1); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      </div>
+    `;
     
-    if (resData && resData.data && resData.data.videos && resData.data.videos.length > 0) {
-      const videos = resData.data.videos;
-      resultsContainer.innerHTML = '';
+    // 触发云端搜索事件
+    triggerActionsSniff(query, "SEARCH:" + query);
+    
+    // 轮询同源下的 search_results.json 结果文件
+    if (state.searchPollTimer) clearInterval(state.searchPollTimer);
+    
+    let attempts = 0;
+    state.searchPollTimer = setInterval(async () => {
+      attempts++;
+      if (attempts > 15) { // 37秒超时
+        clearInterval(state.searchPollTimer);
+        resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 云端搜索超时，请重试或检查配置</p></div>';
+        return;
+      }
       
-      videos.forEach(anime => {
-        const card = document.createElement('div');
-        card.className = 'anime-folder-card card-glass';
-        card.style.borderColor = 'rgba(0, 113, 227, 0.25)';
-        
-        card.innerHTML = `
-          <div class="folder-title" style="display: flex; align-items: center; gap: 12px; padding: 12px;">
-            <img src="${anime.cover}" alt="${anime.name}" style="width: 50px; height: 70px; border-radius: 6px; object-fit: cover; box-shadow: var(--shadow-sm);" onerror="this.src='https://cdn.aqdstatic.com:966/large/008BrtkLgy1hu7n7adu6oj30k00zk0y7.jpg'">
-            <div style="flex: 1; text-align: left;">
-              <h4 style="margin: 0 0 6px 0; font-size: 15px; color: #1d1d1f;">${anime.name}</h4>
-              <div style="display: flex; gap: 6px;">
-                <span style="font-size: 11px; color: #86868b; border: 1px solid #d2d2d7; padding: 1px 4px; border-radius: 3px;">${anime.status}</span>
-                <span style="font-size: 11px; color: var(--color-primary); background: rgba(0,113,227,0.08); padding: 1px 6px; border-radius: 3px;">${anime.uptodate}</span>
-              </div>
+      try {
+        const res = await fetch(`./search_results.json?t=${Date.now()}`);
+        if (res.ok) {
+          const searchData = await res.json();
+          // 如果结果文件的查询词完全对应，则渲染
+          if (searchData && searchData.query === query) {
+            clearInterval(state.searchPollTimer);
+            renderSearchResults(searchData.videos || []);
+          }
+        }
+      } catch (e) {
+        console.log("轮询搜索结果中...");
+      }
+    }, 2500);
+  }
+}
+
+function renderSearchResults(videos) {
+  const resultsContainer = document.getElementById('global-search-results');
+  if (videos && videos.length > 0) {
+    resultsContainer.innerHTML = '';
+    videos.forEach(anime => {
+      const card = document.createElement('div');
+      card.className = 'anime-folder-card card-glass';
+      card.style.borderColor = 'rgba(0, 113, 227, 0.25)';
+      
+      card.innerHTML = `
+        <div class="folder-title" style="display: flex; align-items: center; gap: 12px; padding: 12px;">
+          <img src="${anime.cover}" alt="${anime.name}" style="width: 50px; height: 70px; border-radius: 6px; object-fit: cover; box-shadow: var(--shadow-sm);" onerror="this.src='https://cdn.aqdstatic.com:966/large/008BrtkLgy1hu7n7adu6oj30k00zk0y7.jpg'">
+          <div style="flex: 1; text-align: left;">
+            <h4 style="margin: 0 0 6px 0; font-size: 15px; color: #1d1d1f;">${anime.name}</h4>
+            <div style="display: flex; gap: 6px;">
+              <span style="font-size: 11px; color: #86868b; border: 1px solid #d2d2d7; padding: 1px 4px; border-radius: 3px;">${anime.status}</span>
+              <span style="font-size: 11px; color: var(--color-primary); background: rgba(0,113,227,0.08); padding: 1px 6px; border-radius: 3px;">${anime.uptodate}</span>
             </div>
           </div>
-        `;
-        
-        card.addEventListener('click', () => {
-          showAnimeDetail(anime.id);
-        });
-
-        resultsContainer.appendChild(card);
+        </div>
+      `;
+      
+      card.addEventListener('click', () => {
+        showAnimeDetail(anime.id || anime.AID);
       });
-    } else {
-      resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 未能搜到相关动漫，请尝试更换关键词。</p></div>';
-    }
-  } catch (err) {
-    resultsContainer.innerHTML = `<div class="empty-state"><p>搜索失败: ${err.message}</p></div>`;
+
+      resultsContainer.appendChild(card);
+    });
+  } else {
+    resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 未能搜到相关动漫，请尝试更换关键词。</p></div>';
   }
 }
 
@@ -350,7 +390,6 @@ async function showAnimeDetail(AID) {
   detailBody.innerHTML = '<div class="empty-state"><p>🔄 正在同步集数列表及播放线路数据...</p></div>';
   toggleModal('sub-modal', true);
 
-  // 核心突破点：首先检查同源内存预加载包，如果是今日更新的新番，100% 同源秒开，0 延迟免代理！
   const strAID = String(AID);
   if (state.latestDetailsMap && state.latestDetailsMap[strAID]) {
     console.log(`[免代理闪电开] AID ${AID} 成功匹配同源详情预存缓存！`);
@@ -415,7 +454,6 @@ async function showAnimeDetail(AID) {
     });
 
     document.getElementById('btn-cloud-sniff-fallback').addEventListener('click', () => {
-      // 老番应急嗅探：直接把 AID 射给 python
       triggerActionsSniff(`老番点播_${AID}`, AID);
       alert(`🎉 已向云端 Actions 发送老番全集并发嗅探指令！\n\n请在 25 秒后返回“追番历史”中刷新，整部老番的无广告直链将自动到账！`);
       toggleModal('sub-modal', false);

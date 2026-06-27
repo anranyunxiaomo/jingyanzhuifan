@@ -90,9 +90,6 @@ def sniff_single_episode(ep_data, parse_base):
         "timestamp": int(time.time())
     }
 
-# ==========================================================================
-# 线程池并发抓取单部详情任务
-# ==========================================================================
 def fetch_single_detail(aid, api_base, headers):
     try:
         url = f"{api_base}detail/{aid}"
@@ -130,10 +127,36 @@ def main():
     payload_torrent = os.environ.get("PAYLOAD_TORRENT")
 
     # ==========================================================================
-    # 启动模式 1：云端一键整部嗅探入库 (由前台搜索或详情点击触发)
+    # 启动模式 0：云端免跨域安全搜索通道 (由前台代理连不上时保底触发)
+    # ==========================================================================
+    if payload_name and payload_torrent and payload_torrent.startswith("SEARCH:"):
+        query = payload_torrent.replace("SEARCH:", "").strip()
+        print(f"[启动模式] Actions 绿色搜索通道. 搜索词: {query}")
+        
+        search_url = f"{AGE_API_BASE}search?query={requests.utils.quote(query)}&page=1"
+        search_res = {"query": query, "timestamp": int(time.time()), "videos": []}
+        try:
+            res = requests.get(search_url, headers=headers, verify=False, timeout=12)
+            videos = res.json().get("data", {}).get("videos", [])
+            search_res["videos"] = videos
+            print(f"[搜索完成] 查到相关视频 {len(videos)} 个，准备写入并推送")
+        except Exception as e:
+            print(f"[搜索失败] AGE接口报错: {e}")
+            
+        results_json_path = os.path.join(base_dir, "search_results.json")
+        with open(results_json_path, 'w', encoding='utf-8') as f:
+            json.dump(search_res, f, indent=2, ensure_ascii=False)
+        print("[完成] 搜索结果已成功提交写入 search_results.json")
+        return
+
+    # ==========================================================================
+    # 启动模式 1：云端一键整部嗅探入库
     # ==========================================================================
     if payload_name and payload_torrent:
         print(f"[启动模式] 实时整部动漫嗅探: 《{payload_name}》 (AID: {payload_torrent})")
+        
+        # 兼容处理：如果是老番紧急点播，可能被传递为 "老番点播_AID"
+        pure_name = payload_name.replace("老番点播_", "").strip()
         
         detail_url = f"{AGE_API_BASE}detail/{payload_torrent}"
         try:
@@ -144,6 +167,7 @@ def main():
             player_jx = det_data.get("player_jx", {"vip": "", "zj": ""})
             player_vip = det_data.get("player_vip", "")
             cover = det_data.get("video", {}).get("cover", "")
+            anime_real_name = det_data.get("video", {}).get("name", pure_name)
             
             if not playlist:
                 print("[嗅探中止] 无法获取该动漫的播放线路")
@@ -182,17 +206,17 @@ def main():
                 sniffed_episodes = [f.result() for f in futures]
                 
             record = {
-                "anime": payload_name,
+                "anime": anime_real_name,
                 "AID": payload_torrent,
                 "cover": cover,
                 "episodes": sniffed_episodes
             }
-            downloaded = [d for d in downloaded if d.get("anime") != payload_name]
+            downloaded = [d for d in downloaded if d.get("anime") != anime_real_name]
             downloaded.insert(0, record)
             
             with open(dl_path, 'w', encoding='utf-8') as f:
                 json.dump(downloaded, f, indent=2, ensure_ascii=False)
-            print(f"[点播成功] 《{payload_name}》全集直链已成功归类缓存入库！")
+            print(f"[点播成功] 《{anime_real_name}》全集直链已成功归类缓存入库！")
         except Exception as e:
             print(f"[点播失败] 嗅探过程异常: {e}")
         return
@@ -312,9 +336,6 @@ def main():
         with open(dl_path, 'w', encoding='utf-8') as f:
             json.dump(downloaded, f, indent=2, ensure_ascii=False)
             
-    # ==========================================================================
-    # 3. 核心机制：并发拉取今日更新番剧详情并写入 latest_details.json 缓存
-    # ==========================================================================
     try:
         print("[云端详情预存] 正在拉取今日更新新番列表...")
         res = requests.get(f"{AGE_API_BASE}home-list", headers=headers, verify=False, timeout=10)
@@ -322,13 +343,11 @@ def main():
         if data and data.get("latest"):
             latest_list = data["latest"]
             
-            # 写入最新首页流缓存
             latest_json_path = os.path.join(base_dir, "latest_rss.json")
             with open(latest_json_path, 'w', encoding='utf-8') as f:
                 json.dump(latest_list, f, indent=2, ensure_ascii=False)
             print("[最新发布流] 成功写入最新 45 部更新缓存！")
             
-            # 并发抓取 45 部番剧的详情数据，合成大 map 缓存
             print(f"[云端详情预存] 开启多线程并发拉取这 {len(latest_list)} 部新番的全部详情...")
             aids = [str(x["AID"]) for x in latest_list]
             details_map = {}
@@ -339,7 +358,6 @@ def main():
                     if detail_data:
                         details_map[aid] = detail_data
             
-            # 写入 latest_details.json
             details_json_path = os.path.join(base_dir, "latest_details.json")
             with open(details_json_path, 'w', encoding='utf-8') as f:
                 json.dump(details_map, f, indent=2, ensure_ascii=False)
