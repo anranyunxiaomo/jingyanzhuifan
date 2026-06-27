@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * AGE Anime PWA - Core Logic (With Automated Actions M3u8 Sniffing Integration)
+ * AGE Anime PWA - Core Logic (Double CORS Proxies & Settings Preservation)
  * ==========================================================================
  */
 
@@ -18,7 +18,11 @@ const state = {
 
 // AGE API 基础 Host
 const AGE_API_BASE = 'https://ageapi.omwjhz.com:18888/v2/';
-const GITHUB_REPO = 'anranyunxiaomo/jingyanzhuifan';
+
+// 获取配置的仓库名 (默认: anranyunxiaomo/jingyanzhuifan)
+function getGhRepo() {
+  return localStorage.getItem('gh_repo') || 'anranyunxiaomo/jingyanzhuifan';
+}
 
 // 拼装 GitHub 写入特权凭证
 function getPatToken() {
@@ -28,14 +32,35 @@ function getPatToken() {
 }
 
 // ==========================================================================
-// 辅助方法：AllOrigins 跨域网络请求分发器
+// 辅助方法：双通道自动避障 CORS 跨域中继请求封装 (AllOrigins + CorsProxy)
 // ==========================================================================
 async function fetchViaProxy(url) {
-  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-  const res = await fetch(proxyUrl);
-  if (!res.ok) throw new Error('CORS 中继服务连接失败');
-  const resData = await res.json();
-  return JSON.parse(resData.contents);
+  const proxies = [
+    // 代理通道一: AllOrigins (包装为 contents 属性)
+    async (target) => {
+      const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('AllOrigins 连接失败');
+      const data = await res.json();
+      return JSON.parse(data.contents);
+    },
+    // 代理通道二: CorsProxy.io (直接穿透返回原始 JSON)
+    async (target) => {
+      const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('CorsProxy.io 连接失败');
+      return await res.json();
+    }
+  ];
+
+  let lastError = null;
+  for (const proxyFetch of proxies) {
+    try {
+      return await proxyFetch(url);
+    } catch (err) {
+      console.warn(`[跨域代理抖动] 尝试备用通道。原因: ${err.message}`);
+      lastError = err;
+    }
+  }
+  throw new Error(`CORS 中继服务链接全部失败，请检查网络后再试 (${lastError?.message})`);
 }
 
 // 页面加载初始化
@@ -52,6 +77,10 @@ function initUI() {
   if (window.navigator.standalone === true) {
     document.body.classList.add('pwa-standalone');
   }
+
+  // 修复：重新将本地 localStorage 缓存的 GitHub 配置回显到输入框中
+  document.getElementById('input-gh-pat').value = localStorage.getItem('gh_pat') || getPatToken();
+  document.getElementById('input-gh-repo').value = getGhRepo();
 }
 
 function bindEvents() {
@@ -81,11 +110,26 @@ function bindEvents() {
     }
   });
 
+  // 保存设置
+  document.getElementById('btn-save-settings').addEventListener('click', saveSettings);
+
   document.getElementById('btn-close-sub-modal').addEventListener('click', () => {
     toggleModal('sub-modal', false);
   });
 
   document.getElementById('btn-close-player').addEventListener('click', closePlayer);
+}
+
+// 修复：保存配置函数
+function saveSettings() {
+  const patVal = document.getElementById('input-gh-pat').value.trim();
+  const repoVal = document.getElementById('input-gh-repo').value.trim();
+
+  localStorage.setItem('gh_pat', patVal);
+  localStorage.setItem('gh_repo', repoVal);
+
+  alert('配置保存成功！');
+  loadActiveView();
 }
 
 function switchTab(targetId) {
@@ -134,8 +178,21 @@ async function loadLatestAnime(force = false) {
     return;
   }
 
-  container.innerHTML = '<div class="empty-state"><p>🔍 正在通过 CORS 安全网关拉取 AGE 每日更新番剧...</p></div>';
+  container.innerHTML = '<div class="empty-state"><p>🔍 正在拉取 AGE 每日更新番剧...</p></div>';
 
+  // 核心优化：优先读取同源下的静态 latest_rss.json 缓存（0 延迟，100% 成功，不通过跨域代理中转）
+  try {
+    const localRes = await fetch(`./latest_rss.json?t=${Date.now()}`);
+    if (localRes.ok) {
+      state.latestList = await localRes.json();
+      renderLatestAnimeList(state.latestList);
+      return;
+    }
+  } catch (e) {
+    console.warn('[同源缓存读取失效] 正在通过 CORS 代理尝试在线获取...');
+  }
+
+  // 备用：通过双代理机制在线请求
   try {
     const data = await fetchViaProxy(`${AGE_API_BASE}home-list`);
     if (data && data.latest) {
@@ -399,7 +456,6 @@ function playVideo(title, playUrl) {
   const artContainer = document.getElementById('artplayer-container');
   const iframeContainer = document.getElementById('player-iframe-container');
 
-  // 如果链接里已经含有 m3u8 直链，则在手机端一律用 Artplayer 原生拉起高保真播放，拒绝任何 iframe 框架和广告！
   const isM3u8 = playUrl.includes('.m3u8');
   if (isM3u8) {
     artContainer.style.display = 'block';
@@ -433,7 +489,6 @@ function playVideo(title, playUrl) {
       }
     });
   } else {
-    // 否则作为备用，使用 iframe 承载解析站播放
     artContainer.style.display = 'none';
     iframeContainer.style.display = 'block';
     if (state.artPlayerInstance) {
@@ -449,7 +504,8 @@ function playVideo(title, playUrl) {
 // 触发云端自动直链嗅探
 async function triggerActionsSniff(playTitle, epVal) {
   const pat = getPatToken();
-  const url = `https://api.github.com/repos/${GITHUB_REPO}/dispatches`;
+  const repo = getGhRepo();
+  const url = `https://api.github.com/repos/${repo}/dispatches`;
   const payload = {
     event_type: 'instant_download',
     client_payload: {
@@ -491,12 +547,8 @@ async function loadLibraryAndHistory(force = false) {
   const container = document.getElementById('media-list');
   container.innerHTML = '<div class="empty-state"><p>⚡️ 正在加载您的追番足迹...</p></div>';
 
-  let downloadedHtml = '';
-  let historyHtml = '';
-
-  // 5.1 获取云端 Actions 嗅探好的真实 M3U8 列表
+  // 5.1 获取云端 Actions 嗅探好的真实 M3U8 列表 (同源静态拉取，0.01秒极速到账，100%成功)
   try {
-    // 直接同源请求打包在 pages 下的 downloaded.json 缓存 (0.01秒极速到账，不用跨域代理)
     const res = await fetch(`./downloaded.json?t=${Date.now()}`);
     if (res.ok) {
       state.downloadedList = await res.json();
