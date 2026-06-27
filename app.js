@@ -36,29 +36,50 @@ function getPatToken() {
 // ==========================================================================
 async function fetchViaProxy(url) {
   const proxies = [
+    // 代理 1: CodeTabs (国内无限制，直接返回 JSON)
+    async (target) => {
+      const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('CodeTabs 节点失败');
+      return await res.json();
+    },
+    // 代理 2: AllOrigins (经典 CF 代理，包装 contents 属性)
     async (target) => {
       const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(target)}`);
-      if (!res.ok) throw new Error('AllOrigins 连接失败');
+      if (!res.ok) throw new Error('AllOrigins 节点失败');
       const data = await res.json();
       return JSON.parse(data.contents);
     },
+    // 代理 3: CorsProxy.io (轻量直传)
     async (target) => {
       const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
-      if (!res.ok) throw new Error('CorsProxy.io 连接失败');
+      if (!res.ok) throw new Error('CorsProxy.io 节点失败');
+      return await res.json();
+    },
+    // 代理 4: ThingProxy (国外备用)
+    async (target) => {
+      const res = await fetch(`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('ThingProxy 节点失败');
+      return await res.json();
+    },
+    // 代理 5: Yacdn 代理
+    async (target) => {
+      const res = await fetch(`https://yacdn.org/proxy/${encodeURIComponent(target)}`);
+      if (!res.ok) throw new Error('Yacdn 节点失败');
       return await res.json();
     }
   ];
 
   let lastError = null;
-  for (const proxyFetch of proxies) {
+  for (let i = 0; i < proxies.length; i++) {
     try {
-      return await proxyFetch(url);
+      console.log(`[CORS 路由] 正在尝试第 ${i+1}/${proxies.length} 个跨域代理通道...`);
+      return await proxies[i](url);
     } catch (err) {
-      console.warn(`[跨域代理抖动] 尝试备用通道。原因: ${err.message}`);
+      console.warn(`[CORS 路由抖动] 通道 ${i+1} 失败: ${err.message}，尝试下一通道。`);
       lastError = err;
     }
   }
-  throw new Error(`CORS 中继服务链接全部失败，请检查网络后再试 (${lastError?.message})`);
+  throw new Error(`CORS 代理服务全部瘫痪，请检查网络后再试 (错误信息: ${lastError?.message})`);
 }
 
 // 页面加载初始化
