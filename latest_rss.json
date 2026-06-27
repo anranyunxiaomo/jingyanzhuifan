@@ -1,5 +1,12 @@
 [
   {
+    "AID": 20000005,
+    "Href": "/detail/20000005",
+    "NewTitle": "第1265集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20000005.jpg",
+    "Title": "名侦探柯南"
+  },
+  {
     "AID": 20260080,
     "Href": "/detail/20260080",
     "NewTitle": "第12集(完结)",
@@ -75,12 +82,5 @@
     "NewTitle": "第12集(完结)",
     "PicSmall": "https://cdn.aqdstatic.com:966/age/20260126.jpg",
     "Title": "库兹马唱歌的话家里哆啰啰"
-  },
-  {
-    "AID": 20250209,
-    "Href": "/detail/20250209",
-    "NewTitle": "第38集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
-    "Title": "元祖！BanG Dream Chan"
   }
 ]
