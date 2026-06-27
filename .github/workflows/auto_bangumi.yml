@@ -1,0 +1,54 @@
+name: Auto Bangumi Cloud
+
+on:
+  schedule:
+    # 每小时的第 0 分钟定时触发运行一次
+    - cron: '0 */1 * * *'
+  workflow_dispatch:
+    # 支持在 GitHub 页面上点击手动运行测试
+
+permissions:
+  contents: write # 赋予 actions 权限，用于 commit 和 push 状态更新文件
+
+jobs:
+  run-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run parser and sync
+        env:
+          BAIDU_CLIENT_ID: ${{ secrets.BAIDU_CLIENT_ID }}
+          BAIDU_CLIENT_SECRET: ${{ secrets.BAIDU_CLIENT_SECRET }}
+          INITIAL_BAIDU_REFRESH_TOKEN: ${{ secrets.INITIAL_BAIDU_REFRESH_TOKEN }}
+        run: |
+          python scripts/parser.py
+
+      - name: Commit and Push state changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 检查是否有文件改动 (downloaded.json 或 baidu_credentials.json)
+          # git status -s 能够输出简短的状态变更
+          if [ -n "$(git status -s)" ]; then
+            git add downloaded.json baidu_credentials.json
+            git commit -m "chore: 自动同步下载历史与百度云凭证 [skip ci]"
+            git push
+            echo "[成功] 已成功向仓库推送最新状态数据"
+          else
+            echo "[通知] 无任何状态更新，无需提交"
+          fi
