@@ -1,5 +1,47 @@
 [
   {
+    "AID": 20260083,
+    "Href": "/detail/20260083",
+    "NewTitle": "第12集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
+    "Title": "黑猫与魔女的教室"
+  },
+  {
+    "AID": 20260064,
+    "Href": "/detail/20260064",
+    "NewTitle": "第22集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
+    "Title": "名侦探光之美少女！"
+  },
+  {
+    "AID": 20260127,
+    "Href": "/detail/20260127",
+    "NewTitle": "第13集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260127.jpg",
+    "Title": "钻石王牌 act2 第二季"
+  },
+  {
+    "AID": 20260078,
+    "Href": "/detail/20260078",
+    "NewTitle": "第13集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260078.jpg",
+    "Title": "杖与剑的魔剑谭 第二季"
+  },
+  {
+    "AID": 20260065,
+    "Href": "/detail/20260065",
+    "NewTitle": "第12集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
+    "Title": "夜樱家的大作战 第二季"
+  },
+  {
+    "AID": 20260115,
+    "Href": "/detail/20260115",
+    "NewTitle": "第13集",
+    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260115.jpg",
+    "Title": "拜托了偶像公主"
+  },
+  {
     "AID": 20260042,
     "Href": "/detail/20260042",
     "NewTitle": "第24集(完结)",
@@ -40,47 +82,5 @@
     "NewTitle": "第12集(完结)",
     "PicSmall": "https://cdn.aqdstatic.com:966/age/20260094.jpg",
     "Title": "弱弱老师"
-  },
-  {
-    "AID": 20260097,
-    "Href": "/detail/20260097",
-    "NewTitle": "第13集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
-    "Title": "入间同学入魔了 第四季"
-  },
-  {
-    "AID": 20260159,
-    "Href": "/detail/20260159",
-    "NewTitle": "第13集(完结)",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260159.jpg",
-    "Title": "轻松熊"
-  },
-  {
-    "AID": 20260089,
-    "Href": "/detail/20260089",
-    "NewTitle": "第12集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260089.jpg",
-    "Title": "小书痴的下克上 〜为了成为图书管理员而不择手段〜 第四季"
-  },
-  {
-    "AID": 20000005,
-    "Href": "/detail/20000005",
-    "NewTitle": "第1265集",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20000005.jpg",
-    "Title": "名侦探柯南"
-  },
-  {
-    "AID": 20260080,
-    "Href": "/detail/20260080",
-    "NewTitle": "第12集(完结)",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260080.jpg",
-    "Title": "上伊那牡丹，酒醉身姿似百合花般"
-  },
-  {
-    "AID": 20260074,
-    "Href": "/detail/20260074",
-    "NewTitle": "第13集(完结)",
-    "PicSmall": "https://cdn.aqdstatic.com:966/age/20260074.jpg",
-    "Title": "冻结地球"
   }
 ]
