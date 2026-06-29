@@ -90,8 +90,31 @@ class WebProxyInterceptor extends QueuedInterceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     if (kIsWeb) {
-      // 0. 【全动态自愈】拦截帖子/详情接口 (r/{id})
-      if (options.path.contains('r/')) {
+      // 0.1 拦截收藏、喜欢等动作以及状态查询，直接返回干净的 Mock JSON，防止撞到已宕机的后端或在 byte 拦截中崩溃
+      if (options.path.contains('collect') || options.path.contains('like')) {
+        handler.resolve(Response(
+          requestOptions: options,
+          data: {"code": 200, "data": false},
+          statusCode: 200,
+        ));
+        return;
+      }
+
+      // 0.2 拦截评论接口 (comment)，避免详情页拉取评论报 403 跨域错
+      if (options.path.contains('comment')) {
+        handler.resolve(Response(
+          requestOptions: options,
+          data: {"code": 200, "data": []},
+          statusCode: 200,
+        ));
+        return;
+      }
+
+      // 0.3 【全动态自愈】拦截帖子/详情接口 (r/{id}) - 必须确保排除了收藏、喜欢等子路由
+      if (options.path.contains('r/') && 
+          !options.path.contains('collect') && 
+          !options.path.contains('like') && 
+          !options.path.contains('status')) {
         final parts = options.path.split('/');
         final idStr = parts.last;
         final id = int.tryParse(idStr) ?? 1;
