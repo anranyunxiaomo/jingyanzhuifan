@@ -83,9 +83,11 @@ class BangumiDetailEpisodesView extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Get.toNamed('/vod/${Get.arguments.id}',
+                                    final detailController = Get.find<BangumiDetailController>();
+                                    final animeId = detailController.id.value;
+                                    Get.toNamed('/vod/$animeId',
                                         arguments: {
-                                          'id': Get.arguments.id,
+                                          'id': animeId,
                                           'episode': state[index].sort,
                                           'data': data,
                                           'episodes': state

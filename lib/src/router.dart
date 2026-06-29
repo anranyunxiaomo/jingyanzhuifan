@@ -42,8 +42,8 @@ class AppRoute {
         name: '/profile',
         page: () => const ProfilePage(),
         middlewares: [AuthMiddleware()]),
-    // 帖子
-    GetPage(name: '/thread/:id', page: () => const ThreadPage()),
+    // 帖子重定向映射至番剧详情页
+    GetPage(name: '/thread/:id', page: () => const BangumiDetailPage()),
     // 番剧
     GetPage(name: '/bangumi', page: () => const BangumiPage()),
     // 番剧分类列表

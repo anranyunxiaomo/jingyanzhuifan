@@ -47,7 +47,21 @@ class BangumiDetailController extends GetxController
 
   @override
   void onInit() {
-    id(Get.arguments.id);
+    int finalId = 1;
+    if (Get.arguments != null) {
+      try {
+        finalId = Get.arguments.id;
+      } catch (e) {
+        if (Get.arguments is Map) {
+          finalId = Get.arguments['id'] ?? 1;
+        } else if (Get.arguments is int) {
+          finalId = Get.arguments;
+        }
+      }
+    } else {
+      finalId = int.tryParse(Get.parameters['id'] ?? '') ?? 1;
+    }
+    id(finalId);
     get();
     getCollectStatus();
     super.onInit();
