@@ -66,11 +66,13 @@ class BangumiIndexController extends GetxController
   List<bangumi_list_item_> result = [];
   RxBool isLoading = false.obs;
 
+  // 100% 与非凡资源网官方界面及分类对齐：国产、日韩、欧美、港台动漫
   Map<String, String> typeList = {
-    '': '类型',
-    'tv': '正篇',
-    'movie': '剧场版',
-    'ova': '特别篇'
+    '': '分类',
+    '20': '国产动漫',
+    '21': '日韩动漫',
+    '22': '欧美动漫',
+    '23': '港台动漫'
   };
 
   Map<String, String> langList = {
@@ -113,7 +115,12 @@ class BangumiIndexController extends GetxController
       debugPrint('BangumiIndexController-get');
       change(result, status: RxStatus.loading());
       
-      final data = await fetchFeifanDetail(t: 4, pg: 1);
+      int targetType = 4; // 默认全部动漫
+      if (typeSelected.value.isNotEmpty) {
+        targetType = int.tryParse(typeSelected.value) ?? 4;
+      }
+
+      final data = await fetchFeifanDetail(t: targetType, pg: 1);
       final List<bangumi_list_item_> listData = [];
 
       if (data != null && data['list'] is List) {
@@ -156,11 +163,15 @@ class BangumiIndexController extends GetxController
       result.clear();
       change(null, status: RxStatus.loading());
 
-      // 根据选择的语言/年份关键词进行模糊搜索筛选
+      int targetType = 4; // 默认全部动漫
+      if (typeSelected.value.isNotEmpty) {
+        targetType = int.tryParse(typeSelected.value) ?? 4;
+      }
+
       String queryKeyword = '';
       if (yearSelected.value.isNotEmpty) queryKeyword = yearSelected.value;
 
-      final data = await fetchFeifanDetail(wd: queryKeyword.isNotEmpty ? queryKeyword : null, t: 4, pg: 1);
+      final data = await fetchFeifanDetail(wd: queryKeyword.isNotEmpty ? queryKeyword : null, t: targetType, pg: 1);
       final List<bangumi_list_item_> listData = [];
 
       if (data != null && data['list'] is List) {

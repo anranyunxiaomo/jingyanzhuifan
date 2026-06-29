@@ -16,8 +16,10 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 (Web端防线，用于绕过 API 的跨域限制)
+// 终极自愈备用跨域代理通道列表 - 优先选用速度极快且完全免除 API 频控的 Codetabs 代理与 Thingproxy
 final List<String> webProxies = [
+  'https://api.codetabs.com/v1/proxy?quest=',
+  'https://thingproxy.freeboard.io/fetch/',
   'https://api.allorigins.win/get?url=',
   'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
@@ -46,7 +48,7 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
   // 1. 优先通过支持跨域的备用通道进行请求，杜绝 Web 端 API 跨域报错
   for (int i = 0; i < webProxies.length; i++) {
     final proxy = webProxies[i];
-    final String targetUrl = proxy.contains('allorigins') 
+    final String targetUrl = proxy.contains('allorigins') || proxy.contains('codetabs')
         ? '$proxy${Uri.encodeComponent(rawUrl)}' 
         : '$proxy$rawUrl';
         
@@ -54,29 +56,41 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
       // 【避坑红线】在 Web 端绝对不能手动携带 User-Agent 请求头，否则会被浏览器以 "Refused to set unsafe header" 强行中断异常崩溃！
       final res = await client.get(targetUrl);
       
-      if (res.statusCode == 200 && res.data is Map) {
-        var mapData = Map<String, dynamic>.from(res.data);
-        // 如果是 AllOrigins 代理，需要解包 contents 属性
-        if (mapData.containsKey('contents')) {
-          final contents = mapData['contents'];
-          if (contents is String) {
-            return jsonDecode(contents) as Map<String, dynamic>;
-          } else if (contents is Map) {
-            return Map<String, dynamic>.from(contents);
-          }
+      if (res.statusCode == 200) {
+        var responseData = res.data;
+        if (responseData is String) {
+          responseData = jsonDecode(responseData);
         }
-        return mapData;
+        if (responseData is Map) {
+          var mapData = Map<String, dynamic>.from(responseData);
+          // 如果是 AllOrigins 代理，需要解包 contents 属性
+          if (mapData.containsKey('contents')) {
+            final contents = mapData['contents'];
+            if (contents is String) {
+              return jsonDecode(contents) as Map<String, dynamic>;
+            } else if (contents is Map) {
+              return Map<String, dynamic>.from(contents);
+            }
+          }
+          return mapData;
+        }
       }
     } catch (e) {
-      print("[Feifan API] 跨域通道 ${i + 1} 获取失败，尝试下一通道: $e");
+      print("[Feifan API] 跨域通道 ${i + 1} (${proxy}) 获取失败，尝试下一通道: $e");
     }
   }
 
   // 2. 最后的直连兜底尝试
   try {
     final res = await client.get(rawUrl);
-    if (res.statusCode == 200 && res.data is Map) {
-      return Map<String, dynamic>.from(res.data);
+    if (res.statusCode == 200) {
+      var responseData = res.data;
+      if (responseData is String) {
+        responseData = jsonDecode(responseData);
+      }
+      if (responseData is Map) {
+        return Map<String, dynamic>.from(responseData);
+      }
     }
   } catch (e) {
     print("[Feifan API] 直连与所有代理中转均告失败: $e");
@@ -221,12 +235,18 @@ class WebProxyInterceptor extends QueuedInterceptor {
       // 2. 【全动态自愈】针对分类列表和搜索
       if (options.path.contains('bangumi/list') || options.path.contains('search')) {
         final keyword = options.queryParameters['keyword']?.toString() ?? '';
-        Map<String, dynamic>? data;
+        final typeVal = options.queryParameters['type']?.toString() ?? '';
+        
+        int typeId = 4; // 默认全部动漫
+        if (typeVal == '20' || typeVal == '21' || typeVal == '22' || typeVal == '23') {
+          typeId = int.parse(typeVal);
+        }
 
+        Map<String, dynamic>? data;
         if (keyword.isNotEmpty) {
           data = await fetchFeifanDetail(wd: keyword);
         } else {
-          data = await fetchFeifanDetail(t: 4, pg: 1);
+          data = await fetchFeifanDetail(t: typeId, pg: 1);
         }
 
         final List<thread_list_data_> mockData = [];
@@ -457,7 +477,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
-      if (proxyPrefix.contains('cors-anywhere') || proxyPrefix.contains('cors.eu.org')) {
+      if (proxyPrefix.contains('cors-anywhere') || proxyPrefix.contains('cors.eu.org') || proxyPrefix.contains('thingproxy')) {
         options.path = '$proxyPrefix$fullUrl';
       } else {
         options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
@@ -501,7 +521,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
         requestOptions.extra['proxyIndex'] = nextIdx;
         
         String nextPrefix = webProxies[nextIdx];
-        if (nextPrefix.contains('cors-anywhere') || nextPrefix.contains('cors.eu.org')) {
+        if (nextPrefix.contains('cors-anywhere') || nextPrefix.contains('cors.eu.org') || nextPrefix.contains('thingproxy')) {
           requestOptions.path = '$nextPrefix$originalUrl';
         } else {
           requestOptions.path = '$nextPrefix${Uri.encodeComponent(originalUrl)}';
