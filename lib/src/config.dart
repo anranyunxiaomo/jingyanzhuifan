@@ -16,11 +16,11 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 - 优先选用速度极快且完全免除 API 频控的 Codetabs 代理与 Thingproxy
+// 终极自愈备用跨域代理通道列表 - 优先选用速度极快且完全免除 API 400 错误的 corsproxy.io 顶级代理
 final List<String> webProxies = [
-  'https://api.codetabs.com/v1/proxy?quest=',
-  'https://thingproxy.freeboard.io/fetch/',
+  'https://corsproxy.io/?',
   'https://api.allorigins.win/get?url=',
+  'https://thingproxy.freeboard.io/fetch/',
   'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
 ];
@@ -48,7 +48,7 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
   // 1. 优先通过支持跨域的备用通道进行请求，杜绝 Web 端 API 跨域报错
   for (int i = 0; i < webProxies.length; i++) {
     final proxy = webProxies[i];
-    final String targetUrl = proxy.contains('allorigins') || proxy.contains('codetabs')
+    final String targetUrl = proxy.contains('allorigins')
         ? '$proxy${Uri.encodeComponent(rawUrl)}' 
         : '$proxy$rawUrl';
         
@@ -477,7 +477,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
-      if (proxyPrefix.contains('cors-anywhere') || proxyPrefix.contains('cors.eu.org') || proxyPrefix.contains('thingproxy')) {
+      if (proxyPrefix.contains('cors-anywhere') || proxyPrefix.contains('cors.eu.org') || proxyPrefix.contains('thingproxy') || proxyPrefix.contains('corsproxy.io')) {
         options.path = '$proxyPrefix$fullUrl';
       } else {
         options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
@@ -521,7 +521,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
         requestOptions.extra['proxyIndex'] = nextIdx;
         
         String nextPrefix = webProxies[nextIdx];
-        if (nextPrefix.contains('cors-anywhere') || nextPrefix.contains('cors.eu.org') || nextPrefix.contains('thingproxy')) {
+        if (nextPrefix.contains('cors-anywhere') || nextPrefix.contains('cors.eu.org') || nextPrefix.contains('thingproxy') || nextPrefix.contains('corsproxy.io')) {
           requestOptions.path = '$nextPrefix$originalUrl';
         } else {
           requestOptions.path = '$nextPrefix${Uri.encodeComponent(originalUrl)}';

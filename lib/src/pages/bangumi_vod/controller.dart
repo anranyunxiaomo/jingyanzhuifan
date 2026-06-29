@@ -471,7 +471,7 @@ class BangumiVodPageController extends PlayerController
     SmartDialog.showToast('无法读取播放地址');
   }
 
-  // 设置视频链接 - 兼容明文链接
+  // 设置视频链接 - 兼容明文链接及 Web 端 CORS 视频流代理
   void setPlayer() async {
     if (playUrls.isNotEmpty) {
       lastPosition(PlayHistoryStorage.getLastPosition(id, episode));
@@ -482,6 +482,17 @@ class BangumiVodPageController extends PlayerController
       // 如果不是以 http 开头，代表它是以前加密的 base64 串，需要执行解密
       if (!targetUrl.startsWith('http')) {
         targetUrl = urlDecode(targetUrl);
+      }
+
+      if (kIsWeb) {
+        // 使用 corsproxy.io 万能中转，彻底绕过视频源切片 CORS 跨域拦截
+        targetUrl = 'https://corsproxy.io/?${Uri.encodeComponent(targetUrl)}';
+        try {
+          // Chrome Web 自动播放策略限制：必须在静音下才能自动播放
+          player.setVolume(0);
+        } catch (e) {
+          debugPrint("Mute volume error: $e");
+        }
       }
 
       await player.open(
