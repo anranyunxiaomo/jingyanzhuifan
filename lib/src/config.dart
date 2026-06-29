@@ -33,19 +33,7 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 2. 分流番剧详情页 (bangumi/detail/{id})
-      if (options.path.contains('/bangumi/detail/')) {
-        final parts = options.path.split('/');
-        final bgmId = parts.last;
-        options.path = './detail_$bgmId.json';
-        options.baseUrl = '';
-        options.queryParameters = {};
-        options.headers.remove('user-agent');
-        handler.next(options);
-        return;
-      }
-
-      // 3. 分流番剧搜索页 (search) -> 导向同源全量表进行前端极速内存过滤
+      // 2. 分流番剧搜索页 (search) -> 导向同源全量表进行前端极速内存过滤
       if (options.path.contains('/search')) {
         final keyword = options.queryParameters['keyword'] ?? '';
         options.extra['search_keyword'] = keyword;
@@ -58,7 +46,7 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 4. 分流全量番剧表 (bangumi/list)
+      // 3. 分流全量番剧表 (bangumi/list)
       if (options.path.contains('/bangumi/list')) {
         options.path = './bangumi_list.json';
         options.baseUrl = '';
