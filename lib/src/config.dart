@@ -16,11 +16,11 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 (Web端防线，用于绕过 API 的跨域限制)
+// 终极自愈备用跨域代理通道列表 (Web端防线，将稳定好用的 allorigins 提到第一位)
 final List<String> webProxies = [
+  'https://api.allorigins.win/get?url=',
   'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
-  'https://api.allorigins.win/get?url=',
 ];
 
 // 异步拉取非凡资源网标准苹果CMS API详情的底层封装 (自动轮询代理以解决 Web 端跨域拦截)
@@ -40,10 +40,8 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
         : '$proxy$rawUrl';
         
     try {
-      final res = await client.get(targetUrl, options: Options(
-        responseType: ResponseType.json,
-        headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'}
-      ));
+      // 【避坑红线】在 Web 端绝对不能手动携带 User-Agent 请求头，否则会被浏览器以 "Refused to set unsafe header" 强行中断异常崩溃！
+      final res = await client.get(targetUrl);
       
       if (res.statusCode == 200 && res.data is Map) {
         var mapData = Map<String, dynamic>.from(res.data);
@@ -63,12 +61,9 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
     }
   }
 
-  // 2. 最后的直连兜底尝试
+  // 2. 最后的直连兜底尝试 (同样不带任何自定义 Headers，保障安全沙箱连通)
   try {
-    final res = await client.get(rawUrl, options: Options(
-      responseType: ResponseType.json,
-      headers: {'User-Agent': 'Mozilla/5.0'}
-    ));
+    final res = await client.get(rawUrl);
     if (res.statusCode == 200 && res.data is Map) {
       return Map<String, dynamic>.from(res.data);
     }
