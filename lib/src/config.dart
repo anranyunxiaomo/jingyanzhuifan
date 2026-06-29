@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
+import 'package:get_storage/get_storage.dart';
 
 // 条件导入：在 Web 导入 platform_util.dart，在原生 IO 平台自动导入 platform_util_io.dart
 import 'package:xs/src/utils/platform_util.dart'
@@ -17,7 +18,7 @@ final List<String> webProxies = [
   'https://thingproxy.freeboard.io/fetch/',
 ];
 
-// Web 端专属网络防护拦截器：支持多通道 4s 超时自动熔断并秒切重试
+// Web 端专属网络防护拦截器：支持用户自定义代理与公共通道轮询自愈
 class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
@@ -37,23 +38,44 @@ class WebProxyInterceptor extends Interceptor {
         fullUrl = uri.toString();
       }
 
-      // 保存最原始的无代理 URL 在 extra 里，供失败重试时调取
+      options.headers.remove('user-agent');
+
+      // 3. 核心：如果用户设置了个人专属的 Cloudflare Worker 代理，100% 优先直连它！
+      if (AppConfig.customProxy.value.isNotEmpty) {
+        String prefix = AppConfig.customProxy.value;
+        if (!prefix.endsWith('=')) {
+          if (prefix.contains('codetabs')) {
+            prefix += '?quest=';
+          } else if (prefix.contains('allorigins') || prefix.contains('corsproxy')) {
+            prefix += '?url=';
+          } else if (!prefix.endsWith('/')) {
+            // 自定义 Workers 默认采用 / 拼接格式，如: https://my-worker.workers.dev/?url=
+            if (!prefix.contains('?')) {
+              prefix += '?url=';
+            }
+          }
+        }
+        options.path = '$prefix${Uri.encodeComponent(fullUrl)}';
+        options.baseUrl = '';
+        options.queryParameters = {};
+        handler.next(options);
+        return;
+      }
+
+      // 保存最原始的无代理 URL 在 extra 里，供公共通道失败重试时调取
       options.extra['originalUrl'] = fullUrl;
 
-      // 3. 清空 options.queryParameters，防 Dio 重复拼装
+      // 4. 清空 options.queryParameters，防 Dio 重复拼装
       options.queryParameters = {};
 
-      // 4. 动态读取当前尝试的代理索引
+      // 5. 动态读取当前尝试的代理索引
       int idx = options.extra['proxyIndex'] ?? 0;
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
-      // 5. 拼装代理绝对路径并清空 baseUrl
+      // 6. 拼装代理绝对路径并清空 baseUrl
       options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
       options.baseUrl = '';
-
-      // 6. 安全抹除 user-agent 头以防浏览器报错
-      options.headers.remove('user-agent');
     }
     super.onRequest(options, handler);
   }
@@ -96,6 +118,7 @@ class WebProxyInterceptor extends Interceptor {
 class AppConfig {
   static RxString version = ''.obs;
   static RxString ua = ''.obs;
+  static RxString customProxy = ''.obs; // 个人专属跨域中转代理
   
   static const baseUrl = 'https://api.emmmm.eu.org';
   static const bilibiliApiProxyUrl = 'https://bili-dm.emmmm.eu.org';
@@ -106,6 +129,10 @@ class AppConfig {
     version(packageInfo.version);
     String platformName = platform.getPlatformName();
     ua('${packageInfo.packageName} $platformName ${packageInfo.version}');
+
+    // 初始化加载用户保存的专属 CORS 代理
+    final box = GetStorage();
+    customProxy(box.read('custom_proxy') ?? '');
   }
 
   static Map<String, dynamic> getHeaders() {
@@ -118,9 +145,9 @@ class AppConfig {
     final dio = Dio(BaseOptions(
       baseUrl: baseUrl,
       headers: getHeaders(),
-      // 稍微缩减超时限制，防止单通道死等，加快多通道轮询速度
-      connectTimeout: const Duration(milliseconds: 4000),
-      receiveTimeout: const Duration(milliseconds: 4000),
+      // 提升超时时间至 8 秒，保障国内握手成功率
+      connectTimeout: const Duration(milliseconds: 8000),
+      receiveTimeout: const Duration(milliseconds: 8000),
     ));
     dio.interceptors.add(WebProxyInterceptor());
     return dio;

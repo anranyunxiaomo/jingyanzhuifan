@@ -85,23 +85,38 @@ class PlayHistorySettingsPageController extends GetxController
   }
 }
 
+import 'package:xs/src/config.dart';
+import 'package:get_storage/get_storage.dart';
+
 class InfoSettingsPageController extends GetxController
     with StateMixin, GetTickerProviderStateMixin {
   late final AnimationController animationController;
+  late final TextEditingController proxyController;
 
   @override
-  void onInit() async {
+  void onInit() {
     super.onInit();
 
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
     );
+
+    proxyController = TextEditingController();
+    final box = GetStorage();
+    proxyController.text = box.read('custom_proxy') ?? '';
+  }
+
+  void saveProxy(String val) {
+    final box = GetStorage();
+    box.write('custom_proxy', val.trim());
+    AppConfig.customProxy(val.trim());
   }
 
   @override
   void dispose() {
     animationController.dispose();
+    proxyController.dispose();
     super.dispose();
   }
 }

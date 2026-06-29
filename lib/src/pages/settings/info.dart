@@ -114,6 +114,41 @@ class InfoSettingsPage extends StatelessWidget {
                                     ),
                                   ),
                                 ],
+                            ),
+                            Padding(
+                              padding: AppStyle.edgeInsetsA12,
+                              child: Text(
+                                '轻应用跨域设置',
+                                style: Get.textTheme.titleSmall,
+                              ),
+                            ),
+                            SettingsCard(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                                child: Column(
+                                  children: [
+                                    TextField(
+                                      controller: controller.proxyController,
+                                      style: Get.textTheme.bodyMedium?.copyWith(
+                                        color: Get.theme.colorScheme.onSurface,
+                                      ),
+                                      decoration: InputDecoration(
+                                        labelText: '专属 CORS 代理 URL',
+                                        labelStyle: Get.textTheme.bodyMedium?.copyWith(
+                                          color: Get.theme.colorScheme.onSurface.withOpacity(0.6),
+                                        ),
+                                        hintText: '例: https://proxy.xxx.workers.dev/',
+                                        hintStyle: Get.textTheme.bodyMedium?.copyWith(
+                                          color: Get.theme.colorScheme.onSurface.withOpacity(0.3),
+                                        ),
+                                        border: InputBorder.none,
+                                      ),
+                                      onChanged: (val) {
+                                        controller.saveProxy(val);
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
