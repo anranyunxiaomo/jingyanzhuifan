@@ -34,6 +34,12 @@ jobs:
       - name: Build Web Target
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
+      - name: Inject Cachebuster to JS
+        run: |
+          TIMESTAMP=$(date +%s)
+          sed -i "s/main.dart.js/main.dart.js?v=${TIMESTAMP}/g" build/web/flutter_bootstrap.js
+          echo "Successfully injected cachebuster timestamp $TIMESTAMP"
+
       - name: Install curl_cffi
         run: pip install curl_cffi
 
