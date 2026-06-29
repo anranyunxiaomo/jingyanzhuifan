@@ -1,39 +1,87 @@
-from curl_cffi import requests
+import urllib.request
 import json
 import os
+import ssl
 
-# 直接创建在最终编译输出的 build/web 目录下，彻底避开 Flutter 编译器的文件过滤
-data_dir = "./build/web"
+# 直接写入 web 根目录下，由 Git 跟踪直接打包发布
+data_dir = "./web"
 os.makedirs(data_dir, exist_ok=True)
 
-def fetch_json(url):
+# 自动尝试本地最常见的代理端口进行翻墙自愈，彻底越过 TLS 握手警报与 GFW 阻断
+proxy_ports = [7890, 1080, 10809, 1087, 7893]
+success_opener = None
+
+# 关闭 SSL 证书校验，防止非标证书报错
+ssl_context = ssl._create_unverified_context()
+
+print("============== [开始寻找本地可用代理通道] ==============")
+
+# 1. 首先尝试直连
+try:
+    print("尝试直连 API ...")
+    req = urllib.request.Request(
+        "https://api.emmmm.eu.org/latest?sort=-1&type=all&skip=0",
+        headers={'User-Agent': 'xs IOS 1.0.0'}
+    )
+    with urllib.request.urlopen(req, context=ssl_context, timeout=5) as response:
+        if response.status == 200:
+            print("[通了] 直连成功！")
+            success_opener = urllib.request.build_opener()
+except Exception as e:
+    print(f"直连失败: {e}")
+
+# 2. 依次尝试本地代理端口
+if not success_opener:
+    for port in proxy_ports:
+        proxy_url = f"http://127.0.0.1:{port}"
+        try:
+            print(f"尝试挂载本地代理 {proxy_url} ...")
+            proxy_support = urllib.request.ProxyHandler({'http': proxy_url, 'https': proxy_url})
+            opener = urllib.request.build_opener(proxy_support)
+            req = urllib.request.Request(
+                "https://api.emmmm.eu.org/latest?sort=-1&type=all&skip=0",
+                headers={'User-Agent': 'xs IOS 1.0.0'}
+            )
+            with opener.open(req, timeout=5) as response:
+                if response.status == 200:
+                    print(f"[通了] 成功匹配本地可用代理端口: {port} ！")
+                    success_opener = opener
+                    break
+        except Exception as e:
+            print(f"代理端口 {port} 不可用")
+
+if not success_opener:
+    print("\n[警告] 未能匹配到任何可用代理，将尝试用默认方式直连备份数据...\n")
+    success_opener = urllib.request.build_opener()
+
+def fetch_data(url):
     try:
-        # 使用 curl_cffi 强力伪装成标准的 Chrome 浏览器 TLS 与 JA3 指纹，直接穿透所有的 SSL 握手与 TLS 拦截
-        response = requests.get(url, impersonate="chrome110", timeout=25)
-        if response.status_code == 200:
-            return response.json()
+        req = urllib.request.Request(url, headers={'User-Agent': 'xs IOS 1.0.0'})
+        # 如果是默认的 opener 且没有挂载代理，我们传入不校验证书的 context
+        if isinstance(success_opener, urllib.request.OpenerDirector) and not success_opener.handlers:
+            with urllib.request.urlopen(req, context=ssl_context, timeout=10) as response:
+                return json.loads(response.read().decode('utf-8'))
         else:
-            print(f"[Error] HTTP Status {response.status_code} for {url}")
+            with success_opener.open(req, timeout=10) as response:
+                return json.loads(response.read().decode('utf-8'))
     except Exception as e:
-        print(f"[Error] Failed to fetch {url} via curl_cffi: {e}")
+        print(f"[Error] 获取数据失败 {url}: {e}")
     return None
 
-print("============== [开始云端数据备份] ==============")
+print("============== [开始本地数据备份] ==============")
 
 # 1. 抓取最新更新 (Latest)
-latest_url = "https://api.emmmm.eu.org/latest?sort=-1&type=all&skip=0"
-latest_data = fetch_json(latest_url)
+latest_data = fetch_data("https://api.emmmm.eu.org/latest?sort=-1&type=all&skip=0")
 if latest_data:
     with open(f"{data_dir}/latest.json", 'w', encoding='utf-8') as f:
         json.dump(latest_data, f, ensure_ascii=False, indent=2)
-    print("[成功] 备份 latest.json")
+    print("[成功] 备份最新番剧数据到 web/latest.json")
 
-# 2. 抓取全局番剧大表，用于轻应用前端的免跨域“极速检索”
-list_url = "https://api.emmmm.eu.org/bangumi/list?skip=0&type=all"
-list_data = fetch_json(list_url)
+# 2. 抓取全局大表
+list_data = fetch_data("https://api.emmmm.eu.org/bangumi/list?skip=0&type=all")
 if list_data:
     with open(f"{data_dir}/bangumi_list.json", 'w', encoding='utf-8') as f:
         json.dump(list_data, f, ensure_ascii=False, indent=2)
-    print("[成功] 备份 bangumi_list.json (用于本地全局搜索)")
+    print("[成功] 备份全局番剧大表到 web/bangumi_list.json")
 
-print("============== [云端数据备份完成] ==============")
+print("============== [本地数据备份完成] ==============")
