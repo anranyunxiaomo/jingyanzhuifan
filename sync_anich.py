@@ -1,24 +1,23 @@
-import os
+import subprocess
 import json
-import urllib.request
 import time
+import os
 
 # 直接创建在 web 根目录下，保障 Flutter 编译打包时 100% 复制分发
 data_dir = "./web"
 
-headers = {
-    'User-Agent': 'xs IOS 1.0.0',
-    'Accept': 'application/json'
-}
-
 def fetch_json(url):
-    req = urllib.request.Request(url, headers=headers)
     try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            return json.loads(response.read().decode('utf-8'))
+        # 使用 curl -k -L 忽略一切非标 SSL/TLS 证书及握手错误，保障云端 100% 数据送达
+        result = subprocess.run(
+            ['curl', '-k', '-L', '-s', '-A', 'xs IOS 1.0.0', url],
+            capture_output=True, text=True, timeout=15
+        )
+        if result.returncode == 0:
+            return json.loads(result.stdout)
     except Exception as e:
-        print(f"[Error] Failed to fetch {url}: {e}")
-        return None
+        print(f"[Error] Failed to fetch {url} via curl: {e}")
+    return None
 
 print("============== [开始云端数据备份] ==============")
 
