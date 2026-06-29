@@ -490,6 +490,13 @@ class BangumiVodPageController extends PlayerController
         if (targetUrl.startsWith('http://')) {
           targetUrl = targetUrl.replaceFirst('http://', 'https://');
         }
+        try {
+          // 【Chrome Autoplay 完美绕过】必须在 open (即 play) 执行之前前置静音，
+          // 避开任何手动调用 pause() 引发的 Promise 中断红字报错。
+          await player.setVolume(0.0);
+        } catch (e) {
+          debugPrint("Web autoplay prevention error: $e");
+        }
       }
 
       await player.open(
@@ -498,15 +505,6 @@ class BangumiVodPageController extends PlayerController
           httpHeaders: headers,
         ),
       );
-
-      if (kIsWeb) {
-        try {
-          await player.setVolume(0.0);
-          await player.pause();
-        } catch (e) {
-          debugPrint("Web autoplay prevention error: $e");
-        }
-      }
 
       Log.d('播放链接\r\n：$targetUrl');
     }
