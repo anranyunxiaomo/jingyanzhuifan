@@ -1,0 +1,7 @@
+display_name: 像宿
+publisher_display_name: Sle2p
+identity_name: cx.xs
+logo_path: assets/images/icon.png
+capabilities: internetClient
+languages: zh-cn
+install_certificate: "false"

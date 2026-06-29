@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://ani.emmmm.eu.org",
+  "bilibiliApiUrl": "https://bili-dm.emmmm.eu.org",
+  "qqVideoApiUrl": "https://dm.video.qq.com",
+  "updateUrl": "https://api.github.com/repos/Sle2p/AniCh/releases/latest",
+  "githubProxyUrl": "https://gh.llkk.cc",
+  "apis": [
+    "https://api.500403.xyz",
+    "https://ani.emmmm.eu.org",
+    "https://api.emmmm.eu.org.cdn.cloudflare.net"
+  ]
+}

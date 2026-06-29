@@ -1,0 +1,20 @@
+display_name: 像宿
+package_name: xs
+maintainer:
+  name: Sle2p
+  email: noreply@xs.cx
+priority: optional
+section: x11
+installed_size: 24400
+essential: false
+icon: assets/images/icon.png
+
+keywords:
+  - xs
+
+generic_name: xs
+
+categories:
+  - Media
+
+startup_notify: true
