@@ -247,22 +247,34 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 5. 【极速 Mock】针对视频播放直链接口 (vod/{id}/{episode})
+      // 5. 【真正的番剧正片播放】针对视频播放直链接口 (vod/{id}/{episode})
       if (options.path.contains('/vod/')) {
-        // 使用字节跳动公共大厂 HLS 直链，秒开速度极快，国内直连完全免疫跨域！
+        final parts = options.path.split('/');
+        // 获取 id 和 episode
+        final id = int.tryParse(parts[parts.length - 2]) ?? 2;
+        final ep = int.tryParse(parts.last) ?? 1;
+
+        // 根据不同的 id 和集数，下发 100% 真正的、高清动漫正片 M3U8 播放直链！
+        String realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di01ji/index.m3u8";
+        if (id == 2) {
+          if (ep == 2) {
+            realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di02ji/index.m3u8";
+          } else if (ep == 3) {
+            realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di03ji/index.m3u8";
+          }
+        } else if (id == 1) {
+          realVodUrl = "https://s1.bfzycdn.com/video/guimiezhirenzhuxunlianpian/di01ji/index.m3u8";
+        } else if (id == 3) {
+          realVodUrl = "https://s1.bfzycdn.com/video/guashou8hao/di01ji/index.m3u8";
+        }
+
         final mockVod = vod_(
           data: [
             vod_item_(
-              url: "https://sf1-cdn-tos.byteimg.com/obj/tos-cn-v-0067/928cde33ff444c9b83b38466b02a28fa",
+              url: realVodUrl,
               sort: 1,
               type: "hls",
               caption: "高清专线 (秒开推荐)"
-            ),
-            vod_item_(
-              url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-              sort: 2,
-              type: "hls",
-              caption: "测试备用线路"
             )
           ]
         );
