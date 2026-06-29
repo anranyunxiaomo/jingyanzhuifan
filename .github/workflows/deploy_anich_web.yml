@@ -37,8 +37,9 @@ jobs:
       - name: Inject Cachebuster to JS
         run: |
           TIMESTAMP=$(date +%s)
-          sed -i "s/main.dart.js/main.dart.js?v=${TIMESTAMP}/g" build/web/flutter_bootstrap.js
-          echo "Successfully injected cachebuster timestamp $TIMESTAMP"
+          mv build/web/main.dart.js build/web/main.dart.v${TIMESTAMP}.js
+          sed -i "s/main.dart.js/main.dart.v${TIMESTAMP}.js/g" build/web/flutter_bootstrap.js
+          echo "Successfully physical renamed to main.dart.v${TIMESTAMP}.js"
 
       - name: Install curl_cffi
         run: pip install curl_cffi
