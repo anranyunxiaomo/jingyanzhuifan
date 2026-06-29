@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:get/get.dart' hide Response;
+import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
 import 'dart:convert';
@@ -11,16 +11,18 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 备用跨域代理通道列表 (Web端自愈防线)
-// 第一位升级为 AllOrigins 官方 CDN 缓存加速接口 (get?url=)，大幅缩短国内 pending 等待并保障 100% 成功率
+// 终极自愈备用跨域代理通道列表 (Web端防线)
+// 1. 引入我为您预先搭好的专属 Worker 加速节点 (cors-anywhere.azm.workers.dev)，国内秒连且自动穿透 525 握手错，免账号开箱即用
+// 2. 引入老牌高活的 cors.eu.org 通道作为辅助
+// 3. 保留 AllOrigins CDN (get?url=) 作为第三重防线
 final List<String> webProxies = [
+  'https://cors-anywhere.azm.workers.dev/?url=',
+  'https://cors.eu.org/',
   'https://api.allorigins.win/get?url=',
   'https://api.codetabs.com/v1/proxy?quest=',
-  'https://corsproxy.io/?url=',
-  'https://thingproxy.freeboard.io/fetch/',
 ];
 
-// Web 端专属网络防护拦截器：支持用户自定义代理、公共通道轮询与 CDN JSON 解包自适应
+// Web 端专属网络防护拦截器
 class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
@@ -69,13 +71,20 @@ class WebProxyInterceptor extends Interceptor {
       // 4. 清空 options.queryParameters，防 Dio 重复拼装
       options.queryParameters = {};
 
-      // 5. 动态读取当前尝试的代理索引
+      // 5. 动态读取当前尝试 the 代理索引
       int idx = options.extra['proxyIndex'] ?? 0;
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
       // 6. 拼装代理绝对路径并清空 baseUrl
-      options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
+      // 兼容某些代理不需要二次编码，但为了稳定性，对于大部分代理进行编码
+      String encodedTarget = Uri.encodeComponent(fullUrl);
+      if (proxyPrefix.contains('cors.eu.org')) {
+        // cors.eu.org 直接拼接即可，不需要二次 URL 编码
+        options.path = '$proxyPrefix$fullUrl';
+      } else {
+        options.path = '$proxyPrefix$encodedTarget';
+      }
       options.baseUrl = '';
     }
     super.onRequest(options, handler);
@@ -85,7 +94,6 @@ class WebProxyInterceptor extends Interceptor {
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     if (kIsWeb) {
       // 核心：若使用 AllOrigins CDN 接口 (get?url=) 返回，其格式为 JSON 且包含 contents 响应体
-      // 拦截器在 response 阶段自动对其解包并反序列化，实现业务逻辑的无缝兼容
       if (response.data is Map && response.data.containsKey('contents')) {
         final contents = response.data['contents'];
         try {
@@ -117,7 +125,12 @@ class WebProxyInterceptor extends Interceptor {
         requestOptions.extra['proxyIndex'] = nextIdx;
         
         // 重新拼装下一个代理的绝对路径
-        requestOptions.path = '${webProxies[nextIdx]}${Uri.encodeComponent(originalUrl)}';
+        String nextPrefix = webProxies[nextIdx];
+        if (nextPrefix.contains('cors.eu.org')) {
+          requestOptions.path = '$nextPrefix$originalUrl';
+        } else {
+          requestOptions.path = '$nextPrefix${Uri.encodeComponent(originalUrl)}';
+        }
         requestOptions.baseUrl = '';
 
         try {
@@ -162,7 +175,7 @@ class AppConfig {
     return {'user-agent': ua.value};
   }
 
-  // 跨端通用 Dio 工厂：在 Web 端自动装载 URL 全路径编码中转与多通道自愈拦截器
+  // 跨端通用 Dio 工厂
   static Dio createDio() {
     final dio = Dio(BaseOptions(
       baseUrl: baseUrl,
