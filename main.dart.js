@@ -117489,15 +117489,15 @@ gb9(){return $.byq()},
 gbi(a){return this.a.a2(0)},
 gd2(a){return this.a.a5(1)}}
 A.Pd.prototype={
-wK(a,b){var s,r,q,p,o,n,m,l="user-agent",k="./data/bangumi_list.json",j=a.cx
-if(B.d.p(j,"/latest")){a.cx="./data/latest.json"
+wK(a,b){var s,r,q,p,o,n,m,l="user-agent",k="./bangumi_list.json",j=a.cx
+if(B.d.p(j,"/latest")){a.cx="./latest.json"
 a.sog("")
 a.kv$=A.z(t.N,t.z)
 s=a.b
 s===$&&A.b()
 s.G(0,l)
 b.tF(0,a)
-return}if(B.d.p(j,"/bangumi/detail/")){a.cx="./data/detail_"+B.b.ga6(j.split("/"))+".json"
+return}if(B.d.p(j,"/bangumi/detail/")){a.cx="./detail_"+B.b.ga6(j.split("/"))+".json"
 a.sog("")
 a.kv$=A.z(t.N,t.z)
 s=a.b
