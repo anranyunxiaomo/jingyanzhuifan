@@ -489,8 +489,16 @@ class BangumiVodPageController extends PlayerController
           targetUrl,
           httpHeaders: headers,
         ),
-        play: !kIsWeb, // 在 Web 平台显式置为 false 以彻底规避 Chrome Autoplay 自动播放报错拦截
       );
+
+      if (kIsWeb) {
+        try {
+          await player.setVolume(0.0);
+          await player.pause();
+        } catch (e) {
+          debugPrint("Web autoplay prevention error: $e");
+        }
+      }
 
       Log.d('播放链接\r\n：$targetUrl');
     }
