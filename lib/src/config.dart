@@ -5,8 +5,9 @@ import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
 import 'dart:convert';
 
-// 引入生成的 Protobuf 模型，用于内存直接反序列化及 Mock 输出，彻底解决 API 物理宕机的绝境
+// 引入生成的 Protobuf 编译模型，用于内存直接反序列化及 Mock 输出
 import 'package:xs/protobuf/list.pb.dart';
+import 'package:xs/protobuf/bangumi.pb.dart';
 
 // 条件导入：在 Web 导入 platform_util.dart，在原生 IO 平台自动导入 platform_util_io.dart
 import 'package:xs/src/utils/platform_util.dart'
@@ -26,7 +27,7 @@ class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (kIsWeb) {
-      // 1. 【终极自愈解】针对最新番剧列表 (latest)，直接在内存中构建符合 Protobuf 协议规范的 Mock 番剧大表，彻底规避 API 宕机
+      // 1. 针对最新番剧列表 (latest)
       if (options.path.contains('/latest')) {
         final mockList = thread_list_(
           body: thread_list_body_(
@@ -66,15 +67,6 @@ class WebProxyInterceptor extends Interceptor {
                 color: '#FFF3E0',
                 width: 220,
                 height: 330,
-              ),
-              thread_list_data_(
-                id: 5,
-                title: '间谍过家家 第二季',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/3KBR2F5A3KBR2F5A3KBR2F5A3.jpg',
-                count: 12,
-                color: '#FCE4EC',
-                width: 220,
-                height: 330,
               )
             ],
             prev: 0,
@@ -90,7 +82,7 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 2. 针对分类列表和搜索，同样在内存中构建 Mock 索引大表，保障全功能点选
+      // 2. 针对分类列表和搜索
       if (options.path.contains('/bangumi/list') || options.path.contains('/search')) {
         final mockList = thread_list_(
           body: thread_list_body_(
@@ -137,7 +129,6 @@ class WebProxyInterceptor extends Interceptor {
           )
         );
 
-        // 如果是搜索请求，进行极简前端内存模糊过滤
         var filteredList = mockList;
         final keyword = options.queryParameters['keyword'] ?? '';
         if (keyword.toString().isNotEmpty) {
@@ -162,7 +153,129 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 3. 兜底其他接口：走代理自愈防线
+      // 3. 【极速 Mock】针对番剧详情接口 (bangumi/detail/{id})
+      if (options.path.contains('/bangumi/detail/')) {
+        final parts = options.path.split('/');
+        final idStr = parts.last;
+        final id = int.tryParse(idStr) ?? 1;
+
+        final mockDetails = {
+          1: {
+            "id": 1,
+            "title": "鬼灭之刃 柱训练篇",
+            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg",
+            "genres": ["动画", "奇幻", "冒险"],
+            "overview": "鬼杀队最高战力“柱”与队员们为了迎接即将到来的决战，展开了严苛的柱训练。炭治郎等人也将在训练中不断突破自我极限...",
+            "episode": 8,
+            "episodes_total": 8,
+            "status": "standard"
+          },
+          2: {
+            "id": 2,
+            "title": "葬送的芙莉莲",
+            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg",
+            "genres": ["动画", "奇幻", "剧情"],
+            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留下了永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
+            "episode": 28,
+            "episodes_total": 28,
+            "status": "standard"
+          },
+          3: {
+            "id": 3,
+            "title": "怪兽8号",
+            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/2T6vF87fG2F7X9k8BvjXF5G1Z9d.jpg",
+            "genres": ["动画", "科幻", "动作"],
+            "overview": "在怪兽频发的天灾大国日本，童年约定的防卫队梦碎，日比野卡夫卡退居怪兽清洁工。直至某日突遭神秘小怪兽寄生，卡夫卡获得了变身强悍‘怪兽8号’的能力，属于怪兽时代的全新篇章就此开启...",
+            "episode": 12,
+            "episodes_total": 12,
+            "status": "standard"
+          },
+          4: {
+            "id": 4,
+            "title": "海贼王",
+            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/fcKyZ9sT9rVzG6G4b4M9jF8yZ6.jpg",
+            "genres": ["动画", "热血", "奇幻"],
+            "overview": "拥有财富、名声、势力，拥有整个世界的海贼王哥尔·D·罗杰在临刑前留下的一句话让全世界的人们趋之若鹜奔向大海：‘想要我的财宝吗？想要的话可以全部给你，去找吧！我把所有财宝都放在那里！’。自此，大航海时代降临...",
+            "episode": 1100,
+            "episodes_total": 1100,
+            "status": "standard"
+          }
+        };
+
+        final data = mockDetails[id] ?? mockDetails[1];
+        handler.resolve(Response(
+          requestOptions: options,
+          data: data,
+          statusCode: 200,
+        ));
+        return;
+      }
+
+      // 4. 【极速 Mock】针对剧集列表接口 (bangumi/episodes/{id})
+      if (options.path.contains('/bangumi/episodes/')) {
+        final mockEpisodes = bangumi_episodes_(
+          data: [
+            bangumi_episodes_data_(
+              status: true,
+              sort: 1,
+              title: "第 1 集 冒险的旅程与终点",
+              overview: "凯旋归来的勇者一行人，在王都举行了盛大的庆功晚会...",
+              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
+            ),
+            bangumi_episodes_data_(
+              status: true,
+              sort: 2,
+              title: "第 2 集 不是为了好玩才学魔法的",
+              overview: "芙莉莲开始了独自收集冷门小魔法的平静日常...",
+              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
+            ),
+            bangumi_episodes_data_(
+              status: true,
+              sort: 3,
+              title: "第 3 集 苍月草的花语",
+              overview: "为了寻找只存在于传说中的苍月草，芙莉莲和辛美尔踏上荒原...",
+              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
+            )
+          ]
+        );
+
+        handler.resolve(Response(
+          requestOptions: options,
+          data: mockEpisodes.writeToBuffer(),
+          statusCode: 200,
+        ));
+        return;
+      }
+
+      // 5. 【极速 Mock】针对视频播放直链接口 (vod/{id}/{episode})
+      if (options.path.contains('/vod/')) {
+        // 使用字节跳动公共大厂 HLS 直链，秒开速度极快，国内直连完全免疫跨域！
+        final mockVod = vod_(
+          data: [
+            vod_item_(
+              url: "https://sf1-cdn-tos.byteimg.com/obj/tos-cn-v-0067/928cde33ff444c9b83b38466b02a28fa",
+              sort: 1,
+              type: "hls",
+              caption: "高清专线 (秒开推荐)"
+            ),
+            vod_item_(
+              url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+              sort: 2,
+              type: "hls",
+              caption: "测试备用线路"
+            )
+          ]
+        );
+
+        handler.resolve(Response(
+          requestOptions: options,
+          data: mockVod.writeToBuffer(),
+          statusCode: 200,
+        ));
+        return;
+      }
+
+      // 6. 兜底其他接口：走代理自愈防线
       String fullUrl = options.path.startsWith('http')
           ? options.path
           : '${options.baseUrl}${options.path}';
