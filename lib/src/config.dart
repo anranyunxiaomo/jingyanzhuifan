@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Response;
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
 import 'dart:convert';

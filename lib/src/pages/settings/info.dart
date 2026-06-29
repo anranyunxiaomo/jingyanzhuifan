@@ -114,6 +114,7 @@ class InfoSettingsPage extends StatelessWidget {
                                     ),
                                   ),
                                 ],
+                              ),
                             ),
                             Padding(
                               padding: AppStyle.edgeInsetsA12,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:xs/src/config.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ThemeSettingsPageController extends GetxController
     with StateMixin, GetTickerProviderStateMixin {
@@ -84,9 +86,6 @@ class PlayHistorySettingsPageController extends GetxController
     super.dispose();
   }
 }
-
-import 'package:xs/src/config.dart';
-import 'package:get_storage/get_storage.dart';
 
 class InfoSettingsPageController extends GetxController
     with StateMixin, GetTickerProviderStateMixin {
