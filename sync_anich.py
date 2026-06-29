@@ -3,9 +3,8 @@ import json
 import urllib.request
 import time
 
-# 创建静态数据目录
-data_dir = "./web/data"
-os.makedirs(data_dir, exist_ok=True)
+# 直接创建在 web 根目录下，保障 Flutter 编译打包时 100% 复制分发
+data_dir = "./web"
 
 headers = {
     'User-Agent': 'xs IOS 1.0.0',

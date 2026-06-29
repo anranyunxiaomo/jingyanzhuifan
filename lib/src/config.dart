@@ -25,7 +25,7 @@ class WebProxyInterceptor extends Interceptor {
     if (kIsWeb) {
       // 1. 分流最新更新列表 (latest)
       if (options.path.contains('/latest')) {
-        options.path = './data/latest.json';
+        options.path = './latest.json';
         options.baseUrl = '';
         options.queryParameters = {};
         options.headers.remove('user-agent');
@@ -37,7 +37,7 @@ class WebProxyInterceptor extends Interceptor {
       if (options.path.contains('/bangumi/detail/')) {
         final parts = options.path.split('/');
         final bgmId = parts.last;
-        options.path = './data/detail_$bgmId.json';
+        options.path = './detail_$bgmId.json';
         options.baseUrl = '';
         options.queryParameters = {};
         options.headers.remove('user-agent');
@@ -50,7 +50,7 @@ class WebProxyInterceptor extends Interceptor {
         final keyword = options.queryParameters['keyword'] ?? '';
         options.extra['search_keyword'] = keyword;
 
-        options.path = './data/bangumi_list.json';
+        options.path = './bangumi_list.json';
         options.baseUrl = '';
         options.queryParameters = {};
         options.headers.remove('user-agent');
@@ -60,7 +60,7 @@ class WebProxyInterceptor extends Interceptor {
 
       // 4. 分流全量番剧表 (bangumi/list)
       if (options.path.contains('/bangumi/list')) {
-        options.path = './data/bangumi_list.json';
+        options.path = './bangumi_list.json';
         options.baseUrl = '';
         options.queryParameters = {};
         options.headers.remove('user-agent');
