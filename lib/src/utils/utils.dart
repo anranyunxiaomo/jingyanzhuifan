@@ -304,7 +304,7 @@ class Utils {
       cancel: '退出',
     );
     if (!result) {
-      exit(0);
+      platform.exitApp();
     }
   }
 

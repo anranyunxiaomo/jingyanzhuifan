@@ -21,11 +21,15 @@ import 'package:xs/src/router.dart';
 import 'package:xs/src/utils/listen_fourth_button.dart';
 import 'package:xs/src/utils/log.dart';
 import 'package:xs/src/utils/utils.dart';
+import 'package:xs/src/utils/platform_util.dart'
+    if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
 import 'package:xs/src/widgets/app_loadding_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MediaKit.ensureInitialized();
+  if (!platform.isIOS && !platform.isAndroid) {
+    MediaKit.ensureInitialized();
+  }
   await GetStorage.init();
   await GetStorage.init('playHistory');
   await initWindow();
@@ -130,7 +134,7 @@ class MyApp extends StatelessWidget {
                         (FourthButtonTapGestureRecognizer instance) {
                           instance.onTapDown = (TapDownDetails details) async {
                             //如果处于全屏状态，退出全屏
-                            if (!kIsWeb && !Platform.isAndroid && !Platform.isIOS) {
+                            if (!platform.isIOS && !platform.isAndroid) {
                               if (await windowManager.isFullScreen()) {
                                 await windowManager.setFullScreen(false);
                                 return;
@@ -148,7 +152,7 @@ class MyApp extends StatelessWidget {
                             event.logicalKey == LogicalKeyboardKey.escape) {
                           // ESC退出全屏
                           // 如果处于全屏状态，退出全屏
-                          if (!kIsWeb && !Platform.isAndroid && !Platform.isIOS) {
+                          if (!platform.isIOS && !platform.isAndroid) {
                             if (await windowManager.isFullScreen()) {
                               await windowManager.setFullScreen(false);
                               return;
@@ -177,7 +181,7 @@ class AppScrollBehavior extends MaterialScrollBehavior {
 }
 
 Future initWindow() async {
-  if (kIsWeb || !(Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
+  if (!platform.isWindows && !platform.isMacOS && !platform.isLinux) {
     return;
   }
   await windowManager.ensureInitialized();

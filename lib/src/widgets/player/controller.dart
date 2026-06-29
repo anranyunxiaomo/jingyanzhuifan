@@ -453,9 +453,8 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
           SmartDialog.dismiss(status: SmartStatus.loading);
           return;
         }
-        var file = File(path);
-        await file.writeAsBytes(imageData);
-        SmartDialog.showToast('已保存截图至${file.path}');
+        await platform.writeBytes(path, imageData);
+        SmartDialog.showToast('已保存截图至$path');
       }
     } catch (e) {
       Log.logPrint(e);
