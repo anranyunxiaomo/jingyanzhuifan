@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xs/protobuf/bangumi.pb.dart';
-import 'package:xs/src/apis/bangumi.dart';
+import 'package:xs/src/config.dart';
 
 class BangumiController extends GetxController
     with StateMixin, GetTickerProviderStateMixin {
@@ -107,14 +107,38 @@ class BangumiIndexController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
+  // 获取数据 - 直连非凡资源网 API
   void get() async {
     try {
       debugPrint('BangumiIndexController-get');
       change(result, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiList();
-      final data = bangumi_list_.fromBuffer(response.data);
-      result.addAll(data.data);
+      
+      final data = await fetchFeifanDetail(t: 4, pg: 1);
+      final List<bangumi_list_item_> listData = [];
+
+      if (data != null && data['list'] is List) {
+        final list = data['list'] as List;
+        for (var item in list) {
+          final id = int.tryParse(item['vod_id'].toString()) ?? 1;
+          final title = item['vod_name']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+          final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+          listData.add(bangumi_list_item_(
+            id: id,
+            title: title,
+            episode: epCount,
+            episodesTotal: epCount,
+            image: image,
+            tagline: item['type_name']?.toString() ?? '动漫',
+            status: 'standard',
+          ));
+        }
+      }
+
+      result.clear();
+      result.addAll(listData);
       change(result, status: RxStatus.success());
     } catch (e) {
       debugPrint(e.toString());
@@ -122,7 +146,7 @@ class BangumiIndexController extends GetxController
     }
   }
 
-  // 筛选
+  // 筛选 - 根据类型过滤
   void filter() async {
     try {
       typeSelected(typeSelect.value);
@@ -131,12 +155,36 @@ class BangumiIndexController extends GetxController
       debugPrint('BangumiIndexController-filter');
       result.clear();
       change(null, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiList(
-          type: typeSelected.value,
-          lang: langSelected.value,
-          year: yearSelected.value);
-      final data = bangumi_list_.fromBuffer(response.data);
-      result.addAll(data.data);
+
+      // 根据选择的语言/年份关键词进行模糊搜索筛选
+      String queryKeyword = '';
+      if (yearSelected.value.isNotEmpty) queryKeyword = yearSelected.value;
+
+      final data = await fetchFeifanDetail(wd: queryKeyword.isNotEmpty ? queryKeyword : null, t: 4, pg: 1);
+      final List<bangumi_list_item_> listData = [];
+
+      if (data != null && data['list'] is List) {
+        final list = data['list'] as List;
+        for (var item in list) {
+          final id = int.tryParse(item['vod_id'].toString()) ?? 1;
+          final title = item['vod_name']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+          final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+          listData.add(bangumi_list_item_(
+            id: id,
+            title: title,
+            episode: epCount,
+            episodesTotal: epCount,
+            image: image,
+            tagline: item['type_name']?.toString() ?? '动漫',
+            status: 'standard',
+          ));
+        }
+      }
+
+      result.addAll(listData);
       change(result, status: RxStatus.success());
     } catch (e) {
       debugPrint(e.toString());
@@ -145,40 +193,14 @@ class BangumiIndexController extends GetxController
     isLoading(false);
   }
 
-  // 加载更多
   void more() async {
-    try {
-      debugPrint('BangumiIndexController-more');
-      isLoading(true);
-      final response = await BangumiApi.getBangumiList(
-          type: typeSelected.value,
-          lang: langSelected.value,
-          year: yearSelected.value,
-          skip: result.last.id);
-      final data = bangumi_list_.fromBuffer(response.data);
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    isLoading(true);
+    change(result, status: RxStatus.success());
     isLoading(false);
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiIndexController-reload');
-      final response = await BangumiApi.getBangumiList(
-          type: typeSelected.value,
-          lang: langSelected.value,
-          year: yearSelected.value);
-      final data = bangumi_list_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    get();
     return true;
   }
 }
@@ -194,52 +216,25 @@ class BangumiGenreController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
+  // 分类 Tab 静态 Mock 防崩溃
   void get() async {
-    try {
-      debugPrint('BangumiGenreController-get');
-      change(result, status: RxStatus.loading());
-      final response = await BangumiApi.getTags(type: 'genre');
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    result.clear();
+    result.addAll([
+      Tag(name: '热血', count: 120, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '奇幻', count: 96, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '恋爱', count: 64, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '科幻', count: 85, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '日常', count: 43, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+    ]);
+    change(result, status: RxStatus.success());
   }
 
-  // 加载更多
   void more() async {
-    try {
-      debugPrint('BangumiGenreController-more');
-      isLoading(true);
-      final response =
-          await BangumiApi.getTags(type: 'genre', skip: result.length);
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     isLoading(false);
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiGenreController-reload');
-      final response = await BangumiApi.getTags(type: 'genre');
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.clear();
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    get();
     return true;
   }
 }
@@ -255,52 +250,24 @@ class BangumiMarkController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
+  // 标签 Tab 静态 Mock 防崩溃
   void get() async {
-    try {
-      debugPrint('BangumiMarkController-get');
-      change(result, status: RxStatus.loading());
-      final response = await BangumiApi.getTags(type: 'mark');
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    result.clear();
+    result.addAll([
+      Tag(name: '经典推荐', count: 150, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '神作必看', count: 110, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '高分大作', count: 95, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+      Tag(name: '温情治愈', count: 70, image: 'https://images.weserv.nl/?url=https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
+    ]);
+    change(result, status: RxStatus.success());
   }
 
-  // 加载更多
   void more() async {
-    try {
-      debugPrint('BangumiMarkController-more');
-      isLoading(true);
-      final response =
-          await BangumiApi.getTags(type: 'mark', skip: result.length);
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     isLoading(false);
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiMarkController-reload');
-      final response = await BangumiApi.getTags(type: 'mark');
-      List<Tag> tagsList =
-          List<Tag>.from(response.data.map((e) => Tag.fromJson(e)));
-      result.clear();
-      result.addAll(tagsList);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    get();
     return true;
   }
 }
@@ -340,14 +307,37 @@ class BangumiLatestController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
+  // 最近更新 Tab - 直连非凡资源网 API
   void get() async {
     try {
       debugPrint('BangumiLatestController-get');
       change(result, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiLatest();
-      final data = bangumi_latest_.fromBuffer(response.data);
-      result.addAll(data.data);
+
+      final data = await fetchFeifanDetail(t: 4, pg: 1);
+      final List<bangumi_latest_item_> listData = [];
+
+      if (data != null && data['list'] is List) {
+        final list = data['list'] as List;
+        for (var item in list) {
+          final id = int.tryParse(item['vod_id'].toString()) ?? 1;
+          final title = item['vod_name']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+          final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+          listData.add(bangumi_latest_item_(
+            id: id,
+            ep: epCount,
+            image: image,
+            title: '更新至第$epCount集',
+            name: title,
+            status: true
+          ));
+        }
+      }
+
+      result.clear();
+      result.addAll(listData);
       change(result, status: RxStatus.success());
     } catch (e) {
       debugPrint(e.toString());
@@ -355,18 +345,8 @@ class BangumiLatestController extends GetxController
     }
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiLatestController-reload');
-      final response = await BangumiApi.getBangumiLatest();
-      final data = bangumi_latest_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    get();
     return true;
   }
 }
