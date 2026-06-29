@@ -484,22 +484,12 @@ class BangumiVodPageController extends PlayerController
         targetUrl = urlDecode(targetUrl);
       }
 
-      if (kIsWeb) {
-        // 使用 corsproxy.io 万能中转，彻底绕过视频源切片 CORS 跨域拦截
-        targetUrl = 'https://corsproxy.io/?${Uri.encodeComponent(targetUrl)}';
-        try {
-          // Chrome Web 自动播放策略限制：必须在静音下才能自动播放
-          player.setVolume(0);
-        } catch (e) {
-          debugPrint("Mute volume error: $e");
-        }
-      }
-
       await player.open(
         Media(
           targetUrl,
           httpHeaders: headers,
         ),
+        play: !kIsWeb, // 在 Web 平台显式置为 false 以彻底规避 Chrome Autoplay 自动播放报错拦截
       );
 
       Log.d('播放链接\r\n：$targetUrl');
