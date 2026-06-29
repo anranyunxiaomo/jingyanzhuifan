@@ -26,7 +26,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.22.2' # 使用与项目 sdk: '>=3.4.4 <4.0.0' 强兼容的稳定 flutter 版本
+          flutter-version: '3.24.0'
 
       - name: Install Dependencies
         run: flutter pub get
