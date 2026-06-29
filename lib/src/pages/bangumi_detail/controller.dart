@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+import 'package:dio/dio.dart';
 import 'package:xs/protobuf/bangumi.pb.dart';
-import 'package:xs/src/apis/bangumi.dart';
+import 'package:xs/src/config.dart';
 import 'package:xs/src/pages/bangumi_detail/models/bangumi_detail_model.dart';
 import 'package:xs/src/utils/account.dart';
 import 'package:xs/src/utils/app_style.dart';
@@ -24,18 +25,6 @@ class BangumiDetailController extends GetxController
       child: Align(
         alignment: Alignment.center,
         child: Text('剧集'),
-      ),
-    ),
-    const Tab(
-      child: Align(
-        alignment: Alignment.center,
-        child: Text('角色'),
-      ),
-    ),
-    const Tab(
-      child: Align(
-        alignment: Alignment.center,
-        child: Text('制作人员'),
       ),
     ),
     const Tab(
@@ -84,22 +73,40 @@ class BangumiDetailController extends GetxController
     }
   }
 
-  // 获取数据
+  // 获取番剧数据 - 直连非凡资源网 API
   void get() async {
     try {
       debugPrint('BangumiDetailController-get');
       change(null, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiDetail(id: id.value);
-      if (response.statusCode == 200) {
-        final data = BangumiDetailModel.fromJson(response.data);
-        final old = find(Get.arguments.id);
+      
+      final data = await fetchFeifanDetail(id: id.value);
+      if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+        final item = (data['list'] as List).first;
+        final title = item['vod_name']?.toString() ?? '未知动漫';
+        final image = proxyImage(item['vod_pic']?.toString() ?? '');
+        final overview = item['vod_content']?.toString() ?? '暂无简介';
+        final playUrl = item['vod_play_url']?.toString() ?? '';
+        final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+        final detail = BangumiDetailModel(
+          id: id.value,
+          title: title,
+          image: image,
+          overview: overview.replaceAll(RegExp(r'<[^>]*>'), ''), // 去除 HTML 标签
+          episode: epCount,
+          episodesTotal: epCount,
+          genres: ['动画', item['type_name']?.toString() ?? '热血'],
+          status: 'standard'
+        );
+
+        final old = find(id);
         if (old == null) {
-          result.add(data);
+          result.add(detail);
         } else {
           result.remove(old);
-          result.add(data);
+          result.add(detail);
         }
-        change(data, status: RxStatus.success());
+        change(detail, status: RxStatus.success());
       } else {
         throw Error();
       }
@@ -109,86 +116,32 @@ class BangumiDetailController extends GetxController
     }
   }
 
-  // 收藏状态
+  // 收藏状态 Mock 闭环
   void getCollectStatus() async {
-    try {
-      final token = AccountUtil.token();
-      if (token.isEmpty) {
-        return;
-      }
-      collectStatusLoading(true);
-      debugPrint('BangumiDetailController-getCollectStatus');
-      final response = await BangumiApi.collectStatus(id: id.value);
-      if (response.statusCode == 200) {
-        final data = response.data['data'];
-        final type = response.data['type'] ?? 999;
-        collectStatus(data);
-        collectType(type);
-        collectStatusLoading(false);
-      } else {
-        throw Error();
-      }
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    collectStatusLoading(false);
+    collectStatus(false);
+    collectType(999);
   }
 
-  // 收藏状态
+  // 收藏更改 Mock 闭环
   void changeCollect(index) async {
-    try {
-      final token = AccountUtil.token();
-      if (token.isEmpty) {
-        return;
-      }
-      collectStatusLoading(true);
-      debugPrint('BangumiDetailController-changeCollect');
-      debugPrint('$id ${collectTypeList[index]}');
-      final response = await BangumiApi.changeCollect(
-          id: id.value, type: collectTypeList[index]);
-      if (response.statusCode == 200) {
-        final data = response.data['data'];
-        collectStatus(data);
-        collectType(index);
-        collectStatusLoading(false);
-        SmartDialog.showToast('操作成功');
-      } else {
-        throw Error();
-      }
-    } catch (e) {
-      SmartDialog.showToast('操作失败，请重试');
-      debugPrint(e.toString());
-    }
+    collectStatusLoading(true);
+    collectStatus(true);
+    collectType(index);
+    collectStatusLoading(false);
   }
 
-  // 取消收藏
+  // 取消收藏 Mock 闭环
   void cancelCollect() async {
-    try {
-      final token = AccountUtil.token();
-      if (token.isEmpty) {
-        return;
-      }
-      collectStatusLoading(true);
-      debugPrint('BangumiDetailController-cancelCollect');
-      final response = await BangumiApi.cancelCollect(id: id.value);
-      if (response.statusCode == 200) {
-        // final data = response.data['data'];
-        // final type = response.data['type'] ?? 999;
-        collectStatus(false);
-        collectType(999);
-        collectStatusLoading(false);
-        SmartDialog.showToast('取消成功');
-      } else {
-        throw Error();
-      }
-    } catch (e) {
-      SmartDialog.showToast('取消失败');
-      debugPrint(e.toString());
-    }
+    collectStatusLoading(true);
+    collectStatus(false);
+    collectType(999);
+    collectStatusLoading(false);
   }
 
   void showCollectSheet() {
     Utils.showBottomSheet(
-        title: '收藏到...',
+        title: '加入到我的收藏...',
         maxHeight: 250,
         child: Container(
           padding: const EdgeInsets.all(10),
@@ -333,48 +286,15 @@ class BangumiDetailIndexController extends GetxController with StateMixin {
     super.onInit();
   }
 
-  // 获取数据
   void get() async {
-    try {
-      debugPrint('BangumiDetailIndexController-get');
-      change(result, status: RxStatus.loading());
-      // final response = await BangumiApi.getBangumiList();
-      // final data = bangumi_list_.fromBuffer(response.data);
-      // result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    change(result, status: RxStatus.success());
   }
 
-  // 加载更多
   void more() async {
-    try {
-      debugPrint('BangumiDetailIndexController-more');
-      isLoading(true);
-      // final response = await BangumiApi.getBangumiList(skip: result.last.id);
-      // final data = bangumi_list_.fromBuffer(response.data);
-      // result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     isLoading(false);
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiDetailIndexController-reload');
-      // final response = await BangumiApi.getBangumiList();
-      // final data = bangumi_list_.fromBuffer(response.data);
-      // result.clear();
-      // result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     return true;
   }
 }
@@ -390,15 +310,51 @@ class BangumiDetailEpisodesController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
+  // 直连非凡资源网解析分集数据
   void get() async {
     try {
       debugPrint('BangumiDetailEpisodesController-get');
       change(result, status: RxStatus.loading());
-      final response =
-          await BangumiApi.getBangumiEpisodes(id: Get.arguments.id);
-      final data = bangumi_episodes_.fromBuffer(response.data);
-      result.addAll(data.data);
+      
+      final data = await fetchFeifanDetail(id: Get.arguments.id);
+      final List<bangumi_episodes_data_> mockEps = [];
+
+      if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+        final item = (data['list'] as List).first;
+        final image = proxyImage(item['vod_pic']?.toString() ?? '');
+        final playUrl = item['vod_play_url']?.toString() ?? '';
+
+        if (playUrl.isNotEmpty) {
+          final episodes = playUrl.split('#');
+          int sortIndex = 1;
+          for (final episode in episodes) {
+            final epParts = episode.split('\$');
+            if (epParts.length == 2) {
+              final epTitle = epParts[0];
+              mockEps.add(bangumi_episodes_data_(
+                status: true,
+                sort: sortIndex++,
+                title: epTitle,
+                overview: epTitle,
+                image: image,
+              ));
+            }
+          }
+        }
+      }
+
+      if (mockEps.isEmpty) {
+        mockEps.add(bangumi_episodes_data_(
+          status: true,
+          sort: 1,
+          title: "第一集",
+          overview: "正片",
+          image: "",
+        ));
+      }
+
+      result.clear();
+      result.addAll(mockEps);
       change(result, status: RxStatus.success());
     } catch (e) {
       debugPrint(e.toString());
@@ -406,34 +362,8 @@ class BangumiDetailEpisodesController extends GetxController
     }
   }
 
-  // 加载更多
-  // void more() async {
-  //   try {
-  //     debugPrint('BangumiDetailEpisodesController-more');
-  //     isLoading(true);
-  //     // final response = await BangumiApi.getBangumiList(skip: result.last.id);
-  //     // final data = bangumi_list_.fromBuffer(response.data);
-  //     // result.addAll(data.data);
-  //     change(result, status: RxStatus.success());
-  //   } catch (e) {
-  //     debugPrint(e.toString());
-  //   }
-  //   isLoading(false);
-  // }
-
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiDetailEpisodesController-reload');
-      final response =
-          await BangumiApi.getBangumiEpisodes(id: Get.arguments.id);
-      final data = bangumi_episodes_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
+    get();
     return true;
   }
 }
@@ -451,48 +381,11 @@ class BangumiDetailRelatedController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
   void get() async {
-    try {
-      debugPrint('BangumiDetailRelatedController-get');
-      change(result, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiRelated(id: Get.arguments.id);
-      final data = bangumi_related_.fromBuffer(response.data);
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    change(result, status: RxStatus.success());
   }
 
-  // 加载更多
-  // void more() async {
-  //   try {
-  //     debugPrint('BangumiDetailRelatedController-more');
-  //     isLoading(true);
-  //     // final response = await BangumiApi.getBangumiList(skip: result.last.id);
-  //     // final data = bangumi_list_.fromBuffer(response.data);
-  //     // result.addAll(data.data);
-  //     change(result, status: RxStatus.success());
-  //   } catch (e) {
-  //     debugPrint(e.toString());
-  //   }
-  //   isLoading(false);
-  // }
-
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiDetailRelatedController-reload');
-      final response = await BangumiApi.getBangumiRelated(id: Get.arguments.id);
-      final data = bangumi_related_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     return true;
   }
 }
@@ -508,33 +401,11 @@ class BangumiDetailCharactersController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
   void get() async {
-    try {
-      debugPrint('BangumiDetailCharactersController-get');
-      change(null, status: RxStatus.loading());
-      final response = await BangumiApi.getCharacters(id: Get.arguments.id);
-      final data = bangumi_characters_.fromBuffer(response.data);
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    change(result, status: RxStatus.success());
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiDetailCharactersController-reload');
-      final response = await BangumiApi.getCharacters(id: Get.arguments.id);
-      final data = bangumi_characters_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     return true;
   }
 }
@@ -550,33 +421,11 @@ class BangumiDetailPersonsController extends GetxController
     super.onInit();
   }
 
-  // 获取数据
   void get() async {
-    try {
-      debugPrint('BangumiDetailPersonsController-get');
-      change(null, status: RxStatus.loading());
-      final response = await BangumiApi.getPersons(id: Get.arguments.id);
-      final data = bangumi_persons_.fromBuffer(response.data);
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-      change(null, status: RxStatus.error('error'));
-    }
+    change(result, status: RxStatus.success());
   }
 
-  // 刷新
   Future<bool> reload() async {
-    try {
-      debugPrint('BangumiDetailPersonsController-reload');
-      final response = await BangumiApi.getPersons(id: Get.arguments.id);
-      final data = bangumi_persons_.fromBuffer(response.data);
-      result.clear();
-      result.addAll(data.data);
-      change(result, status: RxStatus.success());
-    } catch (e) {
-      debugPrint(e.toString());
-    }
     return true;
   }
 }

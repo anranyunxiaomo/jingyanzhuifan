@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:xs/src/config.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -307,16 +308,32 @@ class BangumiVodPageController extends PlayerController
     }
   }
 
-  // 获取番剧数据
+  // 获取番剧数据 - 前端直连重构
   void getBangumiData() async {
     try {
       debugPrint('BangumiVodController-getBangumiData');
       change(null, status: RxStatus.loading());
-      final response = await BangumiApi.getBangumiDetail(id: id);
-      if (response.statusCode == 200) {
-        final data = BangumiDetailModel.fromJson(response.data);
-        this.data = data;
-        change(data, status: RxStatus.success());
+      final data = await fetchFeifanDetail(id: id);
+      if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+        final item = (data['list'] as List).first;
+        final title = item['vod_name']?.toString() ?? '未知动漫';
+        final image = proxyImage(item['vod_pic']?.toString() ?? '');
+        final overview = item['vod_content']?.toString() ?? '暂无简介';
+        final playUrl = item['vod_play_url']?.toString() ?? '';
+        final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+        final detail = BangumiDetailModel(
+          id: id,
+          title: title,
+          image: image,
+          overview: overview.replaceAll(RegExp(r'<[^>]*>'), ''),
+          episode: epCount,
+          episodesTotal: epCount,
+          genres: ['动画'],
+          status: 'standard'
+        );
+        this.data = detail;
+        change(detail, status: RxStatus.success());
       } else {
         throw Error();
       }
@@ -337,206 +354,64 @@ class BangumiVodPageController extends PlayerController
     }
   }
 
-  // 获取番剧剧集
+  // 获取番剧剧集 - 前端直连重构
   void getBangumiEpisodes() async {
     try {
       debugPrint('BangumiVodController-getBangumiEpisodes');
-      final response = await BangumiApi.getBangumiEpisodes(id: id);
-      if (response.statusCode == 200) {
-        final data = bangumi_episodes_.fromBuffer(response.data);
-        episodes.addAll(data.data);
-        episodeDetail = episodes.firstWhere((e) => e.sort == episode);
-        update();
-      } else {
-        throw Error();
+      final data = await fetchFeifanDetail(id: id);
+      final List<bangumi_episodes_data_> mockEps = [];
+
+      if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+        final item = (data['list'] as List).first;
+        final image = proxyImage(item['vod_pic']?.toString() ?? '');
+        final playUrl = item['vod_play_url']?.toString() ?? '';
+
+        if (playUrl.isNotEmpty) {
+          final episodes = playUrl.split('#');
+          int sortIndex = 1;
+          for (final episode in episodes) {
+            final epParts = episode.split('\$');
+            if (epParts.length == 2) {
+              final epTitle = epParts[0];
+              mockEps.add(bangumi_episodes_data_(
+                status: true,
+                sort: sortIndex++,
+                title: epTitle,
+                overview: epTitle,
+                image: image,
+              ));
+            }
+          }
+        }
       }
+      
+      episodes.clear();
+      episodes.addAll(mockEps);
+      episodeDetail = episodes.firstWhere((e) => e.sort == episode, orElse: () => mockEps.first);
+      update();
     } catch (e) {
       debugPrint(e.toString());
     }
   }
 
-  // 获取弹幕
+  // 获取弹幕 (留空免除网页端跨域请求)
   void getDanmaku() async {
-    int thisEpisode = episode;
-    int index = 0;
-    int length = 3000;
-    bool completed = false;
-    while (!completed && !leave.value && thisEpisode == episode) {
-      try {
-        debugPrint('BangumiVodController-getDanmaku-$index');
-        final response = await BangumiApi.getDanmaku(
-            id: id, episode: episode, skip: index * length);
-        if (response.statusCode == 200) {
-          final data = danmaku_.fromBuffer(response.data);
-          if (data.data.isNotEmpty) {
-            danmakuList.addAll(data.data);
-            if (data.data.length == length) {
-              index += 1;
-            } else {
-              completed = true;
-            }
-          } else {
-            completed = true;
-          }
-        } else {
-          throw Error();
-        }
-      } catch (e) {
-        completed = true;
-        debugPrint(e.toString());
-      }
-    }
-    debugPrint('BangumiVodController-getDanmaku-complete');
+    return;
   }
 
   // 获取哔哩哔哩弹幕
   void getBilibiliDanmaku() async {
-    int thisEpisode = episode;
-    int index = 1;
-    bool completed = false;
-    while (!completed && !leave.value && thisEpisode == episode) {
-      await Future.delayed(const Duration(seconds: 1));
-      if (episodes.isNotEmpty) {
-        final currentEpisode = getEpisodeData();
-        if (currentEpisode.sites.isNotEmpty) {
-          bangumi_episodes_sites_ site = currentEpisode.sites.firstWhere(
-              (e) => e.site == 'bili_cid',
-              orElse: () => bangumi_episodes_sites_());
-          if (site.id.isEmpty) {
-            completed = true;
-            return;
-          } else {
-            try {
-              debugPrint('BangumiVodController-getBilibiliDanmaku-$index');
-              final response = await BangumiApi.getBilibiliDanmaku(
-                  type: 1, oid: int.parse(site.id), segmentIndex: index);
-              if (response.statusCode == 200) {
-                final data = bilibili_danmaku_.fromBuffer(response.data);
-                if (data.list.isNotEmpty) {
-                  final list = Utils.splitList(data.list, 500);
-                  for (final item in list) {
-                    final list_ = (await compute(
-                            DanmakuShieldStorage.defaultShieldCheck, item))
-                        .cast<bilibili_danmaku_item_>();
-                    bilibiliDanmakuList.addAll(list_);
-                  }
-                  index += 1;
-                } else {
-                  completed = true;
-                }
-              } else {
-                completed = true;
-                throw Error();
-              }
-            } catch (e) {
-              completed = true;
-              debugPrint(e.toString());
-            }
-          }
-        }
-      }
-    }
-    debugPrint('BangumiVodController-getBilibiliDanmaku-complete');
+    return;
   }
 
   // 获取哔哩哔哩(港澳台)弹幕
   void getBilibiliHmtDanmaku() async {
-    int thisEpisode = episode;
-    int index = 1;
-    bool completed = false;
-    while (!completed && !leave.value && thisEpisode == episode) {
-      await Future.delayed(const Duration(seconds: 1));
-      if (episodes.isNotEmpty) {
-        final currentEpisode = getEpisodeData();
-        if (currentEpisode.sites.isNotEmpty) {
-          bangumi_episodes_sites_ site = currentEpisode.sites.firstWhere(
-              (e) => e.site == 'bili_hmt_cid',
-              orElse: () => bangumi_episodes_sites_());
-          if (site.id.isEmpty) {
-            completed = true;
-            return;
-          } else {
-            try {
-              debugPrint('BangumiVodController-getBilibiliHmtDanmaku-$index');
-              final response = await BangumiApi.getBilibiliDanmaku(
-                  type: 1, oid: int.parse(site.id), segmentIndex: index);
-              if (response.statusCode == 200) {
-                final data = bilibili_danmaku_.fromBuffer(response.data);
-                if (data.list.isNotEmpty) {
-                  final list = Utils.splitList(data.list, 500);
-                  for (final item in list) {
-                    final list_ = (await compute(
-                            DanmakuShieldStorage.defaultShieldCheck, item))
-                        .cast<bilibili_danmaku_item_>();
-                    bilibiliHmtDanmakuList.addAll(list_);
-                  }
-                  index += 1;
-                } else {
-                  completed = true;
-                }
-              } else {
-                completed = true;
-                throw Error();
-              }
-            } catch (e) {
-              completed = true;
-              debugPrint(e.toString());
-            }
-          }
-        }
-      }
-    }
-    debugPrint('BangumiVodController-getBilibiliHmtDanmaku-complete');
+    return;
   }
 
   // 获取腾讯视频弹幕
   void getQQDanmaku() async {
-    int thisEpisode = episode;
-    int index = 1;
-    bool completed = false;
-    while (!completed && !leave.value && thisEpisode == episode) {
-      await Future.delayed(const Duration(seconds: 1));
-      if (episodes.isNotEmpty) {
-        final currentEpisode = getEpisodeData();
-        if (currentEpisode.sites.isNotEmpty) {
-          bangumi_episodes_sites_ site = currentEpisode.sites.firstWhere(
-              (e) => e.site == 'qq',
-              orElse: () => bangumi_episodes_sites_());
-          if (site.id.isEmpty) {
-            completed = true;
-            return;
-          } else {
-            try {
-              debugPrint('BangumiVodController-getQQDanmaku-$index');
-              final response =
-                  await BangumiApi.getQQDanmaku(id: site.id, page: index);
-              if (response.statusCode == 200) {
-                final data = QqVideoModel.fromJson(response.data).barrageList;
-                if (data!.isNotEmpty) {
-                  final list = Utils.splitList(data, 500);
-                  for (final item in list) {
-                    final list_ = (await compute(
-                            DanmakuShieldStorage.defaultShieldCheck, item))
-                        .cast<BarrageList>();
-                    qqDanmakuList.addAll(list_);
-                  }
-                  index += 1;
-                } else {
-                  completed = true;
-                }
-              } else {
-                completed = true;
-                throw Error();
-              }
-            } catch (e) {
-              completed = true;
-              debugPrint(e.toString());
-            }
-          }
-        }
-      }
-    }
-    debugPrint('BangumiVodController-getQQDanmaku-complete');
+    return;
   }
 
   // URL解密
@@ -550,52 +425,73 @@ class BangumiVodPageController extends PlayerController
     }
   }
 
-  // 获取视频链接
+  // 获取视频链接 - 前端直连重构
   void getPlayUrl() async {
     playUrls.clear();
     currentLineInfo.value = '获取中...';
     currentLineIndex = -1;
-    final response =
-        await BangumiApi.getBangumiEpisodeVod(id: id, episode: episode);
-    if (response.statusCode == 200) {
-      vod_ data = vod_.fromBuffer(response.data.cast<int>());
-      playUrls.value = data.data;
-      currentLineIndex = 0;
-      currentLineInfo.value = '线路${currentLineIndex + 1}';
-      setPlayer();
-    } else {
-      currentLineInfo.value = '获取失败';
-      SmartDialog.showToast('无法读取播放地址');
-      return;
+
+    try {
+      final data = await fetchFeifanDetail(id: id);
+      if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+        final item = (data['list'] as List).first;
+        final playUrl = item['vod_play_url']?.toString() ?? '';
+        String finalM3u8Url = '';
+
+        if (playUrl.isNotEmpty) {
+          final episodesList = playUrl.split('#');
+          if (episode - 1 >= 0 && episode - 1 < episodesList.length) {
+            final epParts = episodesList[episode - 1].split('\$');
+            if (epParts.length == 2) {
+              finalM3u8Url = epParts[1];
+            }
+          }
+        }
+
+        if (finalM3u8Url.isNotEmpty) {
+          playUrls.value = [
+            vod_item_(
+              url: finalM3u8Url,
+              sort: 1,
+              type: "hls",
+              caption: "高清直连专线"
+            )
+          ];
+          currentLineIndex = 0;
+          currentLineInfo.value = '高清直连专线';
+          setPlayer();
+          return;
+        }
+      }
+    } catch (e) {
+      debugPrint("[Vod Play] 抓取直连链接错误: $e");
     }
-    if (playUrls.isEmpty) {
-      currentLineInfo.value = '暂无资源';
-      SmartDialog.showToast('暂无资源');
-    }
+
+    currentLineInfo.value = '暂无资源';
+    SmartDialog.showToast('无法读取播放地址');
   }
 
-  // 设置视频链接
+  // 设置视频链接 - 兼容明文链接
   void setPlayer() async {
     if (playUrls.isNotEmpty) {
       lastPosition(PlayHistoryStorage.getLastPosition(id, episode));
       currentLineInfo.value = '线路${currentLineIndex + 1}';
       Map<String, String> headers = {};
+      
+      String targetUrl = playUrls[currentLineIndex].url;
+      // 如果不是以 http 开头，代表它是以前加密的 base64 串，需要执行解密
+      if (!targetUrl.startsWith('http')) {
+        targetUrl = urlDecode(targetUrl);
+      }
+
       await player.open(
         Media(
-          urlDecode(playUrls[currentLineIndex].url),
+          targetUrl,
           httpHeaders: headers,
         ),
       );
 
-      // final history = box.read(id.toString());
-      // if (history != null) {
-      //   final thisEpisode = history['episodes'].firstWhere(
-      //       (e) => e['episode'].toString() == episode.toString(),
-      //       orElse: () => {});
-      //   lastPosition(int.parse(thisEpisode['position'].toString()));
-      // }
-
-      Log.d('播放链接\r\n：${urlDecode(playUrls[currentLineIndex].url)}');
+      Log.d('播放链接\r\n：$targetUrl');
     }
   }
 
