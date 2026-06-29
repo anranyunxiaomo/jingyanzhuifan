@@ -16,12 +16,23 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 (Web端防线，将稳定好用的 allorigins 提到第一位)
+// 终极自愈备用跨域代理通道列表 (Web端防线，用于绕过 API 的跨域限制)
 final List<String> webProxies = [
   'https://api.allorigins.win/get?url=',
   'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
 ];
+
+// 【图片跨域自愈网关】使用全球著名的 Weserv 免费图片缓存代理，彻底绕过采集站海报图片服务器的 CORS 跨域拦截
+String proxyImage(String url) {
+  if (url.isEmpty) return url;
+  if (kIsWeb) {
+    if (url.startsWith('http')) {
+      return 'https://images.weserv.nl/?url=${Uri.encodeComponent(url)}';
+    }
+  }
+  return url;
+}
 
 // 异步拉取非凡资源网标准苹果CMS API详情的底层封装 (自动轮询代理以解决 Web 端跨域拦截)
 Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit, int? t, int? pg}) async {
@@ -61,7 +72,7 @@ Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit
     }
   }
 
-  // 2. 最后的直连兜底尝试 (同样不带任何自定义 Headers，保障安全沙箱连通)
+  // 2. 最后的直连兜底尝试
   try {
     final res = await client.get(rawUrl);
     if (res.statusCode == 200 && res.data is Map) {
@@ -91,7 +102,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
         if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
           final item = (data['list'] as List).first;
           final title = item['vod_name']?.toString() ?? '未知动漫';
-          final image = item['vod_pic']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
 
           mockThread = thread_(
             id: id,
@@ -139,7 +150,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
           for (var item in list) {
             final id = int.tryParse(item['vod_id'].toString()) ?? 1;
             final title = item['vod_name']?.toString() ?? '';
-            final image = item['vod_pic']?.toString() ?? '';
+            final image = proxyImage(item['vod_pic']?.toString() ?? '');
             final playUrl = item['vod_play_url']?.toString() ?? '';
             final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
 
@@ -160,7 +171,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
           mockData.add(thread_list_data_(
             id: 2,
             title: '暂无动漫数据，请重试',
-            image: 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg',
+            image: proxyImage('https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'),
             count: 0,
             color: '#EDE7F6',
             width: 220,
@@ -201,7 +212,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
           for (var item in list) {
             final id = int.tryParse(item['vod_id'].toString()) ?? 1;
             final title = item['vod_name']?.toString() ?? '';
-            final image = item['vod_pic']?.toString() ?? '';
+            final image = proxyImage(item['vod_pic']?.toString() ?? '');
             final playUrl = item['vod_play_url']?.toString() ?? '';
             final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
 
@@ -254,7 +265,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
         if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
           final item = (data['list'] as List).first;
           final title = item['vod_name']?.toString() ?? '';
-          final image = item['vod_pic']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
           final overview = item['vod_content']?.toString() ?? '暂无简介';
           final playUrl = item['vod_play_url']?.toString() ?? '';
           final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
@@ -290,7 +301,7 @@ class WebProxyInterceptor extends QueuedInterceptor {
 
         if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
           final item = (data['list'] as List).first;
-          final image = item['vod_pic']?.toString() ?? '';
+          final image = proxyImage(item['vod_pic']?.toString() ?? '');
           final playUrl = item['vod_play_url']?.toString() ?? '';
 
           if (playUrl.isNotEmpty) {
