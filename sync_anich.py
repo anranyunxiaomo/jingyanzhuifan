@@ -3,8 +3,8 @@ import json
 import time
 import os
 
-# 直接创建在 web 根目录下，保障 Flutter 编译打包时 100% 复制分发
-data_dir = "./web"
+# 直接创建在最终编译输出的 build/web 目录下，彻底避开 Flutter 编译器的文件过滤
+data_dir = "./build/web"
 
 def fetch_json(url):
     try:
