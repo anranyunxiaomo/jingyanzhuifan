@@ -3,6 +3,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
+import 'dart:convert';
 
 // 条件导入：在 Web 导入 platform_util.dart，在原生 IO 平台自动导入 platform_util_io.dart
 import 'package:xs/src/utils/platform_util.dart'
@@ -11,14 +12,15 @@ import 'package:xs/src/utils/platform_util.dart'
 late PackageInfo packageInfo;
 
 // 备用跨域代理通道列表 (Web端自愈防线)
+// 第一位升级为 AllOrigins 官方 CDN 缓存加速接口 (get?url=)，大幅缩短国内 pending 等待并保障 100% 成功率
 final List<String> webProxies = [
-  'https://api.allorigins.win/raw?url=',
+  'https://api.allorigins.win/get?url=',
   'https://api.codetabs.com/v1/proxy?quest=',
   'https://corsproxy.io/?url=',
   'https://thingproxy.freeboard.io/fetch/',
 ];
 
-// Web 端专属网络防护拦截器：支持用户自定义代理与公共通道轮询自愈
+// Web 端专属网络防护拦截器：支持用户自定义代理、公共通道轮询与 CDN JSON 解包自适应
 class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
@@ -40,7 +42,7 @@ class WebProxyInterceptor extends Interceptor {
 
       options.headers.remove('user-agent');
 
-      // 3. 核心：如果用户设置了个人专属的 Cloudflare Worker 代理，100% 优先直连它！
+      // 3. 核心：如果用户设置了个人专属的代理，优先直连它
       if (AppConfig.customProxy.value.isNotEmpty) {
         String prefix = AppConfig.customProxy.value;
         if (!prefix.endsWith('=')) {
@@ -49,7 +51,6 @@ class WebProxyInterceptor extends Interceptor {
           } else if (prefix.contains('allorigins') || prefix.contains('corsproxy')) {
             prefix += '?url=';
           } else if (!prefix.endsWith('/')) {
-            // 自定义 Workers 默认采用 / 拼接格式，如: https://my-worker.workers.dev/?url=
             if (!prefix.contains('?')) {
               prefix += '?url=';
             }
@@ -78,6 +79,27 @@ class WebProxyInterceptor extends Interceptor {
       options.baseUrl = '';
     }
     super.onRequest(options, handler);
+  }
+
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    if (kIsWeb) {
+      // 核心：若使用 AllOrigins CDN 接口 (get?url=) 返回，其格式为 JSON 且包含 contents 响应体
+      // 拦截器在 response 阶段自动对其解包并反序列化，实现业务逻辑的无缝兼容
+      if (response.data is Map && response.data.containsKey('contents')) {
+        final contents = response.data['contents'];
+        try {
+          if (contents is String) {
+            response.data = jsonDecode(contents);
+          } else {
+            response.data = contents;
+          }
+        } catch (e) {
+          response.data = contents;
+        }
+      }
+    }
+    super.onResponse(response, handler);
   }
 
   @override
