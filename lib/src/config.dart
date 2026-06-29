@@ -16,58 +16,71 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 (Web端防线)
+// 终极自愈备用跨域代理通道列表 (Web端防线，用于绕过 API 的跨域限制)
 final List<String> webProxies = [
   'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
   'https://api.allorigins.win/get?url=',
 ];
 
-// 异步拉取非凡资源网标准苹果CMS API详情的底层封装
+// 异步拉取非凡资源网标准苹果CMS API详情的底层封装 (自动轮询代理以解决 Web 端跨域拦截)
 Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit, int? t, int? pg}) async {
   final client = Dio();
-  String url = 'https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/?ac=detail';
-  if (id != null) {
-    url += '&ids=$id';
+  String rawUrl = 'https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/?ac=detail';
+  if (id != null) rawUrl += '&ids=$id';
+  if (wd != null && wd.isNotEmpty) rawUrl += '&wd=${Uri.encodeComponent(wd)}';
+  if (t != null) rawUrl += '&t=$t';
+  if (pg != null) rawUrl += '&pg=$pg';
+
+  // 1. 优先通过支持跨域的备用通道进行请求，杜绝 Web 端 API 跨域报错
+  for (int i = 0; i < webProxies.length; i++) {
+    final proxy = webProxies[i];
+    final String targetUrl = proxy.contains('allorigins') 
+        ? '$proxy${Uri.encodeComponent(rawUrl)}' 
+        : '$proxy$rawUrl';
+        
+    try {
+      final res = await client.get(targetUrl, options: Options(
+        responseType: ResponseType.json,
+        headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'}
+      ));
+      
+      if (res.statusCode == 200 && res.data is Map) {
+        var mapData = Map<String, dynamic>.from(res.data);
+        // 如果是 AllOrigins 代理，需要解包 contents 属性
+        if (mapData.containsKey('contents')) {
+          final contents = mapData['contents'];
+          if (contents is String) {
+            return jsonDecode(contents) as Map<String, dynamic>;
+          } else if (contents is Map) {
+            return Map<String, dynamic>.from(contents);
+          }
+        }
+        return mapData;
+      }
+    } catch (e) {
+      print("[Feifan API] 跨域通道 ${i + 1} 获取失败，尝试下一通道: $e");
+    }
   }
-  if (wd != null && wd.isNotEmpty) {
-    url += '&wd=${Uri.encodeComponent(wd)}';
-  }
-  if (t != null) {
-    url += '&t=$t';
-  }
-  if (pg != null) {
-    url += '&pg=$pg';
-  }
-  
+
+  // 2. 最后的直连兜底尝试
   try {
-    final res = await client.get(url, options: Options(
+    final res = await client.get(rawUrl, options: Options(
       responseType: ResponseType.json,
-      headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
+      headers: {'User-Agent': 'Mozilla/5.0'}
     ));
     if (res.statusCode == 200 && res.data is Map) {
       return Map<String, dynamic>.from(res.data);
     }
   } catch (e) {
-    print("[Feifan API] 直连请求失败，正在尝试通过代理自愈: $e");
-    try {
-      final proxyUrl = 'https://api.allorigins.win/get?url=${Uri.encodeComponent(url)}';
-      final res = await client.get(proxyUrl);
-      if (res.statusCode == 200 && res.data is Map && res.data.containsKey('contents')) {
-        final contents = res.data['contents'];
-        if (contents is String) {
-          return jsonDecode(contents) as Map<String, dynamic>;
-        }
-      }
-    } catch (proxyErr) {
-      print("[Feifan API] 代理中转拉取也失败: $proxyErr");
-    }
+    print("[Feifan API] 直连与所有代理中转均告失败: $e");
   }
+  
   return null;
 }
 
-// Web 端专属智能路由拦截器
-class WebProxyInterceptor extends Interceptor {
+// Web 端专属智能队列拦截器（使用 QueuedInterceptor 保证 Dio 会规规矩矩地等待异步 Mock 流程执行完毕，彻底解决大转圈圈和 Crash 问题）
+class WebProxyInterceptor extends QueuedInterceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     if (kIsWeb) {
@@ -103,7 +116,7 @@ class WebProxyInterceptor extends Interceptor {
             ]
           );
         } else {
-          // 降级兜底
+          // 降级分流
           mockThread = thread_(
             id: id,
             title: '未找到该动漫详情',
@@ -123,7 +136,6 @@ class WebProxyInterceptor extends Interceptor {
 
       // 1. 【全动态自愈】针对最新番剧列表 (latest)
       if (options.path.contains('latest')) {
-        // 请求非凡资源网的最新“动漫片”（大类ID=4）的最新更新
         final data = await fetchFeifanDetail(t: 4, pg: 1);
         final List<thread_list_data_> mockData = [];
 
@@ -257,7 +269,7 @@ class WebProxyInterceptor extends Interceptor {
             "title": title,
             "image": image,
             "genres": ["动画", "奇幻"],
-            "overview": overview.replaceAll(RegExp(r'<[^>]*>'), ''), // 移除 HTML 标签
+            "overview": overview.replaceAll(RegExp(r'<[^>]*>'), ''), 
             "episode": epCount,
             "episodes_total": epCount,
             "status": "standard"
