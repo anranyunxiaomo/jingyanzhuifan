@@ -28,7 +28,7 @@ class WebProxyInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (kIsWeb) {
       // 1. 针对最新番剧列表 (latest)
-      if (options.path.contains('/latest')) {
+      if (options.path.contains('latest')) {
         final mockList = thread_list_(
           body: thread_list_body_(
             data: [
@@ -83,7 +83,7 @@ class WebProxyInterceptor extends Interceptor {
       }
 
       // 2. 针对分类列表和搜索
-      if (options.path.contains('/bangumi/list') || options.path.contains('/search')) {
+      if (options.path.contains('bangumi/list') || options.path.contains('search')) {
         final mockList = thread_list_(
           body: thread_list_body_(
             data: [
@@ -154,7 +154,7 @@ class WebProxyInterceptor extends Interceptor {
       }
 
       // 3. 【极速 Mock】针对番剧详情接口 (bangumi/detail/{id})
-      if (options.path.contains('/bangumi/detail/')) {
+      if (options.path.contains('bangumi/detail/')) {
         final parts = options.path.split('/');
         final idStr = parts.last;
         final id = int.tryParse(idStr) ?? 1;
@@ -175,7 +175,7 @@ class WebProxyInterceptor extends Interceptor {
             "title": "葬送的芙莉莲",
             "image": "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg",
             "genres": ["动画", "奇幻", "剧情"],
-            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留下了永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
+            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留留下永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
             "episode": 28,
             "episodes_total": 28,
             "status": "standard"
@@ -212,7 +212,7 @@ class WebProxyInterceptor extends Interceptor {
       }
 
       // 4. 【极速 Mock】针对剧集列表接口 (bangumi/episodes/{id})
-      if (options.path.contains('/bangumi/episodes/')) {
+      if (options.path.contains('bangumi/episodes/')) {
         final mockEpisodes = bangumi_episodes_(
           data: [
             bangumi_episodes_data_(
@@ -248,13 +248,11 @@ class WebProxyInterceptor extends Interceptor {
       }
 
       // 5. 【真正的番剧正片播放】针对视频播放直链接口 (vod/{id}/{episode})
-      if (options.path.contains('/vod/')) {
+      if (options.path.contains('vod/')) {
         final parts = options.path.split('/');
-        // 获取 id 和 episode
         final id = int.tryParse(parts[parts.length - 2]) ?? 2;
         final ep = int.tryParse(parts.last) ?? 1;
 
-        // 根据不同的 id 和集数，下发 100% 真正的、高清动漫正片 M3U8 播放直链！
         String realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di01ji/index.m3u8";
         if (id == 2) {
           if (ep == 2) {
