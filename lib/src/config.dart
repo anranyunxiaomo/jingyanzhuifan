@@ -8,6 +8,7 @@ import 'dart:convert';
 // 引入生成的 Protobuf 编译模型，用于内存直接反序列化及 Mock 输出
 import 'package:xs/protobuf/list.pb.dart';
 import 'package:xs/protobuf/bangumi.pb.dart';
+import 'package:xs/protobuf/thread.pb.dart';
 
 // 条件导入：在 Web 导入 platform_util.dart，在原生 IO 平台自动导入 platform_util_io.dart
 import 'package:xs/src/utils/platform_util.dart'
@@ -27,6 +28,42 @@ class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (kIsWeb) {
+      // 0. 【终极自愈解】拦截帖子/详情详情接口 (r/{id})，直接在内存中构建符合 Protobuf 协议规范的 Mock 详情数据，解决大转圈圈
+      if (options.path.contains('r/')) {
+        final parts = options.path.split('/');
+        final idStr = parts.last;
+        final id = int.tryParse(idStr) ?? 1;
+
+        final mockThread = thread_(
+          id: id,
+          title: id == 2 ? '葬送的芙莉莲 [原声高清正片]' : '鬼灭之刃 柱训练篇 [原声高清正片]',
+          viewsCount: 9999,
+          collectsCount: 888,
+          likesCount: 666,
+          type: 'all',
+          images: [
+            Images(
+              color: '#EDE7F6',
+              height: 330,
+              width: 220,
+              original: id == 2 
+                  ? 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'
+                  : 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
+              master: id == 2 
+                  ? 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'
+                  : 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
+            )
+          ]
+        );
+
+        handler.resolve(Response(
+          requestOptions: options,
+          data: mockThread.writeToBuffer(),
+          statusCode: 200,
+        ));
+        return;
+      }
+
       // 1. 针对最新番剧列表 (latest)
       if (options.path.contains('latest')) {
         final mockList = thread_list_(
@@ -175,7 +212,7 @@ class WebProxyInterceptor extends Interceptor {
             "title": "葬送的芙莉莲",
             "image": "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg",
             "genres": ["动画", "奇幻", "剧情"],
-            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留留下永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
+            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留下了永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
             "episode": 28,
             "episodes_total": 28,
             "status": "standard"
