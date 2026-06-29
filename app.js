@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * AGE Anime PWA - Core Logic (Cloud Pre-fetch Details & Fallback Cloud Search)
+ * AGE Anime PWA - Core Logic (AniCh Lightweight App Architecture Version 3.0)
  * ==========================================================================
  */
 
@@ -8,29 +8,89 @@
 const state = {
   activeTab: 'view-library',
   latestList: [],       // 首页今日新番列表
-  latestDetailsMap: {}, // 云端打包好的最新 45 部新番详情预加载映射包
+  latestDetailsMap: {}, // 云端详情预加载字典
   searchList: [],       // 全网搜索结果列表
   historyList: [],      // 追番历史列表
-  downloadedList: [],   // 云端嗅探完成的嵌套大类动漫列表
+  downloadedList: [],   // 云端已缓存嵌套直链列表
   currentDetail: null,  // 当前弹窗中加载的动漫详情
   selectedLine: '',     // 当前选中的播放线路
   artPlayerInstance: null,
-  searchPollTimer: null // 搜索轮询计时器
+  searchPollTimer: null // 云端搜索轮询定时器
 };
 
-// AGE API 基础 Host
+// AGE API 基础 Host 与 弹弹Play 弹幕 API Host
 const AGE_API_BASE = 'https://ageapi.omwjhz.com:18888/v2/';
+const DANDAN_API_BASE = 'https://api.dandanplay.net/api/v2/';
+
+// ==========================================================================
+// 核心模块 1：轻量级本地大容量数据库 (IndexedDB DBHelper)
+// ==========================================================================
+const IDB = {
+  dbName: 'anich_pwa_db',
+  dbVersion: 1,
+  db: null,
+  init() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(this.dbName, this.dbVersion);
+      request.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains('settings')) {
+          db.createObjectStore('settings');
+        }
+        if (!db.objectStoreNames.contains('playback_progress')) {
+          db.createObjectStore('playback_progress');
+        }
+      };
+      request.onsuccess = (e) => {
+        this.db = e.target.result;
+        resolve();
+      };
+      request.onerror = (e) => reject(e.target.error);
+    });
+  },
+  get(storeName, key) {
+    return new Promise((resolve) => {
+      if (!this.db) return resolve(null);
+      try {
+        const tx = this.db.transaction(storeName, 'readonly');
+        const store = tx.objectStore(storeName);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => resolve(null);
+      } catch (err) {
+        resolve(null);
+      }
+    });
+  },
+  set(storeName, key, val) {
+    return new Promise((resolve) => {
+      if (!this.db) return resolve(false);
+      try {
+        const tx = this.db.transaction(storeName, 'readwrite');
+        const store = tx.objectStore(storeName);
+        const req = store.put(val, key);
+        req.onsuccess = () => resolve(true);
+        req.onerror = () => resolve(false);
+      } catch (err) {
+        resolve(false);
+      }
+    });
+  }
+};
 
 // 获取配置的仓库名
-function getGhRepo() {
-  return localStorage.getItem('gh_repo') || 'anranyunxiaomo/jingyanzhuifan';
+async function getGhRepo() {
+  const saved = await IDB.get('settings', 'gh_repo');
+  return saved || 'anranyunxiaomo/jingyanzhuifan';
 }
 
-// 拼装 GitHub 写入凭证
-function getPatToken() {
+// 拼装 GITHUB Token 凭证
+async function getPatToken() {
+  const saved = await IDB.get('settings', 'gh_pat');
+  if (saved) return saved;
   const p1 = "gh" + "p_";
   const p2 = atob("Z2h0R2h1TGZUMHd1Z1FLSENHR0F4a3FhaXdlQmh5MXNCcUwx");
-  return localStorage.getItem('gh_pat') || (p1 + p2);
+  return p1 + p2;
 }
 
 // ==========================================================================
@@ -54,25 +114,21 @@ async function fetchWithTimeout(url, options = {}, timeout = 3500) {
 
 async function fetchViaProxy(url) {
   const proxies = [
-    // 代理 1: AllOrigins raw 直传通道 (由于其将请求透传，国内连接率极高，且天然支持 18888 非标端口与 SSL 忽略)
     async (target) => {
       const res = await fetchWithTimeout(`https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('AllOrigins Raw 通道失败');
       return await res.json();
     },
-    // 代理 2: CodeTabs (经典直传)
     async (target) => {
       const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CodeTabs 节点失败');
       return await res.json();
     },
-    // 代理 3: CorsProxy.io (国内备用)
     async (target) => {
       const res = await fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('CorsProxy.io 节点失败');
       return await res.json();
     },
-    // 代理 4: ThingProxy
     async (target) => {
       const res = await fetchWithTimeout(`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(target)}`);
       if (!res.ok) throw new Error('ThingProxy 节点失败');
@@ -94,24 +150,31 @@ async function fetchViaProxy(url) {
 }
 
 // 页面加载初始化
-document.addEventListener('DOMContentLoaded', () => {
-  initUI();
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await IDB.init(); // 载入本地 IndexedDB 大数据库
+  } catch (e) {
+    console.error("数据库加载失败，回退降级:", e);
+  }
+  await initUI();
   bindEvents();
-  preloadLatestDetails(); // 重大升级：DOM加载完在第一顺位立即在后台并发预拉取新番详情，不让其有时间差降级走代理
+  preloadLatestDetails(); // DOM加载完并发预拉取新番详情，不让其有时差降级走代理
   loadActiveView();
 });
 
 // ==========================================================================
 // UI 初始化与事件绑定
 // ==========================================================================
-function initUI() {
+async function initUI() {
   if (window.navigator.standalone === true) {
     document.body.classList.add('pwa-standalone');
   }
 
-  // 回显 GitHub 配置
-  document.getElementById('input-gh-pat').value = localStorage.getItem('gh_pat') || getPatToken();
-  document.getElementById('input-gh-repo').value = getGhRepo();
+  // 从本地 IndexedDB 缓存回填设置页面的输入框
+  const savedPat = await IDB.get('settings', 'gh_pat');
+  const savedRepo = await IDB.get('settings', 'gh_repo');
+  document.getElementById('input-gh-pat').value = savedPat || await getPatToken();
+  document.getElementById('input-gh-repo').value = savedRepo || await getGhRepo();
 }
 
 function bindEvents() {
@@ -123,17 +186,14 @@ function bindEvents() {
     });
   });
 
-  // 刷新直链库与历史
   document.getElementById('btn-refresh-files').addEventListener('click', () => {
     loadLibraryAndHistory(true);
   });
 
-  // 刷新今日新番
   document.getElementById('btn-refresh-rss').addEventListener('click', () => {
     loadLatestAnime(true);
   });
 
-  // 搜索
   document.getElementById('btn-global-search').addEventListener('click', searchGlobalAnime);
   document.getElementById('input-global-search').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
@@ -141,7 +201,6 @@ function bindEvents() {
     }
   });
 
-  // 保存设置
   document.getElementById('btn-save-settings').addEventListener('click', saveSettings);
 
   document.getElementById('btn-close-sub-modal').addEventListener('click', () => {
@@ -151,14 +210,14 @@ function bindEvents() {
   document.getElementById('btn-close-player').addEventListener('click', closePlayer);
 }
 
-function saveSettings() {
+async function saveSettings() {
   const patVal = document.getElementById('input-gh-pat').value.trim();
   const repoVal = document.getElementById('input-gh-repo').value.trim();
 
-  localStorage.setItem('gh_pat', patVal);
-  localStorage.setItem('gh_repo', repoVal);
+  await IDB.set('settings', 'gh_pat', patVal);
+  await IDB.set('settings', 'gh_repo', repoVal);
 
-  alert('配置保存成功！');
+  alert('配置已持久化保存至本地数据库！');
   loadActiveView();
 }
 
@@ -291,12 +350,10 @@ async function searchGlobalAnime() {
   resultsContainer.innerHTML = '<div class="empty-state"><p>🔍 正在检索 AGE 动漫库，请稍候...</p></div>';
   
   try {
-    // 2.1 优先尝试使用实时 CORS 代理搜索，追求秒级响应
     const url = `${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`;
     const resData = await fetchViaProxy(url);
     renderSearchResults(resData?.data?.videos || []);
   } catch (err) {
-    // 2.2 核心容错：若代理全部瘫痪报错，自动降级启动云端 Actions 安全搜索通道！
     console.warn("[跨域代理全挂] 启动云端 Actions 绿色搜索备用防线...");
     resultsContainer.innerHTML = `
       <div class="empty-state" style="padding: 20px 10px;">
@@ -304,20 +361,18 @@ async function searchGlobalAnime() {
         <p style="font-size: 11px; color: #86868b; margin-bottom: 12px; line-height: 1.5;">
           已为您自动启用 Actions 云端安全搜索通道。请稍等 15-20 秒，Actions 正在云端进行通畅检索...
         </p>
-        <div class="spinner-small" style="margin: 0 auto 12px auto; width: 20px; height: 20px; border: 2px solid rgba(0,0,0,0.1); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <div class="spinner-small" style="margin: 0 auto 12px auto; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.1); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
       </div>
     `;
     
-    // 触发云端搜索事件
     triggerActionsSniff(query, "SEARCH:" + query);
     
-    // 轮询同源下的 search_results.json 结果文件
     if (state.searchPollTimer) clearInterval(state.searchPollTimer);
     
     let attempts = 0;
     state.searchPollTimer = setInterval(async () => {
       attempts++;
-      if (attempts > 15) { // 37秒超时
+      if (attempts > 15) {
         clearInterval(state.searchPollTimer);
         resultsContainer.innerHTML = '<div class="empty-state"><p>❌ 云端搜索超时，请重试或检查配置</p></div>';
         return;
@@ -327,7 +382,6 @@ async function searchGlobalAnime() {
         const res = await fetch(`./search_results.json?t=${Date.now()}`);
         if (res.ok) {
           const searchData = await res.json();
-          // 如果结果文件的查询词完全对应，则渲染
           if (searchData && searchData.query === query) {
             clearInterval(state.searchPollTimer);
             renderSearchResults(searchData.videos || []);
@@ -374,7 +428,7 @@ function renderSearchResults(videos) {
 }
 
 // ==========================================================================
-// 模块 3：选集弹窗与线路动态切换 (集成云端整部并发嗅探机制)
+// 模块 3：选集弹窗与线路动态切换
 // ==========================================================================
 async function showAnimeDetail(AID) {
   const detailBody = document.getElementById('detail-modal-body');
@@ -398,7 +452,6 @@ async function showAnimeDetail(AID) {
     return;
   }
 
-  // 备用：如不在预存包中 (属于搜索搜出的陈年老番)，再通过跨域代理请求
   try {
     const detailUrl = `${AGE_API_BASE}detail/${AID}`;
     const data = await fetchViaProxy(detailUrl);
@@ -425,7 +478,6 @@ async function showAnimeDetail(AID) {
     renderDetailModalContent(video, lines, playlist);
   } catch (err) {
     detailTitle.innerText = '同步失败 (可重试/云嗅探)';
-    // 如果代理全部瘫痪了，为这部老番也提供一键 Actions 嗅探回仓库的应急按钮！
     detailBody.innerHTML = `
       <div class="empty-state" style="padding: 20px 10px; text-align: center;">
         <p style="color: var(--color-primary); font-weight: bold; margin-bottom: 8px;">⚠️ 线路数据同步超时</p>
@@ -436,7 +488,7 @@ async function showAnimeDetail(AID) {
           <button id="btn-cloud-sniff-fallback" class="btn-primary-action" style="margin: 0; padding: 10px; font-size: 12px; background: #34c759; border-color: #34c759; box-shadow: 0 4px 10px rgba(52, 199, 89, 0.25);">
             ⚡️ 一键交由云端并发嗅探全集
           </button>
-          <button id="btn-retry-sync" class="btn-primary-action" style="margin: 0; padding: 8px 10px; font-size: 11px; background: rgba(0,0,0,0.05); border-color: transparent; color: #1d1d1f;">
+          <button id="btn-retry-sync" class="btn-primary-action" style="margin: 0; padding: 8px 10px; font-size: 11px; background: rgba(255,255,255,0.05); border-color: transparent; color: #1d1d1f;">
             🔄 重新尝试连接代理同步
           </button>
         </div>
@@ -546,7 +598,7 @@ function renderEpisodes(playlist) {
 }
 
 // ==========================================================================
-// 模块 4：播放引擎解析与双通道播放
+// 模块 4：播放引擎解析与双通道播放 (带弹弹Play弹幕搜索、映射和精准续播机制)
 // ==========================================================================
 function playAgeVideo(animeName, lineName, epIndex) {
   const data = state.currentDetail;
@@ -579,27 +631,91 @@ function playAgeVideo(animeName, lineName, epIndex) {
     return;
   }
 
-  playVideo(playTitle, playUrl);
+  playVideo(playTitle, playUrl, animeName, epName);
   addPlayHistory(animeName, epName, video.AID || data.AID || 'unknown', lineName, epIndex);
 }
 
-function playVideo(title, playUrl) {
+// 核心播放控制引擎 (挂载 HLS、Danmuku 插件以及 IndexedDB 续播)
+async function playVideo(title, playUrl, animeName = '', epName = '') {
   toggleModal('sub-modal', false);
   toggleModal('player-modal', true);
   document.getElementById('player-title').innerText = title;
 
   const artContainer = document.getElementById('artplayer-container');
   const iframeContainer = document.getElementById('player-iframe-container');
+  const statusText = document.getElementById('danmaku-status-text');
 
   const isM3u8 = playUrl.includes('.m3u8');
   if (isM3u8) {
     artContainer.style.display = 'block';
     iframeContainer.style.display = 'none';
     iframeContainer.innerHTML = '';
-    
+    statusText.innerText = '正在匹配弹幕...';
+
+    // 4.1 发起对“弹弹Play”的跨域检索匹配 (AniCh 风格)
+    let fetchedDanmakus = [];
+    if (animeName && epName) {
+      try {
+        const cleanAnimeName = animeName.split('-')[0].replace(/第\s*\d+\s*季/g, '').trim();
+        const searchUrl = `${DANDAN_API_BASE}search/episodes?anime=${encodeURIComponent(cleanAnimeName)}`;
+        
+        // 1) 检索剧集
+        const searchRes = await fetch(searchUrl).then(r => r.json());
+        let episodeId = null;
+        if (searchRes && searchRes.animes && searchRes.animes.length > 0) {
+          // 模糊数字抓取匹配，比如 “第12集” 提取出 12
+          const epNumMatch = epName.match(/\d+/);
+          const epNum = epNumMatch ? epNumMatch[0] : '';
+          
+          const matchedAnime = searchRes.animes[0];
+          const matchedEp = matchedAnime.episodes.find(e => {
+            if (epNum) {
+              return e.episodeTitle.includes(epNum) || e.episodeTitle.includes(epName);
+            }
+            return e.episodeTitle.includes(epName);
+          });
+          
+          if (matchedEp) {
+            episodeId = matchedEp.episodeId;
+          } else if (matchedAnime.episodes.length > 0) {
+            // 兜底找最相似的
+            episodeId = matchedAnime.episodes[0].episodeId;
+          }
+        }
+        
+        // 2) 抓取弹幕列表并格式化映射为 Artplayer Danmuku 能够识别的格式
+        if (episodeId) {
+          const commentUrl = `${DANDAN_API_BASE}comment/${episodeId}?withRelated=true`;
+          const commentRes = await fetch(commentUrl).then(r => r.json());
+          if (commentRes && commentRes.comments) {
+            fetchedDanmakus = commentRes.comments.map(c => {
+              const p = c.p.split(','); // "时间,模式,颜色,时间戳,用户ID"
+              return {
+                text: c.m,
+                time: parseFloat(p[0]) || 0,
+                mode: parseInt(p[1]) === 1 ? 0 : (parseInt(p[1]) === 4 ? 2 : (parseInt(p[1]) === 5 ? 1 : 0)), // 映射模式
+                color: '#' + parseInt(p[2]).toString(16).padStart(6, '0'),
+                border: false
+              };
+            });
+            statusText.innerText = `成功载入 ${fetchedDanmakus.length} 条弹幕`;
+          } else {
+            statusText.innerText = '未匹配到弹幕';
+          }
+        } else {
+          statusText.innerText = '暂无弹幕源';
+        }
+      } catch (err) {
+        console.warn("弹幕获取出错:", err);
+        statusText.innerText = '弹幕加载失败';
+      }
+    }
+
     if (state.artPlayerInstance) {
       state.artPlayerInstance.destroy();
     }
+
+    // 4.2 初始化 Artplayer，注入 Danmuku 插件
     state.artPlayerInstance = new Artplayer({
       container: '#artplayer-container',
       url: playUrl,
@@ -608,6 +724,16 @@ function playVideo(title, playUrl) {
       autoSize: true,
       fullscreen: true,
       fullscreenWeb: true,
+      plugins: [
+        artplayerPluginDanmuku({
+          danmakus: fetchedDanmakus,
+          speed: 5,
+          opacity: 0.8,
+          fontSize: 18,
+          antiOverlap: true,
+          synchronousPlayback: true
+        })
+      ],
       customType: {
         m3u8: function (video, url) {
           if (Hls.isSupported()) {
@@ -623,9 +749,70 @@ function playVideo(title, playUrl) {
         }
       }
     });
+
+    const art = state.artPlayerInstance;
+
+    // 4.3 核心亮点：从 IndexedDB 中恢复上次的精准断点观看进度
+    const savedProgress = await IDB.get('playback_progress', playUrl);
+    if (savedProgress && savedProgress > 2) {
+      art.on('ready', () => {
+        art.currentTime = savedProgress;
+        // 浮现提示横幅
+        const minutes = Math.floor(savedProgress / 60);
+        const seconds = Math.floor(savedProgress % 60);
+        showToast("继续播放", `已为您自动跳转到上次观看的 ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} 处`);
+      });
+    }
+
+    // 4.4 播放进度实时自动存入 IndexedDB
+    let lastSavedTime = 0;
+    art.on('video:timeupdate', () => {
+      const now = art.currentTime;
+      // 节流，每隔 3.5 秒持久化一次
+      if (Math.abs(now - lastSavedTime) > 3.5) {
+        IDB.set('playback_progress', playUrl, now);
+        lastSavedTime = now;
+      }
+    });
+
+    art.on('video:pause', () => {
+      IDB.set('playback_progress', playUrl, art.currentTime);
+    });
+
+    // 4.5 绑定弹幕快捷设置栏事件
+    const chkShow = document.getElementById('chk-danmaku-show');
+    const rangeOp = document.getElementById('range-danmaku-op');
+    const selSize = document.getElementById('sel-danmaku-size');
+
+    // 初始化控件状态
+    chkShow.checked = true;
+    rangeOp.value = 0.8;
+    selSize.value = "18";
+
+    // 绑定事件
+    chkShow.onchange = () => {
+      if (chkShow.checked) {
+        art.plugins.artplayerPluginDanmuku.show();
+      } else {
+        art.plugins.artplayerPluginDanmuku.hide();
+      }
+    };
+
+    rangeOp.oninput = () => {
+      const opVal = parseFloat(rangeOp.value);
+      art.plugins.artplayerPluginDanmuku.config({ opacity: opVal });
+    };
+
+    selSize.onchange = () => {
+      const sizeVal = parseInt(selSize.value);
+      art.plugins.artplayerPluginDanmuku.config({ fontSize: sizeVal });
+    };
+
   } else {
+    // 备用：Iframe 播放通道
     artContainer.style.display = 'none';
     iframeContainer.style.display = 'block';
+    statusText.innerText = '网页解析源 (弹幕不支持)';
     if (state.artPlayerInstance) {
       state.artPlayerInstance.destroy();
       state.artPlayerInstance = null;
@@ -636,9 +823,22 @@ function playVideo(title, playUrl) {
   }
 }
 
+// 模拟 Toast 气泡浮现
+function showToast(title, text) {
+  const toast = document.getElementById('ios-toast');
+  document.getElementById('toast-title').innerText = title;
+  document.getElementById('toast-desc').innerText = text;
+  document.getElementById('btn-toast-action').style.display = 'none'; // 仅做提示时隐藏按钮
+  
+  toast.classList.add('active');
+  setTimeout(() => {
+    toast.classList.remove('active');
+  }, 4000);
+}
+
 async function triggerActionsSniff(name, epValOrAID) {
-  const pat = getPatToken();
-  const repo = getGhRepo();
+  const pat = await getPatToken();
+  const repo = await getGhRepo();
   const url = `https://api.github.com/repos/${repo}/dispatches`;
   const payload = {
     event_type: 'instant_download',
@@ -666,16 +866,22 @@ async function triggerActionsSniff(name, epValOrAID) {
 }
 
 function closePlayer() {
-  toggleModal('player-modal', false);
-  document.getElementById('player-iframe-container').innerHTML = '';
+  // 关闭时尝试保存最终进度
   if (state.artPlayerInstance) {
-    state.artPlayerInstance.destroy();
+    const art = state.artPlayerInstance;
+    const url = art.url;
+    if (url) {
+      IDB.set('playback_progress', url, art.currentTime);
+    }
+    art.destroy();
     state.artPlayerInstance = null;
   }
+  toggleModal('player-modal', false);
+  document.getElementById('player-iframe-container').innerHTML = '';
 }
 
 // ==========================================================================
-// 模块 5：云端已缓存直链库文件夹 与 本地历史记录
+// 模块 5：云端已缓存直链库文件夹 与 本地历史记录的双层渲染
 // ==========================================================================
 async function loadLibraryAndHistory(force = false) {
   const container = document.getElementById('media-list');
@@ -695,6 +901,7 @@ async function loadLibraryAndHistory(force = false) {
 
   container.innerHTML = '';
 
+  // 1) 文件夹折叠展现
   if (state.downloadedList.length > 0) {
     const subHeader = document.createElement('div');
     subHeader.className = 'section-header';
@@ -739,7 +946,7 @@ async function loadLibraryAndHistory(force = false) {
           const anime = btn.getAttribute('data-anime');
           const title = btn.getAttribute('data-title');
           const url = btn.getAttribute('data-url');
-          playVideo(`${anime} - ${title}`, url);
+          playVideo(`${anime} - ${title}`, url, anime, title);
         });
       });
 

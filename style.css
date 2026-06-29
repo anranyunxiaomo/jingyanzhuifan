@@ -736,5 +736,24 @@ details[open] .arrow-indicator {
 
 .arrow-indicator {
   display: inline-block;
-  transition: transform 0.28s var(--ease-spring);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+/* details 展开内容高度拉伸的弹性效果 */
+details div {
+  animation: sweep 0.3s var(--ease-spring);
+}
+
+@keyframes sweep {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Artplayer Danmuku Text Shadows (高清高白视频下依然极其清晰)
+   ========================================================================== */
+.art-danmuku-item {
+  text-shadow: 1px 1px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000 !important;
+  font-family: inherit !important;
+  font-weight: 600 !important;
 }
