@@ -23,38 +23,95 @@ final List<String> webProxies = [
   'https://api.allorigins.win/get?url=',
 ];
 
+// 异步拉取非凡资源网标准苹果CMS API详情的底层封装
+Future<Map<String, dynamic>?> fetchFeifanDetail({int? id, String? wd, int? limit, int? t, int? pg}) async {
+  final client = Dio();
+  String url = 'https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/?ac=detail';
+  if (id != null) {
+    url += '&ids=$id';
+  }
+  if (wd != null && wd.isNotEmpty) {
+    url += '&wd=${Uri.encodeComponent(wd)}';
+  }
+  if (t != null) {
+    url += '&t=$t';
+  }
+  if (pg != null) {
+    url += '&pg=$pg';
+  }
+  
+  try {
+    final res = await client.get(url, options: Options(
+      responseType: ResponseType.json,
+      headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
+    ));
+    if (res.statusCode == 200 && res.data is Map) {
+      return Map<String, dynamic>.from(res.data);
+    }
+  } catch (e) {
+    print("[Feifan API] 直连请求失败，正在尝试通过代理自愈: $e");
+    try {
+      final proxyUrl = 'https://api.allorigins.win/get?url=${Uri.encodeComponent(url)}';
+      final res = await client.get(proxyUrl);
+      if (res.statusCode == 200 && res.data is Map && res.data.containsKey('contents')) {
+        final contents = res.data['contents'];
+        if (contents is String) {
+          return jsonDecode(contents) as Map<String, dynamic>;
+        }
+      }
+    } catch (proxyErr) {
+      print("[Feifan API] 代理中转拉取也失败: $proxyErr");
+    }
+  }
+  return null;
+}
+
 // Web 端专属智能路由拦截器
 class WebProxyInterceptor extends Interceptor {
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     if (kIsWeb) {
-      // 0. 【终极自愈解】拦截帖子/详情详情接口 (r/{id})，直接在内存中构建符合 Protobuf 协议规范的 Mock 详情数据，解决大转圈圈
+      // 0. 【全动态自愈】拦截帖子/详情接口 (r/{id})
       if (options.path.contains('r/')) {
         final parts = options.path.split('/');
         final idStr = parts.last;
         final id = int.tryParse(idStr) ?? 1;
 
-        final mockThread = thread_(
-          id: id,
-          title: id == 2 ? '葬送的芙莉莲 [原声高清正片]' : '鬼灭之刃 柱训练篇 [原声高清正片]',
-          viewsCount: 9999,
-          collectsCount: 888,
-          likesCount: 666,
-          type: 'all',
-          images: [
-            Images(
-              color: '#EDE7F6',
-              height: 330,
-              width: 220,
-              original: id == 2 
-                  ? 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'
-                  : 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
-              master: id == 2 
-                  ? 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg'
-                  : 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
-            )
-          ]
-        );
+        final data = await fetchFeifanDetail(id: id);
+        thread_ mockThread;
+
+        if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+          final item = (data['list'] as List).first;
+          final title = item['vod_name']?.toString() ?? '未知动漫';
+          final image = item['vod_pic']?.toString() ?? '';
+
+          mockThread = thread_(
+            id: id,
+            title: title,
+            viewsCount: 12345,
+            collectsCount: 999,
+            likesCount: 888,
+            type: 'all',
+            images: [
+              Images(
+                color: '#EDE7F6',
+                height: 330,
+                width: 220,
+                original: image,
+                master: image,
+              )
+            ]
+          );
+        } else {
+          // 降级兜底
+          mockThread = thread_(
+            id: id,
+            title: '未找到该动漫详情',
+            viewsCount: 0,
+            collectsCount: 0,
+            likesCount: 0,
+          );
+        }
 
         handler.resolve(Response(
           requestOptions: options,
@@ -64,48 +121,49 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 1. 针对最新番剧列表 (latest)
+      // 1. 【全动态自愈】针对最新番剧列表 (latest)
       if (options.path.contains('latest')) {
+        // 请求非凡资源网的最新“动漫片”（大类ID=4）的最新更新
+        final data = await fetchFeifanDetail(t: 4, pg: 1);
+        final List<thread_list_data_> mockData = [];
+
+        if (data != null && data['list'] is List) {
+          final list = data['list'] as List;
+          for (var item in list) {
+            final id = int.tryParse(item['vod_id'].toString()) ?? 1;
+            final title = item['vod_name']?.toString() ?? '';
+            final image = item['vod_pic']?.toString() ?? '';
+            final playUrl = item['vod_play_url']?.toString() ?? '';
+            final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+            mockData.add(thread_list_data_(
+              id: id,
+              title: title,
+              image: image,
+              count: epCount,
+              color: '#EDE7F6',
+              width: 220,
+              height: 330,
+            ));
+          }
+        }
+
+        // 降级保护
+        if (mockData.isEmpty) {
+          mockData.add(thread_list_data_(
+            id: 2,
+            title: '暂无动漫数据，请重试',
+            image: 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg',
+            count: 0,
+            color: '#EDE7F6',
+            width: 220,
+            height: 330,
+          ));
+        }
+
         final mockList = thread_list_(
           body: thread_list_body_(
-            data: [
-              thread_list_data_(
-                id: 1,
-                title: '鬼灭之刃 柱训练篇',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
-                count: 8,
-                color: '#E0F2F1',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 2,
-                title: '葬送的芙莉莲',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg',
-                count: 28,
-                color: '#EDE7F6',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 3,
-                title: '怪兽8号',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/2T6vF87fG2F7X9k8BvjXF5G1Z9d.jpg',
-                count: 12,
-                color: '#E8F5E9',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 4,
-                title: '海贼王',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/fcKyZ9sT9rVzG6G4b4M9jF8yZ6.jpg',
-                count: 1100,
-                color: '#FFF3E0',
-                width: 220,
-                height: 330,
-              )
-            ],
+            data: mockData,
             prev: 0,
             next: 0,
           )
@@ -119,163 +177,145 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 2. 针对分类列表和搜索
+      // 2. 【全动态自愈】针对分类列表和搜索
       if (options.path.contains('bangumi/list') || options.path.contains('search')) {
+        final keyword = options.queryParameters['keyword']?.toString() ?? '';
+        Map<String, dynamic>? data;
+
+        if (keyword.isNotEmpty) {
+          data = await fetchFeifanDetail(wd: keyword);
+        } else {
+          data = await fetchFeifanDetail(t: 4, pg: 1);
+        }
+
+        final List<thread_list_data_> mockData = [];
+        if (data != null && data['list'] is List) {
+          final list = data['list'] as List;
+          for (var item in list) {
+            final id = int.tryParse(item['vod_id'].toString()) ?? 1;
+            final title = item['vod_name']?.toString() ?? '';
+            final image = item['vod_pic']?.toString() ?? '';
+            final playUrl = item['vod_play_url']?.toString() ?? '';
+            final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+            mockData.add(thread_list_data_(
+              id: id,
+              title: title,
+              image: image,
+              count: epCount,
+              color: '#EDE7F6',
+              width: 220,
+              height: 330,
+            ));
+          }
+        }
+
         final mockList = thread_list_(
           body: thread_list_body_(
-            data: [
-              thread_list_data_(
-                id: 1,
-                title: '鬼灭之刃 柱训练篇',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg',
-                count: 8,
-                color: '#E0F2F1',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 2,
-                title: '葬送的芙莉莲',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg',
-                count: 28,
-                color: '#EDE7F6',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 3,
-                title: '怪兽8号',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/2T6vF87fG2F7X9k8BvjXF5G1Z9d.jpg',
-                count: 12,
-                color: '#E8F5E9',
-                width: 220,
-                height: 330,
-              ),
-              thread_list_data_(
-                id: 4,
-                title: '海贼王',
-                image: 'https://image.tmdb.org/t/p/w220_and_h330_face/fcKyZ9sT9rVzG6G4b4M9jF8yZ6.jpg',
-                count: 1100,
-                color: '#FFF3E0',
-                width: 220,
-                height: 330,
-              )
-            ],
+            data: mockData,
             prev: 0,
             next: 0,
           )
         );
 
-        var filteredList = mockList;
-        final keyword = options.queryParameters['keyword'] ?? '';
-        if (keyword.toString().isNotEmpty) {
-          final query = keyword.toString().toLowerCase();
-          final filteredData = mockList.body.data.where((item) {
-            return item.title.toLowerCase().contains(query);
-          }).toList();
-          filteredList = thread_list_(
-            body: thread_list_body_(
-              data: filteredData,
-              prev: 0,
-              next: 0,
-            )
-          );
-        }
-
         handler.resolve(Response(
           requestOptions: options,
-          data: filteredList.writeToBuffer(),
+          data: mockList.writeToBuffer(),
           statusCode: 200,
         ));
         return;
       }
 
-      // 3. 【极速 Mock】针对番剧详情接口 (bangumi/detail/{id})
+      // 3. 【全动态自愈】针对番剧详情接口 (bangumi/detail/{id})
       if (options.path.contains('bangumi/detail/')) {
         final parts = options.path.split('/');
         final idStr = parts.last;
         final id = int.tryParse(idStr) ?? 1;
 
-        final mockDetails = {
-          1: {
-            "id": 1,
-            "title": "鬼灭之刃 柱训练篇",
-            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/o2d2vC8d6Z1UqfDox7Yv4Wf1C7E.jpg",
-            "genres": ["动画", "奇幻", "冒险"],
-            "overview": "鬼杀队最高战力“柱”与队员们为了迎接即将到来的决战，展开了严苛的柱训练。炭治郎等人也将在训练中不断突破自我极限...",
-            "episode": 8,
-            "episodes_total": 8,
-            "status": "standard"
-          },
-          2: {
-            "id": 2,
-            "title": "葬送的芙莉莲",
-            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg",
-            "genres": ["动画", "奇幻", "剧情"],
-            "overview": "打倒魔王之后的勇者一行人，在庆功宴上许下了下一次流星雨的约定。随着半精灵魔法使芙莉莲独自踏上收集魔法的旅程，时间的流逝在精灵与人类之间留下了永恒的叹息。这是一部关于‘英雄们后日谈’的史诗旅程...",
-            "episode": 28,
-            "episodes_total": 28,
-            "status": "standard"
-          },
-          3: {
-            "id": 3,
-            "title": "怪兽8号",
-            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/2T6vF87fG2F7X9k8BvjXF5G1Z9d.jpg",
-            "genres": ["动画", "科幻", "动作"],
-            "overview": "在怪兽频发的天灾大国日本，童年约定的防卫队梦碎，日比野卡夫卡退居怪兽清洁工。直至某日突遭神秘小怪兽寄生，卡夫卡获得了变身强悍‘怪兽8号’的能力，属于怪兽时代的全新篇章就此开启...",
-            "episode": 12,
-            "episodes_total": 12,
-            "status": "standard"
-          },
-          4: {
-            "id": 4,
-            "title": "海贼王",
-            "image": "https://image.tmdb.org/t/p/w220_and_h330_face/fcKyZ9sT9rVzG6G4b4M9jF8yZ6.jpg",
-            "genres": ["动画", "热血", "奇幻"],
-            "overview": "拥有财富、名声、势力，拥有整个世界的海贼王哥尔·D·罗杰在临刑前留下的一句话让全世界的人们趋之若鹜奔向大海：‘想要我的财宝吗？想要的话可以全部给你，去找吧！我把所有财宝都放在那里！’。自此，大航海时代降临...",
-            "episode": 1100,
-            "episodes_total": 1100,
-            "status": "standard"
-          }
+        final data = await fetchFeifanDetail(id: id);
+        Map<String, dynamic> mockDetails = {
+          "id": id,
+          "title": "未知动漫",
+          "image": "",
+          "genres": ["动画"],
+          "overview": "暂无简介",
+          "episode": 0,
+          "episodes_total": 0,
+          "status": "standard"
         };
 
-        final data = mockDetails[id] ?? mockDetails[1];
+        if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+          final item = (data['list'] as List).first;
+          final title = item['vod_name']?.toString() ?? '';
+          final image = item['vod_pic']?.toString() ?? '';
+          final overview = item['vod_content']?.toString() ?? '暂无简介';
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+          final epCount = playUrl.isNotEmpty ? playUrl.split('#').length : 0;
+
+          mockDetails = {
+            "id": id,
+            "title": title,
+            "image": image,
+            "genres": ["动画", "奇幻"],
+            "overview": overview.replaceAll(RegExp(r'<[^>]*>'), ''), // 移除 HTML 标签
+            "episode": epCount,
+            "episodes_total": epCount,
+            "status": "standard"
+          };
+        }
+
         handler.resolve(Response(
           requestOptions: options,
-          data: data,
+          data: mockDetails,
           statusCode: 200,
         ));
         return;
       }
 
-      // 4. 【极速 Mock】针对剧集列表接口 (bangumi/episodes/{id})
+      // 4. 【全动态自愈】针对剧集列表接口 (bangumi/episodes/{id})
       if (options.path.contains('bangumi/episodes/')) {
-        final mockEpisodes = bangumi_episodes_(
-          data: [
-            bangumi_episodes_data_(
-              status: true,
-              sort: 1,
-              title: "第 1 集 冒险的旅程与终点",
-              overview: "凯旋归来的勇者一行人，在王都举行了盛大的庆功晚会...",
-              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
-            ),
-            bangumi_episodes_data_(
-              status: true,
-              sort: 2,
-              title: "第 2 集 不是为了好玩才学魔法的",
-              overview: "芙莉莲开始了独自收集冷门小魔法的平静日常...",
-              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
-            ),
-            bangumi_episodes_data_(
-              status: true,
-              sort: 3,
-              title: "第 3 集 苍月草的花语",
-              overview: "为了寻找只存在于传说中的苍月草，芙莉莲和辛美尔踏上荒原...",
-              image: "https://image.tmdb.org/t/p/w220_and_h330_face/ssKE3DzuWhIziihvQqA6QHingJ8.jpg"
-            )
-          ]
-        );
+        final parts = options.path.split('/');
+        final idStr = parts.last;
+        final id = int.tryParse(idStr) ?? 1;
 
+        final data = await fetchFeifanDetail(id: id);
+        final List<bangumi_episodes_data_> mockEps = [];
+
+        if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+          final item = (data['list'] as List).first;
+          final image = item['vod_pic']?.toString() ?? '';
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+
+          if (playUrl.isNotEmpty) {
+            final episodes = playUrl.split('#');
+            int sortIndex = 1;
+            for (final episode in episodes) {
+              final epParts = episode.split('\$');
+              if (epParts.length == 2) {
+                final epTitle = epParts[0];
+                mockEps.add(bangumi_episodes_data_(
+                  status: true,
+                  sort: sortIndex++,
+                  title: epTitle,
+                  overview: epTitle,
+                  image: image,
+                ));
+              }
+            }
+          }
+        }
+
+        if (mockEps.isEmpty) {
+          mockEps.add(bangumi_episodes_data_(
+            status: true,
+            sort: 1,
+            title: "第一集",
+            overview: "正片",
+            image: "",
+          ));
+        }
+
+        final mockEpisodes = bangumi_episodes_(data: mockEps);
         handler.resolve(Response(
           requestOptions: options,
           data: mockEpisodes.writeToBuffer(),
@@ -284,29 +324,39 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 5. 【真正的番剧正片播放】针对视频播放直链接口 (vod/{id}/{episode})
+      // 5. 【全动态自愈】针对视频播放直链接口 (vod/{id}/{episode})
       if (options.path.contains('vod/')) {
         final parts = options.path.split('/');
-        final id = int.tryParse(parts[parts.length - 2]) ?? 2;
+        final id = int.tryParse(parts[parts.length - 2]) ?? 1;
         final ep = int.tryParse(parts.last) ?? 1;
 
-        String realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di01ji/index.m3u8";
-        if (id == 2) {
-          if (ep == 2) {
-            realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di02ji/index.m3u8";
-          } else if (ep == 3) {
-            realVodUrl = "https://s1.bfzycdn.com/video/zangsoudefulilian/di03ji/index.m3u8";
+        final data = await fetchFeifanDetail(id: id);
+        String finalM3u8Url = '';
+
+        if (data != null && data['list'] is List && (data['list'] as List).isNotEmpty) {
+          final item = (data['list'] as List).first;
+          final playUrl = item['vod_play_url']?.toString() ?? '';
+
+          if (playUrl.isNotEmpty) {
+            final episodes = playUrl.split('#');
+            if (ep - 1 >= 0 && ep - 1 < episodes.length) {
+              final epParts = episodes[ep - 1].split('\$');
+              if (epParts.length == 2) {
+                finalM3u8Url = epParts[1];
+              }
+            }
           }
-        } else if (id == 1) {
-          realVodUrl = "https://s1.bfzycdn.com/video/guimiezhirenzhuxunlianpian/di01ji/index.m3u8";
-        } else if (id == 3) {
-          realVodUrl = "https://s1.bfzycdn.com/video/guashou8hao/di01ji/index.m3u8";
+        }
+
+        // 降级保护链接
+        if (finalM3u8Url.isEmpty) {
+          finalM3u8Url = "https://s1.bfzycdn.com/video/zangsoudefulilian/di01ji/index.m3u8";
         }
 
         final mockVod = vod_(
           data: [
             vod_item_(
-              url: realVodUrl,
+              url: finalM3u8Url,
               sort: 1,
               type: "hls",
               caption: "高清专线 (秒开推荐)"
