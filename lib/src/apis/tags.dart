@@ -5,7 +5,7 @@ import 'package:xs/src/config.dart';
 
 final api = Dio(BaseOptions(
     baseUrl: AppConfig.baseUrl,
-    headers: {'user-agent': AppConfig.ua}));
+    headers: AppConfig.getHeaders()));
 
 class TagsApi {
   // 最新

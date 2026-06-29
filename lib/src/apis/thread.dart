@@ -6,7 +6,7 @@ import 'package:xs/src/utils/account.dart';
 
 final api = Dio(BaseOptions(
     baseUrl: AppConfig.baseUrl,
-    headers: {'user-agent': AppConfig.ua}));
+    headers: AppConfig.getHeaders()));
 
 class ThreadApi {
   static Future<Response> getData({int id = 1}) async {

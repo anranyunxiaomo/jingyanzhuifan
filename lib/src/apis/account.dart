@@ -10,7 +10,7 @@ import 'package:xs/src/utils/account.dart';
 
 final api = Dio(BaseOptions(
     baseUrl: AppConfig.baseUrl,
-    headers: {'user-agent': AppConfig.ua}));
+    headers: AppConfig.getHeaders()));
 final box = GetStorage();
 
 class AccountApi {
