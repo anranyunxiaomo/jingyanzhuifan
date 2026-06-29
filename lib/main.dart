@@ -130,7 +130,7 @@ class MyApp extends StatelessWidget {
                         (FourthButtonTapGestureRecognizer instance) {
                           instance.onTapDown = (TapDownDetails details) async {
                             //如果处于全屏状态，退出全屏
-                            if (!Platform.isAndroid && !Platform.isIOS) {
+                            if (!kIsWeb && !Platform.isAndroid && !Platform.isIOS) {
                               if (await windowManager.isFullScreen()) {
                                 await windowManager.setFullScreen(false);
                                 return;
@@ -148,7 +148,7 @@ class MyApp extends StatelessWidget {
                             event.logicalKey == LogicalKeyboardKey.escape) {
                           // ESC退出全屏
                           // 如果处于全屏状态，退出全屏
-                          if (!Platform.isAndroid && !Platform.isIOS) {
+                          if (!kIsWeb && !Platform.isAndroid && !Platform.isIOS) {
                             if (await windowManager.isFullScreen()) {
                               await windowManager.setFullScreen(false);
                               return;
@@ -177,7 +177,7 @@ class AppScrollBehavior extends MaterialScrollBehavior {
 }
 
 Future initWindow() async {
-  if (!(Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
+  if (kIsWeb || !(Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
     return;
   }
   await windowManager.ensureInitialized();

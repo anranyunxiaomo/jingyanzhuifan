@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
+
 import 'dart:math';
 
 import 'package:floating/floating.dart';
@@ -70,7 +71,7 @@ class BangumiVodPageState extends State<BangumiVodPage> {
               return buildPageUI(controller);
             }
           });
-          if (!Platform.isAndroid) {
+          if (!platform.isAndroid) {
             return page;
           }
           return PiPSwitcher(

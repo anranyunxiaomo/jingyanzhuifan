@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -94,7 +95,7 @@ class BangumiDetailIndexView extends StatelessWidget {
                                   ),
                             Wrap(
                               spacing: 0.0,
-                              runSpacing: Platform.isWindows ? 0.0 : -10.0,
+                              runSpacing: platform.isWindows ? 0.0 : -10.0,
                               children:
                                   List.generate(data!.genres!.length, (index) {
                                 return Container(
@@ -143,7 +144,7 @@ class BangumiDetailIndexView extends StatelessWidget {
                                   ),
                             Wrap(
                               spacing: 0.0,
-                              runSpacing: Platform.isWindows ? 0.0 : -10.0,
+                              runSpacing: platform.isWindows ? 0.0 : -10.0,
                               children:
                                   List.generate(data!.marks!.length, (index) {
                                 return Container(

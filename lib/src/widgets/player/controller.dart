@@ -1,5 +1,6 @@
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
 import 'dart:async';
-import 'dart:io';
+
 import 'dart:math';
 
 import 'package:auto_orientation/auto_orientation.dart';
@@ -245,7 +246,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
 
   // 初始化一些系统状态
   void initSystem() async {
-    if (Platform.isAndroid || Platform.isIOS) {
+    if (platform.isAndroid || platform.isIOS) {
       PerfectVolumeControl.hideUI = true;
     }
 
@@ -266,7 +267,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
     );
 
     await setPortraitOrientation();
-    if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
+    if (platform.isAndroid || platform.isIOS || platform.isMacOS) {
       // 亮度重置,桌面平台可能会报错,暂时不处理桌面平台的亮度
       try {
         await screenBrightness.resetScreenBrightness();
@@ -289,9 +290,9 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
   //横屏
   Future<void> landScape() async {
     try {
-      if (Platform.isAndroid || Platform.isIOS) {
+      if (platform.isAndroid || platform.isIOS) {
         await AutoOrientation.landscapeAutoMode(forceSensor: true);
-      } else if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
+      } else if (platform.isMacOS || platform.isWindows || platform.isLinux) {
         await const MethodChannel('com.alexmercerind/media_kit_video')
             .invokeMethod(
           'Utils.EnterNativeFullscreen',
@@ -316,8 +317,8 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
   Future<void> exitFull() async {
     late SystemUiMode mode = SystemUiMode.edgeToEdge;
     try {
-      if (Platform.isAndroid || Platform.isIOS) {
-        if (Platform.isAndroid &&
+      if (platform.isAndroid || platform.isIOS) {
+        if (platform.isAndroid &&
             (await DeviceInfoPlugin().androidInfo).version.sdkInt < 29) {
           mode = SystemUiMode.manual;
         }
@@ -326,7 +327,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
           overlays: SystemUiOverlay.values,
         );
         await SystemChrome.setPreferredOrientations([]);
-      } else if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
+      } else if (platform.isMacOS || platform.isWindows || platform.isLinux) {
         await const MethodChannel('com.alexmercerind/media_kit_video')
             .invokeMethod(
           'Utils.ExitNativeFullscreen',
@@ -345,7 +346,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
 
   //小窗模式()
   void enterSmallWindow() async {
-    if (!(Platform.isAndroid || Platform.isIOS)) {
+    if (!(platform.isAndroid || platform.isIOS)) {
       fullScreenState.value = true;
       smallWindowState.value = true;
 
@@ -373,7 +374,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
 
   //退出小窗模式()
   void exitSmallWindow() {
-    if (!(Platform.isAndroid || Platform.isIOS)) {
+    if (!(platform.isAndroid || platform.isIOS)) {
       fullScreenState.value = false;
       smallWindowState.value = false;
       // windowManager.setTitleBarStyle(TitleBarStyle.normal);
@@ -407,7 +408,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
 
   // 是否是IOS16以下
   Future<bool> beforeIOS16() async {
-    if (Platform.isIOS) {
+    if (platform.isIOS) {
       var info = await deviceInfo.iosInfo;
       var version = info.systemVersion;
       var versionInt = int.tryParse(version.split('.').first) ?? 0;
@@ -435,7 +436,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
         return;
       }
 
-      if (Platform.isIOS || Platform.isAndroid) {
+      if (platform.isIOS || platform.isAndroid) {
         await ImageGallerySaver.saveImage(
           imageData,
         );
@@ -468,7 +469,7 @@ mixin PlayerSystemMixin on PlayerMixin, PlayerStateMixin, PlayerDanmakuMixin {
   bool danmakuStateBeforePIP = false;
 
   Future enablePIP() async {
-    if (!Platform.isAndroid) {
+    if (!platform.isAndroid) {
       return;
     }
     if (await pip.isPipAvailable == false) {
@@ -521,7 +522,7 @@ mixin PlayerGestureControlMixin
   }
 
   void onHover(PointerHoverEvent event, BuildContext context) {
-    if (Platform.isAndroid || Platform.isIOS) {
+    if (platform.isAndroid || platform.isIOS) {
       return;
     }
     // final screenHeight = MediaQuery.of(context).size.height;
@@ -574,15 +575,15 @@ mixin PlayerGestureControlMixin
 
     throttle = DelayedThrottle(200);
 
-    if (!Platform.isAndroid && !Platform.isIOS) {
+    if (!platform.isAndroid && !platform.isIOS) {
       return;
     }
     verticalDragging = true;
     showGestureTip.value = true;
-    if (Platform.isAndroid || Platform.isIOS) {
+    if (platform.isAndroid || platform.isIOS) {
       _currentVolume = await PerfectVolumeControl.volume;
     }
-    if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
+    if (platform.isAndroid || platform.isIOS || platform.isMacOS) {
       _currentBrightness = await screenBrightness.current;
     }
   }
@@ -593,7 +594,7 @@ mixin PlayerGestureControlMixin
       return;
     }
     if (verticalDragging == false) return;
-    if (!Platform.isAndroid && !Platform.isIOS) {
+    if (!platform.isAndroid && !platform.isIOS) {
       return;
     }
     //String text = '';

@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
+
 import 'dart:math';
 
 import 'package:device_info_plus/device_info_plus.dart';
@@ -441,7 +442,7 @@ class Utils {
   /// 检查相册权限
   static Future<bool> checkPhotoPermission() async {
     try {
-      if (!Platform.isIOS) {
+      if (!platform.isIOS) {
         return true;
       }
       var status = await Permission.photos.status;
@@ -467,7 +468,7 @@ class Utils {
   /// 检查文件权限
   static Future<bool> checkStorgePermission() async {
     try {
-      if (!Platform.isAndroid) {
+      if (!platform.isAndroid) {
         return true;
       }
       Permission permission = Permission.storage;

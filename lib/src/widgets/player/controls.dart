@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -195,7 +196,7 @@ Widget buildFullControls(
                     ),
                   ),
                   Visibility(
-                    visible: Platform.isAndroid,
+                    visible: platform.isAndroid,
                     child: IconButton(
                       onPressed: () {
                         controller.enablePIP();
@@ -319,7 +320,7 @@ Widget buildFullControls(
                       )),
                       Visibility(
                         visible: !controller.smallWindowState.value &&
-                            (!Platform.isAndroid && !Platform.isIOS),
+                            (!platform.isAndroid && !platform.isIOS),
                         child: IconButton(
                           key: volumeButtonkey,
                           onPressed: () {
@@ -613,7 +614,7 @@ Widget buildControls(
                     ),
                   ),
                   Visibility(
-                    visible: !Platform.isAndroid && !Platform.isIOS,
+                    visible: !platform.isAndroid && !platform.isIOS,
                     child: IconButton(
                       onPressed: () {
                         controller.enterSmallWindow();
@@ -626,7 +627,7 @@ Widget buildControls(
                     ),
                   ),
                   Visibility(
-                    visible: Platform.isAndroid,
+                    visible: platform.isAndroid,
                     child: IconButton(
                       onPressed: () {
                         controller.enablePIP();
@@ -733,7 +734,7 @@ Widget buildControls(
                         ),
                       )),
                       Visibility(
-                        visible: !Platform.isAndroid && !Platform.isIOS,
+                        visible: !platform.isAndroid && !platform.isIOS,
                         child: IconButton(
                           key: volumeButtonkey,
                           onPressed: () {

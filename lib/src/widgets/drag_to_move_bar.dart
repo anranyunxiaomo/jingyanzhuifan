@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
+
 
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
@@ -49,7 +50,7 @@ class CustomDragToMoveArea extends StatelessWidget {
 
 Widget closeWindowButton(
     {bool positioned = true, EdgeInsetsGeometry padding = EdgeInsets.zero}) {
-  if ((Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+  if ((platform.isWindows || platform.isLinux || platform.isMacOS)) {
     if (positioned) {
       return Positioned(
           right: 0,

@@ -1,5 +1,5 @@
 // platform_util_io.dart
-// 原生 IO 平台实现，在非 Web 环境下会被条件导入
+// 原生 IO 平台实现，仅在非 Web（有 dart.library.io）环境被引入
 import 'dart:io';
 
 String getPlatformName() {
@@ -11,3 +11,13 @@ String getPlatformName() {
   if (Platform.isWindows) return 'Windows';
   return 'Unknown';
 }
+
+String get operatingSystem => Platform.operatingSystem;
+String get operatingSystemVersion => Platform.operatingSystemVersion;
+String get localeName => Platform.localeName;
+
+bool get isAndroid => Platform.isAndroid;
+bool get isIOS => Platform.isIOS;
+bool get isWindows => Platform.isWindows;
+bool get isMacOS => Platform.isMacOS;
+bool get isLinux => Platform.isLinux;

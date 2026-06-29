@@ -1,3 +1,4 @@
+import 'package:xs/src/utils/platform_util.dart' if (dart.library.io) 'package:xs/src/utils/platform_util_io.dart' as platform;
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
@@ -134,20 +135,20 @@ class LogFileWriter {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     write('System Info:');
     write('Current Time: ${DateTime.now()}');
-    write('Platform: ${Platform.operatingSystem}');
-    write('Version: ${Platform.operatingSystemVersion}');
-    write('Local: ${Platform.localeName}');
+    write('Platform: ${platform.operatingSystem}');
+    write('Version: ${platform.operatingSystemVersion}');
+    write('Local: ${platform.localeName}');
     write(
         'App Version: ${Utils.packageInfo.version}+${Utils.packageInfo.buildNumber}');
-    if (Platform.isAndroid) {
+    if (platform.isAndroid) {
       write((await deviceInfo.androidInfo).data.toString());
-    } else if (Platform.isIOS) {
+    } else if (platform.isIOS) {
       write((await deviceInfo.iosInfo).data.toString());
-    } else if (Platform.isLinux) {
+    } else if (platform.isLinux) {
       write((await deviceInfo.linuxInfo).data.toString());
-    } else if (Platform.isMacOS) {
+    } else if (platform.isMacOS) {
       write((await deviceInfo.macOsInfo).data.toString());
-    } else if (Platform.isWindows) {
+    } else if (platform.isWindows) {
       write((await deviceInfo.windowsInfo).data.toString());
     }
     write('End System Info');

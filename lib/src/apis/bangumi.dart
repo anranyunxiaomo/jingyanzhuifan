@@ -1,4 +1,4 @@
-import 'dart:io';
+
 
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
@@ -7,7 +7,7 @@ import 'package:xs/src/utils/account.dart';
 
 final api = Dio(BaseOptions(
     baseUrl: AppConfig.baseUrl,
-    headers: {HttpHeaders.userAgentHeader: AppConfig.ua}));
+    headers: {'user-agent': AppConfig.ua}));
 final bilibiliApiProxy =
     Dio(BaseOptions(baseUrl: AppConfig.bilibiliApiProxyUrl));
 final qqVideoApi = Dio(BaseOptions(baseUrl: AppConfig.qqVideoApiUrl));
