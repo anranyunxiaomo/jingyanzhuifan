@@ -33,6 +33,26 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // 强制注销 Flutter Service Worker，彻底杜绝 disk cache 幽灵缓存
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+          console.log('[PWA] 成功注销 Service Worker');
+        }
+      });
+    }
+    // 强制清空浏览器的 Cache Storage 缓存
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) {
+          caches.delete(name);
+          console.log('[PWA] 成功清除 Cache Storage:', name);
+        }
+      });
+    }
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
