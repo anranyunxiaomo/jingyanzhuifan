@@ -34,6 +34,9 @@ jobs:
       - name: Build Web Target
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
+      - name: Install curl_cffi
+        run: pip install curl_cffi
+
       - name: Sync Static Data from API
         run: python3 sync_anich.py
 

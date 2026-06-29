@@ -1,8 +1,6 @@
-import subprocess
+from curl_cffi import requests
 import json
-import time
 import os
-import urllib.parse
 
 # 直接创建在最终编译输出的 build/web 目录下，彻底避开 Flutter 编译器的文件过滤
 data_dir = "./build/web"
@@ -10,16 +8,14 @@ os.makedirs(data_dir, exist_ok=True)
 
 def fetch_json(url):
     try:
-        # 将原始 URL 进行 UrlEncode 编码，套上 AllOrigins 进行云端中转抓取，彻底规避 TLSV1_ALERT_INTERNAL_ERROR
-        proxy_url = f"https://api.allorigins.win/raw?url={urllib.parse.quote_plus(url)}"
-        result = subprocess.run(
-            ['curl', '-k', '-L', '-s', '-A', 'xs IOS 1.0.0', proxy_url],
-            capture_output=True, text=True, timeout=20
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            return json.loads(result.stdout)
+        # 使用 curl_cffi 强力伪装成标准的 Chrome 浏览器 TLS 与 JA3 指纹，直接穿透所有的 SSL 握手与 TLS 拦截
+        response = requests.get(url, impersonate="chrome110", timeout=25)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"[Error] HTTP Status {response.status_code} for {url}")
     except Exception as e:
-        print(f"[Error] Failed to fetch {url} via proxy curl: {e}")
+        print(f"[Error] Failed to fetch {url} via curl_cffi: {e}")
     return None
 
 print("============== [开始云端数据备份] ==============")

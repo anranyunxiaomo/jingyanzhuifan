@@ -11,14 +11,17 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 备用跨域代理通道列表 (作为降级防线)
+// 终极自愈备用跨域代理通道列表 (Web端防线)
+// 1. 引入最坚挺的老牌公共反代 cors-anywhere.herokuapp.com，直接接受原始 URL 转发
+// 2. 引入 cors.eu.org 通道作为第二防线
+// 3. 保留 AllOrigins CDN (get?url=) 作为第三重降维防线
 final List<String> webProxies = [
-  'https://cors-anywhere.azm.workers.dev/?url=',
+  'https://cors-anywhere.herokuapp.com/',
   'https://cors.eu.org/',
   'https://api.allorigins.win/get?url=',
 ];
 
-// Web 端专属智能路由拦截器：优先分流至同源 Actions 物理缓存 JSON 数据，秒开且 0 跨域 0 证书错误
+// Web 端专属智能路由拦截器
 class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
@@ -56,7 +59,7 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 5. 兜底其他接口：走代理自愈防线
+      // 4. 兜底其他接口：走代理自愈防线
       String fullUrl = options.path.startsWith('http')
           ? options.path
           : '${options.baseUrl}${options.path}';
@@ -100,7 +103,8 @@ class WebProxyInterceptor extends Interceptor {
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
-      if (proxyPrefix.contains('cors.eu.org')) {
+      // 对 herokuapp 和 cors.eu.org 均直接拼接即可，不需要二次 URL 编码
+      if (proxyPrefix.contains('cors-anywhere') || proxyPrefix.contains('cors.eu.org')) {
         options.path = '$proxyPrefix$fullUrl';
       } else {
         options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
@@ -160,7 +164,7 @@ class WebProxyInterceptor extends Interceptor {
         requestOptions.extra['proxyIndex'] = nextIdx;
         
         String nextPrefix = webProxies[nextIdx];
-        if (nextPrefix.contains('cors.eu.org')) {
+        if (nextPrefix.contains('cors-anywhere') || nextPrefix.contains('cors.eu.org')) {
           requestOptions.path = '$nextPrefix$originalUrl';
         } else {
           requestOptions.path = '$nextPrefix${Uri.encodeComponent(originalUrl)}';

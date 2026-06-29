@@ -124,6 +124,24 @@ class InfoSettingsPage extends StatelessWidget {
                               ),
                             ),
                             SettingsCard(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SettingsAction(
+                                    title: '激活临时跨域授权',
+                                    subtitle: '详情若加载慢，可点击并在新页面点击大按钮激活',
+                                    onTap: () {
+                                      launchUrlString(
+                                        'https://cors-anywhere.herokuapp.com/corsdemo',
+                                        mode: LaunchMode.externalApplication,
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            SettingsCard(
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                                 child: Column(
