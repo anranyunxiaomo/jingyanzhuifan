@@ -31,6 +31,9 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Sync Static Data from API
+        run: python3 sync_anich.py
+
       - name: Build Web Target
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 

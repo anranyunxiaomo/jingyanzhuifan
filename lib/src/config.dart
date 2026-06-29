@@ -11,28 +11,68 @@ import 'package:xs/src/utils/platform_util.dart'
 
 late PackageInfo packageInfo;
 
-// 终极自愈备用跨域代理通道列表 (Web端防线)
-// 1. 引入我为您预先搭好的专属 Worker 加速节点 (cors-anywhere.azm.workers.dev)，国内秒连且自动穿透 525 握手错，免账号开箱即用
-// 2. 引入老牌高活的 cors.eu.org 通道作为辅助
-// 3. 保留 AllOrigins CDN (get?url=) 作为第三重防线
+// 备用跨域代理通道列表 (作为降级防线)
 final List<String> webProxies = [
   'https://cors-anywhere.azm.workers.dev/?url=',
   'https://cors.eu.org/',
   'https://api.allorigins.win/get?url=',
-  'https://api.codetabs.com/v1/proxy?quest=',
 ];
 
-// Web 端专属网络防护拦截器
+// Web 端专属智能路由拦截器：优先分流至同源 Actions 物理缓存 JSON 数据，秒开且 0 跨域 0 证书错误
 class WebProxyInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     if (kIsWeb) {
-      // 1. 组合 baseUrl + path 得到完整路径
+      // 1. 分流最新更新列表 (latest)
+      if (options.path.contains('/latest')) {
+        options.path = './data/latest.json';
+        options.baseUrl = '';
+        options.queryParameters = {};
+        options.headers.remove('user-agent');
+        handler.next(options);
+        return;
+      }
+
+      // 2. 分流番剧详情页 (bangumi/detail/{id})
+      if (options.path.contains('/bangumi/detail/')) {
+        final parts = options.path.split('/');
+        final bgmId = parts.last;
+        options.path = './data/detail_$bgmId.json';
+        options.baseUrl = '';
+        options.queryParameters = {};
+        options.headers.remove('user-agent');
+        handler.next(options);
+        return;
+      }
+
+      // 3. 分流番剧搜索页 (search) -> 导向同源全量表进行前端极速内存过滤
+      if (options.path.contains('/search')) {
+        final keyword = options.queryParameters['keyword'] ?? '';
+        options.extra['search_keyword'] = keyword;
+
+        options.path = './data/bangumi_list.json';
+        options.baseUrl = '';
+        options.queryParameters = {};
+        options.headers.remove('user-agent');
+        handler.next(options);
+        return;
+      }
+
+      // 4. 分流全量番剧表 (bangumi/list)
+      if (options.path.contains('/bangumi/list')) {
+        options.path = './data/bangumi_list.json';
+        options.baseUrl = '';
+        options.queryParameters = {};
+        options.headers.remove('user-agent');
+        handler.next(options);
+        return;
+      }
+
+      // 5. 兜底其他接口：走代理自愈防线
       String fullUrl = options.path.startsWith('http')
           ? options.path
           : '${options.baseUrl}${options.path}';
 
-      // 2. 借助 Uri.replace 将 queryParameters 自动编码并融合进 URL
       if (options.queryParameters.isNotEmpty) {
         final Map<String, String> stringParams = {};
         options.queryParameters.forEach((key, value) {
@@ -44,7 +84,7 @@ class WebProxyInterceptor extends Interceptor {
 
       options.headers.remove('user-agent');
 
-      // 3. 核心：如果用户设置了个人专属的代理，优先直连它
+      // 若配置了自定义专属代理
       if (AppConfig.customProxy.value.isNotEmpty) {
         String prefix = AppConfig.customProxy.value;
         if (!prefix.endsWith('=')) {
@@ -65,25 +105,17 @@ class WebProxyInterceptor extends Interceptor {
         return;
       }
 
-      // 保存最原始的无代理 URL 在 extra 里，供公共通道失败重试时调取
       options.extra['originalUrl'] = fullUrl;
-
-      // 4. 清空 options.queryParameters，防 Dio 重复拼装
       options.queryParameters = {};
 
-      // 5. 动态读取当前尝试 the 代理索引
       int idx = options.extra['proxyIndex'] ?? 0;
       if (idx >= webProxies.length) idx = 0;
       String proxyPrefix = webProxies[idx];
 
-      // 6. 拼装代理绝对路径并清空 baseUrl
-      // 兼容某些代理不需要二次编码，但为了稳定性，对于大部分代理进行编码
-      String encodedTarget = Uri.encodeComponent(fullUrl);
       if (proxyPrefix.contains('cors.eu.org')) {
-        // cors.eu.org 直接拼接即可，不需要二次 URL 编码
         options.path = '$proxyPrefix$fullUrl';
       } else {
-        options.path = '$proxyPrefix$encodedTarget';
+        options.path = '$proxyPrefix${Uri.encodeComponent(fullUrl)}';
       }
       options.baseUrl = '';
     }
@@ -93,7 +125,23 @@ class WebProxyInterceptor extends Interceptor {
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     if (kIsWeb) {
-      // 核心：若使用 AllOrigins CDN 接口 (get?url=) 返回，其格式为 JSON 且包含 contents 响应体
+      // 核心 1：对同源静态大表进行内存前端搜索过滤
+      if (response.requestOptions.path.contains('bangumi_list.json')) {
+        final keyword = response.requestOptions.extra['search_keyword'];
+        if (keyword != null && keyword.toString().isNotEmpty) {
+          final query = keyword.toString().toLowerCase();
+          if (response.data is List) {
+            final list = response.data as List;
+            final filtered = list.where((item) {
+              final title = (item['title'] ?? '').toString().toLowerCase();
+              return title.contains(query);
+            }).toList();
+            response.data = filtered;
+          }
+        }
+      }
+
+      // 核心 2：AllOrigins CDN 缓存解包
       if (response.data is Map && response.data.containsKey('contents')) {
         final contents = response.data['contents'];
         try {
@@ -117,14 +165,12 @@ class WebProxyInterceptor extends Interceptor {
       final originalUrl = requestOptions.extra['originalUrl'];
       int currentIdx = requestOptions.extra['proxyIndex'] ?? 0;
 
-      // 如果当前不是最后一个备用通道，则无感自愈重试
       if (originalUrl != null && currentIdx < webProxies.length - 1) {
         final nextIdx = currentIdx + 1;
-        print("[CORS 自愈] 代理通道 ${currentIdx + 1} 失败，正在重试切换到通道 ${currentIdx + 2}: ${webProxies[nextIdx]}");
+        print("[CORS 自愈] 正在重试切换到通道 ${currentIdx + 2}: ${webProxies[nextIdx]}");
         
         requestOptions.extra['proxyIndex'] = nextIdx;
         
-        // 重新拼装下一个代理的绝对路径
         String nextPrefix = webProxies[nextIdx];
         if (nextPrefix.contains('cors.eu.org')) {
           requestOptions.path = '$nextPrefix$originalUrl';
@@ -134,12 +180,10 @@ class WebProxyInterceptor extends Interceptor {
         requestOptions.baseUrl = '';
 
         try {
-          // 发起重试 (使用独立的临时 Dio 防止递归锁死)
           final retryDio = Dio();
           final response = await retryDio.fetch(requestOptions);
-          return handler.resolve(response); // 重试成功，直接解决返回！
+          return handler.resolve(response);
         } catch (retryErr) {
-          // 重试依旧失败，递归进入下一个通道
           if (retryErr is DioException) {
             return onError(retryErr, handler);
           }
@@ -165,7 +209,6 @@ class AppConfig {
     String platformName = platform.getPlatformName();
     ua('${packageInfo.packageName} $platformName ${packageInfo.version}');
 
-    // 初始化加载用户保存的专属 CORS 代理
     final box = GetStorage();
     customProxy(box.read('custom_proxy') ?? '');
   }
@@ -175,12 +218,10 @@ class AppConfig {
     return {'user-agent': ua.value};
   }
 
-  // 跨端通用 Dio 工厂
   static Dio createDio() {
     final dio = Dio(BaseOptions(
       baseUrl: baseUrl,
       headers: getHeaders(),
-      // 提升超时时间至 8 秒，保障国内握手成功率
       connectTimeout: const Duration(milliseconds: 8000),
       receiveTimeout: const Duration(milliseconds: 8000),
     ));
