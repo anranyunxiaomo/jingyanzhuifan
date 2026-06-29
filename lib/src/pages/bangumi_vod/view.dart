@@ -35,10 +35,18 @@ class BangumiVodPageState extends State<BangumiVodPage> {
     final BangumiDetailModel? data;
     final List<bangumi_episodes_data_>? episodes;
     final int episode;
-    id = Get.arguments['id'];
-    data = Get.arguments['data'];
-    episodes = Get.arguments['episodes'];
-    episode = Get.arguments['episode'];
+
+    if (Get.arguments != null && Get.arguments is Map) {
+      id = Get.arguments['id'] ?? 1;
+      data = Get.arguments['data'];
+      episodes = Get.arguments['episodes'];
+      episode = Get.arguments['episode'] ?? 1;
+    } else {
+      id = int.tryParse(Get.parameters['id'] ?? '') ?? 1;
+      data = null;
+      episodes = null;
+      episode = 1;
+    }
     return GetBuilder(
         id: Get.currentRoute,
         init: BangumiVodPageController(pId: id, pEpisode: episode),

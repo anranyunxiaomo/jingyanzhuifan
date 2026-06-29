@@ -484,6 +484,14 @@ class BangumiVodPageController extends PlayerController
         targetUrl = urlDecode(targetUrl);
       }
 
+      if (kIsWeb) {
+        // 【Mixed Content 终极自愈】在强 HTTPS 网站（如 GitHub Pages）下，若拉取的是 HTTP 的视频流，会直接被浏览器安全拦截。
+        // 自动将视频源升级为 HTTPS，绝大部分采集站 CDN 均已全面支持安全加密。
+        if (targetUrl.startsWith('http://')) {
+          targetUrl = targetUrl.replaceFirst('http://', 'https://');
+        }
+      }
+
       await player.open(
         Media(
           targetUrl,
