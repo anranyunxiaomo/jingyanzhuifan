@@ -5,9 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:xs/src/config.dart';
 import 'package:xs/src/utils/account.dart';
 
-final api = Dio(BaseOptions(
-    baseUrl: AppConfig.baseUrl,
-    headers: AppConfig.getHeaders()));
+final api = AppConfig.createDio();
 final bilibiliApiProxy =
     Dio(BaseOptions(baseUrl: AppConfig.bilibiliApiProxyUrl));
 final qqVideoApi = Dio(BaseOptions(baseUrl: AppConfig.qqVideoApiUrl));

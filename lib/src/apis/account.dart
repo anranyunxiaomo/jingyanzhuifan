@@ -8,9 +8,7 @@ import 'package:xs/src/config.dart';
 import 'package:xs/protobuf/account.pb.dart';
 import 'package:xs/src/utils/account.dart';
 
-final api = Dio(BaseOptions(
-    baseUrl: AppConfig.baseUrl,
-    headers: AppConfig.getHeaders()));
+final api = AppConfig.createDio();
 final box = GetStorage();
 
 class AccountApi {

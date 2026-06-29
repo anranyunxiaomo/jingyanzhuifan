@@ -3,9 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:xs/src/config.dart';
 
-final api = Dio(BaseOptions(
-    baseUrl: AppConfig.baseUrl,
-    headers: AppConfig.getHeaders()));
+final api = AppConfig.createDio();
 
 class HomeApi {
   // 最新

@@ -4,9 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:xs/src/config.dart';
 import 'package:xs/src/utils/account.dart';
 
-final api = Dio(BaseOptions(
-    baseUrl: AppConfig.baseUrl,
-    headers: AppConfig.getHeaders()));
+final api = AppConfig.createDio();
 
 class ThreadApi {
   static Future<Response> getData({int id = 1}) async {
