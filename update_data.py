@@ -345,6 +345,9 @@ async def main_async():
                 print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE HIT] {title} is up-to-date ({new_title}). Skipping API request.")
                 fetched_details[aid] = (local_detail, detail_path, title)
                 
+                # 💡 确保 playlists 变量在此作用域中 100% 被正确提取赋值以规避 UnboundLocalError
+                playlists = local_detail.get('video', {}).get('playlists', {})
+                
                 # 依然需要扫描该已缓存动漫的集数，处理可能需要参与无头解析的冷门集数（主要是为了防止上次断网丢失）
                 vip_list = (local_detail.get('player_vip') or '').split(',')
                 player_jx = local_detail.get('player_jx') or {}
