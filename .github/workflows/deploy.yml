@@ -36,6 +36,16 @@ jobs:
           python-version: '3.9'
           cache: 'pip'
 
+      # 2.5 缓存 Playwright 浏览器二进制核心，防止每次重复下载
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-v1
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       # 3. 安装依赖库 (通过 pip 缓存机制瞬间装完 Python 包)
       - name: Install dependencies
         run: |
