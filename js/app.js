@@ -293,11 +293,14 @@ new Vue({
           axios.get(PROXY_BASE + encodeURIComponent(targetUrl))
             .then(response => {
               const resData = response.data;
-              if (resData && resData.data) {
+              if (resData && resData.video) {
+                this.animeDetail = resData;
+                this.initializePlayerLine();
+              } else if (resData && resData.data) {
                 this.animeDetail = resData.data;
                 this.initializePlayerLine();
               } else {
-                throw new Error("接口返回的详情为空");
+                throw new Error("接口返回的详情无效");
               }
             })
             .catch(apiErr => {
