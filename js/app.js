@@ -41,6 +41,8 @@ new Vue({
     activePlayUrl: '', // 正在播放的 iframe 链接
     activeEpisodeName: '', // 正在播放的剧集名称
     dplayerKey: 'dplayer_init', // DPlayer DOM 容器的物理隔离 Key
+    guardTimer: null, // 高频归零阻截定时器
+    
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
@@ -345,6 +347,10 @@ new Vue({
     },
     
     playEpisode(epIdx) {
+      if (this.guardTimer) {
+        clearInterval(this.guardTimer);
+        this.guardTimer = null;
+      }
       this.activeEpisodeIndex = epIdx;
       
       const ep = this.activeEpisodes[epIdx];
@@ -402,10 +408,10 @@ new Vue({
                 }
               });
 
-              // 💡 进度守卫看守锁，物理截击任何第三方插件/浏览器的异步 seek
-              let hasGuarded = false;
+              // 💡 进度守卫看守锁，用于保障有历史进度时的恢复
+              let hasRestored = false;
 
-              // 💡 监听视频加载成功事件，主动接管进度条 seek
+              // 💡 监听视频加载成功事件，如果看起过则主动恢复它
               this.dpInstance.on('loadedmetadata', () => {
                 const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
                 const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
@@ -413,37 +419,46 @@ new Vue({
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
                   this.dpInstance.seek(savedTime);
-                } else {
-                  // 如果没有我们自己的历史进度记录，首先强制 seek 到 0.01 秒
-                  this.dpInstance.seek(0.01);
+                  hasRestored = true;
                 }
               });
 
-              // 💡 监听播放时间更新，自动记录进度 + 执行强力看守阻截
+              // 💡 监听播放事件：如果是新视频，强力启用高频归零定时器，强力压制任何第三方的 seek！
+              this.dpInstance.on('play', () => {
+                const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+                const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
+                
+                // 🛡️ 新视频没有历史进度记录 (或者小于 3 秒)，启用 1.2 秒的高频 40ms 定时器疯狂归零
+                if (savedTime <= 3) {
+                  if (!this.guardTimer) {
+                    console.log("[GUARD] Starting 1.2s high-frequency zero-seek guard interval to defeat extensions...");
+                    this.guardTimer = setInterval(() => {
+                      try {
+                        if (this.dpInstance && this.dpInstance.video) {
+                          // 强行把当前播放时间归零，粉碎一切其他脚本的 seek
+                          this.dpInstance.video.currentTime = 0.01;
+                        }
+                      } catch(e) {}
+                    }, 40);
+
+                    // 1.2 秒后自动拆除定时器，放行让用户自己拖动
+                    setTimeout(() => {
+                      if (this.guardTimer) {
+                        clearInterval(this.guardTimer);
+                        this.guardTimer = null;
+                        console.log("[GUARD] Guard interval released.");
+                      }
+                    }, 1200);
+                  }
+                }
+              });
+
+              // 💡 监听播放时间更新，自动记录进度
               this.dpInstance.on('timeupdate', () => {
                 const currentTime = this.dpInstance.video.currentTime;
                 const duration = this.dpInstance.video.duration;
-                
-                // 1. 🛡️ 守卫看守防线：如果这集没有历史进度，且检测到当前播放时间突然偏离（大于 0.2 秒），强制将其拉回 0.01 秒
-                if (!hasGuarded) {
-                  const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
-                  const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-                  
-                  if (savedTime <= 3) {
-                    if (currentTime > 0.2) {
-                      console.log(`[GUARD ACTIVATED] Detected unauthorized seek to ${currentTime}s. Dragging back to 0.01s.`);
-                      this.dpInstance.seek(0.01);
-                      hasGuarded = true; // 标记已看守，防止陷入死循环，使用户后续能正常拉动进度条
-                    }
-                  } else {
-                    // 如果有历史记录，当时间走到历史位置附近时，自动解除守护状态
-                    if (Math.abs(currentTime - savedTime) < 3) {
-                      hasGuarded = true;
-                    }
-                  }
-                }
 
-                // 2. 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
+                // 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
                   const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
                   localStorage.setItem(progressKey, currentTime.toString());
