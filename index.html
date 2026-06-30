@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260630T1508">
 </head>
 <body>
 
@@ -325,9 +325,8 @@
                   class="fav-toggle-btn" 
                   @click="toggleFavorite"
                   :class="{ active: isFavorited(currentAnimeId) }"
-                  style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; cursor: pointer; font-size: 13px; font-weight: bold; transition: all 0.3s ease;"
                 >
-                  <i data-lucide="heart" :class="{ 'heart-active': isFavorited(currentAnimeId) }" style="width: 14px; height: 14px; transition: all 0.3s ease;"></i>
+                  <i data-lucide="heart" :class="{ 'heart-active': isFavorited(currentAnimeId) }"></i>
                   {{ isFavorited(currentAnimeId) ? '已加入追番' : '加入追番' }}
                 </button>
               </div>

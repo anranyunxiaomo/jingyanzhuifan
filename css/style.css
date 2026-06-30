@@ -1189,24 +1189,47 @@ body {
 }
 
 /* 🌟 追番收藏按钮与高亮动效 */
+.fav-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* 默认状态：亮红文字配浅红半透明背景，即使在白色背景卡片上也极其瞩目 */
+  background: rgba(255, 59, 48, 0.06) !important;
+  border: 1px solid rgba(255, 59, 48, 0.25) !important;
+  color: #ff3b30 !important;
+}
+.fav-toggle-btn i {
+  color: #ff3b30 !important;
+  width: 14px;
+  height: 14px;
+  transition: all 0.3s ease;
+}
 .fav-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  transform: scale(1.02);
+  background: rgba(255, 59, 48, 0.12) !important;
+  border-color: rgba(255, 59, 48, 0.4) !important;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.1);
 }
 .fav-toggle-btn.active {
-  background: rgba(255, 59, 48, 0.15) !important;
-  border-color: rgba(255, 59, 48, 0.4) !important;
-  color: #ff3b30 !important;
+  background: #ff3b30 !important;
+  border-color: #ff3b30 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.25);
 }
 .fav-toggle-btn.active i {
-  color: #ff3b30 !important;
-  fill: #ff3b30 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
   animation: heart-beat 0.4s ease;
 }
 .heart-active {
-  color: #ff3b30 !important;
-  fill: #ff3b30 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 @keyframes heart-beat {
   0% { transform: scale(1); }
