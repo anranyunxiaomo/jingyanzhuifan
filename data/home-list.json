@@ -1,6 +1,41 @@
 {
   "latest": [
     {
+      "AID": 20260246,
+      "Href": "/detail/20260246",
+      "NewTitle": "抢先版",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260246.jpg",
+      "Title": "剧场版 关于我转生变成史莱姆这档事 苍海之泪篇"
+    },
+    {
+      "AID": 20260072,
+      "Href": "/detail/20260072",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260072.jpg",
+      "Title": "左撇子艾伦"
+    },
+    {
+      "AID": 20260113,
+      "Href": "/detail/20260113",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260113.jpg",
+      "Title": "想结束这场“我爱你”的游戏"
+    },
+    {
+      "AID": 20260117,
+      "Href": "/detail/20260117",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260117.jpg",
+      "Title": "复制品的我也会谈恋爱。"
+    },
+    {
+      "AID": 20260111,
+      "Href": "/detail/20260111",
+      "NewTitle": "已完结",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260111.jpg",
+      "Title": "婚姻剧毒"
+    },
+    {
       "AID": 20260189,
       "Href": "/detail/20260189",
       "NewTitle": "第01集",
@@ -48,127 +83,92 @@
       "NewTitle": "第12集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
       "Title": "夜樱家的大作战 第二季"
-    },
-    {
-      "AID": 20260115,
-      "Href": "/detail/20260115",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260115.jpg",
-      "Title": "拜托了偶像公主"
-    },
-    {
-      "AID": 20260042,
-      "Href": "/detail/20260042",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260042.jpg",
-      "Title": "勇者之屑"
-    },
-    {
-      "AID": 20260092,
-      "Href": "/detail/20260092",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260092.jpg",
-      "Title": "主播女孩重度依赖"
-    },
-    {
-      "AID": 20260100,
-      "Href": "/detail/20260100",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260100.jpg",
-      "Title": "春夏秋冬代行者 春之舞"
-    },
-    {
-      "AID": 20260095,
-      "Href": "/detail/20260095",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260095.jpg",
-      "Title": "杀手青春"
     }
   ],
   "recommend": [
     {
-      "AID": 20190366,
-      "Href": "/detail/20190366",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
-      "Title": "恋爱小行星"
-    },
-    {
-      "AID": 20190396,
-      "Href": "/detail/20190396",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
-      "Title": "紫罗兰永恒花园 外传 - 永远与自动手记人偶 -"
-    },
-    {
-      "AID": 20170018,
-      "Href": "/detail/20170018",
+      "AID": 20140031,
+      "Href": "/detail/20140031",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170018.jpg",
-      "Title": "青之驱魔师 京都不净王篇"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140031.jpg",
+      "Title": "属性同好会"
     },
     {
-      "AID": 20060001,
-      "Href": "/detail/20060001",
+      "AID": 20180229,
+      "Href": "/detail/20180229",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
+      "Title": "邻家的吸血鬼小妹"
+    },
+    {
+      "AID": 20150002,
+      "Href": "/detail/20150002",
       "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
-      "Title": "传颂之物"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150002.jpg",
+      "Title": "潮与虎"
     },
     {
-      "AID": 20190022,
-      "Href": "/detail/20190022",
+      "AID": 20160180,
+      "Href": "/detail/20160180",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190022.jpg",
-      "Title": "同居人是猫"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160180.jpg",
+      "Title": "爆音少女"
     },
     {
-      "AID": 20130042,
-      "Href": "/detail/20130042",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130042.jpg",
-      "Title": "猎天使魔女剧场版 血色命运"
+      "AID": 20030021,
+      "Href": "/detail/20030021",
+      "NewTitle": "第27集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030021.jpg",
+      "Title": "爱的魔法"
     },
     {
-      "AID": 20050027,
-      "Href": "/detail/20050027",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050027.jpg",
-      "Title": "扑杀天使朵库萝"
-    },
-    {
-      "AID": 20150024,
-      "Href": "/detail/20150024",
-      "NewTitle": "20241207冬日特辑",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150024.jpg",
-      "Title": "落第骑士英雄谭"
-    },
-    {
-      "AID": 20140059,
-      "Href": "/detail/20140059",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
-      "Title": "未确认进行式"
-    },
-    {
-      "AID": 20100044,
-      "Href": "/detail/20100044",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100044.jpg",
-      "Title": "吸血鬼同盟"
-    },
-    {
-      "AID": 20180146,
-      "Href": "/detail/20180146",
+      "AID": 20160042,
+      "Href": "/detail/20160042",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
-      "Title": "遥之彼方的接发球"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160042.jpg",
+      "Title": "超自然9人组"
     },
     {
-      "AID": 20190047,
-      "Href": "/detail/20190047",
-      "NewTitle": "[TV 01-26.5]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190047.jpg",
-      "Title": "在世界尽头咏唱恋曲的少女YU-NO"
+      "AID": 20140037,
+      "Href": "/detail/20140037",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
+      "Title": "中二病也要谈恋爱！ 第二季"
+    },
+    {
+      "AID": 20170021,
+      "Href": "/detail/20170021",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170021.jpg",
+      "Title": "秋叶原之旅"
+    },
+    {
+      "AID": 20160038,
+      "Href": "/detail/20160038",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160038.jpg",
+      "Title": "冰上的尤里"
+    },
+    {
+      "AID": 20080059,
+      "Href": "/detail/20080059",
+      "NewTitle": "[DVD 01-07+EX+OV",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080059.jpg",
+      "Title": "糖果男孩"
+    },
+    {
+      "AID": 20170253,
+      "Href": "/detail/20170253",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170253.jpg",
+      "Title": "最游记RELOAD BLAST"
+    },
+    {
+      "AID": 20120021,
+      "Href": "/detail/20120021",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120021.jpg",
+      "Title": "恋爱与选举与巧克力"
     }
   ],
   "week_list": {
@@ -264,20 +264,20 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260113,
         "wd": 2,
         "name": "想结束这场“我爱你”的游戏",
-        "mtime": "2026-06-23 22:51:48",
-        "namefornew": "22:30 第11集"
+        "mtime": "2026-06-30 23:09:34",
+        "namefornew": "22:30 第12集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260117,
         "wd": 2,
         "name": "复制品的我也会谈恋爱。",
-        "mtime": "2026-06-23 22:50:11",
-        "namefornew": "22:30 已完结"
+        "mtime": "2026-06-30 23:08:45",
+        "namefornew": "第13集(完结)"
       },
       {
         "isnew": 0,
@@ -288,20 +288,20 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260111,
         "wd": 2,
         "name": "婚姻剧毒",
-        "mtime": "2026-06-23 22:49:22",
+        "mtime": "2026-06-30 23:08:03",
         "namefornew": "22:30 已完结"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260072,
         "wd": 2,
         "name": "左撇子艾伦",
-        "mtime": "2026-06-24 00:21:45",
-        "namefornew": "00:00 已完结"
+        "mtime": "2026-07-01 00:25:41",
+        "namefornew": "第13集(完结)"
       }
     ],
     "3": [

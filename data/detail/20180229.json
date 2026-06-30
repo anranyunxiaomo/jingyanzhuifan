@@ -1,0 +1,433 @@
+{
+  "video": {
+    "id": 20180229,
+    "name_other": "隔壁的吸血鬼美眉 / 邻家索菲",
+    "company": "Studio五組 / AXsiZ",
+    "name": "邻家的吸血鬼小妹",
+    "type": "TV",
+    "writer": "甘党",
+    "name_original": "となりの吸血鬼さん",
+    "plot": "百合 搞笑 治愈 吸血鬼",
+    "plot_arr": [
+      "百合",
+      "搞笑",
+      "治愈",
+      "吸血鬼"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "第01话",
+          "age_d0bcwiANwkkZJ5%2FR75c9G5rBMh%2F%2FKEl1S7dippr%2FHtc0fqMcTrJM0rvKubFF7x35LKNNQdjeRcCDQvm3fsqfMXpHPtajYTvYi8EV"
+        ],
+        [
+          "第02话",
+          "age_3889pqDpaQ5XUzNCOpmZimO57G%2FuuIyoSk20Et5dXqpycHBzVXi%2BysBtGotGU37EJhNcW31v3hXEBouI4762MuLXCzjxJmRepQl6"
+        ],
+        [
+          "第03话",
+          "age_45c98Ed%2FUad%2B4u8luzPdLrmc%2FogxCj372H03yzkq%2BgsY4dIhdaGvSvkLQlSWv0R0HqG8QIRMqtvDo4GkdKwMR3cXd1R%2FlKGboEof"
+        ],
+        [
+          "第04话",
+          "age_ac42tQpfyDk4PcJgTQ8BABikSJvHK241bS%2BWevFmirQP8TA9EyJoUQ7%2BIDvKn%2FwYAiQwTHUJokmFvaN8HXQKU7VK3oB%2BuLYM%2B1Wa"
+        ],
+        [
+          "第05话",
+          "age_8ac7%2FwKI1gEQLHE4%2FAYBSnD03fooAIx2ZNVHiHgej5Ok8H5dCbUCDjRr6g0AE%2BU%2F8Z5VSBZMYbyrMzn9NvUj3AEa8nPVxNJdIvMO"
+        ],
+        [
+          "第06话",
+          "age_f2c33umbw158a%2BgWeq7h%2F82VszNakTCcpIZWfSrdzPQElVLS9t%2BDLYkRL85JJw9irYT7i24%2Bp5JhOKfIPTcysLNkRfLnubshtRm7"
+        ],
+        [
+          "第07话",
+          "age_a5afd1sHKHHHJDUhw%2BWkA0AR0Eetb9ZTkgs1UE5HDCp0SS%2BgkumTFJHQSR3SrPX7ku6M6EzP6wLY9Zsr3uFjSbHAYhjLUn8j0NAI"
+        ],
+        [
+          "第08话",
+          "age_53f8I189cHOPIU3SK6XH4W2GxFQHndyLLeLrBzyVormVQm6J3nZQbdQyz5G1zwsnd9DZrNdahhZ43MKIsVLC3M%2B6gzElYStocquh"
+        ],
+        [
+          "第09话",
+          "age_ba77D%2F6O64Cik1dkMd%2BDo852RxC98BmrLvUTL1t45w3KUWXBVdlCmLWAT7s8jQj1%2BC6cb1kjSyc0lRG6tkj3uDjIlYgiYGGTWJgC"
+        ],
+        [
+          "第10话",
+          "age_f581lkZuG2IOoRgZMzsO%2Bck7MZ6sdpxWh8JfFY3HpEdHKUl9UIrBep2CiK8xFixMGlo5b7e1ctYQLN3JebnkY%2FW3fT95OEJORwwV"
+        ],
+        [
+          "第11话",
+          "age_543bL%2BzjWnR2nNvrTiouKUcGfAbsGL%2FjoCbOujwRfEHcvEew3wGQj9csnlzzkOfWShsaovncq80WCcYzCM%2FR3ey8hKBDidX1h0Jv"
+        ],
+        [
+          "第12话",
+          "age_2c34kQ1IG0YWdM2Ff%2BD1MSnnOANeHZywEMEzYQEXi%2Ff8hPZbJ3nn4DbEWRlMMKnRQSI7HucLdsc%2BC9eujB14zeYlWzpkTyzsmW1C"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_cd5fnQVX7uQbrIiSAYicRNHXdBAPHdZhRaN2TLvLhmHdgB8edgKL6DM2NoYwS2B7fW%2FUWTwa4H78su0m2vEOhbeCuBDgZQzmXySDozdd1wneilni%2FwFlJrU8gCPthG4fdWI6Yg",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第01集/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_aa02bb1vpw1d8Gx22%2Fc%2BRiprdE8AOVRrq3qn7NAAFKkBkoQt1RQ0fausuIg1ijGv55oCoOjJ0vNxPXOZOoYKS4wZ22KbIIEKXfGcBsScbN3IFGTUjHcfwHR5Il%2B1sjX0aPQ2ug",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第02集/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_01efz6oUKeOWWSlNBZim77Pn8Kd6yTfYbMZFUcMM8IQt0QJVyVvg0ceYfe2%2FQ7Gdr5BqTi36SpSwAVB%2FbYE4mU3XBp6EuC3j5wlKZ%2Bh9XONDES0s%2FLBmnb6c5ueDfKxsjZr3Kw",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第03集/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_761dbKiI771h%2FvFPP%2Bmnqgcga2f0o7Jg2C0nJ2OQUX60wAbZY8%2BfDci2sDwU4bj9dmO6sLrHZYmZTuE2l99fTpGCRV%2FgVSgEz%2FXabE%2BSP41sZe6EeXYpPWTgR9iMrP0QR%2Fqfgw",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第04集/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_6ed2w5GxiKcTNUehZ1vKIrH4m5sRWV5RvtjeCE44VtTe32W0ReRdKIOuUDDjJGFpt70lRQgytbhfODt34DYreG2VId%2BQqqdtYzfmje5tlnF3yU9EsKZ0gOr%2FZSIEZ0WX1m41lg",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第05集/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_c8a6rYUmjYLK8ABdq9KOKs8jYgDy9LF9abWg4hp07B%2B31LNUeTZAxXYQD2iPfAZOHPziMiz4cM%2FTslA5GL5Ky3paiCrHwPtxyhtzcwjixlEch2CYTIBdFIJK66e5oeBI9MswJg",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第06集/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_b0edz9mw8WAqfoHk5MIh%2F716oGvczf9ei%2BbVITKkuwJOBdvy%2BxAUjlC%2BzlHl%2B8i6JraVUxbCH%2BxPxTl8P%2B6TUM7I2cuHGa92OKnvDQBwVauvWU%2B7i2QOhBqAT4U4y6CO4W3nsQ",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第07集/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_ca38X13M%2BWM2KFBznPg0d0FAO3mpYF7O%2Bk%2F6WvjeGZKC5Uy%2FWZxgZ5pWDKMV2%2BPzDEfJeux499OYUGs3wS9dmBdWORYEvQyrUKLc8nCSRYCVJwAEolIuRbGjg3wBmggxp3Gshg",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第08集/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_03ebFz6r8hCqny5DRUiY0Xo6612Acm3dNCDKDub0M2kZJMVnnNMWdCjeNA%2B9xlbxpqyxx0O9ktGuZNnEw26KCw6%2FdzfLQjgP18puHcIniqFxREj%2FiYOIcAMKy3NHQLEnW9dQJw",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第09集/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_be5bUXhAJsbZTtDyYTyzyAXZEpSLP%2BiUq19%2BPFb8Wfey38P8YJevjznBs6eUJ%2BMno5OmtmZi7bLTicMJKA7qIsRi5xao3dA4ZjSALM0wU239dyb5pHqSPoOjZJgZg8MFNyLOOg",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第10集/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_cf22kQoKrts9DfUiFhOybsSxZyo595GArEZ4hp78LOTg%2B7vuQCwNNsRP9%2FFx4PpK80JoFI9NLSgRT0HmJLl1xV9O56mH1RhMY%2Fjofoaa8uPphNbMjU0TUB%2BMPYD%2FUcQcNAoqeA",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第11集/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_5a4cNV3ieE2kUSdzx7%2B9ipy0E9G2Z0%2Fjlh8aWOXTtqy9eQN%2FCmDOc2a%2Fvi2rH%2BekkhCcZHqShs9KCUYWX6IbBuOP8yzBi52sHjS9cEMDxK5etttNpzJpjevqE4n1nQrFlQ%2FiQQ",
+          "https://c1.ddbbffcdn.com/video/gebidexixueguimeimei/第12集/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_6c77bGy5FY7gLQ9LCmvrmd3bLj313HfjwzJnnq5jej0%2FAbt1HD%2Byn925nnsqKvKff3EvrlDV3Qb6a0CXX1mEjM3Bs26qN9xx80XxyUMdxEUV8%2FSK8bMqaK7kMtExXQ",
+          "https://v6.ppqrrs.com/wjv6/202309/09/idvGYqAeZS1/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_fda7%2Bf8pG4OHrNoPCyPyZxEEJigo%2F8IBp3NUaQDTHLeH4oSraWzzpSIAPPcbQG8c2MhrGqAaRFNQ3xOWs%2BwL6zfDVzuTjTIkzwz6sjKHGzirRX5%2Fm7go1OBWpX1dOg",
+          "https://v6.ppqrrs.com/wjv6/202309/09/TFcP0EcgMH1/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_7e26pc2dbiyx20LAcDofB1swzi1ALBkXV6mbGdeo8RNN2IVpP0%2F%2BQmpTDRjQkY97QwmLydU6uDSEtPpa81Zv%2FEBUzsPTpBsF5hi5CZWk2ThgkEHZA6L9OWJOjlbpnw",
+          "https://v6.ppqrrs.com/wjv6/202309/09/M6nU55MsiP1/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_736bwyIMx2b5fyYWaIuAE4I0j4jvstgE47FuMNINv99EmgKDM5jcbY5MBoHW6LUDExqm8Zjs%2F3kMdIRiwRgV7Z5vpCEF70DQrOjDz6WkMzyIj4pixKSLlx0xJulueg",
+          "https://v6.ppqrrs.com/wjv6/202309/09/Tk0LDV5MT21/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_df8eCVo%2Fed%2FW0HbSe%2Ff%2Fe1VAL8%2BXvBR8H4EeAV5wFcaMIkAswyL5jIK1Egq6btMLAq%2F7Fir2NKSchWhP1WZyuZFOdQEe4h%2FSr9oMRMHTifaIfI%2F6qv%2BnGCsd%2BgnavA",
+          "https://v6.ppqrrs.com/wjv6/202309/09/MnB05uYsqz1/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_0d1cJYsFXyDMeMVaUpQuxdeAyEp9pe6QsB%2Fn5Gj%2BbZDqplsifx4nOiXDWqMwz4%2FrG30ZH7V6E8IKwAw0rZGBTiSOuloFSTXi4jYtd6%2BhilHw37HZ0iv%2F%2FMcWdieUvA",
+          "https://v6.ppqrrs.com/wjv6/202309/09/UxCEQaXfmG1/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_e724DuyES9R%2BGNKzQ3xKqFyo1jrJtfybeqG%2F03c7DNJLhdDM9nxVGAOXGE%2FA4HIneC%2FYkB1dygONcTJjjOuaMe3xNs0xrqXnSL6igF%2B9x6PRmLh2LzZeLNt2jZBGeA",
+          "https://v6.ppqrrs.com/wjv6/202309/09/Ryx5QMmjQz1/video/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_fe41NTj0dfM1eaL3sBX5pWiwUAuIU%2FUTv7WMJj1gp6G28Z1MnMFK5F3GS00RwRG6SfYFjzVrWP5cgPDB69bOfi5yszc3ub62K4svZ3u3a%2BA%2FKwZoyegDmh1hjRdH4Q",
+          "https://v6.ppqrrs.com/wjv6/202309/09/iPaufJiMQy1/video/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_2160SMYQaoORodaGKbk2sCJ6FHej5vni3rC2w3tjg2XHJINHxGFmiGfPnTAiKctRwFAljnf1dtmPu1AprJCjCtxvtCtvmnaQ9hEp0UcJgKvEbPY9zpWwer783pfJtQ",
+          "https://v6.ppqrrs.com/wjv6/202309/09/i4BwBrNU0E1/video/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_a884zX6upcqvnVPz0CdHgaNP%2FhfAtj9aLx7tNS0LmCZNAHCfDUmZPTTCCgxHNB5T%2FQYPZThyz%2FKpMojZ%2BnmvSEtjqa%2BOWCD1gFCrFh2esPYHcE2i5sZgBs%2FmvgQMJA",
+          "https://v6.ppqrrs.com/wjv6/202309/09/h4rQ4HTXFk1/video/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_4364MNvStU%2FfdjB7WenNDZsmjx3yXrZAbkjOi0h5RK3u2285IZ3so75hN%2BPVvGeGPVbuohOk%2BMIeQhYJ9KDj4uLErK%2B9A0iA4RHqwEnSGjBWFrKOLnIyQHOIjrno7g",
+          "https://v6.ppqrrs.com/wjv6/202309/09/G94zHeRnMF1/video/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_d566I1Wpp%2B7F%2B%2BiWrMPPzb%2F47HrQu1fCTJ7cIPzkFK%2FytU060aMSFLQmMff%2BLRLfqFbIvuCrRjtK%2BiqekkcHz1gNKosaeNrNRsOD32NuUNB6DvIVG45GU6xfUJx6VoE",
+          "https://v5.ppqrrs.com/wjv5/202404/17/0KNmHz3cvG77/video/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第01集",
+          "age_f7494VhGQRsccUlbByZroaouk5%2FP7XThUofsXJ7IFG7RXcTCzFxhBcn1oyznLFiv4I9uoJfcHiIruOIaHzKxuMyBa3ODpugH9cI",
+          "https://64.32.20.246/play/YerNB66e/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_042d9TQpHt9lEhGbbdGSE7hnRXfJ66LurkHB9LfIi7SEamXcWafug60aV49yuoY98iN1H6btwDa0%2F41Ts35JwxLBuBU2%2FncMeqU",
+          "https://64.32.20.246/play/penV7kle/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_e8014WUvLcTNi7MnH3A98zVHAA%2FeKg%2BQQYdYC1X0cMU4SYHfLkGgvlf19IOPDuU1g7s3lbQEOD67vxIDFGJR9TXxGb4jaM%2Fh0Ic",
+          "https://64.32.20.246/play/mep6Bl6b/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_b8afzSHMkERZjcOLMlU7lIZvqz8ZSUybKzt%2BXOXcHgiE4WjdkkVOtmxpNgdCkzImWM%2BlZRVJPozPk%2FHCnUlftQrGtZkeuPnBL2g",
+          "https://64.32.20.246/play/Ddw82wJe/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_05f1r2BthYchvmO484ocgZRwx2pb7%2FRTuek%2F5Ya0HvxevFZnzmgjSBdSKV6iBWgZ4XShM85CDTqcETQshzSNQh4Oof8ZyJx0OPo",
+          "https://64.32.20.246/play/penV7k4e/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_0440g3wxpVCV5OcRlw8%2F%2FtREsALUmR1TtbDKV0OoFBUChdWtcO8EPW1h%2BoGb8nGCxWn%2Bo%2FP%2FmlwBNqgR74VQm4VAkXoksb7GX6Y",
+          "https://64.32.20.246/play/Ddw82wwe/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_41a2qo1%2FHy%2FpDbcL1MXholByuRNTsFTP9jq9WSrbusQmK2UHDcljOhkGYemgvjYthDH0UnX8ToHMXZ83tOSnpMCpN8Aoz0gNkMY",
+          "https://64.32.20.246/play/DbD76oBa/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_d315mFOcIVcmxwiUSsHTv%2F7VpYAK8eVBfiOqqn%2Fr7JU0mfd26t70%2B%2BFXq9ur7rggrM3T1ezbzQGV0vo5or3Sq5PhOR%2BsYeHn3LU",
+          "https://64.32.20.246/play/RdG7zo0d/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_96eaXlzaM2pGajDxD0me1cwlElUT%2BRXrR%2Bt3Dh%2BicCzQafxFNkeKz%2FoXnZxZP88%2B97JgizRpenYHDdPeQNLD%2FXjSKRtjOWNBh6E",
+          "https://64.32.20.246/play/Xe0yE7Xa/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_ad92c6oDGxo%2FBFVDfB5kcD3au2972nhV8ddCHnq1aLZcQB78NGHD%2F65SXhj1YnSpPM5opNYLUl7AcxhHbPC8jYn0MdVK0BHzo50",
+          "https://64.32.20.246/play/PdyO7xWa/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_8be4jjJKRrrSVOzVyF1jc7%2BNM6FbwBjKhpa6hVj2zK1a3Ua6v0WxR%2Bclefdv3kRF1XE6uvwmO2IzafpZGAe5Dc5D7SLDu28LPAg",
+          "https://64.32.20.246/play/lejV5N5e/index.m3u8"
+        ],
+        [
+          "第12集完结",
+          "age_ef9a23TXYAag7AdAVILsrQHmL9CYgqLHlcaaLRtGv05Wn2MLFXrP7V4KiM7n1L2jQxlFrSIFl4Jx0ChaNmwJ%2FBfozaQvHvmohSQ",
+          "https://64.32.20.246/play/Rb4DV36b/index.m3u8"
+        ]
+      ],
+      "sdm3u8": [
+        [
+          "第01集",
+          "age_4e1buL7UdxalMvq08JFADCm0Xt4T%2FKYirdWIj5Eew%2BmumNPzHDdD62FuYB7Pln4mkZNR3oLTBEi49K082oVl98KJsz9AH2ZZh7X%2Fo%2FXUQxLXuIGXW%2FpdxPrKcllKog",
+          "https://v6.qqqrst.com/sdv6/202309/09/idvGYqAeZS1/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_c5e5ZzATigmktqaoGRN%2BFztGsT1Mt9bI0AOp4Hb7Z0ei1iNVKCpF4Q4lmHVMNxHAV5O5ipcm7cBasxfQG6ELSooBkckAER6vdXEu7VWNKNq0O8ZIzn1QarMFdNDfdA",
+          "https://v6.qqqrst.com/sdv6/202309/09/TFcP0EcgMH1/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_f009BxdfhxSWM4IoIvtNqwnfBeUOAC1Ptn3IimSYT614l%2BHDbLihbLLMOyJVIFNpqnFUFUZCWCgUPXKNt8tjOxMq7Ubz%2FqHUZ3H8AafGqTYr9vblt81SCnqetSh0jw",
+          "https://v6.qqqrst.com/sdv6/202309/09/M6nU55MsiP1/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_0b702mea7H3Gr%2BKg3WQ3vRkjhq5Txf%2Bi3zfI7GqWEHYg4L4WurFkcMM6xF0PAdOgq33X0iJ0wZSLRLibAUeHit6TkVMTVWpSBauu1UPwa6F7Cv4lHMjd3YkbsSA7MA",
+          "https://v6.qqqrst.com/sdv6/202309/09/Tk0LDV5MT21/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_c2d4X1d1GaVFE%2Ff5QQX9f9lBNStcEAfVquXom6nOERVcFLLAg%2FJDmqZD3N8l0sWncjw3prfYTuLeLcdrXLVgJAppN%2FZCsQtGrynMqQw10hIkJl0D5OamwYjyBm%2BSoQ",
+          "https://v6.qqqrst.com/sdv6/202309/09/MnB05uYsqz1/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_edc4LEaBSghRnoIDfLQ5N3xw2ovCRhVeYTrUFWIkYvTePpSDzsqBMsXuLcKgwlEm9HF0H0GIusw6AwoGkbxrQEVJSjV1uBgiqmUSOnUvWIyR1GgEnGb7wLYbbu39QQ",
+          "https://v6.qqqrst.com/sdv6/202309/09/UxCEQaXfmG1/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_74ccLla%2BZNcmU0Hx4W7fh1y%2BJU2OxRmN5x00DuehQK2J1T5LuOe%2FjE8HLzOpbAaHfhnlVRAEGJQe%2Fiex4rPKTWtNr4Dh%2Bedf6%2BZps1oJM0BF%2FN2W3NXPRDZC8pwXiQ",
+          "https://v6.qqqrst.com/sdv6/202309/09/Ryx5QMmjQz1/video/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_969fbAr%2BrN%2BZa85QD40LnyM747klIPBcRbmH9jc1inoe9YNAiRgSblPhk4CLnuwSblH9omtHwxF%2BMCEUP510Bnxm%2Bn1pTKw8K1ALjxshPvF%2F%2BCo3v9vuWA1YRm1zDA",
+          "https://v6.qqqrst.com/sdv6/202309/09/iPaufJiMQy1/video/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_4008q6dguY4OPIk3VcSAam17L5nu1MhlYZk4j%2BgqkWpxE7ojg%2FRJw78P0GekwBjkDtXH6LnaS%2FsoT%2FFmqa%2BuQgvjXiJApt4HdueRYYcU1U8P5OmJWffBtOWFHZKbvA",
+          "https://v6.qqqrst.com/sdv6/202309/09/i4BwBrNU0E1/video/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_a645gyVWfbZiehQ%2FFXEXIzGZxdBCeT%2BO%2BuzmGSpijjv%2ByjWyQUXHA96y%2B96JqTyCWzn8CjB5L7xkJvKNts77%2Fipzf3EciwEhp9Tra5aH3K%2FMYQfx6wkYZh1cKbPCVA",
+          "https://v6.qqqrst.com/sdv6/202309/09/h4rQ4HTXFk1/video/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_4a4cN2W0YYxNdQcKUKvFufLe2Aif5IANXEtYxoJJKaP%2F8CDbBHo3TdnEPzjeIhO2basizFNvWgVRObDE3KCW45yF4JQnd9%2BdTVQH8%2BOBUVFT9LpsgdD1aHnQPOM2Pg",
+          "https://v6.qqqrst.com/sdv6/202309/09/G94zHeRnMF1/video/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_c978ln%2BF%2FDtYzhZpewUfyN11B83Tii94sUWuUxKR2eREk%2FrveOc9MlJoYXxApXozX9jCPJ7gOw3zbVYt7Jt%2BSuDCA0%2BAi7hN65hLXmvP3Nok7Mf06h1810v18bSkPBU",
+          "https://v6.qqqrst.com/sdv6/202404/17/1TGBHzQP4378/video/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "L",
+    "website": "http://kyuketsukisan-anime.com",
+    "star": 4,
+    "status": "完结",
+    "uptodate": "第12集(完结)",
+    "time_format_1": "20181221210458",
+    "time_format_2": "2018-12-21",
+    "time_format_3": "2018-12-21 21:04:58",
+    "time": 1545397498,
+    "tags": "百合 搞笑 治愈 吸血鬼",
+    "tags_arr": [
+      "百合",
+      "搞笑",
+      "治愈",
+      "吸血鬼"
+    ],
+    "intro": "电视动画《隔壁的吸血鬼小妹》改编自甘党著同名百合漫画，于2018年3月宣布动画化。\n故事的主角是年龄 360 岁但外表如同漂亮的少女人偶的吸血鬼索菲，与十分喜欢人偶人类少女天野灯。某天天野灯为了寻找「人形之馆」在森林中迷路，遇到了路过的吸血鬼索菲，索菲对天野灯说「我只是个普通的吸血鬼，不是什么奇怪的人」，索菲张开自己翅膀带着天野灯平安的达到了「人形之馆」。而天野灯对于宛如可爱人偶索菲的狂热，让吸血鬼索菲都感到了害怕，天野灯还有一些和索菲相亲相爱的妄想。实际上索菲是个居家派的御宅吸血鬼，她睡觉的棺材里有自己喜欢的 ACG 角色的抱枕，还会去参加自己喜欢作品的作者签名会，不过由于吸血鬼的属性必须要带好阳伞与披风才能外出。除了索菲和天野灯外，还有天野灯的朋友夏木日向，与另一位吸血鬼少女爱莉—",
+    "intro_html": "电视动画《隔壁的吸血鬼小妹》改编自甘党著同名百合漫画，于2018年3月宣布动画化。<br />故事的主角是年龄 360 岁但外表如同漂亮的少女人偶的吸血鬼索菲，与十分喜欢人偶人类少女天野灯。某天天野灯为了寻找「人形之馆」在森林中迷路，遇到了路过的吸血鬼索菲，索菲对天野灯说「我只是个普通的吸血鬼，不是什么奇怪的人」，索菲张开自己翅膀带着天野灯平安的达到了「人形之馆」。而天野灯对于宛如可爱人偶索菲的狂热，让吸血鬼索菲都感到了害怕，天野灯还有一些和索菲相亲相爱的妄想。实际上索菲是个居家派的御宅吸血鬼，她睡觉的棺材里有自己喜欢的 ACG 角色的抱枕，还会去参加自己喜欢作品的作者签名会，不过由于吸血鬼的属性必须要带好阳伞与披风才能外出。除了索菲和天野灯外，还有天野灯的朋友夏木日向，与另一位吸血鬼少女爱莉—<br /><br />\t\t\t",
+    "intro_clean": "电视动画《隔壁的吸血鬼小妹》改编自甘党著同名百合漫画，于2018年3月宣布动画化。故事的主角是年龄 360 岁但外表如同漂亮的少女人偶的吸血鬼索菲，与十分喜欢人偶人类少女天野灯。某天天野灯为了寻找「人形之馆」在森林中迷路，遇到了路过的吸血鬼索菲，索菲对天野灯说「我只是个普通的吸血鬼，不是什么奇怪的人」，索菲张开自己翅膀带着天野灯平安的达到了「人形之馆」。而天野灯对于宛如可爱人偶索菲的狂热，让吸血鬼索菲都感到了害怕，天野灯还有一些和索菲相亲相爱的妄想。实际上索菲是个居家派的御宅吸血鬼，她睡觉的棺材里有自己喜欢的 ACG 角色的抱枕，还会去参加自己喜欢作品的作者签名会，不过由于吸血鬼的属性必须要带好阳伞与披风才能外出。除了索菲和天野灯外，还有天野灯的朋友夏木日向，与另一位吸血鬼少女爱莉—\t\t\t",
+    "series": "邻家的吸血鬼小妹",
+    "net_disk": null,
+    "resource": "",
+    "year": 2018,
+    "season": 10,
+    "premiere": "2018-10-05",
+    "rank_cnt": "29.9w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "138",
+    "collect_cnt": "1,654"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20130131,
+      "Href": "/detail/20130131",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130131.jpg",
+      "Title": "漫研部"
+    },
+    {
+      "AID": 20260208,
+      "Href": "/detail/20260208",
+      "NewTitle": "PV",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260208.jpg",
+      "Title": "骸骨骑士大人异世界冒险中 第二季"
+    },
+    {
+      "AID": 20170052,
+      "Href": "/detail/20170052",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170052.jpg",
+      "Title": "动作女英雄 水果应援团"
+    },
+    {
+      "AID": 20230096,
+      "Href": "/detail/20230096",
+      "NewTitle": "第260627期",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230096.jpg",
+      "Title": "机动奥特曼 最终季"
+    },
+    {
+      "AID": 20230093,
+      "Href": "/detail/20230093",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230093.jpg",
+      "Title": "亡骸游戏"
+    },
+    {
+      "AID": 20200336,
+      "Href": "/detail/20200336",
+      "NewTitle": "[WEB 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200336.jpg",
+      "Title": "英雄再临"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
