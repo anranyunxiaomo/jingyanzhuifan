@@ -179,8 +179,8 @@ class PlaywrightResolver:
             page.on("response", handle_response)
             
             print("      [RESOLVE STEP 3] page.on response hook registered. Navigating...")
-            # 限制等待时长
-            await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded")
+            # 限制等待时长 (附带防盗链 Referer 保护头，100% 防止解析接口 302 重定向到广告黄站)
+            await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded", referer="https://web.agespa-01.com:8443/")
             print("      [RESOLVE STEP 4] page.goto complete. Entering sleep buffer...")
             await asyncio.sleep(4.0)
             print("      [RESOLVE STEP 5] sleep buffer complete.")
