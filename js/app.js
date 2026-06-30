@@ -517,13 +517,13 @@ new Vue({
       // 2. 智能判断使用 "?" 还是 "&" 来拼接参数
       const joinChar = playUrl.includes('?') ? '&' : '?';
       
-      // 3. 构建【饱和式起播时间控制参数】。无论是 DPlayer, 腾讯播放器还是其它第三方接口，
-      //    只要它们支持解析 URL 中的任何一种常见时间参数（start/t/time/ctime/progress/playtime/seek），均会被强制拉回！
+      // 3. 构建【饱和式起播时间控制参数】 + 【自动播放覆写参数】。
+      //    在没有历史进度记录时，强拼 autoplay=0 和 auto=0。这会迫使许多跨域解析站的播放器在前台暂停，而不去执行其 LocalStorage 的续播跳转！
       let timeParams = "";
       if (savedTime > 3) {
-        timeParams = `&start=${savedTime}&t=${savedTime}&time=${savedTime}&ctime=${savedTime}&progress=${savedTime}&playtime=${savedTime}&seek=${savedTime}#t=${savedTime}`;
+        timeParams = `&start=${savedTime}&t=${savedTime}&time=${savedTime}&ctime=${savedTime}&progress=${savedTime}&playtime=${savedTime}&seek=${savedTime}&autoplay=1&auto=1#t=${savedTime}`;
       } else {
-        timeParams = `&start=0&t=0.01&time=0&ctime=0&progress=0&playtime=0&seek=0#t=0.01`;
+        timeParams = `&start=0&t=0.01&time=0&ctime=0&progress=0&playtime=0&seek=0&autoplay=0&auto=0#t=0.01`;
       }
       
       playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
