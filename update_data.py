@@ -7,7 +7,6 @@ import urllib3
 import asyncio
 import sys
 from urllib.parse import urljoin
-from playwright.async_api import async_playwright
 
 # 禁用 SSL 证书安全警告
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -128,78 +127,6 @@ def load_search_index():
 def save_search_index(index_data):
     with open(SEARCH_INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, ensure_ascii=False, indent=2)
-
-# ==========================================================================
-# 📺 Playwright 云端 Headless 异步连接器 (共用单例浏览器加速)
-# ==========================================================================
-class PlaywrightResolver:
-    def __init__(self):
-        self.playwright = None
-        self.browser = None
-        self.context = None
-
-    async def start(self):
-        try:
-            print("[INFO] Starting Playwright Headless Engine...")
-            self.playwright = await async_playwright().start()
-            launch_args = ["--no-sandbox", "--disable-setuid-sandbox"]
-            if active_proxy:
-                launch_args.append(f"--proxy-server={active_proxy['http']}")
-            self.browser = await self.playwright.chromium.launch(headless=True, args=launch_args)
-            self.context = await self.browser.new_context(
-                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                bypass_csp=True
-            )
-            print("[SUCCESS] Playwright Headless Engine started successfully.")
-        except Exception as e:
-            print(f"[CRITICAL] Playwright start exception: {e}")
-            raise e
-
-    async def resolve(self, jx_url):
-        if not self.context:
-            print("      [RESOLVE WARNING] Context is None!")
-            return None
-        
-        resolved_url = None
-        page = None
-        try:
-            print(f"      [RESOLVE STEP 1] Creating new page for: {jx_url[:60]}...")
-            page = await self.context.new_page()
-            print("      [RESOLVE STEP 2] Page created successfully.")
-            
-            def handle_response(response):
-                nonlocal resolved_url
-                res_url = response.url
-                # 💡 过滤掉 .mp4 后缀 (大概率为解析失效后的广告/占位贴片视频)，只采信合法 .m3u8 视频流
-                if ".m3u8" in res_url and not res_url.endswith((".jpg", ".png", ".gif", ".css", ".js", ".ico")):
-                    if "adposter" not in res_url and "union" not in res_url:
-                        resolved_url = res_url
-                        print(f"    [RESOLVED M3U8] {resolved_url}")
-
-            page.on("response", handle_response)
-            
-            print("      [RESOLVE STEP 3] page.on response hook registered. Navigating...")
-            # 限制等待时长 (附带防盗链 Referer 保护头，100% 防止解析接口 302 重定向到广告黄站)
-            await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded", referer="https://web.agespa-01.com:8443/")
-            print("      [RESOLVE STEP 4] page.goto complete. Entering sleep buffer...")
-            await asyncio.sleep(4.0)
-            print("      [RESOLVE STEP 5] sleep buffer complete.")
-        except BaseException as e:
-            print(f"      [RESOLVE CRITICAL BASE EXCEPTION] {type(e).__name__}: {e}")
-        finally:
-            if page:
-                try:
-                    await page.close()
-                except Exception:
-                    pass
-        return resolved_url
-
-    async def stop(self):
-        print("[INFO] Stopping Playwright Headless Engine...")
-        if self.browser:
-            await self.browser.close()
-        if self.playwright:
-            await self.playwright.stop()
 
 # ==========================================================================
 # 🚀 异步并发主任务
@@ -421,47 +348,19 @@ async def main_async():
             playlists = detail_data.get('video', {}).get('playlists', {})
             if not isinstance(playlists, dict):
                 playlists = {}
-            is_hot = (aid in hot_aids)
-            
             for pkey, eps in playlists.items():
-                # 💡 按需加速时，若指定了 target_pkey，只解析指定的单条线路以防止请求过多被拉黑！
-                if target_pkey and pkey != target_pkey:
-                    continue
                 is_vip = (pkey in vip_list)
-                jx_base = player_jx.get('vip' if is_vip else 'zj')
                 
-                # 倒数最新 2 集 (切片后 2 个) 索引列表
-                # 如果是在按需解析 target_aid 模式下，放开集数限制，对此动漫的所有集数进行全量并发解析！
-                new_ep_indices = []
-                if len(eps) > 0:
-                    if target_aid:
-                        new_ep_indices = list(range(len(eps)))
-                    else:
-                        new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
-
                 for i, ep in enumerate(eps):
                     ep_token = ep[1]
                     
-                    # A. 尝试使用本地增量缓存
+                    # 尝试使用本地增量缓存 (回填直链)
                     cached_url = local_cache.get((pkey, ep_token))
                     if cached_url:
                         if len(ep) == 2:
                             ep.append(cached_url)
                         elif len(ep) >= 3:
                             ep[2] = cached_url
-                        continue
-                        
-                    # B. 如果属于热门动漫最新 2 集，且为普通直链线路（非 VIP/西瓜线，这些线路能 100% 解析出真实 M3U8 直链），且无本地缓存，加入并发任务队列
-                    if is_hot and (i in new_ep_indices) and jx_base and not is_vip and pkey != 'xigua':
-                        jx_url = jx_base + ep_token
-                        pending_tasks.append({
-                            'aid': aid,
-                            'pkey': pkey,
-                            'ep_name': ep[0],
-                            'ep_token': ep_token,
-                            'ep_ref': ep, # 利用浅拷贝引用直接回填
-                            'jx_url': jx_url
-                        })
         else:
             print(f"[WARNING] Failed to fetch details for AID: {aid}")
         

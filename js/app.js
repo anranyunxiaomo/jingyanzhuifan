@@ -53,9 +53,6 @@ new Vue({
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
     
-    // GitHub 操作与按需加速解析配置
-    githubToken: 'gho' + '_' + 'mL6LouRO' + 'ebBgcjX3' + 'NqK1aNzp' + 'ArAvY00p' + 'qGwu', // 💡 字符零碎化混淆，彻底规避 GitHub 强推扫描保护
-    onDemandLoading: false, // 远程按需触发加载状态
   },
   
   computed: {
@@ -352,49 +349,7 @@ new Vue({
       localStorage.setItem('custom_proxy_url', this.customProxyUrl);
     },
 
-    saveGithubToken() {
-      localStorage.setItem('github_token', this.githubToken);
-    },
 
-    triggerOnDemandResolution() {
-      // 💡 彻底内置 Token 拼图，无条件首选使用，避开 localStorage 覆盖干扰与繁琐的手动输入
-      const activeToken = 'gho' + '_' + 'mL6LouRO' + 'ebBgcjX3' + 'NqK1aNzp' + 'ArAvY00p' + 'qGwu';
-
-      this.onDemandLoading = true;
-      const owner = "anranyunxiaomo";
-      const repo = "jingyanzhuifan";
-      const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
-
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Authorization': 'token ' + activeToken,
-          'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          event_type: 'resolve_anime_on_demand',
-          client_payload: {
-            aid: String(this.currentAnimeId),
-            pkey: String(this.activeLineKey)
-          }
-        })
-      })
-      .then(res => {
-        if (res.status === 204 || res.status === 200) {
-          alert("⚡ 已成功唤醒云端加速引擎！\n\nGitHub Actions 已经自动启动，专为你开始解析当前番剧你所选中的这整条播放线路。整个解析与部署约需 20-30 秒。\n\n解析完成后，本线路中拥有 H5 直链的集数将亮起 ⚡ 徽标。请大约 30 秒后刷新网页体验！");
-        } else {
-          alert("❌ 唤醒云端加速引擎失败，请检查网络或 Token 状态。");
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        alert("❌ 发送加速请求失败，请检查网络或配置。");
-      })
-      .finally(() => {
-        this.onDemandLoading = false;
-      });
-    },
 
 
 

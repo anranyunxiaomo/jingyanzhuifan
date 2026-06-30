@@ -244,18 +244,6 @@
             <div class="playing-title-wrapper" style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
               <span class="playing-indicator">正在播放</span>
               <h3 class="playing-title" style="margin-right: auto;">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
-              
-              <!-- ⚡ 一键申请云端解析按钮 (只在没有直链时显示) -->
-              <button 
-                class="on-demand-btn" 
-                v-if="isIframeMode" 
-                @click="triggerOnDemandResolution"
-                :disabled="onDemandLoading"
-                title="点击向 GitHub Actions 发送按需直链解析事件"
-              >
-                <i data-lucide="zap" class="zap-icon"></i>
-                {{ onDemandLoading ? '解析引擎已唤醒...' : '云端加速解析此集' }}
-              </button>
             </div>
             <!-- 极简白金换源/换解析器面板 -->
             <div class="engine-selector-wrapper">
