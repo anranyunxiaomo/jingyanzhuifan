@@ -72,7 +72,7 @@ new Vue({
       return { html: '', style: '' };
     },
     
-    // 3. 详情页可用线路列表
+    // 3. 详情页可用线路列表 (过滤掉无效的西瓜、VIP及私有加密协议线路，仅保留能播的 M3U8 常规节点)
     availableLines() {
       if (!this.animeDetail || !this.animeDetail.video || !this.animeDetail.video.playlists) {
         return [];
@@ -81,14 +81,20 @@ new Vue({
       const vipList = (this.animeDetail.player_vip || '').split(',');
       const labelArr = this.animeDetail.player_label_arr || {};
       
+      // 合法可播放的常规 M3U8 H5 线路白名单
+      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8'];
+      
       const lines = [];
       for (const key in playlists) {
-        if (playlists[key] && playlists[key].length > 0) {
-          lines.push({
-            key: key,
-            title: labelArr[key] || key,
-            isVip: vipList.includes(key)
-          });
+        if (ALLOWED_KEYS.includes(key) && playlists[key] && playlists[key].length > 0) {
+          const isVip = vipList.includes(key);
+          if (!isVip) {
+            lines.push({
+              key: key,
+              title: labelArr[key] || key,
+              isVip: false
+            });
+          }
         }
       }
       return lines;
@@ -311,6 +317,11 @@ new Vue({
         // 使用备用纯 HTTPS 解析引擎
         playUrl = this.activeEngineKey + epToken;
       }
+      
+      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug：强行在解析 URL 末尾附加唯一番剧 ID 与集数索引查询参数
+      // 这能保证解析站内的播放器生成独一无二的 history LocalStorage 进度键，不同视频间再也不发生进度污染！
+      playUrl = playUrl + "&aid=" + this.currentAnimeId + "&ep=" + epIdx;
+
       
       // 如果开启了免拦截代理中转通道，通过专属或公共安全 HTTPS 网页代理进行中转重写
       if (this.useProxyTunnel) {
