@@ -1,11 +1,15 @@
 name: 定时更新动漫数据与部署 Pages
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # 每 4 小时自动运行一次 (UTC 时间，对应北京时间的 4, 8, 12, 16, 20, 24 点左右)
     - cron: '0 */4 * * *'
   workflow_dispatch:
     # 支持在 GitHub 仓库后台一键手动运行
+
 
 permissions:
   contents: write # 必须赋予写权限以允许推送 JSON 数据回仓库
