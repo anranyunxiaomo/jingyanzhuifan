@@ -141,7 +141,7 @@ class PlaywrightResolver:
     async def start(self):
         print("[INFO] Starting Playwright Headless Engine...")
         self.playwright = await async_playwright().start()
-        launch_args = []
+        launch_args = ["--no-sandbox", "--disable-setuid-sandbox"]
         if active_proxy:
             launch_args.append(f"--proxy-server={active_proxy['http']}")
         self.browser = await self.playwright.chromium.launch(headless=True, args=launch_args)
