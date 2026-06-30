@@ -262,6 +262,10 @@ async def main_async():
     if target_aid:
         print(f"[INFO] On-demand mode active. Targeting AID: {target_aid}")
         hot_aids = {target_aid}
+        if target_aid in aids_to_fetch:
+            aids_to_fetch = {target_aid: aids_to_fetch[target_aid]}
+        else:
+            aids_to_fetch = {target_aid: "按需加速番剧"}
 
     # 待并发解析的任务列表
     pending_tasks = []
