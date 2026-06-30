@@ -38,6 +38,15 @@ new Vue({
     activeEpisodeIndex: -1, // 当前选中的集数索引
     activePlayUrl: '', // 正在播放的 iframe 链接
     activeEpisodeName: '', // 正在播放的剧集名称
+    
+    // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
+    jxEngines: [
+      { label: '系统默认 (AGE 合作源)', value: 'default' },
+      { label: '超清无广告源 A', value: 'https://jx.jsonplayer.com/?url=' },
+      { label: '超清无广告源 B', value: 'https://jx.xmflv.com/?url=' },
+      { label: '全能解析源 C', value: 'https://im1907.top/?jx=' }
+    ],
+    activeEngineKey: 'default',
   },
   
   computed: {
@@ -222,24 +231,43 @@ new Vue({
       if (!ep) return;
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
-      const epToken = ep[1];          // 加密 token
+      const epToken = ep[1];          // 加密 token 或直链 url
       
-      const vipList = (this.animeDetail.player_vip || '').split(',');
-      const playerJx = this.animeDetail.player_jx || {};
+      let playUrl = "";
       
-      // 检查当前选中的线路是否为 VIP 线路
-      const isVip = vipList.includes(this.activeLineKey);
-      const jxBase = isVip ? playerJx.vip : playerJx.zj;
-      
-      if (!jxBase) {
-        alert("播放解析服务配置失效，请尝试切换其他线路播放。");
-        return;
+      if (this.activeEngineKey === 'default') {
+        const vipList = (this.animeDetail.player_vip || '').split(',');
+        const playerJx = this.animeDetail.player_jx || {};
+        
+        // 检查当前选中的线路是否为 VIP 线路
+        const isVip = vipList.includes(this.activeLineKey);
+        const jxBase = isVip ? playerJx.vip : playerJx.zj;
+        
+        if (!jxBase) {
+          alert("播放解析服务配置失效，请尝试切换其他线路播放。");
+          return;
+        }
+        playUrl = jxBase + epToken;
+      } else {
+        // 使用备用纯 HTTPS 解析引擎
+        playUrl = this.activeEngineKey + epToken;
       }
       
-      // 核心拼接算法！直接拼接 iframe src
-      this.activePlayUrl = jxBase + epToken;
+      // 自动强升 https，彻底防 Mixed Content 混合内容拦截
+      if (playUrl.startsWith('http://')) {
+        playUrl = playUrl.replace('http://', 'https://');
+      }
+      
+      this.activePlayUrl = playUrl;
       console.log(`[PLAYING] URL: ${this.activePlayUrl}`);
     },
+    
+    rePlayCurrentEpisode() {
+      if (this.activeEpisodeIndex > -1) {
+        this.playEpisode(this.activeEpisodeIndex);
+      }
+    },
+
     
     // ==========================================================================
     // 🧭 导航及交互控制

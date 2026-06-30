@@ -229,9 +229,21 @@
             ></iframe>
           </div>
           <div class="playing-info" v-if="activePlayUrl">
-            <span class="playing-indicator">正在播放</span>
-            <h3 class="playing-title">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
+            <div class="playing-title-wrapper">
+              <span class="playing-indicator">正在播放</span>
+              <h3 class="playing-title">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
+            </div>
+            <!-- 极简白金换源/换解析器面板 -->
+            <div class="engine-selector-wrapper">
+              <span class="engine-label">解析引擎:</span>
+              <select class="engine-select" v-model="activeEngineKey" @change="rePlayCurrentEpisode">
+                <option v-for="engine in jxEngines" :key="engine.value" :value="engine.value">
+                  {{ engine.label }}
+                </option>
+              </select>
+            </div>
           </div>
+
         </div>
 
         <!-- 3.2 动漫图文介绍 -->
