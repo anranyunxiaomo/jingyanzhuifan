@@ -1,0 +1,473 @@
+{
+  "video": {
+    "id": 20260097,
+    "name_other": "Mairimashita! Iruma-kun 4",
+    "company": "BN Pictures",
+    "name": "入间同学入魔了 第四季",
+    "type": "TV",
+    "writer": "西修",
+    "name_original": "魔入りました！入間くん 第4シリーズ",
+    "plot": "搞笑 校园 奇幻",
+    "plot_arr": [
+      "搞笑",
+      "校园",
+      "奇幻"
+    ],
+    "playlists": {
+      "xigua": [
+        [
+          "第01集",
+          "age_0a24NGOcmxNHo5U3kfVALfNhBFn0%2BGStPxFzPyqDCwL%2BqShjiyJNTImAuwMMdYTNLabBPU1Nu%2B2MFoUTHINhjujm"
+        ],
+        [
+          "第02集",
+          "age_37c0yBZgPgbsPq0JjHOSR2pZUDcw34jegqkooO5MLNwnDyTowIN%2B0eO4bOgZ7Uw2uxoZRM2UveRYavPagkHQ10h1"
+        ],
+        [
+          "第03集",
+          "age_3efaW2s5H1rAgszEtBPSabeE2OOxo5rHmDtVet%2Br1JylN5cn3BS42itXs35rCbyq%2BNrHL3OCULx9dAxM30ZFRF27"
+        ],
+        [
+          "第04集",
+          "age_e960qaffEia98qwaY38fJYWwPgZcqC06DQQIwAUAuVUcMcIThCybvQUPcwIBhQRSccnQJUyA0GJI1%2F6hHIHw4wFD"
+        ],
+        [
+          "第05集",
+          "age_698bSa9nV3Gh6lfZv684zlhOTwUTPf%2Fsg0tJddiXyJOB5UhZgHIEfMZeisgnR2UwXB85mHkPuu948Djq3oIyEFQK"
+        ],
+        [
+          "第06集",
+          "age_20d9%2BBk8yCDjq5cgNPEH9ueLi5QUGhcmE5N1GwMfoXt4ZtRwZEVuLIEWrOND0FxCtpNdUasUiqRF2gMRDXP6ehlS"
+        ],
+        [
+          "第07集",
+          "age_ca83j1Fut%2B6ccXZUKN7L9MmALqnAGxn5KHQ4svD2QTIOQcLYCMPgAj%2BlEy5bJskTkfTiptG9pnbKrb32EuCpHPTc"
+        ],
+        [
+          "第08集",
+          "age_7f5cgY8062RtMU4uMHfljpy6a1MGsJn2ki9hOfzlVa2HB0a6oV7KTS6C6%2Bp6RrkRvyyVckznl%2B2zbHtGjI5ByE6v"
+        ],
+        [
+          "第09集",
+          "age_4b01A89xx1588DlwU1Iv5RUAcxDvVE6ZEPiHdHPNGDpRwoXYvkQAtj5tMfZTdQlSUubnbBNoHmuQ7ZJd5o%2BKazcB"
+        ],
+        [
+          "第10集",
+          "age_6af0U2ch98xwz17wSUBnoQbHR3WWWz5d%2FRks2IfsnjxS1zg5CXE22cXv0vkCYV9VaIDyCaB11jxqCVscIzWd0NxK"
+        ],
+        [
+          "第11集",
+          "age_b3512dhFGmr9kJsYIhrfVBwMlF1X6%2BdBKsz4WOs%2FNonpMMS0Rpeix4Xp%2Be7LJWpvQ3KGpuOViCDfB2E8Ftzv7SWw"
+        ],
+        [
+          "第12集",
+          "age_5259br%2BK4YCplLVj33cmD9iWnz9s3nxjZ9K6RvjK6OpYwi2PsBA%2BKbuVCJdtHsiJn5RqLGTpsg9eRyjwIB3wOy9c"
+        ],
+        [
+          "第13集",
+          "age_b7cdu2W4Kwntapz7z7nT7tvWE9d9PAh5QJ7bBnk6ivfjOelh2GnhhbZU6rS6JtgYw6%2BwbQIB7Zev98Jv8qg1aYTZ"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_8d32dxgToncoYdt7x6GbtMezE%2BcXwaZzpi79jObZSk6rN4i5%2BgNxj9Z48tjlRxk%2FRWcqmjOx9qDk1OtB3MOVLr7RH6HN%2FHcPTQDeNUTaPDI0a6g5pm0fBbIH"
+        ],
+        [
+          "第02集",
+          "age_5c3ejzzl8xivD6cnbYEyMa2MSyfhyuV%2FdcTNIigpJeCOgPL%2BD6MkQj4XdtWLqA30NfMsnhersxcALjabLAw136YaXiB1dGuCEj263NAOmrIE7Qbh%2Bp%2F4v9ah"
+        ],
+        [
+          "第03集",
+          "age_9b61xlJi6gQ56usM%2FvNgARmXLqY0Wb4OA650E3KKbAPQ%2FBKWKusFUVP7oti11EsdE%2BsD117uCEM2MoNo%2BbHfR6lbN3vAaKUPa9hn3MFBwRMOvsrjwHWD%2FZrr"
+        ],
+        [
+          "第04集",
+          "age_9fd7XOJzng3%2F8QV4CbKs5R5sEleCjoXVw2bMhOCC2WOUyDOW58sMZ7UktZ19Ov63wRkgk5XPfzoTnPRmEeVN%2F3%2FVqnQIUlw8tED%2B5B1B0Kcgtm8MEjULenum"
+        ],
+        [
+          "第05集",
+          "age_63b7CgdffJRX%2BBVLiYHHt%2F7bhMUeCMzDohjWgVGkr6ykDvjoHRBPOH600ag%2BlD9AXBI5TAyAHKpwfr7IxtnMdTaVGN0551HcXtdOdT%2FuZB43Z1zm0NhrHFRP"
+        ],
+        [
+          "第06集",
+          "age_3a5dd1k81hj%2B1cgk%2Fb1Zxh5RfcIrtSnpCpWiEi2ZWgZ%2BEZZX14qSc8lMxyWSkL%2FVLK75ZOv3ITQiVEchA9OiTv5ADOKmLSlJAgs0RlFQCrNEniFU%2BeQjC%2BCb"
+        ],
+        [
+          "第07集",
+          "age_590cA%2BOoPX31qgl4ez4rrlveO4Q4GMKaO1Mfzlz4jflW0zkoYJzPD%2FaLHRLrz8g2D2tFHO6WqCf%2BaaS4z0E4bD%2BWflj8x2Vba73PiL2MJdHFGV7oLFEdV7Zt"
+        ],
+        [
+          "第08集",
+          "age_bc8c4YxbVeQMOVoAhX19DAv08UYbTPE2Bqjr3FrERsnPLw%2BKKVqSYuZmhcIUuqcrhDJNFQHh8JBeHjfhlK9SFJTvKA%2BQqL6ZsnBgPYB9Yiq8XYrIJaK9OZO0"
+        ],
+        [
+          "第09集",
+          "age_7864yKGDfFd4MbNurGJXRy5eq%2F4vyb4N%2F%2Bjk3vdrSaOZMy7V6tkKvCwx4%2F69upYRpu4sI9l2togofXHA1NRpxBMa1oC2gejO2cDwrHvmD0iSY8UEgp9U6gy%2B"
+        ],
+        [
+          "第10集",
+          "age_51fcxPoOO2WAk57ayhp0sCstjmYBOOAIEUjqKq6BFEvgrVScMAvmEpxnSc2%2FnsXIOC%2FBsbHTxiNJB9RzXAr4rLaFrVbVmXpnIJT2M53YfKfby1AREP97sebL"
+        ],
+        [
+          "第11集",
+          "age_9f56R4R8zS%2FOtpQvvHhj2%2Fzp%2FurgSa4hetlYxDXIA2dZEnc5fW%2Bj7ki%2FpeMDWXs407G3MNaK98LC9MorlBSZkMOY2D6D5QDcvuRk4tpevhTPqGdUV3TC27h0"
+        ],
+        [
+          "第12集",
+          "age_7f8adCrHBXo8ltvhTmv8lGoJUy8lOXKoX6NQq4hYEIH0S49%2F64D0oQZPDT8WVxN72EX0ZfjnUb1Mjkmid2BmJdcFT%2BjpAflWtpEX54iyw6aXnGvcIrSGdHZU"
+        ],
+        [
+          "第13集",
+          "age_678d5gKjbpiWhhwA6eruRfPpfFV6RmgaFuBmmuep7VsaLzQuzLalVWhGLtjy73EIvoZQrravaw4BlarzCULjeL8mFH5kAPqj8mhdh8%2B1ukOMRcbFjK4Zm17B"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_2ea6G99Mzis%2BKyPQiL3dnwgDqwUjG37o8Ap%2Btqj8ugMjo48XdM2ZOfm%2FUNNVRtU72UUVOXgent%2FCfMmAD8PCg1i69YTZXPHFTnwhzmRq6WWM5PRnobIIdh9ordK6hmBE1disxOw%2Busjpc9WirT0"
+        ],
+        [
+          "第2集",
+          "age_4eadZlvDvL7%2FBPDuvNH%2Fe2PnHkMoThawvOB939i%2BOaauDYGT%2FwWSa8HfApZFQH4v8wUj6jSurFFpm6aHGdWvCusOxNEqHn3SAJEIcr5z%2B2CJgImd2lugH9r3an8KhFOvTbat1hkX%2Fz2KUfibsPY"
+        ],
+        [
+          "第3集",
+          "age_241dDuo3HgcqPMKpnJCOSPzsUN3%2F1p0ZBiJBDr3BkKxb5SfQmWGR8N0%2Foe1Ya0jjkNR6q48slELadcFy1kkvxi14YLHz3vxaWv7Msxty5xZbiWC54foT77G2FvYo%2BSAoJ7FAVUrZhYdLe%2BuXBes"
+        ],
+        [
+          "第4集",
+          "age_b99d3y0b3Tfgj%2F0gB1fDKmvTmxRkv%2B7r1iuXU8IJjUxBvM8DR66omSW1%2Fpd7HQmp2Rhi3dxzIvMlEnmaiEwU8VPij2lX1dSdrPT0dd4H6gu97FNt6RrQuybDivKJ%2BIThl8r6xxWQAprLuVVf8Li56A"
+        ],
+        [
+          "第5集",
+          "age_8ffdLcr1gywwXIdfaSFnm2tl8bLL00WDqEuXhfgrLkx5xsE6eaocjbRYl3wmZGb5y8LjCyL4cjDwpwxJgCnXrZhx%2F9thVSzQFlwcrwIC%2Bqole2ON0r4%2BYlw2F39dI5jDwhzl63LGjGac%2Bf7CosU%2Beg"
+        ],
+        [
+          "第6集",
+          "age_2470SgwMRz1Vq787NQpTGxihXr4EAUsPPbwYV%2Figwzo%2BKAFIpBi7gEhuq%2B6QXQnE1sbB9%2BEhqBjd3C2txojfeDchwS2RXT8YAfylss80WNgwhkmaZ0KTJniAOLIylzOW3vWKkEZeKiZWjLLMjPVt%2Bg"
+        ],
+        [
+          "第7集",
+          "age_4db2AcnMrqdvAvVpY2s6BAPZTwkW4LkcRN%2F85Aw%2BbkDQpkw4EjL6f5AYdrImjx9TzqAjNJIT9SLKx0TbLPG7SpyFLXK1f0DryyyFyXtbqPrETLhkAlVCkaRSzxZBex3dvFUgEoQE6g5rGkOj2MPYig"
+        ],
+        [
+          "第8集",
+          "age_bc66mSv4XlxUEA%2BUsVnHVEdz1o%2FvscE%2FNwYXE%2BiZ7bDr9p0QIrSrqkDPB2VyzJJKxolPQNuzFO3oFbn82cXY0QgeX477IQvOaaV25r3PlsSILLt3iRf6gO5aHKPAF9dEzmWIZmFEDqxSz5MVBA%2B2sw"
+        ],
+        [
+          "第9集",
+          "age_6792Ci6o8r1ctcGfmEbXllYA2Fb5qtdI7vauQca5ZReIJRoLfXqaUHR2xFqazx2dGPFf3AUIuT5pv5iqGk4YG2FFerGE52tcWEiqx0%2FPvTQ04hTspyZqLOISL87hQzw%2F6I9NY5v4q5C%2BOSHnc%2Bnz%2FQ"
+        ],
+        [
+          "第10集",
+          "age_7d49yq%2FK7tL6H86adKTVXZtzkkjQM9r5tpbH1BinrUMaJphBonW9r0Y%2BM75LQFAzayb%2BjEhVl59fuY8VNoHfMxB6pAZx0bDUhWkMfphP462mqgCpmPM7%2FTIf6wHyHxJKElAh21czlki3DT3YLui8jQ"
+        ],
+        [
+          "第11集",
+          "age_a1daZjBlpl%2BYqwSvz2palodaByeoxetStut7y%2BHRcgKrFNustQSaW2ETqkA8CDu2UXVcmU3IiIraieroo4CTRnVocoUluzqSXVi29yrO8w7ZMP5uSfvJLcAhGUUFLMZ0VSxL%2FHO3S3E0y4MOvXx5HQ"
+        ],
+        [
+          "第12集",
+          "age_bcc3Y1tTDf270z0CNSxf%2BJT3t7QSQe0PZd3x%2B5we%2BP4UpS1WaA%2FloNBrJXnK6F1klAiPj3wyUQxjBwkgLJ6RXmbtIye%2BvP%2B8VG4rvglMNWSKr58MVOXgPDjop6tR6%2B82YEeFRBbCV0VX26aX%2FITEYw"
+        ],
+        [
+          "第13集",
+          "age_4a775lQ9DJ1lZe0v3YijjFEOHfYRipU6Ob8zt9rJrSItaq6LCuQ7%2Bw%2F2Fbg5RrhK7BFxriA0osMlkNTv127cghMLYmV%2BVh1RO8oMjxJk1lxyoy9wmd1lavs6DwT4mFz73ISkGIgYj5ZE43p6cZs"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_d89ebsKlapOu%2F8pBToAHcwmnTB%2Bd3hwFqDYCJwSaaPW0%2FJTJUsM8hTjYjHbppqQFD96OLYzZxn16CXNZ50sgJ%2FTvMrbbVYSdgB0nTlvv71BnJAVwR9hoAnNbhEgkBng"
+        ],
+        [
+          "第02集",
+          "age_a142%2F0vTRDSNZFbuzS8Fh5By1%2Ffvn5WhWPFqu4kmaZ3kT1LftJWwLNTC4Fay5Osg%2BDJoQnXJLbHW%2Fw3WyOv%2BEVV6xjlGCcXXfj09f0QWR2%2BvKxhylnUV49Wl7eDLOJI"
+        ],
+        [
+          "第03集",
+          "age_e91aqHScpaeROD%2BYLbptqSqR%2Baxrv39iC3P94LlJEhhsB0wqQHra6mzqNCACrvBCdTsXscoQkEP19nDgKfCHvCTF%2BPawkdfW03ZVOFj5NhBMLBlJYsJP1%2BngyQtGv28"
+        ],
+        [
+          "第04集",
+          "age_89809SeatGPbJJYgvkIhP7wrpT%2BztNj7Xw9x6hzouUW2qDxHwC1d8rHN6zY0Rz%2BXtcyZj9jjBpIO74YhItfAxgEQMUjoVGKPrOw6iqZJ8xsyqUg6X36VFcO8VWcHLyy6IA"
+        ],
+        [
+          "第05集",
+          "age_2b84BMF7Vl0mDVK3Y1Hpe8l7YNipdbvF81aprMjXLM6KlHflG%2Bc1j3TKSKR8Z%2Fsb7oKhn7YWLlA6jDXaIUdmXlI5ekCOMyX9y4qJLoaNRTaVlty92knMXx8fW7scLeE"
+        ],
+        [
+          "第06集",
+          "age_4fe9micvV6RHYYuM%2FEAi%2Bt09f0m9pnQ%2BVm%2FUkPBJg0El%2B1OqHynI4KtHFUaB3ErOoVGTTq4knva0MtZGBc0MSOWVRBSzXjf0x%2FHQenBMJ6GsETfGf5pOsjkJufnFMXscZw"
+        ],
+        [
+          "第07集",
+          "age_e5f3ej1kN4VW7Cy6cLeW0vd%2F3GDt6WSqLwbR74YpVcuVyDO8T%2BmhUBleYDi8KRTKL2D6Myo4CEK7J%2Bbsa%2FOcsTKTW0Nh7M%2BEumv%2B61PllG0865coalJaDQcysoDfZtw"
+        ],
+        [
+          "第08集",
+          "age_f0c5MdMxWnNSKgWVEG20iFgbmcus8dRxiyCSSYumefFzWnk9cktKJqGxlRzLD7VGxqC8jd7Fs%2FOpYkxUPDBtHmHh1f0CAiI%2BHKW%2BRAsklkfZk3gr65pQudrojta58%2Bo"
+        ],
+        [
+          "第09集",
+          "age_cac3qRwXfHr4zNYrCbP591IEXQ2LD1VnsntBI0ZbNb2Fy8LhRHpmk%2FYy%2BFcNmBaL5fh%2BxearbazCRAy%2BokVBPhucoe0cZjBrtOFfQoSBbxf13HvX9KADbkOV8GpvyTQ"
+        ],
+        [
+          "第10集",
+          "age_dc838VW8bYFycVY%2F5XlP3KXoraw%2Fw%2Fz3Jb5KBB4%2FL5KMIxFg7x%2BcR7pxz9gY7RhKm7gcc8GOH78OEpub0%2Bhb0vRaGtzxUVezEOOP8lA%2BHvigB9zqt%2F%2FKuxKM0JUWu6w"
+        ],
+        [
+          "第11集",
+          "age_3556cGpAuk%2FuLdFB%2BQP%2BLQrCBTWA%2BTvhu4RN61BPxNFA2fTK4%2Fm6dE1buutozIMASSORVeMk8kwqEyexSvnq9M1yus0jPv%2Fg67GtxGIBzshuF%2BGDDfbzNly1UgY%2FBeY"
+        ],
+        [
+          "第12集",
+          "age_2bea5vNLTEsbFXPPp3kVXc9eXwn8uRtTTIYocGx0pcswv%2Fzft%2F0ZyF5Is9MUe61aBKn%2Fw7tJfJOgOHCr1r7QQh%2B%2B1MmvWbeM9zHfSNE3UquYbTR36wOeV9fE3naAhuQ"
+        ],
+        [
+          "第13集",
+          "age_ecf6z4MeMrKEEnVhXB7sVLKhd6XVGFt9BIG%2FR968mvRtBNSuL4%2BmZcNUgcjQlA%2FyiSdkCSgmSUFVQg28FGqvoE4TxGQBvclJezKVRG3Y5PTPwZeqhQsinIZ5S312ekg"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "age_6b9dxS9pjq8ZAAYbG%2FOx5KtPl1Y26wXNuv0C0dD%2Ba7fYP1IRhhD%2BLenTYyI5bTe1mgJyL9y%2B%2B%2BYyRpEYcKkk2DRsyx%2BSaDuWBM4"
+        ],
+        [
+          "第2集",
+          "age_91436rS%2FlBKL9l9jt6YGtrTLYtrbWz6Ugg%2F4ikhay0GljzzGOF5GhI2nUmC%2FMNk6ckAs47w8HN3lN%2FG32vkA8u1YufGHC%2BdAp2c"
+        ],
+        [
+          "第3集",
+          "age_0b58chkBuV4gVHA2VtmjTtS1VswuCxipXMI3AF66r0xSV%2ByxpxwPTg7wJv19%2BRVv%2BZw5H3hHwtvTE6lndP6TIYGw%2FEqVUfFtmpk"
+        ],
+        [
+          "第4集",
+          "age_e16bSd5hcv8qyYj6yeiolmpr%2Bm2wM7gypopinInco875UvSPqADJDhiULhtrBQoRk16TEd9nD6l3K3V4oq%2B9CEeEUJSU6H5WekA"
+        ],
+        [
+          "第5集",
+          "age_2773ky2YVFr6KcXVUXylTeGm1CiZIUqjLZXqszl%2BoigjsPPP45JYHhm4b%2BQv%2BB5agchBoU2EIRslXtyBWGLkVwgcaj4auT22rLU"
+        ],
+        [
+          "第6集",
+          "age_4e0fogTyy8zJTjIreQ2BdKQNYVPMVygO4TQfRpRFKsV91uuEt319y6wCRwm720S8lHgNODbaAgsLLTEOKCXY003b97SXiCC%2BWsI"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_9fbfP2AgCgTSYJBCJ7W7dUvEvwObq4k8KlMCGglZw3ugxKnq%2BIipo0uNasa%2FwILc0yQtsNnDhMcjbOZj4q2l0HdSQv3zcYNdUkWiJWoaldMH2zy0"
+        ],
+        [
+          "第02集",
+          "age_1c9alXhloOgUdWiTTm%2Bg3RG9VxOtcLocvzvTR5t3vZ61PC6dNvEOxgUPZIvdCz8eMAJJ5gebkJWnPzRIHUwvz2XmeZbZ8pF93PAYFj0eAtQPzjXb"
+        ],
+        [
+          "第03集",
+          "age_d5520VovWOX9IU7PZDka6Y26hgZX1ZALVubl%2BqjinK6bAWhtaRlqPew5O7egPXz9l7rY%2Bt%2B6NxeYTq0eBaLNUb9GxsPkx88tdopG3hoZ0b0HgYGU"
+        ],
+        [
+          "第04集",
+          "age_a94a8gie158fyetfVu0YBjOR1QsPyNU4coBBdQx7NS0o1ezM0s72CUdHcp2%2FPn%2F7sgA3%2BvH80%2B%2BVdYECNnP3hgXAxC94oKQanLOUzdNu0aj7aGVe"
+        ],
+        [
+          "第05集",
+          "age_05ddgf9735HDrYiwyPDAH%2BeEJNy6pZYPSDf43uKN8ZMyMlv8occiMMg5bLB04J6UzHyL5N6TQZtCUF3OCIfV7Dt6Ekagf0KrVtB4Hc2UuJDobfaN"
+        ],
+        [
+          "第06集",
+          "age_4e6fZWuKDWQPWPKmnBBp60YEI%2Fc0zUsAhrwwzepPcsamdNUsZ6h1gkA0EoN%2BbjRHAgBb%2BdQi6IpAf20Ve1QAuBqXAlf8nVjr9zYYxXgv%2B6%2Bca7pN3Q"
+        ],
+        [
+          "第07集",
+          "age_0cdfB8zfJfcmAckkTZ6vqqkFqqeKogcNwV4rmofeOtaqWnJ9cZFzPpsoZ%2BHmz0r0vXLJNBTBS6%2BzZqdnyUQPD%2Bbx7ykR%2B7EXztx9iF8A4hW6js6pQg"
+        ],
+        [
+          "第08集",
+          "age_2056YFJuzSuAef8ym42nOt09RXzYPvx6TFAVXk6%2Fo%2FN6M0gJyuzDkfvcfrkNPNQIW%2FTVsolhVQUUfd57%2BR4HsaR%2BsbaCTzO8yyFRwtFMVXGvCu4CqA"
+        ],
+        [
+          "第09集",
+          "age_694b9j0xWv4j5F0jscko6ir7s%2BLHw7a5JcDuvkHR7CY1zq4EDNzc62PvIy4HwMIhjcQfQsb7T0fP6kHf6U8b0EDtY%2BJ3DaTfXB5RrQr1Na4nzmDNMA"
+        ],
+        [
+          "第10集",
+          "age_a4f7J6EniPkymSQfOgud0UDvSkHx42oe3hi26JXbkR1j0mU4RX39cFa8JGTDf3UVZ%2BC0n81uVsMKq7LcJIChlu1sGD3sY9EJ3pAWjyAFvxM2e1cT4w"
+        ],
+        [
+          "第11集",
+          "age_b220ZhKybv2%2B%2BdgFDX9JWisWyHY4ZEJePURFmYEDTulscMAo1y66e0UuuZFtvxzigyAjeE4lzKFIzxuSjJRAjyHa36wZLgDjQS2pv1G0FXeYp9bB"
+        ],
+        [
+          "第12集",
+          "age_a3c6GbjMKDs58%2BZqe6Nggk7wknia0koRvSQltyRhyxW5KLy2HBYiitAjo3pFcuhALxQSGtkvjGDbbT42aXjx3ZiDjCziofiGEg13CjX3fdWE7CjE"
+        ],
+        [
+          "第13集",
+          "age_be5bUXhAJsbZTtDyYWnknwGMFpeFOOqdp1YjMwb8Wfey38P8YIKwzSfGtavBcK4gotDq6zt%2FreuB3psJeFy6eP9lrkznztM7cXKEJ8A4Tiq%2Fo%2F9t"
+        ]
+      ],
+      "wolong": [
+        [
+          "第01集",
+          "age_4066s87RRoTGGdqSqoKs7hLQ2uvRlU%2FXHE36LvwrgLj812jLclX9gvTTNv18n5vucnhh7nz7p9Ml96OLcNmWqCtYRA7xvn%2FhY1HWTQ"
+        ],
+        [
+          "第02集",
+          "age_419fK2widSzwnB4Glh4VfP%2B0icWNt5%2Fot87DjLKR9JfKdCwp5tYJW3GG0rDKb4FFEkC9jJZntONWkM61R%2F4JDQ3VjZMkkDg3gdi00A"
+        ],
+        [
+          "第03集",
+          "age_9b88%2BbRIs6WyeGziSDG0126tfNuP0i%2FzMkyBIxRg7PKzggprviL2YH6pd0FZi8DnzWYcSK6IbgKC2mzjhKTX2WitEnsfvEWCDhd3gg"
+        ],
+        [
+          "第04集",
+          "age_891eg0qaP7%2ByPXRekqFBNqvByow%2BOjA64g%2BwEotld4mANGxGltMfO4tibve%2FmSmO8nTUKf%2BXWwHCta6nDuhrcmnSoRUCripU5YsqZg"
+        ],
+        [
+          "第05集",
+          "age_95f4ermQw%2F%2F4K57xPCn%2FzAG75iG4zCCCxABs6LgDvgGEiNwMzq11z7yEFoBczA5V5sGhVKBieJpgAx%2FW8I61Vu9I23bLRSdpEcSHdg"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "R",
+    "website": "https://www.nhk-character.com/chara/iruma/",
+    "star": 0,
+    "status": "连载",
+    "uptodate": "18:55 第13集",
+    "time_format_1": "20260627224731",
+    "time_format_2": "2026-06-27",
+    "time_format_3": "2026-06-27 22:47:31",
+    "time": 1782571651,
+    "tags": "搞笑 校园 奇幻",
+    "tags_arr": [
+      "搞笑",
+      "校园",
+      "奇幻"
+    ],
+    "intro": "欢迎来到充满欢笑的魔界！！\r\n总是无法拒绝他人请托的烂好人少年铃木入间，因为一段奇妙的机缘而成为魔界的大恶魔萨利班的孙子！\r\n备受溺爱的入间，进入了萨利班担任理事长的恶魔学校就读……\r\n尽管入间隐瞒自己的人类身份、希望能渡过一段和平的校园生活，但他不知为何总是备受注目。\r\n不但有恶魔菁英跑来找他打架、有珍兽系（？）女子喜欢接近他，甚至还被严格的学生会长给盯上了！\r\n面对接踵而来的麻烦，入间将利用他与生俱来的温柔性格逐一克服难关！\r\n在一年级最大的两个难题之一，收获祭，完美落幕后，还没等问题儿童班喘上一口气，马上就迎来了第二个挑战！\r\n音乐祭篇，就此开幕！",
+    "intro_html": "欢迎来到充满欢笑的魔界！！<br />总是无法拒绝他人请托的烂好人少年铃木入间，因为一段奇妙的机缘而成为魔界的大恶魔萨利班的孙子！<br />备受溺爱的入间，进入了萨利班担任理事长的恶魔学校就读……<br />尽管入间隐瞒自己的人类身份、希望能渡过一段和平的校园生活，但他不知为何总是备受注目。<br />不但有恶魔菁英跑来找他打架、有珍兽系（？）女子喜欢接近他，甚至还被严格的学生会长给盯上了！<br />面对接踵而来的麻烦，入间将利用他与生俱来的温柔性格逐一克服难关！<br />在一年级最大的两个难题之一，收获祭，完美落幕后，还没等问题儿童班喘上一口气，马上就迎来了第二个挑战！<br />音乐祭篇，就此开幕！",
+    "intro_clean": "欢迎来到充满欢笑的魔界！！总是无法拒绝他人请托的烂好人少年铃木入间，因为一段奇妙的机缘而成为魔界的大恶魔萨利班的孙子！备受溺爱的入间，进入了萨利班担任理事长的恶魔学校就读……尽管入间隐瞒自己的人类身份、希望能渡过一段和平的校园生活，但他不知为何总是备受注目。不但有恶魔菁英跑来找他打架、有珍兽系（？）女子喜欢接近他，甚至还被严格的学生会长给盯上了！面对接踵而来的麻烦，入间将利用他与生俱来的温柔性格逐一克服难关！在一年级最大的两个难题之一，收获祭，完美落幕后，还没等问题儿童班喘上一口气，马上就迎来了第二个挑战！音乐祭篇，就此开幕！",
+    "series": "入间同学入魔了",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 4,
+    "premiere": "2026-04-04",
+    "rank_cnt": "26.8w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "119",
+    "collect_cnt": "1,543"
+  },
+  "series": [
+    {
+      "AID": 20190202,
+      "Href": "/detail/20190202",
+      "NewTitle": "[TV 01-23]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
+      "Title": "入间同学入魔了"
+    },
+    {
+      "AID": 20210146,
+      "Href": "/detail/20210146",
+      "NewTitle": "第21话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210146.jpg",
+      "Title": "入间同学入魔了 第二季"
+    },
+    {
+      "AID": 20220034,
+      "Href": "/detail/20220034",
+      "NewTitle": "第21集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220034.jpg",
+      "Title": "入间同学入魔了 第三季"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20150188,
+      "Href": "/detail/20150188",
+      "NewTitle": "[OVA 01-02]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150188.jpg",
+      "Title": "快盗天使 新OVA"
+    },
+    {
+      "AID": 20210318,
+      "Href": "/detail/20210318",
+      "NewTitle": "第35集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210318.jpg",
+      "Title": "魔道祖师 完结篇"
+    },
+    {
+      "AID": 20160089,
+      "Href": "/detail/20160089",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160089.jpg",
+      "Title": "魔法少女伊莉雅 第四季"
+    },
+    {
+      "AID": 20210134,
+      "Href": "/detail/20210134",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210134.jpg",
+      "Title": "七原罪剧场版 被光诅咒的众人"
+    },
+    {
+      "AID": 20180144,
+      "Href": "/detail/20180144",
+      "NewTitle": "[TV 01-12 ]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180144.jpg",
+      "Title": "ISLAND"
+    },
+    {
+      "AID": 20220067,
+      "Href": "/detail/20220067",
+      "NewTitle": "完结",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220067.jpg",
+      "Title": "圣剑学院的魔剑使"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

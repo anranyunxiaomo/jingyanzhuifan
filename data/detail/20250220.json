@@ -1,0 +1,135 @@
+{
+  "video": {
+    "id": 20250220,
+    "name_other": "Ganglion",
+    "company": "studio maf",
+    "name": "GANGLION",
+    "type": "TV",
+    "writer": "白岩久弥",
+    "name_original": "ガングリオン",
+    "plot": "职场",
+    "plot_arr": [
+      "职场"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "PV",
+          "age_6b23N5eH47xIvVy%2BGCCqC1DHYIkCp7p1CH8mWkXY%2BOwzWFNDISJt3YdGaRkdlmlSI7isn52MqaqrVfhTPMRDlf%2BbO6C%2BNZGqm9A"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "G",
+    "website": "https://ganglion-anime.com/",
+    "star": 0,
+    "status": "未播放",
+    "uptodate": "00:53 PV",
+    "time_format_1": "20250927143712",
+    "time_format_2": "2025-09-27",
+    "time_format_3": "2025-09-27 14:37:12",
+    "time": 1758955032,
+    "tags": "职场",
+    "tags_arr": [
+      "职场"
+    ],
+    "intro": "2000年代初期的东京。\r\n企图征服世界的“株式会社GANGLION”的战斗员矶边，他的工作场所就是战场。\r\n身穿紧身衣，他参与了“东京杉花粉作战”和“富士山爆破作战”，却在英雄HOPEMAN的正义一击下轻易惨败。\r\n在合规的黎明期，他忍受着上司的无理要求，拼命奋斗……\r\n这是一部献给所有工作的人的“职场”剧。\r\n故事讲述了一位悲惨的上班族战斗员，令人感同身受。",
+    "intro_html": "2000年代初期的东京。<br />企图征服世界的“株式会社GANGLION”的战斗员矶边，他的工作场所就是战场。<br />身穿紧身衣，他参与了“东京杉花粉作战”和“富士山爆破作战”，却在英雄HOPEMAN的正义一击下轻易惨败。<br />在合规的黎明期，他忍受着上司的无理要求，拼命奋斗……<br />这是一部献给所有工作的人的“职场”剧。<br />故事讲述了一位悲惨的上班族战斗员，令人感同身受。",
+    "intro_clean": "2000年代初期的东京。企图征服世界的“株式会社GANGLION”的战斗员矶边，他的工作场所就是战场。身穿紧身衣，他参与了“东京杉花粉作战”和“富士山爆破作战”，却在英雄HOPEMAN的正义一击下轻易惨败。在合规的黎明期，他忍受着上司的无理要求，拼命奋斗……这是一部献给所有工作的人的“职场”剧。故事讲述了一位悲惨的上班族战斗员，令人感同身受。",
+    "series": "GANGLION",
+    "net_disk": null,
+    "resource": "",
+    "year": 2025,
+    "season": 10,
+    "premiere": "2025-10-03",
+    "rank_cnt": "2,418",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250220.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "9",
+    "collect_cnt": "64"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20190407,
+      "Href": "/detail/20190407",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190407.jpg",
+      "Title": "怪怪守护神OVA"
+    },
+    {
+      "AID": 20170072,
+      "Href": "/detail/20170072",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170072.jpg",
+      "Title": "路人女主的养成方法 第二季"
+    },
+    {
+      "AID": 20180186,
+      "Href": "/detail/20180186",
+      "NewTitle": "[TV 00-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180186.jpg",
+      "Title": "Free! 第三季"
+    },
+    {
+      "AID": 20250232,
+      "Href": "/detail/20250232",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250232.jpg",
+      "Title": "王者天下 第六季"
+    },
+    {
+      "AID": 20200050,
+      "Href": "/detail/20200050",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200050.jpg",
+      "Title": "八十龟酱观察日记 第二季"
+    },
+    {
+      "AID": 20210204,
+      "Href": "/detail/20210204",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210204.jpg",
+      "Title": "小林家的龙女仆 迷你龙"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

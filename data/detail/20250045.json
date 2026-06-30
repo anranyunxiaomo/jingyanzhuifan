@@ -1,0 +1,138 @@
+{
+  "video": {
+    "id": 20250045,
+    "name_other": "0岁儿童开始冲刺的故事 Season2",
+    "company": "暂缺",
+    "name": "0岁儿童开始冲刺的故事 第二季",
+    "type": "TV",
+    "writer": "海華· はやせれく",
+    "name_original": "0歳児スタートダッシュ物語 シーズン2",
+    "plot": "魔法 奇幻",
+    "plot_arr": [
+      "魔法",
+      "奇幻"
+    ],
+    "playlists": [],
+    "area": "日本",
+    "letter": "L",
+    "website": "https://www.shusuisha.com/lp/info0saiji",
+    "star": 0,
+    "status": "未播放",
+    "uptodate": "16:55 PV",
+    "time_format_1": "20241224171135",
+    "time_format_2": "2024-12-24",
+    "time_format_3": "2024-12-24 17:11:35",
+    "time": 1735031495,
+    "tags": "魔法 奇幻",
+    "tags_arr": [
+      "魔法",
+      "奇幻"
+    ],
+    "intro": "前世是电子游戏怪物的莉莉娅转生成为了一名侯爵大小姐。\r\n在她还只有0岁的时候就开始了修炼魔法，五岁时就达到了贤者的水平。\r\n有一天莉莉娅被邀请到王宫，与一个人发生了命运的邂逅。",
+    "intro_html": "前世是电子游戏怪物的莉莉娅转生成为了一名侯爵大小姐。<br />在她还只有0岁的时候就开始了修炼魔法，五岁时就达到了贤者的水平。<br />有一天莉莉娅被邀请到王宫，与一个人发生了命运的邂逅。",
+    "intro_clean": "前世是电子游戏怪物的莉莉娅转生成为了一名侯爵大小姐。在她还只有0岁的时候就开始了修炼魔法，五岁时就达到了贤者的水平。有一天莉莉娅被邀请到王宫，与一个人发生了命运的邂逅。",
+    "series": "0岁儿童开始冲刺的故事",
+    "net_disk": null,
+    "resource": "",
+    "year": 2025,
+    "season": 1,
+    "premiere": "2025-01-05",
+    "rank_cnt": "1,027",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250045.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "17",
+    "collect_cnt": "349"
+  },
+  "series": [
+    {
+      "AID": 20240120,
+      "Href": "/detail/20240120",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240120.jpg",
+      "Title": "0岁儿童开始冲刺的故事"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20190111,
+      "Href": "/detail/20190111",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190111.jpg",
+      "Title": "水果篮子"
+    },
+    {
+      "AID": 20200228,
+      "Href": "/detail/20200228",
+      "NewTitle": "第15集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200228.jpg",
+      "Title": "隐世华族"
+    },
+    {
+      "AID": 20220118,
+      "Href": "/detail/20220118",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220118.jpg",
+      "Title": "妖幻三重奏"
+    },
+    {
+      "AID": 20090067,
+      "Href": "/detail/20090067",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090067.jpg",
+      "Title": "小鸠"
+    },
+    {
+      "AID": 20170063,
+      "Href": "/detail/20170063",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170063.jpg",
+      "Title": "带着智能手机闯荡异世界"
+    },
+    {
+      "AID": 20110070,
+      "Href": "/detail/20110070",
+      "NewTitle": "[OAD 01-02]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110070.jpg",
+      "Title": "世界第一初恋OAD"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
