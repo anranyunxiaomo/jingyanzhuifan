@@ -28,7 +28,7 @@
       <div class="brand" @click="goHome">
         <span class="logo-text">AGE</span>
         <span class="logo-sub">FAN</span>
-        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v18:26</span>
+        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v18:34</span>
       </div>
       
       <!-- 极速本地搜索框 -->
@@ -277,12 +277,12 @@
               <p>请在下方选择剧集开始播放</p>
             </div>
             <template v-else>
-              <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-show="!isIframeMode"></div>
+              <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode"></div>
               
               <!-- 降级 传统 Iframe 播放器 (强绑 key 以在换源/换集数时彻底重置渲染，物理隔绝进度污染) -->
               <iframe 
                 id="playerIFrame"
-                v-show="isIframeMode"
+                v-if="isIframeMode"
                 :src="activePlayUrl" 
                 :key="activePlayUrl"
                 class="video-iframe"
@@ -423,6 +423,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260630T1826"></script>
+<script src="js/app.js?v=20260630T1834"></script>
 </body>
 </html>
