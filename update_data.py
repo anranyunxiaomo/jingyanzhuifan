@@ -207,12 +207,9 @@ async def main_async():
         json.dump(home_data, f, ensure_ascii=False, indent=2)
     print("[SUCCESS] Saved home-list.json")
     
-    # 2. 收集热门番剧（需要无头预解析直链）
+    # 2. 收集热门番剧（在云端我们只对最火的前 3 部新番进行无头预解析以节省时间）
     hot_aids = set()
-    for item in home_data.get('latest', [])[:12]:
-        if item.get('AID'):
-            hot_aids.add(str(item['AID']))
-    for item in home_data.get('recommend', [])[:8]:
+    for item in home_data.get('latest', [])[:3]:
         if item.get('AID'):
             hot_aids.add(str(item['AID']))
 
@@ -317,8 +314,8 @@ async def main_async():
                                 ep[2] = cached_url
                             continue
                             
-                        # 2. 如果属于热门动漫最新 2 集，且本地没有缓存，则启动无头浏览器动态预解析
-                        if is_hot and (i in new_ep_indices) and jx_base:
+                        # 2. 如果属于热门动漫最新 2 集，且为 VIP 线路（如西瓜 VIP，最易受 HTTP 阻断），且本地无缓存，则启用无头解析
+                        if is_hot and (i in new_ep_indices) and jx_base and (pkey == 'xigua' or is_vip):
                             jx_url = jx_base + ep_token
                             print(f"  --> [RESOLVING LAN] Line: {pkey}, Episode: {ep[0]}...")
                             real_url = await resolver.resolve(jx_url)
