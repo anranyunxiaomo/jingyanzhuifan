@@ -150,11 +150,6 @@ async def main_async():
             json.dump(home_data, f, ensure_ascii=False, indent=2)
         print("[SUCCESS] Saved home-list.json")
         
-        # 2. 收集热门番剧（在云端我们只对最火的前 3 部新番进行无头预解析以节省时间）
-        for item in home_data.get('latest', [])[:3]:
-            if item.get('AID'):
-                hot_aids.add(str(item['AID']))
-
         # 3. 汇总需要抓取详情的动漫列表
         for item in home_data.get('latest', []):
             if item.get('AID'):
@@ -264,40 +259,6 @@ async def main_async():
                 print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE HIT] {title} is up-to-date ({new_title}). Skipping API request.")
                 fetched_details[aid] = (local_detail, detail_path, title)
                 
-                # 💡 确保 playlists 变量在此作用域中 100% 被正确提取且强制类型为 dict 以防 list items AttributeError 崩溃
-                playlists = local_detail.get('video', {}).get('playlists', {})
-                if not isinstance(playlists, dict):
-                    playlists = {}
-                
-                # 依然需要扫描该已缓存动漫的集数，处理可能需要参与无头解析的冷门集数（主要是为了防止上次断网丢失）
-                vip_list = (local_detail.get('player_vip') or '').split(',')
-                player_jx = local_detail.get('player_jx') or {}
-                
-                # 倒数最新 2 集 (切片后 2 个) 索引列表
-                is_hot = (aid in hot_aids)
-                for pkey, eps in playlists.items():
-                    # 💡 按需加速时，若指定了 target_pkey，只解析指定的单条线路以防止请求过多被拉黑！
-                    if target_pkey and pkey != target_pkey:
-                        continue
-                    is_vip = (pkey in vip_list)
-                    jx_base = player_jx.get('vip' if is_vip else 'zj')
-                    new_ep_indices = list(range(max(0, len(eps) - 2), len(eps))) if len(eps) > 0 else []
-                    
-                    for i, ep in enumerate(eps):
-                        ep_token = ep[1]
-                        
-                        # 检查第三个位置是否已经拥有直链，如果没有，才可能需要无头解析
-                        if len(ep) < 3 or not ep[2]:
-                            if is_hot and (i in new_ep_indices) and jx_base and not is_vip and pkey != 'xigua':
-                                jx_url = jx_base + ep_token
-                                pending_tasks.append({
-                                    'aid': aid,
-                                    'pkey': pkey,
-                                    'ep_name': ep[0],
-                                    'ep_token': ep_token,
-                                    'ep_ref': ep,
-                                    'jx_url': jx_url
-                                })
                 continue
 
         # C. 缓存未命中，才需要向 API 抓取最新详情
