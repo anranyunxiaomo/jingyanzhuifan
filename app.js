@@ -374,6 +374,7 @@ new Vue({
       // 1. 如果存在预解析直链，优先使用原生 DPlayer 播放，享受极致无广告体验！
       if (realUrl) {
         this.isIframeMode = false;
+        this.activePlayUrl = realUrl; // 💡 激活播放区域显示DOM
         
         // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
