@@ -511,7 +511,7 @@ new Vue({
         timeParams = `&start=0&t=0.01#t=0.01`;
       }
       
-      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
+      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + "&_r=" + Math.random().toString(36).substr(2, 9) + timeParams;
 
       // 自动强升 https，彻底防 Mixed Content 混合内容拦截
       if (playUrl.startsWith('http://')) {
