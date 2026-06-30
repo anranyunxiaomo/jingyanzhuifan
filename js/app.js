@@ -42,9 +42,12 @@ new Vue({
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
       { label: '系统默认 (AGE 合作源)', value: 'default' },
-      { label: '超清无广告源 A', value: 'https://jx.jsonplayer.com/?url=' },
-      { label: '超清无广告源 B', value: 'https://jx.xmflv.com/?url=' },
-      { label: '全能解析源 C', value: 'https://im1907.top/?jx=' }
+      { label: '官方备用解析 A', value: 'https://vip.cqtnfs.com:8443/vip/?url=' },
+      { label: '官方备用解析 B', value: 'https://vip.huijujiavip.com:8443/vip/?url=' },
+      { label: '官方备用解析 C (Jump)', value: 'https://vip.cqtnfs.com:8443/jump.html?url=' },
+      { label: '官方备用解析 D (Jump)', value: 'https://vip.huijujiavip.com:8443/jump.html?url=' },
+      { label: '超清无广告源 A (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
+      { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
     activeEngineKey: 'default',
   },
