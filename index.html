@@ -276,8 +276,7 @@
               <p>请在下方选择剧集开始播放</p>
             </div>
             <template v-else>
-              <!-- 原生 H5 DPlayer 挂载点 -->
-              <div id="dplayer" class="video-dplayer" v-show="!isIframeMode"></div>
+              <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-show="!isIframeMode"></div>
               
               <!-- 降级 传统 Iframe 播放器 (强绑 key 以在换源/换集数时彻底重置渲染，物理隔绝进度污染) -->
               <iframe 
@@ -411,6 +410,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260630T1519"></script>
+<script src="js/app.js?v=20260630T1526"></script>
 </body>
 </html>

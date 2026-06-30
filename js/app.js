@@ -40,6 +40,7 @@ new Vue({
     activeEpisodeIndex: -1, // 当前选中的集数索引
     activePlayUrl: '', // 正在播放的 iframe 链接
     activeEpisodeName: '', // 正在播放的剧集名称
+    dplayerKey: 'dplayer_init', // DPlayer DOM 容器的物理隔离 Key
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
@@ -368,39 +369,44 @@ new Vue({
       if (realUrl) {
         this.isIframeMode = false;
         
-        // 销毁上一次的播放器实例
+        // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
           try { this.dpInstance.destroy(); } catch(e) {}
           this.dpInstance = null;
         }
 
-        // 💡 强力物理清空 DPlayer DOM 容器中的一切残留节点与 video 状态，阻断任何隐藏的 currentTime 残留传递
+        // 💡 物理清空 DOM 节点：在修改 DPlayer Key 触发 Vue 回收前，强行将原有 DOM 内容擦除
         const container = document.getElementById('dplayer');
         if (container) {
           container.innerHTML = '';
         }
-        
+
+        // 💡 强行旋转 Vue 绑定在 DPlayer 容器上的 Key！
+        // 这将强制 Vue 将原来的 div DOM 彻底抛弃回收，重新实例化一个纯净的 div，彻底扼杀任何浏览器底层的 HTMLMediaElement 硬件复用！
+        this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
         this.activePlayUrl = realUrl;
         
-        // 异步渲染并挂载 DPlayer 播放器
+        // 异步渲染并挂载 DPlayer 播放器 (延迟 120 毫秒以确保新 div 被重新挂载，且硬件通道已关闭)
         this.$nextTick(() => {
-          try {
-            this.dpInstance = new DPlayer({
-              container: document.getElementById('dplayer'),
-              autoplay: true,
-              screenshot: false,
-              // 💡 物理隔断不同视频、不同集数间的播放进度，确保 DPlayer 内部的 history localstorage 进度键值绝对独立
-              id: String(this.currentAnimeId) + "_" + String(this.activeEpisodeName),
-              video: {
-                url: realUrl,
-                type: 'hls' // 支持 hls.js 解码 m3u8
-              }
-            });
-            console.log(`[DPLAYER PLAYING] URL: ${realUrl} | ID: ${this.currentAnimeId}_${this.activeEpisodeName}`);
-          } catch(e) {
-            console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
-            this.isIframeMode = true;
-          }
+          setTimeout(() => {
+            try {
+              this.dpInstance = new DPlayer({
+                container: document.getElementById('dplayer'),
+                autoplay: true,
+                screenshot: false,
+                // 💡 物理隔断不同视频、不同集数间的播放进度，确保 DPlayer 内部的 history localstorage 进度键值绝对独立
+                id: String(this.currentAnimeId) + "_" + String(this.activeEpisodeName),
+                video: {
+                  url: realUrl,
+                  type: 'hls' // 支持 hls.js 解码 m3u8
+                }
+              });
+              console.log(`[DPLAYER PLAYING] URL: ${realUrl} | ID: ${this.currentAnimeId}_${this.activeEpisodeName}`);
+            } catch(e) {
+              console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
+              this.isIframeMode = true;
+            }
+          }, 120);
         });
         return;
       }
