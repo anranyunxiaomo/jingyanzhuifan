@@ -204,6 +204,7 @@ async def main_async():
     
     aids_to_fetch = {}
     hot_aids = set()
+    recently_updated_aids = set()
     
     if target_aid:
         print(f"[INFO] On-demand mode active. Directly targeting AID: {target_aid}")
@@ -270,8 +271,10 @@ async def main_async():
             update_data = request_api("update", params={"page": page})
             if update_data and isinstance(update_data, list):
                 for item in update_data:
-                    if item.get('AID'):
-                        aids_to_fetch[str(item['AID'])] = {
+                    aid_str = str(item.get('AID', ''))
+                    if aid_str:
+                        recently_updated_aids.add(aid_str)
+                        aids_to_fetch[aid_str] = {
                             'title': item.get('Title', '未知动漫'),
                             'new_title': item.get('NewTitle', ''),
                             'is_active': True
@@ -320,19 +323,23 @@ async def main_async():
 
         # B. 智能增量判定：如果本地详情已存在，且当前动漫今天没有更新（或者虽然更新了但集数已匹配），直接使用本地缓存！
         if local_detail and not target_aid:
-            is_active = info.get('is_active', False)
-            new_title = info.get('new_title', '')
-            
             should_skip_api = False
-            if not is_active:
+            
+            # 💡 增量核心：如果该动漫在最近 2 页更新列表里找不到，说明今天全站根本没有它新集数的任何更新，100% 可信跳过 API！
+            if aid not in recently_updated_aids:
                 should_skip_api = True
-            elif new_title:
-                playlists = local_detail.get('video', {}).get('playlists', {})
-                for pkey, eps in playlists.items():
-                    if eps and len(eps) > 0:
-                        if eps[-1][0] == new_title:
-                            should_skip_api = True
-                            break
+            else:
+                new_title = info.get('new_title', '')
+                if not new_title:
+                    # 若没有写明最新集数名字，稳妥起见不跳过详情，重新拉一次
+                    should_skip_api = False
+                else:
+                    playlists = local_detail.get('video', {}).get('playlists', {})
+                    for pkey, eps in playlists.items():
+                        if eps and len(eps) > 0:
+                            if eps[-1][0] == new_title:
+                                should_skip_api = True
+                                break
             
             if should_skip_api:
                 print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE HIT] {title} is up-to-date ({new_title}). Skipping API request.")
