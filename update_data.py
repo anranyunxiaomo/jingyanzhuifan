@@ -70,6 +70,30 @@ def get_session():
 
 session = get_session()
 
+from concurrent.futures import ThreadPoolExecutor
+
+class AgeM3u8Sniffer:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+    }
+    
+    @classmethod
+    def sniff_m3u8_link(cls, parse_url):
+        try:
+            r = session.get(parse_url, headers=cls.headers, timeout=8)
+            if r.status_code == 200:
+                text_clean = r.text.replace("\\/", "/")
+                m3u8_matches = re.findall(r'["\']((?:https?:)?//[^"\']+\.m3u8[^"\']*)["\']', text_clean)
+                if m3u8_matches:
+                    real_m3u8 = m3u8_matches[0]
+                    if real_m3u8.startswith("//"):
+                        real_m3u8 = "https:" + real_m3u8
+                    return real_m3u8
+            return None
+        except Exception:
+            return None
+
+
 def fetch_api_base():
     """获取最新的 API 域名配置"""
     urls = [
@@ -325,23 +349,58 @@ async def main_async():
             vip_list = (detail_data.get('player_vip') or '').split(',')
             player_jx = detail_data.get('player_jx') or {}
             
-            # 循环 playlist 集数收集待解析任务
+            # 循环 playlist 集数收集待解析任务，并执行高效的后台多线程直链嗅探
             playlists = detail_data.get('video', {}).get('playlists', {})
             if not isinstance(playlists, dict):
                 playlists = {}
+            
+            tasks_to_sniff = []
             for pkey, eps in playlists.items():
                 is_vip = (pkey in vip_list)
+                parse_base = player_jx.get('vip') if is_vip else player_jx.get('zj')
+                if not parse_base:
+                    parse_base = "https://jx.wuzhoupai.com:8443/m3u8/?url="
                 
                 for i, ep in enumerate(eps):
                     ep_token = ep[1]
-                    
-                    # 尝试使用本地增量缓存 (回填直链)
                     cached_url = local_cache.get((pkey, ep_token))
                     if cached_url:
                         if len(ep) == 2:
                             ep.append(cached_url)
                         elif len(ep) >= 3:
                             ep[2] = cached_url
+                    else:
+                        # 没命中缓存的，加入待嗅探池
+                        parse_url = parse_base + ep_token
+                        tasks_to_sniff.append({
+                            "pkey": pkey,
+                            "ep_index": i,
+                            "parse_url": parse_url
+                        })
+
+            # 并发执行直链嗅探，并将 realUrl 回填进 playlists
+            if tasks_to_sniff:
+                print(f"  [SNIFFER] Detected {len(tasks_to_sniff)} new episodes needing stream sniffing. Resolving via thread pool...")
+                
+                def sniff_worker(task):
+                    real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(task["parse_url"])
+                    return task, real_m3u8
+
+                with ThreadPoolExecutor(max_workers=10) as executor:
+                    results = list(executor.map(sniff_worker, tasks_to_sniff))
+                
+                for task, real_m3u8 in results:
+                    if real_m3u8:
+                        pkey = task["pkey"]
+                        idx = task["ep_index"]
+                        ep = playlists[pkey][idx]
+                        if len(ep) == 2:
+                            ep.append(real_m3u8)
+                        elif len(ep) >= 3:
+                            ep[2] = real_m3u8
+                        # 回填增量缓存，供后续无脑命中
+                        local_cache[(pkey, ep[1])] = real_m3u8
+                        print(f"    [OK] Resolved direct stream for {pkey} - EP index {idx}")
         else:
             print(f"[WARNING] Failed to fetch details for AID: {aid}")
         

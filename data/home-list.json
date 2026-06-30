@@ -87,88 +87,88 @@
   ],
   "recommend": [
     {
-      "AID": 20100026,
-      "Href": "/detail/20100026",
-      "NewTitle": "[BD 01-15]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100026.jpg",
-      "Title": "我的妹妹不可能那么可爱"
-    },
-    {
-      "AID": 20120038,
-      "Href": "/detail/20120038",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
-      "Title": "刀剑神域"
-    },
-    {
-      "AID": 20140076,
-      "Href": "/detail/20140076",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140076.jpg",
-      "Title": "日常系的异能战斗"
-    },
-    {
-      "AID": 20080043,
-      "Href": "/detail/20080043",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080043.jpg",
-      "Title": "你是主人我是仆"
-    },
-    {
-      "AID": 20180081,
-      "Href": "/detail/20180081",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180081.jpg",
-      "Title": "妖怪旅馆营业中"
-    },
-    {
-      "AID": 20180042,
-      "Href": "/detail/20180042",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180042.jpg",
-      "Title": "BEATLESS -没有心跳的少女-"
-    },
-    {
-      "AID": 20150011,
-      "Href": "/detail/20150011",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150011.jpg",
-      "Title": "动画锻炼！EX"
-    },
-    {
-      "AID": 20050023,
-      "Href": "/detail/20050023",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050023.jpg",
-      "Title": "波子汽水"
-    },
-    {
-      "AID": 20140067,
-      "Href": "/detail/20140067",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140067.jpg",
-      "Title": "心理测量者 新编集版"
-    },
-    {
-      "AID": 20120035,
-      "Href": "/detail/20120035",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120035.jpg",
-      "Title": "少女与战车"
-    },
-    {
-      "AID": 20200067,
-      "Href": "/detail/20200067",
+      "AID": 20190366,
+      "Href": "/detail/20190366",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200067.jpg",
-      "Title": "隐瞒之事"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
+      "Title": "恋爱小行星"
     },
     {
-      "AID": 20190359,
-      "Href": "/detail/20190359",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190359.jpg",
-      "Title": "列比乌斯"
+      "AID": 20190396,
+      "Href": "/detail/20190396",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
+      "Title": "紫罗兰永恒花园 外传 - 永远与自动手记人偶 -"
+    },
+    {
+      "AID": 20170018,
+      "Href": "/detail/20170018",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170018.jpg",
+      "Title": "青之驱魔师 京都不净王篇"
+    },
+    {
+      "AID": 20060001,
+      "Href": "/detail/20060001",
+      "NewTitle": "[TV 01-26]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
+      "Title": "传颂之物"
+    },
+    {
+      "AID": 20190022,
+      "Href": "/detail/20190022",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190022.jpg",
+      "Title": "同居人是猫"
+    },
+    {
+      "AID": 20130042,
+      "Href": "/detail/20130042",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130042.jpg",
+      "Title": "猎天使魔女剧场版 血色命运"
+    },
+    {
+      "AID": 20050027,
+      "Href": "/detail/20050027",
+      "NewTitle": "第4集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050027.jpg",
+      "Title": "扑杀天使朵库萝"
+    },
+    {
+      "AID": 20150024,
+      "Href": "/detail/20150024",
+      "NewTitle": "20241207冬日特辑",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150024.jpg",
+      "Title": "落第骑士英雄谭"
+    },
+    {
+      "AID": 20140059,
+      "Href": "/detail/20140059",
+      "NewTitle": "[TV 01-12+OVA]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
+      "Title": "未确认进行式"
+    },
+    {
+      "AID": 20100044,
+      "Href": "/detail/20100044",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100044.jpg",
+      "Title": "吸血鬼同盟"
+    },
+    {
+      "AID": 20180146,
+      "Href": "/detail/20180146",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
+      "Title": "遥之彼方的接发球"
+    },
+    {
+      "AID": 20190047,
+      "Href": "/detail/20190047",
+      "NewTitle": "[TV 01-26.5]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190047.jpg",
+      "Title": "在世界尽头咏唱恋曲的少女YU-NO"
     }
   ],
   "week_list": {
