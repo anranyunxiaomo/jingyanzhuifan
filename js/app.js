@@ -372,12 +372,14 @@ new Vue({
               container: document.getElementById('dplayer'),
               autoplay: true,
               screenshot: false,
+              // 💡 物理隔断不同视频、不同集数间的播放进度，确保 DPlayer 内部的 history localstorage 进度键值绝对独立
+              id: String(this.currentAnimeId) + "_" + String(this.activeEpisodeName),
               video: {
                 url: realUrl,
                 type: 'hls' // 支持 hls.js 解码 m3u8
               }
             });
-            console.log(`[DPLAYER PLAYING] URL: ${realUrl}`);
+            console.log(`[DPLAYER PLAYING] URL: ${realUrl} | ID: ${this.currentAnimeId}_${this.activeEpisodeName}`);
           } catch(e) {
             console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
             this.isIframeMode = true;
