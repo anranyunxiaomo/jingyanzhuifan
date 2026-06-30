@@ -162,10 +162,11 @@ class PlaywrightResolver:
             def handle_response(response):
                 nonlocal resolved_url
                 res_url = response.url
-                if (".m3u8" in res_url or ".mp4" in res_url or "88ys.cn" in res_url) and not res_url.endswith((".jpg", ".png", ".gif", ".css", ".js", ".ico")):
+                # 💡 过滤掉 .mp4 后缀 (大概率为解析失效后的广告/占位贴片视频)，只采信合法 .m3u8 视频流
+                if ".m3u8" in res_url and not res_url.endswith((".jpg", ".png", ".gif", ".css", ".js", ".ico")):
                     if "adposter" not in res_url and "union" not in res_url:
                         resolved_url = res_url
-                        print(f"    [RESOLVED] {resolved_url}")
+                        print(f"    [RESOLVED M3U8] {resolved_url}")
 
             page.on("response", handle_response)
             
