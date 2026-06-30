@@ -146,8 +146,10 @@ new Vue({
       
       if (this.searchTimer) clearTimeout(this.searchTimer);
       this.searchTimer = setTimeout(() => {
+        const PROXY_BASE = "https://jyzf-proxy.azm.workers.dev/?url=";
         const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
-        axios.get(`${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`)
+        const targetUrl = `${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`;
+        axios.get(PROXY_BASE + encodeURIComponent(targetUrl))
           .then(response => {
             const videos = response.data?.data?.videos || [];
             this.remoteSearchResults = videos.map(v => ({
@@ -275,9 +277,11 @@ new Vue({
         .catch(err => {
           console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 未命中，自动启用云端 API 实时加载防线...`);
           
-          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API
+          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API (通过 CF Worker 代理解决 CORS)
+          const PROXY_BASE = "https://jyzf-proxy.azm.workers.dev/?url=";
           const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
-          axios.get(`${AGE_API_BASE}detail/${aid}`)
+          const targetUrl = `${AGE_API_BASE}detail/${aid}`;
+          axios.get(PROXY_BASE + encodeURIComponent(targetUrl))
             .then(response => {
               const resData = response.data;
               if (resData && resData.data) {
