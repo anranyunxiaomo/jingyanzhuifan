@@ -68,18 +68,25 @@ jobs:
             python update_data.py
           fi
 
-      # 4.9 在自动 commit 之前，拉取最新的远程核心代码，防止与我们本地并发推送的代码产生 diverged 分叉
-      - name: Pull latest remote changes
-        run: |
-          git pull --rebase origin main || true
-
-      # 5. 自动将新抓取到的静态 JSON 数据库 Commit 并 Push 回仓库
-      # 这可以让本地 of search_index 滚雪球般越来越大，且保存历史详情数据
+      # 5. 安全同步并自动推回静态数据 JSON（完美规避 Actions 游离 HEAD 分叉问题）
       - name: Commit and push static data changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(data): auto-update anime static databases"
-          file_pattern: 'data/'  # 💡 仅自动 commit 和 push data 目录下的 JSON 改动
+        run: |
+          # A. 确保本地切回真实的 main 分支并跟踪远程，防止 detached HEAD 游离
+          git checkout -B main
+          
+          # B. 拉取并合并可能存在的最新远程提交
+          git pull --rebase origin main
+          
+          # C. 检查是否有数据改动，若有则自动提交并推回
+          git add data/
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git commit -m "chore(data): auto-update anime static databases"
+            git push origin main
+          else
+            echo "[INFO] No data changes detected. Skipping push."
+          fi
 
       # 6. 使用 GitHub 官方原生方式上传静态网页产物
       - name: Upload static files artifact
