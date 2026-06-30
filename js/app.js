@@ -358,7 +358,6 @@ new Vue({
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
       const epToken = ep[1];          // 加密 token 或直链 url
-      const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
       // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
       // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
@@ -368,7 +367,7 @@ new Vue({
         window.history.replaceState(null, '', newQuery);
       } catch (e) {}
 
-      // 💡 预先计算好降级时所需的 Iframe 解析播放链接 playUrl，供分支复用或 DPlayer HLS 跨域报错时无缝降级！
+      // 💡 计算 Iframe 解析播放链接 playUrl
       let playUrl = "";
       if (this.activeEngineKey === 'default') {
         const vipList = (this.animeDetail.player_vip || '').split(',');
@@ -394,132 +393,22 @@ new Vue({
         playUrl = playUrl.replace('http://', 'https://');
       }
 
-      // ✅ 变量捕获闭包锁定
-      const capturedAnimeId = String(this.currentAnimeId);
-      const capturedEpName = String(this.activeEpisodeName);
-      const capturedRealUrl = realUrl;
-      const capturedIframeUrl = playUrl;
-
-      // 1. 如果存在预解析直链，优先尝试使用原生 DPlayer 播放
-      if (realUrl) {
-        this.isIframeMode = false;
-        this.activePlayUrl = realUrl;
-
-        // 销毁上一次的播放器实例
-        if (this.dpInstance) {
-          try { 
-            this.dpInstance.off('timeupdate');
-            this.dpInstance.off('loadedmetadata');
-            this.dpInstance.off('error');
-            this.dpInstance.destroy(); 
-          } catch(e) {}
-          this.dpInstance = null;
-        }
-
-        const container = document.getElementById('dplayer');
-        if (container) {
-          container.innerHTML = '';
-        }
-
-        this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
-
-        this.$nextTick(() => {
-          setTimeout(() => {
-            try {
-              const dp = new DPlayer({
-                container: document.getElementById('dplayer'),
-                autoplay: true,
-                screenshot: false,
-                id: capturedAnimeId + "_" + capturedEpName,
-                video: {
-                  url: capturedRealUrl,
-                  type: 'hls'
-                }
-              });
-              this.dpInstance = dp;
-
-              if (savedTime <= 3) {
-                console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
-                this.guardTimer = setInterval(() => {
-                  try {
-                    if (dp && dp.video) {
-                      dp.video.currentTime = 0.01;
-                    }
-                  } catch(e) {}
-                }, 30);
-                
-                setTimeout(() => {
-                  if (this.guardTimer) {
-                    clearInterval(this.guardTimer);
-                    this.guardTimer = null;
-                  }
-                }, 1500);
-              }
-
-              dp.on('loadedmetadata', () => {
-                if (savedTime > 3) {
-                  console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
-                  dp.seek(savedTime);
-                }
-              });
-
-              dp.on('timeupdate', () => {
-                if (!dp || !dp.video) return;
-                const currentTime = dp.video.currentTime;
-                const duration = dp.video.duration;
-                if (currentTime > 3 && duration && (duration - currentTime > 10)) {
-                  const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
-                  localStorage.setItem(pKey, currentTime.toString());
-                }
-              });
-
-              // 💡 跨域网络容灾：如果原生 DPlayer 播放直链报错 (如非凡/无尽直链 CORS 403)，100% 自动无缝降级切换为备用超清解析源 Iframe 播放
-              dp.on('error', () => {
-                console.warn("[DPLAYER HLS ERROR] CORS blockade. Redirecting stream through premium backup resolver...");
-                if (this.dpInstance) {
-                  try {
-                    this.dpInstance.off('timeupdate');
-                    this.dpInstance.off('loadedmetadata');
-                    this.dpInstance.off('error');
-                    this.dpInstance.destroy();
-                  } catch(e) {}
-                  this.dpInstance = null;
-                }
-                this.isIframeMode = true;
-                
-                // 💡 终极奥义：使用公共强力解析接口作为中转，直接把直链喂给它，100% 物理避开 403 并实现流畅秒播！
-                const fallbackUrl = "https://jx.jsonplayer.com/?url=" + encodeURIComponent(capturedRealUrl) + timeParams;
-                this.activePlayUrl = '';
-                this.$nextTick(() => {
-                  setTimeout(() => {
-                    this.activePlayUrl = fallbackUrl;
-                    console.log(`[CASCADING FALLBACK] Redirected to backup proxy resolver: ${this.activePlayUrl}`);
-                  }, 120);
-                });
-              });
-
-              console.log(`[DPLAYER PLAYING] URL: ${capturedRealUrl} | ID: ${capturedAnimeId}_${capturedEpName}`);
-            } catch(e) {
-              console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
-              this.isIframeMode = true;
-              this.activePlayUrl = capturedIframeUrl;
-            }
-          }, 120);
-        });
-        return;
-      }
-      
-      // 2. 如果不存在直链，同步降级为传统的 Iframe 解析模式
+      // 强制设为 Iframe 模式，清理可能存在的旧播放器实例
       this.isIframeMode = true;
       if (this.dpInstance) {
-        try { this.dpInstance.destroy(); } catch(e) {}
+        try { 
+          this.dpInstance.off('timeupdate');
+          this.dpInstance.off('loadedmetadata');
+          this.dpInstance.off('error');
+          this.dpInstance.destroy(); 
+        } catch(e) {}
         this.dpInstance = null;
       }
       
       this.activePlayUrl = '';
       this.$nextTick(() => {
         setTimeout(() => {
-          this.activePlayUrl = capturedIframeUrl;
+          this.activePlayUrl = playUrl;
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
