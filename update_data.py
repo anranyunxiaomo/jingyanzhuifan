@@ -21,8 +21,8 @@ os.makedirs(DETAIL_DIR, exist_ok=True)
 
 # 备用域名列表
 BACKUP_DOMAINS = [
-    "https://ageapi.omwjhz.com:18888/v2/",
-    "https://ageapi.omwjhz.com:18888/v2/"
+    "https://api.agedm.io/v2/",
+    "https://api.agedm.io/v2/"
 ]
 
 headers = {
@@ -83,7 +83,7 @@ def fetch_api_base():
                 data = r.json()
                 web_url = data.get('url', '')
                 if web_url:
-                    return "https://ageapi.omwjhz.com:18888/v2/"
+                    return "https://api.agedm.io/v2/"
         except Exception as e:
             print(f"[DEBUG] Fetch config from {url} failed: {e}")
     return BACKUP_DOMAINS[0]
@@ -181,9 +181,9 @@ async def main_async():
                                     'is_active': True
                                 }
 
-        # 获取最近更新的前 2 页
-        print("Fetching update page 1 & 2...")
-        for page in [1, 2]:
+        # 获取最近更新的前 15 页 (汇总包含近一个月内更新的所有最热当季新番，大约 450+ 部)
+        print("Fetching update pages 1 to 15...")
+        for page in range(1, 16):
             update_data = request_api("update", params={"page": page})
             if update_data and isinstance(update_data, list):
                 for item in update_data:
@@ -195,6 +195,45 @@ async def main_async():
                             'new_title': item.get('NewTitle', ''),
                             'is_active': True
                         }
+
+        # 获取最近更新的前 15 页 (汇总包含近一个月内更新的所有最热当季新番，大约 450+ 部)
+        print("Fetching update pages 1 to 15...")
+        for page in range(1, 16):
+            update_data = request_api("update", params={"page": page})
+            if update_data and isinstance(update_data, list):
+                for item in update_data:
+                    aid_str = str(item.get('AID', ''))
+                    if aid_str:
+                        recently_updated_aids.add(aid_str)
+                        aids_to_fetch[aid_str] = {
+                            'title': item.get('Title', '未知动漫'),
+                            'new_title': item.get('NewTitle', ''),
+                            'is_active': True
+                        }
+
+    # 💡 强制把中文追番界爆火的殿堂级名作 AID 注入待抓取名单，彻底将其静态化离线化，确保 100% 搜索即见、0% 依赖国外 CORS 代理
+    PERMANENT_HOT_ANIME = [
+        "20230207", "20260029", # 葬送的芙莉莲 系列
+        "19990011", "20240172", # 海贼王 系列
+        "20190059", "20200234", "20210214", "20210215", "20230073", "20240090", # 鬼灭之刃 系列
+        "20200249", "20230072", # 咒术回战 系列
+        "20180104", "20210006", "20210134", "20240059", # 转生史莱姆 系列
+        "20130026", "20170062", "20180126", "20190058", "20200318", "20220008", "20230030", "20230225", # 进击的巨人 系列
+        "20220063", "20220261", "20230209", # 间谍过家家 系列
+        "20220245", "20230085", "20240149", # 死神 千年血战 系列
+        "20220244", # 电锯人
+        "20220248", # 孤独摇滚
+        "19960002", # 名侦探柯南
+        "20220133", # 莉可丽丝
+        "20020014", "20070029", "20170046" # 火影忍者 系列
+    ]
+    for aid in PERMANENT_HOT_ANIME:
+        if aid not in aids_to_fetch:
+            aids_to_fetch[aid] = {
+                'title': '热门大作',
+                'new_title': '',
+                'is_active': False
+            }
 
     print(f"[INFO] Collected {len(aids_to_fetch)} unique anime AIDs to fetch.")
     
@@ -312,34 +351,43 @@ async def main_async():
 
 
     # ==========================================================================
-    # 3️⃣ 第三阶段：批量写入本地 JSON 文件并更新搜索索引
+    # 3️⃣ 第三阶段：批量写入本地 JSON 文件并重建搜索索引
     # ==========================================================================
-    print("\n[SAVING] Writing detail files and indexing...")
+    print("\n[SAVING] Writing newly fetched detail files...")
     for aid, (detail_data, detail_path, title) in fetched_details.items():
         with open(detail_path, 'w', encoding='utf-8') as f:
             json.dump(detail_data, f, ensure_ascii=False, indent=2)
-        
-        # 更新搜索索引
-        if aid not in existing_aids:
-            pinyin_code = get_pinyin_initials(title)
-            search_index.append({
-                "AID": int(aid),
-                "Title": title,
-                "Pinyin": pinyin_code,
-                "Cover": detail_data.get('video', {}).get('cover', ''),
-                "Status": detail_data.get('video', {}).get('status', '连载'),
-                "UpToDate": detail_data.get('video', {}).get('uptodate', '更新中')
-            })
-            existing_aids.add(aid)
-        else:
-            for item in search_index:
-                if str(item['AID']) == aid:
-                    item['Status'] = detail_data.get('video', {}).get('status', '连载')
-                    item['UpToDate'] = detail_data.get('video', {}).get('uptodate', '更新中')
-                    break
 
-    save_search_index(search_index)
-    print(f"[SUCCESS] Saved search_index.json with {len(search_index)} items.")
+    # 💡 稳健大杀器：一键重建最新的 search_index.json，使本地模糊搜索能 100% 覆盖所有已缓存/同步的动漫
+    print("\n[INDEX] Rebuilding search_index.json from all local details...")
+    index_data = []
+    seen_aids = set()
+    
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_file_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_file_path, 'r', encoding='utf-8') as f:
+                    detail = json.load(f)
+                    video = detail.get("video", {})
+                    title = video.get("name")
+                    if title and aid_str not in seen_aids:
+                        pinyin_code = get_pinyin_initials(title)
+                        index_data.append({
+                            "AID": int(aid_str),
+                            "Title": title,
+                            "Pinyin": pinyin_code,
+                            "Cover": video.get("cover", ""),
+                            "Status": video.get("status", "连载"),
+                            "UpToDate": video.get("uptodate", "更新中")
+                        })
+                        seen_aids.add(aid_str)
+            except Exception as e:
+                print(f"[WARNING] Failed to parse detail file {filename}: {e}")
+                
+    save_search_index(index_data)
+    print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
     print("[FINISHED] Anime data static generation complete!")
 
 def main():

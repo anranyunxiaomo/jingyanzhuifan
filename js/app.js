@@ -54,6 +54,8 @@ new Vue({
     
     // 追番收藏夹
     favorites: [],
+    // 本地扁平动漫库保底
+    localAnimeCatalog: [],
   },
   
   computed: {
@@ -145,7 +147,7 @@ new Vue({
       
       if (this.searchTimer) clearTimeout(this.searchTimer);
       this.searchTimer = setTimeout(() => {
-        const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
+        const AGE_API_BASE = "https://api.agedm.io/v2/";
         const targetUrl = `${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`;
         this.axiosGetViaProxy(targetUrl)
           .then(response => {
@@ -302,7 +304,7 @@ new Vue({
           console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 未命中，自动启用云端 API 实时加载防线...`);
           
           // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API (通过高可用 CORS Fallback 代理链)
-          const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
+          const AGE_API_BASE = "https://api.agedm.io/v2/";
           const targetUrl = `${AGE_API_BASE}detail/${aid}`;
           this.axiosGetViaProxy(targetUrl)
             .then(response => {
