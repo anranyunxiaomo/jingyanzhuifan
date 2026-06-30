@@ -366,42 +366,63 @@ new Vue({
       try {
         const newQuery = `?aid=${this.currentAnimeId}&ep=${epIdx}&_t=${new Date().getTime()}`;
         window.history.replaceState(null, '', newQuery);
-        console.log(`[ADDRESS BAR UPDATED] location.search set to: ${newQuery}`);
-      } catch (e) {
-        console.warn("[Address Bar] Failed to update URL search state:", e);
+      } catch (e) {}
+
+      // 💡 预先计算好降级时所需的 Iframe 解析播放链接 playUrl，供分支复用或 DPlayer HLS 跨域报错时无缝降级！
+      let playUrl = "";
+      if (this.activeEngineKey === 'default') {
+        const vipList = (this.animeDetail.player_vip || '').split(',');
+        const playerJx = this.animeDetail.player_jx || {};
+        const isVip = vipList.includes(this.activeLineKey);
+        const jxBase = isVip ? playerJx.vip : playerJx.zj;
+        if (jxBase) {
+          playUrl = jxBase + epToken;
+        } else {
+          playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
+        }
+      } else {
+        playUrl = this.activeEngineKey + epToken;
       }
+
+      const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+      const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
+      const joinChar = playUrl.includes('?') ? '&' : '?';
+      const timeParams = savedTime > 3 ? `&start=${savedTime}&t=${savedTime}#t=${savedTime}` : `&start=0&t=0.01#t=0.01`;
       
-      // 1. 如果存在预解析直链，优先使用原生 DPlayer 播放，享受极致无广告体验！
+      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
+      if (playUrl.startsWith('http://')) {
+        playUrl = playUrl.replace('http://', 'https://');
+      }
+
+      // ✅ 变量捕获闭包锁定
+      const capturedAnimeId = String(this.currentAnimeId);
+      const capturedEpName = String(this.activeEpisodeName);
+      const capturedRealUrl = realUrl;
+      const capturedIframeUrl = playUrl;
+
+      // 1. 如果存在预解析直链，优先尝试使用原生 DPlayer 播放
       if (realUrl) {
         this.isIframeMode = false;
-        this.activePlayUrl = realUrl; // 💡 激活播放区域显示DOM
-        
-        // 销毁上一次 of 播放器实例
+        this.activePlayUrl = realUrl;
+
+        // 销毁上一次的播放器实例
         if (this.dpInstance) {
           try { 
             this.dpInstance.off('timeupdate');
             this.dpInstance.off('loadedmetadata');
+            this.dpInstance.off('error');
             this.dpInstance.destroy(); 
           } catch(e) {}
           this.dpInstance = null;
         }
 
-        // 💡 物理清空 DOM 节点：在修改 DPlayer Key 触发 Vue 回收前，强行将原有 DOM 内容擦除
         const container = document.getElementById('dplayer');
         if (container) {
           container.innerHTML = '';
         }
 
-        // 💡 强行旋转 Vue 绑定在 DPlayer 容器上的 Key！
-        // 这将强制 Vue 将原来的 div DOM 彻底抛弃回收，重新实例化一个纯净的 div，彻底扼杀任何浏览器底层的 HTMLMediaElement 硬件复用！
         this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
-        
-        // ✅ 在进入异步之前，把所有关键值固定住，绝对不让异步回调里读取任何 this.xxx 响应式变量，彻底防止高频切集产生的时间污染！
-        const capturedAnimeId = String(this.currentAnimeId);
-        const capturedEpName = String(this.activeEpisodeName);
-        const capturedRealUrl = realUrl;
 
-        // 异步渲染并挂载 DPlayer 播放器 (延迟 120 毫秒以确保新 div 被重新挂载，且硬件通道已关闭)
         this.$nextTick(() => {
           setTimeout(() => {
             try {
@@ -409,21 +430,14 @@ new Vue({
                 container: document.getElementById('dplayer'),
                 autoplay: true,
                 screenshot: false,
-                // 💡 物理隔断不同视频、不同集数间的播放进度，确保 DPlayer 内部的 history localstorage 进度键值绝对独立
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
                   url: capturedRealUrl,
-                  type: 'hls' // 支持 hls.js 解码 m3u8
+                  type: 'hls'
                 }
               });
               this.dpInstance = dp;
 
-              // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
-              // 在 DPlayer 刚刚创建、视频尚未完全加载的同步阶段，直接启动 1.5 秒的高频归零定时器。
-              // 无论外部插件何时在微秒级异步执行它的 seek，我们都会在 30 毫秒内强制将其重新拽回最起点！
-              const progressKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
-              const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-              
               if (savedTime <= 3) {
                 console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
                 this.guardTimer = setInterval(() => {
@@ -434,17 +448,14 @@ new Vue({
                   } catch(e) {}
                 }, 30);
                 
-                // 1.5 秒后自动拆除定时器，放行让用户自己拖动
                 setTimeout(() => {
                   if (this.guardTimer) {
                     clearInterval(this.guardTimer);
                     this.guardTimer = null;
-                    console.log("[GUARD] Guard interval released.");
                   }
                 }, 1500);
               }
 
-              // 💡 监听视频加载成功事件，如果看起过则主动恢复它
               dp.on('loadedmetadata', () => {
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
@@ -452,86 +463,60 @@ new Vue({
                 }
               });
 
-              // ✅ 在注册事件时，把当前动漫 ID 和集名固定在局部变量闭包中，不受后续切换响应式更新的影响，物理阻断“临终幽灵写回”Bug！
               dp.on('timeupdate', () => {
-                if (!dp || !dp.video) return; // 💡 临终安全卫士，防销毁时 null 报错导致 JS 主线程崩溃
+                if (!dp || !dp.video) return;
                 const currentTime = dp.video.currentTime;
                 const duration = dp.video.duration;
-
-                // 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
                   const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(pKey, currentTime.toString());
                 }
               });
 
+              // 💡 跨域网络容灾：如果原生 DPlayer 播放直链报错 (如非凡/无尽直链 CORS 403)，100% 自动无缝降级切换为传统的 Iframe 模式
+              dp.on('error', () => {
+                console.warn("[DPLAYER HLS ERROR] CORS blockade or invalid stream. Cascading fallback to Iframe...");
+                if (this.dpInstance) {
+                  try {
+                    this.dpInstance.off('timeupdate');
+                    this.dpInstance.off('loadedmetadata');
+                    this.dpInstance.off('error');
+                    this.dpInstance.destroy();
+                  } catch(e) {}
+                  this.dpInstance = null;
+                }
+                this.isIframeMode = true;
+                this.activePlayUrl = '';
+                this.$nextTick(() => {
+                  setTimeout(() => {
+                    this.activePlayUrl = capturedIframeUrl;
+                    console.log(`[CASCADING FALLBACK] Loading Iframe resolve: ${this.activePlayUrl}`);
+                  }, 120);
+                });
+              });
+
               console.log(`[DPLAYER PLAYING] URL: ${capturedRealUrl} | ID: ${capturedAnimeId}_${capturedEpName}`);
             } catch(e) {
               console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
               this.isIframeMode = true;
+              this.activePlayUrl = capturedIframeUrl;
             }
           }, 120);
         });
         return;
       }
       
-      // 2. 如果不存在预解析直链 (冷门旧番/历史缓存未覆盖部分)，安全降级为传统的 Iframe 解析模式
+      // 2. 如果不存在直链，同步降级为传统的 Iframe 解析模式
       this.isIframeMode = true;
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
         this.dpInstance = null;
       }
       
-      let playUrl = "";
-      
-      if (this.activeEngineKey === 'default') {
-        const vipList = (this.animeDetail.player_vip || '').split(',');
-        const playerJx = this.animeDetail.player_jx || {};
-        
-        // 检查当前选中的线路是否为 VIP 线路
-        const isVip = vipList.includes(this.activeLineKey);
-        const jxBase = isVip ? playerJx.vip : playerJx.zj;
-        
-        if (!jxBase) {
-          alert("播放解析服务配置失效，请尝试切换其他线路播放。");
-          return;
-        }
-        playUrl = jxBase + epToken;
-      } else {
-        // 使用备用纯 HTTPS 解析引擎
-        playUrl = this.activeEngineKey + epToken;
-      }
-      
-      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug (Iframe 模式)：
-      // 1. 读取本集有无我们自己记录的历史进度
-      const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
-      const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-      
-      // 2. 智能判断使用 "?" 还是 "&" 来拼接参数
-      const joinChar = playUrl.includes('?') ? '&' : '?';
-      
-      // 3. 构建起播时间参数。如果是新视频，强制传 start=0&t=0.01；如果有历史进度，传入对应的恢复时间
-      let timeParams = "";
-      if (savedTime > 3) {
-        timeParams = `&start=${savedTime}&t=${savedTime}#t=${savedTime}`;
-      } else {
-        timeParams = `&start=0&t=0.01#t=0.01`;
-      }
-      
-      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
-
-      // 自动强升 https，彻底防 Mixed Content 混合内容拦截
-      if (playUrl.startsWith('http://')) {
-        playUrl = playUrl.replace('http://', 'https://');
-      }
-      
-      // 2. 💡 iframe 物理销毁重载机制 (Blank Reset)：
-      //    在将 activePlayUrl 设为新 URL 前，先设为空。这样 Vue 会彻底销毁旧的 iframe DOM 节点，
-      //    在 120 毫秒后，再重新将 activePlayUrl 设为新视频的 playUrl，彻底阻断旧视频 unload 时的进度全局写入对新视频的污染！
       this.activePlayUrl = '';
       this.$nextTick(() => {
         setTimeout(() => {
-          this.activePlayUrl = playUrl;
+          this.activePlayUrl = capturedIframeUrl;
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
