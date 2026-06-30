@@ -47,6 +47,7 @@ new Vue({
     ],
     activeEngineKey: 'default',
     useProxyTunnel: false, // 免拦截中转代理通道开关
+    customProxyUrl: '',   // 用户专属 Cloudflare Worker 代理域名
   },
   
   computed: {
@@ -139,6 +140,12 @@ new Vue({
     // 首次渲染图标
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
+    }
+    
+    // 读取本地缓存的专属代理链接
+    const savedProxy = localStorage.getItem('custom_proxy_url');
+    if (savedProxy) {
+      this.customProxyUrl = savedProxy;
     }
   },
   
@@ -253,9 +260,11 @@ new Vue({
         playUrl = this.activeEngineKey + epToken;
       }
       
-      // 如果开启了免拦截代理中转通道，通过公网安全 HTTPS 网页代理进行中转重写
+      // 如果开启了免拦截代理中转通道，通过专属或公共安全 HTTPS 网页代理进行中转重写
       if (this.useProxyTunnel) {
-        playUrl = "https://netfiles.eu/browse.php?b=4&u=" + encodeURIComponent(playUrl);
+        const proxyBase = this.customProxyUrl.trim() || "https://bypass.run";
+        const formattedProxy = proxyBase.endsWith('/') ? proxyBase : (proxyBase + '/');
+        playUrl = formattedProxy + "?url=" + encodeURIComponent(playUrl);
       } else {
         // 自动强升 https，彻底防 Mixed Content 混合内容拦截
         if (playUrl.startsWith('http://')) {
@@ -275,8 +284,19 @@ new Vue({
 
     toggleProxyTunnel() {
       this.useProxyTunnel = !this.useProxyTunnel;
+      // 重新实例化 lucide 图标，避免动态生成的 DOM 图标不显示
+      this.$nextTick(() => {
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      });
       this.rePlayCurrentEpisode();
     },
+
+    saveProxyConfig() {
+      localStorage.setItem('custom_proxy_url', this.customProxyUrl);
+    },
+
 
 
     
