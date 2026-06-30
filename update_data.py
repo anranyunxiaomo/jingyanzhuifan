@@ -157,12 +157,15 @@ class PlaywrightResolver:
 
     async def resolve(self, jx_url):
         if not self.context:
+            print("      [RESOLVE WARNING] Context is None!")
             return None
         
         resolved_url = None
         page = None
         try:
+            print(f"      [RESOLVE STEP 1] Creating new page for: {jx_url[:60]}...")
             page = await self.context.new_page()
+            print("      [RESOLVE STEP 2] Page created successfully.")
             
             def handle_response(response):
                 nonlocal resolved_url
@@ -175,11 +178,14 @@ class PlaywrightResolver:
 
             page.on("response", handle_response)
             
+            print("      [RESOLVE STEP 3] page.on response hook registered. Navigating...")
             # 限制等待时长
             await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded")
+            print("      [RESOLVE STEP 4] page.goto complete. Entering sleep buffer...")
             await asyncio.sleep(4.0)
-        except Exception as e:
-            print(f"      [RESOLVE EXCEPTION] {e}")
+            print("      [RESOLVE STEP 5] sleep buffer complete.")
+        except BaseException as e:
+            print(f"      [RESOLVE CRITICAL BASE EXCEPTION] {type(e).__name__}: {e}")
         finally:
             if page:
                 try:
