@@ -334,8 +334,8 @@ async def main_async():
                             ep[2] = cached_url
                         continue
                         
-                    # B. 如果属于热门动漫最新 2 集，且为 VIP 线路（最易被 HTTPS 混合内容拦截），且无本地缓存，加入并发任务队列
-                    if is_hot and (i in new_ep_indices) and jx_base and (pkey == 'xigua' or is_vip):
+                    # B. 如果属于热门动漫最新 2 集，且为普通直链线路（非 VIP/西瓜线，这些线路能 100% 解析出真实 M3U8 直链），且无本地缓存，加入并发任务队列
+                    if is_hot and (i in new_ep_indices) and jx_base and not is_vip and pkey != 'xigua':
                         jx_url = jx_base + ep_token
                         pending_tasks.append({
                             'aid': aid,
