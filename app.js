@@ -389,12 +389,21 @@ new Vue({
         console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
+        // 💡 修复：如果常规线路被加密成了 age_ 开头，且我们有 realUrl，就优先传 realUrl 给解析站
+        // 否则把 age_ 传给第三方解析站(如 m3u8.tv) 会导致 404
+        const targetUrlToResolve = realUrl ? realUrl : epToken;
+        
         if (this.activeEngineKey === 'default') {
-          // 常规线路默认使用 m3u8.tv 专属 VIP 接口，躲避 403 跨域
-          playUrl = "https://jx.m3u8.tv/jiaxing.php?url=" + epToken;
+          // 如果 target 还是 age_ 开头，说明它是个漏网之鱼的加密 Token，必须用官方解密
+          if (targetUrlToResolve.startsWith('age_')) {
+              playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
+          } else {
+              // 常规真实 m3u8 链接，用 m3u8.tv 专属 VIP 接口代理
+              playUrl = "https://jx.m3u8.tv/jiaxing.php?url=" + targetUrlToResolve;
+          }
           console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium m3u8.tv resolver.");
         } else {
-          playUrl = this.activeEngineKey + epToken;
+          playUrl = this.activeEngineKey + targetUrlToResolve;
           console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
       }
