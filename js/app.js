@@ -390,8 +390,12 @@ new Vue({
         // 💡 强行旋转 Vue 绑定在 DPlayer 容器上的 Key！
         // 这将强制 Vue 将原来的 div DOM 彻底抛弃回收，重新实例化一个纯净的 div，彻底扼杀任何浏览器底层的 HTMLMediaElement 硬件复用！
         this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
-        this.activePlayUrl = realUrl;
         
+        // ✅ 在进入异步之前，把所有关键值固定住，绝对不让异步回调里读取任何 this.xxx 响应式变量，彻底防止高频切集产生的时间污染！
+        const capturedAnimeId = String(this.currentAnimeId);
+        const capturedEpName = String(this.activeEpisodeName);
+        const capturedRealUrl = realUrl;
+
         // 异步渲染并挂载 DPlayer 播放器 (延迟 120 毫秒以确保新 div 被重新挂载，且硬件通道已关闭)
         this.$nextTick(() => {
           setTimeout(() => {
@@ -401,9 +405,9 @@ new Vue({
                 autoplay: true,
                 screenshot: false,
                 // 💡 物理隔断不同视频、不同集数间的播放进度，确保 DPlayer 内部的 history localstorage 进度键值绝对独立
-                id: String(this.currentAnimeId) + "_" + String(this.activeEpisodeName),
+                id: capturedAnimeId + "_" + capturedEpName,
                 video: {
-                  url: realUrl,
+                  url: capturedRealUrl,
                   type: 'hls' // 支持 hls.js 解码 m3u8
                 }
               });
@@ -411,7 +415,7 @@ new Vue({
               // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
               // 在 DPlayer 刚刚创建、视频尚未完全加载的同步阶段，直接启动 1.5 秒的高频归零定时器。
               // 无论外部插件何时在微秒级异步执行它的 seek，我们都会在 30 毫秒内强制将其重新拽回最起点！
-              const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+              const progressKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
               const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
               
               if (savedTime <= 3) {
@@ -443,22 +447,18 @@ new Vue({
               });
 
               // ✅ 在注册事件时，把当前动漫 ID 和集名固定在局部变量闭包中，不受后续切换响应式更新的影响，物理阻断“临终幽灵写回”Bug！
-              const capturedAnimeId = this.currentAnimeId;
-              const capturedEpName = this.activeEpisodeName;
-
-              // 💡 监听播放时间更新，自动记录进度
               this.dpInstance.on('timeupdate', () => {
                 const currentTime = this.dpInstance.video.currentTime;
                 const duration = this.dpInstance.video.duration;
 
                 // 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
-                  const progressKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
-                  localStorage.setItem(progressKey, currentTime.toString());
+                  const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+                  localStorage.setItem(pKey, currentTime.toString());
                 }
               });
 
-              console.log(`[DPLAYER PLAYING] URL: ${realUrl} | ID: ${this.currentAnimeId}_${this.activeEpisodeName}`);
+              console.log(`[DPLAYER PLAYING] URL: ${capturedRealUrl} | ID: ${capturedAnimeId}_${capturedEpName}`);
             } catch(e) {
               console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
               this.isIframeMode = true;
