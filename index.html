@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>AGE 动漫 - 高级白金版</title>
+  <!-- Google Fonts 引入 Outfit & Inter 高级字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide 图标 CDN 引入 -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- CSS 样式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app" v-cloak>
+  
+  <!-- 置顶导航栏 (白金磨砂吸顶) -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand" @click="goHome">
+        <span class="logo-text">AGE</span>
+        <span class="logo-sub">FAN</span>
+      </div>
+      
+      <!-- 极速本地搜索框 -->
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i data-lucide="search" class="search-icon"></i>
+          <input 
+            type="text" 
+            placeholder="搜索动漫... (支持中文、拼音首字母)" 
+            v-model="searchQuery" 
+            @focus="searchFocused = true"
+            @blur="handleSearchBlur"
+          >
+          <i data-lucide="x" class="clear-icon" v-if="searchQuery" @click="searchQuery = ''"></i>
+        </div>
+        
+        <!-- 搜索下拉匹配框 -->
+        <transition name="fade-slide">
+          <div class="search-results" v-if="searchFocused && filteredResults.length > 0">
+            <div 
+              class="result-item" 
+              v-for="item in filteredResults" 
+              :key="item.AID"
+              @mousedown="selectAnime(item.AID)"
+            >
+              <img :src="item.Cover" :alt="item.Title" class="result-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
+              <div class="result-info">
+                <div class="result-title">{{ item.Title }}</div>
+                <div class="result-meta">{{ item.Status }} · {{ item.UpToDate }}</div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区 -->
+  <main class="app-main">
+    
+    <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
+    <section class="banner-section" v-if="!currentAnimeId && bannerList.length > 0">
+      <div class="banner-container">
+        <transition name="fade" mode="out-in">
+          <div 
+            class="banner-slide" 
+            :key="currentBannerIndex"
+            :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,248,246,0.9) 30%, rgba(250,248,246,0.2) 100%), url(' + activeBanner.style + ')' }"
+          >
+            <div class="banner-content">
+              <span class="banner-tag">精选推荐</span>
+              <h1 class="banner-title" v-html="activeBanner.html"></h1>
+              <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
+                <i data-lucide="play-circle"></i> 立即观看
+              </button>
+            </div>
+          </div>
+        </transition>
+        
+        <!-- 幻灯片指示器 -->
+        <div class="banner-dots">
+          <span 
+            class="dot" 
+            v-for="(dot, idx) in bannerList" 
+            :key="idx" 
+            :class="{ active: idx === currentBannerIndex }"
+            @click="currentBannerIndex = idx"
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 动漫列表模式 (首页展示) -->
+    <div class="home-content" v-if="!currentAnimeId">
+      
+      <!-- 2.1 每日更新时刻表 (星期卡片) -->
+      <section class="schedule-section" v-if="weekListKeys.length > 0">
+        <div class="section-title-wrapper">
+          <i data-lucide="calendar" class="title-icon"></i>
+          <h2 class="section-title">每日更新时间表</h2>
+        </div>
+        
+        <!-- 星期导航 Tab -->
+        <div class="week-tabs">
+          <button 
+            class="tab-btn" 
+            v-for="day in weekDays" 
+            :key="day.value"
+            :class="{ active: activeWeekDay === day.value }"
+            @click="activeWeekDay = day.value"
+          >
+            {{ day.label }}
+          </button>
+        </div>
+        
+        <!-- 更新动漫卡片列表 -->
+        <div class="grid-list">
+          <div 
+            class="anime-card" 
+            v-for="item in activeWeekList" 
+            :key="item.id"
+            @click="selectAnime(item.id)"
+          >
+            <div class="card-cover-wrapper">
+              <div class="card-tag">{{ item.namefornew }}</div>
+              <div class="card-overlay">
+                <i data-lucide="play" class="overlay-play-icon"></i>
+              </div>
+              <!-- 占位符图防裂 -->
+              <img 
+                :src="'https://cdn.aqdstatic.com:966/age/' + item.id + '.jpg'" 
+                :alt="item.name" 
+                class="card-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
+              >
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">{{ item.name }}</h3>
+              <p class="card-update-time">{{ item.mtime.split(' ')[1] }} 更新</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2.2 最近更新列表 -->
+      <section class="list-section">
+        <div class="section-title-wrapper">
+          <i data-lucide="clock" class="title-icon"></i>
+          <h2 class="section-title">最近更新</h2>
+        </div>
+        <div class="grid-list">
+          <div 
+            class="anime-card" 
+            v-for="item in latestList" 
+            :key="item.AID"
+            @click="selectAnime(item.AID)"
+          >
+            <div class="card-cover-wrapper">
+              <div class="card-tag">{{ item.NewTitle }}</div>
+              <div class="card-overlay">
+                <i data-lucide="play" class="overlay-play-icon"></i>
+              </div>
+              <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">{{ item.Title }}</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2.3 推荐动漫列表 -->
+      <section class="list-section">
+        <div class="section-title-wrapper">
+          <i data-lucide="thumbs-up" class="title-icon"></i>
+          <h2 class="section-title">本季推荐</h2>
+        </div>
+        <div class="grid-list">
+          <div 
+            class="anime-card" 
+            v-for="item in recommendList" 
+            :key="item.AID"
+            @click="selectAnime(item.AID)"
+          >
+            <div class="card-cover-wrapper">
+              <div class="card-tag">{{ item.NewTitle }}</div>
+              <div class="card-overlay">
+                <i data-lucide="play" class="overlay-play-icon"></i>
+              </div>
+              <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">{{ item.Title }}</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
+    <div class="detail-content" v-else>
+      <div class="back-nav" @click="goHome">
+        <i data-lucide="arrow-left"></i> 返回主页
+      </div>
+      
+      <div class="detail-container" v-if="animeDetail">
+        
+        <!-- 3.1 高端白金播放器区域 -->
+        <div class="player-panel">
+          <div class="player-wrapper">
+            <div class="player-placeholder" v-if="!activePlayUrl">
+              <i data-lucide="video" class="placeholder-icon"></i>
+              <p>请在下方选择剧集开始播放</p>
+            </div>
+            <iframe 
+              id="playerIFrame"
+              v-else
+              :src="activePlayUrl" 
+              class="video-iframe"
+              scrolling="no" 
+              allowfullscreen="true" 
+              frameborder="no" 
+              allowtransparency="yes"
+            ></iframe>
+          </div>
+          <div class="playing-info" v-if="activePlayUrl">
+            <span class="playing-indicator">正在播放</span>
+            <h3 class="playing-title">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
+          </div>
+        </div>
+
+        <!-- 3.2 动漫图文介绍 -->
+        <div class="info-panel">
+          <div class="info-header">
+            <img :src="animeDetail.video.cover" :alt="animeDetail.video.name" class="detail-poster" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+            <div class="detail-meta-info">
+              <h2 class="detail-title">{{ animeDetail.video.name }}</h2>
+              <div class="meta-tag-list">
+                <span class="meta-tag">{{ animeDetail.video.area }}</span>
+                <span class="meta-tag">{{ animeDetail.video.year }}年</span>
+                <span class="meta-tag">{{ animeDetail.video.type }}</span>
+                <span class="meta-tag status-tag">{{ animeDetail.video.status }}</span>
+              </div>
+              <p class="detail-row"><strong>原作：</strong>{{ animeDetail.video.writer || '暂无' }}</p>
+              <p class="detail-row"><strong>最新：</strong>{{ animeDetail.video.uptodate }}</p>
+              <p class="detail-row"><strong>首播：</strong>{{ animeDetail.video.premiere || '暂无' }}</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <h4 class="info-subtitle">剧情简介</h4>
+            <p class="intro-text">{{ animeDetail.video.intro_clean }}</p>
+          </div>
+        </div>
+
+        <!-- 3.3 线路与剧集选择面板 -->
+        <div class="episodes-panel">
+          <div class="panel-header">
+            <i data-lucide="layers" class="panel-icon"></i>
+            <h3>播放线路与剧集</h3>
+          </div>
+          
+          <!-- 线路切换 Tab -->
+          <div class="line-tabs">
+            <button 
+              class="line-tab-btn" 
+              v-for="line in availableLines" 
+              :key="line.key"
+              :class="{ active: activeLineKey === line.key }"
+              @click="switchLine(line.key)"
+            >
+              {{ line.title }} <span class="vip-badge" v-if="line.isVip">VIP</span>
+            </button>
+          </div>
+
+          <!-- 剧集按钮网格 -->
+          <div class="episodes-grid" v-if="activeEpisodes.length > 0">
+            <button 
+              class="ep-btn" 
+              v-for="(ep, idx) in activeEpisodes" 
+              :key="idx"
+              :class="{ active: activeEpisodeIndex === idx }"
+              @click="playEpisode(idx)"
+            >
+              {{ ep[0] }}
+            </button>
+          </div>
+          <div class="no-episodes" v-else>
+            该线路暂无可用剧集
+          </div>
+        </div>
+      </div>
+      
+      <!-- 加载详情骨架屏 -->
+      <div class="detail-skeleton" v-else>
+        <div class="skeleton-player"></div>
+        <div class="skeleton-info">
+          <div class="skeleton-line title"></div>
+          <div class="skeleton-line subtitle"></div>
+          <div class="skeleton-line text"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 极简白金底部 -->
+  <footer class="app-footer">
+    <p>© 2026 AGE 动漫. 免责声明：本站仅供学术交流与测试，数据来源于网络公开资源。</p>
+  </footer>
+
+</div>
+
+<!-- Vue.js CDN 引入 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<!-- Axios CDN 引入 -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<!-- JS 应用逻辑 -->
+<script src="js/app.js"></script>
+</body>
+</html>
