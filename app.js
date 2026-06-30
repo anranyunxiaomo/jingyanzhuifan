@@ -47,8 +47,11 @@ new Vue({
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
       { label: '系统默认 (AGE 合作源)', value: 'default' },
-      { label: '超清无广告源 A (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
-      { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
+      { label: '超清 VIP 万能接口 A (极速稳定)', value: 'https://jx.m3u8.tv/jiaxing.php?url=' },
+      { label: '超清 VIP 极速接口 B', value: 'https://jx.wpp.link/?url=' },
+      { label: '全网超级 VIP 接口 C', value: 'https://im1907.top/?jx=' },
+      { label: '备用免广告源 D (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
+      { label: '备用免广告源 E (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
     activeEngineKey: 'default',
     // H5 播放器状态管理
@@ -388,9 +391,9 @@ new Vue({
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         if (this.activeEngineKey === 'default') {
-          // 如果选择默认，但又是常规线路，为了物理躲避 GFW 被墙和 403 跨域阻断，系统自动将其无感升级至 xmflv 播放！
-          playUrl = "https://jx.xmflv.com/?url=" + epToken;
-          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to high-availability xmflv resolver.");
+          // 💡 升级策略：常规线路默认使用 m3u8.tv 专属 VIP 接口，该接口技术雄厚，100% 破除 403 跨域且支持所有视频平台，国内秒开！
+          playUrl = "https://jx.m3u8.tv/jiaxing.php?url=" + epToken;
+          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium m3u8.tv resolver.");
         } else {
           // 如果用户手动挑选了其它引擎，尊重用户选择
           playUrl = this.activeEngineKey + epToken;
