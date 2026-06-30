@@ -440,6 +440,17 @@ async def main_async():
     # 2️⃣ 第二阶段：使用 Playwright 受控并发（Semaphore）进行高效率直链拦截
     # ==========================================================================
     if pending_tasks:
+        # 💡 按需动态下载安装 Playwright 核心及 Linux 系统库 (在 0 解析任务时完美避开 40 秒浪费)
+        try:
+            print("[INFO] On-demand mode detected pending tasks. Preparing Playwright dependencies...")
+            import subprocess
+            import sys
+            subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
+            subprocess.run([sys.executable, "-m", "playwright", "install-deps"], check=True)
+            print("[SUCCESS] Playwright dependencies initialized successfully.")
+        except Exception as e:
+            print(f"[WARNING] On-demand Playwright prep warning: {e}")
+
         print(f"\n[CONCURRENCY] Total {len(pending_tasks)} video tasks to resolve. Launching concurrent parser...")
         resolver = PlaywrightResolver()
         await resolver.start()
