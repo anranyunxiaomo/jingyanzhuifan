@@ -432,8 +432,7 @@ new Vue({
                 screenshot: false,
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
-                  // 💡 终极奥义：直接通过我们自己部署的 Cloudflare Workers 专属代理中转流媒体，100% 物理剥离 Referer 防盗链与跨域拦截，实现原生 DPlayer 超清秒播！
-                  url: "https://jyzf-proxy.anranyunxiaomo.workers.dev/?url=" + encodeURIComponent(capturedRealUrl),
+                  url: capturedRealUrl,
                   type: 'hls'
                 }
               });
