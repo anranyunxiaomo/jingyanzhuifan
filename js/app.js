@@ -491,10 +491,23 @@ new Vue({
         playUrl = this.activeEngineKey + epToken;
       }
       
-      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug：
-      // 1. 强行在解析 URL 末尾附加唯一番剧 ID、集数索引，以及毫秒级的时间戳 _t。
-      //    这能保证即使解析站使用 URL 作为 localStorage 的 key，不同视频、不同集数甚至是同集重播也 100% 进度隔离！
-      playUrl = playUrl + "&aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime();
+      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug (Iframe 模式)：
+      // 1. 读取本集有无我们自己记录的历史进度
+      const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+      const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
+      
+      // 2. 智能判断使用 "?" 还是 "&" 来拼接参数
+      const joinChar = playUrl.includes('?') ? '&' : '?';
+      
+      // 3. 构建起播时间参数。如果是新视频，强制传 start=0&t=0.01；如果有历史进度，传入对应的恢复时间
+      let timeParams = "";
+      if (savedTime > 3) {
+        timeParams = `&start=${savedTime}&t=${savedTime}#t=${savedTime}`;
+      } else {
+        timeParams = `&start=0&t=0.01#t=0.01`;
+      }
+      
+      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
 
       // 自动强升 https，彻底防 Mixed Content 混合内容拦截
       if (playUrl.startsWith('http://')) {
