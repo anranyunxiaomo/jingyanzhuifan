@@ -503,7 +503,16 @@ new Vue({
           alert("播放解析服务配置失效，请尝试切换其他线路播放。");
           return;
         }
-        playUrl = jxBase + epToken;
+        
+        let targetJxBase = jxBase;
+        // 💡 物理阻断带有全局进度污染 Bug 的官方默认解析源 (wuzhoupai / 88ystv)
+        // 只要检测到官方返回的解析接口属于 wuzhoupai 或 88ystv，立刻强行重塑为高级超清无广告源 A (jx.jsonplayer.com)
+        if (targetJxBase && (targetJxBase.includes('wuzhoupai.com') || targetJxBase.includes('88ystv.com'))) {
+          console.log(`[PARSER OVERRIDE] Replaced buggy official parser ${targetJxBase} with high-quality jsonplayer.`);
+          targetJxBase = 'https://jx.jsonplayer.com/?url=';
+        }
+        
+        playUrl = targetJxBase + epToken;
       } else {
         // 使用备用纯 HTTPS 解析引擎
         playUrl = this.activeEngineKey + epToken;
