@@ -67,8 +67,13 @@ jobs:
             python update_data.py
           fi
 
+      # 4.9 在自动 commit 之前，拉取最新的远程核心代码，防止与我们本地并发推送的代码产生 diverged 分叉
+      - name: Pull latest remote changes
+        run: |
+          git pull --rebase origin main || true
+
       # 5. 自动将新抓取到的静态 JSON 数据库 Commit 并 Push 回仓库
-      # 这可以让本地的 search_index 滚雪球般越来越大，且保存历史详情数据
+      # 这可以让本地 of search_index 滚雪球般越来越大，且保存历史详情数据
       - name: Commit and push static data changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
