@@ -50,7 +50,7 @@ new Vue({
       { label: '超清无广告源 A (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
       { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
-    activeEngineKey: 'https://jx.xmflv.com/?url=',
+    activeEngineKey: 'default',
     // H5 播放器状态管理
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
@@ -360,27 +360,42 @@ new Vue({
       const epToken = ep[1];          // 加密 token 或直链 url
 
       // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
-      // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
+      // 无刷新更新浏览器地址栏 of URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
       // 如此，以 location.href 作为视频进度数据库主键的所有第三方记忆插件，面对新链接时，均会 100% 重新从 0 播放！
       try {
         const newQuery = `?aid=${this.currentAnimeId}&ep=${epIdx}&_t=${new Date().getTime()}`;
         window.history.replaceState(null, '', newQuery);
       } catch (e) {}
 
-      // 💡 计算 Iframe 解析播放链接 playUrl
+      // 💡 智能流媒体路由算法 (Smart Resolver Routing)：
+      // 1. 获取当前线路的 VIP 属性
+      const vipList = (this.animeDetail.player_vip || '').split(',');
+      const isVip = vipList.includes(this.activeLineKey);
+      
       let playUrl = "";
-      if (this.activeEngineKey === 'default') {
-        const vipList = (this.animeDetail.player_vip || '').split(',');
+      
+      // 2. 根据线路属性和引擎状态，自动匹配最适宜且存活的解析服务器，物理隔离 403 跨域与“不支持视频平台”报错
+      if (isVip) {
+        // 如果是官方加密/VIP线路，必须强行使用 AGE 合作的 default 解析源，才能解密播放，否则会报“不支持的视频平台”
         const playerJx = this.animeDetail.player_jx || {};
-        const isVip = vipList.includes(this.activeLineKey);
-        const jxBase = isVip ? playerJx.vip : playerJx.zj;
+        const jxBase = playerJx.vip || playerJx.zj;
         if (jxBase) {
           playUrl = jxBase + epToken;
         } else {
           playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
         }
+        console.log("[SMART ROUTER] VIP Line detected. routing to Default System Decryptor.");
       } else {
-        playUrl = this.activeEngineKey + epToken;
+        // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
+        if (this.activeEngineKey === 'default') {
+          // 如果选择默认，但又是常规线路，为了物理躲避 GFW 被墙和 403 跨域阻断，系统自动将其无感升级至 xmflv 播放！
+          playUrl = "https://jx.xmflv.com/?url=" + epToken;
+          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to high-availability xmflv resolver.");
+        } else {
+          // 如果用户手动挑选了其它引擎，尊重用户选择
+          playUrl = this.activeEngineKey + epToken;
+          console.log("[SMART ROUTER] Custom engine chosen by user: " + this.activeEngineKey);
+        }
       }
 
       const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
