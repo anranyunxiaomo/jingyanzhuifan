@@ -361,9 +361,10 @@ new Vue({
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
       const epToken = ep[1];          // 加密 token 或直链 url
+      const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
       // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
-      // 无刷新更新浏览器地址栏 of URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
+      // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
       // 如此，以 location.href 作为视频进度数据库主键的所有第三方记忆插件，面对新链接时，均会 100% 重新从 0 播放！
       try {
         const newQuery = `?aid=${this.currentAnimeId}&ep=${epIdx}&_t=${new Date().getTime()}`;
@@ -371,13 +372,11 @@ new Vue({
       } catch (e) {}
 
       // 💡 智能流媒体路由算法 (Smart Resolver Routing)：
-      // 1. 获取当前线路的 VIP 属性
       const vipList = (this.animeDetail.player_vip || '').split(',');
       const isVip = vipList.includes(this.activeLineKey);
       
       let playUrl = "";
       
-      // 2. 根据线路属性和引擎状态，自动匹配最适宜且存活的解析服务器，物理隔离 403 跨域与“不支持视频平台”报错
       if (isVip) {
         // 如果是官方加密/VIP线路，必须强行使用 AGE 合作的 default 解析源，才能解密播放，否则会报“不支持的视频平台”
         const playerJx = this.animeDetail.player_jx || {};
@@ -387,17 +386,16 @@ new Vue({
         } else {
           playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
         }
-        console.log("[SMART ROUTER] VIP Line detected. routing to Default System Decryptor.");
+        console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         if (this.activeEngineKey === 'default') {
-          // 💡 升级策略：常规线路默认使用 m3u8.tv 专属 VIP 接口，该接口技术雄厚，100% 破除 403 跨域且支持所有视频平台，国内秒开！
+          // 常规线路默认使用 m3u8.tv 专属 VIP 接口，躲避 403 跨域
           playUrl = "https://jx.m3u8.tv/jiaxing.php?url=" + epToken;
           console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium m3u8.tv resolver.");
         } else {
-          // 如果用户手动挑选了其它引擎，尊重用户选择
           playUrl = this.activeEngineKey + epToken;
-          console.log("[SMART ROUTER] Custom engine chosen by user: " + this.activeEngineKey);
+          console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
       }
 
@@ -411,22 +409,129 @@ new Vue({
         playUrl = playUrl.replace('http://', 'https://');
       }
 
-      // 强制设为 Iframe 模式，清理可能存在的旧播放器实例
+      // ✅ 变量捕获闭包锁定
+      const capturedAnimeId = String(this.currentAnimeId);
+      const capturedEpName = String(this.activeEpisodeName);
+      const capturedRealUrl = realUrl;
+      const capturedIframeUrl = playUrl;
+
+      // 1. 如果存在预解析直链，优先尝试使用原生 DPlayer 播放，并走我们自己免墙的专属代理中转
+      if (realUrl) {
+        this.isIframeMode = false;
+        this.activePlayUrl = realUrl;
+
+        // 销毁上一次的播放器实例
+        if (this.dpInstance) {
+          try { 
+            this.dpInstance.off('timeupdate');
+            this.dpInstance.off('loadedmetadata');
+            this.dpInstance.off('error');
+            this.dpInstance.destroy(); 
+          } catch(e) {}
+          this.dpInstance = null;
+        }
+
+        const container = document.getElementById('dplayer');
+        if (container) {
+          container.innerHTML = '';
+        }
+
+        this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
+
+        this.$nextTick(() => {
+          setTimeout(() => {
+            try {
+              const dp = new DPlayer({
+                container: document.getElementById('dplayer'),
+                autoplay: true,
+                screenshot: false,
+                id: capturedAnimeId + "_" + capturedEpName,
+                video: {
+                  // 💡 黄金路由：直接使用我们在国内 100% 畅通无阻的个人专属代理域名中转，彻底抹平 CORS 和防盗链！
+                  url: "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl),
+                  type: 'hls'
+                }
+              });
+              this.dpInstance = dp;
+
+              if (savedTime <= 3) {
+                console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
+                this.guardTimer = setInterval(() => {
+                  try {
+                    if (dp && dp.video) {
+                      dp.video.currentTime = 0.01;
+                    }
+                  } catch(e) {}
+                }, 30);
+                
+                setTimeout(() => {
+                  if (this.guardTimer) {
+                    clearInterval(this.guardTimer);
+                    this.guardTimer = null;
+                  }
+                }, 1500);
+              }
+
+              dp.on('loadedmetadata', () => {
+                if (savedTime > 3) {
+                  console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
+                  dp.seek(savedTime);
+                }
+              });
+
+              dp.on('timeupdate', () => {
+                if (!dp || !dp.video) return;
+                const currentTime = dp.video.currentTime;
+                const duration = dp.video.duration;
+                if (currentTime > 3 && duration && (duration - currentTime > 10)) {
+                  const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+                  localStorage.setItem(pKey, currentTime.toString());
+                }
+              });
+
+              // 💡 极限容灾：如果自建代理出意外报错，依然能自动无缝降级到公共 VIP 接口
+              dp.on('error', () => {
+                console.warn("[DPLAYER ERROR] Fallback to iframe resolve...");
+                if (this.dpInstance) {
+                  try {
+                    this.dpInstance.off('timeupdate');
+                    this.dpInstance.off('loadedmetadata');
+                    this.dpInstance.off('error');
+                    this.dpInstance.destroy();
+                  } catch(e) {}
+                  this.dpInstance = null;
+                }
+                this.isIframeMode = true;
+                this.activePlayUrl = '';
+                this.$nextTick(() => {
+                  setTimeout(() => {
+                    this.activePlayUrl = capturedIframeUrl;
+                  }, 120);
+                });
+              });
+
+              console.log(`[DPLAYER PLAYING] URL: ${capturedRealUrl} | ID: ${capturedAnimeId}_${capturedEpName}`);
+            } catch(e) {
+              console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
+              this.isIframeMode = true;
+              this.activePlayUrl = capturedIframeUrl;
+            }
+          }, 120);
+        });
+        return;
+      }
+      
+      // 2. 如果不存在直链，同步降级为传统的 Iframe 解析模式
       this.isIframeMode = true;
       if (this.dpInstance) {
-        try { 
-          this.dpInstance.off('timeupdate');
-          this.dpInstance.off('loadedmetadata');
-          this.dpInstance.off('error');
-          this.dpInstance.destroy(); 
-        } catch(e) {}
+        try { this.dpInstance.destroy(); } catch(e) {}
         this.dpInstance = null;
       }
       
       this.activePlayUrl = '';
       this.$nextTick(() => {
         setTimeout(() => {
-          this.activePlayUrl = playUrl;
+          this.activePlayUrl = capturedIframeUrl;
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
