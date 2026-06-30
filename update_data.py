@@ -134,27 +134,10 @@ def save_search_index(index_data):
 async def main_async():
     print("[START] Start updating anime data...")
     
-    # 💡 提前提取 target_aid 参数，若为按需解析模式，直接跳过全量首页和时刻表抓取！
-    target_aid = None
-    for arg in sys.argv:
-        if arg.startswith('--aid='):
-            target_aid = str(arg.split('=')[1])
-    
     aids_to_fetch = {}
-    hot_aids = set()
     recently_updated_aids = set()
     
-    if target_aid:
-        print(f"[INFO] On-demand mode active. Directly targeting AID: {target_aid}")
-        hot_aids = {target_aid}
-        aids_to_fetch = {
-            target_aid: {
-                'title': "按需加速番剧",
-                'new_title': '',
-                'is_active': True
-            }
-        }
-    else:
+    if True:
         # 1. 获取首页列表 (home-list)
         print("Fetching home-list...")
         home_data = request_api("home-list")
@@ -233,8 +216,6 @@ async def main_async():
         if arg.startswith('--pkey='):
             target_pkey = str(arg.split('=')[1])
 
-    # 待并发解析的任务列表
-    pending_tasks = []
     # 临时存放所有拉取出的详情数据，以便后续回填并统一批量保存
     fetched_details = {}
 
@@ -260,7 +241,7 @@ async def main_async():
                 pass
 
         # B. 智能增量判定：如果本地详情已存在，且当前动漫今天没有更新（或者虽然更新了但集数已匹配），直接使用本地缓存！
-        if local_detail and not target_aid:
+        if local_detail:
             should_skip_api = False
             new_title = info.get('new_title', '')
             
@@ -367,53 +348,7 @@ async def main_async():
         # 适当小歇防 API 反爬
         time.sleep(0.3)
 
-    # ==========================================================================
-    # 2️⃣ 第二阶段：使用 Playwright 受控并发（Semaphore）进行高效率直链拦截
-    # ==========================================================================
-    if pending_tasks:
-        # 💡 按需动态下载安装 Playwright 核心及 Linux 系统库 (在 0 解析任务时完美避开 40 秒浪费)
-        try:
-            print("[INFO] On-demand mode detected pending tasks. Preparing Playwright dependencies...")
-            import subprocess
-            subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
-            print("[SUCCESS] Playwright dependencies initialized successfully.")
-        except Exception as e:
-            print(f"[WARNING] On-demand Playwright prep warning: {e}")
 
-        print(f"\n[CONCURRENCY] Total {len(pending_tasks)} video tasks to resolve. Launching concurrent parser...")
-        resolver = PlaywrightResolver()
-        await resolver.start()
-        
-        # 限制最大并发数为 3，兼顾性能与解析站防 CC 拦截
-        sem = asyncio.Semaphore(3)
-
-        async def resolve_task(task):
-            async with sem:
-                # 💡 在每次请求解析前温和歇息 0.4 到 1.0 秒，温柔请求，防止解析站 IP 限频拉黑
-                import random
-                await asyncio.sleep(random.uniform(0.4, 1.0))
-                
-                print(f"  --> [START CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']}, URL: {task['jx_url']}")
-                real_url = await resolver.resolve(task['jx_url'])
-                if real_url:
-                    if real_url.startswith('http://'):
-                        real_url = real_url.replace('http://', 'https://')
-                    
-                    # 引用回填，直接修改列表中原数组项
-                    ep = task['ep_ref']
-                    if len(ep) == 2:
-                        ep.append(real_url)
-                    elif len(ep) >= 3:
-                        ep[2] = real_url
-                    print(f"    [SUCCESS CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']} resolved: {real_url}")
-                else:
-                    print(f"    [FAILED CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']} failed to resolve.")
-
-        # 启动协程并发
-        await asyncio.gather(*[resolve_task(t) for t in pending_tasks])
-        await resolver.stop()
-    else:
-        print("[INFO] No pending video resolution tasks. All items hit local cache!")
 
     # ==========================================================================
     # 3️⃣ 第三阶段：批量写入本地 JSON 文件并更新搜索索引
