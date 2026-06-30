@@ -12,6 +12,10 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- 自动将不安全内容 (HTTP) 升级为安全内容 (HTTPS) 防浏览器阻断 -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- 终极防浏览器强缓存 Meta 标签 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <!-- H5 播放器 M3U8 支持 (hls.js & DPlayer) -->
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
@@ -28,7 +32,7 @@
       <div class="brand" @click="goHome">
         <span class="logo-text">AGE</span>
         <span class="logo-sub">FAN</span>
-        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v16:12</span>
+        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v16:32</span>
       </div>
       
       <!-- 极速本地搜索框 -->
@@ -423,6 +427,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260630T1612"></script>
+<script src="js/app.js?v=20260630T1632"></script>
 </body>
 </html>
