@@ -25,9 +25,14 @@ class AgeM3u8Sniffer:
         try:
             res = requests.get(parse_url, headers=cls.headers, verify=False, timeout=8)
             if res.status_code == 200:
-                m3u8_matches = re.findall(r'["\'](https?://[^"\']+\.m3u8[^"\']*)["\']', res.text)
+                # 兼容 // 相对协议的 m3u8 匹配正则，支持转义反斜杠的预处理
+                text_clean = res.text.replace("\\/", "/")
+                m3u8_matches = re.findall(r'["\']((?:https?:)?//[^"\']+\.m3u8[^"\']*)["\']', text_clean)
                 if m3u8_matches:
-                    real_m3u8 = m3u8_matches[0].replace("\\/", "/")
+                    real_m3u8 = m3u8_matches[0]
+                    # 自动补全相对协议前缀为 https://
+                    if real_m3u8.startswith("//"):
+                        real_m3u8 = "https:" + real_m3u8
                     return real_m3u8
             return None
         except Exception:
