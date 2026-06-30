@@ -55,11 +55,14 @@ jobs:
             echo "No data changes detected. Skipping git push."
           fi
 
-      # 6. 将网页静态资源打包并发布到 GitHub Pages 分支 (gh-pages)
-      - name: Deploy static web page to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # 6. 使用 GitHub 官方原生方式上传静态网页产物
+      - name: Upload static files artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # 部署当前目录
-          publish_branch: gh-pages  # 部署到单独的静态页面分支
-          exclude_assets: '.git,.github,README.md,requirements.txt,test_conn.js,test_conn.py'
+          path: '.' # 部署当前目录的所有静态网页文件
+
+      # 7. 部署到 GitHub Pages 托管服务
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
