@@ -1,21 +1,3 @@
-// 🌟 强力注销 Service Worker 与清理 Cache Storage，阻断并击碎任何浏览器的静态资源强缓存，确保用户始终运行最新 HTML/JS 代码
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for (let registration of registrations) {
-      registration.unregister();
-      console.log('[SW CLEAN] Unregistered stale worker successfully.');
-    }
-  });
-}
-if ('caches' in window) {
-  caches.keys().then(function(names) {
-    for (let name of names) {
-      caches.delete(name);
-      console.log('[CACHE CLEAN] Stale CacheStorage deleted:', name);
-    }
-  });
-}
-
 new Vue({
   el: '#app',
   data: {
@@ -503,16 +485,7 @@ new Vue({
           alert("播放解析服务配置失效，请尝试切换其他线路播放。");
           return;
         }
-        
-        let targetJxBase = jxBase;
-        // 💡 物理阻断带有全局进度污染 Bug 且在火狐/部分网络下会握手失败的官方默认解析源 (wuzhoupai / 88ystv)
-        // 只要检测到官方返回的解析接口属于 wuzhoupai 或 88ystv，立刻强行重塑为高级超清无广告源 B (jx.xmflv.com)，彻底封杀进度共享 Bug，并在国内流畅播放！
-        if (targetJxBase && (targetJxBase.includes('wuzhoupai.com') || targetJxBase.includes('88ystv.com'))) {
-          console.log(`[PARSER OVERRIDE] Replaced buggy official parser ${targetJxBase} with high-quality xmflv.`);
-          targetJxBase = 'https://jx.xmflv.com/?url=';
-        }
-        
-        playUrl = targetJxBase + epToken;
+        playUrl = jxBase + epToken;
       } else {
         // 使用备用纯 HTTPS 解析引擎
         playUrl = this.activeEngineKey + epToken;
@@ -526,13 +499,12 @@ new Vue({
       // 2. 智能判断使用 "?" 还是 "&" 来拼接参数
       const joinChar = playUrl.includes('?') ? '&' : '?';
       
-      // 3. 构建【饱和式起播时间控制参数】 + 【自动播放覆写参数】。
-      //    在没有历史进度记录时，强拼 autoplay=0 和 auto=0。这会迫使许多跨域解析站的播放器在前台暂停，而不去执行其 LocalStorage 的续播跳转！
+      // 3. 构建起播时间参数。如果是新视频，强制传 start=0&t=0.01；如果有历史进度，传入对应的恢复时间
       let timeParams = "";
       if (savedTime > 3) {
-        timeParams = `&start=${savedTime}&t=${savedTime}&time=${savedTime}&ctime=${savedTime}&progress=${savedTime}&playtime=${savedTime}&seek=${savedTime}&autoplay=1&auto=1#t=${savedTime}`;
+        timeParams = `&start=${savedTime}&t=${savedTime}#t=${savedTime}`;
       } else {
-        timeParams = `&start=0&t=0.01&time=0&ctime=0&progress=0&playtime=0&seek=0&autoplay=0&auto=0#t=0.01`;
+        timeParams = `&start=0&t=0.01#t=0.01`;
       }
       
       playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
@@ -542,15 +514,15 @@ new Vue({
         playUrl = playUrl.replace('http://', 'https://');
       }
       
-      // 2. 💡 iframe 物理销毁重载机制 (Blank Reset & 380ms 延时)：
-      //    在将 activePlayUrl 设为新 URL 前，先设为空。这会彻底销毁旧的 iframe DOM 节点，
-      //    强制保留足足 380 毫秒的空白冷却期，供浏览器完全关闭旧视频，彻底断开 unload / beforeunload 时可能触发的全局进度强行写入，阻断污染源头！
+      // 2. 💡 iframe 物理销毁重载机制 (Blank Reset)：
+      //    在将 activePlayUrl 设为新 URL 前，先设为空。这样 Vue 会彻底销毁旧的 iframe DOM 节点，
+      //    在 120 毫秒后，再重新将 activePlayUrl 设为新视频的 playUrl，彻底阻断旧视频 unload 时的进度全局写入对新视频的污染！
       this.activePlayUrl = '';
       this.$nextTick(() => {
         setTimeout(() => {
           this.activePlayUrl = playUrl;
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
-        }, 380);
+        }, 120);
       });
     },
     
@@ -573,9 +545,6 @@ new Vue({
       
       // 3. 强行重新触发加载播放 (这会拼上最新的时间戳与 start=0&t=0.01 压制参数)
       this.playEpisode(this.activeEpisodeIndex);
-      
-      // 弹出轻量级网页提示，告知用户重置成功
-      alert("⚡ 播放器已强制初始化！已清理所有历史播放进度，视频将强制从最起点重载播放。\n\n[排查提示]：如果重新播放后依然显示 00:05 秒，说明这是该视频文件起播解码时的【物理起点/片头】，属于正常现象，并未发生跨集进度污染。");
     },
     
     rePlayCurrentEpisode() {
