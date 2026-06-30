@@ -48,13 +48,12 @@ new Vue({
       { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
     activeEngineKey: 'default',
-    useProxyTunnel: false, // 免拦截中转代理通道开关 (默认关闭，优先走 HTML5 零延迟 no-referrer 穿透通道)
-    customProxyUrl: '',   // 用户专属 Cloudflare Worker 代理域名
-    
     // H5 播放器状态管理
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
     
+    // 追番收藏夹
+    favorites: [],
   },
   
   computed: {
@@ -186,6 +185,7 @@ new Vue({
   
   created() {
     this.initData();
+    this.initFavorites(); // 💡 载入收藏数据
     this.startBannerAutoPlay();
     
     // 自动判定当前星期几，高亮时刻表
@@ -197,18 +197,6 @@ new Vue({
     // 首次渲染图标
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
-    }
-    
-    // 读取本地缓存的专属代理链接
-    const savedProxy = localStorage.getItem('custom_proxy_url');
-    if (savedProxy) {
-      this.customProxyUrl = savedProxy;
-    }
-
-    // 读取本地缓存的 GitHub Token
-    const savedToken = localStorage.getItem('github_token');
-    if (savedToken) {
-      this.githubToken = savedToken;
     }
   },
   
@@ -402,16 +390,9 @@ new Vue({
       playUrl = playUrl + "&aid=" + this.currentAnimeId + "&ep=" + epIdx;
 
       
-      // 如果开启了免拦截代理中转通道，通过专属或公共安全 HTTPS 网页代理进行中转重写
-      if (this.useProxyTunnel) {
-        const proxyBase = this.customProxyUrl.trim() || "https://jyzf-proxy.azm.workers.dev";
-        const formattedProxy = proxyBase.endsWith('/') ? proxyBase : (proxyBase + '/');
-        playUrl = formattedProxy + "?url=" + encodeURIComponent(playUrl);
-      } else {
-        // 自动强升 https，彻底防 Mixed Content 混合内容拦截
-        if (playUrl.startsWith('http://')) {
-          playUrl = playUrl.replace('http://', 'https://');
-        }
+      // 自动强升 https，彻底防 Mixed Content 混合内容拦截
+      if (playUrl.startsWith('http://')) {
+        playUrl = playUrl.replace('http://', 'https://');
       }
       
       this.activePlayUrl = playUrl;
@@ -424,19 +405,52 @@ new Vue({
       }
     },
 
-    toggleProxyTunnel() {
-      this.useProxyTunnel = !this.useProxyTunnel;
-      // 重新实例化 lucide 图标，避免动态生成的 DOM 图标不显示
+    // ==========================================================================
+    // ⭐ 追番收藏夹核心功能 (本地持久化 LocalStorage)
+    // ==========================================================================
+    initFavorites() {
+      const favs = localStorage.getItem('jyzf_favorites');
+      if (favs) {
+        try {
+          this.favorites = JSON.parse(favs);
+        } catch (e) {
+          this.favorites = [];
+        }
+      }
+    },
+
+    isFavorited(aid) {
+      return this.favorites.some(f => String(f.AID) === String(aid));
+    },
+
+    toggleFavorite() {
+      if (!this.animeDetail || !this.animeDetail.video) return;
+      const video = this.animeDetail.video;
+      const aidStr = String(this.currentAnimeId);
+
+      if (this.isFavorited(aidStr)) {
+        // 取消收藏，移出列表
+        this.favorites = this.favorites.filter(f => String(f.AID) !== aidStr);
+      } else {
+        // 加入收藏列表
+        this.favorites.push({
+          AID: aidStr,
+          Title: video.name,
+          Cover: video.cover,
+          Status: video.status || '完结',
+          UpToDate: video.uptodate || '全集'
+        });
+      }
+      
+      // 持久化保存
+      localStorage.setItem('jyzf_favorites', JSON.stringify(this.favorites));
+
+      // 实时更新页面上的 Lucide 心形图标状态
       this.$nextTick(() => {
         if (typeof lucide !== 'undefined') {
           lucide.createIcons();
         }
       });
-      this.rePlayCurrentEpisode();
-    },
-
-    saveProxyConfig() {
-      localStorage.setItem('custom_proxy_url', this.customProxyUrl);
     },
 
 
