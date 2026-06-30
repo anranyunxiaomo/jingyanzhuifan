@@ -444,7 +444,6 @@ async def main_async():
         try:
             print("[INFO] On-demand mode detected pending tasks. Preparing Playwright dependencies...")
             import subprocess
-            import sys
             subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
             subprocess.run([sys.executable, "-m", "playwright", "install-deps"], check=True)
             print("[SUCCESS] Playwright dependencies initialized successfully.")
