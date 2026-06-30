@@ -1,0 +1,314 @@
+{
+  "video": {
+    "id": 20120038,
+    "name_other": "Sword Art Online",
+    "company": "A-1 Pictures",
+    "name": "刀剑神域",
+    "type": "TV",
+    "writer": "川原礫",
+    "name_original": "ソードアート・オンライン",
+    "plot": "战斗 爱情 冒险 后宫 科幻",
+    "plot_arr": [
+      "战斗",
+      "爱情",
+      "冒险",
+      "后宫",
+      "科幻"
+    ],
+    "playlists": {
+      "qq": [
+        [
+          "第01话",
+          "age_e011Tx35d8LoGx%2BqbamP4cY5%2Fo9RPBVVVCLWiJaO81Ho%2F2Qdw4ZwWPWBSGzyveRsmy5ubPaZtT%2BYIF6UNL6lEDYjlHxyHKEzU3BKakUfb1NejXXShPo"
+        ],
+        [
+          "第02话",
+          "age_b6de0BRnZB%2FVQgzgxjajC7AmJI%2F9ygxA%2FjzE3Zl9ktOYkp%2BG8FgVjPU%2F7miHq9A43fA%2BBsl5s2%2BkhRPn1O6li2JSDe178FHhFCylfRn3eZS2mx5%2BQsQ"
+        ],
+        [
+          "第03话",
+          "age_a84dVA%2F4vz13Koh3FB7NKnfwlfAzaSH%2BFgHJqkwYG3WnpVJzQl6FgtrTNxKa05sEa%2FuZd1N3W%2BJawPnZfulBv%2BjAUZxI7NuWOJ78D%2Fjh2gHl29YF350"
+        ],
+        [
+          "第04话",
+          "age_c152veIz7ofHQHzdpYnAzayyD7oeNnGAocHVKe6wgR2ptmb6vrZBjS5DWOPUFQqNpk037eIpAk84mOVvfCERfNeCoscuy2Ek1t2OTgmjNkihVeG5iIo"
+        ],
+        [
+          "第05话",
+          "age_96680BFfm1f6nt08vV2SXBjjPuvAjzuGEYTpVlm9WlgDZbods9T%2BCIwRoh4BOC7cPiRCWmDMKPhA6jPF0oqr0QNbn1o8RKDj2N7BNKMwDHcEDFAWBsc"
+        ],
+        [
+          "第06话",
+          "age_8a1cZbAt%2F4b4oUNW9g6UBbEFNY%2FfoN03Oi2uyiC76hMHqZvvVcEnPf5Dxul1lAS%2BHyKcsCQiqcM84ywz%2B%2F3AHOC3dJGij%2FKOEJZw457WO44QhbRYVfM"
+        ],
+        [
+          "第07话",
+          "age_1b4fS%2B3JdkmOs3kTDTAkmmgOUnivPwrV9dEu9Jnq6ZPUMR001qMNisXnH9d1w3OEZIOC2o7FUzwM6MYHK810n8Pm06IxL6PXY%2BrgrnLPjPQQ3c5EXSg"
+        ],
+        [
+          "第08话",
+          "age_e19fH%2F%2BSRx0bjdADwM5rzSty%2FkW6BftwWq3%2FjiiHQyM9oWg3BEOCSpWIc5E9%2FjzvEWveta0YhW%2Bq2bdctm%2BNRc8DolSP4Hnfuvyz4ZqaeHk6OlBqdWU"
+        ],
+        [
+          "第09话",
+          "age_c5e7Nv%2BRtbaOzJrls7lDYkyNjT5kxNBQNnvXfoyFBQmWye%2B3%2BoQRdzGLkFMjslIHYlh%2F4VNnaqxlX75IN4QCYxutN9fxEgVBOZ1hHgNjXOFInm8BFbo"
+        ],
+        [
+          "第10话",
+          "age_4b06eGxE1pesR2LQtpUIgbv8pCzPi7NV8H%2F%2BHD7%2FouFI5SYVQ9nqAN6GqL%2BJBRjk9uQdvx06q1TdK0dk%2BDUUWszN22ZOPb0aLK34VyU20H7XdI9i3H4"
+        ],
+        [
+          "第11话",
+          "age_7462CBiDkRQiJzHvIMqz%2FBg0jGOGVG0W0bgCS%2FBTomgiESCb3X12LCtz2e%2BnDixH6j0yfsDscC1N4AORwDLdkPg9p3ZLaAEAAyYHzb4tiJ4bcMztiIQ"
+        ],
+        [
+          "第12话",
+          "age_3da4GCDTP8tD3Xtfuu3mnv6Q1dnJC7%2BofN4%2FaBYI29AEv8M%2BfmC0mmEvThkH9q2dTVZ7JuuD5%2ByPvOix0yJgD74w%2FY4%2FQM3XV2juZqkzzyR7jloukfM"
+        ],
+        [
+          "第13话",
+          "age_ecfdQ23jGLvCLkjk4pc27lsIwIZj8J63Lz52vnj%2Fky4yAMJCqZPJ8NlSHpypi%2BDLF6DkURjT8kGk4bsUBDE1zQi2Lu2TYoa7CDMwczjBwwf6jYSxRUs"
+        ],
+        [
+          "第14话",
+          "age_c9aaAb6o4oTh4oAWsZrjbzPpPi%2FGkpak8C8jtZuF33qxF8Yc5MVPDcA%2F3uVGLIHJp0GRggJYEAPAwUb1CRQZKaF2NbmyLA8c43UH%2Bo%2FW1Ysfcip83NQ"
+        ],
+        [
+          "第15话",
+          "age_4b3f4LGYKDllGzFJE9xjo56WW5x5l2QcCMBB2THxIpGikSxr5u9B4%2F3po9dLfp63ZkVzlk3SK%2BKWkH58O3IlYLxhqZK7mhgB8C%2FoOoqXioSrYK0okPE"
+        ],
+        [
+          "第16话",
+          "age_6964VV%2BARfOOi%2BkE%2FnS8QaKukGYrYVeuhhqXkQ8H6D91Q43uTtuBTjWlJCCCA%2Fp5bg1yX%2FrFGDshSaovn0vyI8r235eEJO6TTbS6r4u1pdV9n2DIXhQ"
+        ],
+        [
+          "第17话",
+          "age_01f8UcZzYWB93FJnpZCylkuV2ni1nH6CU8t7WDmPqwM2f6Mh7SJR%2BMySJ4q7e1UPxg16f2MSaYYyx93fzJe8xMjYRLaVqfKSh9vMVS7caF7wlSSvUTk"
+        ],
+        [
+          "第18话",
+          "age_6deb%2FMgPO8KvWtK45JH%2BCQO7h8mdtgyMGHhE%2BFb4y3sn7epldDsha2im05c3aY7BqP5ilqfs2vMn%2FTzrbhiU1%2Fs5DkubGzktrRQq%2FMRPR4Qh%2Ff%2FjGi0"
+        ],
+        [
+          "第19话",
+          "age_8aadCM49%2FbswL1cTbWRVZ0uKQscszEHxYcL0Gwgz9dqqAEGYDD0hnWxQti1pewgO7wgUTXMedC%2FeFV0glXFPZ0zYpVlNlNrAGigQ76Ss9A97Mq7fcrY"
+        ],
+        [
+          "第20话",
+          "age_22d3BhHA5USpRdHkOCYvaBEjqleePBBnxF84RtzhcokeBskKYyLer8pva3qSicVVPyKtfEsEW4B9hdVnMDN%2FhLw8zuGrOu7%2FpTOLIj%2BRZFXCTWYf7yM"
+        ],
+        [
+          "第21话",
+          "age_0c0bcOdsP7quguXdeYtdcHwh4d24JNgdWTd8Cyr6rNXU9ukNXe%2FpryFWBnLY3EkyqNPZTpiBiqMYndzuSzYnam2XihbHJMRvNsN%2F5ZSzVSibkHllBzU"
+        ],
+        [
+          "第22话",
+          "age_74aagOov09uV87%2FN%2Fpgzp%2FiGoVEJRuUEREFHuk8U8yD8uRf1jcv4ly%2FvaIQBnCcQlcXe9%2BAwtvMHNGdCs8Ck60ZKh8UDuKtoJvIEyhmuvvquelaNEnE"
+        ],
+        [
+          "第23话",
+          "age_0916S08KwIUJ855wYIB7q5xpHZFFQ2N%2B2L79NcgbV1C4HaaL8lShz9WhYJ4Qem%2BTEgyXzEwrnqsTOQFLjD%2BaPrxX9A4%2BurEKz%2B2sQ97753BeGKK3my4"
+        ],
+        [
+          "第24话",
+          "age_b00bMPIxDbRT%2BfgzsX%2BBPMP0pX6iL394DXlNlGbhscFTDjDsKa9leXYxpdl8m8fiGatdskOgwKxpMyjzTE1LJkrFx8skn9AIj9lUtkOXK4TPtF5biHA"
+        ],
+        [
+          "第25话",
+          "age_ba2eso7A%2BvrINLjljXS2Mlud%2FhXybV7Uzz8HcnFBJSM5T8FDtNRicdxtq%2B8yKa6efjzV%2FHmZ1oTBidMjASQH1DXEltAognUwPyLvD2TXw7LsyHnU5xc"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "D",
+    "website": "http://www.swordart-online.net/",
+    "star": 4,
+    "status": "完结",
+    "uptodate": "第25集(完结)",
+    "time_format_1": "20170716123208",
+    "time_format_2": "2017-07-16",
+    "time_format_3": "2017-07-16 12:32:08",
+    "time": 1500179528,
+    "tags": "励志 战斗 爱情 冒险 后宫 科幻 游戏 剧情 轻小说",
+    "tags_arr": [
+      "励志",
+      "战斗",
+      "爱情",
+      "冒险",
+      "后宫",
+      "科幻",
+      "游戏",
+      "剧情",
+      "轻小说"
+    ],
+    "intro": "电视动画《刀剑神域》改编自日本轻小说家川原砾原作的同名轻小说，\n作品以 2022 年为舞台，大厂牌电子机械制造商“ARGUS”开发出－“NERvGear”－能连结虚拟世界的机器。完全的虚拟实境终于能够实现。主角桐人使用 NERvGear 游玩 VR MMORPG《Sword Art Online》的玩家，幸运地参与过封测并买下正式版的桐人，和正式营运就马上“完全潜行”享受着正式版的 SAO 世界。\n就在游戏四小时多后，桐人发现到“登出”指令竟然消失。认为只是系统暂时出错的桐人和开始陷入混乱的所有玩家们一起被传送到开始地点广场，并传来游戏设计者的死亡游戏说明：不能登出是游戏的正常现象，只有打倒位于“艾恩葛朗特”顶楼的头目，达成“完全攻略”才是离开这个世界唯一的方法……",
+    "intro_html": "电视动画《刀剑神域》改编自日本轻小说家川原砾原作的同名轻小说，<br />作品以 2022 年为舞台，大厂牌电子机械制造商“ARGUS”开发出－“NERvGear”－能连结虚拟世界的机器。完全的虚拟实境终于能够实现。主角桐人使用 NERvGear 游玩 VR MMORPG《Sword Art Online》的玩家，幸运地参与过封测并买下正式版的桐人，和正式营运就马上“完全潜行”享受着正式版的 SAO 世界。<br />就在游戏四小时多后，桐人发现到“登出”指令竟然消失。认为只是系统暂时出错的桐人和开始陷入混乱的所有玩家们一起被传送到开始地点广场，并传来游戏设计者的死亡游戏说明：不能登出是游戏的正常现象，只有打倒位于“艾恩葛朗特”顶楼的头目，达成“完全攻略”才是离开这个世界唯一的方法……<br /><br />\t\t\t",
+    "intro_clean": "电视动画《刀剑神域》改编自日本轻小说家川原砾原作的同名轻小说，作品以 2022 年为舞台，大厂牌电子机械制造商“ARGUS”开发出－“NERvGear”－能连结虚拟世界的机器。完全的虚拟实境终于能够实现。主角桐人使用 NERvGear 游玩 VR MMORPG《Sword Art Online》的玩家，幸运地参与过封测并买下正式版的桐人，和正式营运就马上“完全潜行”享受着正式版的 SAO 世界。就在游戏四小时多后，桐人发现到“登出”指令竟然消失。认为只是系统暂时出错的桐人和开始陷入混乱的所有玩家们一起被传送到开始地点广场，并传来游戏设计者的死亡游戏说明：不能登出是游戏的正常现象，只有打倒位于“艾恩葛朗特”顶楼的头目，达成“完全攻略”才是离开这个世界唯一的方法……\t\t\t",
+    "series": "刀剑神域",
+    "net_disk": null,
+    "resource": "",
+    "year": 2012,
+    "season": 7,
+    "premiere": "2012-07-07",
+    "rank_cnt": "232.7w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "702",
+    "collect_cnt": "5,312"
+  },
+  "series": [
+    {
+      "AID": 20130137,
+      "Href": "/detail/20130137",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130137.jpg",
+      "Title": "刀剑神域 Extra Edition"
+    },
+    {
+      "AID": 20140086,
+      "Href": "/detail/20140086",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140086.jpg",
+      "Title": "刀剑神域 第二季"
+    },
+    {
+      "AID": 20170071,
+      "Href": "/detail/20170071",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
+      "Title": "刀剑神域剧场版 序列之争"
+    },
+    {
+      "AID": 20170140,
+      "Href": "/detail/20170140",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170140.jpg",
+      "Title": "刀剑神域外传 Gun Gale Online"
+    },
+    {
+      "AID": 20180246,
+      "Href": "/detail/20180246",
+      "NewTitle": "[TV 01-24]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180246.jpg",
+      "Title": "刀剑神域 Alicization篇"
+    },
+    {
+      "AID": 20190181,
+      "Href": "/detail/20190181",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190181.jpg",
+      "Title": "刀剑神域 Alicization篇 War of Underworld"
+    },
+    {
+      "AID": 20200123,
+      "Href": "/detail/20200123",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200123.jpg",
+      "Title": "刀剑神域 Alicization篇 War of Underworld 第二季"
+    },
+    {
+      "AID": 20210026,
+      "Href": "/detail/20210026",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210026.jpg",
+      "Title": "刀剑神域 进击篇 无星之夜的咏叹调"
+    },
+    {
+      "AID": 20220085,
+      "Href": "/detail/20220085",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220085.jpg",
+      "Title": "刀剑神域 进击篇 黯淡黄昏的谐谑曲"
+    },
+    {
+      "AID": 20230254,
+      "Href": "/detail/20230254",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
+      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20220185,
+      "Href": "/detail/20220185",
+      "NewTitle": "第8集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220185.jpg",
+      "Title": "舰队Collection 第二季"
+    },
+    {
+      "AID": 20190158,
+      "Href": "/detail/20190158",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190158.jpg",
+      "Title": "女高中生的无所事事"
+    },
+    {
+      "AID": 20000094,
+      "Href": "/detail/20000094",
+      "NewTitle": "[OVA 01-05]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000094.jpg",
+      "Title": "高智能方程式：SIN"
+    },
+    {
+      "AID": 20110132,
+      "Href": "/detail/20110132",
+      "NewTitle": "暂缺",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110132.jpg",
+      "Title": "电影 Suite 光之美少女♪ 夺取回来！连结心中的奇迹旋律♪"
+    },
+    {
+      "AID": 20180336,
+      "Href": "/detail/20180336",
+      "NewTitle": "第40集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180336.jpg",
+      "Title": "万界仙踪"
+    },
+    {
+      "AID": 20160219,
+      "Href": "/detail/20160219",
+      "NewTitle": "[TV 112-136]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160219.jpg",
+      "Title": "狐妖小红娘总集篇"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
