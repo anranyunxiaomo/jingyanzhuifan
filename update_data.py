@@ -297,6 +297,8 @@ async def main_async():
             
             # 循环 playlist 集数收集待解析任务
             playlists = detail_data.get('video', {}).get('playlists', {})
+            if not isinstance(playlists, dict):
+                playlists = {}
             is_hot = (aid in hot_aids)
             
             for pkey, eps in playlists.items():
