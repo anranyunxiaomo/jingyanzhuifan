@@ -413,18 +413,26 @@ new Vue({
         playUrl = this.activeEngineKey + epToken;
       }
       
-      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug：强行在解析 URL 末尾附加唯一番剧 ID 与集数索引查询参数
-      // 这能保证解析站内的播放器生成独一无二的 history LocalStorage 进度键，不同视频间再也不发生进度污染！
-      playUrl = playUrl + "&aid=" + this.currentAnimeId + "&ep=" + epIdx;
+      // 💡 物理隔断跨视频/跨动漫播放进度共享 Bug：
+      // 1. 强行在解析 URL 末尾附加唯一番剧 ID、集数索引，以及毫秒级的时间戳 _t。
+      //    这能保证即使解析站使用 URL 作为 localStorage 的 key，不同视频、不同集数甚至是同集重播也 100% 进度隔离！
+      playUrl = playUrl + "&aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime();
 
-      
       // 自动强升 https，彻底防 Mixed Content 混合内容拦截
       if (playUrl.startsWith('http://')) {
         playUrl = playUrl.replace('http://', 'https://');
       }
       
-      this.activePlayUrl = playUrl;
-      console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
+      // 2. 💡 iframe 物理销毁重载机制 (Blank Reset)：
+      //    在将 activePlayUrl 设为新 URL 前，先设为空。这样 Vue 会彻底销毁旧的 iframe DOM 节点，
+      //    在 120 毫秒后，再重新将 activePlayUrl 设为新视频的 playUrl，彻底阻断旧视频 unload 时的进度全局写入对新视频的污染！
+      this.activePlayUrl = '';
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.activePlayUrl = playUrl;
+          console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
+        }, 120);
+      });
     },
     
     rePlayCurrentEpisode() {
