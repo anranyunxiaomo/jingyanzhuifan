@@ -56,19 +56,10 @@ jobs:
       # 5. 自动将新抓取到的静态 JSON 数据库 Commit 并 Push 回仓库
       # 这可以让本地的 search_index 滚雪球般越来越大，且保存历史详情数据
       - name: Commit and push static data changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add data/
-          # 检查是否有文件改动，若有则 commit 并 push
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "chore(data): auto-update anime static databases"
-            # 拉取并合并可能存在的最新远程提交 (防止本地并发 push 导致云端冲突被拒)
-            git pull --rebase origin HEAD:${{ github.ref }}
-            git push origin HEAD:${{ github.ref }}
-          else
-            echo "No data changes detected. Skipping git push."
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): auto-update anime static databases"
+          file_pattern: 'data/'  # 💡 仅自动 commit 和 push data 目录下的 JSON 改动
 
       # 6. 使用 GitHub 官方原生方式上传静态网页产物
       - name: Upload static files artifact
