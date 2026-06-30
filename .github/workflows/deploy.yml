@@ -56,8 +56,8 @@ jobs:
       - name: Fetch and staticize anime data
         run: |
           if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${{ github.event.action }}" = "resolve_anime_on_demand" ]; then
-            echo "[INFO] On-demand triggered for AID: ${{ github.event.client_payload.aid }}"
-            python update_data.py --aid=${{ github.event.client_payload.aid }}
+            echo "[INFO] On-demand triggered for AID: ${{ github.event.client_payload.aid }}, PKEY: ${{ github.event.client_payload.pkey }}"
+            python update_data.py --aid=${{ github.event.client_payload.aid }} --pkey=${{ github.event.client_payload.pkey }}
           else
             python update_data.py
           fi

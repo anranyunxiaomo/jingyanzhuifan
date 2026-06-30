@@ -375,13 +375,14 @@ new Vue({
         body: JSON.stringify({
           event_type: 'resolve_anime_on_demand',
           client_payload: {
-            aid: String(this.currentAnimeId)
+            aid: String(this.currentAnimeId),
+            pkey: String(this.activeLineKey)
           }
         })
       })
       .then(res => {
         if (res.status === 204 || res.status === 200) {
-          alert("⚡ 已成功唤醒云端加速引擎！\n\nGitHub Actions 已经自动启动，专为你开始解析当前番剧的所有线路。整个解析与部署约需 20-30 秒。\n\n解析完成后，本剧集中拥有 H5 直链的集数右侧将亮起 ⚡ 徽标。请大约 30 秒后刷新网页体验！");
+          alert("⚡ 已成功唤醒云端加速引擎！\n\nGitHub Actions 已经自动启动，专为你开始解析当前番剧你所选中的这整条播放线路。整个解析与部署约需 20-30 秒。\n\n解析完成后，本线路中拥有 H5 直链的集数将亮起 ⚡ 徽标。请大约 30 秒后刷新网页体验！");
         } else {
           alert("❌ 唤醒云端加速引擎失败，请检查网络或 Token 状态。");
         }

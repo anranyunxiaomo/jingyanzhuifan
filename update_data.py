@@ -283,11 +283,14 @@ async def main_async():
     search_index = load_search_index()
     existing_aids = {str(item['AID']) for item in search_index}
 
-    # 5. 限制项处理
+    # 5. 限制项处理与 pkey 参数提取
     limit = 9999
+    target_pkey = None
     for arg in sys.argv:
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
+        if arg.startswith('--pkey='):
+            target_pkey = str(arg.split('=')[1])
 
     # 待并发解析的任务列表
     pending_tasks = []
@@ -342,6 +345,9 @@ async def main_async():
                 # 倒数最新 2 集 (切片后 2 个) 索引列表
                 is_hot = (aid in hot_aids)
                 for pkey, eps in playlists.items():
+                    # 💡 按需加速时，若指定了 target_pkey，只解析指定的单条线路以防止请求过多被拉黑！
+                    if target_pkey and pkey != target_pkey:
+                        continue
                     is_vip = (pkey in vip_list)
                     jx_base = player_jx.get('vip' if is_vip else 'zj')
                     new_ep_indices = list(range(max(0, len(eps) - 2), len(eps))) if len(eps) > 0 else []
@@ -395,6 +401,9 @@ async def main_async():
             is_hot = (aid in hot_aids)
             
             for pkey, eps in playlists.items():
+                # 💡 按需加速时，若指定了 target_pkey，只解析指定的单条线路以防止请求过多被拉黑！
+                if target_pkey and pkey != target_pkey:
+                    continue
                 is_vip = (pkey in vip_list)
                 jx_base = player_jx.get('vip' if is_vip else 'zj')
                 
@@ -458,6 +467,10 @@ async def main_async():
 
         async def resolve_task(task):
             async with sem:
+                # 💡 在每次请求解析前温和歇息 0.4 到 1.0 秒，温柔请求，防止解析站 IP 限频拉黑
+                import random
+                await asyncio.sleep(random.uniform(0.4, 1.0))
+                
                 print(f"  --> [START CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']}, URL: {task['jx_url']}")
                 real_url = await resolver.resolve(task['jx_url'])
                 if real_url:
