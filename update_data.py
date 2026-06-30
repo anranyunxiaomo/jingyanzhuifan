@@ -115,12 +115,21 @@ def fetch_api_base():
 API_BASE = fetch_api_base()
 print(f"[INFO] Using API Base URL: {API_BASE}")
 
+import urllib.parse
+
 def request_api(path, params=None):
     """请求 API 封装"""
-    url = urljoin(API_BASE, path)
+    target_url = urllib.parse.urljoin(API_BASE, path)
+    if params:
+        target_url += "?" + urllib.parse.urlencode(params)
+    
+    # 🚀 绝杀策略：强制通过自建 CF Worker 代理绕过 GitHub Actions 的机房 IP 封锁 (403)
+    encoded_target_url = urllib.parse.quote(target_url, safe='')
+    url = f"https://jingyanff.xyz/?url={encoded_target_url}"
+    
     for retry in range(3):
         try:
-            r = session.get(url, params=params, timeout=10)
+            r = session.get(url, timeout=15)
             if r.status_code == 200:
                 return r.json()
             else:
