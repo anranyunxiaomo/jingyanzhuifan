@@ -352,6 +352,17 @@ new Vue({
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
       const epToken = ep[1];          // 加密 token 或直链 url
       const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
+
+      // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
+      // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
+      // 如此，以 location.href 作为视频进度数据库主键的所有第三方记忆插件，面对新链接时，均会 100% 重新从 0 播放！
+      try {
+        const newQuery = `?aid=${this.currentAnimeId}&ep=${epIdx}&_t=${new Date().getTime()}`;
+        window.history.replaceState(null, '', newQuery);
+        console.log(`[ADDRESS BAR UPDATED] location.search set to: ${newQuery}`);
+      } catch (e) {
+        console.warn("[Address Bar] Failed to update URL search state:", e);
+      }
       
       // 1. 如果存在预解析直链，优先使用原生 DPlayer 播放，享受极致无广告体验！
       if (realUrl) {
@@ -361,6 +372,12 @@ new Vue({
         if (this.dpInstance) {
           try { this.dpInstance.destroy(); } catch(e) {}
           this.dpInstance = null;
+        }
+
+        // 💡 强力物理清空 DPlayer DOM 容器中的一切残留节点与 video 状态，阻断任何隐藏的 currentTime 残留传递
+        const container = document.getElementById('dplayer');
+        if (container) {
+          container.innerHTML = '';
         }
         
         this.activePlayUrl = realUrl;
