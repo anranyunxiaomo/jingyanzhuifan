@@ -12,6 +12,10 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- 自动将不安全内容 (HTTP) 升级为安全内容 (HTTPS) 防浏览器阻断 -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- H5 播放器 M3U8 支持 (hls.js & DPlayer) -->
+  <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
+  <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -218,16 +222,22 @@
               <i data-lucide="video" class="placeholder-icon"></i>
               <p>请在下方选择剧集开始播放</p>
             </div>
-            <iframe 
-              id="playerIFrame"
-              v-else
-              :src="activePlayUrl" 
-              class="video-iframe"
-              scrolling="no" 
-              allowfullscreen="true" 
-              frameborder="no" 
-              allowtransparency="yes"
-            ></iframe>
+            <template v-else>
+              <!-- 原生 H5 DPlayer 挂载点 -->
+              <div id="dplayer" class="video-dplayer" v-show="!isIframeMode"></div>
+              
+              <!-- 降级 传统 Iframe 播放器 -->
+              <iframe 
+                id="playerIFrame"
+                v-show="isIframeMode"
+                :src="activePlayUrl" 
+                class="video-iframe"
+                scrolling="no" 
+                allowfullscreen="true" 
+                frameborder="no" 
+                allowtransparency="yes"
+              ></iframe>
+            </template>
           </div>
           <div class="playing-info" v-if="activePlayUrl">
             <div class="playing-title-wrapper">

@@ -4,9 +4,12 @@ import json
 import time
 import requests
 import urllib3
+import asyncio
+import sys
 from urllib.parse import urljoin
+from playwright.async_api import async_playwright
 
-# 禁用 SSL 证书安全警告 (AGE 使用非官方自签名证书)
+# 禁用 SSL 证书安全警告
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 初始化基本配置
@@ -17,7 +20,7 @@ SEARCH_INDEX_PATH = os.path.join(DATA_DIR, 'search_index.json')
 
 os.makedirs(DETAIL_DIR, exist_ok=True)
 
-# 备用域名列表，若在线配置获取失败则按顺序使用
+# 备用域名列表
 BACKUP_DOMAINS = [
     "https://ageapi.omwjhz.com:18888/v2/",
     "https://ageapi.omwjhz.com:18888/v2/"
@@ -36,7 +39,6 @@ active_proxy = None
 def get_session():
     """获取可用代理会话或直连会话"""
     global active_proxy
-    # 1. 尝试直连
     session = requests.Session()
     session.verify = False
     session.headers.update(headers)
@@ -49,7 +51,6 @@ def get_session():
     except Exception:
         pass
         
-    # 2. 尝试本地代理
     for port in proxy_ports:
         for ptype in ["http", "socks5h"]:
             proxies = {
@@ -81,12 +82,8 @@ def fetch_api_base():
             r = session.get(url, timeout=5)
             if r.status_code == 200:
                 data = r.json()
-                # 提取配置中的 API baseURL，如果 age.json 中没定义，会 fallback 到默认
-                # 解析配置中若包含了 url，我们拼装成 API 根路径
                 web_url = data.get('url', '')
                 if web_url:
-                    # 原 app.js 解析出域名，但通常 API 端口和域名是独立的，
-                    # 故我们还是优先返回默认的高速 API
                     return "https://ageapi.omwjhz.com:18888/v2/"
         except Exception as e:
             print(f"[DEBUG] Fetch config from {url} failed: {e}")
@@ -110,20 +107,16 @@ def request_api(path, params=None):
             time.sleep(1.5)
     return None
 
-# 用于本地拼音转换（如果未安装 pypinyin 则退化为仅支持中文首字母或首字）
 try:
     from pypinyin import pinyin, Style
     def get_pinyin_initials(text):
         initials = pinyin(text, style=Style.FIRST_LETTER)
         return "".join([item[0] for item in initials]).lower()
 except ImportError:
-    print("[INFO] pypinyin library not found. Installing it via pip is recommended.")
     def get_pinyin_initials(text):
-        # 降级：仅抽取中文汉字
         return ""
 
 def load_search_index():
-    """读取已有的搜索索引文件"""
     if os.path.exists(SEARCH_INDEX_PATH):
         try:
             with open(SEARCH_INDEX_PATH, 'r', encoding='utf-8') as f:
@@ -133,11 +126,73 @@ def load_search_index():
     return []
 
 def save_search_index(index_data):
-    """写入搜索索引"""
     with open(SEARCH_INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, ensure_ascii=False, indent=2)
 
-def main():
+# ==========================================================================
+# 📺 Playwright 云端 Headless 异步连接器 (共用单例浏览器加速)
+# ==========================================================================
+class PlaywrightResolver:
+    def __init__(self):
+        self.playwright = None
+        self.browser = None
+        self.context = None
+
+    async def start(self):
+        print("[INFO] Starting Playwright Headless Engine...")
+        self.playwright = await async_playwright().start()
+        launch_args = []
+        if active_proxy:
+            launch_args.append(f"--proxy-server={active_proxy['http']}")
+        self.browser = await self.playwright.chromium.launch(headless=True, args=launch_args)
+        self.context = await self.browser.new_context(
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            bypass_csp=True
+        )
+
+    async def resolve(self, jx_url):
+        if not self.context:
+            return None
+        
+        resolved_url = None
+        page = None
+        try:
+            page = await self.context.new_page()
+            
+            def handle_response(response):
+                nonlocal resolved_url
+                res_url = response.url
+                if (".m3u8" in res_url or ".mp4" in res_url or "88ys.cn" in res_url) and not res_url.endswith((".jpg", ".png", ".gif", ".css", ".js", ".ico")):
+                    if "adposter" not in res_url and "union" not in res_url:
+                        resolved_url = res_url
+                        print(f"    [RESOLVED] {resolved_url}")
+
+            page.on("response", handle_response)
+            
+            # 限制等待时长
+            await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded")
+            await asyncio.sleep(4.0)
+        except Exception:
+            pass
+        finally:
+            if page:
+                try:
+                    await page.close()
+                except Exception:
+                    pass
+        return resolved_url
+
+    async def stop(self):
+        print("[INFO] Stopping Playwright Headless Engine...")
+        if self.browser:
+            await self.browser.close()
+        if self.playwright:
+            await self.playwright.stop()
+
+# ==========================================================================
+# 🚀 异步主任务
+# ==========================================================================
+async def main_async():
     print("[START] Start updating anime data...")
     
     # 1. 获取首页列表 (home-list)
@@ -151,22 +206,25 @@ def main():
     with open(os.path.join(DATA_DIR, 'home-list.json'), 'w', encoding='utf-8') as f:
         json.dump(home_data, f, ensure_ascii=False, indent=2)
     print("[SUCCESS] Saved home-list.json")
-
-    # 2. 收集需要抓取详情的动漫 AID 列表
-    # 为保证数据完整度，我们抓取首页最新(latest)、推荐(recommend)以及星期更新表(week_list)的所有动漫
-    aids_to_fetch = {}
     
-    # 2.1 从 latest 提取
+    # 2. 收集热门番剧（需要无头预解析直链）
+    hot_aids = set()
+    for item in home_data.get('latest', [])[:12]:
+        if item.get('AID'):
+            hot_aids.add(str(item['AID']))
+    for item in home_data.get('recommend', [])[:8]:
+        if item.get('AID'):
+            hot_aids.add(str(item['AID']))
+
+    # 3. 汇总需要抓取详情的动漫列表
+    aids_to_fetch = {}
     for item in home_data.get('latest', []):
         if item.get('AID'):
             aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
-
-    # 2.2 从 recommend 提取
     for item in home_data.get('recommend', []):
         if item.get('AID'):
             aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
 
-    # 2.3 从 week_list 提取
     week_list = home_data.get('week_list', {})
     if isinstance(week_list, dict):
         for day_key, day_items in week_list.items():
@@ -178,8 +236,7 @@ def main():
                         if aid:
                             aids_to_fetch[str(aid)] = name or '未知动漫'
 
-
-    # 2.4 获取最近更新页面(update)的前 2 页，保证有更多动漫数据可以搜索和观看
+    # 获取最近更新的前 2 页
     print("Fetching update page 1 & 2...")
     for page in [1, 2]:
         update_data = request_api("update", params={"page": page})
@@ -189,65 +246,130 @@ def main():
                     aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
 
     print(f"[INFO] Collected {len(aids_to_fetch)} unique anime AIDs to fetch.")
-
-    # 3. 载入现有的搜索库
+    
+    # 4. 载入现有的搜索库
     search_index = load_search_index()
     existing_aids = {str(item['AID']) for item in search_index}
 
-    # 5. 循环抓取详情并写入文件，同时更新搜索索引
-    import sys
+    # 5. 限制项处理
     limit = 9999
     for arg in sys.argv:
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
 
+    # 启动单例 Playwright 解析引擎
+    resolver = PlaywrightResolver()
+    await resolver.start()
+
     counter = 0
-    for aid, title in aids_to_fetch.items():
-        if counter >= limit:
-            print(f"[INFO] Reached limit of {limit} entries. Stop fetching details.")
-            break
-        counter += 1
-        detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
-        
-        # 为了不重复抓取已经完结或没有更新的动漫，这里我们先抓取
-        # 实际开发为了保障时效性，对所有首页和更新列表的动漫每次必更新
-        print(f"[{counter}/{min(len(aids_to_fetch), limit)}] Fetching detail for AID: {aid} ({title})...")
-
-        
-        detail_data = request_api(f"detail/{aid}")
-        if detail_data:
-            with open(detail_path, 'w', encoding='utf-8') as f:
-                json.dump(detail_data, f, ensure_ascii=False, indent=2)
+    try:
+        for aid, title in aids_to_fetch.items():
+            if counter >= limit:
+                print(f"[INFO] Reached limit of {limit} entries. Stop fetching details.")
+                break
+            counter += 1
+            detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
             
-            # 更新搜索索引
-            if aid not in existing_aids:
-                pinyin_code = get_pinyin_initials(title)
-                search_index.append({
-                    "AID": int(aid),
-                    "Title": title,
-                    "Pinyin": pinyin_code,
-                    "Cover": detail_data.get('video', {}).get('cover', ''),
-                    "Status": detail_data.get('video', {}).get('status', '连载'),
-                    "UpToDate": detail_data.get('video', {}).get('uptodate', '更新中')
-                })
-                existing_aids.add(aid)
-            else:
-                # 若已存在，更新其最新状态和连载进度
-                for item in search_index:
-                    if str(item['AID']) == aid:
-                        item['Status'] = detail_data.get('video', {}).get('status', '连载')
-                        item['UpToDate'] = detail_data.get('video', {}).get('uptodate', '更新中')
-                        break
-        else:
-            print(f"[WARNING] Failed to fetch details for AID: {aid}")
-        
-        # 控制频次，防反爬
-        time.sleep(0.5)
+            print(f"[{counter}/{min(len(aids_to_fetch), limit)}] Fetching detail for AID: {aid} ({title})...")
+            detail_data = request_api(f"detail/{aid}")
+            
+            if detail_data:
+                # 读取本地已有的缓存，做增量直链同步
+                local_cache = {}
+                if os.path.exists(detail_path):
+                    try:
+                        with open(detail_path, 'r', encoding='utf-8') as f:
+                            old_data = json.load(f)
+                            old_playlists = old_data.get('video', {}).get('playlists', {})
+                            for pkey, eps in old_playlists.items():
+                                for ep in eps:
+                                    if len(ep) >= 3 and ep[2]:
+                                        local_cache[(pkey, ep[1])] = ep[2]
+                    except Exception:
+                        pass
 
-    # 5. 保存最终的搜索索引
+                # 获取当前解析接口配置
+                vip_list = (detail_data.get('player_vip') or '').split(',')
+                player_jx = detail_data.get('player_jx') or {}
+                
+                # 循环 playlist 集数做直链预解析
+                playlists = detail_data.get('video', {}).get('playlists', {})
+                is_hot = (aid in hot_aids)
+                
+                for pkey, eps in playlists.items():
+                    is_vip = (pkey in vip_list)
+                    jx_base = player_jx.get('vip' if is_vip else 'zj')
+                    
+                    # 倒数最新 2 集 (切片后 2 个) 索引列表
+                    new_ep_indices = []
+                    if len(eps) > 0:
+                        new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
+
+                    for i, ep in enumerate(eps):
+                        ep_token = ep[1]
+                        
+                        # 1. 尝试使用本地增量缓存
+                        cached_url = local_cache.get((pkey, ep_token))
+                        if cached_url:
+                            if len(ep) == 2:
+                                ep.append(cached_url)
+                            elif len(ep) >= 3:
+                                ep[2] = cached_url
+                            continue
+                            
+                        # 2. 如果属于热门动漫最新 2 集，且本地没有缓存，则启动无头浏览器动态预解析
+                        if is_hot and (i in new_ep_indices) and jx_base:
+                            jx_url = jx_base + ep_token
+                            print(f"  --> [RESOLVING LAN] Line: {pkey}, Episode: {ep[0]}...")
+                            real_url = await resolver.resolve(jx_url)
+                            if real_url:
+                                # 强升 https
+                                if real_url.startswith('http://'):
+                                    real_url = real_url.replace('http://', 'https://')
+                                
+                                if len(ep) == 2:
+                                    ep.append(real_url)
+                                elif len(ep) >= 3:
+                                    ep[2] = real_url
+                                
+                                local_cache[(pkey, ep_token)] = real_url
+                                time.sleep(1.0)
+                
+                # 写入本地静态 JSON
+                with open(detail_path, 'w', encoding='utf-8') as f:
+                    json.dump(detail_data, f, ensure_ascii=False, indent=2)
+                
+                # 更新搜索索引
+                if aid not in existing_aids:
+                    pinyin_code = get_pinyin_initials(title)
+                    search_index.append({
+                        "AID": int(aid),
+                        "Title": title,
+                        "Pinyin": pinyin_code,
+                        "Cover": detail_data.get('video', {}).get('cover', ''),
+                        "Status": detail_data.get('video', {}).get('status', '连载'),
+                        "UpToDate": detail_data.get('video', {}).get('uptodate', '更新中')
+                    })
+                    existing_aids.add(aid)
+                else:
+                    for item in search_index:
+                        if str(item['AID']) == aid:
+                            item['Status'] = detail_data.get('video', {}).get('status', '连载')
+                            item['UpToDate'] = detail_data.get('video', {}).get('uptodate', '更新中')
+                            break
+            else:
+                print(f"[WARNING] Failed to fetch details for AID: {aid}")
+            
+            time.sleep(0.5)
+    finally:
+        await resolver.stop()
+
     save_search_index(search_index)
     print(f"[SUCCESS] Saved search_index.json with {len(search_index)} items.")
     print("[FINISHED] Anime data static generation complete!")
+
+def main():
+    asyncio.run(main_async())
 
 if __name__ == "__main__":
     main()

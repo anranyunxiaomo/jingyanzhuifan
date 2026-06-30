@@ -33,11 +33,12 @@ jobs:
         with:
           python-version: '3.9'
 
-      # 3. 安装依赖库 (包括 pypinyin 以提供完美的拼音模糊检索支持)
+      # 3. 安装依赖库 (包括 pypinyin 以及用于视频解析的 playwright)
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pypinyin
+          pip install requests pypinyin playwright
+          python -m playwright install chromium
 
       # 4. 执行爬虫数据抓取 (在 GitHub 虚拟机中无限制跑完详情抓取)
       - name: Fetch and staticize anime data

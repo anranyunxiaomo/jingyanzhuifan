@@ -563,6 +563,31 @@ body {
   background: #000;
 }
 
+.video-dplayer {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+}
+
+/* 覆盖 DPlayer 原生控制进度条颜色为优雅的品牌金色 */
+.dplayer-controller .dplayer-bar-wrap .dplayer-bar .dplayer-played {
+  background: var(--accent-gold) !important;
+}
+.dplayer-thumb {
+  background: var(--accent-gold) !important;
+}
+.dplayer-mobile-play, .dplayer-play-icon {
+  fill: var(--accent-gold) !important;
+}
+.dplayer-volume-bar-inner {
+  background: var(--accent-gold) !important;
+}
+
+
 .playing-info {
   margin-top: 1rem;
   display: flex;

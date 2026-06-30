@@ -48,6 +48,10 @@ new Vue({
     activeEngineKey: 'default',
     useProxyTunnel: false, // 免拦截中转代理通道开关
     customProxyUrl: '',   // 用户专属 Cloudflare Worker 代理域名
+    
+    // H5 播放器状态管理
+    dpInstance: null,      // DPlayer 实例
+    isIframeMode: false,   // 是否为 Iframe 降级模式
   },
   
   computed: {
@@ -239,6 +243,47 @@ new Vue({
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
       const epToken = ep[1];          // 加密 token 或直链 url
+      const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
+      
+      // 1. 如果存在预解析直链，优先使用原生 DPlayer 播放，享受极致无广告体验！
+      if (realUrl) {
+        this.isIframeMode = false;
+        
+        // 销毁上一次的播放器实例
+        if (this.dpInstance) {
+          try { this.dpInstance.destroy(); } catch(e) {}
+          this.dpInstance = null;
+        }
+        
+        this.activePlayUrl = realUrl;
+        
+        // 异步渲染并挂载 DPlayer 播放器
+        this.$nextTick(() => {
+          try {
+            this.dpInstance = new DPlayer({
+              container: document.getElementById('dplayer'),
+              autoplay: true,
+              screenshot: false,
+              video: {
+                url: realUrl,
+                type: 'hls' // 支持 hls.js 解码 m3u8
+              }
+            });
+            console.log(`[DPLAYER PLAYING] URL: ${realUrl}`);
+          } catch(e) {
+            console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
+            this.isIframeMode = true;
+          }
+        });
+        return;
+      }
+      
+      // 2. 如果不存在预解析直链 (冷门旧番/历史缓存未覆盖部分)，安全降级为传统的 Iframe 解析模式
+      this.isIframeMode = true;
+      if (this.dpInstance) {
+        try { this.dpInstance.destroy(); } catch(e) {}
+        this.dpInstance = null;
+      }
       
       let playUrl = "";
       
@@ -273,7 +318,7 @@ new Vue({
       }
       
       this.activePlayUrl = playUrl;
-      console.log(`[PLAYING] URL: ${this.activePlayUrl}`);
+      console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
     },
     
     rePlayCurrentEpisode() {
@@ -304,6 +349,13 @@ new Vue({
     // 🧭 导航及交互控制
     // ==========================================================================
     goHome() {
+      // 安全销毁 DPlayer 实例，防止声音残留
+      if (this.dpInstance) {
+        try { this.dpInstance.destroy(); } catch(e) {}
+        this.dpInstance = null;
+      }
+      this.isIframeMode = false;
+      
       this.currentAnimeId = null;
       this.animeDetail = null;
       this.activePlayUrl = '';
