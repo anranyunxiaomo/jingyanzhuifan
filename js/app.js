@@ -378,7 +378,11 @@ new Vue({
         
         // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
-          try { this.dpInstance.destroy(); } catch(e) {}
+          try { 
+            this.dpInstance.off('timeupdate');
+            this.dpInstance.off('loadedmetadata');
+            this.dpInstance.destroy(); 
+          } catch(e) {}
           this.dpInstance = null;
         }
 
@@ -401,7 +405,7 @@ new Vue({
         this.$nextTick(() => {
           setTimeout(() => {
             try {
-              this.dpInstance = new DPlayer({
+              const dp = new DPlayer({
                 container: document.getElementById('dplayer'),
                 autoplay: true,
                 screenshot: false,
@@ -412,6 +416,7 @@ new Vue({
                   type: 'hls' // 支持 hls.js 解码 m3u8
                 }
               });
+              this.dpInstance = dp;
 
               // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
               // 在 DPlayer 刚刚创建、视频尚未完全加载的同步阶段，直接启动 1.5 秒的高频归零定时器。
@@ -423,8 +428,8 @@ new Vue({
                 console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
                 this.guardTimer = setInterval(() => {
                   try {
-                    if (this.dpInstance && this.dpInstance.video) {
-                      this.dpInstance.video.currentTime = 0.01;
+                    if (dp && dp.video) {
+                      dp.video.currentTime = 0.01;
                     }
                   } catch(e) {}
                 }, 30);
@@ -440,17 +445,18 @@ new Vue({
               }
 
               // 💡 监听视频加载成功事件，如果看起过则主动恢复它
-              this.dpInstance.on('loadedmetadata', () => {
+              dp.on('loadedmetadata', () => {
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
-                  this.dpInstance.seek(savedTime);
+                  dp.seek(savedTime);
                 }
               });
 
               // ✅ 在注册事件时，把当前动漫 ID 和集名固定在局部变量闭包中，不受后续切换响应式更新的影响，物理阻断“临终幽灵写回”Bug！
-              this.dpInstance.on('timeupdate', () => {
-                const currentTime = this.dpInstance.video.currentTime;
-                const duration = this.dpInstance.video.duration;
+              dp.on('timeupdate', () => {
+                if (!dp || !dp.video) return; // 💡 临终安全卫士，防销毁时 null 报错导致 JS 主线程崩溃
+                const currentTime = dp.video.currentTime;
+                const duration = dp.video.duration;
 
                 // 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
