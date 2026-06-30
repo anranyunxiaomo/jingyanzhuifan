@@ -139,16 +139,21 @@ class PlaywrightResolver:
         self.context = None
 
     async def start(self):
-        print("[INFO] Starting Playwright Headless Engine...")
-        self.playwright = await async_playwright().start()
-        launch_args = ["--no-sandbox", "--disable-setuid-sandbox"]
-        if active_proxy:
-            launch_args.append(f"--proxy-server={active_proxy['http']}")
-        self.browser = await self.playwright.chromium.launch(headless=True, args=launch_args)
-        self.context = await self.browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            bypass_csp=True
-        )
+        try:
+            print("[INFO] Starting Playwright Headless Engine...")
+            self.playwright = await async_playwright().start()
+            launch_args = ["--no-sandbox", "--disable-setuid-sandbox"]
+            if active_proxy:
+                launch_args.append(f"--proxy-server={active_proxy['http']}")
+            self.browser = await self.playwright.chromium.launch(headless=True, args=launch_args)
+            self.context = await self.browser.new_context(
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                bypass_csp=True
+            )
+            print("[SUCCESS] Playwright Headless Engine started successfully.")
+        except Exception as e:
+            print(f"[CRITICAL] Playwright start exception: {e}")
+            raise e
 
     async def resolve(self, jx_url):
         if not self.context:
@@ -173,8 +178,8 @@ class PlaywrightResolver:
             # 限制等待时长
             await page.goto(jx_url, timeout=12000, wait_until="domcontentloaded")
             await asyncio.sleep(4.0)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"      [RESOLVE EXCEPTION] {e}")
         finally:
             if page:
                 try:
