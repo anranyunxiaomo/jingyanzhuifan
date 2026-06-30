@@ -196,52 +196,64 @@ class PlaywrightResolver:
 async def main_async():
     print("[START] Start updating anime data...")
     
-    # 1. 获取首页列表 (home-list)
-    print("Fetching home-list...")
-    home_data = request_api("home-list")
-    if not home_data:
-        print("[CRITICAL] Failed to fetch home-list. Aborting.")
-        return
+    # 💡 提前提取 target_aid 参数，若为按需解析模式，直接跳过全量首页和时刻表抓取！
+    target_aid = None
+    for arg in sys.argv:
+        if arg.startswith('--aid='):
+            target_aid = str(arg.split('=')[1])
     
-    # 保存 home-list.json 到 data/ 目录
-    with open(os.path.join(DATA_DIR, 'home-list.json'), 'w', encoding='utf-8') as f:
-        json.dump(home_data, f, ensure_ascii=False, indent=2)
-    print("[SUCCESS] Saved home-list.json")
-    
-    # 2. 收集热门番剧（在云端我们只对最火的前 3 部新番进行无头预解析以节省时间）
-    hot_aids = set()
-    for item in home_data.get('latest', [])[:3]:
-        if item.get('AID'):
-            hot_aids.add(str(item['AID']))
-
-    # 3. 汇总需要抓取详情的动漫列表
     aids_to_fetch = {}
-    for item in home_data.get('latest', []):
-        if item.get('AID'):
-            aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
-    for item in home_data.get('recommend', []):
-        if item.get('AID'):
-            aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+    hot_aids = set()
+    
+    if target_aid:
+        print(f"[INFO] On-demand mode active. Directly targeting AID: {target_aid}")
+        hot_aids = {target_aid}
+        aids_to_fetch = {target_aid: "按需加速番剧"}
+    else:
+        # 1. 获取首页列表 (home-list)
+        print("Fetching home-list...")
+        home_data = request_api("home-list")
+        if not home_data:
+            print("[CRITICAL] Failed to fetch home-list. Aborting.")
+            return
+        
+        # 保存 home-list.json 到 data/ 目录
+        with open(os.path.join(DATA_DIR, 'home-list.json'), 'w', encoding='utf-8') as f:
+            json.dump(home_data, f, ensure_ascii=False, indent=2)
+        print("[SUCCESS] Saved home-list.json")
+        
+        # 2. 收集热门番剧（在云端我们只对最火的前 3 部新番进行无头预解析以节省时间）
+        for item in home_data.get('latest', [])[:3]:
+            if item.get('AID'):
+                hot_aids.add(str(item['AID']))
 
-    week_list = home_data.get('week_list', {})
-    if isinstance(week_list, dict):
-        for day_key, day_items in week_list.items():
-            if isinstance(day_items, list):
-                for item in day_items:
-                    if isinstance(item, dict):
-                        aid = item.get('id') or item.get('AID')
-                        name = item.get('name') or item.get('Title')
-                        if aid:
-                            aids_to_fetch[str(aid)] = name or '未知动漫'
+        # 3. 汇总需要抓取详情的动漫列表
+        for item in home_data.get('latest', []):
+            if item.get('AID'):
+                aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+        for item in home_data.get('recommend', []):
+            if item.get('AID'):
+                aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
 
-    # 获取最近更新的前 2 页
-    print("Fetching update page 1 & 2...")
-    for page in [1, 2]:
-        update_data = request_api("update", params={"page": page})
-        if update_data and isinstance(update_data, list):
-            for item in update_data:
-                if item.get('AID'):
-                    aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+        week_list = home_data.get('week_list', {})
+        if isinstance(week_list, dict):
+            for day_key, day_items in week_list.items():
+                if isinstance(day_items, list):
+                    for item in day_items:
+                        if isinstance(item, dict):
+                            aid = item.get('id') or item.get('AID')
+                            name = item.get('name') or item.get('Title')
+                            if aid:
+                                aids_to_fetch[str(aid)] = name or '未知动漫'
+
+        # 获取最近更新的前 2 页
+        print("Fetching update page 1 & 2...")
+        for page in [1, 2]:
+            update_data = request_api("update", params={"page": page})
+            if update_data and isinstance(update_data, list):
+                for item in update_data:
+                    if item.get('AID'):
+                        aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
 
     print(f"[INFO] Collected {len(aids_to_fetch)} unique anime AIDs to fetch.")
     
@@ -249,23 +261,11 @@ async def main_async():
     search_index = load_search_index()
     existing_aids = {str(item['AID']) for item in search_index}
 
-    # 5. 限制项与按需 AID 参数提取
+    # 5. 限制项处理
     limit = 9999
-    target_aid = None
     for arg in sys.argv:
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
-        if arg.startswith('--aid='):
-            target_aid = str(arg.split('=')[1])
-
-    # 如果是按需解析模式，重写热门 AID 集合，仅对请求的 target_aid 进行解析
-    if target_aid:
-        print(f"[INFO] On-demand mode active. Targeting AID: {target_aid}")
-        hot_aids = {target_aid}
-        if target_aid in aids_to_fetch:
-            aids_to_fetch = {target_aid: aids_to_fetch[target_aid]}
-        else:
-            aids_to_fetch = {target_aid: "按需加速番剧"}
 
     # 待并发解析的任务列表
     pending_tasks = []
