@@ -31,6 +31,8 @@ new Vue({
     searchQuery: '',
     searchFocused: false,
     searchIndex: [], // 缓存的全局搜索数据库
+    remoteSearchResults: [], // 远程 API 实时搜索到的动漫结果
+    searchTimer: null, // 搜索防抖定时器
     
     // 详情页数据
     animeDetail: null,
@@ -107,20 +109,62 @@ new Vue({
       return playlists[this.activeLineKey] || [];
     },
     
-    // 5. 本地实时模糊检索
+    // 5. 智能搜索合并 (本地 115 热门缓存匹配 + 远程 API 实时检索并去重)
     filteredResults() {
       const query = this.searchQuery.trim().toLowerCase();
       if (!query) return [];
       
-      return this.searchIndex.filter(item => {
+      const localMatches = this.searchIndex.filter(item => {
         const title = (item.Title || '').toLowerCase();
         const pinyin = (item.Pinyin || '').toLowerCase();
         return title.includes(query) || pinyin.includes(query);
-      }).slice(0, 8); // 最多展示 8 个推荐匹配
+      });
+      
+      const merged = [...localMatches];
+      const seenAids = new Set(localMatches.map(m => String(m.AID)));
+      
+      this.remoteSearchResults.forEach(item => {
+        const aidStr = String(item.AID);
+        if (!seenAids.has(aidStr)) {
+          merged.push(item);
+          seenAids.add(aidStr);
+        }
+      });
+      
+      return merged.slice(0, 15); // 最多展示 15 个推荐匹配 (拉伸展示远程结果)
     }
   },
   
   watch: {
+    // 监听搜索词输入防抖，智能拉取全网实时检索 API 结果
+    searchQuery(newVal) {
+      const query = newVal.trim();
+      if (!query) {
+        this.remoteSearchResults = [];
+        return;
+      }
+      
+      if (this.searchTimer) clearTimeout(this.searchTimer);
+      this.searchTimer = setTimeout(() => {
+        const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
+        axios.get(`${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`)
+          .then(response => {
+            const videos = response.data?.data?.videos || [];
+            this.remoteSearchResults = videos.map(v => ({
+              AID: String(v.id || v.AID),
+              Title: v.name,
+              Cover: v.cover,
+              Status: v.status,
+              UpToDate: v.uptodate,
+              isRemote: true
+            }));
+          })
+          .catch(err => {
+            console.warn("远程全网检索超时或失败，已降级仅展示本地缓存", err);
+          });
+      }, 400); // 400毫秒微防抖以保证极速反应
+    },
+
     // 当页面有新元素添加时刷新 Lucide 图标
     currentAnimeId() {
       this.$nextTick(() => {
@@ -222,22 +266,41 @@ new Vue({
       this.activePlayUrl = '';
       this.activeEpisodeName = '';
       
-      // 加载本地详情 JSON 文件 (附带实时时间戳，彻底打破浏览器/CDN 缓存阻碍)
+      // 💡 分级策略 1：首先尝试拉取本地静态化详情 JSON (响应最快，免跨域)
       axios.get(`data/detail/${aid}.json?t=${new Date().getTime()}`)
         .then(response => {
           this.animeDetail = response.data;
-          
-          // 默认选中第一个可用的播放线路
-          const lines = this.availableLines;
-          if (lines.length > 0) {
-            this.activeLineKey = lines[0].key;
-          }
+          this.initializePlayerLine();
         })
         .catch(err => {
-          console.error(`加载动漫详情 (AID: ${aid}) 失败！`, err);
-          alert("加载动漫详情失败，此动漫详情数据可能未被静态化下载。");
-          this.goHome();
+          console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 未命中，自动启用云端 API 实时加载防线...`);
+          
+          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API
+          const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
+          axios.get(`${AGE_API_BASE}detail/${aid}`)
+            .then(response => {
+              const resData = response.data;
+              if (resData && resData.data) {
+                this.animeDetail = resData.data;
+                this.initializePlayerLine();
+              } else {
+                throw new Error("接口返回的详情为空");
+              }
+            })
+            .catch(apiErr => {
+              console.error("官方实时详情拉取失败！", apiErr);
+              alert("加载动漫详情失败，此动漫暂时无法访问，请尝试切换其他网络。");
+              this.goHome();
+            });
         });
+    },
+    
+    initializePlayerLine() {
+      // 默认选中第一个可用的播放线路
+      const lines = this.availableLines;
+      if (lines.length > 0) {
+        this.activeLineKey = lines[0].key;
+      }
     },
     
     // ==========================================================================
