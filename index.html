@@ -36,7 +36,7 @@
           <i data-lucide="search" class="search-icon"></i>
           <input 
             type="text" 
-            placeholder="搜索动漫... (支持中文、拼音首字母)" 
+            placeholder="搜索动漫... (输入中文、拼音，或直接粘贴 AGE 番剧 ID)" 
             v-model="searchQuery" 
             @focus="searchFocused = true"
             @blur="handleSearchBlur"
@@ -44,9 +44,9 @@
           <i data-lucide="x" class="clear-icon" v-if="searchQuery" @click="searchQuery = ''"></i>
         </div>
         
-        <!-- 搜索下拉匹配框 -->
         <transition name="fade-slide">
-          <div class="search-results" v-if="searchFocused && filteredResults.length > 0">
+          <div class="search-results" v-if="searchFocused && searchQuery.trim() !== ''">
+            <!-- A. 匹配的搜索结果列表 (本地缓存 + 远程检索) -->
             <div 
               class="result-item" 
               v-for="item in filteredResults" 
@@ -57,6 +57,31 @@
               <div class="result-info">
                 <div class="result-title">{{ item.Title }}</div>
                 <div class="result-meta">{{ item.Status }} · {{ item.UpToDate }}</div>
+              </div>
+            </div>
+            
+            <!-- B. 智能万能直连备用项 (如果输入的是纯数字 ID) -->
+            <div 
+              class="result-item" 
+              v-if="/^\d+$/.test(searchQuery.trim())"
+              @mousedown="selectAnime(searchQuery.trim())"
+              style="border-top: 1px dashed rgba(255,255,255,0.1); background: rgba(0, 113, 227, 0.12);"
+            >
+              <div class="result-info" style="padding: 4px 6px;">
+                <div class="result-title" style="color: var(--color-primary); font-weight: bold;">⚡ 强制拉取此 AGE ID 并开播</div>
+                <div class="result-meta">尝试直接拉取并播放云端番剧 ID: {{ searchQuery.trim() }}</div>
+              </div>
+            </div>
+
+            <!-- C. 空状态友好引导提示 -->
+            <div 
+              class="result-item" 
+              v-if="filteredResults.length === 0 && !/^\d+$/.test(searchQuery.trim())"
+              style="cursor: default; pointer-events: none; opacity: 0.7;"
+            >
+              <div class="result-info" style="padding: 8px;">
+                <div class="result-title" style="font-size: 13px;">🔍 未命中的冷门老番</div>
+                <div class="result-meta" style="font-size: 11px;">建议去 AGE 官网复制该动漫的纯数字 ID 输入即可强行开播</div>
               </div>
             </div>
           </div>
@@ -383,6 +408,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js"></script>
+<script src="js/app.js?v=20260630T1350"></script>
 </body>
 </html>

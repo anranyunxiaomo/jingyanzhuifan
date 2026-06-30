@@ -261,6 +261,15 @@ new Vue({
     // ==========================================================================
     selectAnime(aid) {
       if (!aid) return;
+      
+      // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字
+      if (typeof aid === 'string' && !/^\d+$/.test(aid)) {
+        const match = aid.match(/\d+/);
+        if (match) {
+          aid = match[0];
+        }
+      }
+      
       this.currentAnimeId = aid;
       this.animeDetail = null;
       this.activeLineKey = '';
