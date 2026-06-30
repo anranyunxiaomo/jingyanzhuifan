@@ -46,7 +46,7 @@ new Vue({
       { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
     activeEngineKey: 'default',
-    useProxyTunnel: true, // 免拦截中转代理通道开关 (默认开启，100% 解决国内源站防盗链 302 重定向拦截)
+    useProxyTunnel: false, // 免拦截中转代理通道开关 (默认关闭，优先走 HTML5 零延迟 no-referrer 穿透通道)
     customProxyUrl: '',   // 用户专属 Cloudflare Worker 代理域名
     
     // H5 播放器状态管理
