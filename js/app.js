@@ -145,10 +145,9 @@ new Vue({
       
       if (this.searchTimer) clearTimeout(this.searchTimer);
       this.searchTimer = setTimeout(() => {
-        const PROXY_BASE = "https://api.allorigins.win/raw?url=";
         const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
         const targetUrl = `${AGE_API_BASE}search?query=${encodeURIComponent(query)}&page=1`;
-        axios.get(PROXY_BASE + encodeURIComponent(targetUrl))
+        this.axiosGetViaProxy(targetUrl)
           .then(response => {
             const videos = response.data?.data?.videos || [];
             this.remoteSearchResults = videos.map(v => ({
@@ -201,6 +200,34 @@ new Vue({
   },
   
   methods: {
+    // 💡 行业顶级高可用防线：连环 Fallback 跨域代理中转器 (corsproxy.io -> codetabs -> allorigins)
+    // 只要有任何一条线路存活，就能秒速拉回数据，彻底免疫单一公共代理服务器崩溃/被墙超时隐患
+    async axiosGetViaProxy(targetUrl) {
+      const PROXIES = [
+        "https://corsproxy.io/?url=",
+        "https://api.codetabs.com/v1/proxy?quest=",
+        "https://api.allorigins.win/raw?url="
+      ];
+      
+      let lastErr = null;
+      for (const proxyBase of PROXIES) {
+        try {
+          const proxiedUrl = proxyBase + encodeURIComponent(targetUrl);
+          console.log(`[CORS PROXY TRY] Requesting via: ${proxyBase}`);
+          // 设定超短超时保护 (5秒)，防止在超时的旧线路上卡死
+          const res = await axios.get(proxiedUrl, { timeout: 5000 });
+          if (res && res.data) {
+            console.log(`[CORS PROXY SUCCESS] Loaded successfully via: ${proxyBase}`);
+            return res;
+          }
+        } catch (err) {
+          console.warn(`[CORS PROXY FAIL] ${proxyBase} failed. Falling back to next...`, err);
+          lastErr = err;
+        }
+      }
+      throw lastErr || new Error("All CORS proxies exhausted and failed");
+    },
+
     // ==========================================================================
     // 🚀 数据初始化与拉取 
     // ==========================================================================
@@ -274,11 +301,10 @@ new Vue({
         .catch(err => {
           console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 未命中，自动启用云端 API 实时加载防线...`);
           
-          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API (通过 CF Worker 代理解决 CORS)
-          const PROXY_BASE = "https://api.allorigins.win/raw?url=";
+          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API (通过高可用 CORS Fallback 代理链)
           const AGE_API_BASE = "https://ageapi.omwjhz.com:18888/v2/";
           const targetUrl = `${AGE_API_BASE}detail/${aid}`;
-          axios.get(PROXY_BASE + encodeURIComponent(targetUrl))
+          this.axiosGetViaProxy(targetUrl)
             .then(response => {
               const resData = response.data;
               if (resData && resData.video) {
