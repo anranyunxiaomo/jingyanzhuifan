@@ -262,7 +262,7 @@ new Vue({
       
       // 如果开启了免拦截代理中转通道，通过专属或公共安全 HTTPS 网页代理进行中转重写
       if (this.useProxyTunnel) {
-        const proxyBase = this.customProxyUrl.trim() || "https://bypass.run";
+        const proxyBase = this.customProxyUrl.trim() || "https://jyzf-proxy.azm.workers.dev";
         const formattedProxy = proxyBase.endsWith('/') ? proxyBase : (proxyBase + '/');
         playUrl = formattedProxy + "?url=" + encodeURIComponent(playUrl);
       } else {
