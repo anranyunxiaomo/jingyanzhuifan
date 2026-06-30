@@ -626,8 +626,52 @@ body {
   box-shadow: 0 4px 15px rgba(233, 189, 108, 0.1);
 }
 
-  color: var(--text-main);
+.proxy-tunnel-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(142, 142, 147, 0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
 }
+
+.proxy-tunnel-btn.active {
+  background: var(--accent-gold-light);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-hover);
+  box-shadow: 0 4px 15px rgba(233, 189, 108, 0.15);
+  animation: goldPulse 2s infinite;
+}
+
+.proxy-tunnel-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-main);
+  background: rgba(233, 189, 108, 0.04);
+}
+
+.tunnel-icon {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes goldPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(233, 189, 108, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(233, 189, 108, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(233, 189, 108, 0);
+  }
+}
+
 
 /* 动漫介绍面板 */
 .info-panel {

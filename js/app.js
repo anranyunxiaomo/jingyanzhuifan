@@ -42,14 +42,11 @@ new Vue({
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
       { label: '系统默认 (AGE 合作源)', value: 'default' },
-      { label: '官方备用解析 A', value: 'https://vip.cqtnfs.com:8443/vip/?url=' },
-      { label: '官方备用解析 B', value: 'https://vip.huijujiavip.com:8443/vip/?url=' },
-      { label: '官方备用解析 C (Jump)', value: 'https://vip.cqtnfs.com:8443/jump.html?url=' },
-      { label: '官方备用解析 D (Jump)', value: 'https://vip.huijujiavip.com:8443/jump.html?url=' },
       { label: '超清无广告源 A (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
       { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
     activeEngineKey: 'default',
+    useProxyTunnel: false, // 免拦截中转代理通道开关
   },
   
   computed: {
@@ -256,9 +253,14 @@ new Vue({
         playUrl = this.activeEngineKey + epToken;
       }
       
-      // 自动强升 https，彻底防 Mixed Content 混合内容拦截
-      if (playUrl.startsWith('http://')) {
-        playUrl = playUrl.replace('http://', 'https://');
+      // 如果开启了免拦截代理中转通道，通过公网安全 HTTPS 网页代理进行中转重写
+      if (this.useProxyTunnel) {
+        playUrl = "https://netfiles.eu/browse.php?b=4&u=" + encodeURIComponent(playUrl);
+      } else {
+        // 自动强升 https，彻底防 Mixed Content 混合内容拦截
+        if (playUrl.startsWith('http://')) {
+          playUrl = playUrl.replace('http://', 'https://');
+        }
       }
       
       this.activePlayUrl = playUrl;
@@ -270,6 +272,12 @@ new Vue({
         this.playEpisode(this.activeEpisodeIndex);
       }
     },
+
+    toggleProxyTunnel() {
+      this.useProxyTunnel = !this.useProxyTunnel;
+      this.rePlayCurrentEpisode();
+    },
+
 
     
     // ==========================================================================

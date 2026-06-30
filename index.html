@@ -242,8 +242,21 @@
                   {{ engine.label }}
                 </option>
               </select>
+              
+              <!-- 免拦截代理中转开关 -->
+              <button 
+                class="proxy-tunnel-btn" 
+                :class="{ active: useProxyTunnel }" 
+                @click="toggleProxyTunnel"
+                title="当视频黑屏或显示哭脸时，点击开启免拦截中转通道"
+              >
+                <i data-lucide="shield-check" class="tunnel-icon" v-if="useProxyTunnel"></i>
+                <i data-lucide="shield-alert" class="tunnel-icon" v-else></i>
+                {{ useProxyTunnel ? '中转通道已开启' : '启用免拦截中转' }}
+              </button>
             </div>
           </div>
+
 
         </div>
 
