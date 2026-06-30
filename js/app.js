@@ -408,48 +408,37 @@ new Vue({
                 }
               });
 
-              // 💡 进度守卫看守锁，用于保障有历史进度时的恢复
-              let hasRestored = false;
+              // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
+              // 在 DPlayer 刚刚创建、视频尚未完全加载的同步阶段，直接启动 1.5 秒的高频归零定时器。
+              // 无论外部插件何时在微秒级异步执行它的 seek，我们都会在 30 毫秒内强制将其重新拽回最起点！
+              const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+              const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
+              
+              if (savedTime <= 3) {
+                console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
+                this.guardTimer = setInterval(() => {
+                  try {
+                    if (this.dpInstance && this.dpInstance.video) {
+                      this.dpInstance.video.currentTime = 0.01;
+                    }
+                  } catch(e) {}
+                }, 30);
+                
+                // 1.5 秒后自动拆除定时器，放行让用户自己拖动
+                setTimeout(() => {
+                  if (this.guardTimer) {
+                    clearInterval(this.guardTimer);
+                    this.guardTimer = null;
+                    console.log("[GUARD] Guard interval released.");
+                  }
+                }, 1500);
+              }
 
               // 💡 监听视频加载成功事件，如果看起过则主动恢复它
               this.dpInstance.on('loadedmetadata', () => {
-                const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
-                const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-                
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
                   this.dpInstance.seek(savedTime);
-                  hasRestored = true;
-                }
-              });
-
-              // 💡 监听播放事件：如果是新视频，强力启用高频归零定时器，强力压制任何第三方的 seek！
-              this.dpInstance.on('play', () => {
-                const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
-                const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-                
-                // 🛡️ 新视频没有历史进度记录 (或者小于 3 秒)，启用 1.2 秒的高频 40ms 定时器疯狂归零
-                if (savedTime <= 3) {
-                  if (!this.guardTimer) {
-                    console.log("[GUARD] Starting 1.2s high-frequency zero-seek guard interval to defeat extensions...");
-                    this.guardTimer = setInterval(() => {
-                      try {
-                        if (this.dpInstance && this.dpInstance.video) {
-                          // 强行把当前播放时间归零，粉碎一切其他脚本的 seek
-                          this.dpInstance.video.currentTime = 0.01;
-                        }
-                      } catch(e) {}
-                    }, 40);
-
-                    // 1.2 秒后自动拆除定时器，放行让用户自己拖动
-                    setTimeout(() => {
-                      if (this.guardTimer) {
-                        clearInterval(this.guardTimer);
-                        this.guardTimer = null;
-                        console.log("[GUARD] Guard interval released.");
-                      }
-                    }, 1200);
-                  }
                 }
               });
 
