@@ -208,7 +208,13 @@ async def main_async():
     if target_aid:
         print(f"[INFO] On-demand mode active. Directly targeting AID: {target_aid}")
         hot_aids = {target_aid}
-        aids_to_fetch = {target_aid: "按需加速番剧"}
+        aids_to_fetch = {
+            target_aid: {
+                'title': "按需加速番剧",
+                'new_title': '',
+                'is_active': True
+            }
+        }
     else:
         # 1. 获取首页列表 (home-list)
         print("Fetching home-list...")
@@ -230,10 +236,18 @@ async def main_async():
         # 3. 汇总需要抓取详情的动漫列表
         for item in home_data.get('latest', []):
             if item.get('AID'):
-                aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+                aids_to_fetch[str(item['AID'])] = {
+                    'title': item.get('Title', '未知动漫'),
+                    'new_title': item.get('NewTitle', ''),
+                    'is_active': True
+                }
         for item in home_data.get('recommend', []):
             if item.get('AID'):
-                aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+                aids_to_fetch[str(item['AID'])] = {
+                    'title': item.get('Title', '未知动漫'),
+                    'new_title': '',
+                    'is_active': False
+                }
 
         week_list = home_data.get('week_list', {})
         if isinstance(week_list, dict):
@@ -244,7 +258,11 @@ async def main_async():
                             aid = item.get('id') or item.get('AID')
                             name = item.get('name') or item.get('Title')
                             if aid:
-                                aids_to_fetch[str(aid)] = name or '未知动漫'
+                                aids_to_fetch[str(aid)] = {
+                                    'title': name or '未知动漫',
+                                    'new_title': item.get('new_title') or item.get('NewTitle') or '',
+                                    'is_active': True
+                                }
 
         # 获取最近更新的前 2 页
         print("Fetching update page 1 & 2...")
@@ -253,7 +271,11 @@ async def main_async():
             if update_data and isinstance(update_data, list):
                 for item in update_data:
                     if item.get('AID'):
-                        aids_to_fetch[str(item['AID'])] = item.get('Title', '未知动漫')
+                        aids_to_fetch[str(item['AID'])] = {
+                            'title': item.get('Title', '未知动漫'),
+                            'new_title': item.get('NewTitle', ''),
+                            'is_active': True
+                        }
 
     print(f"[INFO] Collected {len(aids_to_fetch)} unique anime AIDs to fetch.")
     
@@ -276,14 +298,73 @@ async def main_async():
     # ==========================================================================
     # 1️⃣ 第一阶段：快速同步抓取 API 并和本地做 Diff 缓存匹配，收集待解析任务
     # ==========================================================================
-    for aid, title in aids_to_fetch.items():
+    for aid, info in aids_to_fetch.items():
         if counter >= limit:
             print(f"[INFO] Reached limit of {limit} entries. Stop fetching details.")
             break
         counter += 1
         detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
+        title = info['title']
         
-        print(f"[{counter}/{min(len(aids_to_fetch), limit)}] Fetching detail for AID: {aid} ({title})...")
+        # A. 检查本地是否存在已有详情缓存
+        local_detail = None
+        if os.path.exists(detail_path):
+            try:
+                with open(detail_path, 'r', encoding='utf-8') as f:
+                    local_detail = json.load(f)
+            except Exception:
+                pass
+
+        # B. 智能增量判定：如果本地详情已存在，且当前动漫今天没有更新（或者虽然更新了但集数已匹配），直接使用本地缓存！
+        if local_detail and not target_aid:
+            is_active = info.get('is_active', False)
+            new_title = info.get('new_title', '')
+            
+            should_skip_api = False
+            if not is_active:
+                should_skip_api = True
+            elif new_title:
+                playlists = local_detail.get('video', {}).get('playlists', {})
+                for pkey, eps in playlists.items():
+                    if eps and len(eps) > 0:
+                        if eps[-1][0] == new_title:
+                            should_skip_api = True
+                            break
+            
+            if should_skip_api:
+                print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE HIT] {title} is up-to-date ({new_title}). Skipping API request.")
+                fetched_details[aid] = (local_detail, detail_path, title)
+                
+                # 依然需要扫描该已缓存动漫的集数，处理可能需要参与无头解析的冷门集数（主要是为了防止上次断网丢失）
+                vip_list = (local_detail.get('player_vip') or '').split(',')
+                player_jx = local_detail.get('player_jx') or {}
+                
+                # 倒数最新 2 集 (切片后 2 个) 索引列表
+                is_hot = (aid in hot_aids)
+                for pkey, eps in playlists.items():
+                    is_vip = (pkey in vip_list)
+                    jx_base = player_jx.get('vip' if is_vip else 'zj')
+                    new_ep_indices = list(range(max(0, len(eps) - 2), len(eps))) if len(eps) > 0 else []
+                    
+                    for i, ep in enumerate(eps):
+                        ep_token = ep[1]
+                        
+                        # 检查第三个位置是否已经拥有直链，如果没有，才可能需要无头解析
+                        if len(ep) < 3 or not ep[2]:
+                            if is_hot and (i in new_ep_indices) and jx_base and not is_vip and pkey != 'xigua':
+                                jx_url = jx_base + ep_token
+                                pending_tasks.append({
+                                    'aid': aid,
+                                    'pkey': pkey,
+                                    'ep_name': ep[0],
+                                    'ep_token': ep_token,
+                                    'ep_ref': ep,
+                                    'jx_url': jx_url
+                                })
+                continue
+
+        # C. 缓存未命中，才需要向 API 抓取最新详情
+        print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE MISS] Fetching detail for AID: {aid} ({title})...")
         detail_data = request_api(f"detail/{aid}")
         
         if detail_data:
