@@ -356,11 +356,12 @@
               class="ep-btn" 
               v-for="(ep, idx) in activeEpisodes" 
               :key="idx"
-              :class="{ active: activeEpisodeIndex === idx, 'has-real-url': ep[2] }"
+              :class="{ active: activeEpisodeIndex === idx, 'has-real-url': ep[2], 'has-cache-token': !ep[2] && ep[1] }"
               @click="playEpisode(idx)"
             >
               {{ ep[0] }}
-              <span class="lightning-badge" v-if="ep[2]">⚡</span>
+              <span class="lightning-badge gold" v-if="ep[2]">⚡</span>
+              <span class="lightning-badge green" v-else-if="ep[1]">⚡</span>
             </button>
           </div>
           <div class="no-episodes" v-else>

@@ -1005,12 +1005,34 @@ body {
   border-color: var(--accent-gold);
 }
 
+/* ⚡ 绿色云端代理加速播放源特有高档微发光视觉 */
+.ep-btn.has-cache-token {
+  border: 1px solid rgba(52, 199, 89, 0.45);
+  background: rgba(52, 199, 89, 0.05);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 6px rgba(52, 199, 89, 0.04);
+}
+
+.ep-btn.has-cache-token:hover {
+  background: rgba(52, 199, 89, 0.12) !important;
+  border-color: #34c759;
+}
+
+.lightning-badge.gold {
+  color: var(--accent-gold);
+  filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
+}
+
+.lightning-badge.green {
+  color: #34c759;
+  filter: drop-shadow(0 0 2px rgba(52, 199, 89, 0.3));
+}
+
 /* 闪电微标样式 */
 .lightning-badge {
-  color: var(--accent-gold);
   font-size: 0.75rem;
   margin-left: 2px;
-  filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
 }
 
 /* ⚡ 一键按需云端加速解析按钮（高档白金微发光圆角设计） */
