@@ -52,6 +52,10 @@ new Vue({
     // H5 播放器状态管理
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
+    
+    // GitHub 操作与按需加速解析配置
+    githubToken: '',       // GitHub 专属操作 Token (按需解析使用)
+    onDemandLoading: false, // 远程按需触发加载状态
   },
   
   computed: {
@@ -150,6 +154,12 @@ new Vue({
     const savedProxy = localStorage.getItem('custom_proxy_url');
     if (savedProxy) {
       this.customProxyUrl = savedProxy;
+    }
+
+    // 读取本地缓存的 GitHub Token
+    const savedToken = localStorage.getItem('github_token');
+    if (savedToken) {
+      this.githubToken = savedToken;
     }
   },
   
@@ -340,6 +350,57 @@ new Vue({
 
     saveProxyConfig() {
       localStorage.setItem('custom_proxy_url', this.customProxyUrl);
+    },
+
+    saveGithubToken() {
+      localStorage.setItem('github_token', this.githubToken);
+    },
+
+    triggerOnDemandResolution() {
+      if (!this.githubToken.trim()) {
+        alert("💡 申请按需加速解析前，请先点击【启用免拦截中转】展开中转配置面板，在最下方填入你的 GitHub 操作 Token。\n\n此 Token 仅保存在你的浏览器本地（LocalStorage），仅用于授权向你的 GitHub 仓库发送加速指令，绝不外泄。");
+        this.useProxyTunnel = true;
+        this.$nextTick(() => {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        });
+        return;
+      }
+
+      this.onDemandLoading = true;
+      const owner = "anranyunxiaomo";
+      const repo = "jingyanzhuifan";
+      const url = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': 'token ' + this.githubToken.trim(),
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          event_type: 'resolve_anime_on_demand',
+          client_payload: {
+            aid: String(this.currentAnimeId)
+          }
+        })
+      })
+      .then(res => {
+        if (res.status === 204 || res.status === 200) {
+          alert("⚡ 已成功唤醒云端加速引擎！\n\nGitHub Actions 已经自动启动，专为你开始解析当前番剧的所有线路。整个解析与部署约需 20-30 秒。\n\n解析完成后，本剧集中拥有 H5 直链的集数右侧将亮起 ⚡ 徽标。请大约 30 秒后刷新网页体验！");
+        } else {
+          alert("❌ 唤醒云端加速引擎失败，请检查你的 GitHub Token 是否正确（需具备 repo 写入权限）。");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("❌ 发送加速请求失败，请检查网络或 Token 状态。");
+      })
+      .finally(() => {
+        this.onDemandLoading = false;
+      });
     },
 
 

@@ -9,6 +9,8 @@ on:
     - cron: '0 */4 * * *'
   workflow_dispatch:
     # 支持在 GitHub 仓库后台一键手动运行
+  repository_dispatch:
+    types: [resolve_anime_on_demand]
 
 
 permissions:
@@ -44,7 +46,12 @@ jobs:
       # 4. 执行爬虫数据抓取 (在 GitHub 虚拟机中无限制跑完详情抓取)
       - name: Fetch and staticize anime data
         run: |
-          python update_data.py
+          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${{ github.event.action }}" = "resolve_anime_on_demand" ]; then
+            echo "[INFO] On-demand triggered for AID: ${{ github.event.client_payload.aid }}"
+            python update_data.py --aid=${{ github.event.client_payload.aid }}
+          else
+            python update_data.py
+          fi
 
       # 5. 自动将新抓取到的静态 JSON 数据库 Commit 并 Push 回仓库
       # 这可以让本地的 search_index 滚雪球般越来越大，且保存历史详情数据

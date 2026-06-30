@@ -249,11 +249,19 @@ async def main_async():
     search_index = load_search_index()
     existing_aids = {str(item['AID']) for item in search_index}
 
-    # 5. 限制项处理
+    # 5. 限制项与按需 AID 参数提取
     limit = 9999
+    target_aid = None
     for arg in sys.argv:
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
+        if arg.startswith('--aid='):
+            target_aid = str(arg.split('=')[1])
+
+    # 如果是按需解析模式，重写热门 AID 集合，仅对请求的 target_aid 进行解析
+    if target_aid:
+        print(f"[INFO] On-demand mode active. Targeting AID: {target_aid}")
+        hot_aids = {target_aid}
 
     # 待并发解析的任务列表
     pending_tasks = []
@@ -306,9 +314,13 @@ async def main_async():
                 jx_base = player_jx.get('vip' if is_vip else 'zj')
                 
                 # 倒数最新 2 集 (切片后 2 个) 索引列表
+                # 如果是在按需解析 target_aid 模式下，放开集数限制，对此动漫的所有集数进行全量并发解析！
                 new_ep_indices = []
                 if len(eps) > 0:
-                    new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
+                    if target_aid:
+                        new_ep_indices = list(range(len(eps)))
+                    else:
+                        new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
 
                 for i, ep in enumerate(eps):
                     ep_token = ep[1]
