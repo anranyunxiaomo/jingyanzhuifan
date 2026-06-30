@@ -52,23 +52,34 @@ jobs:
             python update_data.py
           fi
 
-      # 5. 安全同步并自动推回静态数据 JSON（“先 commit 后 rebase” 极速闭环防冲突版）
+      # 5. 安全同步并自动推回静态数据 JSON（“物理备份与强覆盖对齐” 无冲突版）
       - name: Commit and push static data changes
         run: |
           # A. 确保本地切回真实的 main 分支并跟踪远程，防止 detached HEAD 游离
           git checkout -B main
           
-          # B. 先将数据改动暂存并 commit，让工作区保持绝对干净！
-          git add data/
+          # B. 检查是否有数据改动，若有则进行备份和无冲突拉取
           if [ -n "$(git status --porcelain data/)" ]; then
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git commit -m "chore(data): auto-update anime static databases"
+            echo "[INFO] Detected data changes. Backing up locally modified JSONs..."
             
-            # C. 本地已 commit 干净！此时拉取远程最新核心代码，进行 rebase 挂载对齐
+            # 1. 物理备份本地的 data/ 目录
+            mkdir -p /tmp/data_backup
+            cp -r data/* /tmp/data_backup/
+            
+            # 2. 强行重置本地，使工作区回归 pristine 状态 (保证 pull 绝对不报 unstaged changes)
+            git reset --hard HEAD
+            
+            # 3. 此时 100% 毫无阻碍地拉取并对齐远程最新 main
             git pull --rebase origin main
             
-            # D. 完美 Fast-Forward 安全推回远程 main
+            # 4. 将刚才爬好的最新数据强行覆盖回来！
+            cp -r /tmp/data_backup/* data/
+            
+            # 5. 执行常规提交与推送
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/
+            git commit -m "chore(data): auto-update anime static databases"
             git push origin main
           else
             echo "[INFO] No data changes detected. Skipping push."

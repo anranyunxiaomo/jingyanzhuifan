@@ -219,8 +219,8 @@ new Vue({
       this.activePlayUrl = '';
       this.activeEpisodeName = '';
       
-      // 加载本地详情 JSON 文件
-      axios.get(`data/detail/${aid}.json`)
+      // 加载本地详情 JSON 文件 (附带实时时间戳，彻底打破浏览器/CDN 缓存阻碍)
+      axios.get(`data/detail/${aid}.json?t=${new Date().getTime()}`)
         .then(response => {
           this.animeDetail = response.data;
           
