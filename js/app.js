@@ -401,6 +401,33 @@ new Vue({
                   type: 'hls' // 支持 hls.js 解码 m3u8
                 }
               });
+
+              // 💡 监听视频加载成功事件，主动接管进度条 seek
+              this.dpInstance.on('loadedmetadata', () => {
+                const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+                const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
+                
+                if (savedTime > 3) {
+                  console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
+                  this.dpInstance.seek(savedTime);
+                } else {
+                  // 🛡️ 核心防卫：如果没有我们自己的历史进度记录，强制视频归零到 0.01 秒，直接覆写并抹平任何第三方浏览器插件强行跳转的进度！
+                  console.log(`[PROGRESS DEFENSE] No progress record found. Force seeking to 0.01s to block browser extension contamination.`);
+                  this.dpInstance.seek(0.01);
+                }
+              });
+
+              // 💡 监听播放时间更新，自动记录进度
+              this.dpInstance.on('timeupdate', () => {
+                const currentTime = this.dpInstance.video.currentTime;
+                const duration = this.dpInstance.video.duration;
+                // 大于 3 秒，且离结束还有 10 秒以上时才记忆
+                if (currentTime > 3 && duration && (duration - currentTime > 10)) {
+                  const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+                  localStorage.setItem(progressKey, currentTime.toString());
+                }
+              });
+
               console.log(`[DPLAYER PLAYING] URL: ${realUrl} | ID: ${this.currentAnimeId}_${this.activeEpisodeName}`);
             } catch(e) {
               console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
