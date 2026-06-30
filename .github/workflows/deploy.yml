@@ -63,6 +63,8 @@ jobs:
           # 检查是否有文件改动，若有则 commit 并 push
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore(data): auto-update anime static databases"
+            # 拉取并合并可能存在的最新远程提交 (防止本地并发 push 导致云端冲突被拒)
+            git pull --rebase origin HEAD:${{ github.ref }}
             git push origin HEAD:${{ github.ref }}
           else
             echo "No data changes detected. Skipping git push."
