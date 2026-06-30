@@ -324,12 +324,12 @@ async def main_async():
         # B. 智能增量判定：如果本地详情已存在，且当前动漫今天没有更新（或者虽然更新了但集数已匹配），直接使用本地缓存！
         if local_detail and not target_aid:
             should_skip_api = False
+            new_title = info.get('new_title', '')
             
             # 💡 增量核心：如果该动漫在最近 2 页更新列表里找不到，说明今天全站根本没有它新集数的任何更新，100% 可信跳过 API！
             if aid not in recently_updated_aids:
                 should_skip_api = True
             else:
-                new_title = info.get('new_title', '')
                 if not new_title:
                     # 若没有写明最新集数名字，稳妥起见不跳过详情，重新拉一次
                     should_skip_api = False
