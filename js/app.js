@@ -526,6 +526,27 @@ new Vue({
       });
     },
     
+    forceResetProgressAndReplay() {
+      if (this.activeEpisodeIndex === -1) return;
+      console.log(`[FORCE RESET PROGRESS] Clearing cached index of: ${this.currentAnimeId}_${this.activeEpisodeName}`);
+      
+      // 1. 强行删除我们自定义的播放进度记录
+      const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+      localStorage.removeItem(progressKey);
+      
+      // 2. 如果是原生播放器实例，强制清理 DPlayer 的 LocalStorage 并强行 Seek 归零
+      if (this.dpInstance) {
+        try {
+          const dpStorageKey = String(this.currentAnimeId) + "_" + String(this.activeEpisodeName);
+          localStorage.removeItem(`dplayer-video-api-key-${dpStorageKey}`);
+          this.dpInstance.seek(0.01);
+        } catch(e) {}
+      }
+      
+      // 3. 强行重新触发加载播放 (这会拼上最新的时间戳与 start=0&t=0.01 压制参数)
+      this.playEpisode(this.activeEpisodeIndex);
+    },
+    
     rePlayCurrentEpisode() {
       if (this.activeEpisodeIndex > -1) {
         this.playEpisode(this.activeEpisodeIndex);
