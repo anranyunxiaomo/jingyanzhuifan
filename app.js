@@ -50,7 +50,7 @@ new Vue({
       { label: '超清无广告源 A (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
       { label: '超清无广告源 B (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
     ],
-    activeEngineKey: 'default',
+    activeEngineKey: 'https://jx.jsonplayer.com/?url=',
     // H5 播放器状态管理
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
