@@ -442,6 +442,10 @@ new Vue({
                 }
               });
 
+              // ✅ 在注册事件时，把当前动漫 ID 和集名固定在局部变量闭包中，不受后续切换响应式更新的影响，物理阻断“临终幽灵写回”Bug！
+              const capturedAnimeId = this.currentAnimeId;
+              const capturedEpName = this.activeEpisodeName;
+
               // 💡 监听播放时间更新，自动记录进度
               this.dpInstance.on('timeupdate', () => {
                 const currentTime = this.dpInstance.video.currentTime;
@@ -449,7 +453,7 @@ new Vue({
 
                 // 自动记录进度：大于 3 秒，且离结束还有 10 秒以上时才记忆
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
-                  const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
+                  const progressKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(progressKey, currentTime.toString());
                 }
               });
