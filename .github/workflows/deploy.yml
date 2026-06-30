@@ -29,11 +29,12 @@ jobs:
         with:
           persist-credentials: true
 
-      # 2. 设置 Python 环境
+      # 2. 设置 Python 环境 (启用 requirements.txt 缓存机制)
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+          cache: 'pip'
 
       # 2.5 缓存 Playwright 浏览器二进制核心，防止每次重复下载
       - name: Cache Playwright browsers
@@ -49,7 +50,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pypinyin playwright
+          pip install -r requirements.txt
           if [ "${{ steps.playwright-cache.outputs.cache-hit }}" != "true" ]; then
             python -m playwright install chromium
           else
