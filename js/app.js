@@ -401,10 +401,10 @@ new Vue({
 
       const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
       const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
-      const joinChar = playUrl.includes('?') ? '&' : '?';
-      const timeParams = savedTime > 3 ? `&start=${savedTime}&t=${savedTime}#t=${savedTime}` : `&start=0&t=0.01#t=0.01`;
-      
-      playUrl = playUrl + joinChar + "aid=" + this.currentAnimeId + "&ep=" + epIdx + "&_t=" + new Date().getTime() + timeParams;
+      // 💡 修复：禁止将内部进度参数作为 Query 附加到第三方解析站 URL 上（会导致解析站 404/500）
+      // 仅在哈希中安全传递进度和防缓存标记，Hash 不会发送给远端服务器！
+      const hashParams = savedTime > 3 ? `#t=${savedTime}&_t=${new Date().getTime()}` : `#t=0.01&_t=${new Date().getTime()}`;
+      playUrl = playUrl + hashParams;
       if (playUrl.startsWith('http://')) {
         playUrl = playUrl.replace('http://', 'https://');
       }
