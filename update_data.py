@@ -190,7 +190,7 @@ class PlaywrightResolver:
             await self.playwright.stop()
 
 # ==========================================================================
-# 🚀 异步主任务
+# 🚀 异步并发主任务
 # ==========================================================================
 async def main_async():
     print("[START] Start updating anime data...")
@@ -254,112 +254,149 @@ async def main_async():
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
 
-    # 启动单例 Playwright 解析引擎
-    resolver = PlaywrightResolver()
-    await resolver.start()
+    # 待并发解析的任务列表
+    pending_tasks = []
+    # 临时存放所有拉取出的详情数据，以便后续回填并统一批量保存
+    fetched_details = {}
 
     counter = 0
-    try:
-        for aid, title in aids_to_fetch.items():
-            if counter >= limit:
-                print(f"[INFO] Reached limit of {limit} entries. Stop fetching details.")
-                break
-            counter += 1
-            detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
+    # ==========================================================================
+    # 1️⃣ 第一阶段：快速同步抓取 API 并和本地做 Diff 缓存匹配，收集待解析任务
+    # ==========================================================================
+    for aid, title in aids_to_fetch.items():
+        if counter >= limit:
+            print(f"[INFO] Reached limit of {limit} entries. Stop fetching details.")
+            break
+        counter += 1
+        detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
+        
+        print(f"[{counter}/{min(len(aids_to_fetch), limit)}] Fetching detail for AID: {aid} ({title})...")
+        detail_data = request_api(f"detail/{aid}")
+        
+        if detail_data:
+            fetched_details[aid] = (detail_data, detail_path, title)
             
-            print(f"[{counter}/{min(len(aids_to_fetch), limit)}] Fetching detail for AID: {aid} ({title})...")
-            detail_data = request_api(f"detail/{aid}")
-            
-            if detail_data:
-                # 读取本地已有的缓存，做增量直链同步
-                local_cache = {}
-                if os.path.exists(detail_path):
-                    try:
-                        with open(detail_path, 'r', encoding='utf-8') as f:
-                            old_data = json.load(f)
-                            old_playlists = old_data.get('video', {}).get('playlists', {})
-                            for pkey, eps in old_playlists.items():
-                                for ep in eps:
-                                    if len(ep) >= 3 and ep[2]:
-                                        local_cache[(pkey, ep[1])] = ep[2]
-                    except Exception:
-                        pass
+            # 读取本地已有的缓存，做增量直链同步
+            local_cache = {}
+            if os.path.exists(detail_path):
+                try:
+                    with open(detail_path, 'r', encoding='utf-8') as f:
+                        old_data = json.load(f)
+                        old_playlists = old_data.get('video', {}).get('playlists', {})
+                        for pkey, eps in old_playlists.items():
+                            for ep in eps:
+                                if len(ep) >= 3 and ep[2]:
+                                    local_cache[(pkey, ep[1])] = ep[2]
+                except Exception:
+                    pass
 
-                # 获取当前解析接口配置
-                vip_list = (detail_data.get('player_vip') or '').split(',')
-                player_jx = detail_data.get('player_jx') or {}
+            # 获取当前解析接口配置
+            vip_list = (detail_data.get('player_vip') or '').split(',')
+            player_jx = detail_data.get('player_jx') or {}
+            
+            # 循环 playlist 集数收集待解析任务
+            playlists = detail_data.get('video', {}).get('playlists', {})
+            is_hot = (aid in hot_aids)
+            
+            for pkey, eps in playlists.items():
+                is_vip = (pkey in vip_list)
+                jx_base = player_jx.get('vip' if is_vip else 'zj')
                 
-                # 循环 playlist 集数做直链预解析
-                playlists = detail_data.get('video', {}).get('playlists', {})
-                is_hot = (aid in hot_aids)
-                
-                for pkey, eps in playlists.items():
-                    is_vip = (pkey in vip_list)
-                    jx_base = player_jx.get('vip' if is_vip else 'zj')
+                # 倒数最新 2 集 (切片后 2 个) 索引列表
+                new_ep_indices = []
+                if len(eps) > 0:
+                    new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
+
+                for i, ep in enumerate(eps):
+                    ep_token = ep[1]
                     
-                    # 倒数最新 2 集 (切片后 2 个) 索引列表
-                    new_ep_indices = []
-                    if len(eps) > 0:
-                        new_ep_indices = list(range(max(0, len(eps) - 2), len(eps)))
-
-                    for i, ep in enumerate(eps):
-                        ep_token = ep[1]
+                    # A. 尝试使用本地增量缓存
+                    cached_url = local_cache.get((pkey, ep_token))
+                    if cached_url:
+                        if len(ep) == 2:
+                            ep.append(cached_url)
+                        elif len(ep) >= 3:
+                            ep[2] = cached_url
+                        continue
                         
-                        # 1. 尝试使用本地增量缓存
-                        cached_url = local_cache.get((pkey, ep_token))
-                        if cached_url:
-                            if len(ep) == 2:
-                                ep.append(cached_url)
-                            elif len(ep) >= 3:
-                                ep[2] = cached_url
-                            continue
-                            
-                        # 2. 如果属于热门动漫最新 2 集，且为 VIP 线路（如西瓜 VIP，最易受 HTTP 阻断），且本地无缓存，则启用无头解析
-                        if is_hot and (i in new_ep_indices) and jx_base and (pkey == 'xigua' or is_vip):
-                            jx_url = jx_base + ep_token
-                            print(f"  --> [RESOLVING LAN] Line: {pkey}, Episode: {ep[0]}...")
-                            real_url = await resolver.resolve(jx_url)
-                            if real_url:
-                                # 强升 https
-                                if real_url.startswith('http://'):
-                                    real_url = real_url.replace('http://', 'https://')
-                                
-                                if len(ep) == 2:
-                                    ep.append(real_url)
-                                elif len(ep) >= 3:
-                                    ep[2] = real_url
-                                
-                                local_cache[(pkey, ep_token)] = real_url
-                                time.sleep(1.0)
-                
-                # 写入本地静态 JSON
-                with open(detail_path, 'w', encoding='utf-8') as f:
-                    json.dump(detail_data, f, ensure_ascii=False, indent=2)
-                
-                # 更新搜索索引
-                if aid not in existing_aids:
-                    pinyin_code = get_pinyin_initials(title)
-                    search_index.append({
-                        "AID": int(aid),
-                        "Title": title,
-                        "Pinyin": pinyin_code,
-                        "Cover": detail_data.get('video', {}).get('cover', ''),
-                        "Status": detail_data.get('video', {}).get('status', '连载'),
-                        "UpToDate": detail_data.get('video', {}).get('uptodate', '更新中')
-                    })
-                    existing_aids.add(aid)
+                    # B. 如果属于热门动漫最新 2 集，且为 VIP 线路（最易被 HTTPS 混合内容拦截），且无本地缓存，加入并发任务队列
+                    if is_hot and (i in new_ep_indices) and jx_base and (pkey == 'xigua' or is_vip):
+                        jx_url = jx_base + ep_token
+                        pending_tasks.append({
+                            'aid': aid,
+                            'pkey': pkey,
+                            'ep_name': ep[0],
+                            'ep_token': ep_token,
+                            'ep_ref': ep, # 利用浅拷贝引用直接回填
+                            'jx_url': jx_url
+                        })
+        else:
+            print(f"[WARNING] Failed to fetch details for AID: {aid}")
+        
+        # 适当小歇防 API 反爬
+        time.sleep(0.3)
+
+    # ==========================================================================
+    # 2️⃣ 第二阶段：使用 Playwright 受控并发（Semaphore）进行高效率直链拦截
+    # ==========================================================================
+    if pending_tasks:
+        print(f"\n[CONCURRENCY] Total {len(pending_tasks)} video tasks to resolve. Launching concurrent parser...")
+        resolver = PlaywrightResolver()
+        await resolver.start()
+        
+        # 限制最大并发数为 3，兼顾性能与解析站防 CC 拦截
+        sem = asyncio.Semaphore(3)
+
+        async def resolve_task(task):
+            async with sem:
+                print(f"  --> [START CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']}, URL: {task['jx_url']}")
+                real_url = await resolver.resolve(task['jx_url'])
+                if real_url:
+                    if real_url.startswith('http://'):
+                        real_url = real_url.replace('http://', 'https://')
+                    
+                    # 引用回填，直接修改列表中原数组项
+                    ep = task['ep_ref']
+                    if len(ep) == 2:
+                        ep.append(real_url)
+                    elif len(ep) >= 3:
+                        ep[2] = real_url
+                    print(f"    [SUCCESS CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']} resolved: {real_url}")
                 else:
-                    for item in search_index:
-                        if str(item['AID']) == aid:
-                            item['Status'] = detail_data.get('video', {}).get('status', '连载')
-                            item['UpToDate'] = detail_data.get('video', {}).get('uptodate', '更新中')
-                            break
-            else:
-                print(f"[WARNING] Failed to fetch details for AID: {aid}")
-            
-            time.sleep(0.5)
-    finally:
+                    print(f"    [FAILED CONCURRENT] Line: {task['pkey']}, Episode: {task['ep_name']} failed to resolve.")
+
+        # 启动协程并发
+        await asyncio.gather(*[resolve_task(t) for t in pending_tasks])
         await resolver.stop()
+    else:
+        print("[INFO] No pending video resolution tasks. All items hit local cache!")
+
+    # ==========================================================================
+    # 3️⃣ 第三阶段：批量写入本地 JSON 文件并更新搜索索引
+    # ==========================================================================
+    print("\n[SAVING] Writing detail files and indexing...")
+    for aid, (detail_data, detail_path, title) in fetched_details.items():
+        with open(detail_path, 'w', encoding='utf-8') as f:
+            json.dump(detail_data, f, ensure_ascii=False, indent=2)
+        
+        # 更新搜索索引
+        if aid not in existing_aids:
+            pinyin_code = get_pinyin_initials(title)
+            search_index.append({
+                "AID": int(aid),
+                "Title": title,
+                "Pinyin": pinyin_code,
+                "Cover": detail_data.get('video', {}).get('cover', ''),
+                "Status": detail_data.get('video', {}).get('status', '连载'),
+                "UpToDate": detail_data.get('video', {}).get('uptodate', '更新中')
+            })
+            existing_aids.add(aid)
+        else:
+            for item in search_index:
+                if str(item['AID']) == aid:
+                    item['Status'] = detail_data.get('video', {}).get('status', '连载')
+                    item['UpToDate'] = detail_data.get('video', {}).get('uptodate', '更新中')
+                    break
 
     save_search_index(search_index)
     print(f"[SUCCESS] Saved search_index.json with {len(search_index)} items.")
