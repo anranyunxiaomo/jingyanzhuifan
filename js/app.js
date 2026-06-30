@@ -505,11 +505,11 @@ new Vue({
         }
         
         let targetJxBase = jxBase;
-        // 💡 物理阻断带有全局进度污染 Bug 的官方默认解析源 (wuzhoupai / 88ystv)
-        // 只要检测到官方返回的解析接口属于 wuzhoupai 或 88ystv，立刻强行重塑为高级超清无广告源 A (jx.jsonplayer.com)
+        // 💡 物理阻断带有全局进度污染 Bug 且在火狐/部分网络下会握手失败的官方默认解析源 (wuzhoupai / 88ystv)
+        // 只要检测到官方返回的解析接口属于 wuzhoupai 或 88ystv，立刻强行重塑为高级超清无广告源 B (jx.xmflv.com)，彻底封杀进度共享 Bug，并在国内流畅播放！
         if (targetJxBase && (targetJxBase.includes('wuzhoupai.com') || targetJxBase.includes('88ystv.com'))) {
-          console.log(`[PARSER OVERRIDE] Replaced buggy official parser ${targetJxBase} with high-quality jsonplayer.`);
-          targetJxBase = 'https://jx.jsonplayer.com/?url=';
+          console.log(`[PARSER OVERRIDE] Replaced buggy official parser ${targetJxBase} with high-quality xmflv.`);
+          targetJxBase = 'https://jx.xmflv.com/?url=';
         }
         
         playUrl = targetJxBase + epToken;
