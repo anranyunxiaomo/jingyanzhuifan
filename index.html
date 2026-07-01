@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260701T1920">
+  <link rel="stylesheet" href="css/style.css?v=20260701T1922">
 </head>
 <body class="loader-active">
 
@@ -323,20 +323,22 @@
                 allowtransparency="yes"
                 referrerpolicy="no-referrer"
               ></iframe>
+              
+              <!-- 💡 仅在 iframe 降级模式下展示的悬浮画面比例控制器，不占用外部物理空间 -->
+              <button 
+                v-if="isIframeMode"
+                class="iframe-fit-btn"
+                @click="toggleVideoFit"
+              >
+                <i data-lucide="maximize-2" style="width: 12px; height: 12px;"></i>
+                <span>比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满' : '拉伸') }}</span>
+              </button>
             </template>
           </div>
           <div class="playing-info" v-if="activePlayUrl">
             <div class="playing-title-wrapper" style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
               <span class="playing-indicator">正在播放</span>
               <h3 class="playing-title" style="margin-right: auto;">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
-              <!-- 💡 画面比例切换按钮，支持 铺满/等比/拉伸，消除上下留黑 -->
-              <button 
-                class="fav-toggle-btn" 
-                @click="toggleVideoFit"
-                style="padding: 4px 10px; font-size: 12px; height: auto;"
-              >
-                <i data-lucide="maximize-2"></i> 画面比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满(裁剪)' : '拉伸') }}
-              </button>
             </div>
             <!-- 极简白金换源/换解析器面板 -->
             <div class="engine-selector-wrapper" style="display: none !important; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
@@ -489,6 +491,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260701T1917"></script>
+<script src="js/app.js?v=20260701T1922"></script>
 </body>
 </html>

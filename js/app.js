@@ -515,6 +515,50 @@ new Vue({
                 }
               });
               this.dpInstance = dp;
+              
+              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
+              this.$nextTick(() => {
+                const rightIcons = document.querySelector('.dplayer-icons-right');
+                if (rightIcons) {
+                  // 防重复清理
+                  const existBtn = rightIcons.querySelector('.dplayer-fit-icon');
+                  if (existBtn) existBtn.remove();
+                  
+                  const btn = document.createElement('button');
+                  btn.className = 'dplayer-icon dplayer-fit-icon';
+                  btn.style.width = 'auto';
+                  btn.style.padding = '0 12px';
+                  btn.style.color = '#fff';
+                  btn.style.fontSize = '12px';
+                  btn.style.background = 'transparent';
+                  btn.style.border = 'none';
+                  btn.style.cursor = 'pointer';
+                  btn.style.opacity = '0.8';
+                  btn.style.transition = 'opacity 0.2s';
+                  btn.innerHTML = `<span class="fit-text">比例: ${this.videoFitMode === 'contain' ? '等比' : (this.videoFitMode === 'cover' ? '铺满' : '拉伸')}</span>`;
+                  
+                  btn.onmouseenter = () => btn.style.opacity = '1';
+                  btn.onmouseleave = () => btn.style.opacity = '0.8';
+                  
+                  const fsBtn = rightIcons.querySelector('.dplayer-full-icon');
+                  if (fsBtn) {
+                    rightIcons.insertBefore(btn, fsBtn);
+                  } else {
+                    rightIcons.appendChild(btn);
+                  }
+                  
+                  btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.toggleVideoFit();
+                    const textSpan = btn.querySelector('.fit-text');
+                    if (textSpan) {
+                      const labels = { contain: '等比', cover: '铺满', fill: '拉伸' };
+                      textSpan.textContent = '比例: ' + labels[this.videoFitMode];
+                    }
+                  });
+                }
+              });
 
               if (savedTime <= 3) {
                 console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
