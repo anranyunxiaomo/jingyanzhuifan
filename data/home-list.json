@@ -1,6 +1,34 @@
 {
   "latest": [
     {
+      "AID": 20260219,
+      "Href": "/detail/20260219",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
+      "Title": "女主角？圣女？不，我是杂役女仆（自豪）！"
+    },
+    {
+      "AID": 20260163,
+      "Href": "/detail/20260163",
+      "NewTitle": "已完结",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260163.jpg",
+      "Title": "Candy Caries 蛀在糖糖里"
+    },
+    {
+      "AID": 20260096,
+      "Href": "/detail/20260096",
+      "NewTitle": "第13集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
+      "Title": "欺诈游戏"
+    },
+    {
+      "AID": 20250251,
+      "Href": "/detail/20250251",
+      "NewTitle": "第38集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250251.jpg",
+      "Title": "会动的！从前从前有只猫 世界喵童话"
+    },
+    {
       "AID": 20260246,
       "Href": "/detail/20260246",
       "NewTitle": "抢先版",
@@ -55,120 +83,92 @@
       "NewTitle": "第12集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
       "Title": "黑猫与魔女的教室"
-    },
-    {
-      "AID": 20260064,
-      "Href": "/detail/20260064",
-      "NewTitle": "第22集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
-      "Title": "名侦探光之美少女！"
-    },
-    {
-      "AID": 20260127,
-      "Href": "/detail/20260127",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260127.jpg",
-      "Title": "钻石王牌 act2 第二季"
-    },
-    {
-      "AID": 20260078,
-      "Href": "/detail/20260078",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260078.jpg",
-      "Title": "杖与剑的魔剑谭 第二季"
-    },
-    {
-      "AID": 20260065,
-      "Href": "/detail/20260065",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
-      "Title": "夜樱家的大作战 第二季"
     }
   ],
   "recommend": [
     {
-      "AID": 20150172,
-      "Href": "/detail/20150172",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150172.jpg",
-      "Title": "旋转少女"
+      "AID": 20160104,
+      "Href": "/detail/20160104",
+      "NewTitle": "[TV 01-12+特典+小剧场",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160104.jpg",
+      "Title": "田中君总是如此慵懒"
     },
     {
-      "AID": 20040001,
-      "Href": "/detail/20040001",
+      "AID": 20100064,
+      "Href": "/detail/20100064",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100064.jpg",
+      "Title": "侵略！乌贼娘"
+    },
+    {
+      "AID": 20190045,
+      "Href": "/detail/20190045",
+      "NewTitle": "[TV 01-18]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190045.jpg",
+      "Title": "不吉波普不笑"
+    },
+    {
+      "AID": 20090059,
+      "Href": "/detail/20090059",
+      "NewTitle": "[BD 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090059.jpg",
+      "Title": "迦南"
+    },
+    {
+      "AID": 20170057,
+      "Href": "/detail/20170057",
+      "NewTitle": "[TV 01-26]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170057.jpg",
+      "Title": "妖怪公寓的幽雅日常"
+    },
+    {
+      "AID": 20140011,
+      "Href": "/detail/20140011",
       "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040001.jpg",
-      "Title": "妖精的旋律"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140011.jpg",
+      "Title": "灰色的果实"
     },
     {
-      "AID": 20150041,
-      "Href": "/detail/20150041",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150041.jpg",
-      "Title": "Chaos Dragon 赤龙战役"
+      "AID": 20130019,
+      "Href": "/detail/20130019",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130019.jpg",
+      "Title": "噬血狂袭"
     },
     {
-      "AID": 20160086,
-      "Href": "/detail/20160086",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160086.jpg",
-      "Title": "迷家"
+      "AID": 20150032,
+      "Href": "/detail/20150032",
+      "NewTitle": "第22集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
+      "Title": "暗杀教室"
     },
     {
-      "AID": 20190205,
-      "Href": "/detail/20190205",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190205.jpg",
-      "Title": "鸭子的天空"
+      "AID": 20110025,
+      "Href": "/detail/20110025",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110025.jpg",
+      "Title": "回转企鹅罐"
     },
     {
-      "AID": 20180278,
-      "Href": "/detail/20180278",
-      "NewTitle": "第2卷(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180278.jpg",
-      "Title": "续·终物语"
+      "AID": 20150030,
+      "Href": "/detail/20150030",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150030.jpg",
+      "Title": "其实我是"
     },
     {
-      "AID": 20140122,
-      "Href": "/detail/20140122",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140122.jpg",
-      "Title": "电器街的漫画店"
+      "AID": 20190012,
+      "Href": "/detail/20190012",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190012.jpg",
+      "Title": "城市猎人剧场版 新宿 PRIVATE EYES"
     },
     {
-      "AID": 20080047,
-      "Href": "/detail/20080047",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080047.jpg",
-      "Title": "记忆女神的女儿们"
-    },
-    {
-      "AID": 20210020,
-      "Href": "/detail/20210020",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210020.jpg",
-      "Title": "怪病医拉姆尼"
-    },
-    {
-      "AID": 20160148,
-      "Href": "/detail/20160148",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160148.jpg",
-      "Title": "时空囚徒"
-    },
-    {
-      "AID": 20180168,
-      "Href": "/detail/20180168",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180168.jpg",
-      "Title": "LORD of VERMILION 红莲之王"
-    },
-    {
-      "AID": 20140032,
-      "Href": "/detail/20140032",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140032.jpg",
-      "Title": "东京喰种"
+      "AID": 20100007,
+      "Href": "/detail/20100007",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100007.jpg",
+      "Title": "最后的大魔王"
     }
   ],
   "week_list": {
@@ -230,11 +230,11 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260096,
         "wd": 1,
         "name": "欺诈游戏",
-        "mtime": "2026-06-24 00:19:40",
+        "mtime": "2026-07-01 22:33:19",
         "namefornew": "23:00 第13集"
       },
       {
@@ -264,7 +264,7 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260113,
         "wd": 2,
         "name": "想结束这场“我爱你”的游戏",
@@ -272,7 +272,7 @@
         "namefornew": "22:30 第12集(完结)"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260117,
         "wd": 2,
         "name": "复制品的我也会谈恋爱。",
@@ -288,7 +288,7 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260111,
         "wd": 2,
         "name": "婚姻剧毒",
@@ -296,7 +296,7 @@
         "namefornew": "22:30 已完结"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260072,
         "wd": 2,
         "name": "左撇子艾伦",
