@@ -47,11 +47,9 @@ new Vue({
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
       { label: '系统默认 (AGE 合作源)', value: 'default' },
-      { label: '超清 VIP 万能接口 A (极速稳定)', value: 'https://jx.m3u8.tv/jiaxing.php?url=' },
-      { label: '超清 VIP 极速接口 B', value: 'https://jx.wpp.link/?url=' },
-      { label: '全网超级 VIP 接口 C', value: 'https://im1907.top/?jx=' },
-      { label: '备用免广告源 D (不支持VIP线)', value: 'https://jx.jsonplayer.com/?url=' },
-      { label: '备用免广告源 E (不支持VIP线)', value: 'https://jx.xmflv.com/?url=' }
+      { label: '超清 VIP 极速接口 A (先锋解析)', value: 'https://jx.xmflv.com/?url=' },
+      { label: '超清 VIP 万能接口 B (JSON解析)', value: 'https://jx.jsonplayer.com/?url=' },
+      { label: '全网超级 VIP 接口 C', value: 'https://im1907.top/?jx=' }
     ],
     activeEngineKey: 'default',
     // H5 播放器状态管理
@@ -398,10 +396,10 @@ new Vue({
           if (targetUrlToResolve.startsWith('age_')) {
               playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
           } else {
-              // 常规真实 m3u8 链接，用 m3u8.tv 专属 VIP 接口代理
-              playUrl = "https://jx.m3u8.tv/jiaxing.php?url=" + targetUrlToResolve;
+              // 常规真实 m3u8 链接，用 xmflv.com 专属 VIP 接口代理 (替代已失效的 m3u8.tv)
+              playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
           }
-          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium m3u8.tv resolver.");
+          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
         } else {
           playUrl = this.activeEngineKey + targetUrlToResolve;
           console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
