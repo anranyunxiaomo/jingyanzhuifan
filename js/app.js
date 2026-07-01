@@ -220,6 +220,9 @@ new Vue({
     // 🏮 监听 URL Hash 路由，实现前进后退及刷新保持状态
     window.addEventListener('hashchange', this.handleHashRoute);
     this.handleHashRoute();
+    
+    // 初始化视频铺满模式的 body class 绑定，消除全屏状态下视频留黑
+    document.body.classList.add('fit-' + this.videoFitMode);
   },
   
   beforeDestroy() {
@@ -730,18 +733,11 @@ new Vue({
       const currentIdx = modes.indexOf(this.videoFitMode);
       this.videoFitMode = modes[(currentIdx + 1) % modes.length];
       
-      this.$nextTick(() => {
-        // H5 播放器核心视频标签注入
-        const videoEl = document.querySelector('#dplayer video');
-        if (videoEl) {
-          videoEl.style.objectFit = this.videoFitMode;
-        }
-        // Iframe 降级框架注入
-        const iframeEl = document.getElementById('playerIFrame');
-        if (iframeEl) {
-          iframeEl.style.objectFit = this.videoFitMode;
-        }
-      });
+      // 💡 核心修复：将缩放类直接施加给 document.body！
+      // 由于全屏状态下（特别是 iOS Native 全屏或 DPlayer 全屏），原本 DOM 树的父级关联可能失效，
+      // 通过全局 Body 级别 class 与 CSS !important 强行锁定 object-fit，100% 确保全屏下视频拉伸生效。
+      document.body.classList.remove('fit-contain', 'fit-cover', 'fit-fill');
+      document.body.classList.add('fit-' + this.videoFitMode);
     },
     
     // 💡 路由解析服务

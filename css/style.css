@@ -1840,5 +1840,22 @@ body {
   }
 }
 
+/* 🏮 全局与全屏模式下 HLS/DPlayer 视频及 iframe 画面比例强制覆盖规则 */
+body.fit-contain video, 
+body.fit-contain iframe {
+  object-fit: contain !important;
+}
+
+body.fit-cover video, 
+body.fit-cover iframe {
+  object-fit: cover !important;
+}
+
+body.fit-fill video, 
+body.fit-fill iframe {
+  object-fit: fill !important;
+}
+
+
 
 
