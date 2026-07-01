@@ -36,14 +36,23 @@
   </div>
 </div>
 <script>
-  // 仅在会话首次访问时展示，避免用户后续频繁操作产生打扰
-  if (sessionStorage.getItem('gufeng_entered') === 'true') {
+  // 仅在会话首次访问时展示，并包裹 try-catch 防御无痕模式禁用 storage 导致的崩页
+  var gufengEntered = false;
+  try {
+    gufengEntered = (sessionStorage.getItem('gufeng_entered') === 'true');
+  } catch (e) {
+    console.warn("sessionStorage access denied:", e);
+  }
+
+  if (gufengEntered) {
     document.getElementById('gufeng-loader').style.display = 'none';
   } else {
     document.getElementById('gufeng-loader').addEventListener('click', function() {
       var loader = document.getElementById('gufeng-loader');
       loader.classList.add('unrolled');
-      sessionStorage.setItem('gufeng_entered', 'true');
+      try {
+        sessionStorage.setItem('gufeng_entered', 'true');
+      } catch (e) {}
       setTimeout(function() {
         loader.style.display = 'none';
       }, 1200);
