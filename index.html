@@ -298,7 +298,7 @@
               <h3 class="playing-title" style="margin-right: auto;">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
             </div>
             <!-- 极简白金换源/换解析器面板 -->
-            <div class="engine-selector-wrapper" style="display: flex; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
+            <div class="engine-selector-wrapper" style="display: none !important; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
               <div style="display: flex; align-items: center; gap: 0.4rem; margin-right: auto;">
                 <span class="engine-label">解析引擎:</span>
                 <select class="engine-select" v-model="activeEngineKey" @change="rePlayCurrentEpisode">
