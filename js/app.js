@@ -312,6 +312,7 @@ new Vue({
       }
       
       this.currentAnimeId = aid;
+      window.scrollTo(0, 0); // 🏮 瞬间将滚动条置顶，防止在详情页出现高度坍塌和滚动条错位
       this.animeDetail = null;
       this.activeLineKey = '';
       this.activeEpisodeIndex = -1;
@@ -664,6 +665,7 @@ new Vue({
       this.isIframeMode = false;
       
       this.currentAnimeId = null;
+      window.scrollTo(0, 0); // 🏮 瞬间置顶，平稳过渡到首页
       this.animeDetail = null;
       this.activePlayUrl = '';
       this.activeEpisodeName = '';
