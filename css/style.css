@@ -1535,7 +1535,15 @@ body {
     padding: 8px 6px; /* 卡片内衬微调 */
   }
   .player-panel {
-    padding: 0.8rem; /* 减小内边距，让出更多播放面积 */
+    padding: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin: 0 -0.6rem 1.2rem -0.6rem; /* 💡 负外边距打破父级 app-main 的 0.6rem 左右 padding，实现 100% 手机贴边 */
+    box-shadow: none;
+  }
+  .player-wrapper {
+    border-radius: 0;
   }
   .info-panel, .episodes-panel {
     padding: 1.2rem;
@@ -1610,15 +1618,17 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 999999;
+  height: 100dvh; /* iOS 动态视口高度支持 */
+  z-index: 2147483647; /* 绝对最高优先级遮挡，物理防止任何固定元素/广告溢出 */
   display: flex;
   visibility: visible;
   pointer-events: auto;
 }
 
 .loader-panel {
-  width: 50vw;
+  width: 51vw; /* 💡 51vw 宽度，使左右两个卷轴面板在中轴线处微幅重叠，100% 彻底消灭移动端像素四舍五入造成的 1px 漏缝漏图 bug */
   height: 100vh;
+  height: 100dvh; /* iOS 动态视口高度支持 */
   background: var(--bg-primary);
   position: relative;
   transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);

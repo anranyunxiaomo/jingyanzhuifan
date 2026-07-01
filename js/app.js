@@ -477,6 +477,7 @@ new Vue({
                 container: document.getElementById('dplayer'),
                 autoplay: true,
                 screenshot: false,
+                playsinline: true,
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
                   // 💡 黄金路由：将打点参数与 SessionID 附带在视频流请求中，保证 100% 成功上报且会话内唯一
