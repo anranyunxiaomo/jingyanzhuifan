@@ -63,9 +63,18 @@ new Vue({
     favorites: [],
     // 本地扁平动漫库保底
     localAnimeCatalog: [],
+    // 窗口尺寸状态（反应式支持）
+    screenWidth: window.innerWidth,
+    detailTab: 'episodes', // 手机端详情页 Tab 控制: 'episodes' (选集) 或 'info' (简介)
+    videoFitMode: 'contain', // 视频铺满模式: 'contain' (等比), 'cover' (裁剪), 'fill' (拉伸)
   },
   
   computed: {
+    // 💡 动态判断是否为手机移动端 (屏幕宽度 <= 768px)
+    isMobile() {
+      return this.screenWidth <= 768;
+    },
+    
     // 1. 获取当前星期选中的动漫列表
     activeWeekList() {
       if (this.weekList && this.weekList[this.activeWeekDay]) {
@@ -207,6 +216,11 @@ new Vue({
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
+    window.addEventListener('resize', this.handleResize);
+  },
+  
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
   },
   
   methods: {
@@ -313,6 +327,7 @@ new Vue({
       
       this.currentAnimeId = aid;
       window.scrollTo(0, 0); // 🏮 瞬间将滚动条置顶，防止在详情页出现高度坍塌和滚动条错位
+      this.detailTab = 'episodes'; // 🏮 重新打开动漫时，默认选择“选集播放” Tab，缩短滚动操作
       this.animeDetail = null;
       this.activeLineKey = '';
       this.activeEpisodeIndex = -1;
@@ -692,6 +707,31 @@ new Vue({
           this.currentBannerIndex = (this.currentBannerIndex + 1) % this.bannerList.length;
         }
       }, 5000);
+    },
+    
+    // 💡 监听窗口尺寸变化
+    handleResize() {
+      this.screenWidth = window.innerWidth;
+    },
+    
+    // 💡 画面比例切换服务 (循环切换：等比 -> 铺满/裁剪 -> 强制拉伸)
+    toggleVideoFit() {
+      const modes = ['contain', 'cover', 'fill'];
+      const currentIdx = modes.indexOf(this.videoFitMode);
+      this.videoFitMode = modes[(currentIdx + 1) % modes.length];
+      
+      this.$nextTick(() => {
+        // H5 播放器核心视频标签注入
+        const videoEl = document.querySelector('#dplayer video');
+        if (videoEl) {
+          videoEl.style.objectFit = this.videoFitMode;
+        }
+        // Iframe 降级框架注入
+        const iframeEl = document.getElementById('playerIFrame');
+        if (iframeEl) {
+          iframeEl.style.objectFit = this.videoFitMode;
+        }
+      });
     }
   },
   
@@ -699,5 +739,6 @@ new Vue({
     if (this.bannerTimer) {
       clearInterval(this.bannerTimer);
     }
+    window.removeEventListener('resize', this.handleResize);
   }
 });

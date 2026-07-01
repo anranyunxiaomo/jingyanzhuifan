@@ -16,9 +16,9 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260701T1902">
+  <link rel="stylesheet" href="css/style.css?v=20260701T1908">
 </head>
-<body>
+<body class="loader-active">
 
 <!-- 🏮 古风开屏双画轴分裂入画加载器 -->
 <div id="gufeng-loader" class="gufeng-loader">
@@ -36,10 +36,11 @@
   </div>
 </div>
 <script>
-  // 每次刷新/加载页面时都展示，点击后开屏画轴分裂退场
+  // 每次刷新/加载页面时都展示，点击后开屏画轴分裂退场，并接触 body 滚动锁定
   document.getElementById('gufeng-loader').addEventListener('click', function() {
     var loader = document.getElementById('gufeng-loader');
     loader.classList.add('unrolled');
+    document.body.classList.remove('loader-active');
     setTimeout(function() {
       loader.style.display = 'none';
     }, 1200);
@@ -328,6 +329,14 @@
             <div class="playing-title-wrapper" style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
               <span class="playing-indicator">正在播放</span>
               <h3 class="playing-title" style="margin-right: auto;">{{ animeDetail.video.name }} — {{ activeEpisodeName }}</h3>
+              <!-- 💡 画面比例切换按钮，支持 铺满/等比/拉伸，消除上下留黑 -->
+              <button 
+                class="fav-toggle-btn" 
+                @click="toggleVideoFit"
+                style="padding: 4px 10px; font-size: 12px; height: auto;"
+              >
+                <i data-lucide="maximize-2"></i> 画面比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满(裁剪)' : '拉伸') }}
+              </button>
             </div>
             <!-- 极简白金换源/换解析器面板 -->
             <div class="engine-selector-wrapper" style="display: none !important; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
@@ -364,8 +373,26 @@
 
         </div>
 
+        <!-- 💡 手机端专属切换 Tab 导航 (用于切换 剧情简介 与 线路选集) -->
+        <div class="mobile-detail-tabs" v-if="isMobile">
+          <button 
+            class="detail-tab-btn" 
+            :class="{ active: detailTab === 'episodes' }" 
+            @click="detailTab = 'episodes'"
+          >
+            <i data-lucide="play-circle" style="width: 14px; height: 14px;"></i> 选集播放
+          </button>
+          <button 
+            class="detail-tab-btn" 
+            :class="{ active: detailTab === 'info' }" 
+            @click="detailTab = 'info'"
+          >
+            <i data-lucide="info" style="width: 14px; height: 14px;"></i> 剧情简介
+          </button>
+        </div>
+
         <!-- 3.2 动漫图文介绍 -->
-        <div class="info-panel">
+        <div class="info-panel" v-show="!isMobile || detailTab === 'info'">
           <div class="info-header">
             <img :src="animeDetail.video.cover" :alt="animeDetail.video.name" class="detail-poster" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             <div class="detail-meta-info">
@@ -398,7 +425,7 @@
         </div>
 
         <!-- 3.3 线路与剧集选择面板 -->
-        <div class="episodes-panel">
+        <div class="episodes-panel" v-show="!isMobile || detailTab === 'episodes'">
           <div class="panel-header">
             <i data-lucide="layers" class="panel-icon"></i>
             <h3>播放线路与剧集</h3>
