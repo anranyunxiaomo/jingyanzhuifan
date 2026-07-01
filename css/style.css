@@ -1918,6 +1918,47 @@ body.fit-fill iframe {
   transform: scale(0.95);
 }
 
+/* 🏮 播放画质提示面板 - 古风宣纸桃露配色，确保在浅色背景下完美可读 */
+.quality-tip-box {
+  margin-top: 1rem;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: rgba(226, 109, 128, 0.04) !important;
+  border: 1px dashed rgba(226, 109, 128, 0.2) !important;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted) !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quality-tip-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent-gold-hover) !important;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 📱 手机端隐藏多余提示，优化垂直紧凑排版，防止大块留白 */
+@media (max-width: 768px) {
+  .quality-tip-box {
+    display: none !important;
+  }
+  .playing-info {
+    padding: 0.8rem 1.2rem !important; /* 加回手机侧边边距 */
+    margin-top: 0 !important;
+    gap: 0.4rem !important;
+  }
+  .playing-title-wrapper {
+    width: 100%;
+  }
+}
+
+
 
 
 
