@@ -42,6 +42,7 @@ new Vue({
     activeEpisodeName: '', // 正在播放的剧集名称
     dplayerKey: 'dplayer_init', // DPlayer DOM 容器的物理隔离 Key
     guardTimer: null, // 高频归零阻截定时器
+    clientId: '', // 景雁分析：唯一观众代号
     
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
@@ -192,6 +193,7 @@ new Vue({
     this.initData();
     this.initFavorites(); // 💡 载入收藏数据
     this.startBannerAutoPlay();
+    this.getOrCreateClientId(); // 💡 载入/生成唯一代号
     
     // 自动判定当前星期几，高亮时刻表
     const today = new Date().getDay(); // 0=周日, 1=周一...
@@ -203,9 +205,80 @@ new Vue({
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
+
+    // 💡 页面关闭/切出后台时，静默上报当前播放进度
+    window.addEventListener('pagehide', () => {
+      if (this.dpInstance && this.dpInstance.video && !this.isIframeMode) {
+        const timeText = this.formatSecondsToText(this.dpInstance.video.currentTime);
+        this.logPlayAction('exit', timeText);
+      }
+    });
   },
   
   methods: {
+    // ==========================================================================
+    // 📊 景雁数据分析（Jingyan Analytics）打点服务
+    // ==========================================================================
+    getOrCreateClientId() {
+      let cid = localStorage.getItem('jyzf_client_id');
+      if (!cid) {
+        const prefixList = ['玫瑰小雁', '浅粉甜心', '晨曦初樱', '苏子玫瑰', '落樱小雁', '浅粉波点', '暮色山樱', '流云粉雁', '冰摇桃桃', '蜜桃粉雁', '樱花粉雁'];
+        const randomPrefix = prefixList[Math.floor(Math.random() * prefixList.length)];
+        const randomHex = Math.random().toString(16).substring(2, 5).toUpperCase();
+        cid = `${randomPrefix}-${randomHex}`;
+        localStorage.setItem('jyzf_client_id', cid);
+      }
+      this.clientId = cid;
+      return cid;
+    },
+
+    logPlayAction(status, progressText = '00:00') {
+      if (!this.clientId) {
+        this.getOrCreateClientId();
+      }
+      
+      const animeName = this.animeDetail ? this.animeDetail.video.name : '未知动漫';
+      const epName = this.activeEpisodeName || '未知集数';
+
+      const payload = {
+        clientId: this.clientId,
+        anime: animeName,
+        episode: epName,
+        progress: progressText,
+        status: status // 'start', 'pause', 'exit'
+      };
+
+      const logUrl = 'https://jingyanff.xyz/api/log';
+
+      // 💡 针对退出页面，使用 sendBeacon 保证 100% 异步投递成功而不阻塞页面卸载
+      if (status === 'exit') {
+        if (navigator.sendBeacon) {
+          const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+          navigator.sendBeacon(logUrl, blob);
+        } else {
+          fetch(logUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            keepalive: true
+          }).catch(() => {});
+        }
+      } else {
+        fetch(logUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.warn('[LOG ERROR]', err));
+      }
+    },
+
+    formatSecondsToText(sec) {
+      if (!sec || isNaN(sec)) return '00:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    },
+
     // 💡 行业顶级高可用防线：连环 Fallback 跨域代理中转器 (corsproxy.io -> codetabs -> allorigins)
     // 只要有任何一条线路存活，就能秒速拉回数据，彻底免疫单一公共代理服务器崩溃/被墙超时隐患
     async axiosGetViaProxy(targetUrl) {
@@ -427,6 +500,12 @@ new Vue({
         this.isIframeMode = false;
         this.activePlayUrl = realUrl;
 
+        // 销毁上一次的播放器实例前，上报一次进度
+        if (this.dpInstance && this.dpInstance.video) {
+          const timeText = this.formatSecondsToText(this.dpInstance.video.currentTime);
+          this.logPlayAction('exit', timeText);
+        }
+
         // 销毁上一次的播放器实例
         if (this.dpInstance) {
           try { 
@@ -542,6 +621,11 @@ new Vue({
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
+
+      // 💡 延迟一秒上报开始播放事件（等播放器挂载就绪）
+      setTimeout(() => {
+        this.logPlayAction('start', '00:00');
+      }, 1000);
     },
     
     forceResetProgressAndReplay() {

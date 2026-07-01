@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>景雁数据分析后台 - Jingyan Analytics</title>
+  <!-- Google Fonts 引入 Outfit & Inter & Noto Serif SC 高级字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Lucide 图标 CDN 引入 -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tailwind CSS CDN 引入 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: '#FCF5F6',
+              bg: '#FCF5F6',
+              card: '#FFFDFD',
+              pink: '#F28C9F',
+              hover: '#DE6B7E',
+              muted: '#9E8488',
+              main: '#332225'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: linear-gradient(135deg, #FCF5F6 0%, #FFFDFD 100%);
+      color: #332225;
+      min-height: 100vh;
+    }
+    .glass-card {
+      background: rgba(255, 253, 254, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(242, 140, 159, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(242, 140, 159, 0.05);
+    }
+    .logo-title {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 900;
+      background: linear-gradient(135deg, #DE6B7E 0%, #F28C9F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+
+<div id="app" class="max-w-6xl mx-auto" v-cloak>
+
+  <!-- 1. 🔒 密码登录遮罩 -->
+  <div v-if="!isAuthorized" class="min-h-[70vh] flex flex-col items-center justify-center">
+    <div class="glass-card p-8 rounded-2xl w-full max-w-md text-center">
+      <h1 class="logo-title text-3xl mb-2">景雁</h1>
+      <p class="text-xs text-brand-muted mb-6 tracking-wider">JINGYAN ANALYTICS DATA DASHBOARD</p>
+      
+      <form @submit.prevent="authenticate">
+        <div class="mb-4 text-left">
+          <label class="text-xs font-semibold text-brand-muted block mb-1.5 pl-1">访问密码</label>
+          <input 
+            type="password" 
+            v-model="password" 
+            placeholder="请输入管理员访问密码" 
+            class="w-full bg-brand-light border border-pink-100 rounded-xl px-4 py-3 outline-none text-sm focus:border-brand-pink transition-all text-center"
+            required
+          >
+        </div>
+        
+        <p v-if="loginError" class="text-xs text-red-500 mb-4">{{ loginError }}</p>
+        
+        <button 
+          type="submit" 
+          :disabled="isLoggingIn"
+          class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-pink to-brand-hover text-white text-sm font-semibold shadow-lg shadow-pink-200/50 hover:-translate-y-0.5 transition-all disabled:opacity-50"
+        >
+          {{ isLoggingIn ? '验证中...' : '进入数据后台' }}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. 📊 数据监控面板 (主视图) -->
+  <div v-else class="space-y-6">
+    <!-- 头部栏 -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-pink-100/50 pb-6">
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="logo-title text-3xl">景雁</h1>
+          <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-pink-100/60 text-brand-hover border border-pink-200/40">分析后台</span>
+        </div>
+        <p class="text-xs text-brand-muted mt-1">实时统计并呈现全部观众的最新播放足迹与网络动态</p>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <button 
+          @click="fetchLogs" 
+          class="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-white border border-pink-100 text-brand-hover hover:bg-pink-50 transition-all"
+        >
+          <i data-lucide="rotate-cw" class="w-3.5 h-3.5" :class="{ 'animate-spin': isRefreshing }"></i>
+          刷新数据
+        </button>
+        <button 
+          @click="logout" 
+          class="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-all"
+        >
+          <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+          登出
+        </button>
+      </div>
+    </header>
+
+    <!-- 简易指标汇总看板 -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="glass-card p-4 rounded-xl">
+        <p class="text-xs text-brand-muted font-medium">累计操作日志</p>
+        <h3 class="text-2xl font-extrabold text-brand-main mt-1">{{ logs.length }} 次</h3>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <p class="text-xs text-brand-muted font-medium">独立观看用户</p>
+        <h3 class="text-2xl font-extrabold text-brand-main mt-1">{{ uniqueUsersCount }} 人</h3>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <p class="text-xs text-brand-muted font-medium">覆盖省市地区</p>
+        <h3 class="text-2xl font-extrabold text-brand-main mt-1">{{ uniqueLocationsCount }} 个</h3>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <p class="text-xs text-brand-muted font-medium">正在播的动漫</p>
+        <h3 class="text-2xl font-extrabold text-brand-main mt-1">{{ uniqueAnimesCount }} 部</h3>
+      </div>
+    </div>
+
+    <!-- 过滤器 & 搜素 -->
+    <div class="glass-card p-4 rounded-xl flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <div class="relative w-full sm:max-w-md">
+        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+          <i data-lucide="search" class="h-4 w-4 text-brand-muted"></i>
+        </span>
+        <input 
+          type="text" 
+          v-model="searchQuery"
+          placeholder="按 观众代号、动漫名称、地区或IP 过滤过滤结果..." 
+          class="w-full bg-brand-light border border-pink-100 rounded-lg pl-10 pr-4 py-2 text-xs outline-none focus:border-brand-pink transition-all"
+        >
+      </div>
+      <div class="text-xs text-brand-muted w-full sm:w-auto text-right">
+        当前展示 {{ filteredLogs.length }} / {{ logs.length }} 条记录
+      </div>
+    </div>
+
+    <!-- 主数据列表 / 时间线 -->
+    <div class="glass-card rounded-2xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-pink-100/10 border-b border-pink-100 text-xs font-semibold text-brand-muted uppercase tracking-wider">
+              <th class="py-4 px-6">观众代号</th>
+              <th class="py-4 px-6">操作状态</th>
+              <th class="py-4 px-6">观看详情</th>
+              <th class="py-4 px-6">当前进度</th>
+              <th class="py-4 px-6">物理位置及IP</th>
+              <th class="py-4 px-6">更新时间</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-pink-100/50 text-sm">
+            <tr v-for="log in filteredLogs" :key="log.time" class="hover:bg-pink-50/20 transition-all">
+              <!-- 1. 观众代号 -->
+              <td class="py-4 px-6 font-semibold text-brand-main whitespace-nowrap">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full" :style="{ backgroundColor: getUserColor(log.clientId) }"></span>
+                  {{ log.clientId }}
+                </div>
+              </td>
+              <!-- 2. 操作状态 -->
+              <td class="py-4 px-6 whitespace-nowrap">
+                <span 
+                  class="text-xs font-semibold px-2.5 py-1 rounded-full border"
+                  :class="{
+                    'bg-green-50 text-green-600 border-green-200/50': log.status === 'start',
+                    'bg-yellow-50 text-yellow-600 border-yellow-200/50': log.status === 'pause',
+                    'bg-pink-50 text-brand-hover border-pink-200/50': log.status === 'exit'
+                  }"
+                >
+                  {{ getStatusText(log.status) }}
+                </span>
+              </td>
+              <!-- 3. 观看详情 -->
+              <td class="py-4 px-6 font-medium text-brand-main">
+                <div class="flex flex-col">
+                  <span class="font-bold text-xs">{{ log.anime }}</span>
+                  <span class="text-xxs text-brand-muted mt-0.5">{{ log.episode }}</span>
+                </div>
+              </td>
+              <!-- 4. 当前进度 -->
+              <td class="py-4 px-6 font-mono text-xs font-semibold text-brand-hover">
+                {{ log.progress }}
+              </td>
+              <!-- 5. 地理位置及IP -->
+              <td class="py-4 px-6 text-xs text-brand-muted">
+                <div class="flex flex-col">
+                  <span class="font-semibold text-brand-main">{{ formatGeo(log.location) }}</span>
+                  <span class="text-xxs font-mono opacity-80 mt-0.5">{{ log.ip }}</span>
+                </div>
+              </td>
+              <!-- 6. 记录时间 -->
+              <td class="py-4 px-6 text-xs text-brand-muted whitespace-nowrap">
+                {{ formatTime(log.time) }}
+              </td>
+            </tr>
+            <tr v-if="filteredLogs.length === 0">
+              <td colspan="6" class="py-12 text-center text-xs text-brand-muted">
+                <i data-lucide="inbox" class="w-8 h-8 mx-auto opacity-30 mb-2"></i>
+                暂未检索到任何符合条件的播放数据
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Vue.js CDN 引入 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<!-- Axios CDN 引入 -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      password: '',
+      isAuthorized: false,
+      isLoggingIn: false,
+      isRefreshing: false,
+      loginError: '',
+      searchQuery: '',
+      logs: []
+    },
+    computed: {
+      filteredLogs() {
+        const query = this.searchQuery.trim().toLowerCase();
+        if (!query) return this.logs;
+        return this.logs.filter(log => {
+          return (log.clientId || '').toLowerCase().includes(query) ||
+                 (log.anime || '').toLowerCase().includes(query) ||
+                 (log.location || '').toLowerCase().includes(query) ||
+                 (log.ip || '').toLowerCase().includes(query) ||
+                 (log.episode || '').toLowerCase().includes(query);
+        });
+      },
+      uniqueUsersCount() {
+        const s = new Set(this.logs.map(l => l.clientId));
+        return s.size;
+      },
+      uniqueLocationsCount() {
+        const s = new Set(this.logs.map(l => l.location));
+        return s.size;
+      },
+      uniqueAnimesCount() {
+        const s = new Set(this.logs.map(l => l.anime));
+        return s.size;
+      }
+    },
+    created() {
+      // 检查本地缓存的密码
+      const cachedPw = localStorage.getItem('jyzf_admin_password');
+      if (cachedPw) {
+        this.password = cachedPw;
+        this.isAuthorized = true;
+        this.fetchLogs();
+      }
+    },
+    mounted() {
+      this.$nextTick(() => {
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      });
+    },
+    methods: {
+      authenticate() {
+        this.isLoggingIn = true;
+        this.loginError = '';
+        
+        axios.get(`https://jingyanff.xyz/api/logs?password=${encodeURIComponent(this.password)}`)
+          .then(res => {
+            this.isAuthorized = true;
+            this.logs = res.data.logs || [];
+            localStorage.setItem('jyzf_admin_password', this.password);
+            this.triggerIcons();
+          })
+          .catch(err => {
+            this.loginError = '密码验证失败，请输入正确的密码！';
+            console.error(err);
+          })
+          .finally(() => {
+            this.isLoggingIn = false;
+          });
+      },
+      fetchLogs() {
+        this.isRefreshing = true;
+        axios.get(`https://jingyanff.xyz/api/logs?password=${encodeURIComponent(this.password)}`)
+          .then(res => {
+            this.logs = res.data.logs || [];
+            this.triggerIcons();
+          })
+          .catch(err => {
+            console.error(err);
+          })
+          .finally(() => {
+            this.isRefreshing = false;
+          });
+      },
+      logout() {
+        localStorage.removeItem('jyzf_admin_password');
+        this.password = '';
+        this.isAuthorized = false;
+        this.logs = [];
+      },
+      getStatusText(status) {
+        switch (status) {
+          case 'start': return '▶️ 开始播放';
+          case 'pause': return '⏸ 暂停播放';
+          case 'exit': return '⏹ 退出切出';
+          default: return '观看中';
+        }
+      },
+      formatGeo(geoStr) {
+        if (!geoStr) return '本地网络';
+        // CF 的格式通常是 CN region city，我们做一个简易友好格式化
+        const parts = geoStr.split(' ');
+        const country = parts[0] === 'CN' ? '🇨🇳 中国' : parts[0];
+        const region = parts[1] || '';
+        const city = parts[2] || '';
+        return `${country} ${region} ${city}`.trim();
+      },
+      formatTime(ts) {
+        if (!ts) return '';
+        const date = new Date(ts);
+        const now = new Date();
+        const diffMs = now.getTime() - date.getTime();
+        
+        // 5分钟内展示相对时间
+        const diffMins = Math.floor(diffMs / 60000);
+        if (diffMins < 1) return '刚刚';
+        if (diffMins < 60) return `${diffMins} 分钟前`;
+        
+        // 当天显示时分
+        if (date.toDateString() === now.toDateString()) {
+          return '今天 ' + date.toTimeString().split(' ')[0].substring(0, 5);
+        }
+        
+        // 跨天直接显示月日时分
+        return `${date.getMonth() + 1}月${date.getDate()}日 ${date.toTimeString().split(' ')[0].substring(0, 5)}`;
+      },
+      getUserColor(clientId) {
+        if (!clientId) return '#F28C9F';
+        // 利用客户端ID哈希一个粉色调的小色块
+        let hash = 0;
+        for (let i = 0; i < clientId.length; i++) {
+          hash = clientId.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        const colors = [
+          '#F28C9F', // Sakura
+          '#E07B8E', // Deep Rose
+          '#DE6B7E', // Dark Pink
+          '#EC7E90', // Coral Rose
+          '#FFB6C1', // Light Pink
+          '#FF8E9E', // Saturated Pink
+          '#D46A7A', // Muted Pink
+          '#C05869'  // Wine Rose
+        ];
+        const index = Math.abs(hash) % colors.length;
+        return colors[index];
+      },
+      triggerIcons() {
+        this.$nextTick(() => {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        });
+      }
+    }
+  });
+</script>
+</body>
+</html>
