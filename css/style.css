@@ -4,7 +4,7 @@
 
 :root {
   /* 🏮 顶级高级设计系统 - 绯桃古典色系 */
-  --bg-primary: #FAF4EE;        /* 宣纸淡杏：温润古雅的宣纸原色，保护视力且高贵 */
+  --bg-primary: #FAF4EE;        /* 宣纸杏白：中国传统经典宣纸杏白，柔和温润 */
   --bg-secondary: #FFFDFB;      /* 凝脂玉：纯净的温润白玉色，用作卡片与面板背景 */
   --text-main: #2C1E20;         /* 深黛墨：深沉高雅的徽墨黑，带有微褐，拒绝死黑 */
   --text-muted: #8E7A7D;        /* 晚香褐：古典温婉的灰褐色，用作辅助文字 */
@@ -121,16 +121,16 @@ body::before {
   align-items: center;
 }
 
-/* 🏮 景雁专属：古典朱泥“阴刻印章” (Yin Stamp) —— 解决 Webkit 文字填充透明导致的字形消失 bug */
+/* 🏮 景雁专属：古典朱泥“阴刻印章” (Yin Stamp) */
 .logo-art::after {
   content: '景雁'; 
   display: inline-block;
   font-size: 0.52rem;
   font-weight: 900;
   font-family: 'Noto Serif SC', serif;
-  color: var(--bg-primary) !important; /* 🏮 阴刻：印章内的字呈宣纸白底色 */
+  color: var(--bg-primary) !important; /* 阴刻：印章内的字呈宣纸白底色 */
   -webkit-text-fill-color: var(--bg-primary) !important; /* 💡 核心修复：强制重置文字填充色，拒绝继承透明 */
-  background: var(--accent-gold) !important; /* 🏮 满涂朱砂红背景 */
+  background: var(--accent-gold) !important; /* 满涂朱砂红背景 */
   padding: 2px 4px 1px 4px;
   margin-left: 10px;
   vertical-align: middle;
@@ -140,6 +140,26 @@ body::before {
   letter-spacing: 1px;
   box-shadow: 0 2px 6px rgba(226, 109, 128, 0.25);
   border: none;
+  transition: transform 0.3s ease;
+}
+
+/* 🏮 交互动效：悬停时触发“重压落印”动效 */
+.brand:hover .logo-art::after {
+  animation: stampPress 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes stampPress {
+  0% {
+    transform: rotate(-15deg) scale(1.4);
+    box-shadow: 0 10px 20px rgba(226, 109, 128, 0.1);
+  }
+  70% {
+    transform: rotate(-3deg) scale(0.92);
+  }
+  100% {
+    transform: rotate(-3deg) scale(1) translateY(-2px);
+    box-shadow: 0 4px 12px rgba(226, 109, 128, 0.35);
+  }
 }
 
 /* 搜索容器 */
@@ -198,15 +218,13 @@ body::before {
   color: var(--accent-gold-hover);
 }
 
-/* 搜索结果下拉面板 (毛玻璃+宣纸感) */
+/* 搜索结果下拉面板 */
 .search-results {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   right: 0;
   background: rgba(255, 253, 251, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 4px;
   box-shadow: 0 12px 40px rgba(226, 109, 128, 0.1);
@@ -405,9 +423,24 @@ body::before {
 }
 
 /* ==========================================================================
-   首页主体布局与古典装裱卡片
+   首页主体布局与画轴卡片
    ========================================================================== */
-/* 🏮 宣纸全书卷大框线设计，使整个内容区被框在一个古典卷轴里 */
+/* 🏮 核心古风画卷展开动画：全页在初次载入或刷新时，像画轴一般徐徐从中间向两边展开 */
+@keyframes scrollUnroll {
+  0% {
+    transform: scaleX(0.02) scaleY(0.98);
+    opacity: 0;
+  }
+  35% {
+    transform: scaleX(0.02) scaleY(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+
 .app-main {
   max-width: 1200px;
   margin: 2.2rem auto;
@@ -417,6 +450,10 @@ body::before {
   box-shadow: 0 20px 60px -15px rgba(44, 30, 32, 0.08);
   position: relative;
   border-radius: 4px;
+  
+  /* 🏮 挂接画轴展开动画 */
+  transform-origin: center;
+  animation: scrollUnroll 1.1s cubic-bezier(0.25, 1, 0.3, 1) forwards;
 }
 
 /* 宣纸内框细线 */
@@ -512,22 +549,42 @@ body::before {
   cursor: pointer;
   white-space: nowrap;
   transition: var(--transition-smooth);
-  border-bottom: 2px solid rgba(226, 109, 128, 0.15);
+  position: relative;
+}
+
+/* 🏮 交互动效：Tab 悬浮下划线犹如毛笔润色，轻轻划出一道墨色红杠 */
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+
+.tab-btn:hover::after {
+  width: 80%;
+  background: var(--accent-gold-hover);
 }
 
 .tab-btn:hover {
   background: rgba(255, 253, 251, 0.98);
   color: var(--text-main);
-  border-color: var(--accent-gold);
 }
 
 .tab-btn.active {
   background: var(--accent-gold);
   color: white !important;
   border-color: var(--accent-gold);
-  border-bottom-color: var(--accent-gold-hover);
-  box-shadow: 0 4px 12px rgba(226, 109, 128, 0.2);
-  transform: scale(1.02);
+}
+
+.tab-btn.active::after {
+  width: 90%;
+  height: 3px;
+  background: var(--accent-gold-hover);
 }
 
 /* 动漫卡片网格列表 */
@@ -542,7 +599,6 @@ body::before {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: var(--transition-smooth);
   background: #FDF9F5; /* 绢本宣纸色 */
   border: 1px solid rgba(226, 109, 128, 0.18);
   padding: 12px 10px; /* 绢边留白装裱 */
@@ -550,6 +606,51 @@ body::before {
   border-bottom: 3px solid #8E6D70; /* 🏮 下轴：木轴收尾 */
   position: relative;
   box-shadow: 0 6px 18px -6px rgba(44, 30, 32, 0.08);
+  
+  /* 🏮 动画交互：挂接 staggered cascade 竹简/画轴顺次徐徐滑落动效 */
+  opacity: 0;
+  animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* staggered 延迟，让卡片像竹简那样顺次滚落 */
+.anime-card:nth-child(1) { animation-delay: 0.04s; }
+.anime-card:nth-child(2) { animation-delay: 0.08s; }
+.anime-card:nth-child(3) { animation-delay: 0.12s; }
+.anime-card:nth-child(4) { animation-delay: 0.16s; }
+.anime-card:nth-child(5) { animation-delay: 0.20s; }
+.anime-card:nth-child(6) { animation-delay: 0.24s; }
+.anime-card:nth-child(7) { animation-delay: 0.28s; }
+.anime-card:nth-child(8) { animation-delay: 0.32s; }
+.anime-card:nth-child(9) { animation-delay: 0.36s; }
+.anime-card:nth-child(10) { animation-delay: 0.40s; }
+.anime-card:nth-child(11) { animation-delay: 0.44s; }
+.anime-card:nth-child(12) { animation-delay: 0.48s; }
+
+@keyframes bambooCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotateX(-12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* 🏮 交互动效：卡片背后暗藏水墨晕染特效背景层 */
+.anime-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(226, 109, 128, 0.14) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 4px;
 }
 
 .card-cover-wrapper {
@@ -608,11 +709,15 @@ body::before {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 卡片悬停国风立体动效 */
+/* 卡片悬停国风立体动效 + 背景墨晕四散 */
 .anime-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px -12px rgba(226, 109, 128, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px -12px rgba(226, 109, 128, 0.22);
   border-color: rgba(226, 109, 128, 0.45);
+}
+
+.anime-card:hover::after {
+  opacity: 1; /* 触发淡墨散开 */
 }
 
 .anime-card:hover .card-cover {
