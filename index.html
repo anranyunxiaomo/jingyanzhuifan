@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>AGE 动漫 - 高级白金版</title>
-  <!-- Google Fonts 引入 Outfit & Inter 高级字体 -->
+  <title>景雁动漫 - 高级白金版</title>
+  <!-- Google Fonts 引入 Outfit & Inter & Noto Serif SC 高级字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
   <!-- Lucide 图标 CDN 引入 -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- 自动将不安全内容 (HTTP) 升级为安全内容 (HTTPS) 防浏览器阻断 -->
@@ -26,9 +26,9 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand" @click="goHome">
-        <span class="logo-text">AGE</span>
-        <span class="logo-sub">FAN</span>
-        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v15:41</span>
+        <span class="logo-art">景雁</span>
+        <span class="logo-sub">动漫</span>
+        <span style="font-size: 9px; opacity: 0.5; margin-left: 6px; font-weight: normal; letter-spacing: normal;">v15:53</span>
       </div>
       
       <!-- 极速本地搜索框 -->
@@ -37,7 +37,7 @@
           <i data-lucide="search" class="search-icon"></i>
           <input 
             type="text" 
-            placeholder="搜索动漫... (输入中文、拼音，或直接粘贴 AGE 番剧 ID)" 
+            placeholder="搜索动漫... (输入中文、拼音，或直接粘贴番剧 ID)" 
             v-model="searchQuery" 
             @focus="searchFocused = true"
             @blur="handleSearchBlur"
@@ -69,7 +69,7 @@
               style="border-top: 1px dashed rgba(255,255,255,0.1); background: rgba(0, 113, 227, 0.12);"
             >
               <div class="result-info" style="padding: 4px 6px;">
-                <div class="result-title" style="color: var(--color-primary); font-weight: bold;">⚡ 强制拉取此 AGE ID 并开播</div>
+                <div class="result-title" style="color: var(--color-primary); font-weight: bold;">⚡ 强制拉取此番剧 ID 并开播</div>
                 <div class="result-meta">尝试直接拉取并播放云端番剧 ID: {{ searchQuery.trim() }}</div>
               </div>
             </div>
@@ -82,7 +82,7 @@
             >
               <div class="result-info" style="padding: 8px;">
                 <div class="result-title" style="font-size: 13px;">🔍 未命中的冷门老番</div>
-                <div class="result-meta" style="font-size: 11px;">建议去 AGE 官网复制该动漫的纯数字 ID 输入即可强行开播</div>
+                <div class="result-meta" style="font-size: 11px;">建议复制原站该动漫的纯数字 ID 输入即可强行开播</div>
               </div>
             </div>
           </div>
@@ -421,7 +421,7 @@
 
   <!-- 极简白金底部 -->
   <footer class="app-footer">
-    <p>© 2026 AGE 动漫. 免责声明：本站仅供学术交流与测试，数据来源于网络公开资源。</p>
+    <p>© 2026 景雁动漫. 免责声明：本站仅供学术交流与测试，数据来源于网络公开资源。</p>
   </footer>
 
 </div>
@@ -431,6 +431,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260701T1541"></script>
+<script src="js/app.js?v=20260701T1553"></script>
 </body>
 </html>

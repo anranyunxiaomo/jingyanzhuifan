@@ -46,7 +46,7 @@ new Vue({
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
-      { label: '系统默认 (AGE 合作源)', value: 'default' },
+      { label: '系统默认 (景雁 合作源)', value: 'default' },
       { label: '超清 VIP 极速接口 A (先锋解析)', value: 'https://jx.xmflv.com/?url=' },
       { label: '超清 VIP 万能接口 B (JSON解析)', value: 'https://jx.jsonplayer.com/?url=' },
       { label: '全网超级 VIP 接口 C', value: 'https://im1907.top/?jx=' }

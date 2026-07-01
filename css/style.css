@@ -78,19 +78,29 @@ body {
   user-select: none;
 }
 
-.logo-text {
+.logo-art {
+  font-family: 'Noto Serif SC', serif;
   font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -1px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #DE6B7E 0%, #F28C9F 50%, #FFB6C1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 2px 4px rgba(242, 140, 159, 0.25));
+  position: relative;
 }
 
 .logo-sub {
-  font-size: 1.1rem;
-  font-weight: 500;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #DE6B7E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(242, 140, 159, 0.08);
+  letter-spacing: 1px;
+  margin-left: 4px;
 }
 
 /* 搜索容器 */
