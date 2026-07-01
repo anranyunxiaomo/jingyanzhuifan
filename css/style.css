@@ -842,6 +842,7 @@ body::before {
   height: 100%;
   border: none;
   background: #000;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .video-dplayer {
@@ -1841,19 +1842,46 @@ body {
 }
 
 /* 🏮 全局与全屏模式下 HLS/DPlayer 视频及 iframe 画面比例强制覆盖规则 */
-body.fit-contain video, 
-body.fit-contain iframe {
+body.fit-contain video,
+body.fit-contain .dplayer-video,
+body.fit-contain #dplayer video {
   object-fit: contain !important;
 }
 
-body.fit-cover video, 
-body.fit-cover iframe {
+body.fit-cover video,
+body.fit-cover .dplayer-video,
+body.fit-cover #dplayer video {
   object-fit: cover !important;
 }
 
-body.fit-fill video, 
-body.fit-fill iframe {
+body.fit-fill video,
+body.fit-fill .dplayer-video,
+body.fit-fill #dplayer video {
   object-fit: fill !important;
+}
+
+/* 🏮 针对 iframe 降级框架，object-fit 无效时，通过 2D/3D Transform 强行物理缩放以裁切黑边 */
+body.fit-contain iframe {
+  transform: scale(1) !important;
+  transform-origin: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.fit-cover iframe {
+  /* 💡 放大 1.28 倍以在全面屏手机上裁掉左右或上下黑边，保持等比且无画面拉伸变形 */
+  transform: scale(1.28) !important; 
+  transform-origin: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.fit-fill iframe {
+  /* 💡 横向单向拉伸 1.28 倍填满，保持高度不变，实现无黑边画面拉伸 */
+  transform: scaleX(1.28) !important;
+  transform-origin: center center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 
