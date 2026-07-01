@@ -80,6 +80,14 @@
     "UpToDate": "第12集(完结)"
   },
   {
+    "AID": 20210020,
+    "Title": "怪病医拉姆尼",
+    "Pinyin": "gbylmn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20210020.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
+  },
+  {
     "AID": 20150009,
     "Title": "境界之轮回",
     "Pinyin": "jjzlh",
@@ -94,6 +102,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260054.jpg",
     "Status": "完结",
     "UpToDate": "第12集(完结)"
+  },
+  {
+    "AID": 20040001,
+    "Title": "妖精的旋律",
+    "Pinyin": "yjdxl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20040001.jpg",
+    "Status": "完结",
+    "UpToDate": "第13集(完结)"
   },
   {
     "AID": 20180146,
@@ -328,12 +344,28 @@
     "UpToDate": "[TV 01-13]"
   },
   {
+    "AID": 20080047,
+    "Title": "记忆女神的女儿们",
+    "Pinyin": "jynsdnem",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20080047.jpg",
+    "Status": "完结",
+    "UpToDate": "第6集(完结)"
+  },
+  {
     "AID": 20180358,
     "Title": "甜心战士Universe",
     "Pinyin": "txzsuniverse",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180358.jpg",
     "Status": "完结",
     "UpToDate": "[BD 01-12]"
+  },
+  {
+    "AID": 20160148,
+    "Title": "时空囚徒",
+    "Pinyin": "skqt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160148.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
   },
   {
     "AID": 20260078,
@@ -374,6 +406,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
     "Status": "连载",
     "UpToDate": "23:00 第12集"
+  },
+  {
+    "AID": 20180278,
+    "Title": "续·终物语",
+    "Pinyin": "x·zwy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180278.jpg",
+    "Status": "完结",
+    "UpToDate": "第2卷(完结)"
   },
   {
     "AID": 20100009,
@@ -472,6 +512,14 @@
     "UpToDate": "02:05 第12集"
   },
   {
+    "AID": 20180168,
+    "Title": "LORD of VERMILION 红莲之王",
+    "Pinyin": "lord of vermilion hlzw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180168.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
+  },
+  {
     "AID": 20260105,
     "Title": "最强的职业不是勇者也不是贤者好像是鉴定士(伪)的样子?",
     "Pinyin": "zqdzybsyzybsxzhxsjds(w)dyz?",
@@ -526,6 +574,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260107.jpg",
     "Status": "完结",
     "UpToDate": "第12集(完结)"
+  },
+  {
+    "AID": 20140122,
+    "Title": "电器街的漫画店",
+    "Pinyin": "dqjdmhd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140122.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
   },
   {
     "AID": 20120038,
@@ -688,6 +744,14 @@
     "UpToDate": "22:00 第13集"
   },
   {
+    "AID": 20150172,
+    "Title": "旋转少女",
+    "Pinyin": "xzsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150172.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
+  },
+  {
     "AID": 20160180,
     "Title": "爆音少女",
     "Pinyin": "bysn",
@@ -726,6 +790,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240051.jpg",
     "Status": "连载",
     "UpToDate": "09:00 第94集"
+  },
+  {
+    "AID": 20190205,
+    "Title": "鸭子的天空",
+    "Pinyin": "yzdtk",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190205.jpg",
+    "Status": "完结",
+    "UpToDate": "第50集(完结)"
   },
   {
     "AID": 20260116,
@@ -1008,6 +1080,14 @@
     "UpToDate": "[TV 01-12]"
   },
   {
+    "AID": 20140032,
+    "Title": "东京喰种",
+    "Pinyin": "djcz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140032.jpg",
+    "Status": "完结",
+    "UpToDate": "第12集(完结)"
+  },
+  {
     "AID": 20260069,
     "Title": "和班上第二可爱的女孩成为朋友",
     "Pinyin": "hbsdekadnhcwpy",
@@ -1118,6 +1198,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
     "Status": "完结",
     "UpToDate": "全集"
+  },
+  {
+    "AID": 20150041,
+    "Title": "Chaos Dragon 赤龙战役",
+    "Pinyin": "chaos dragon clzy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150041.jpg",
+    "Status": "完结",
+    "UpToDate": "第12集(完结)"
   },
   {
     "AID": 20230209,
@@ -1428,6 +1516,14 @@
     "Title": "恋爱小行星",
     "Pinyin": "laxxx",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
+    "Status": "完结",
+    "UpToDate": "[TV 01-12]"
+  },
+  {
+    "AID": 20160086,
+    "Title": "迷家",
+    "Pinyin": "mj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160086.jpg",
     "Status": "完结",
     "UpToDate": "[TV 01-12]"
   },
