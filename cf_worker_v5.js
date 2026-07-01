@@ -263,7 +263,15 @@ export default {
             } else {
               try {
                   let absoluteTsUrl = new URL(line, targetUrlStr).href;
-                  lines[i] = `${workerOrigin}/?url=${encodeURIComponent(absoluteTsUrl)}`;
+                  // 💡 极限请求优化：如果此行是 TS 切片，直接输出其绝对直链，让客户端浏览器直连视频源 CDN！
+                  // 绝对不通过我们这个 Cloudflare Worker 代理中转二进制切片。
+                  // 这样能将每次播放产生的 Worker 请求次数降低 99.9%，从 1500+ 次直接降到只剩 1~3 次，彻底免疫 10万次/天的免费限额！
+                  if (absoluteTsUrl.includes('.ts') || absoluteTsUrl.includes('.mp4') || absoluteTsUrl.includes('.jpeg') || absoluteTsUrl.includes('.png') || absoluteTsUrl.includes('.webp')) {
+                    lines[i] = absoluteTsUrl;
+                  } else {
+                    // 如果是嵌套的二级 M3U8 子播放列表，我们依然需要通过代理以维持透传参数
+                    lines[i] = `${workerOrigin}/?url=${encodeURIComponent(absoluteTsUrl)}`;
+                  }
               } catch(e) {}
             }
           }
