@@ -1523,3 +1523,148 @@ body::before {
   50% { transform: scale(1.25); }
   100% { transform: scale(1); }
 }
+
+/* ==========================================================================
+   🏮 古风开屏双画轴分裂入画加载器 (Full Screen Scroll Split Loader)
+   ========================================================================== */
+.gufeng-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  display: flex;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.loader-panel {
+  width: 50vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  position: relative;
+  transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  background-image: 
+    linear-gradient(rgba(226, 109, 128, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 109, 128, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.loader-left {
+  border-right: 3px solid #8E6D70; /* 檀木中轴线 */
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.loader-right {
+  border-left: 3px solid #8E6D70; /* 檀木中轴线 */
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 内画框线 */
+.loader-inside-border {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  border: 1px solid rgba(226, 109, 128, 0.2);
+}
+
+.loader-left .loader-inside-border {
+  left: 30px;
+  right: 15px;
+  border-right: none;
+}
+
+.loader-right .loader-inside-border {
+  right: 30px;
+  left: 15px;
+  border-left: none;
+}
+
+/* 文字与印章居中 */
+.loader-text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 100;
+  pointer-events: none;
+  transition: all 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.loader-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  letter-spacing: 16px;
+  margin-left: 16px;
+  text-shadow: 0 4px 12px rgba(44, 30, 32, 0.06);
+}
+
+.loader-yin-stamp {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.85rem;
+  color: var(--bg-primary) !important;
+  -webkit-text-fill-color: var(--bg-primary) !important;
+  background: var(--accent-gold) !important;
+  padding: 4px 10px 3px 10px;
+  border-radius: 1px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 12px rgba(226, 109, 128, 0.3);
+  transform: rotate(-4deg);
+}
+
+.loader-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  letter-spacing: 6px;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.loader-hint {
+  font-size: 0.8rem;
+  color: var(--accent-gold-hover);
+  letter-spacing: 3px;
+  margin-top: 2rem;
+  border: 1px dashed var(--accent-gold);
+  padding: 5px 16px;
+  border-radius: 2px;
+  background: rgba(226, 109, 128, 0.02);
+  animation: pulseEnter 2s infinite;
+}
+
+@keyframes pulseEnter {
+  0% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 10px rgba(226, 109, 128, 0.15); }
+  100% { transform: scale(1); opacity: 0.75; }
+}
+
+/* 🏮 展开分裂激活状态 */
+.gufeng-loader.unrolled {
+  visibility: hidden;
+  transition-delay: 1.2s; /* 动画走完后隐藏 */
+}
+
+.gufeng-loader.unrolled .loader-left {
+  transform: translateX(-100%);
+}
+
+.gufeng-loader.unrolled .loader-right {
+  transform: translateX(100%);
+}
+
+.gufeng-loader.unrolled .loader-text-wrapper {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+}
+

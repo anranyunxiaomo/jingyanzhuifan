@@ -16,9 +16,40 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260701T1832">
+  <link rel="stylesheet" href="css/style.css?v=20260701T1837">
 </head>
 <body>
+
+<!-- 🏮 古风开屏双画轴分裂入画加载器 -->
+<div id="gufeng-loader" class="gufeng-loader">
+  <div class="loader-panel loader-left">
+    <div class="loader-inside-border"></div>
+  </div>
+  <div class="loader-panel loader-right">
+    <div class="loader-inside-border"></div>
+  </div>
+  <div class="loader-text-wrapper">
+    <h1 class="loader-title">景雁·番書</h1>
+    <div class="loader-yin-stamp">景雁印</div>
+    <p class="loader-quote">「浮生半日，閑聽雨眠」</p>
+    <div class="loader-hint">点击入画</div>
+  </div>
+</div>
+<script>
+  // 仅在会话首次访问时展示，避免用户后续频繁操作产生打扰
+  if (sessionStorage.getItem('gufeng_entered') === 'true') {
+    document.getElementById('gufeng-loader').style.display = 'none';
+  } else {
+    document.getElementById('gufeng-loader').addEventListener('click', function() {
+      var loader = document.getElementById('gufeng-loader');
+      loader.classList.add('unrolled');
+      sessionStorage.setItem('gufeng_entered', 'true');
+      setTimeout(function() {
+        loader.style.display = 'none';
+      }, 1200);
+    });
+  }
+</script>
 
 <div id="app" v-cloak>
   
