@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260701T1837">
+  <link rel="stylesheet" href="css/style.css?v=20260701T1843">
 </head>
 <body>
 
@@ -36,28 +36,14 @@
   </div>
 </div>
 <script>
-  // 仅在会话首次访问时展示，并包裹 try-catch 防御无痕模式禁用 storage 导致的崩页
-  var gufengEntered = false;
-  try {
-    gufengEntered = (sessionStorage.getItem('gufeng_entered') === 'true');
-  } catch (e) {
-    console.warn("sessionStorage access denied:", e);
-  }
-
-  if (gufengEntered) {
-    document.getElementById('gufeng-loader').style.display = 'none';
-  } else {
-    document.getElementById('gufeng-loader').addEventListener('click', function() {
-      var loader = document.getElementById('gufeng-loader');
-      loader.classList.add('unrolled');
-      try {
-        sessionStorage.setItem('gufeng_entered', 'true');
-      } catch (e) {}
-      setTimeout(function() {
-        loader.style.display = 'none';
-      }, 1200);
-    });
-  }
+  // 每次刷新/加载页面时都展示，点击后开屏画轴分裂退场
+  document.getElementById('gufeng-loader').addEventListener('click', function() {
+    var loader = document.getElementById('gufeng-loader');
+    loader.classList.add('unrolled');
+    setTimeout(function() {
+      loader.style.display = 'none';
+    }, 1200);
+  });
 </script>
 
 <div id="app" v-cloak>
@@ -132,40 +118,43 @@
   <!-- 主体内容区 -->
   <main class="app-main">
     
-    <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
-    <section class="banner-section" v-if="!currentAnimeId && bannerList.length > 0">
-      <div class="banner-container">
-        <transition name="fade" mode="out-in">
-          <div 
-            class="banner-slide" 
-            :key="currentBannerIndex"
-            :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,248,246,0.9) 30%, rgba(250,248,246,0.2) 100%), url(' + activeBanner.style + ')' }"
-          >
-            <div class="banner-content">
-              <span class="banner-tag">精选推荐</span>
-              <h1 class="banner-title" v-html="activeBanner.html"></h1>
-              <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
-                <i data-lucide="play-circle"></i> 立即观看
-              </button>
+    <transition name="gufeng-fade-slide" mode="out-in">
+      <!-- 🏮 首页视图包装器 -->
+      <div v-if="!currentAnimeId" key="home">
+        <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
+        <section class="banner-section" v-if="bannerList.length > 0">
+          <div class="banner-container">
+            <transition name="fade" mode="out-in">
+              <div 
+                class="banner-slide" 
+                :key="currentBannerIndex"
+                :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,248,246,0.9) 30%, rgba(250,248,246,0.2) 100%), url(' + activeBanner.style + ')' }"
+              >
+                <div class="banner-content">
+                  <span class="banner-tag">精选推荐</span>
+                  <h1 class="banner-title" v-html="activeBanner.html"></h1>
+                  <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
+                    <i data-lucide="play-circle"></i> 立即观看
+                  </button>
+                </div>
+              </div>
+            </transition>
+            
+            <!-- 幻灯片指示器 -->
+            <div class="banner-dots">
+              <span 
+                class="dot" 
+                v-for="(dot, idx) in bannerList" 
+                :key="idx" 
+                :class="{ active: idx === currentBannerIndex }"
+                @click="currentBannerIndex = idx"
+              ></span>
             </div>
           </div>
-        </transition>
-        
-        <!-- 幻灯片指示器 -->
-        <div class="banner-dots">
-          <span 
-            class="dot" 
-            v-for="(dot, idx) in bannerList" 
-            :key="idx" 
-            :class="{ active: idx === currentBannerIndex }"
-            @click="currentBannerIndex = idx"
-          ></span>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 2. 动漫列表模式 (首页展示) -->
-    <div class="home-content" v-if="!currentAnimeId">
+        <!-- 2. 动漫列表模式 (首页展示) -->
+        <div class="home-content">
       
       <!-- 🌟 我的追番收藏夹 (仅在有收藏数据时展示) -->
       <section class="list-section favorites-section" v-if="favorites.length > 0" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1.5rem;">
@@ -297,10 +286,10 @@
           </div>
         </div>
       </section>
-    </div>
+    </div></div> <!-- 关闭 v-if="!currentAnimeId" 首页包装器 -->
 
     <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
-    <div class="detail-content" v-else>
+    <div class="detail-content" v-else key="detail">
       <div class="back-nav" @click="goHome">
         <i data-lucide="arrow-left"></i> 返回主页
       </div>
@@ -455,6 +444,7 @@
         </div>
       </div>
     </div>
+    </transition>
   </main>
 
   <!-- 极简白金底部 -->

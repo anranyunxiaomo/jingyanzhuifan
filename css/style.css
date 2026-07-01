@@ -1668,3 +1668,20 @@ body::before {
   transform: translate(-50%, -50%) scale(0.85);
 }
 
+/* 🏮 详情页与首页切换的古风“画轴展开/渐显”过渡效果 */
+.gufeng-fade-slide-enter-active, 
+.gufeng-fade-slide-leave-active {
+  transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.gufeng-fade-slide-enter {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+
+.gufeng-fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-24px) scale(0.985);
+}
+
+
