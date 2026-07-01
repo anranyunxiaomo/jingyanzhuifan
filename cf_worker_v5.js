@@ -32,19 +32,33 @@ export default {
       try {
         const body = await request.json();
         
-        // 提取地理网络定位（Cloudflare Edge 边缘自动提供）
+        // 💡 优先从 request.cf 中提取极其精确的地理位置 (Cloudflare 自带，无需外部 API)
         const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
-        const country = request.headers.get('cf-ipcountry') || '';
-        const region = request.headers.get('cf-region') || '';
-        const city = request.headers.get('cf-city') || '';
+        const country = request.cf ? request.cf.country : (request.headers.get('cf-ipcountry') || '');
+        const region = request.cf ? request.cf.region : (request.headers.get('cf-region') || '');
+        const city = request.cf ? request.cf.city : (request.headers.get('cf-city') || '');
         const location = `${country} ${region} ${city}`.trim() || '本地网络';
 
         const timestamp = Date.now();
-        // KV 日志键名：log:时间戳:观众ID
-        const logKey = `log:${timestamp}:${body.clientId}`;
+        // 💡 采用 Session ID 对同一播放会话进行覆盖更新，防止生成大量重复日志
+        const sessionId = body.sessionId || `legacy_${timestamp}`;
+        const logKey = `log:${sessionId}:${body.clientId}`;
+
+        // 尝试读取现有记录，保持首次播放时间
+        let startTime = timestamp;
+        if (env.JYZF_LOGS) {
+          const existing = await env.JYZF_LOGS.get(logKey);
+          if (existing) {
+            try {
+              const parsed = JSON.parse(existing);
+              startTime = parsed.time;
+            } catch(e) {}
+          }
+        }
 
         const logData = {
-          time: timestamp,
+          time: startTime,
+          updateTime: timestamp,
           ip: ip,
           location: location,
           clientId: body.clientId,
@@ -54,7 +68,7 @@ export default {
           status: body.status || 'watching'
         };
 
-        // 写入 Cloudflare KV (保存 30 天，防止撑爆免费额度)
+        // 写入 Cloudflare KV (保存 30 天，防止数据无限膨胀)
         if (env.JYZF_LOGS) {
           await env.JYZF_LOGS.put(logKey, JSON.stringify(logData), { expirationTtl: 2592000 });
         } else {
@@ -162,19 +176,19 @@ export default {
     const clientParam = url.searchParams.get('client');
     const animeParam = url.searchParams.get('anime');
     const episodeParam = url.searchParams.get('episode');
+    const sessionParam = url.searchParams.get('session');
 
-    if (clientParam && animeParam && episodeParam && (targetUrlStr.includes('.m3u8') || targetUrlStr.includes('index.m3u8'))) {
-      const timestamp = Date.now();
-      const logKey = `log:${timestamp}:${clientParam}`;
+    if (clientParam && animeParam && episodeParam && sessionParam && (targetUrlStr.includes('.m3u8') || targetUrlStr.includes('index.m3u8'))) {
+      const logKey = `log:${sessionParam}:${clientParam}`;
       
       const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
-      const country = request.headers.get('cf-ipcountry') || '';
-      const region = request.headers.get('cf-region') || '';
-      const city = request.headers.get('cf-city') || '';
+      const country = request.cf ? request.cf.country : (request.headers.get('cf-ipcountry') || '');
+      const region = request.cf ? request.cf.region : (request.headers.get('cf-region') || '');
+      const city = request.cf ? request.cf.city : (request.headers.get('cf-city') || '');
       const location = `${country} ${region} ${city}`.trim() || '本地网络';
 
       const logData = {
-        time: timestamp,
+        time: Date.now(),
         ip: ip,
         location: location,
         clientId: clientParam,
@@ -185,8 +199,14 @@ export default {
       };
 
       if (env.JYZF_LOGS) {
-        // 使用 ctx.waitUntil 保证写库异步非阻塞，不拖慢视频流的加载响应时间
-        ctx.waitUntil(env.JYZF_LOGS.put(logKey, JSON.stringify(logData), { expirationTtl: 2592000 }));
+        // 使用 ctx.waitUntil 保证写库异步非阻塞
+        // 💡 只有当日志不存在时才写入，防止重头获取 M3U8 时把已有的观看进度重置为 00:00
+        ctx.waitUntil((async () => {
+          const existing = await env.JYZF_LOGS.get(logKey);
+          if (!existing) {
+            await env.JYZF_LOGS.put(logKey, JSON.stringify(logData), { expirationTtl: 2592000 });
+          }
+        })());
       }
     }
 

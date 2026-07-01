@@ -43,6 +43,8 @@ new Vue({
     dplayerKey: 'dplayer_init', // DPlayer DOM 容器的物理隔离 Key
     guardTimer: null, // 高频归零阻截定时器
     clientId: '', // 景雁分析：唯一观众代号
+    activeSessionId: '', // 景雁分析：当前播放会话 ID
+    lastLogProgressTime: 0, // 景雁分析：上次上报的播放秒数
     
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
@@ -242,10 +244,11 @@ new Vue({
 
       const payload = {
         clientId: this.clientId,
+        sessionId: this.activeSessionId, // 绑定当前观看会话，用于覆盖更新记录
         anime: animeName,
         episode: epName,
         progress: progressText,
-        status: status // 'start', 'pause', 'exit'
+        status: status // 'start', 'pause', 'exit', 'watching'
       };
 
       const logUrl = 'https://jingyanff.xyz/api/log';
@@ -489,6 +492,10 @@ new Vue({
         playUrl = playUrl.replace('http://', 'https://');
       }
 
+      // ✅ 初始化/生成全新播放会话 ID 和进度打点计数器
+      this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+      this.lastLogProgressTime = 0;
+
       // ✅ 变量捕获闭包锁定
       const capturedAnimeId = String(this.currentAnimeId);
       const capturedEpName = String(this.activeEpisodeName);
@@ -533,11 +540,12 @@ new Vue({
                 screenshot: false,
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
-                  // 💡 黄金路由：直接使用我们在国内 100% 畅通无阻的个人专属代理域名中转，将打点参数附带在视频流请求中，保证 100% 成功上报
+                  // 💡 黄金路由：将打点参数与 SessionID 附带在视频流请求中，保证 100% 成功上报且会话内唯一
                   url: "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
                        "&client=" + encodeURIComponent(this.clientId) +
                        "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '未知动漫') +
-                       "&episode=" + encodeURIComponent(capturedEpName),
+                       "&episode=" + encodeURIComponent(capturedEpName) +
+                       "&session=" + encodeURIComponent(this.activeSessionId),
                   type: 'hls'
                 }
               });
@@ -575,6 +583,20 @@ new Vue({
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
                   const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(pKey, currentTime.toString());
+                }
+
+                // 💡 每播放 30 秒，静默更新一次服务器上的进度数据 (以会话 ID 覆盖，不产生多余日志行)
+                if (Math.abs(currentTime - this.lastLogProgressTime) >= 30) {
+                  this.lastLogProgressTime = currentTime;
+                  const timeText = this.formatSecondsToText(currentTime);
+                  this.logPlayAction('watching', timeText);
+                }
+              });
+
+              dp.on('pause', () => {
+                if (dp && dp.video) {
+                  const timeText = this.formatSecondsToText(dp.video.currentTime);
+                  this.logPlayAction('pause', timeText);
                 }
               });
 
