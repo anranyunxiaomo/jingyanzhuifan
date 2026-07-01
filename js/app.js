@@ -742,10 +742,13 @@ new Vue({
     
     // 💡 路由解析服务
     handleHashRoute() {
-      const hash = window.location.hash;
+      // 💡 核心修复：使用 decodeURIComponent 解码 URL Hash！
+      // 移动端/微信及某些浏览器刷新时会把 "/ " 编码为 "%2F "，导致 startsWith("#/detail/") 判定失效。
+      const hash = decodeURIComponent(window.location.hash);
       if (hash.startsWith('#/detail/')) {
         const aid = hash.replace('#/detail/', '');
-        if (aid) {
+        // 💡 增加防重入守卫：当前 ID 和 Hash ID 不同才发起请求，防止手动点击时触发双倍网络流量
+        if (aid && String(this.currentAnimeId) !== String(aid)) {
           this.selectAnime(aid, true);
         }
       } else {
