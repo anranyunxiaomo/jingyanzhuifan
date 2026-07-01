@@ -207,14 +207,6 @@ new Vue({
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
-
-    // 💡 页面关闭/切出后台时，静默上报当前播放进度
-    window.addEventListener('pagehide', () => {
-      if (this.dpInstance && this.dpInstance.video && !this.isIframeMode) {
-        const timeText = this.formatSecondsToText(this.dpInstance.video.currentTime);
-        this.logPlayAction('exit', timeText);
-      }
-    });
   },
   
   methods: {
@@ -232,54 +224,6 @@ new Vue({
       }
       this.clientId = cid;
       return cid;
-    },
-
-    logPlayAction(status, progressText = '00:00') {
-      if (!this.clientId) {
-        this.getOrCreateClientId();
-      }
-      
-      const animeName = this.animeDetail ? this.animeDetail.video.name : '未知动漫';
-      const epName = this.activeEpisodeName || '未知集数';
-
-      const payload = {
-        clientId: this.clientId,
-        sessionId: this.activeSessionId, // 绑定当前观看会话，用于覆盖更新记录
-        anime: animeName,
-        episode: epName,
-        progress: progressText,
-        status: status // 'start', 'pause', 'exit', 'watching'
-      };
-
-      const logUrl = 'https://jingyanff.xyz/api/log';
-
-      // 💡 针对退出页面，使用 sendBeacon 保证 100% 异步投递成功而不阻塞页面卸载
-      if (status === 'exit') {
-        if (navigator.sendBeacon) {
-          const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-          navigator.sendBeacon(logUrl, blob);
-        } else {
-          fetch(logUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-            keepalive: true
-          }).catch(() => {});
-        }
-      } else {
-        fetch(logUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).catch(err => console.warn('[LOG ERROR]', err));
-      }
-    },
-
-    formatSecondsToText(sec) {
-      if (!sec || isNaN(sec)) return '00:00';
-      const m = Math.floor(sec / 60);
-      const s = Math.floor(sec % 60);
-      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     },
 
     // 💡 行业顶级高可用防线：连环 Fallback 跨域代理中转器 (corsproxy.io -> codetabs -> allorigins)
@@ -507,12 +451,6 @@ new Vue({
         this.isIframeMode = false;
         this.activePlayUrl = realUrl;
 
-        // 销毁上一次的播放器实例前，上报一次进度
-        if (this.dpInstance && this.dpInstance.video) {
-          const timeText = this.formatSecondsToText(this.dpInstance.video.currentTime);
-          this.logPlayAction('exit', timeText);
-        }
-
         // 销毁上一次的播放器实例
         if (this.dpInstance) {
           try { 
@@ -584,20 +522,6 @@ new Vue({
                   const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(pKey, currentTime.toString());
                 }
-
-                // 💡 每播放 30 秒，静默更新一次服务器上的进度数据 (以会话 ID 覆盖，不产生多余日志行)
-                if (Math.abs(currentTime - this.lastLogProgressTime) >= 30) {
-                  this.lastLogProgressTime = currentTime;
-                  const timeText = this.formatSecondsToText(currentTime);
-                  this.logPlayAction('watching', timeText);
-                }
-              });
-
-              dp.on('pause', () => {
-                if (dp && dp.video) {
-                  const timeText = this.formatSecondsToText(dp.video.currentTime);
-                  this.logPlayAction('pause', timeText);
-                }
               });
 
               // 💡 极限容灾：如果自建代理出意外报错，依然能自动无缝降级到公共 VIP 接口
@@ -646,11 +570,6 @@ new Vue({
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
-
-      // 💡 延迟一秒上报开始播放事件（等播放器挂载就绪）
-      setTimeout(() => {
-        this.logPlayAction('start', '00:00');
-      }, 1000);
     },
     
     forceResetProgressAndReplay() {
