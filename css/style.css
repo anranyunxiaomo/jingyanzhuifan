@@ -1566,9 +1566,9 @@ body {
     border-radius: 2px;
   }
   .detail-tab-btn.active {
-    background: var(--color-primary);
-    color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(226, 109, 128, 0.18);
+    background: var(--accent-gold-hover); /* 🏮 绛红：印泥朱砂深红色，保证极高的视觉对比度 */
+    color: var(--bg-secondary) !important; /* 🏮 凝脂白玉色，高对比度文字 */
+    box-shadow: 0 4px 12px rgba(197, 83, 101, 0.22);
   }
   .grid-list {
     /* 手机端 2 列网格卡片排列，最适合竖屏单手滑动阅览 */

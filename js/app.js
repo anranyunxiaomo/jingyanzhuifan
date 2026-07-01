@@ -217,10 +217,14 @@ new Vue({
       lucide.createIcons();
     }
     window.addEventListener('resize', this.handleResize);
+    // 🏮 监听 URL Hash 路由，实现前进后退及刷新保持状态
+    window.addEventListener('hashchange', this.handleHashRoute);
+    this.handleHashRoute();
   },
   
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('hashchange', this.handleHashRoute);
   },
   
   methods: {
@@ -314,7 +318,7 @@ new Vue({
     // ==========================================================================
     // 🎬 动漫选择与详情加载
     // ==========================================================================
-    selectAnime(aid) {
+    selectAnime(aid, skipHashUpdate = false) {
       if (!aid) return;
       
       // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字
@@ -326,6 +330,9 @@ new Vue({
       }
       
       this.currentAnimeId = aid;
+      if (!skipHashUpdate) {
+        window.location.hash = '#/detail/' + aid;
+      }
       window.scrollTo(0, 0); // 🏮 瞬间将滚动条置顶，防止在详情页出现高度坍塌和滚动条错位
       this.detailTab = 'episodes'; // 🏮 重新打开动漫时，默认选择“选集播放” Tab，缩短滚动操作
       this.animeDetail = null;
@@ -672,7 +679,7 @@ new Vue({
     // ==========================================================================
     // 🧭 导航及交互控制
     // ==========================================================================
-    goHome() {
+    goHome(skipHashUpdate = false) {
       // 安全销毁 DPlayer 实例，防止声音残留
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
@@ -681,6 +688,9 @@ new Vue({
       this.isIframeMode = false;
       
       this.currentAnimeId = null;
+      if (!skipHashUpdate) {
+        window.location.hash = '#/';
+      }
       window.scrollTo(0, 0); // 🏮 瞬间置顶，平稳过渡到首页
       this.animeDetail = null;
       this.activePlayUrl = '';
@@ -732,6 +742,21 @@ new Vue({
           iframeEl.style.objectFit = this.videoFitMode;
         }
       });
+    },
+    
+    // 💡 路由解析服务
+    handleHashRoute() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#/detail/')) {
+        const aid = hash.replace('#/detail/', '');
+        if (aid) {
+          this.selectAnime(aid, true);
+        }
+      } else {
+        if (this.currentAnimeId !== null) {
+          this.goHome(true);
+        }
+      }
     }
   },
   
