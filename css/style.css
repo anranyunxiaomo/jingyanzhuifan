@@ -3,20 +3,20 @@
    ========================================================================== */
 
 :root {
-  /* 高级色彩定义 */
-  --bg-primary: #F5F5F7;
-  --bg-secondary: #FAF8F6;
-  --text-main: #1D1D1F;
-  --text-muted: #86868B;
-  --text-light: #F5F5F7;
+  /* 🎨 顶级高级设计系统 - 樱花粉色系 */
+  --bg-primary: #FCF5F6;
+  --bg-secondary: #FFFDFD;
+  --text-main: #332225;
+  --text-muted: #9E8488;
+  --text-light: #FCF5F6;
   
-  --accent-gold: #E9BD6C;
-  --accent-gold-hover: #D5AC5C;
-  --accent-gold-light: rgba(233, 189, 108, 0.15);
+  --accent-gold: #F28C9F;
+  --accent-gold-hover: #DE6B7E;
+  --accent-gold-light: rgba(242, 140, 159, 0.12);
   
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(255, 255, 255, 0.45);
-  --glass-shadow: 0 8px 32px 0 rgba(142, 142, 147, 0.08);
+  --glass-bg: rgba(255, 253, 254, 0.75);
+  --glass-border: rgba(242, 140, 159, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(242, 140, 159, 0.08);
   
   --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -88,7 +88,7 @@ body {
 .logo-sub {
   font-size: 1.1rem;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #C59B4C 100%);
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #DE6B7E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -113,7 +113,7 @@ body {
 .search-box:focus-within {
   background: rgba(255, 255, 255, 0.9);
   border-color: var(--accent-gold);
-  box-shadow: 0 4px 20px rgba(233, 189, 108, 0.12);
+  box-shadow: 0 4px 20px rgba(242, 140, 159, 0.12);
 }
 
 .search-icon {
@@ -236,7 +236,7 @@ body {
 .banner-tag {
   display: inline-block;
   background: var(--accent-gold-light);
-  color: #c59b4c;
+  color: #DE6B7E;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.3rem 0.8rem;
@@ -269,14 +269,14 @@ body {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #d5ac5c 100%);
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #DE6B7E 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(233, 189, 108, 0.3);
+  box-shadow: 0 4px 15px rgba(242, 140, 159, 0.3);
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(233, 189, 108, 0.4);
+  box-shadow: 0 6px 20px rgba(242, 140, 159, 0.4);
 }
 
 .banner-dots {
@@ -455,7 +455,7 @@ body {
 .anime-card:hover .card-cover-wrapper {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  border-color: rgba(233, 189, 108, 0.4);
+  border-color: rgba(242, 140, 159, 0.4);
 }
 
 .anime-card:hover .card-cover {
@@ -648,7 +648,7 @@ body {
 .engine-select:focus, .engine-select:hover {
   border-color: var(--accent-gold);
   background: white;
-  box-shadow: 0 4px 15px rgba(233, 189, 108, 0.1);
+  box-shadow: 0 4px 15px rgba(242, 140, 159, 0.1);
 }
 
 .proxy-tunnel-btn {
@@ -670,14 +670,14 @@ body {
   background: var(--accent-gold-light);
   border-color: var(--accent-gold);
   color: var(--accent-gold-hover);
-  box-shadow: 0 4px 15px rgba(233, 189, 108, 0.15);
-  animation: goldPulse 2s infinite;
+  box-shadow: 0 4px 15px rgba(242, 140, 159, 0.15);
+  animation: pinkPulse 2s infinite;
 }
 
 .proxy-tunnel-btn:hover {
   border-color: var(--accent-gold);
   color: var(--text-main);
-  background: rgba(233, 189, 108, 0.04);
+  background: rgba(242, 140, 159, 0.04);
 }
 
 .tunnel-icon {
@@ -685,23 +685,23 @@ body {
   height: 14px;
 }
 
-@keyframes goldPulse {
+@keyframes pinkPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(233, 189, 108, 0.4);
+    box-shadow: 0 0 0 0 rgba(242, 140, 159, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 6px rgba(233, 189, 108, 0);
+    box-shadow: 0 0 0 6px rgba(242, 140, 159, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(233, 189, 108, 0);
+    box-shadow: 0 0 0 0 rgba(242, 140, 159, 0);
   }
 }
 
 .proxy-config-panel {
   margin-top: 1rem;
   padding: 1rem;
-  background: rgba(233, 189, 108, 0.03);
-  border: 1px dashed rgba(233, 189, 108, 0.3);
+  background: rgba(242, 140, 159, 0.03);
+  border: 1px dashed rgba(242, 140, 159, 0.3);
   border-radius: 12px;
   width: 100%;
 }
@@ -761,7 +761,7 @@ body {
 
 .proxy-input:focus {
   border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px rgba(233, 189, 108, 0.1);
+  box-shadow: 0 0 0 3px rgba(242, 140, 159, 0.1);
 }
 
 .proxy-save-btn {
@@ -778,7 +778,7 @@ body {
 
 .proxy-save-btn:hover {
   background: var(--accent-gold-hover);
-  box-shadow: 0 4px 12px rgba(233, 189, 108, 0.2);
+  box-shadow: 0 4px 12px rgba(242, 140, 159, 0.2);
 }
 
 .config-tip {
@@ -984,11 +984,11 @@ body {
 }
 
 .ep-btn.active {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #d5ac5c 100%);
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #DE6B7E 100%);
   color: white;
   border-color: transparent;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(233, 189, 108, 0.25);
+  box-shadow: 0 4px 12px rgba(242, 140, 159, 0.25);
 }
 
 /* ⚡ 闪电极速原生播放源特有高档微发光视觉 */
