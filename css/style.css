@@ -4,17 +4,17 @@
 
 :root {
   /* 🏮 顶级高级设计系统 - 绯桃古典色系 */
-  --bg-primary: #FAF5F0;        /* 宣纸杏白：中国传统经典宣纸杏白，柔和温润 */
-  --bg-secondary: #FFFDFB;      /* 凝脂白：温润如玉的凝脂白，作为容器背景 */
-  --text-main: #2C1E20;         /* 深黛墨：深沉古雅的墨褐色，拒绝生硬纯黑 */
+  --bg-primary: #FAF4EE;        /* 宣纸淡杏：温润古雅的宣纸原色，保护视力且高贵 */
+  --bg-secondary: #FFFDFB;      /* 凝脂玉：纯净的温润白玉色，用作卡片与面板背景 */
+  --text-main: #2C1E20;         /* 深黛墨：深沉高雅的徽墨黑，带有微褐，拒绝死黑 */
   --text-muted: #8E7A7D;        /* 晚香褐：古典温婉的灰褐色，用作辅助文字 */
-  --text-light: #FAF5F0;
+  --text-light: #FAF4EE;
   
-  --accent-gold: #E26D80;       /* 绯桃花：饱和度极其雅致的中国传统桃红色 */
-  --accent-gold-hover: #C55365; /* 绛红：较深的古风红色，用于悬停 */
-  --accent-gold-light: rgba(226, 109, 128, 0.06); /* 桃花露 */
+  --accent-gold: #E26D80;       /* 绯桃花：中国传统桃花红，温润饱满 */
+  --accent-gold-hover: #C55365; /* 绛红：较深的古风印泥红，用于悬停 */
+  --accent-gold-light: rgba(226, 109, 128, 0.05); /* 桃花露 */
   
-  --glass-bg: rgba(255, 253, 251, 0.94); /* 宣纸层叠质感 */
+  --glass-bg: rgba(255, 253, 251, 0.95); /* 宣纸层叠质感 */
   --glass-border: rgba(226, 109, 128, 0.25); /* 古雅窗棂朱红细线 */
   --glass-shadow: 0 12px 40px -10px rgba(226, 109, 128, 0.08);
   
@@ -49,8 +49,8 @@ body {
   background-color: var(--bg-primary);
   /* 🏮 水墨晕染渐变质感背景 */
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(226, 109, 128, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(44, 30, 32, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(226, 109, 128, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(44, 30, 32, 0.04) 0%, transparent 50%);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
@@ -70,7 +70,7 @@ body::before {
   background-image: 
     linear-gradient(rgba(226, 109, 128, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(226, 109, 128, 0.02) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-size: 32px 32px;
   z-index: -1;
   pointer-events: none;
 }
@@ -121,25 +121,25 @@ body::before {
   align-items: center;
 }
 
-/* 🏮 景雁专属古典红泥小印章 (Stamp) —— 解决 Webkit 文字填充透明导致的字形消失 bug */
+/* 🏮 景雁专属：古典朱泥“阴刻印章” (Yin Stamp) —— 解决 Webkit 文字填充透明导致的字形消失 bug */
 .logo-art::after {
-  content: '雁印';
+  content: '景雁'; 
   display: inline-block;
   font-size: 0.52rem;
   font-weight: 900;
   font-family: 'Noto Serif SC', serif;
-  color: var(--accent-gold) !important;
-  -webkit-text-fill-color: var(--accent-gold) !important; /* 💡 核心修复：强制重置文字填充色，拒绝继承透明 */
-  border: 1.5px solid var(--accent-gold);
-  padding: 1px 3px;
+  color: var(--bg-primary) !important; /* 🏮 阴刻：印章内的字呈宣纸白底色 */
+  -webkit-text-fill-color: var(--bg-primary) !important; /* 💡 核心修复：强制重置文字填充色，拒绝继承透明 */
+  background: var(--accent-gold) !important; /* 🏮 满涂朱砂红背景 */
+  padding: 2px 4px 1px 4px;
   margin-left: 10px;
   vertical-align: middle;
-  transform: rotate(5deg) translateY(-2px);
-  border-radius: 2px;
-  background: rgba(255, 253, 251, 0.95);
-  line-height: 1.1;
-  letter-spacing: 0;
-  box-shadow: 0 2px 5px rgba(226, 109, 128, 0.12);
+  transform: rotate(-3deg) translateY(-2px);
+  border-radius: 1px; /* 极其方正 */
+  line-height: 1;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 6px rgba(226, 109, 128, 0.25);
+  border: none;
 }
 
 /* 搜索容器 */
@@ -208,7 +208,7 @@ body::before {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 12px 40px rgba(226, 109, 128, 0.1);
   max-height: 380px;
   overflow-y: auto;
@@ -269,14 +269,41 @@ body::before {
   border-radius: 4px; /* 彻底直角挂轴质感 */
   overflow: hidden;
   box-shadow: 0 16px 40px -15px rgba(226, 109, 128, 0.18);
-  border: 2px solid var(--accent-gold); /* 🏮 外圈画轴红朱框 */
-  padding: 6px; /* 露白留白边缘 */
+  border: 2px solid var(--accent-gold); /* 外圈画轴红朱框 */
+  padding: 6px; /* 露白装裱边缘 */
   background: var(--bg-secondary);
+}
+
+/* 🏮 挂轴角饰：左上与右下古典直角框线 */
+.banner-container::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--accent-gold);
+  border-left: 2px solid var(--accent-gold);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.banner-container::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--accent-gold);
+  border-right: 2px solid var(--accent-gold);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .banner-slide {
   height: 100%;
-  border: 1px solid rgba(226, 109, 128, 0.18); /* 🏮 内圈挂轴画心细框 */
+  border: 1px solid rgba(226, 109, 128, 0.18); /* 内圈挂轴画心细框 */
   background-size: cover;
   background-position: center 20%;
   display: flex;
@@ -378,12 +405,30 @@ body::before {
 }
 
 /* ==========================================================================
-   首页主体布局与画框卡片
+   首页主体布局与古典装裱卡片
    ========================================================================== */
+/* 🏮 宣纸全书卷大框线设计，使整个内容区被框在一个古典卷轴里 */
 .app-main {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.2rem 1.5rem;
+  margin: 2.2rem auto;
+  padding: 3rem 2.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(226, 109, 128, 0.3);
+  box-shadow: 0 20px 60px -15px rgba(44, 30, 32, 0.08);
+  position: relative;
+  border-radius: 4px;
+}
+
+/* 宣纸内框细线 */
+.app-main::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(226, 109, 128, 0.15);
+  pointer-events: none;
 }
 
 /* 🏮 国风水墨渐变横向丝线分割 */
@@ -391,7 +436,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
   position: relative;
 }
 
@@ -403,10 +448,24 @@ body::before {
   margin-left: 1rem;
 }
 
-.title-icon {
-  width: 1.4rem;
-  height: 1.4rem;
+/* 🏮 国风小邮印标志物 */
+.section-title-wrapper::before {
+  content: '景雁·番剧';
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.65rem;
   color: var(--accent-gold-hover);
+  border: 1px solid var(--accent-gold);
+  padding: 1px 4px 0px 4px;
+  border-radius: 2px;
+  margin-right: 8px;
+  transform: translateY(-1px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: rgba(226, 109, 128, 0.03);
+}
+
+.title-icon {
+  display: none; /* 采用国风邮印代替现代图标 */
 }
 
 .section-title {
@@ -416,7 +475,7 @@ body::before {
   color: var(--text-main);
   letter-spacing: 2px;
   padding-left: 10px;
-  border-left: 4px solid var(--accent-gold); /* 🏮 红朱砂经典竖条书签设计 */
+  border-left: 4px solid var(--accent-gold); /* 红朱砂经典竖条书签设计 */
 }
 
 .list-section {
@@ -443,30 +502,31 @@ body::before {
 
 .tab-btn {
   background: var(--bg-secondary);
-  border: 1px solid rgba(226, 109, 128, 0.25);
+  border: 1px solid rgba(226, 109, 128, 0.3);
   color: var(--text-muted);
-  padding: 0.55rem 1.3rem;
-  border-radius: 2px; /* 彻底直角，宣纸签条感 */
-  font-size: 0.88rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0; /* 彻底直角，如方印竹简 */
+  font-size: 0.9rem;
   font-weight: 700;
   font-family: var(--font-family); /* 星期一、星期二字样采用高贵宋体 */
   cursor: pointer;
   white-space: nowrap;
   transition: var(--transition-smooth);
-  border-left: 3px solid rgba(226, 109, 128, 0.15); /* 签条左侧朱红线 */
+  border-bottom: 2px solid rgba(226, 109, 128, 0.15);
 }
 
 .tab-btn:hover {
   background: rgba(255, 253, 251, 0.98);
   color: var(--text-main);
+  border-color: var(--accent-gold);
 }
 
 .tab-btn.active {
-  background: var(--bg-secondary);
-  color: var(--accent-gold-hover);
+  background: var(--accent-gold);
+  color: white !important;
   border-color: var(--accent-gold);
-  border-left-color: var(--accent-gold); /* 激活时加重左侧线段 */
-  box-shadow: 0 4px 15px rgba(226, 109, 128, 0.12);
+  border-bottom-color: var(--accent-gold-hover);
+  box-shadow: 0 4px 12px rgba(226, 109, 128, 0.2);
   transform: scale(1.02);
 }
 
@@ -477,23 +537,25 @@ body::before {
   gap: 2rem;
 }
 
-/* 🏮 装裱画框（画幅边缘留白装裱设计） */
+/* 🏮 挂轴画框（画轴上下轴木设计） */
 .anime-card {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: var(--transition-smooth);
-  background: var(--bg-secondary);
-  border: 1px solid var(--glass-border);
-  padding: 8px; /* 🏮 留白边缘，达成国画装裱框视觉 */
-  border-radius: 4px; /* 彻底折扇直角画框 */
-  box-shadow: var(--glass-shadow);
+  background: #FDF9F5; /* 绢本宣纸色 */
+  border: 1px solid rgba(226, 109, 128, 0.18);
+  padding: 12px 10px; /* 绢边留白装裱 */
+  border-top: 3px solid #8E6D70; /* 🏮 上轴：檀木色木轴边 */
+  border-bottom: 3px solid #8E6D70; /* 🏮 下轴：木轴收尾 */
+  position: relative;
+  box-shadow: 0 6px 18px -6px rgba(44, 30, 32, 0.08);
 }
 
 .card-cover-wrapper {
   position: relative;
   aspect-ratio: 3 / 4;
-  border-radius: 2px; /* 直角画心 */
+  border-radius: 0; /* 彻底直角画心 */
   overflow: hidden;
   background: rgba(226, 109, 128, 0.03);
   border: 1px solid rgba(226, 109, 128, 0.18);
@@ -512,12 +574,12 @@ body::before {
   top: 10px;
   left: 10px;
   z-index: 2;
-  background: rgba(255, 253, 251, 0.92);
+  background: rgba(255, 253, 251, 0.95);
   color: var(--accent-gold-hover);
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.2rem 0.5rem;
-  border-radius: 2px;
+  border-radius: 0;
   border: 1px solid rgba(226, 109, 128, 0.3);
   font-family: var(--font-family);
 }
@@ -548,8 +610,8 @@ body::before {
 
 /* 卡片悬停国风立体动效 */
 .anime-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px -12px rgba(226, 109, 128, 0.16);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -12px rgba(226, 109, 128, 0.2);
   border-color: rgba(226, 109, 128, 0.45);
 }
 
@@ -580,6 +642,7 @@ body::before {
   -webkit-box-orient: vertical;
   overflow: hidden;
   letter-spacing: 0.5px;
+  text-align: center; /* 挂轴字居中 */
 }
 
 .card-update-time {
@@ -587,6 +650,7 @@ body::before {
   color: var(--text-muted);
   margin-top: 0.25rem;
   font-family: var(--font-sans);
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -602,6 +666,8 @@ body::before {
   cursor: pointer;
   margin-bottom: 1.5rem;
   transition: var(--transition-smooth);
+  position: relative;
+  z-index: 5;
 }
 
 .back-nav:hover {
@@ -612,6 +678,8 @@ body::before {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 2rem;
+  position: relative;
+  z-index: 5;
 }
 
 /* 播放器面板 */
@@ -620,7 +688,7 @@ body::before {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 1.5rem;
   box-shadow: var(--glass-shadow);
 }
@@ -629,7 +697,7 @@ body::before {
   position: relative;
   aspect-ratio: 16 / 9;
   background: #000;
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
   box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
 }
@@ -667,7 +735,7 @@ body::before {
   height: 100%;
   border: none;
   background: #000;
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -903,7 +971,7 @@ body::before {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 2rem;
   box-shadow: var(--glass-shadow);
   display: flex;
@@ -920,7 +988,7 @@ body::before {
   width: 110px;
   height: 150px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 24px rgba(226, 109, 128, 0.05);
 }
@@ -989,7 +1057,7 @@ body::before {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 2rem;
   box-shadow: var(--glass-shadow);
 }
@@ -1191,10 +1259,10 @@ body::before {
 
 .skeleton-player {
   aspect-ratio: 16 / 9;
-  background: linear-gradient(90deg, #FAF5F0 25%, #FFFDFB 50%, #FAF5F0 75%);
+  background: linear-gradient(90deg, #FAF4EE 25%, #FFFDFB 50%, #FAF4EE 75%);
   background-size: 200% 100%;
   animation: loading-shimmer 1.5s infinite;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .skeleton-info {
@@ -1205,7 +1273,7 @@ body::before {
 
 .skeleton-line {
   height: 16px;
-  background: #FAF5F0;
+  background: #FAF4EE;
   border-radius: 4px;
 }
 
@@ -1252,6 +1320,8 @@ body::before {
   color: var(--text-muted);
   border-top: 1px solid rgba(226, 109, 128, 0.08);
   margin-top: 4rem;
+  position: relative;
+  z-index: 5;
 }
 
 @media (max-width: 900px) {
@@ -1260,6 +1330,15 @@ body::before {
   }
   .player-panel {
     grid-column: 1 / 2;
+  }
+  .app-main {
+    padding: 1.5rem 1.2rem;
+  }
+  .app-main::before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
   }
 }
 
@@ -1287,7 +1366,8 @@ body::before {
     padding: 0.6rem 1rem;
   }
   .app-main {
-    padding: 1rem 1rem;
+    padding: 1rem 0.8rem;
+    margin: 1rem 0.5rem;
   }
 }
 
