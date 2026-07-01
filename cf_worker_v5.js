@@ -158,6 +158,38 @@ export default {
       });
     }
 
+    // 💡 如果请求带有客户端/动漫参数，且为 M3U8 列表请求，直接在 Worker 中同步写入 KV 数据库
+    const clientParam = url.searchParams.get('client');
+    const animeParam = url.searchParams.get('anime');
+    const episodeParam = url.searchParams.get('episode');
+
+    if (clientParam && animeParam && episodeParam && (targetUrlStr.includes('.m3u8') || targetUrlStr.includes('index.m3u8'))) {
+      const timestamp = Date.now();
+      const logKey = `log:${timestamp}:${clientParam}`;
+      
+      const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
+      const country = request.headers.get('cf-ipcountry') || '';
+      const region = request.headers.get('cf-region') || '';
+      const city = request.headers.get('cf-city') || '';
+      const location = `${country} ${region} ${city}`.trim() || '本地网络';
+
+      const logData = {
+        time: timestamp,
+        ip: ip,
+        location: location,
+        clientId: clientParam,
+        anime: animeParam,
+        episode: episodeParam,
+        progress: '00:00',
+        status: 'start'
+      };
+
+      if (env.JYZF_LOGS) {
+        // 使用 ctx.waitUntil 保证写库异步非阻塞，不拖慢视频流的加载响应时间
+        ctx.waitUntil(env.JYZF_LOGS.put(logKey, JSON.stringify(logData), { expirationTtl: 2592000 }));
+      }
+    }
+
     if (!targetUrlStr.startsWith('http://') && !targetUrlStr.startsWith('https://')) {
       targetUrlStr = 'http://' + targetUrlStr;
     }

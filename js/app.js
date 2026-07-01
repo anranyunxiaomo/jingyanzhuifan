@@ -533,8 +533,11 @@ new Vue({
                 screenshot: false,
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
-                  // 💡 黄金路由：直接使用我们在国内 100% 畅通无阻的个人专属代理域名中转，彻底抹平 CORS 和防盗链！
-                  url: "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl),
+                  // 💡 黄金路由：直接使用我们在国内 100% 畅通无阻的个人专属代理域名中转，将打点参数附带在视频流请求中，保证 100% 成功上报
+                  url: "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
+                       "&client=" + encodeURIComponent(this.clientId) +
+                       "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '未知动漫') +
+                       "&episode=" + encodeURIComponent(capturedEpName),
                   type: 'hls'
                 }
               });
