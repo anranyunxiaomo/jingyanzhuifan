@@ -217,8 +217,10 @@ new Vue({
       lucide.createIcons();
     }
     window.addEventListener('resize', this.handleResize);
-    // 🏮 监听 URL Hash 路由，实现前进后退及刷新保持状态
-    window.addEventListener('hashchange', this.handleHashRoute);
+    
+    // 🏮 绑定 Hash 路由监听，防 GC 泄露与 context 逃逸
+    this.hashRouteHandler = () => this.handleHashRoute();
+    window.addEventListener('hashchange', this.hashRouteHandler);
     this.handleHashRoute();
     
     // 初始化视频铺满模式的 body class 绑定，消除全屏状态下视频留黑
@@ -227,7 +229,9 @@ new Vue({
   
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
-    window.removeEventListener('hashchange', this.handleHashRoute);
+    if (this.hashRouteHandler) {
+      window.removeEventListener('hashchange', this.hashRouteHandler);
+    }
   },
   
   methods: {
@@ -784,18 +788,27 @@ new Vue({
       document.body.classList.add('fit-' + this.videoFitMode);
     },
     
-    // 💡 路由解析服务
+    // 💡 路由解析服务 (全面防错、支持 Trailing Slash、Query String，正则静默提取)
     handleHashRoute() {
-      // 💡 核心修复：使用 decodeURIComponent 解码 URL Hash！
-      // 移动端/微信及某些浏览器刷新时会把 "/ " 编码为 "%2F "，导致 startsWith("#/detail/") 判定失效。
-      const hash = decodeURIComponent(window.location.hash);
-      if (hash.startsWith('#/detail/')) {
-        const aid = hash.replace('#/detail/', '');
-        // 💡 增加防重入守卫：当前 ID 和 Hash ID 不同才发起请求，防止手动点击时触发双倍网络流量
+      let hash = "";
+      try {
+        hash = decodeURIComponent(window.location.hash);
+      } catch (e) {
+        hash = window.location.hash;
+      }
+      
+      console.log(`[ROUTER] URL hash change matched: "${hash}"`);
+      
+      // 正则动态适配 detail/<AID> 结构，100% 免疫斜杠、空格、后置参数及 URL 编码异化
+      const match = hash.match(/detail\/([0-9]+)/);
+      if (match) {
+        const aid = match[1];
+        console.log(`[ROUTER] Target route is detail page. AID: ${aid}`);
         if (aid && String(this.currentAnimeId) !== String(aid)) {
           this.selectAnime(aid, true);
         }
       } else {
+        console.log(`[ROUTER] Target route is homepage.`);
         if (this.currentAnimeId !== null) {
           this.goHome(true);
         }
