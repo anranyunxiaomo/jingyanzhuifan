@@ -1429,25 +1429,87 @@ body::before {
   z-index: 5;
 }
 
-@media (max-width: 900px) {
+/* ==========================================================================
+   📱 苹果设备响应式适配 (iPhone 17 Pro Max & iPad)
+   ========================================================================== */
+
+/* 🏮 核心适配：iPhone 17 Pro Max 顶部安全区域 */
+.app-header {
+  padding-top: env(safe-area-inset-top, 0); 
+}
+
+/* 🏮 核心适配：iPhone 17 Pro Max 底部指示条安全区域 */
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0); 
+}
+
+/* 📱 iPad / Tablet 专用中屏幕尺寸适配 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-main {
+    padding: 2rem 1.8rem;
+    margin: 1.5rem 1rem;
+  }
+  .app-main::before {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+  }
+  .detail-container {
+    /* iPad尺寸下，采用合理的两栏比例：左侧播放器占 1.5 倍，右侧详情占 1 倍，防止强制收缩 */
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 1.5rem;
+  }
+  .banner-container {
+    height: 320px; /* 适当缩减幻灯片高度，为列表留出视线空间 */
+  }
+  .banner-slide {
+    padding: 3rem;
+  }
+  .banner-title {
+    font-size: 2.2rem;
+  }
+  .grid-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 📱 手机及小屏幕设备级通用折叠 */
+@media (max-width: 768px) {
   .detail-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .player-panel {
     grid-column: 1 / 2;
   }
   .app-main {
-    padding: 1.5rem 1.2rem;
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0.5rem;
   }
   .app-main::before {
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
   }
 }
 
-@media (max-width: 600px) {
+/* 📱 iPhone 17 Pro Max & 紧凑手机尺寸精细适配 */
+@media (max-width: 480px) {
+  .gufeng-loader .loader-title {
+    font-size: 2.2rem;
+    letter-spacing: 8px;
+    margin-left: 8px;
+  }
+  .gufeng-loader .loader-quote {
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+  }
+  .banner-container {
+    height: 280px; /* 幻灯片在手机端适度压缩 */
+  }
   .banner-slide {
     padding: 1.5rem;
     align-items: flex-end;
@@ -1456,25 +1518,40 @@ body::before {
     background: linear-gradient(to top, rgba(255,253,251,0.98) 40%, rgba(255,253,251,0.4) 100%);
   }
   .banner-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  .banner-dots {
-    left: 1.5rem;
-    bottom: 15px;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
   }
   .grid-list {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1rem;
-  }
-  .header-container {
-    padding: 0.6rem 1rem;
+    /* 手机端 2 列网格卡片排列，最适合竖屏单手滑动阅览 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
   .app-main {
-    padding: 1rem 0.8rem;
-    margin: 1rem 0.5rem;
+    padding: 0.8rem 0.6rem;
+    margin: 0.8rem 0.3rem;
+  }
+  .anime-card {
+    padding: 8px 6px; /* 卡片内衬微调 */
+  }
+  .player-panel {
+    padding: 0.8rem; /* 减小内边距，让出更多播放面积 */
+  }
+  .info-panel, .episodes-panel {
+    padding: 1.2rem;
+  }
+  .logo-art {
+    font-size: 1.6rem; /* 导航字号缩小，防溢出 */
+  }
+  .logo-art::after {
+    margin-left: 6px;
+    padding: 1px 3px 0 3px;
+  }
+  .search-wrapper {
+    max-width: 100%;
   }
 }
+
 
 /* 🌟 追番收藏按钮与高亮动效 */
 .fav-toggle-btn {
