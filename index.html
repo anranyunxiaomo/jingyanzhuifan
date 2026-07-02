@@ -154,26 +154,26 @@
                     <i data-lucide="play-circle"></i> 立即观看
                   </button>
                 </div>
-
-                <!-- 🖋 景雁诗 · 竖排逐字墨滴浮层 -->
-                <div class="banner-poem" :key="'poem-' + currentBannerIndex + '-' + poemAnimKey" aria-hidden="true">
-                  <div
-                    class="poem-col"
-                    v-for="(line, li) in poemLines"
-                    :key="li"
-                  >
-                    <span
-                      v-for="(char, ci) in line.split('')"
-                      :key="ci"
-                      :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '']"
-                      :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
-                    >{{ char }}</span>
-                  </div>
-                  <div class="poem-seal">景雁</div>
-                </div>
               </div>
             </transition>
-            
+
+            <!-- 🖋 景雁诗 · 竖排逐字墨滴 (移出 transition 之外，只播一次，幻灯片切换不触发重播) -->
+            <div class="banner-poem" key="poem-once" aria-hidden="true">
+              <div
+                class="poem-col"
+                v-for="(line, li) in poemLines"
+                :key="li"
+              >
+                <span
+                  v-for="(char, ci) in line.split('')"
+                  :key="ci"
+                  :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '']"
+                  :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
+                >{{ char }}</span>
+              </div>
+              <div class="poem-seal">景雁</div>
+            </div>
+
             <!-- 幻灯片指示器 -->
             <div class="banner-dots">
               <span 
