@@ -204,6 +204,17 @@ new Vue({
   },
   
   created() {
+    // ⚡ 防止"Flash of Homepage"：在任何渲染前提前读取 hash，
+    // 如果目标是详情页，立即设置 currentAnimeId，
+    // Vue 初始渲染就直接走详情页骨架，跳过首页 → 不再出现"刷新闪首页"
+    try {
+      const hash = decodeURIComponent(window.location.hash);
+      const match = hash.match(/detail\/([0-9]+)/);
+      if (match && match[1]) {
+        this.currentAnimeId = match[1];
+      }
+    } catch(e) {}
+
     this.initData();
     this.initFavorites();     // 💡 载入收藏数据
     this.initWatchHistory();  // 💡 载入观看历史
