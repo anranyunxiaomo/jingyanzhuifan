@@ -511,6 +511,7 @@ new Vue({
       }
 
       // ✅ 初始化/生成全新播放会话 ID 和进度打点计数器
+      this._hasFallenBack = false; // 重置降级标志，每次新播放重新检测
       this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       this.lastLogProgressTime = 0;
 
@@ -680,6 +681,8 @@ new Vue({
                 if (!dp || !dp.video) return;
                 const currentTime = dp.video.currentTime;
                 const duration = dp.video.duration;
+                // ✅ 一旦真正开始播放，标记已播放，防止超时误降级
+                if (currentTime > 0.1) playbackStarted = true;
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
                   const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(pKey, currentTime.toString());
@@ -693,9 +696,11 @@ new Vue({
                 }
               });
 
-              // 💡 极限容灾：如果自建代理出意外报错，依然能自动无缝降级到公共 VIP 接口
-              dp.on('error', () => {
-                console.warn("[DPLAYER ERROR] Fallback to iframe resolve...");
+              // ─── 降级函数（复用，避免重复代码）───────────────────────
+              const fallbackToIframe = (reason) => {
+                if (this._hasFallenBack) return; // 防止多次触发
+                this._hasFallenBack = true;
+                console.warn(`[FALLBACK → iframe] reason: ${reason}`);
                 if (this.dpInstance) {
                   try {
                     this.dpInstance.off('timeupdate');
@@ -708,6 +713,34 @@ new Vue({
                 this.isIframeMode = true;
                 this.activePlayUrl = '';
                 this.$nextTick(() => { this.activePlayUrl = capturedIframeUrl; });
+              };
+
+              // 保险①：DPlayer 自身 error 事件
+              dp.on('error', () => fallbackToIframe('DPlayer error event'));
+
+              // 保险②：HLS.js 原生 FATAL 错误（CDN分片CORS失败不触发DPlayer error，但会触发这里）
+              try {
+                const hlsInst = dp.plugins && dp.plugins.hls;
+                if (hlsInst && typeof Hls !== 'undefined') {
+                  hlsInst.on(Hls.Events.ERROR, (evt, data) => {
+                    if (data.fatal) {
+                      console.warn('[HLS FATAL]', data.type, data.details);
+                      fallbackToIframe('HLS fatal: ' + data.details);
+                    }
+                  });
+                }
+              } catch(e) {}
+
+              // 保险③：8 秒超时保险——HLS.js 有时静默重试从不触发 fatal，靠此兜底
+              let playbackStarted = false;
+              const fallbackTimer = setTimeout(() => {
+                if (!playbackStarted) {
+                  fallbackToIframe('8s timeout, no playback detected');
+                }
+              }, 8000);
+              // timeupdate 里设置了 playbackStarted = true 时需要清除计时器
+              dp.on('timeupdate', () => {
+                if (playbackStarted && fallbackTimer) clearTimeout(fallbackTimer);
               });
 
             console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
