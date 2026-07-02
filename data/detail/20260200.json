@@ -1,0 +1,156 @@
+{
+  "video": {
+    "id": 20260200,
+    "name_other": "雅尼猫",
+    "company": "Bibury动画工作室",
+    "name": "尼古喵喵",
+    "type": "TV",
+    "writer": "喵喵Factory",
+    "name_original": "ヤニねこ",
+    "plot": "日常",
+    "plot_arr": [
+      "日常"
+    ],
+    "playlists": {
+      "xigua": [
+        [
+          "第01集",
+          "age_0623KJmUe1iG2V0ZY7SGhx6Z7YEQgN5mMvsCUo6wroKfUmr8Vzdb0FK%2F3VIE2qDwJ6Z45E8gLVMjhN70ySOsvApR"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_7845NWi%2FW97qbjz%2B64DiyUMIDIW1d7YsRCXq8caR%2FH0W%2FpUoFIRuXDg1a3bM4pd86wtP3xQlf0FODkImsHNmMNp%2FnfTnU8gv5AOYBYUv7Zq6o0Jo1skkzmhS",
+          "https://vip.ffzy-plays.com/20260703/55347_e5b9f5bf/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_918ejA0Fpept%2FZrPPY%2Bci31jzhdUZUyv9J8JrRMV7J0B3yneNNbJ4T%2BofxVgDM%2Fwpz8onTXBjJ0V5GIffAK5IOjdE3hZEvbukHrxCKFeNakC9LThWKn0yC0lVBF2GtE",
+          "https://v.baofeng11.com/video/nigumiaomiao/3ffa207499e7/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_f3adGAH9PTmpmaHDrL8dMIiP2ik8%2FDG2k%2F%2Bnq9dvHNygZ28KJkffm2nSHodE8HVuxc5MkXwkhl5bwkD0lv3qMDlm0WG2cWNjHIisaq%2BHU3zMd8Ys",
+          "https://v.lzcdn31.com/20260703/7865_42615174/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "N",
+    "website": "暂缺",
+    "star": 0,
+    "status": "连载",
+    "uptodate": "23:30 第01集",
+    "time_format_1": "20260703002912",
+    "time_format_2": "2026-07-03",
+    "time_format_3": "2026-07-03 00:29:12",
+    "time": 1783009752,
+    "tags": "日常",
+    "tags_arr": [
+      "日常"
+    ],
+    "intro": "尼古喵喵是只超爱抽烟的废物兽人！\r\n因为缺乏伦理与卫生观念，不是把烟头往窗外乱丢，就是对人乱吐口水，偶尔还会做出一些违法乱纪的事。\r\n幸好她身边有贴心的管家婆妹妹猫以及好友猫作伴，让她依旧能每天吞云吐雾、得过且过的生活着。",
+    "intro_html": "尼古喵喵是只超爱抽烟的废物兽人！<br />因为缺乏伦理与卫生观念，不是把烟头往窗外乱丢，就是对人乱吐口水，偶尔还会做出一些违法乱纪的事。<br />幸好她身边有贴心的管家婆妹妹猫以及好友猫作伴，让她依旧能每天吞云吐雾、得过且过的生活着。",
+    "intro_clean": "尼古喵喵是只超爱抽烟的废物兽人！因为缺乏伦理与卫生观念，不是把烟头往窗外乱丢，就是对人乱吐口水，偶尔还会做出一些违法乱纪的事。幸好她身边有贴心的管家婆妹妹猫以及好友猫作伴，让她依旧能每天吞云吐雾、得过且过的生活着。",
+    "series": "尼古喵喵",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 7,
+    "premiere": "2026-07-02",
+    "rank_cnt": "2,779",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "5",
+    "collect_cnt": "149"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20160249,
+      "Href": "/detail/20160249",
+      "NewTitle": "第10集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160249.jpg",
+      "Title": "超神学院 第四季(黑甲)"
+    },
+    {
+      "AID": 20210438,
+      "Href": "/detail/20210438",
+      "NewTitle": "第52集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210438.jpg",
+      "Title": "手机里的浣熊小镇"
+    },
+    {
+      "AID": 20120143,
+      "Href": "/detail/20120143",
+      "NewTitle": "第13集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120143.jpg",
+      "Title": "爱杀宝贝"
+    },
+    {
+      "AID": 20260123,
+      "Href": "/detail/20260123",
+      "NewTitle": "第06集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260123.jpg",
+      "Title": "一脸嫌弃表情的妹子给你看胖次R"
+    },
+    {
+      "AID": 20210316,
+      "Href": "/detail/20210316",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210316.jpg",
+      "Title": "蓝色时期"
+    },
+    {
+      "AID": 20220194,
+      "Href": "/detail/20220194",
+      "NewTitle": "第22话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220194.jpg",
+      "Title": "快穿之顶级反派要洗白 动态漫"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

@@ -1,20 +1,6 @@
 {
   "latest": [
     {
-      "AID": 20250249,
-      "Href": "/detail/20250249",
-      "NewTitle": "第39集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250249.jpg",
-      "Title": "考拉绘日记"
-    },
-    {
-      "AID": 20260180,
-      "Href": "/detail/20260180",
-      "NewTitle": "第2集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
-      "Title": "花样少男少女 第2季"
-    },
-    {
       "AID": 20260214,
       "Href": "/detail/20260214",
       "NewTitle": "第02集",
@@ -22,153 +8,167 @@
       "Title": "LV999的村民"
     },
     {
-      "AID": 20260219,
-      "Href": "/detail/20260219",
+      "AID": 20260073,
+      "Href": "/detail/20260073",
+      "NewTitle": "第14集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
+      "Title": "冰之城墙"
+    },
+    {
+      "AID": 20260189,
+      "Href": "/detail/20260189",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260189.jpg",
+      "Title": "世界在起舞"
+    },
+    {
+      "AID": 20260200,
+      "Href": "/detail/20260200",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
+      "Title": "尼古喵喵"
+    },
+    {
+      "AID": 20260212,
+      "Href": "/detail/20260212",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260212.jpg",
+      "Title": "被追放的转生重骑士用游戏知识开无双"
+    },
+    {
+      "AID": 20260210,
+      "Href": "/detail/20260210",
       "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
-      "Title": "女主角？圣女？不，我是杂役女仆（自豪）！"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
+      "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记"
     },
     {
-      "AID": 20260163,
-      "Href": "/detail/20260163",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260163.jpg",
-      "Title": "Candy Caries 蛀在糖糖里"
+      "AID": 20250269,
+      "Href": "/detail/20250269",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250269.jpg",
+      "Title": "面包超人 恰彭的英雄！"
     },
     {
-      "AID": 20260096,
-      "Href": "/detail/20260096",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
-      "Title": "欺诈游戏"
+      "AID": 20260169,
+      "Href": "/detail/20260169",
+      "NewTitle": "第03集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260169.jpg",
+      "Title": "BanG Dream! YUME∞MITA"
     },
     {
-      "AID": 20250251,
-      "Href": "/detail/20250251",
-      "NewTitle": "第38集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250251.jpg",
-      "Title": "会动的！从前从前有只猫 世界喵童话"
+      "AID": 20260193,
+      "Href": "/detail/20260193",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
+      "Title": "令和的斑小姐"
     },
     {
-      "AID": 20260246,
-      "Href": "/detail/20260246",
-      "NewTitle": "抢先版",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260246.jpg",
-      "Title": "剧场版 关于我转生变成史莱姆这档事 苍海之泪篇"
+      "AID": 20250209,
+      "Href": "/detail/20250209",
+      "NewTitle": "第39集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
+      "Title": "元祖！BanG Dream Chan"
     },
     {
-      "AID": 20260072,
-      "Href": "/detail/20260072",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260072.jpg",
-      "Title": "左撇子艾伦"
+      "AID": 20260184,
+      "Href": "/detail/20260184",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
+      "Title": "文豪野犬 汪！第二季"
     },
     {
-      "AID": 20260113,
-      "Href": "/detail/20260113",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260113.jpg",
-      "Title": "想结束这场“我爱你”的游戏"
-    },
-    {
-      "AID": 20260117,
-      "Href": "/detail/20260117",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260117.jpg",
-      "Title": "复制品的我也会谈恋爱。"
-    },
-    {
-      "AID": 20260111,
-      "Href": "/detail/20260111",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260111.jpg",
-      "Title": "婚姻剧毒"
+      "AID": 20250249,
+      "Href": "/detail/20250249",
+      "NewTitle": "第39集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250249.jpg",
+      "Title": "考拉绘日记"
     }
   ],
   "recommend": [
     {
-      "AID": 20140165,
-      "Href": "/detail/20140165",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140165.jpg",
-      "Title": "风云维新大将军"
-    },
-    {
-      "AID": 20160094,
-      "Href": "/detail/20160094",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160094.jpg",
-      "Title": "橘色奇迹"
-    },
-    {
-      "AID": 20180147,
-      "Href": "/detail/20180147",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180147.jpg",
-      "Title": "千绪的通学路"
-    },
-    {
-      "AID": 20180002,
-      "Href": "/detail/20180002",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180002.jpg",
-      "Title": "刀使巫女"
-    },
-    {
-      "AID": 20120084,
-      "Href": "/detail/20120084",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120084.jpg",
-      "Title": "轮回的拉格朗日"
-    },
-    {
-      "AID": 20160035,
-      "Href": "/detail/20160035",
+      "AID": 20190020,
+      "Href": "/detail/20190020",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160035.jpg",
-      "Title": "告诉我！辣妹子酱"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190020.jpg",
+      "Title": "飞翔吧！战机少女"
     },
     {
-      "AID": 20180262,
-      "Href": "/detail/20180262",
-      "NewTitle": "[TV 01-04]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180262.jpg",
-      "Title": "能继续奔跑下去真是太好了"
+      "AID": 20160121,
+      "Href": "/detail/20160121",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160121.jpg",
+      "Title": "只有我不在的街道"
     },
     {
-      "AID": 20170030,
-      "Href": "/detail/20170030",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170030.jpg",
-      "Title": "Re:CREATORS"
+      "AID": 20120014,
+      "Href": "/detail/20120014",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120014.jpg",
+      "Title": "中二病也要谈恋爱！"
     },
     {
-      "AID": 20070016,
-      "Href": "/detail/20070016",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070016.jpg",
-      "Title": "大剑"
-    },
-    {
-      "AID": 20020012,
-      "Href": "/detail/20020012",
+      "AID": 20170044,
+      "Href": "/detail/20170044",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020012.jpg",
-      "Title": "圆盘皇女"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170044.jpg",
+      "Title": "王室教师海涅"
     },
     {
-      "AID": 20180066,
-      "Href": "/detail/20180066",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180066.jpg",
-      "Title": "年轻老板娘是小学生！"
+      "AID": 20160138,
+      "Href": "/detail/20160138",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160138.jpg",
+      "Title": "无畏魔女"
     },
     {
-      "AID": 20080060,
-      "Href": "/detail/20080060",
+      "AID": 20100055,
+      "Href": "/detail/20100055",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100055.jpg",
+      "Title": "食梦者"
+    },
+    {
+      "AID": 20190174,
+      "Href": "/detail/20190174",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190174.jpg",
+      "Title": "超次元游戏 海王星～涅普的暑假～"
+    },
+    {
+      "AID": 20170096,
+      "Href": "/detail/20170096",
+      "NewTitle": "[TV 01-12+SP01-1",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170096.jpg",
+      "Title": "少女终末旅行"
+    },
+    {
+      "AID": 20140020,
+      "Href": "/detail/20140020",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140020.jpg",
+      "Title": "巴哈姆特之怒 GENESIS"
+    },
+    {
+      "AID": 20160047,
+      "Href": "/detail/20160047",
       "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080060.jpg",
-      "Title": "下一站巨星"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160047.jpg",
+      "Title": "Classica Loid"
+    },
+    {
+      "AID": 20000024,
+      "Href": "/detail/20000024",
+      "NewTitle": "[BD 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000024.jpg",
+      "Title": "我家也有外星人"
+    },
+    {
+      "AID": 20190210,
+      "Href": "/detail/20190210",
+      "NewTitle": "[WEB 01-24]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190210.jpg",
+      "Title": "无限之住人-IMMORTAL-"
     }
   ],
   "week_list": {
@@ -230,7 +230,7 @@
         "namefornew": "第12集(完结)"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260096,
         "wd": 1,
         "name": "欺诈游戏",
@@ -420,12 +420,12 @@
         "namefornew": "HD中字"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20250209,
         "wd": 4,
         "name": "元祖！BanG Dream Chan",
-        "mtime": "2026-06-25 23:05:19",
-        "namefornew": "21:00 第38集"
+        "mtime": "2026-07-02 23:02:49",
+        "namefornew": "21:00 第39集"
       },
       {
         "isnew": 0,
@@ -444,12 +444,12 @@
         "namefornew": "22:00 第13集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260073,
         "wd": 4,
         "name": "冰之城墙",
-        "mtime": "2026-06-27 01:04:32",
-        "namefornew": "22:56 第13集"
+        "mtime": "2026-07-03 00:30:39",
+        "namefornew": "22:56 第14集"
       },
       {
         "isnew": 0,
