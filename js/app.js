@@ -353,7 +353,7 @@ new Vue({
       this.activeEpisodeName = '';
       
       // 💡 分级策略 1：首先尝试拉取本地静态化详情 JSON (响应最快，免跨域)
-      axios.get(`data/detail/${aid}.json?t=${new Date().getTime()}`)
+      axios.get(`data/detail/${aid}.json`)  // 允许浏览器缓存，重复进同番剧秒开
         .then(response => {
           this.animeDetail = response.data;
           this.initializePlayerLine();
@@ -524,27 +524,48 @@ new Vue({
           container.innerHTML = '';
         }
 
-        this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx + '_' + new Date().getTime();
+        // dplayerKey 不再追加时间戳（减少不必要的 DOM 重建）
+        this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx;
 
+        // ⚡ Fix: 去掉 120ms 无意义延迟，直接在 nextTick 后初始化 DPlayer
         this.$nextTick(() => {
-          setTimeout(() => {
-            try {
-              const dp = new DPlayer({
-                container: document.getElementById('dplayer'),
-                autoplay: true,
-                screenshot: false,
-                playsinline: true,
-                id: capturedAnimeId + "_" + capturedEpName,
-                video: {
-                  // 💡 黄金路由：将打点参数与 SessionID 附带在视频流请求中，保证 100% 成功上报且会话内唯一
-                  url: "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
-                       "&client=" + encodeURIComponent(this.clientId) +
-                       "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '未知动漫') +
-                       "&episode=" + encodeURIComponent(capturedEpName) +
-                       "&session=" + encodeURIComponent(this.activeSessionId),
-                  type: 'hls'
+          try {
+            const proxyUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
+                             "&client=" + encodeURIComponent(this.clientId) +
+                             "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '') +
+                             "&episode=" + encodeURIComponent(capturedEpName) +
+                             "&session=" + encodeURIComponent(this.activeSessionId);
+
+            const dp = new DPlayer({
+              container: document.getElementById('dplayer'),
+              autoplay: true,
+              screenshot: false,
+              playsinline: true,
+              preload: 'auto',
+              id: capturedAnimeId + "_" + capturedEpName,
+              video: {
+                url: proxyUrl,
+                // ⚡ customHls：注入 HLS.js 加速配置（Web Worker + 自动带宽检测）
+                type: 'customHls',
+                customType: {
+                  customHls(video) {
+                    const hls = new Hls({
+                      enableWorker: true,              // Web Worker 提升解析性能
+                      startLevel: -1,                  // 自动选最快起播分辨率
+                      abrEwmaDefaultEstimate: 500000,  // 初始带宽预估 500kbps
+                      maxBufferLength: 30,
+                      maxMaxBufferLength: 60,
+                      fragLoadingTimeOut: 10000,
+                      manifestLoadingTimeOut: 8000,
+                      manifestLoadingMaxRetry: 2,
+                      fragLoadingMaxRetry: 2,
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                  }
                 }
-              });
+              }
+            });
               this.dpInstance = dp;
               
               // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
@@ -592,7 +613,7 @@ new Vue({
               });
 
               if (savedTime <= 3) {
-                console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
+                console.log("[GUARD] 1.5s zero-seek guard (from-zero only)...");
                 this.guardTimer = setInterval(() => {
                   try {
                     if (dp && dp.video) {
@@ -647,37 +668,29 @@ new Vue({
                 }
                 this.isIframeMode = true;
                 this.activePlayUrl = '';
-                this.$nextTick(() => {
-                  setTimeout(() => {
-                    this.activePlayUrl = capturedIframeUrl;
-                  }, 120);
-                });
+                this.$nextTick(() => { this.activePlayUrl = capturedIframeUrl; });
               });
 
-              console.log(`[DPLAYER PLAYING] URL: ${capturedRealUrl} | ID: ${capturedAnimeId}_${capturedEpName}`);
-            } catch(e) {
-              console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
-              this.isIframeMode = true;
-              this.activePlayUrl = capturedIframeUrl;
-            }
-          }, 120);
+            console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
+          } catch(e) {
+            console.error("[DPlayer Init Failed] Falling back to Iframe:", e);
+            this.isIframeMode = true;
+            this.activePlayUrl = capturedIframeUrl;
+          }
         });
         return;
       }
       
-      // 2. 如果不存在直链，同步降级为传统的 Iframe 解析模式
+      // 2. 无直链 → iframe 解析模式（去掉 120ms 延迟，nextTick 后立即赋值）
       this.isIframeMode = true;
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
         this.dpInstance = null;
       }
-      
       this.activePlayUrl = '';
       this.$nextTick(() => {
-        setTimeout(() => {
-          this.activePlayUrl = capturedIframeUrl;
-          console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
-        }, 120);
+        this.activePlayUrl = capturedIframeUrl;
+        console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
       });
     },
     
