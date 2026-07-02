@@ -607,6 +607,47 @@ new Vue({
                 }
               });
 
+              // ▶‖ 下一集按钮注入：仅在有下一集时显示，插在比例按钮左边
+              this.$nextTick(() => {
+                const ri = document.querySelector('.dplayer-icons-right');
+                if (ri && this.hasNextEpisode) {
+                  const existNext = ri.querySelector('.dplayer-next-icon');
+                  if (existNext) existNext.remove();
+
+                  const nextBtn = document.createElement('button');
+                  nextBtn.className = 'dplayer-icon dplayer-next-icon';
+                  nextBtn.title = '下一集';
+                  Object.assign(nextBtn.style, {
+                    width: 'auto', padding: '0 8px', color: '#fff',
+                    background: 'transparent', border: 'none',
+                    cursor: 'pointer', opacity: '0.8',
+                    transition: 'opacity 0.2s', display: 'inline-flex',
+                    alignItems: 'center', gap: '3px', verticalAlign: 'middle'
+                  });
+                  nextBtn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="5 4 15 12 5 20 5 4"/>
+                      <line x1="19" y1="5" x2="19" y2="19"/>
+                    </svg>
+                    <span style="font-size:11px;letter-spacing:0.02em;">下一集</span>`;
+
+                  nextBtn.onmouseenter = () => nextBtn.style.opacity = '1';
+                  nextBtn.onmouseleave = () => nextBtn.style.opacity = '0.8';
+
+                  const fitBtn = ri.querySelector('.dplayer-fit-icon');
+                  if (fitBtn) fitBtn.before(nextBtn);
+                  else ri.appendChild(nextBtn);
+
+                  nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.playNextEpisode();
+                  });
+                }
+              });
+
               if (savedTime <= 3) {
                 console.log("[GUARD] 1.5s zero-seek guard (from-zero only)...");
                 this.guardTimer = setInterval(() => {
