@@ -128,6 +128,11 @@ new Vue({
       const playlists = this.animeDetail.video.playlists;
       return playlists[this.activeLineKey] || [];
     },
+    // 是否存在下一集（当前不是最后一集）
+    hasNextEpisode() {
+      return this.activeEpisodeIndex > -1 &&
+             this.activeEpisodeIndex < this.activeEpisodes.length - 1;
+    },
     
     // 5. 智能搜索合并 (本地 115 热门缓存匹配 + 远程 API 实时检索并去重)
     filteredResults() {
@@ -685,6 +690,17 @@ new Vue({
       });
     },
     
+    // 播放下一集
+    playNextEpisode() {
+      if (!this.hasNextEpisode) return;
+      this.playEpisode(this.activeEpisodeIndex + 1);
+      // 切集后滚到播放器顶部，方便用户看到画面
+      this.$nextTick(() => {
+        const player = document.querySelector('.player-panel');
+        if (player) player.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    },
+
     forceResetProgressAndReplay() {
       if (this.activeEpisodeIndex === -1) return;
       console.log(`[FORCE RESET PROGRESS] Clearing cached index of: ${this.currentAnimeId}_${this.activeEpisodeName}`);
