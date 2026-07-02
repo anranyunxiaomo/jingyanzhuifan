@@ -130,12 +130,13 @@ body::after {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.9rem 1.5rem;
+  /* 🏮 流体内边距：大屏应该宽松，小屏贴边 */
+  padding: 0.8rem clamp(0.8rem, 3vw, 1.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .brand {
@@ -204,6 +205,8 @@ body::after {
 .search-wrapper {
   position: relative;
   flex: 1;
+  /* 关键：防止 flex 子项超出容器 */
+  min-width: 0;
   max-width: 480px;
 }
 
@@ -315,16 +318,17 @@ body::after {
    ========================================================================== */
 .banner-section {
   max-width: 1200px;
-  margin: 2.2rem auto 0 auto;
-  padding: 0 1.5rem;
+  /* 流体外边距 */
+  margin: clamp(1rem, 2.5vw, 2.2rem) auto 0 auto;
+  padding: 0 clamp(0.5rem, 2vw, 1.5rem);
 }
 
 .banner-container {
   position: relative;
-  height: 420px; /* 升高画幅，给侠客山水更充分的展示空间 */
+  /* 🏮 clamp 实现流体高度：从 155px（超小屏）到 420px（桌面）平滑过渡 */
+  height: clamp(155px, 35vw, 420px);
   border-radius: 4px;
   overflow: hidden;
-  /* 🏮 三层古典画框：外朱框 + 中金线 + 内白装裱 */
   box-shadow:
     0 0 0 2px var(--accent-gold),
     0 0 0 5px #FAF4EE,
@@ -500,8 +504,9 @@ body::after {
 
 .app-main {
   max-width: 1200px;
-  margin: 2.2rem auto;
-  padding: 3rem 2.5rem;
+  margin: clamp(0.5rem, 2.5vw, 2.2rem) auto;
+  /* 🏮 clamp 流体内边距：小屏不会太拥挤 */
+  padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 2.5rem);
   background: var(--bg-secondary);
   border: 1px solid rgba(217, 96, 122, 0.25);
   box-shadow:
@@ -510,9 +515,11 @@ body::after {
     0 1px 0 rgba(255, 255, 255, 0.95) inset;
   position: relative;
   border-radius: 4px;
-  z-index: 1; /* 确保在花瓣层上方 */
+  z-index: 1;
+  /* 实现 100% 宽度限制 */
+  box-sizing: border-box;
+  width: calc(100% - clamp(0.4rem, 2vw, 2rem) * 2);
 
-  /* 🏮 画轴展开动画：弹性阔开，慢慢剀转 → 平平展开 */
   transform-origin: center;
   animation: scrollUnroll 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -550,7 +557,7 @@ body::after {
   margin-left: 1rem;
 }
 
-/* 🏮 首字小印章 */
+/* 🏮 首字小印章（修复: 伪元素用 inline-flex） */
 .section-title-wrapper::before {
   content: '馨';
   font-family: 'Noto Serif SC', serif;
@@ -559,9 +566,11 @@ body::after {
   background: var(--accent-gold-hover);
   width: 20px;
   height: 20px;
-  display: flex;
+  /* 修复：伪元素应用 inline-flex */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
   border-radius: 1px;
   margin-right: 6px;
   font-weight: 900;
@@ -731,13 +740,15 @@ body::after {
   border-radius: 4px;
 }
 
+/* 🏮 播放器画心：封面容器维持 3:4 化 */
 .card-cover-wrapper {
   position: relative;
+  width: 100%;
   aspect-ratio: 3 / 4;
-  border-radius: 0; /* 彻底直角画心 */
+  border-radius: 0;
   overflow: hidden;
-  background: rgba(226, 109, 128, 0.03);
-  border: 1px solid rgba(226, 109, 128, 0.18);
+  background: rgba(217, 96, 122, 0.03);
+  border: 1px solid rgba(217, 96, 122, 0.18);
   transition: var(--transition-smooth);
 }
 
@@ -1176,12 +1187,15 @@ body::after {
 }
 
 .detail-poster {
-  width: 110px;
-  height: 150px;
+  /* 流体宽度：小屏自动缩小 */
+  width: clamp(72px, 12vw, 120px);
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 2px;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 24px rgba(226, 109, 128, 0.05);
+  box-shadow: 0 8px 24px rgba(184, 64, 96, 0.05);
+  flex-shrink: 0;
 }
 
 .detail-meta-info {
@@ -1318,9 +1332,10 @@ body::after {
 /* 剧集网格 */
 .episodes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  /* 流体列宽：山屏天算到小屏平滑缩 */
+  grid-template-columns: repeat(auto-fill, minmax(clamp(60px, 8vw, 90px), 1fr));
   gap: 8px;
-  max-height: 380px;
+  max-height: clamp(220px, 35vh, 380px);
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -1683,7 +1698,7 @@ body {
   .banner-title {
     font-size: 2rem;
   }
-  /* 📋 推荐/最近更新： iPad 下 3最4列弹性流动 */
+  /* 📋 推荐/最近更新： iPad 下弹性流动列 */
   .grid-list {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1.4rem;
@@ -1691,17 +1706,14 @@ body {
   /* 集数面板 iPad 下加大按鈕 */
   .episodes-grid {
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    max-height: 320px;
   }
   .ep-btn {
     padding: 0.65rem 0.3rem;
     font-size: 0.9rem;
   }
-  /* 二列展示详情面板 */
   .info-panel, .episodes-panel {
     padding: 1.5rem;
   }
-  /* 日程表方案小内联展示 */
   .schedule-section {
     margin-top: 2rem;
   }
@@ -1732,23 +1744,22 @@ body {
   .player-panel {
     grid-column: 1 / 2;
   }
+  /* app-main: clamp 已处理 padding/margin，这里只覆盖宽度计算 */
   .app-main {
-    padding: 1.2rem 0.8rem;
-    margin: 1rem 0.4rem;
+    width: calc(100% - 0.8rem);
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
     border-radius: 2px;
   }
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 推荐/最近更新：手机下严格 3 列，让封面气息优先 */
+  /* 推荐/最近更新：手机下 3 列 */
   .grid-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.9rem;
   }
-  /* Banner 内容居左调整 */
-  .banner-container {
-    height: 220px;
-  }
+  /* Banner 内容调整（高度由 clamp 控制） */
   .banner-slide {
     padding: 1.5rem;
     align-items: flex-end;
@@ -1757,23 +1768,16 @@ body {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
   }
-  /* 导航栏自动换行 */
-  .header-container {
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    padding: 0.7rem 1rem;
-  }
+  /* 导航栏搜索框独占一行 */
   .search-wrapper {
     order: 3;
     max-width: 100%;
     width: 100%;
   }
-  /* section 印章氏内容缩短 */
   .section-title {
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
-  /* 日程 Tab 要自动滚动，按鈕稍紧兑 */
   .week-tabs {
     gap: 6px;
     padding-bottom: 0.6rem;
@@ -1784,18 +1788,12 @@ body {
     min-width: 60px;
     text-align: center;
   }
-  /* 集数面板：手机下加大按鈕面积提升点击精度 */
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-    gap: 7px;
-    max-height: 280px;
-  }
+  /* 集数按鈕加大触控面积 */
   .ep-btn {
     padding: 0.6rem 0.2rem;
     font-size: 0.82rem;
     min-height: 40px;
   }
-  /* 线路 Tab 快捷 */
   .line-tabs {
     gap: 5px;
   }
