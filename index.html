@@ -155,7 +155,7 @@
                   </button>
                 </div>
 
-                <!-- 🖋 景明诗 · 竖排逐字墨滴浮层 -->
+                <!-- 🖋 景雁诗 · 竖排逐字墨滴浮层 -->
                 <div class="banner-poem" :key="'poem-' + currentBannerIndex + '-' + poemAnimKey" aria-hidden="true">
                   <div
                     class="poem-col"
@@ -163,13 +163,13 @@
                     :key="li"
                   >
                     <span
-                      class="poem-char"
                       v-for="(char, ci) in line.split('')"
                       :key="ci"
+                      :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '']"
                       :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
                     >{{ char }}</span>
                   </div>
-                  <div class="poem-seal">景明</div>
+                  <div class="poem-seal">景雁</div>
                 </div>
               </div>
             </transition>
@@ -605,6 +605,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260702T2135"></script>
+<script src="js/app.js?v=20260702T2151"></script>
 </body>
 </html>
