@@ -16,9 +16,25 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260701T1934">
+  <link rel="stylesheet" href="css/style.css?v=20260702T1846">
 </head>
 <body class="loader-active">
+
+<!-- 🌸 花瓣飘落粒子层（纯CSS，零JS，固定层不影响任何交互） -->
+<div class="sakura-layer" aria-hidden="true">
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+</div>
 
 <!-- 🏮 古风开屏双画轴分裂入画加载器 -->
 <div id="gufeng-loader" class="gufeng-loader">
@@ -126,11 +142,11 @@
         <section class="banner-section" v-if="bannerList.length > 0">
           <div class="banner-container">
             <transition name="fade" mode="out-in">
-              <div 
-                class="banner-slide" 
-                :key="currentBannerIndex"
-                :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,248,246,0.9) 30%, rgba(250,248,246,0.2) 100%), url(' + activeBanner.style + ')' }"
-              >
+        <div 
+          class="banner-slide" 
+          :key="currentBannerIndex"
+          :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,244,238,0.97) 0%, rgba(250,244,238,0.82) 30%, rgba(250,244,238,0.32) 65%, rgba(250,244,238,0.05) 100%), url(' + activeBanner.style + '), url(assets/wuxia_bg.jpg)' }"
+        >
                 <div class="banner-content">
                   <span class="banner-tag">精选推荐</span>
                   <h1 class="banner-title" v-html="activeBanner.html"></h1>
@@ -157,6 +173,64 @@
         <!-- 2. 动漫列表模式 (首页展示) -->
         <div class="home-content">
       
+      <!-- 💡 继续观看历史 (仅在有历史数据时展示) -->
+      <section class="list-section history-section" v-if="watchHistory.length > 0">
+        <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
+          <i data-lucide="clock-4" class="title-icon" style="color: #E26D80; width: 1.5rem; height: 1.5rem;"></i>
+          <h2 class="section-title" style="margin: 0; font-size: 1.4rem;">继续观看</h2>
+          <button 
+            class="history-clear-btn"
+            @click="clearWatchHistory"
+            title="清空全部历史"
+          >
+            <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i> 清空
+          </button>
+        </div>
+        <!-- 横向滚动容器 -->
+        <div class="history-scroll-container">
+          <div 
+            class="history-card" 
+            v-for="item in watchHistory" 
+            :key="item.AID"
+            @click="resumeFromHistory(item)"
+          >
+            <!-- 封面 + 进度条覆盖层 -->
+            <div class="history-cover-wrapper">
+              <img 
+                :src="item.Cover" 
+                :alt="item.Title" 
+                class="history-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
+              >
+              <!-- 进度条 -->
+              <div class="history-progress-bar" v-if="item.Duration > 0">
+                <div 
+                  class="history-progress-fill"
+                  :style="{ width: Math.min(100, Math.round(item.Progress / item.Duration * 100)) + '%' }"
+                ></div>
+              </div>
+              <!-- 悬浮播放按钮 -->
+              <div class="history-overlay">
+                <i data-lucide="play-circle" class="history-play-icon"></i>
+              </div>
+              <!-- 单条删除 -->
+              <button 
+                class="history-delete-btn"
+                @click.stop="removeWatchHistory(item.AID)"
+                title="删除此记录"
+              >
+                <i data-lucide="x" style="width: 10px; height: 10px;"></i>
+              </button>
+            </div>
+            <!-- 文字信息 -->
+            <div class="history-info">
+              <p class="history-title">{{ item.Title }}</p>
+              <p class="history-meta">{{ item.EpName }} · {{ formatTime(item.Progress) }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 🌟 我的追番收藏夹 (仅在有收藏数据时展示) -->
       <section class="list-section favorites-section" v-if="favorites.length > 0" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1.5rem;">
         <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
@@ -184,6 +258,7 @@
           </div>
         </div>
       </section>
+
 
       <!-- 2.1 每日更新时刻表 (星期卡片) -->
       <section class="schedule-section" v-if="weekListKeys.length > 0">
@@ -491,6 +566,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260701T1937"></script>
+<script src="js/app.js?v=20260702T1846"></script>
 </body>
 </html>

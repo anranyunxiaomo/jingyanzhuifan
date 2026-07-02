@@ -200,6 +200,16 @@ new Vue({
     // 自动判定当前星期几，高亮时刻表
     const today = new Date().getDay(); // 0=周日, 1=周一...
     this.activeWeekDay = today;
+
+    // 💡 刷新/直链还原：读取 URL 中的 ?aid= 参数，自动恢复到对应详情页
+    const urlParams = new URLSearchParams(window.location.search);
+    const aidFromUrl = urlParams.get('aid');
+    const epFromUrl  = urlParams.get('ep');
+    if (aidFromUrl) {
+      // 将恢复的集数索引挂到实例上，供 initializePlayerLine 后续使用
+      this._restoreEpIndex = epFromUrl !== null ? parseInt(epFromUrl, 10) : null;
+      this.selectAnime(aidFromUrl);
+    }
   },
   
   mounted() {
@@ -356,6 +366,14 @@ new Vue({
       const lines = this.availableLines;
       if (lines.length > 0) {
         this.activeLineKey = lines[0].key;
+      }
+      // 💡 刷新还原：如果 URL 携带了 ep 参数，自动恢复到对应集数并开始播放
+      if (this._restoreEpIndex !== null && this._restoreEpIndex !== undefined) {
+        const epIdx = this._restoreEpIndex;
+        this._restoreEpIndex = null; // 消费后清零，避免重复触发
+        this.$nextTick(() => {
+          this.playEpisode(epIdx);
+        });
       }
     },
     

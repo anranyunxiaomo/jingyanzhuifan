@@ -67,6 +67,9 @@ new Vue({
     screenWidth: window.innerWidth,
     detailTab: 'episodes', // 手机端详情页 Tab 控制: 'episodes' (选集) 或 'info' (简介)
     videoFitMode: 'contain', // 视频铺满模式: 'contain' (等比), 'cover' (裁剪), 'fill' (拉伸)
+    // 📺 观看历史 (最多保留 30 条，LocalStorage 持久化)
+    watchHistory: [],
+    _historyThrottleTimer: null, // 历史写入节流计时器
   },
   
   computed: {
@@ -202,7 +205,8 @@ new Vue({
   
   created() {
     this.initData();
-    this.initFavorites(); // 💡 载入收藏数据
+    this.initFavorites();     // 💡 载入收藏数据
+    this.initWatchHistory();  // 💡 载入观看历史
     this.startBannerAutoPlay();
     this.getOrCreateClientId(); // 💡 载入/生成唯一代号
     
@@ -382,10 +386,33 @@ new Vue({
     },
     
     initializePlayerLine() {
-      // 默认选中第一个可用的播放线路
+      // 💡 历史恢复优先：如有指定线路则用之，否则默认第一条
       const lines = this.availableLines;
-      if (lines.length > 0) {
+      if (this._restoreLineKey && lines.some(l => l.key === this._restoreLineKey)) {
+        this.activeLineKey = this._restoreLineKey;
+      } else if (lines.length > 0) {
         this.activeLineKey = lines[0].key;
+      }
+      this._restoreLineKey = null; // 消费后清零
+
+      // 💡 历史/URL 恢复：如有指定集数则自动播放并 seek
+      if (this._restoreEpIndex !== null && this._restoreEpIndex !== undefined) {
+        const epIdx = this._restoreEpIndex;
+        const seekTo = this._restoreTime || null;
+        this._restoreEpIndex = null;
+        this._restoreTime   = null;
+        this.$nextTick(() => {
+          // 注意：playEpisode 会从 localStorage 读取进度，如果 seekTo 有值则在加载后覆盖
+          if (seekTo !== null && seekTo > 3) {
+            // 临时覆写 localStorage 进度，确保 playEpisode 内部读到正确秒数
+            const ep = this.activeEpisodes[epIdx];
+            if (ep) {
+              const pKey = `jyzf_progress_${this.currentAnimeId}_${ep[0]}`;
+              localStorage.setItem(pKey, String(seekTo));
+            }
+          }
+          this.playEpisode(epIdx);
+        });
       }
     },
     
@@ -596,6 +623,13 @@ new Vue({
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
                   const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
                   localStorage.setItem(pKey, currentTime.toString());
+                  // 💡 节流写入观看历史 (每 10 秒写一次，避免高频 I/O)
+                  if (!this._historyThrottleTimer) {
+                    this._historyThrottleTimer = setTimeout(() => {
+                      this._historyThrottleTimer = null;
+                      this.saveWatchHistory(capturedAnimeId, capturedEpName, currentTime, duration);
+                    }, 10000);
+                  }
                 }
               });
 
@@ -672,6 +706,92 @@ new Vue({
       if (this.activeEpisodeIndex > -1) {
         this.playEpisode(this.activeEpisodeIndex);
       }
+    },
+
+    // ==========================================================================
+    // 📺 观看历史核心功能 (本地持久化 LocalStorage，最多 30 条)
+    // ==========================================================================
+    initWatchHistory() {
+      try {
+        const raw = localStorage.getItem('jyzf_watch_history');
+        this.watchHistory = raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        this.watchHistory = [];
+      }
+    },
+
+    /**
+     * 保存/更新一条观看历史
+     * @param {string} aid        - 番剧 AID
+     * @param {string} epName     - 集数名，如「第01集」
+     * @param {number} currentTime - 当前播放秒数
+     * @param {number} duration   - 总时长秒数
+     */
+    saveWatchHistory(aid, epName, currentTime, duration) {
+      if (!aid || !epName || !this.animeDetail) return;
+      const video = this.animeDetail.video;
+      if (!video) return;
+
+      // 找出当前集数在 activeEpisodes 中的索引（用于恢复时直接 playEpisode）
+      const epIdx = this.activeEpisodeIndex;
+      const lineKey = this.activeLineKey;
+
+      const entry = {
+        AID:        String(aid),
+        Title:      video.name || '未知番剧',
+        Cover:      video.cover || '',
+        EpName:     epName,
+        EpIdx:      epIdx,
+        LineKey:    lineKey,
+        Progress:   Math.floor(currentTime),   // 秒
+        Duration:   Math.floor(duration) || 0, // 秒
+        UpdatedAt:  Date.now()
+      };
+
+      // 删除同 AID 的旧记录，将最新的插到最前
+      this.watchHistory = this.watchHistory.filter(h => h.AID !== entry.AID);
+      this.watchHistory.unshift(entry);
+      // 最多保留 30 条
+      if (this.watchHistory.length > 30) {
+        this.watchHistory = this.watchHistory.slice(0, 30);
+      }
+
+      localStorage.setItem('jyzf_watch_history', JSON.stringify(this.watchHistory));
+    },
+
+    /**
+     * 从历史记录跳转：打开番剧 → 指定线路 → 指定集数 → seek 到记录进度
+     */
+    resumeFromHistory(entry) {
+      // 暂存恢复信息，供 initializePlayerLine 消费
+      this._restoreLineKey = entry.LineKey;
+      this._restoreEpIndex = entry.EpIdx;
+      this._restoreTime   = entry.Progress;
+      this.selectAnime(entry.AID);
+    },
+
+    /** 删除单条历史 */
+    removeWatchHistory(aid) {
+      this.watchHistory = this.watchHistory.filter(h => h.AID !== String(aid));
+      localStorage.setItem('jyzf_watch_history', JSON.stringify(this.watchHistory));
+    },
+
+    /** 清空全部历史 */
+    clearWatchHistory() {
+      this.watchHistory = [];
+      localStorage.removeItem('jyzf_watch_history');
+    },
+
+    /** 格式化秒数为 mm:ss 或 hh:mm:ss */
+    formatTime(sec) {
+      if (!sec || sec < 0) return '0:00';
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = Math.floor(sec % 60);
+      if (h > 0) {
+        return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${m}:${String(s).padStart(2, '0')}`;
     },
 
     // ==========================================================================
