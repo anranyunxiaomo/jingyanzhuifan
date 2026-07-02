@@ -593,11 +593,9 @@ new Vue({
                   btn.onmouseleave = () => btn.style.opacity = '0.8';
                   
                   const fsBtn = rightIcons.querySelector('.dplayer-full-icon');
-                  if (fsBtn) {
-                    rightIcons.insertBefore(btn, fsBtn);
-                  } else {
-                    rightIcons.appendChild(btn);
-                  }
+                  // insertBefore 要求严格父子关系，fsBtn.before() 更安全
+                  if (fsBtn) fsBtn.before(btn);
+                  else rightIcons.appendChild(btn);
                   
                   btn.addEventListener('click', (e) => {
                     e.preventDefault();
