@@ -438,12 +438,10 @@ new Vue({
       const epToken = ep[1];          // 加密 token 或直链 url
       const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
-      // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
-      // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
-      // 如此，以 location.href 作为视频进度数据库主键的所有第三方记忆插件，面对新链接时，均会 100% 重新从 0 播放！
+      // 防止第三方进度插件恢复：更新 hash 地址（必须保持 hash 格式，路由器依赖 #/detail/:id）
+      // ⚠️ 不能改为 query 参数格式，否则刷新时路由器识别不到 detail/:id，跳回首页
       try {
-        const newQuery = `?aid=${this.currentAnimeId}&ep=${epIdx}&_t=${new Date().getTime()}`;
-        window.history.replaceState(null, '', newQuery);
+        window.history.replaceState(null, '', `#/detail/${this.currentAnimeId}?ep=${epIdx}&_t=${new Date().getTime()}`);
       } catch (e) {}
 
       // 💡 智能流媒体路由算法 (Smart Resolver Routing)：
@@ -524,11 +522,13 @@ new Vue({
           container.innerHTML = '';
         }
 
-        // dplayerKey 不再追加时间戳（减少不必要的 DOM 重建）
+        // dplayerKey 变化后 Vue 需要两个渲染周期才能把新 #dplayer 挂载到 DOM
         this.dplayerKey = 'dplayer_' + this.currentAnimeId + '_' + epIdx;
 
-        // ⚡ Fix: 去掉 120ms 无意义延迟，直接在 nextTick 后初始化 DPlayer
+        // 双层 $nextTick：第一层等 Vue 销毁旧元素，第二层等新 #dplayer 插入 DOM
+        // 避免 getElementById('dplayer') 返回 null 导致 DPlayer 初始化失败
         this.$nextTick(() => {
+          this.$nextTick(() => {
           try {
             const proxyUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
                              "&client=" + encodeURIComponent(this.clientId) +
@@ -541,29 +541,10 @@ new Vue({
               autoplay: true,
               screenshot: false,
               playsinline: true,
-              preload: 'auto',
               id: capturedAnimeId + "_" + capturedEpName,
               video: {
                 url: proxyUrl,
-                // ⚡ customHls：注入 HLS.js 加速配置（Web Worker + 自动带宽检测）
-                type: 'customHls',
-                customType: {
-                  customHls(video) {
-                    const hls = new Hls({
-                      enableWorker: true,              // Web Worker 提升解析性能
-                      startLevel: -1,                  // 自动选最快起播分辨率
-                      abrEwmaDefaultEstimate: 500000,  // 初始带宽预估 500kbps
-                      maxBufferLength: 30,
-                      maxMaxBufferLength: 60,
-                      fragLoadingTimeOut: 10000,
-                      manifestLoadingTimeOut: 8000,
-                      manifestLoadingMaxRetry: 2,
-                      fragLoadingMaxRetry: 2,
-                    });
-                    hls.loadSource(video.src);
-                    hls.attachMedia(video);
-                  }
-                }
+                type: 'hls'   // 使用 DPlayer 内置 HLS 支持（稳定可靠）
               }
             });
               this.dpInstance = dp;
@@ -675,7 +656,8 @@ new Vue({
             this.isIframeMode = true;
             this.activePlayUrl = capturedIframeUrl;
           }
-        });
+          }); // 第二层 $nextTick 结束
+        }); // 第一层 $nextTick 结束
         return;
       }
       
