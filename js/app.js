@@ -70,6 +70,9 @@ new Vue({
     // 📺 观看历史 (最多保留 30 条，LocalStorage 持久化)
     watchHistory: [],
     _historyThrottleTimer: null, // 历史写入节流计时器
+    // 🖋 景明诗 · 古风诗词
+    poemLines: ['辞霜踏雪向景明，', '万里南飞一客雁。', '木棉红透珠江水，', '化作春风伴远山。'],
+    poemAnimKey: 0, // 每次重新触发动画时自增
   },
   
   computed: {

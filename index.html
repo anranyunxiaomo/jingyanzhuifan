@@ -154,6 +154,23 @@
                     <i data-lucide="play-circle"></i> 立即观看
                   </button>
                 </div>
+
+                <!-- 🖋 景明诗 · 竖排逐字墨滴浮层 -->
+                <div class="banner-poem" :key="'poem-' + currentBannerIndex + '-' + poemAnimKey" aria-hidden="true">
+                  <div
+                    class="poem-col"
+                    v-for="(line, li) in poemLines"
+                    :key="li"
+                  >
+                    <span
+                      class="poem-char"
+                      v-for="(char, ci) in line.split('')"
+                      :key="ci"
+                      :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
+                    >{{ char }}</span>
+                  </div>
+                  <div class="poem-seal">景明</div>
+                </div>
               </div>
             </transition>
             
