@@ -1,0 +1,167 @@
+{
+  "video": {
+    "id": 20260213,
+    "name_other": "The Frontier Lord Begins with Zero Subjects",
+    "company": "animation Studio42",
+    "name": "从0位居民开始的边境领主大人",
+    "type": "TV",
+    "writer": "风楼 (Earth Star)",
+    "name_original": "領民0人スタートの辺境領主様",
+    "plot": "战斗 冒险 奇幻",
+    "plot_arr": [
+      "战斗",
+      "冒险",
+      "奇幻"
+    ],
+    "playlists": {
+      "xigua": [
+        [
+          "第01集",
+          "age_6a6bR05%2ByUPoBWvF1MZkkqw%2BUn8ZtrLiayMkxqqgBR6hHKwfrZVEmNvG5h0KEHBx6mKEMVbUOlcu6%2F3aLRks64wp"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_867eLbi5dVwnMHc%2FdbjECSSimFAfwCcX8P%2FoRhBJfNotbsK0S6JSyYOuB40z9oUz3dSO%2FK1p7zFQQISNc0awWbAC7w8jyFbi5kDyJZ%2BvTcrvOEB8r7IpIaJD",
+          "https://vip.ffzy-plays.com/20260703/55376_5f190feb/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_29f0GcduGwnCeAtsWpeX51KAk05X6P6Kbc%2B2YjRIEEIk%2FzeMoRzvXutudwXSyQXu7umnJvd6IVCrAvDpRvbpPrensIhTUe67lf%2BGqaLlX8AR6bx8mSEOQqKgf4DxH1r7J55qbyW0ydEc0tRj6j0TsddqCU9FTW9uifqAvQ",
+          "https://v.baofeng11.com/video/cong0weijuminkaishidebianjinglingzhudaren/b0a6f9e6f201/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_20642%2FH1E3sSjzR3JXDxvEt%2FfnqRH8r1z%2FMdfHKJFuDg3JYR3J%2FlRUACrcUovBiePnR%2FZC20TOh1wMbePOSa1Ymug0cwGzp7Zma%2BYzWP%2FXC0SgccJeXOGMKu%2BAuPELKN8Q",
+          "https://v11.ppqrrs.com/wjv11/202607/03/VxN1t469yd94/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_80e1Lwmb1ef6CK4Y6I02g%2BHU5FUShFrKDHM%2FM1tj9m8T%2BMitfHlkoFZJrGizxpIzBGy3SM%2BnnmAVyzv6Ot0yJaIe8QLVLZXCkoporZtHNcg2o%2Bky",
+          "https://v.lzcdn31.com/20260703/7953_4673a2d5/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "C",
+    "website": "暂缺",
+    "star": 0,
+    "status": "连载",
+    "uptodate": "第01集",
+    "time_format_1": "20260704002355",
+    "time_format_2": "2026-07-04",
+    "time_format_3": "2026-07-04 00:23:55",
+    "time": 1783095835,
+    "tags": "战斗 冒险 奇幻",
+    "tags_arr": [
+      "战斗",
+      "冒险",
+      "奇幻"
+    ],
+    "intro": "因长期在战争中活跃，而被称为〝救国英雄〞的男人——迪亚斯。\r\n他所收到的唯一奖励就只有——广阔的领地。\r\n与生活在当地的鬼人族少女‧阿尔娜相遇后，开始了他作为领主的第二人生。",
+    "intro_html": "因长期在战争中活跃，而被称为〝救国英雄〞的男人——迪亚斯。<br />他所收到的唯一奖励就只有——广阔的领地。<br />与生活在当地的鬼人族少女‧阿尔娜相遇后，开始了他作为领主的第二人生。",
+    "intro_clean": "因长期在战争中活跃，而被称为〝救国英雄〞的男人——迪亚斯。他所收到的唯一奖励就只有——广阔的领地。与生活在当地的鬼人族少女‧阿尔娜相遇后，开始了他作为领主的第二人生。",
+    "series": "从0位居民开始的边境领主大人",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 7,
+    "premiere": "2026-07-10",
+    "rank_cnt": "821",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260213.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "5",
+    "collect_cnt": "111"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20240123,
+      "Href": "/detail/20240123",
+      "NewTitle": "第11集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240123.jpg",
+      "Title": "筋肉人 完美超人始祖篇"
+    },
+    {
+      "AID": 20250135,
+      "Href": "/detail/20250135",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250135.jpg",
+      "Title": "阴阳回天 Re:Birth"
+    },
+    {
+      "AID": 20120156,
+      "Href": "/detail/20120156",
+      "NewTitle": "第26集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120156.jpg",
+      "Title": "创圣的大天使EVOL"
+    },
+    {
+      "AID": 20120145,
+      "Href": "/detail/20120145",
+      "NewTitle": "第26集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120145.jpg",
+      "Title": "战国Collection"
+    },
+    {
+      "AID": 20220356,
+      "Href": "/detail/20220356",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220356.jpg",
+      "Title": "秋叶原女仆战争"
+    },
+    {
+      "AID": 20140158,
+      "Href": "/detail/20140158",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140158.jpg",
+      "Title": "漫研部 第二季"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
