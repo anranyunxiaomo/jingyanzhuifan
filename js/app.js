@@ -3,6 +3,12 @@ new Vue({
   data: {
     // 页面模式控制
     currentAnimeId: null,
+    currentPage: 'home',   // 'home' | 'catalog'
+
+    // 📚 番剧库（全部番剧浏览页）状态
+    catalogFilter: '全部',  // '全部' | '连载中' | '完结'
+    catalogSort: 'default', // 'default' | 'title'
+    catalogPageNum: 1,      // 当前分页（每页 48 部）
     
     // 首页静态化数据
     bannerList: [],
@@ -80,7 +86,36 @@ new Vue({
     isMobile() {
       return this.screenWidth <= 768;
     },
-    
+
+    // 📚 番剧库：过滤 + 排序后的完整列表
+    catalogAnimes() {
+      let list = this.searchIndex || [];
+      // 按状态筛选
+      if (this.catalogFilter !== '全部') {
+        list = list.filter(a => a.Status === this.catalogFilter);
+      }
+      // 排序
+      if (this.catalogSort === 'title') {
+        list = [...list].sort((a, b) => a.Title.localeCompare(b.Title, 'zh'));
+      } else {
+        // 默认：AID 倒序（越新越靠前）
+        list = [...list].sort((a, b) => Number(b.AID) - Number(a.AID));
+      }
+      return list;
+    },
+
+    // 📚 番剧库：当前分页数据
+    catalogPagedAnimes() {
+      const pageSize = 48;
+      const start = (this.catalogPageNum - 1) * pageSize;
+      return this.catalogAnimes.slice(start, start + pageSize);
+    },
+
+    // 📚 番剧库：总页数
+    catalogTotalPages() {
+      return Math.ceil(this.catalogAnimes.length / 48);
+    },
+
     // 1. 获取当前星期选中的动漫列表
     activeWeekList() {
       if (this.weekList && this.weekList[this.activeWeekDay]) {
@@ -956,6 +991,7 @@ new Vue({
       this.isIframeMode = false;
       
       this.currentAnimeId = null;
+      this.currentPage = 'home'; // 重置到首页视图
       if (!skipHashUpdate) {
         window.location.hash = '#/';
       }
@@ -969,6 +1005,23 @@ new Vue({
           lucide.createIcons();
         }
       });
+    },
+
+    // 📚 进入番剧库页
+    goCatalog() {
+      // 安全停止播放
+      if (this.dpInstance) {
+        try { this.dpInstance.destroy(); } catch(e) {}
+        this.dpInstance = null;
+      }
+      this.isIframeMode = false;
+      this.currentAnimeId = null;
+      this.animeDetail = null;
+      this.activePlayUrl = '';
+      this.currentPage = 'catalog';
+      this.catalogPageNum = 1; // 重置到第一页
+      window.location.hash = '#/catalog';
+      window.scrollTo(0, 0);
     },
     
     handleSearchBlur() {
@@ -1016,25 +1069,29 @@ new Vue({
       
       console.log(`[ROUTER] URL hash change matched: "${hash}"`);
       
-      // 正则动态适配 detail/<AID> 结构，100% 免疫斜杠、空格、后置参数及 URL 编码异化
+      // 正则动态适配 detail/<AID> 结构
       const match = hash.match(/detail\/([0-9]+)/);
       if (match) {
         const aid = match[1];
         console.log(`[ROUTER] Target route is detail page. AID: ${aid}`);
-        // ⚠️ 核心修复：即使 currentAnimeId 已预设相同，只要 animeDetail 未加载，就必须重新进入
-        // 否则刷新后 created() 预设了 ID 但 selectAnime() 没被调用，页面永远卡在首页骨架
         const needLoad = (String(this.currentAnimeId) !== String(aid)) || !this.animeDetail;
         if (aid && needLoad) {
-          // 解析 URL 中的 ep= 参数，刷新时自动恢复到指定集数
           const epMatch = hash.match(/[?&]ep=(\d+)/);
           if (epMatch) {
             this._restoreEpIndex = parseInt(epMatch[1], 10);
           }
           this.selectAnime(aid, true);
         }
+      } else if (hash.includes('/catalog')) {
+        // 📚 番剧库路由
+        console.log(`[ROUTER] Target route is catalog.`);
+        if (this.currentPage !== 'catalog') {
+          this.currentPage = 'catalog';
+          this.currentAnimeId = null;
+        }
       } else {
         console.log(`[ROUTER] Target route is homepage.`);
-        if (this.currentAnimeId !== null) {
+        if (this.currentAnimeId !== null || this.currentPage !== 'home') {
           this.goHome(true);
         }
       }

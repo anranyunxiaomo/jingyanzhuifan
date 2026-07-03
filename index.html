@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260703T1040">
+  <link rel="stylesheet" href="css/style.css?v=20260703T1914">
 </head>
 <body class="loader-active">
 
@@ -129,6 +129,15 @@
           </div>
         </transition>
       </div>
+      <!-- 📚 番剧库入口按鈕 -->
+      <button 
+        class="catalog-nav-btn"
+        :class="{ 'catalog-nav-btn--active': currentPage === 'catalog' }"
+        @click="goCatalog"
+      >
+        <i data-lucide="library" style="width:14px;height:14px;"></i>
+        <span>番剧库</span>
+      </button>
     </div>
   </header>
 
@@ -136,8 +145,79 @@
   <main class="app-main">
     
     <transition name="gufeng-fade-slide" mode="out-in">
-      <!-- 🏮 首页视图包装器 -->
-      <div v-if="!currentAnimeId" key="home">
+      <!-- 📚 番剧库视图 -->
+      <div v-if="!currentAnimeId && currentPage === 'catalog'" key="catalog" class="catalog-page">
+        <div class="catalog-header">
+          <h2 class="catalog-title">
+            <i data-lucide="library" style="width:20px;height:20px;vertical-align:-3px;margin-right:8px;"></i>
+            全部番剧库
+            <span class="catalog-count">({{ catalogAnimes.length }})部</span>
+          </h2>
+          <!-- 筛选栏 -->
+          <div class="catalog-filters">
+            <div class="catalog-filter-group">
+              <button 
+                v-for="f in ['全部', '连载中', '完结']"
+                :key="f"
+                class="filter-btn"
+                :class="{ active: catalogFilter === f }"
+                @click="catalogFilter = f; catalogPageNum = 1"
+              >{{ f }}</button>
+            </div>
+            <div class="catalog-sort-group">
+              <span style="font-size:12px;color:var(--color-text-muted);白-space:nowrap">排序：</span>
+              <select v-model="catalogSort" @change="catalogPageNum=1" class="catalog-sort-select">
+                <option value="default">最新优先</option>
+                <option value="title">名称排序</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 卡片网格 -->
+        <div class="catalog-grid">
+          <div
+            class="catalog-card"
+            v-for="anime in catalogPagedAnimes"
+            :key="anime.AID"
+            @click="selectAnime(anime.AID)"
+          >
+            <div class="catalog-card-cover">
+              <img 
+                :src="anime.Cover" 
+                :alt="anime.Title"
+                loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
+              >
+              <span class="catalog-status-badge" :class="anime.Status === '完结' ? 'badge-done' : 'badge-airing'">
+                {{ anime.Status }}
+              </span>
+            </div>
+            <div class="catalog-card-info">
+              <div class="catalog-card-title">{{ anime.Title }}</div>
+              <div class="catalog-card-ep">{{ anime.UpToDate }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 分页控制器 -->
+        <div class="catalog-pagination" v-if="catalogTotalPages > 1">
+          <button 
+            class="page-btn" 
+            :disabled="catalogPageNum <= 1"
+            @click="catalogPageNum--; $nextTick(() => window.scrollTo(0,0))"
+          >‹ 上一页</button>
+          <span class="page-info">{{ catalogPageNum }} / {{ catalogTotalPages }}</span>
+          <button 
+            class="page-btn"
+            :disabled="catalogPageNum >= catalogTotalPages"
+            @click="catalogPageNum++; $nextTick(() => window.scrollTo(0,0))"
+          >下一页 ›</button>
+        </div>
+      </div>
+
+      <!-- 🌏 首页视图包装器 -->
+      <div v-if="!currentAnimeId && currentPage === 'home'" key="home">
         <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
         <section class="banner-section" v-if="bannerList.length > 0">
           <div class="banner-container">
@@ -607,6 +687,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260703T1044"></script>
+<script src="js/app.js?v=20260703T1914"></script>
 </body>
 </html>

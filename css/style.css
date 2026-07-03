@@ -2875,5 +2875,230 @@ body.fit-fill iframe {
 }
 
 
+/* ==========================================================================
+   📚 番剧库 (Catalog) 页面样式
+   ========================================================================== */
 
+/* 导航栏「番剧库」按钮 */
+.catalog-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1.5px solid rgba(217, 96, 122, 0.3);
+  border-radius: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-silk);
+  white-space: nowrap;
+}
+.catalog-nav-btn:hover,
+.catalog-nav-btn--active {
+  background: rgba(217, 96, 122, 0.1);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
 
+/* 页面整体布局 */
+.catalog-page {
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem);
+  min-height: 80vh;
+}
+
+/* 页头：标题 + 筛选栏 */
+.catalog-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(217, 96, 122, 0.15);
+}
+.catalog-title {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+.catalog-count {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* 筛选区 */
+.catalog-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.catalog-filter-group {
+  display: flex;
+  gap: 6px;
+}
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(217, 96, 122, 0.25);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: rgba(217, 96, 122, 0.12);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+.catalog-sort-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.catalog-sort-select {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(217, 96, 122, 0.25);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 卡片网格 */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+@media (min-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  }
+}
+
+/* 单张卡片 */
+.catalog-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(217, 96, 122, 0.1);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-silk), box-shadow 0.25s var(--ease-silk);
+}
+.catalog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(184, 64, 96, 0.2);
+}
+
+/* 封面区 */
+.catalog-card-cover {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #f0e8e0;
+}
+.catalog-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-silk);
+}
+.catalog-card:hover .catalog-card-cover img {
+  transform: scale(1.06);
+}
+
+/* 状态徽章 */
+.catalog-status-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.badge-airing {
+  background: rgba(242, 140, 159, 0.92);
+  color: #fff;
+}
+.badge-done {
+  background: rgba(100, 100, 110, 0.85);
+  color: #fff;
+}
+
+/* 卡片底部信息 */
+.catalog-card-info {
+  padding: 8px 10px;
+}
+.catalog-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4px;
+}
+.catalog-card-ep {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 分页器 */
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(217, 96, 122, 0.1);
+}
+.page-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(217, 96, 122, 0.3);
+  background: transparent;
+  color: var(--accent-gold);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.page-btn:hover:not(:disabled) {
+  background: rgba(217, 96, 122, 0.1);
+  border-color: var(--accent-gold);
+}
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.page-info {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 60px;
+  text-align: center;
+}
