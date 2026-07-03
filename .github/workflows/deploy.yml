@@ -21,17 +21,18 @@ permissions:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20   # 整个 job 最多跑 20 分钟，防止脚本挂死永不结束
 
     steps:
       # 1. 签出当前仓库代码
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ⬆️ v3 → v4，原生支持 Node.js 20+
         with:
           persist-credentials: true
 
       # 2. 设置 Python 环境 (启用 requirements.txt 缓存机制)
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5   # ⬆️ v4 → v5，兼容 Node.js 24
         with:
           python-version: '3.9'
           cache: 'pip'
@@ -42,12 +43,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. 执行爬虫数据抓取 (在 GitHub 虚拟机中极速抓取并静态化动漫数据)
+      # 4. 执行爬虫数据抓取（步骤级超时 8 分钟，超时自动跳过，不阻断部署）
       - name: Fetch and staticize anime data
+        timeout-minutes: 8
+        continue-on-error: true    # 数据抓取失败不阻断页面部署
         run: |
           python update_data.py
 
-      # 5. 安全同步并自动推回静态数据 JSON（“物理备份与强覆盖对齐” 无冲突版）
+      # 5. 安全同步并自动推回静态数据 JSON（"物理备份与强覆盖对齐" 无冲突版）
       - name: Commit and push static data changes
         run: |
           # A. 确保本地切回真实的 main 分支并跟踪远程，防止 detached HEAD 游离
