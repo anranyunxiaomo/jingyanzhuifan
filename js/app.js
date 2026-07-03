@@ -453,18 +453,20 @@ new Vue({
       // 1. 在后台拉取最新首页数据
       axios.get('data/home-list.json')
         .then(response => {
-          const data = response.data;
+          const data = response.data || {};
+          
+          // 💡 无论缓存是否相同，都必须进行常规赋值以确保 Vue 的反应式状态正常，防止首屏因为缓存逻辑变为空白
+          this.latestList = data.latest || [];
+          this.recommendList = data.recommend || [];
+          this.weekList = data.week_list || {};
+          this.weekListKeys = Object.keys(this.weekList);
+          
           const cachedStr = localStorage.getItem('jyzf_home_list_cache');
           const newStr = JSON.stringify(data);
           
           if (newStr !== cachedStr) {
-            console.log("[CACHE UPDATE] 首页数据有更新，更新状态及缓存...");
-            this.latestList = data.latest || [];
-            this.recommendList = data.recommend || [];
-            this.weekList = data.week_list || {};
-            this.weekListKeys = Object.keys(this.weekList);
+            console.log("[CACHE UPDATE] 首页数据有更新，写入缓存并预加载新图片...");
             localStorage.setItem('jyzf_home_list_cache', newStr);
-            
             // 💾 异步预加载新动漫封面
             this.latestList.slice(0, 12).forEach(item => {
               this.preloadImage(item.PicSmall || item.Cover);
@@ -475,10 +477,11 @@ new Vue({
           axios.get('data/slipic.json')
             .then(res => {
               const banners = res.data || [];
+              this.bannerList = banners; // 💡 始终赋值
+              
               const cachedBStr = localStorage.getItem('jyzf_banner_list_cache');
               const newBStr = JSON.stringify(banners);
               if (newBStr !== cachedBStr) {
-                this.bannerList = banners;
                 localStorage.setItem('jyzf_banner_list_cache', newBStr);
                 // 预加载轮播大图
                 banners.forEach(b => this.preloadImage(b.style));
@@ -492,9 +495,11 @@ new Vue({
                 AID: item.AID,
                 style: item.PicSmall
               }));
+              
+              this.bannerList = fallbackBanners; // 💡 始终赋值
+              
               const fallbackBStr = JSON.stringify(fallbackBanners);
               if (fallbackBStr !== localStorage.getItem('jyzf_banner_list_cache')) {
-                this.bannerList = fallbackBanners;
                 localStorage.setItem('jyzf_banner_list_cache', fallbackBStr);
               }
             });
@@ -507,14 +512,14 @@ new Vue({
       axios.get('data/search_index.json')
         .then(response => {
           const newData = response.data || [];
+          this.searchIndex = newData; // 💡 始终赋值
+          
           const cachedIndexStr = localStorage.getItem('jyzf_search_index_cache');
           const newIndexStr = JSON.stringify(newData);
           
           if (newIndexStr !== cachedIndexStr) {
-            console.log("[CACHE UPDATE] 全局搜索及分类索引有更新，更新状态及缓存...");
-            this.searchIndex = newData;
+            console.log("[CACHE UPDATE] 全局搜索及分类索引有更新，写入缓存并预载图片...");
             localStorage.setItem('jyzf_search_index_cache', newIndexStr);
-            
             // 💾 异步预加载最新的前 24 个封面图以优化番剧库首屏体验
             newData.slice(0, 24).forEach(item => {
               this.preloadImage(item.Cover || item.PicSmall);
