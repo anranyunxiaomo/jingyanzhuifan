@@ -3125,7 +3125,7 @@ body.fit-fill iframe {
 .top-poem-banner {
   position: relative;
   width: 100%;
-  height: 125px; /* 精简折叠高度，比幻灯片稍短，显得主次分明 */
+  height: 165px; /* 增加高度以提供充足的垂直呼吸空间，绝不溢出 */
   background: var(--bg-secondary);
   border: 1px solid rgba(217, 96, 122, 0.16);
   border-radius: 8px;
@@ -3134,7 +3134,7 @@ body.fit-fill iframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.7) 0%, rgba(255, 253, 251, 0.95) 100%);
   overflow: hidden;
 }
@@ -3169,6 +3169,7 @@ body.fit-fill iframe {
   display: flex;
   flex-direction: row; /* 左=印章与末句，右=首句 */
   align-items: flex-start;
+  height: 140px; /* 锁定高度，保证竖排字符在容器内垂直居中且不漏出 */
   gap: clamp(0.5rem, 0.8vw, 1rem);
   padding: 0;
   background: transparent;
@@ -3176,10 +3177,27 @@ body.fit-fill iframe {
   opacity: 0.95;
 }
 
+/* 精细控制字号和行高，完美贴合白框容器 */
+.top-poem-banner .poem-char {
+  font-size: clamp(12px, 1.4vw, 16px);
+  line-height: 1.15;
+}
+.top-poem-banner .poem-char.is-punct {
+  font-size: clamp(10px, 1.1vw, 13px);
+}
+
+/* 将印章单独对齐到最左侧诗句的底部（经典落款位，且不溢出） */
+.top-poem-banner .poem-seal {
+  align-self: flex-end; 
+  margin-bottom: 4px;
+  font-size: clamp(9px, 1.1vw, 12px);
+  padding: 4px 2.5px;
+}
+
 /* 自适应媒体查询覆盖：保证在 iPad 和手机端无遮挡且适配完美 */
 @media (max-width: 768px) {
   .top-poem-banner {
-    height: 105px;
+    height: 125px; /* 平板/手机端稍扁一些 */
     padding: 0 1.2rem;
   }
   .gufeng-brand-stamp {
@@ -3191,19 +3209,22 @@ body.fit-fill iframe {
   }
   .top-poem-banner .banner-poem {
     right: 1.2rem;
+    height: 105px;
     gap: 0.4rem;
   }
   .top-poem-banner .poem-char {
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.1;
   }
   .top-poem-banner .poem-seal {
-    font-size: 9px;
+    font-size: 8px;
     padding: 3px 2px;
+    margin-bottom: 2px;
   }
 }
 
 @media (max-width: 520px) {
   .top-poem-banner {
-    display: none; /* 手机竖屏尺寸（超小屏）完全隐藏此独立顶栏，保证首屏直奔幻灯片和推荐列表，体验更顺畅 */
+    display: none; /* 手机竖屏尺寸（超小屏）完全隐藏此独立顶栏，保证首屏直奔推荐列表，体验更顺畅 */
   }
 }
