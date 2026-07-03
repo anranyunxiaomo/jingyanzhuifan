@@ -294,6 +294,91 @@ new Vue({
   
   methods: {
     // ==========================================================================
+    // 💾 缓存及预加载助手服务
+    // ==========================================================================
+    preloadImage(url) {
+      if (!url) return;
+      const img = new Image();
+      img.src = url;
+    },
+
+    getDetailFromCache(aid) {
+      try {
+        const cachedStr = localStorage.getItem(`jyzf_detail_cache_${aid}`);
+        if (cachedStr) {
+          const cached = JSON.parse(cachedStr);
+          return cached.data || null;
+        }
+      } catch (e) {
+        console.warn(`[CACHE] 读取详情缓存失败 (AID: ${aid}):`, e);
+      }
+      return null;
+    },
+
+    saveDetailToCache(aid, detailData) {
+      if (!aid || !detailData) return;
+      try {
+        // 维持缓存上限，防止 LocalStorage 溢出 (限制在 100 条以内)
+        const keys = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('jyzf_detail_cache_')) {
+            keys.push(key);
+          }
+        }
+        if (keys.length >= 100) {
+          // 清除前 15 条旧缓存
+          keys.slice(0, 15).forEach(k => localStorage.removeItem(k));
+        }
+
+        const cacheObj = {
+          time: Date.now(),
+          data: detailData
+        };
+        localStorage.setItem(`jyzf_detail_cache_${aid}`, JSON.stringify(cacheObj));
+        // 💾 同步预加载/缓存封面图
+        const cover = detailData.video && (detailData.video.cover || detailData.video.pic);
+        if (cover) {
+          this.preloadImage(cover);
+        }
+      } catch (e) {
+        console.warn(`[CACHE] 写入详情缓存失败 (AID: ${aid}):`, e);
+      }
+    },
+
+    hasDetailChanged(cached, fetched) {
+      if (!cached || !fetched) return true;
+      const cVideo = cached.video || {};
+      const fVideo = fetched.video || {};
+      
+      // 1. 比较封面
+      if (cVideo.cover !== fVideo.cover) return true;
+      
+      // 2. 比较播放线路
+      const cPlaylists = cVideo.playlists || {};
+      const fPlaylists = fVideo.playlists || {};
+      const cKeys = Object.keys(cPlaylists);
+      const fKeys = Object.keys(fPlaylists);
+      if (cKeys.length !== fKeys.length) return true;
+      
+      // 3. 比较集数及播放 URL 地址 (token/直链)
+      for (const key of fKeys) {
+        const cList = cPlaylists[key] || [];
+        const fList = fPlaylists[key] || [];
+        if (cList.length !== fList.length) return true;
+        
+        for (let i = 0; i < fList.length; i++) {
+          const cEp = cList[i] || [];
+          const fEp = fList[i] || [];
+          if (cEp[0] !== fEp[0] || cEp[1] !== fEp[1] || cEp[2] !== fEp[2]) {
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+
+    // ==========================================================================
     // 📊 景雁数据分析（Jingyan Analytics）打点服务
     // ==========================================================================
     getOrCreateClientId() {
@@ -341,42 +426,103 @@ new Vue({
     // 🚀 数据初始化与拉取 
     // ==========================================================================
     initData() {
-      // 1. 请求首页数据
-      axios.get('data/home-list.json')
-        .then(response => {
-          const data = response.data;
+      // 💾 A. 尝试从缓存中秒速恢复首页数据和搜索数据库
+      try {
+        const cachedHome = localStorage.getItem('jyzf_home_list_cache');
+        if (cachedHome) {
+          const data = JSON.parse(cachedHome);
           this.latestList = data.latest || [];
           this.recommendList = data.recommend || [];
           this.weekList = data.week_list || {};
           this.weekListKeys = Object.keys(this.weekList);
+        }
+        
+        const cachedIndex = localStorage.getItem('jyzf_search_index_cache');
+        if (cachedIndex) {
+          this.searchIndex = JSON.parse(cachedIndex);
+        }
+
+        const cachedBanners = localStorage.getItem('jyzf_banner_list_cache');
+        if (cachedBanners) {
+          this.bannerList = JSON.parse(cachedBanners);
+        }
+      } catch (e) {
+        console.warn("[CACHE] 恢复首页或搜索库缓存失败:", e);
+      }
+
+      // 1. 在后台拉取最新首页数据
+      axios.get('data/home-list.json')
+        .then(response => {
+          const data = response.data;
+          const cachedStr = localStorage.getItem('jyzf_home_list_cache');
+          const newStr = JSON.stringify(data);
           
-          // 幻灯片处理 (如果 slipic 未定义则降级使用 latest)
-          // 之前请求 slipic 失败可能是因为跨域或没本地持久化。如果本域没有，则用推荐图
+          if (newStr !== cachedStr) {
+            console.log("[CACHE UPDATE] 首页数据有更新，更新状态及缓存...");
+            this.latestList = data.latest || [];
+            this.recommendList = data.recommend || [];
+            this.weekList = data.week_list || {};
+            this.weekListKeys = Object.keys(this.weekList);
+            localStorage.setItem('jyzf_home_list_cache', newStr);
+            
+            // 💾 异步预加载新动漫封面
+            this.latestList.slice(0, 12).forEach(item => {
+              this.preloadImage(item.PicSmall || item.Cover);
+            });
+          }
+          
+          // 获取轮播图
           axios.get('data/slipic.json')
             .then(res => {
-              this.bannerList = res.data || [];
+              const banners = res.data || [];
+              const cachedBStr = localStorage.getItem('jyzf_banner_list_cache');
+              const newBStr = JSON.stringify(banners);
+              if (newBStr !== cachedBStr) {
+                this.bannerList = banners;
+                localStorage.setItem('jyzf_banner_list_cache', newBStr);
+                // 预加载轮播大图
+                banners.forEach(b => this.preloadImage(b.style));
+              }
             })
             .catch(() => {
               // 降级：从 latest 或 recommend 中拼凑出轮播图
               const list = this.recommendList.slice(0, 4);
-              this.bannerList = list.map(item => ({
+              const fallbackBanners = list.map(item => ({
                 html: item.Title,
                 AID: item.AID,
                 style: item.PicSmall
               }));
+              const fallbackBStr = JSON.stringify(fallbackBanners);
+              if (fallbackBStr !== localStorage.getItem('jyzf_banner_list_cache')) {
+                this.bannerList = fallbackBanners;
+                localStorage.setItem('jyzf_banner_list_cache', fallbackBStr);
+              }
             });
         })
         .catch(err => {
-          console.error("加载首页列表失败，请检查 data/ 目录是否已生成数据！", err);
+          console.error("后台同步首页列表失败，若无缓存页面可能为空:", err);
         });
 
-      // 2. 加载本地搜索数据库
+      // 2. 在后台拉取最新搜索与分类索引数据库
       axios.get('data/search_index.json')
         .then(response => {
-          this.searchIndex = response.data || [];
+          const newData = response.data || [];
+          const cachedIndexStr = localStorage.getItem('jyzf_search_index_cache');
+          const newIndexStr = JSON.stringify(newData);
+          
+          if (newIndexStr !== cachedIndexStr) {
+            console.log("[CACHE UPDATE] 全局搜索及分类索引有更新，更新状态及缓存...");
+            this.searchIndex = newData;
+            localStorage.setItem('jyzf_search_index_cache', newIndexStr);
+            
+            // 💾 异步预加载最新的前 24 个封面图以优化番剧库首屏体验
+            newData.slice(0, 24).forEach(item => {
+              this.preloadImage(item.Cover || item.PicSmall);
+            });
+          }
         })
         .catch(err => {
-          console.warn("加载搜索索引失败，模糊搜索暂时不可用", err);
+          console.warn("加载搜索索引失败，使用本地缓存或模糊搜索暂时不可用", err);
         });
     },
     
@@ -398,43 +544,84 @@ new Vue({
       if (!skipHashUpdate) {
         window.location.hash = '#/detail/' + aid;
       }
-      window.scrollTo(0, 0); // 🏮 瞬间将滚动条置顶，防止在详情页出现高度坍塌和滚动条错位
-      this.detailTab = 'episodes'; // 🏮 重新打开动漫时，默认选择“选集播放” Tab，缩短滚动操作
-      this.animeDetail = null;
-      this.activeLineKey = '';
-      this.activeEpisodeIndex = -1;
-      this.activePlayUrl = '';
-      this.activeEpisodeName = '';
+      window.scrollTo(0, 0); // 瞬间置顶
+      this.detailTab = 'episodes'; // 默认选择选集 Tab
       
-      // 💡 分级策略 1：首先尝试拉取本地静态化详情 JSON (响应最快，免跨域)
-      axios.get(`data/detail/${aid}.json`)  // 允许浏览器缓存，重复进同番剧秒开
+      // 💾 1. 首先尝试从 LocalStorage 中读取详情缓存 (实现零延迟秒开)
+      const cached = this.getDetailFromCache(aid);
+      if (cached) {
+        console.log(`[CACHE HIT] 瞬间从缓存渲染动漫 (AID: ${aid})`);
+        this.animeDetail = cached;
+        this.initializePlayerLine();
+      } else {
+        // 无缓存时初始化状态
+        this.animeDetail = null;
+        this.activeLineKey = '';
+        this.activeEpisodeIndex = -1;
+        this.activePlayUrl = '';
+        this.activeEpisodeName = '';
+      }
+
+      // 💾 定义后台请求数据的比对和状态刷新处理器
+      const handleFetchedDetail = (fetchedData) => {
+        if (!fetchedData) return;
+        const changed = this.hasDetailChanged(this.animeDetail, fetchedData);
+        
+        if (changed || !this.animeDetail) {
+          console.log(`[CACHE UPDATE] 动漫数据 (AID: ${aid}) 存在新变动（封面或 m3u8 地址已更新），自动刷新并存盘...`);
+          
+          const prevEpIdx = this.activeEpisodeIndex;
+          this.animeDetail = fetchedData;
+          this.saveDetailToCache(aid, fetchedData);
+          
+          // 如果用户还没有点播具体集数，则重新初始化线路
+          if (prevEpIdx === -1) {
+            this.initializePlayerLine();
+          } else {
+            // 如果已在播放，保持当前线路选择，除非该线路被删掉了
+            const lines = this.availableLines;
+            if (this.activeLineKey && !lines.some(l => l.key === this.activeLineKey) && lines.length > 0) {
+              this.activeLineKey = lines[0].key;
+            }
+          }
+        } else {
+          console.log(`[CACHE VALID] 动漫数据 (AID: ${aid}) 未发生改变，本地缓存有效`);
+        }
+      };
+
+      // 💾 2. 后台获取最新数据以进行验证及热更新
+      axios.get(`data/detail/${aid}.json`)
         .then(response => {
-          this.animeDetail = response.data;
-          this.initializePlayerLine();
+          handleFetchedDetail(response.data);
         })
         .catch(err => {
-          console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 未命中，自动启用云端 API 实时加载防线...`);
+          console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 获取失败，转入云端 API 后台拉取...`);
           
-          // 💡 分级策略 2：本地无缓存，直接跨域拉取官方云端详情 API (通过高可用 CORS Fallback 代理链)
           const AGE_API_BASE = "https://api.agedm.io/v2/";
           const targetUrl = `${AGE_API_BASE}detail/${aid}`;
           this.axiosGetViaProxy(targetUrl)
             .then(response => {
               const resData = response.data;
+              let fetchedData = null;
               if (resData && resData.video) {
-                this.animeDetail = resData;
-                this.initializePlayerLine();
+                fetchedData = resData;
               } else if (resData && resData.data) {
-                this.animeDetail = resData.data;
-                this.initializePlayerLine();
+                fetchedData = resData.data;
+              }
+              
+              if (fetchedData) {
+                handleFetchedDetail(fetchedData);
               } else {
-                throw new Error("接口返回的详情无效");
+                throw new Error("云端详情接口返回的格式无效");
               }
             })
             .catch(apiErr => {
-              console.error("官方实时详情拉取失败！", apiErr);
-              alert("加载动漫详情失败，此动漫暂时无法访问，请尝试切换其他网络。");
-              this.goHome();
+              console.error("云端详情拉取失败！", apiErr);
+              // 如果既无缓存又同步失败，则回首页
+              if (!this.animeDetail) {
+                alert("加载动漫详情失败，此动漫暂时无法访问，请尝试切换其他网络。");
+                this.goHome();
+              }
             });
         });
     },
