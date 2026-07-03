@@ -439,19 +439,21 @@ body::after {
   100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-/* 诗词浮层容器：绝对定位在 banner-slide 右侧 */
+/* 诗词浮层容器：绝对定位在 banner 左侧 */
 .banner-poem {
   position: absolute;
-  right: clamp(3%, 8%, 12%);
+  left: clamp(2%, 4%, 6%);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: row;          /* 数据层已反序：左=末句，右=首句，从右往左读 */
   align-items: flex-start;
   gap: clamp(0.5rem, 1vw, 1.1rem);
-  z-index: 3;
+  z-index: 1;      /* 标题/按钮(z-index:2)覆盖在诗词上，诗词作装饰底层 */
   pointer-events: none;
   padding: 0.6rem 0.4rem;
+  /* 轻微半透明，融入背景不抢内容 */
+  opacity: 0.88;
 }
 
 /* 每一列诗句：writing-mode 控制文字竖排，
@@ -521,7 +523,6 @@ body::after {
 @media (max-width: 680px) {
   .banner-poem {
     position: absolute;
-    right: unset;
     left: 50%;
     top: unset;
     bottom: 10px;
@@ -533,6 +534,7 @@ body::after {
     backdrop-filter: blur(4px);
     border-radius: 6px;
     border: 1px solid rgba(200, 168, 107, 0.2);
+    opacity: 1;
   }
   .poem-col {
     writing-mode: horizontal-tb;  /* 手机端改为横排 */
