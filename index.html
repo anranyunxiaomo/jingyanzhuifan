@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260703T1914">
+  <link rel="stylesheet" href="css/style.css?v=20260703T1931">
 </head>
 <body class="loader-active">
 
@@ -247,7 +247,7 @@
                 <span
                   v-for="(char, ci) in line.split('')"
                   :key="ci"
-                  :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '']"
+                  :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '', (char === '景' || char === '雁') ? 'sparkle-pink' : '']"
                   :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
                 >{{ char }}</span>
               </div>
@@ -687,6 +687,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260703T1922"></script>
+<script src="js/app.js?v=20260703T1931"></script>
 </body>
 </html>

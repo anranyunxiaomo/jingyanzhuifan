@@ -439,21 +439,39 @@ body::after {
   100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-/* 诗词浮层容器：绝对定位在 banner 左侧 */
+/* 诗词浮层容器：绝对定位在 banner 右侧 */
 .banner-poem {
   position: absolute;
-  left: clamp(2%, 4%, 6%);
+  right: clamp(3%, 8%, 12%);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: row;          /* 数据层已反序：左=末句，右=首句，从右往左读 */
   align-items: flex-start;
   gap: clamp(0.5rem, 1vw, 1.1rem);
-  z-index: 1;      /* 标题/按钮(z-index:2)覆盖在诗词上，诗词作装饰底层 */
+  z-index: 3;      /* 移到右侧，作为精美古风点缀，z-index提升为3显示在海报图层上方 */
   pointer-events: none;
   padding: 0.6rem 0.4rem;
-  /* 轻微半透明，融入背景不抢内容 */
-  opacity: 0.88;
+  opacity: 0.95;
+}
+
+/* 🌸 粉色闪闪特效：用于“景”和“雁”二字 */
+.sparkle-pink {
+  color: #ff6ea2 !important; /* 精致亮丽的樱桃粉色 */
+  font-weight: 900 !important;
+  text-shadow: 0 0 4px rgba(255, 110, 162, 0.75), 0 0 10px rgba(255, 110, 162, 0.4);
+  animation: inkDrop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, pinkSparkle 2s infinite ease-in-out !important;
+}
+
+@keyframes pinkSparkle {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(255, 110, 162, 0.75), 0 0 10px rgba(255, 110, 162, 0.4);
+    filter: brightness(1) drop-shadow(0 0 2px rgba(255, 110, 162, 0.3));
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(255, 110, 162, 0.95), 0 0 18px rgba(255, 110, 162, 0.65), 0 0 28px rgba(255, 110, 162, 0.4);
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 110, 162, 0.5));
+  }
 }
 
 /* 每一列诗句：writing-mode 控制文字竖排，
