@@ -446,7 +446,7 @@ body::after {
   top: 50%;
   transform: translateY(-50%);
   display: flex;
-  flex-direction: row-reverse;  /* 古文右→左阅读：首句在右，末句在左 */
+  flex-direction: row;          /* 数据层已反序：左=末句，右=首句，从右往左读 */
   align-items: flex-start;
   gap: clamp(0.5rem, 1vw, 1.1rem);
   z-index: 3;
