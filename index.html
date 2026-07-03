@@ -196,6 +196,26 @@
             <div class="catalog-card-info">
               <div class="catalog-card-title">{{ anime.Title }}</div>
               <div class="catalog-card-ep">{{ anime.UpToDate }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 分页控制器 -->
+        <div class="catalog-pagination" v-if="catalogTotalPages > 1">
+          <button 
+            class="page-btn" 
+            :disabled="catalogPageNum <= 1"
+            @click="catalogPageNum--; $nextTick(() => window.scrollTo(0,0))"
+          >‹ 上一页</button>
+          <span class="page-info">{{ catalogPageNum }} / {{ catalogTotalPages }}</span>
+          <button 
+            class="page-btn"
+            :disabled="catalogPageNum >= catalogTotalPages"
+            @click="catalogPageNum++; $nextTick(() => window.scrollTo(0,0))"
+          >下一页 ›</button>
+        </div>
+      </div>
+
       <!-- 🌏 首页视图包装器 -->
       <div v-if="!currentAnimeId && currentPage === 'home'" key="home">
         
