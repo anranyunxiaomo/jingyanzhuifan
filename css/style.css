@@ -3120,3 +3120,90 @@ body.fit-fill iframe {
   min-width: 60px;
   text-align: center;
 }
+
+/* 🖋 独立古风诗歌顶部横幅 */
+.top-poem-banner {
+  position: relative;
+  width: 100%;
+  height: 125px; /* 精简折叠高度，比幻灯片稍短，显得主次分明 */
+  background: var(--bg-secondary);
+  border: 1px solid rgba(217, 96, 122, 0.16);
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.7) 0%, rgba(255, 253, 251, 0.95) 100%);
+  overflow: hidden;
+}
+
+/* 诗歌独立容器内左侧文字 */
+.top-poem-left-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  user-select: none;
+}
+.gufeng-brand-stamp {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+}
+.gufeng-brand-sub {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* 让诗句在顶部独立容器中靠右绝对定位 */
+.top-poem-banner .banner-poem {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row; /* 左=印章与末句，右=首句 */
+  align-items: flex-start;
+  gap: clamp(0.5rem, 0.8vw, 1rem);
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.95;
+}
+
+/* 自适应媒体查询覆盖：保证在 iPad 和手机端无遮挡且适配完美 */
+@media (max-width: 768px) {
+  .top-poem-banner {
+    height: 105px;
+    padding: 0 1.2rem;
+  }
+  .gufeng-brand-stamp {
+    font-size: 1.1rem;
+  }
+  .gufeng-brand-sub {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  .top-poem-banner .banner-poem {
+    right: 1.2rem;
+    gap: 0.4rem;
+  }
+  .top-poem-banner .poem-char {
+    font-size: 12px;
+  }
+  .top-poem-banner .poem-seal {
+    font-size: 9px;
+    padding: 3px 2px;
+  }
+}
+
+@media (max-width: 520px) {
+  .top-poem-banner {
+    display: none; /* 手机竖屏尺寸（超小屏）完全隐藏此独立顶栏，保证首屏直奔幻灯片和推荐列表，体验更顺畅 */
+  }
+}

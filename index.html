@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260703T1931">
+  <link rel="stylesheet" href="css/style.css?v=20260703T1939">
 </head>
 <body class="loader-active">
 
@@ -196,37 +196,44 @@
             <div class="catalog-card-info">
               <div class="catalog-card-title">{{ anime.Title }}</div>
               <div class="catalog-card-ep">{{ anime.UpToDate }}</div>
+      <!-- 🌏 首页视图包装器 -->
+      <div v-if="!currentAnimeId && currentPage === 'home'" key="home">
+        
+        <!-- 🖋 独立古风诗词横幅 (位于精选推荐幻灯片上方，居右侧展示，左侧带优雅卷轴名) -->
+        <div class="top-poem-banner" v-if="bannerList.length > 0">
+          <div class="top-poem-left-text">
+            <span class="gufeng-brand-stamp">景雁·番書</span>
+            <span class="gufeng-brand-sub">「浮生半日，閑聽雨眠」</span>
+          </div>
+          <!-- 诗词排版容器 -->
+          <div class="banner-poem" key="poem-once" aria-hidden="true">
+            <!-- 印章移到最左侧（阅读顺序的最后） -->
+            <div class="poem-seal">景雁</div>
+            
+            <div
+              class="poem-col"
+              v-for="(line, li) in poemLines"
+              :key="li"
+            >
+              <span
+                v-for="(char, ci) in line.split('')"
+                :key="ci"
+                :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '', (char === '景' || char === '雁') ? 'sparkle-pink' : '']"
+                :style="{ animationDelay: ((poemLines.length - 1 - li) * 6 + ci) * 0.11 + 's' }"
+              >{{ char }}</span>
             </div>
           </div>
         </div>
 
-        <!-- 分页控制器 -->
-        <div class="catalog-pagination" v-if="catalogTotalPages > 1">
-          <button 
-            class="page-btn" 
-            :disabled="catalogPageNum <= 1"
-            @click="catalogPageNum--; $nextTick(() => window.scrollTo(0,0))"
-          >‹ 上一页</button>
-          <span class="page-info">{{ catalogPageNum }} / {{ catalogTotalPages }}</span>
-          <button 
-            class="page-btn"
-            :disabled="catalogPageNum >= catalogTotalPages"
-            @click="catalogPageNum++; $nextTick(() => window.scrollTo(0,0))"
-          >下一页 ›</button>
-        </div>
-      </div>
-
-      <!-- 🌏 首页视图包装器 -->
-      <div v-if="!currentAnimeId && currentPage === 'home'" key="home">
         <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
         <section class="banner-section" v-if="bannerList.length > 0">
           <div class="banner-container">
             <transition name="fade" mode="out-in">
-        <div 
-          class="banner-slide" 
-          :key="currentBannerIndex"
-          :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,244,238,0.97) 0%, rgba(250,244,238,0.82) 30%, rgba(250,244,238,0.32) 65%, rgba(250,244,238,0.05) 100%), url(' + activeBanner.style + '), url(assets/wuxia_bg.jpg)' }"
-        >
+              <div 
+                class="banner-slide" 
+                :key="currentBannerIndex"
+                :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,244,238,0.97) 0%, rgba(250,244,238,0.82) 30%, rgba(250,244,238,0.32) 65%, rgba(250,244,238,0.05) 100%), url(' + activeBanner.style + '), url(assets/wuxia_bg.jpg)' }"
+              >
                 <div class="banner-content">
                   <span class="banner-tag">精选推荐</span>
                   <h1 class="banner-title" v-html="activeBanner.html"></h1>
@@ -237,22 +244,6 @@
               </div>
             </transition>
 
-            <!-- 🖋 景雁诗 · 竖排逐字墨滴 (移出 transition 之外，只播一次，幻灯片切换不触发重播) -->
-            <div class="banner-poem" key="poem-once" aria-hidden="true">
-              <div
-                class="poem-col"
-                v-for="(line, li) in poemLines"
-                :key="li"
-              >
-                <span
-                  v-for="(char, ci) in line.split('')"
-                  :key="ci"
-                  :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '', (char === '景' || char === '雁') ? 'sparkle-pink' : '']"
-                  :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
-                >{{ char }}</span>
-              </div>
-              <div class="poem-seal">景雁</div>
-            </div>
 
             <!-- 幻灯片指示器 -->
             <div class="banner-dots">
@@ -687,6 +678,6 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260703T1931"></script>
+<script src="js/app.js?v=20260703T1939"></script>
 </body>
 </html>
