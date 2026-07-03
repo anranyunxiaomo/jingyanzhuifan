@@ -1021,7 +1021,15 @@ new Vue({
       if (match) {
         const aid = match[1];
         console.log(`[ROUTER] Target route is detail page. AID: ${aid}`);
-        if (aid && String(this.currentAnimeId) !== String(aid)) {
+        // ⚠️ 核心修复：即使 currentAnimeId 已预设相同，只要 animeDetail 未加载，就必须重新进入
+        // 否则刷新后 created() 预设了 ID 但 selectAnime() 没被调用，页面永远卡在首页骨架
+        const needLoad = (String(this.currentAnimeId) !== String(aid)) || !this.animeDetail;
+        if (aid && needLoad) {
+          // 解析 URL 中的 ep= 参数，刷新时自动恢复到指定集数
+          const epMatch = hash.match(/[?&]ep=(\d+)/);
+          if (epMatch) {
+            this._restoreEpIndex = parseInt(epMatch[1], 10);
+          }
           this.selectAnime(aid, true);
         }
       } else {
