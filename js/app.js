@@ -4,6 +4,7 @@ new Vue({
     // 页面模式控制
     currentAnimeId: null,
     currentPage: 'home',   // 'home' | 'catalog'
+    zhujianAnimated: false, // 🎋 竹简滚动展开动效是否已展示过一次
 
     // 📚 番剧库（全部番剧浏览页）状态
     catalogFilter: '全部',  // '全部' | '连载中' | '完结'
@@ -42,6 +43,7 @@ new Vue({
     
     // 详情页数据
     animeDetail: null,
+    detailError: false, // 💡 新增：详情加载错误状态标记
     activeLineKey: '', // 当前选中的播放线路
     activeEpisodeIndex: -1, // 当前选中的集数索引
     activePlayUrl: '', // 正在播放的 iframe 链接
@@ -251,12 +253,28 @@ new Vue({
     // 如果目标是详情页，立即设置 currentAnimeId，
     // Vue 初始渲染就直接走详情页骨架，跳过首页 → 不再出现"刷新闪首页"
     try {
-      const hash = decodeURIComponent(window.location.hash);
+      let hash = decodeURIComponent(window.location.hash);
+      console.log('[DEBUG ROUTER] created() hook start. URL hash:', hash);
+      
+      // 💾 刷新页面保护：如果 URL 中无哈希，尝试从 LocalStorage 中读取并还原上一次所在的页面状态
+      if (!hash || hash === '#/' || hash === '#') {
+        const lastPage = localStorage.getItem('jyzf_last_page');
+        console.log('[DEBUG ROUTER] empty hash detected, fetched lastPage cache:', lastPage);
+        if (lastPage && lastPage !== 'home') {
+          hash = '#/' + lastPage;
+          window.location.hash = hash;
+          console.log('[DEBUG ROUTER] window.location.hash updated to:', hash);
+        }
+      }
+      
       const match = hash.match(/detail\/([0-9]+)/);
       if (match && match[1]) {
         this.currentAnimeId = match[1];
+        console.log('[DEBUG ROUTER] currentAnimeId set to:', this.currentAnimeId);
       }
-    } catch(e) {}
+    } catch(e) {
+      console.error('[DEBUG ROUTER] created() exception:', e);
+    }
 
     this.initData();
     this.initFavorites();     // 💡 载入收藏数据
@@ -280,6 +298,13 @@ new Vue({
     this.hashRouteHandler = () => this.handleHashRoute();
     window.addEventListener('hashchange', this.hashRouteHandler);
     this.handleHashRoute();
+    
+    // 🎋 首次进入页面如果是首页，启动竹简展开动画锁定计时器
+    if (this.currentPage === 'home' && !this.currentAnimeId) {
+      setTimeout(() => {
+        this.zhujianAnimated = true;
+      }, 2600);
+    }
     
     // 初始化视频铺满模式的 body class 绑定，消除全屏状态下视频留黑
     document.body.classList.add('fit-' + this.videoFitMode);
@@ -545,9 +570,19 @@ new Vue({
         }
       }
       
+      console.log('[DEBUG ROUTER] selectAnime() called. aid:', aid, 'skipHashUpdate:', skipHashUpdate);
       this.currentAnimeId = aid;
-      if (!skipHashUpdate) {
+      this.detailError = false; // 💡 重置错误状态
+      
+      try {
+        localStorage.setItem('jyzf_last_page', 'detail/' + aid); // 💾 同步更新本地路由缓存
+      } catch (e) {
+        console.warn('[ROUTER] localStorage.setItem failed in selectAnime:', e);
+      }
+      
+      if (skipHashUpdate !== true) {
         window.location.hash = '#/detail/' + aid;
+        console.log('[DEBUG ROUTER] selectAnime() set window.location.hash to #/detail/' + aid);
       }
       window.scrollTo(0, 0); // 瞬间置顶
       this.detailTab = 'episodes'; // 默认选择选集 Tab
@@ -622,10 +657,14 @@ new Vue({
             })
             .catch(apiErr => {
               console.error("云端详情拉取失败！", apiErr);
-              // 如果既无缓存又同步失败，则回首页
+              // 如果既无缓存又同步失败，则显示本页错误提示卡片而不回退首页
               if (!this.animeDetail) {
-                alert("加载动漫详情失败，此动漫暂时无法访问，请尝试切换其他网络。");
-                this.goHome();
+                this.detailError = true;
+                this.$nextTick(() => {
+                  if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                  }
+                });
               }
             });
         });
@@ -1175,6 +1214,7 @@ new Vue({
     // 🧭 导航及交互控制
     // ==========================================================================
     goHome(skipHashUpdate = false) {
+      console.log('[DEBUG ROUTER] goHome() called. skipHashUpdate:', skipHashUpdate);
       // 安全销毁 DPlayer 实例，防止声音残留
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
@@ -1184,8 +1224,23 @@ new Vue({
       
       this.currentAnimeId = null;
       this.currentPage = 'home'; // 重置到首页视图
-      if (!skipHashUpdate) {
+      
+      try {
+        localStorage.setItem('jyzf_last_page', 'home'); // 💾 同步更新本地路由缓存
+      } catch (e) {
+        console.warn('[ROUTER] localStorage.setItem failed in goHome:', e);
+      }
+      
+      // 🎋 切换回首页时，如果之前未展示过动画，且处于首页视图，启动动画锁定计时器
+      if (!this.zhujianAnimated) {
+        setTimeout(() => {
+          this.zhujianAnimated = true;
+        }, 2600);
+      }
+      
+      if (skipHashUpdate !== true) {
         window.location.hash = '#/';
+        console.log('[DEBUG ROUTER] goHome() set window.location.hash to #/');
       }
       window.scrollTo(0, 0); // 🏮 瞬间置顶，平稳过渡到首页
       this.animeDetail = null;
@@ -1201,6 +1256,7 @@ new Vue({
 
     // 📚 进入番剧库页
     goCatalog() {
+      console.log('[DEBUG ROUTER] goCatalog() called.');
       // 安全停止播放
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
@@ -1212,6 +1268,13 @@ new Vue({
       this.activePlayUrl = '';
       this.currentPage = 'catalog';
       this.catalogPageNum = 1; // 重置到第一页
+      
+      try {
+        localStorage.setItem('jyzf_last_page', 'catalog'); // 💾 同步更新本地路由缓存
+      } catch (e) {
+        console.warn('[ROUTER] localStorage.setItem failed in goCatalog:', e);
+      }
+      
       window.location.hash = '#/catalog';
       window.scrollTo(0, 0);
     },
@@ -1266,6 +1329,11 @@ new Vue({
       if (match) {
         const aid = match[1];
         console.log(`[ROUTER] Target route is detail page. AID: ${aid}`);
+        try {
+          localStorage.setItem('jyzf_last_page', 'detail/' + aid); // 💾 记录本地路由缓存
+        } catch (e) {
+          console.warn('[ROUTER] localStorage.setItem failed in handleHashRoute detail:', e);
+        }
         const needLoad = (String(this.currentAnimeId) !== String(aid)) || !this.animeDetail;
         if (aid && needLoad) {
           const epMatch = hash.match(/[?&]ep=(\d+)/);
@@ -1277,12 +1345,22 @@ new Vue({
       } else if (hash.includes('/catalog')) {
         // 📚 番剧库路由
         console.log(`[ROUTER] Target route is catalog.`);
+        try {
+          localStorage.setItem('jyzf_last_page', 'catalog'); // 💾 记录本地路由缓存
+        } catch (e) {
+          console.warn('[ROUTER] localStorage.setItem failed in handleHashRoute catalog:', e);
+        }
         if (this.currentPage !== 'catalog') {
           this.currentPage = 'catalog';
           this.currentAnimeId = null;
         }
       } else {
         console.log(`[ROUTER] Target route is homepage.`);
+        try {
+          localStorage.setItem('jyzf_last_page', 'home'); // 💾 记录本地路由缓存
+        } catch (e) {
+          console.warn('[ROUTER] localStorage.setItem failed in handleHashRoute home:', e);
+        }
         if (this.currentAnimeId !== null || this.currentPage !== 'home') {
           this.goHome(true);
         }

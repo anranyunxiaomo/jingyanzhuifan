@@ -7,7 +7,7 @@
   <!-- Google Fonts 引入 Outfit & Inter & Noto Serif SC 高级字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <!-- Lucide 图标 CDN 引入 -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- 自动将不安全内容 (HTTP) 升级为安全内容 (HTTPS) 防浏览器阻断 -->
@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260703T2005">
+  <link rel="stylesheet" href="css/style.css?v=20260704T1116">
 </head>
 <body class="loader-active">
 
@@ -52,11 +52,39 @@
   </div>
 </div>
 <script>
-  // 每次刷新/加载页面时都展示，点击后开屏画轴分裂退场，并接触 body 滚动锁定
+  // 🏮 检查是否应该跳过开屏加载器，防止详情页刷新或同一会话中重复显示影响体验
+  (function() {
+    var loader = document.getElementById('gufeng-loader');
+    if (!loader) return;
+    
+    var hasHash = window.location.hash && (window.location.hash.indexOf('detail') !== -1 || window.location.hash.indexOf('catalog') !== -1);
+    var lastPage = null;
+    var alreadyEntered = false;
+    try {
+      lastPage = localStorage.getItem('jyzf_last_page');
+      alreadyEntered = sessionStorage.getItem('jyzf_entered') === 'true';
+    } catch (e) {
+      console.warn('[LOADER] Storage access blocked:', e);
+    }
+    var isSubPage = hasHash || (lastPage && (lastPage.indexOf('detail') !== -1 || lastPage.indexOf('catalog') !== -1));
+
+    if (isSubPage || alreadyEntered) {
+      loader.style.display = 'none';
+      document.body.classList.remove('loader-active');
+    }
+  })();
+
+  // 每次首次加载页面时，点击后开屏画轴分裂退场，并解除 body 滚动锁定
   document.getElementById('gufeng-loader').addEventListener('click', function() {
     var loader = document.getElementById('gufeng-loader');
+    if (!loader) return;
     loader.classList.add('unrolled');
     document.body.classList.remove('loader-active');
+    try {
+      sessionStorage.setItem('jyzf_entered', 'true');
+    } catch (e) {
+      console.warn('[LOADER] sessionStorage.setItem failed:', e);
+    }
     setTimeout(function() {
       loader.style.display = 'none';
     }, 1200);
@@ -69,13 +97,82 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand" @click="goHome">
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="moonGate">
+              <circle cx="50" cy="50" r="42"/>
+            </clipPath>
+          </defs>
+
+          <g clip-path="url(#moonGate)">
+            <!-- 宣纸天空 -->
+            <rect x="0" y="0" width="100" height="100" fill="#FAF4EE"/>
+
+            <!-- ── 山峦叠层（贝塞尔曲线柔化山顶，由远到近） ── -->
+            <!-- 远山左（最淡） -->
+            <path d="M -2,80 Q 16,48 34,80 Z" fill="#a62c19" opacity="0.28"/>
+            <!-- 远山右 -->
+            <path d="M 66,80 Q 82,44 100,80 Z" fill="#a62c19" opacity="0.32"/>
+            <!-- 中景左山 -->
+            <path d="M 8,80 Q 30,46 52,80 Z" fill="#a62c19" opacity="0.52"/>
+            <!-- 中景右山 -->
+            <path d="M 48,80 Q 70,42 93,80 Z" fill="#a62c19" opacity="0.48"/>
+            <!-- 主峰（最高最深，中心） -->
+            <path d="M 20,80 Q 50,18 80,80 Z" fill="#a62c19" opacity="0.82"/>
+            <!-- 山脚地面 -->
+            <rect x="0" y="80" width="100" height="22" fill="#a62c19" opacity="0.9"/>
+
+            <!-- ── 三雁·V字南飞编队 ── -->
+            <!-- 飞行朝向：颈部指向左下=偏南方 -->
+
+            <!-- 头雁（最大，居中领飞） -->
+            <g transform="translate(50,42)">
+              <!-- 左翼弧 -->
+              <path d="M 0,0 C -3,-4 -8,-4 -12,-1" stroke="#a62c19" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <!-- 右翼弧 -->
+              <path d="M 0,0 C 3,-3 8,-3 12,-0.5" stroke="#a62c19" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <!-- 雁身 -->
+              <ellipse cx="0" cy="0.5" rx="3.5" ry="2.2" fill="#a62c19"/>
+              <!-- 颈朝左下（南向） -->
+              <path d="M -1,2 C -2,4 -3,6 -4,8" stroke="#a62c19" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- 头 -->
+              <circle cx="-4.5" cy="9" r="2" fill="#a62c19"/>
+            </g>
+
+            <!-- 左翼雁（中等，头雁左后方） -->
+            <g transform="translate(32,30)">
+              <path d="M 0,0 C -2.5,-3.2 -6.5,-3 -9.5,-0.5" stroke="#a62c19" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+              <path d="M 0,0 C 2.5,-2.5 6,-2.2 9,-0.2" stroke="#a62c19" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+              <ellipse cx="0" cy="0.5" rx="2.8" ry="1.8" fill="#a62c19"/>
+              <path d="M -0.8,2 C -1.5,3.5 -2.2,5 -3,6.5" stroke="#a62c19" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <circle cx="-3.5" cy="7.5" r="1.6" fill="#a62c19"/>
+            </g>
+
+            <!-- 右翼雁（稍小，头雁右后方） -->
+            <g transform="translate(68,31)">
+              <path d="M 0,0 C -2,-3 -5.5,-2.8 -8.5,-0.5" stroke="#a62c19" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+              <path d="M 0,0 C 2,-2.5 5.5,-2 8,-0.2" stroke="#a62c19" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+              <ellipse cx="0" cy="0.5" rx="2.4" ry="1.5" fill="#a62c19"/>
+              <path d="M -0.6,1.8 C -1.2,3 -1.8,4.5 -2.5,6" stroke="#a62c19" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <circle cx="-3" cy="7" r="1.4" fill="#a62c19"/>
+            </g>
+          </g>
+
+          <!-- 月洞门双圆框 -->
+          <circle cx="50" cy="50" r="44" stroke="#a62c19" stroke-width="2.8" fill="none"/>
+          <circle cx="50" cy="50" r="40" stroke="#a62c19" stroke-width="0.8" fill="none" opacity="0.38"/>
+        </svg>
         <span class="logo-art">景雁</span>
       </div>
       
       <!-- 极速本地搜索框 -->
       <div class="search-wrapper">
         <div class="search-box">
-          <i data-lucide="search" class="search-icon"></i>
+          <!-- 搜索图标 -->
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
           <input 
             type="text" 
             placeholder="搜索动漫... (输入中文、拼音，或直接粘贴番剧 ID)" 
@@ -83,7 +180,11 @@
             @focus="searchFocused = true"
             @blur="handleSearchBlur"
           >
-          <i data-lucide="x" class="clear-icon" v-if="searchQuery" @click="searchQuery = ''"></i>
+          <!-- 清除图标 -->
+          <svg class="clear-icon" v-if="searchQuery" @click="searchQuery = ''" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
         </div>
         
         <transition name="fade-slide">
@@ -129,15 +230,19 @@
           </div>
         </transition>
       </div>
-      <!-- 📚 番剧库入口按鈕 -->
-      <button 
-        class="catalog-nav-btn"
-        :class="{ 'catalog-nav-btn--active': currentPage === 'catalog' }"
-        @click="goCatalog"
-      >
-        <i data-lucide="library" style="width:14px;height:14px;"></i>
-        <span>番剧库</span>
-      </button>
+        <button 
+          class="catalog-nav-btn"
+          :class="{ 'catalog-nav-btn--active': currentPage === 'catalog' }"
+          @click="goCatalog"
+        >
+          <!-- 书卷图标 -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            <path d="M8 7h8M8 11h6"/>
+          </svg>
+          <span>番剧库</span>
+        </button>
     </div>
   </header>
 
@@ -149,7 +254,11 @@
       <div v-if="!currentAnimeId && currentPage === 'catalog'" key="catalog" class="catalog-page">
         <div class="catalog-header">
           <h2 class="catalog-title">
-            <i data-lucide="library" style="width:20px;height:20px;vertical-align:-3px;margin-right:8px;"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;vertical-align:-3px;margin-right:8px;">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              <path d="M8 7h8M8 11h6M8 15h4"/>
+            </svg>
             全部番剧库
             <span class="catalog-count">({{ catalogAnimes.length }})部</span>
           </h2>
@@ -165,7 +274,7 @@
               >{{ f }}</button>
             </div>
             <div class="catalog-sort-group">
-              <span style="font-size:12px;color:var(--color-text-muted);白-space:nowrap">排序：</span>
+              <span style="font-size:12px;color:var(--color-text-muted);white-space:nowrap">排序：</span>
               <select v-model="catalogSort" @change="catalogPageNum=1" class="catalog-sort-select">
                 <option value="default">最新优先</option>
                 <option value="title">名称排序</option>
@@ -217,36 +326,23 @@
       </div>
 
       <!-- 🌏 首页视图包装器 -->
-      <div v-if="!currentAnimeId && currentPage === 'home'" key="home">
-        
-        <!-- 🖋 独立古风诗词横幅 (位于精选推荐幻灯片上方，居右侧展示，左侧带优雅卷轴名) -->
-        <div class="top-poem-banner" v-if="bannerList.length > 0">
-          <div class="top-poem-left-text">
-            <span class="gufeng-brand-stamp">景雁·番書</span>
-            <span class="gufeng-brand-sub">「浮生半日，閑聽雨眠」</span>
-          </div>
-          <!-- 诗词排版容器 -->
-          <div class="banner-poem" key="poem-once" aria-hidden="true">
-            <!-- 印章移到最左侧（阅读顺序的最后） -->
-            <div class="poem-seal">景雁</div>
-            
-            <div
-              class="poem-col"
-              v-for="(line, li) in poemLines"
-              :key="li"
-            >
-              <span
-                v-for="(char, ci) in line.split('')"
-                :key="ci"
-                :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '', (char === '景' || char === '雁') ? 'sparkle-pink' : '']"
-                :style="{ animationDelay: ((poemLines.length - 1 - li) * 6 + ci) * 0.11 + 's' }"
-              >{{ char }}</span>
-            </div>
-          </div>
-        </div>
-
+      <div v-else-if="!currentAnimeId && currentPage === 'home'" key="home">
         <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
         <section class="banner-section" v-if="bannerList.length > 0">
+          
+          <!-- 🖋 独立古风诗词横幅 (位于精选推荐幻灯片上方，完美对齐) -->
+          <div class="top-poem-banner">
+            <div class="top-poem-left-text">
+              <span class="gufeng-brand-stamp">景雁·番書</span>
+              <span class="gufeng-brand-sub">「愿你徒步天下，丈量世界。不忘初心」</span>
+            </div>
+            <!-- 诗词排版容器：使用独特的类名 top-banner-poem 以隔离样式冲突 -->
+            <div class="top-banner-poem" aria-hidden="true">
+              <div class="poem-seal">景雁</div>
+              <div class="poem-scroll-text">辞霜踏雪向景明，<br>万里南飞一客雁。<br>木棉红透珠江水，<br>化作春风伴远山。</div>
+            </div>
+          </div>
+
           <div class="banner-container">
             <transition name="fade" mode="out-in">
               <div 
@@ -258,7 +354,10 @@
                   <span class="banner-tag">精选推荐</span>
                   <h1 class="banner-title" v-html="activeBanner.html"></h1>
                   <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
-                    <i data-lucide="play-circle"></i> 立即观看
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+                    </svg> 立即观看
                   </button>
                 </div>
               </div>
@@ -283,17 +382,29 @@
       
       <!-- 💡 继续观看历史 (仅在有历史数据时展示) -->
       <section class="list-section history-section" v-if="watchHistory.length > 0">
-        <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
-          <i data-lucide="clock-4" class="title-icon" style="color: #E26D80; width: 1.5rem; height: 1.5rem;"></i>
-          <h2 class="section-title" style="margin: 0; font-size: 1.4rem;">继续观看</h2>
-          <button 
-            class="history-clear-btn"
-            @click="clearWatchHistory"
-            title="清空全部历史"
-          >
-            <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i> 清空
-          </button>
-        </div>
+          <!-- 继续观看 section -->
+          <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
+            <!-- 时钟图标（古风·日晷风） -->
+            <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="12 7 12 12 15.5 15.5"/>
+              <path d="M12 3v1M12 20v1M3 12h1M20 12h1" stroke-width="1.2"/>
+            </svg>
+            <h2 class="section-title" style="margin: 0; font-size: 1.4rem;">继续观看</h2>
+            <button 
+              class="history-clear-btn"
+              @click="clearWatchHistory"
+              title="清空全部历史"
+            >
+              <!-- 删除图标 -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-1 14H6L5 6"/>
+                <path d="M10 11v6M14 11v6"/>
+                <path d="M9 6V4h6v2"/>
+              </svg> 清空
+            </button>
+          </div>
         <!-- 横向滚动容器 -->
         <div class="history-scroll-container">
           <div 
@@ -317,9 +428,12 @@
                   :style="{ width: Math.min(100, Math.round(item.Progress / item.Duration * 100)) + '%' }"
                 ></div>
               </div>
-              <!-- 悬浮播放按钮 -->
+              <!-- 播放圆圈覆盖图标 -->
               <div class="history-overlay">
-                <i data-lucide="play-circle" class="history-play-icon"></i>
+                <svg class="history-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+                </svg>
               </div>
               <!-- 单条删除 -->
               <button 
@@ -327,7 +441,9 @@
                 @click.stop="removeWatchHistory(item.AID)"
                 title="删除此记录"
               >
-                <i data-lucide="x" style="width: 10px; height: 10px;"></i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width: 10px; height: 10px;">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
               </button>
             </div>
             <!-- 文字信息 -->
@@ -341,10 +457,14 @@
 
       <!-- 🌟 我的追番收藏夹 (仅在有收藏数据时展示) -->
       <section class="list-section favorites-section" v-if="favorites.length > 0" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1.5rem;">
-        <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
-          <i data-lucide="star" class="title-icon gold-star" style="color: #f28c9f; fill: #f28c9f; width: 1.5rem; height: 1.5rem;"></i>
-          <h2 class="section-title" style="margin: 0; font-size: 1.4rem;">我的追番收藏夹</h2>
-        </div>
+          <!-- 收藏 section -->
+          <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
+            <!-- 星星图标（古风·辰宿风） -->
+            <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(217,96,122,0.18)"/>
+            </svg>
+            <h2 class="section-title" style="margin: 0; font-size: 1.4rem;">我的追番收藏夹</h2>
+          </div>
         <div class="grid-list">
           <div 
             class="anime-card fav-card" 
@@ -355,7 +475,10 @@
             <div class="card-cover-wrapper">
               <div class="card-tag" style="background: var(--color-primary); z-index: 10;">{{ item.Status }}</div>
               <div class="card-overlay">
-                <i data-lucide="play" class="overlay-play-icon"></i>
+                <!-- 播放图标 -->
+                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                </svg>
               </div>
               <img :src="item.Cover" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
@@ -370,8 +493,16 @@
 
       <!-- 2.1 每日更新时刻表 (星期卡片) -->
       <section class="schedule-section" v-if="weekListKeys.length > 0">
+        <!-- 每日更新时间表 section -->
         <div class="section-title-wrapper">
-          <i data-lucide="calendar" class="title-icon"></i>
+          <!-- 日历图标（古风·节气风） -->
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke-width="2" stroke-linecap="round"/>
+          </svg>
           <h2 class="section-title">每日更新时间表</h2>
         </div>
         
@@ -399,7 +530,10 @@
             <div class="card-cover-wrapper">
               <div class="card-tag">{{ item.namefornew }}</div>
               <div class="card-overlay">
-                <i data-lucide="play" class="overlay-play-icon"></i>
+                <!-- 播放图标 -->
+                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                </svg>
               </div>
               <!-- 占位符图防裂 -->
               <img 
@@ -419,8 +553,13 @@
 
       <!-- 2.2 最近更新列表 -->
       <section class="list-section">
+        <!-- 最近更新 section -->
         <div class="section-title-wrapper">
-          <i data-lucide="clock" class="title-icon"></i>
+          <!-- 时钟图标（古风·漏刻风） -->
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
           <h2 class="section-title">最近更新</h2>
         </div>
         <div class="grid-list">
@@ -433,7 +572,10 @@
             <div class="card-cover-wrapper">
               <div class="card-tag">{{ item.NewTitle }}</div>
               <div class="card-overlay">
-                <i data-lucide="play" class="overlay-play-icon"></i>
+                <!-- 播放图标 -->
+                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                </svg>
               </div>
               <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
@@ -446,8 +588,13 @@
 
       <!-- 2.3 推荐动漫列表 -->
       <section class="list-section">
+        <!-- 本季推荐 section -->
         <div class="section-title-wrapper">
-          <i data-lucide="thumbs-up" class="title-icon"></i>
+          <!-- 赞图标（古风·拇指风） -->
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+          </svg>
           <h2 class="section-title">本季推荐</h2>
         </div>
         <div class="grid-list">
@@ -460,7 +607,10 @@
             <div class="card-cover-wrapper">
               <div class="card-tag">{{ item.NewTitle }}</div>
               <div class="card-overlay">
-                <i data-lucide="play" class="overlay-play-icon"></i>
+                <!-- 播放图标 -->
+                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                </svg>
               </div>
               <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
@@ -475,7 +625,10 @@
     <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
     <div class="detail-content" v-else key="detail">
       <div class="back-nav" @click="goHome">
-        <i data-lucide="arrow-left"></i> 返回主页
+        <!-- 返回图标 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg> 返回主页
       </div>
       
       <div class="detail-container" v-if="animeDetail">
@@ -484,7 +637,17 @@
         <div class="player-panel">
           <div class="player-wrapper">
             <div class="player-placeholder" v-if="!activePlayUrl">
-              <i data-lucide="video" class="placeholder-icon"></i>
+              <!-- 视频占位图标 -->
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                <line x1="7" y1="2" x2="7" y2="22"/>
+                <line x1="17" y1="2" x2="17" y2="22"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <line x1="2" y1="7" x2="7" y2="7"/>
+                <line x1="2" y1="17" x2="7" y2="17"/>
+                <line x1="17" y1="17" x2="22" y2="17"/>
+                <line x1="17" y1="7" x2="22" y2="7"/>
+              </svg>
               <p>请在下方选择剧集开始播放</p>
             </div>
             <template v-else>
@@ -513,7 +676,10 @@
                 class="iframe-fit-btn"
                 @click="toggleVideoFit"
               >
-                <i data-lucide="maximize-2" style="width: 12px; height: 12px;"></i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;">
+                  <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+                  <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+                </svg>
                 <span>比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满' : '拉伸') }}</span>
               </button>
               <!-- 💡 iframe 模式下一集悬浮按钮 -->
@@ -564,14 +730,21 @@
                 onmouseover="this.style.background='rgba(242, 140, 159, 0.16)'; this.style.borderColor='#F28C9F'"
                 onmouseout="this.style.background='rgba(242, 140, 159, 0.08)'; this.style.borderColor='rgba(242, 140, 159, 0.4)'"
               >
-                <i data-lucide="rotate-ccw" style="width: 13px; height: 13px;"></i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px; height: 13px;">
+                  <polyline points="1 4 1 10 7 10"/>
+                  <path d="M3.51 15a9 9 0 1 0 .49-4.95"/>
+                </svg>
                 ⚡ 强制从头播放
               </button>
             </div>
             
             <!-- 💡 画质温馨提示 -->
             <div class="quality-tip-box">
-              <i data-lucide="info" class="quality-tip-icon"></i>
+              <svg class="quality-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="8" stroke-width="2.5"/>
+                <line x1="12" y1="12" x2="12" y2="16"/>
+              </svg>
               <div>
                 <strong>温馨提示：</strong> 第三方采集源为了保证播放流畅度普遍进行了压缩。如果感觉画面不够清晰，建议优先切换到 <strong>计算云</strong> 或 <strong>凤雏云</strong> 线路播放，并可在播放器右下角设置中手动调至最高清晰度。
               </div>
@@ -589,14 +762,21 @@
             :class="{ active: detailTab === 'episodes' }" 
             @click="detailTab = 'episodes'"
           >
-            <i data-lucide="play-circle" style="width: 14px; height: 14px;"></i> 选集播放
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+            </svg> 选集播放
           </button>
           <button 
             class="detail-tab-btn" 
             :class="{ active: detailTab === 'info' }" 
             @click="detailTab = 'info'"
           >
-            <i data-lucide="info" style="width: 14px; height: 14px;"></i> 剧情简介
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="8" stroke-width="2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+            </svg> 剧情简介
           </button>
         </div>
 
@@ -612,7 +792,10 @@
                   @click="toggleFavorite"
                   :class="{ active: isFavorited(currentAnimeId) }"
                 >
-                  <i data-lucide="heart" :class="{ 'heart-active': isFavorited(currentAnimeId) }"></i>
+                  <!-- 心形图标 -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" :style="{ fill: isFavorited(currentAnimeId) ? 'currentColor' : 'none' }">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
                   {{ isFavorited(currentAnimeId) ? '已加入追番' : '加入追番' }}
                 </button>
               </div>
@@ -636,7 +819,12 @@
         <!-- 3.3 线路与剧集选择面板 -->
         <div class="episodes-panel" v-show="!isMobile || detailTab === 'episodes'">
           <div class="panel-header">
-            <i data-lucide="layers" class="panel-icon"></i>
+            <!-- 线路层图标 -->
+            <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
             <h3>播放线路与剧集</h3>
           </div>
           
@@ -673,6 +861,36 @@
         </div>
       </div>
       
+      <div class="detail-error-card" v-else-if="detailError">
+        <div class="error-card-content">
+          <!-- 警告图标 -->
+          <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2"/>
+          </svg>
+          <h3 class="error-title">畫卷加載失敗</h3>
+          <p class="error-tip">「天涯倦客，山河信美，只恐此番難度。」</p>
+          <p class="error-sub">本地詳情缺失且雲端數據同步受阻，請檢查網絡或重試。</p>
+          <div class="error-actions">
+            <button class="btn btn-gold" @click="selectAnime(currentAnimeId)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;">
+                <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+              重新加載
+            </button>
+            <button class="btn btn-outline" @click="goHome" style="margin-left: 10px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              返回首頁
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- 加载详情骨架屏 -->
       <div class="detail-skeleton" v-else>
         <div class="skeleton-player"></div>
@@ -698,6 +916,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260703T1955"></script>
+<script src="js/app.js?v=20260703T2027"></script>
+
 </body>
 </html>

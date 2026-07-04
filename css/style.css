@@ -84,7 +84,7 @@ body::before {
   top: 0; left: 0; width: 100%; height: 100%;
   background-image:
     /* 丝绸菱形织锦纹（旋转45° 的网格组合） */
-    linear-gradient(45deg,  rgba(217, 96, 122, 0.025) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(217, 96, 122, 0.025) 1px, transparent 1px),
     linear-gradient(-45deg, rgba(217, 96, 122, 0.025) 1px, transparent 1px),
     /* 大网格宣纸基底格 */
     linear-gradient(rgba(217, 96, 122, 0.015) 1px, transparent 1px),
@@ -131,30 +131,48 @@ body::after {
   max-width: 1200px;
   margin: 0 auto;
   /* 🏮 流体内边距：大屏应该宽松，小屏贴边 */
-  padding: 0.8rem clamp(0.8rem, 3vw, 1.5rem);
+  padding: 0.75rem clamp(0.8rem, 3vw, 1.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  flex-wrap: nowrap; /* 🔒 禁止换行，防止 header 被撑开 */
+  gap: 0.8rem;
+  min-width: 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.6rem;
   cursor: pointer;
   user-select: none;
 }
+.brand .logo-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(166, 44, 25, 0.22));
+}
+.brand:hover .logo-icon {
+  transform: translateY(-2px) scale(1.07);
+  filter: drop-shadow(0 5px 14px rgba(166, 44, 25, 0.38));
+}
+.brand:active .logo-icon {
+  transform: scale(0.96);
+  filter: drop-shadow(0 1px 3px rgba(166, 44, 25, 0.15));
+}
 
 .logo-art {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 1.95rem;
+  font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif;
+  font-size: 1.85rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--accent-gold-hover) 0%, var(--accent-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 5px; /* 加宽古典字距 */
+  letter-spacing: 2px; /* 毛笔书法下微缩字距以防过于松散 */
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -171,7 +189,7 @@ body::after {
   -webkit-text-fill-color: var(--bg-primary) !important; /* 💡 核心修复：强制重置文字填充色，拒绝继承透明 */
   background: var(--accent-gold) !important; /* 满涂朱砂红背景 */
   padding: 2px 4px 1px 4px;
-  margin-left: 10px;
+  margin-left: 8px;
   vertical-align: middle;
   transform: rotate(-3deg) translateY(-2px);
   border-radius: 1px; /* 极其方正 */
@@ -204,10 +222,10 @@ body::after {
 /* 搜索容器 */
 .search-wrapper {
   position: relative;
-  flex: 1;
+  flex: 1 1 0;
   /* 关键：防止 flex 子项超出容器 */
   min-width: 0;
-  max-width: 480px;
+  max-width: 520px;
 }
 
 .search-box {
@@ -240,7 +258,7 @@ body::after {
   width: 100%;
   font-size: 0.9rem;
   color: var(--text-main);
-  font-family: var(--font-sans);
+  font-family: var(--font-family); /* 改为古典宋体字，输入时充满国风韵味 */
 }
 
 .search-box input::placeholder {
@@ -499,6 +517,19 @@ body::after {
   will-change: transform, opacity, filter;
 }
 
+/* 🔑 动画已完成标记：强制保持可见，防止动画结束后 opacity 归零 */
+.already-unrolled .poem-char {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+.already-unrolled .poem-seal {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
 /* 标点符号：小一号，金色调 */
 .poem-char.is-punct {
   font-size: clamp(11px, 1.3vw, 16px);
@@ -680,6 +711,7 @@ body::after {
   /* 实现 100% 宽度限制 */
   box-sizing: border-box;
   width: calc(100% - clamp(0.4rem, 2vw, 2rem) * 2);
+  overflow-x: hidden; /* 🔒 防止内容溢出撑开容器 */
 
   transform-origin: center;
   animation: scrollUnroll 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -740,8 +772,33 @@ body::after {
   box-shadow: 0 2px 8px rgba(184, 64, 96, 0.22);
 }
 
+/* 🏮 古风节气图标：精美 SVG 圆形徽章，替代普通 lucide 图标 */
 .title-icon {
-  display: none; /* 采用国风邮印代替现代图标 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 3px rgba(217, 96, 122, 0.3));
+  transition: transform 0.35s var(--ease-spring), opacity 0.3s;
+}
+.title-icon:hover {
+  transform: rotate(8deg) scale(1.1);
+  opacity: 1;
+}
+
+/* 不同图标的个性化颜色 */
+.section-title-wrapper svg.title-icon {
+  /* 图标在 ::before 印章之后，使用负左边距除去印章素才有的多余间距 */
+  margin-left: -4px;
+}
+
+/* 有 SVG 图标时，隐藏 ::before 印章（避免重叠） */
+.section-title-wrapper:has(.title-icon)::before {
+  display: none;
 }
 
 .section-title {
@@ -922,17 +979,23 @@ body::after {
 
 .card-tag {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-  background: rgba(255, 253, 251, 0.95);
-  color: var(--accent-gold-hover);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0;
-  border: 1px solid rgba(226, 109, 128, 0.3);
+  top: 0;
+  left: 8px;
+  z-index: 10;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 6px 4.5px;
+  background: var(--accent-gold) !important; /* 统一使用朱砂印泥红 */
+  color: #ffffff !important;
   font-family: var(--font-family);
+  font-size: 9px !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 0 0 2px 2px;
+  border: 1px solid var(--accent-gold-hover);
+  border-top: none;
+  box-shadow: 1px 1px 3px rgba(44, 26, 14, 0.15);
+  transition: all 0.3s var(--ease-silk);
 }
 
 .card-overlay {
@@ -2903,21 +2966,28 @@ body.fit-fill iframe {
   align-items: center;
   gap: 5px;
   padding: 6px 14px;
-  background: transparent;
-  border: 1.5px solid rgba(217, 96, 122, 0.3);
-  border-radius: 20px;
-  color: var(--text-muted);
+  background: rgba(250, 245, 235, 0.9); /* 淡黄宣纸票签纸色 */
+  border: 1px solid rgba(139, 87, 42, 0.25);
+  border-radius: 0; /* 彻底直角 */
+  color: var(--text-main);
+  font-family: var(--font-family);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(44, 26, 14, 0.05);
   transition: all 0.25s var(--ease-silk);
   white-space: nowrap;
 }
-.catalog-nav-btn:hover,
-.catalog-nav-btn--active {
-  background: rgba(217, 96, 122, 0.1);
+.catalog-nav-btn:hover {
+  background: rgba(246, 235, 212, 0.95);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+}
+.catalog-nav-btn--active {
+  background: var(--accent-gold) !important; /* 激活时为朱泥落款红色印泥底 */
+  border-color: var(--accent-gold) !important;
+  color: #ffffff !important;
+  box-shadow: 1px 1px 4px rgba(166, 44, 25, 0.25);
 }
 
 /* 页面整体布局 */
@@ -3013,16 +3083,20 @@ body.fit-fill iframe {
 
 /* 单张卡片 */
 .catalog-card {
-  border-radius: 10px;
+  border-radius: 0; /* 彻底直角 */
   overflow: hidden;
-  background: var(--bg-secondary);
-  border: 1px solid rgba(217, 96, 122, 0.1);
+  background: rgba(250, 245, 230, 0.95); /* 绢本宣纸色 */
+  border-top: 3px solid #8E6D70; /* 檀木横轴上边界 */
+  border-bottom: 3px solid #8E6D70; /* 檀木横轴下边界 */
+  border-left: 1px solid rgba(139, 87, 42, 0.15);
+  border-right: 1px solid rgba(139, 87, 42, 0.15);
   cursor: pointer;
-  transition: transform 0.25s var(--ease-silk), box-shadow 0.25s var(--ease-silk);
+  box-shadow: 1px 1px 4px rgba(44, 26, 14, 0.06);
+  transition: transform 0.3s var(--ease-silk), box-shadow 0.3s var(--ease-silk);
 }
 .catalog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px rgba(184, 64, 96, 0.2);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 36px -8px rgba(44, 26, 14, 0.18);
 }
 
 /* 封面区 */
@@ -3045,21 +3119,29 @@ body.fit-fill iframe {
 /* 状态徽章 */
 .catalog-status-badge {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  padding: 2px 7px;
-  border-radius: 10px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  top: 0;
+  left: 8px;
+  z-index: 10;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 6px 4.5px;
+  font-family: var(--font-family);
+  font-size: 9px !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 1px 1px 3px rgba(44, 26, 14, 0.15);
+  border-top: none !important;
 }
 .badge-airing {
-  background: rgba(242, 140, 159, 0.92);
-  color: #fff;
+  background: var(--accent-gold) !important; /* 连载中为朱泥红印 */
+  color: #ffffff !important;
+  border: 1px solid var(--accent-gold-hover);
 }
 .badge-done {
-  background: rgba(100, 100, 110, 0.85);
-  color: #fff;
+  background: #50463c !important; /* 已完结为黑墨印 */
+  color: #ffffff !important;
+  border: 1px solid #3c3228;
 }
 
 /* 卡片底部信息 */
@@ -3125,18 +3207,18 @@ body.fit-fill iframe {
 .top-poem-banner {
   position: relative;
   width: 100%;
-  height: 165px; /* 增加高度以提供充足的垂直呼吸空间，绝不溢出 */
+  height: 160px;
   background: var(--bg-secondary);
   border: 1px solid rgba(217, 96, 122, 0.16);
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 1.2rem;
   box-shadow: var(--glass-shadow);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto minmax(0, 45%); /* 🔒 Grid 硬约束：左侧自然宽，右侧最大 45%，不溢出 */
   align-items: center;
-  padding: 0 2.5rem;
-  background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.7) 0%, rgba(255, 253, 251, 0.95) 100%);
-  overflow: hidden;
+  padding: 0 2rem;
+  background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.85) 0%, rgba(255, 253, 251, 0.98) 60%, rgba(255, 248, 245, 0.9) 100%);
+  overflow: hidden; /* 🔒 裁切所有溢出内容 */
 }
 
 /* 诗歌独立容器内左侧文字 */
@@ -3160,21 +3242,41 @@ body.fit-fill iframe {
   letter-spacing: 1px;
 }
 
-/* 让诗句在顶部独立容器中靠右绝对定位 */
-.top-poem-banner .banner-poem {
-  position: absolute;
-  right: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
+/* 诗词容器：靠右对齐，高度固定，自然不溢出 */
+.top-poem-banner .top-banner-poem {
   display: flex;
-  flex-direction: row; /* 左=印章与末句，右=首句 */
-  align-items: flex-start;
-  height: 140px; /* 锁定高度，保证竖排字符在容器内垂直居中且不漏出 */
-  gap: clamp(0.5rem, 0.8vw, 1rem);
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  height: 130px;
+  overflow: hidden;
+  clip-path: inset(0);   /* 核弹级裁切，transform 也拦不住 */
+  padding: 0.4rem 0;
   opacity: 0.95;
+  width: 100%;
+}
+
+/* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
+.top-poem-banner .poem-scroll-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: 'Noto Serif SC', 'STKaiti', 'KaiTi', serif;
+  font-size: 13px;         /* 13px × 1.25 × 8字 = 130px，完整显示一行诗 */
+  font-weight: 700;
+  color: rgba(44, 26, 14, 0.82);
+  letter-spacing: 0.02em;
+  line-height: 1.25;       /* 精确：每字高 = 13 × 1.25 = 16.25px */
+  height: 100%;            /* 继承 banner-poem 的 130px */
+  white-space: nowrap;     /* 禁止自动换列，由 <br> 控制分列 */
+  overflow: visible;       /* 宽度自然延伸，外层 clip-path 裁切 */
+  animation: inkFadeIn 1.2s ease forwards;
+  text-shadow: 0 1px 0 rgba(200, 168, 107, 0.25);
+}
+
+@keyframes inkFadeIn {
+  from { opacity: 0; filter: blur(4px); }
+  to   { opacity: 1; filter: blur(0); }
 }
 
 /* 精细控制字号和行高，完美贴合白框容器 */
@@ -3207,7 +3309,7 @@ body.fit-fill iframe {
     font-size: 11px;
     letter-spacing: 0.5px;
   }
-  .top-poem-banner .banner-poem {
+  .top-poem-banner .top-banner-poem {
     right: 1.2rem;
     height: 105px;
     gap: 0.4rem;
@@ -3227,4 +3329,16 @@ body.fit-fill iframe {
   .top-poem-banner {
     display: none; /* 手机竖屏尺寸（超小屏）完全隐藏此独立顶栏，保证首屏直奔推荐列表，体验更顺畅 */
   }
+}
+
+/* 🏮 独立印章竹片列：使印章置于竹片正中水平居中对齐，排除 vertical-rl 下的浏览器偏离偏差 */
+.top-poem-banner .seal-col {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+.top-poem-banner .seal-col .poem-seal {
+  margin-top: 15px !important;
+  align-self: center !important;
 }
