@@ -1,6 +1,41 @@
 {
   "latest": [
     {
+      "AID": 20260192,
+      "Href": "/detail/20260192",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
+      "Title": "岩元前辈的推荐"
+    },
+    {
+      "AID": 20260195,
+      "Href": "/detail/20260195",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260195.jpg",
+      "Title": "暗黑灯火"
+    },
+    {
+      "AID": 20260223,
+      "Href": "/detail/20260223",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260223.jpg",
+      "Title": "猫与龙"
+    },
+    {
+      "AID": 20260208,
+      "Href": "/detail/20260208",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260208.jpg",
+      "Title": "骸骨骑士大人异世界冒险中 第二季"
+    },
+    {
+      "AID": 20260215,
+      "Href": "/detail/20260215",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
+      "Title": "说出你们先走我断后的十年后 我成为了传说"
+    },
+    {
       "AID": 20260247,
       "Href": "/detail/20260247",
       "NewTitle": "第01集",
@@ -17,7 +52,7 @@
     {
       "AID": 20260097,
       "Href": "/detail/20260097",
-      "NewTitle": "第14集",
+      "NewTitle": "第13集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
       "Title": "入间同学入魔了 第四季"
     },
@@ -48,41 +83,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
       "Title": "画完这个再去死"
-    },
-    {
-      "AID": 20260101,
-      "Href": "/detail/20260101",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
-      "Title": "神之水滴"
-    },
-    {
-      "AID": 20260098,
-      "Href": "/detail/20260098",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260098.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第四季"
-    },
-    {
-      "AID": 20260213,
-      "Href": "/detail/20260213",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260213.jpg",
-      "Title": "从0位居民开始的边境领主大人"
-    },
-    {
-      "AID": 20260197,
-      "Href": "/detail/20260197",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
-      "Title": "少女怪兽焦糖味"
-    },
-    {
-      "AID": 20260193,
-      "Href": "/detail/20260193",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
-      "Title": "令和的斑小姐"
     },
     {
       "AID": "anich_33391",
@@ -765,7 +765,7 @@
         "namefornew": "22:30 已完结"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260101,
         "wd": 5,
         "name": "神之水滴",
@@ -774,7 +774,7 @@
         "anich_id": 37930
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260098,
         "wd": 5,
         "name": "关于我转生变成史莱姆这档事 第四季",
@@ -862,7 +862,7 @@
         "wd": 6,
         "name": "入间同学入魔了 第四季",
         "mtime": "2026-07-04 20:58:42",
-        "namefornew": "18:55 第14集",
+        "namefornew": "18:55 第13集",
         "anich_id": 38016
       },
       {
