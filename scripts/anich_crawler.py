@@ -186,14 +186,42 @@ def decode_episodes_list(data):
 # ──────────────────────────────────────────────
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
-def curl_get_raw(url, auth_header, timeout=8):
-    cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}"]
-    if auth_header:
-        cmd.extend(["-H", f"_: {auth_header}"])
-    cmd.append(url)
+def curl_get_raw(url, token_str, timeout=8):
+    # 1. 尝试无 Token 访问（免登录接口）
+    if not token_str:
+        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", url]
+        r = subprocess.run(cmd, capture_output=True)
+        return r.stdout if r.returncode == 0 else None
+        
+    # 2. 带有 Token 认证，并进行时钟偏差容错重试
+    # 尝试 5 个不同的时钟偏移量（单位：秒）：+60 (原版), 0, -60, +120, -120
+    offsets = [60, 0, -60, 120, -120]
     
-    r = subprocess.run(cmd, capture_output=True)
-    return r.stdout if r.returncode == 0 else None
+    for offset in offsets:
+        # 动态计算该时钟偏移下的 header
+        timestamp_ms = int(time.time() * 1000) + (offset * 1000)
+        time_hex = hex(timestamp_ms)[2:]
+        
+        token_bytes = token_str.encode('utf-8')
+        f1 = b'\x0a' + to_varint(len(token_bytes)) + token_bytes
+        time_bytes = time_hex.encode('utf-8')
+        f2 = b'\x12' + to_varint(len(time_bytes)) + time_bytes
+        
+        proto_bytes = f1 + f2
+        auth_header = ','.join(str(b) for b in proto_bytes)
+        
+        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
+               "-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", url]
+        
+        r = subprocess.run(cmd, capture_output=True)
+        if r.returncode == 0:
+            res_str = r.stdout.decode('utf-8', errors='ignore')
+            if "unauthorized" not in res_str:
+                return r.stdout  # 成功！
+                
+        time.sleep(0.2)
+        
+    return None
 
 def normalize(s):
     if not s: return ""
@@ -249,13 +277,11 @@ def main():
     token = load_anich_token()
     if not token:
         print("[WARN] 未找到用户 Token。将尝试免密直连访问（可能因风控返回 500/unauthorized）")
-        auth_header = ""
     else:
-        auth_header = generate_header_token(token)
-        print("[OK] 成功加载并生成了 Token 认证头")
+        print("[OK] 成功加载 Token。已启用动态时间戳容错认证。")
 
     # 2. 抓取 latest 列表
-    raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", auth_header)
+    raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", token)
     if not raw_latest:
         print("[ERROR] 无法拉取最新番剧列表 (API 访问失败，请检查 Token 是否失效)")
         sys.exit(1)
@@ -324,7 +350,7 @@ def main():
             continue
 
         # 获取该番剧的最新集数
-        raw_eps = curl_get_raw(f"{ANICH_API_BASE}/bangumi/episodes/{bid}", auth_header)
+        raw_eps = curl_get_raw(f"{ANICH_API_BASE}/bangumi/episodes/{bid}", token)
         if not raw_eps:
             continue
         eps_list = decode_episodes_list(raw_eps)
