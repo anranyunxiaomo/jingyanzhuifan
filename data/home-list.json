@@ -1,6 +1,41 @@
 {
   "latest": [
     {
+      "AID": 20260222,
+      "Href": "/detail/20260222",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260222.jpg",
+      "Title": "鬼之花嫁"
+    },
+    {
+      "AID": 20260170,
+      "Href": "/detail/20260170",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260170.jpg",
+      "Title": "魔法少女奈叶 EXCEEDS Gun Blaze Vengeance"
+    },
+    {
+      "AID": 20260187,
+      "Href": "/detail/20260187",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260187.jpg",
+      "Title": "穹庐下的魔女"
+    },
+    {
+      "AID": 20260168,
+      "Href": "/detail/20260168",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260168.jpg",
+      "Title": "Grow Up Show ～向日葵马戏团～"
+    },
+    {
+      "AID": 20260086,
+      "Href": "/detail/20260086",
+      "NewTitle": "第13集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260086.jpg",
+      "Title": "黄泉使者"
+    },
+    {
       "AID": 20260192,
       "Href": "/detail/20260192",
       "NewTitle": "第01集",
@@ -45,44 +80,9 @@
     {
       "AID": 20260205,
       "Href": "/detail/20260205",
-      "NewTitle": "第01集",
+      "NewTitle": "第02集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
       "Title": "无职转生Ⅲ 到了异世界就拿出真本事"
-    },
-    {
-      "AID": 20260097,
-      "Href": "/detail/20260097",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
-      "Title": "入间同学入魔了 第四季"
-    },
-    {
-      "AID": 20260194,
-      "Href": "/detail/20260194",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260194.jpg",
-      "Title": "正后方的神威"
-    },
-    {
-      "AID": 20260209,
-      "Href": "/detail/20260209",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260209.jpg",
-      "Title": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～ 第2季"
-    },
-    {
-      "AID": 20260199,
-      "Href": "/detail/20260199",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260199.jpg",
-      "Title": "我家的弟弟们真是让您费心了"
-    },
-    {
-      "AID": 20260202,
-      "Href": "/detail/20260202",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
-      "Title": "画完这个再去死"
     },
     {
       "AID": "anich_33391",
@@ -312,88 +312,88 @@
   ],
   "recommend": [
     {
-      "AID": 20110058,
-      "Href": "/detail/20110058",
-      "NewTitle": "[TV 00-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
-      "Title": "丹特丽安的书架"
+      "AID": 20110031,
+      "Href": "/detail/20110031",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
+      "Title": "露蒂的玩具"
     },
     {
-      "AID": 20160005,
-      "Href": "/detail/20160005",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160005.jpg",
-      "Title": "Re：从零开始的异世界生活"
+      "AID": 20070032,
+      "Href": "/detail/20070032",
+      "NewTitle": "[BD 01-16]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070032.jpg",
+      "Title": "永生之酒"
     },
     {
-      "AID": 20130017,
-      "Href": "/detail/20130017",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130017.jpg",
-      "Title": "我女友与青梅竹马的惨烈修罗场"
+      "AID": 20200240,
+      "Href": "/detail/20200240",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200240.jpg",
+      "Title": "EX-ARM"
     },
     {
-      "AID": 20100060,
-      "Href": "/detail/20100060",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100060.jpg",
-      "Title": "荒川爆笑团"
-    },
-    {
-      "AID": 20190033,
-      "Href": "/detail/20190033",
+      "AID": 20200243,
+      "Href": "/detail/20200243",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190033.jpg",
-      "Title": "重来吧，魔王大人！"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200243.jpg",
+      "Title": "池袋西口公园"
     },
     {
-      "AID": 20180029,
-      "Href": "/detail/20180029",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180029.jpg",
-      "Title": "原书·原书使"
+      "AID": 20140027,
+      "Href": "/detail/20140027",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140027.jpg",
+      "Title": "CROSS ANGE 天使与龙的轮舞"
     },
     {
-      "AID": 20130007,
-      "Href": "/detail/20130007",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
-      "Title": "命运石之门 负荷领域的既视感"
-    },
-    {
-      "AID": 20080009,
-      "Href": "/detail/20080009",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080009.jpg",
-      "Title": "真实之泪"
-    },
-    {
-      "AID": 20140086,
-      "Href": "/detail/20140086",
+      "AID": 20050016,
+      "Href": "/detail/20050016",
       "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140086.jpg",
-      "Title": "刀剑神域 第二季"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050016.jpg",
+      "Title": "增血鬼果林"
     },
     {
-      "AID": 20170229,
-      "Href": "/detail/20170229",
+      "AID": 20150010,
+      "Href": "/detail/20150010",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150010.jpg",
+      "Title": "机动战士高达 铁血的奥尔芬斯"
+    },
+    {
+      "AID": 20120054,
+      "Href": "/detail/20120054",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170229.jpg",
-      "Title": "风灵玉秀"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120054.jpg",
+      "Title": "最强会长黑神"
     },
     {
-      "AID": 20160039,
-      "Href": "/detail/20160039",
+      "AID": 20060027,
+      "Href": "/detail/20060027",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060027.jpg",
+      "Title": "夜明前的琉璃色-Crescent Love-"
+    },
+    {
+      "AID": 20100052,
+      "Href": "/detail/20100052",
       "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160039.jpg",
-      "Title": "玻璃之花与崩坏的世界"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
+      "Title": "剧场版 快要坏掉的八音盒"
     },
     {
-      "AID": 20190202,
-      "Href": "/detail/20190202",
-      "NewTitle": "[TV 01-23]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
-      "Title": "入间同学入魔了"
+      "AID": 20200029,
+      "Href": "/detail/20200029",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200029.jpg",
+      "Title": "奇幻☆怪盗"
+    },
+    {
+      "AID": 20190123,
+      "Href": "/detail/20190123",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190123.jpg",
+      "Title": "甲铁城的卡巴内利～海门决战～"
     }
   ],
   "week_list": {
@@ -547,7 +547,7 @@
         "wd": 0,
         "name": "女神“异世界转生想成为什么”我“勇者的肋骨”",
         "mtime": "2026-06-25 00:01:57",
-        "namefornew": "02:05 第12集"
+        "namefornew": "第12集(完结)"
       },
       {
         "isnew": 0,
@@ -903,7 +903,7 @@
         "wd": 6,
         "name": "朱音落语",
         "mtime": "2026-06-21 01:09:34",
-        "namefornew": "00:00 已完结"
+        "namefornew": "全12集(完结)"
       },
       {
         "isnew": 0,
@@ -911,17 +911,17 @@
         "wd": 6,
         "name": "主播女孩重度依赖",
         "mtime": "2026-06-28 01:36:20",
-        "namefornew": "01:00 已完结"
+        "namefornew": "全13集(完结)"
       }
     ],
     "0": [
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260086,
         "wd": 0,
         "name": "黄泉使者",
-        "mtime": "2026-06-21 01:10:20",
-        "namefornew": "00:00 已完结",
+        "mtime": "2026-07-05 01:10:45",
+        "namefornew": "00:00 第13集",
         "anich_id": 37919
       },
       {
@@ -938,7 +938,7 @@
         "wd": 0,
         "name": "女神“异世界转生想成为什么”我“勇者的肋骨”",
         "mtime": "2026-06-25 00:01:57",
-        "namefornew": "02:05 第12集"
+        "namefornew": "第12集(完结)"
       },
       {
         "isnew": 0,
@@ -978,7 +978,7 @@
         "wd": 0,
         "name": "不知为何我和尼特且宅的女忍者开始了同居生活",
         "mtime": "2025-03-30 00:42:29",
-        "namefornew": "00:30 第13集"
+        "namefornew": "第13集(完结)"
       },
       {
         "isnew": 0,
@@ -986,7 +986,7 @@
         "wd": 0,
         "name": "一叠间漫画咖啡屋生活！",
         "mtime": "2026-06-21 01:29:33",
-        "namefornew": "01:00 第11集"
+        "namefornew": "第11集(完结)"
       },
       {
         "isnew": 0,
