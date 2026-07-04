@@ -3241,7 +3241,7 @@ body.fit-fill iframe {
   letter-spacing: 1px;
 }
 
-/* 诗词组：绝对定位钉在横幅右侧，彻底避免 Grid/Flex 宽度计算溢出 Bug */
+/* 诗词组：绝对定位钉在横幅右侧，内容严格裁切防溢出 */
 .top-poem-banner .top-banner-poem {
   position: absolute;
   right: 2rem;                 /* 与横幅内边距对齐 */
@@ -3252,6 +3252,7 @@ body.fit-fill iframe {
   align-items: flex-end;       /* 印章底部落款对齐 */
   gap: 10px;
   height: 130px;
+  overflow: hidden;            /* 🔒 内部裁切，阻断竖排文字向右溢出 */
   opacity: 0.95;
 }
 
@@ -3264,10 +3265,10 @@ body.fit-fill iframe {
   color: rgba(44, 26, 14, 0.82);
   letter-spacing: 0.02em;
   height: 100%;            /* 继承 banner-poem 的 130px */
-  overflow: hidden;        /* 防止内容向右溢出 */
+  overflow: visible;       /* 父级已 overflow:hidden，此处不需重复裁切 */
   animation: inkFadeIn 1.2s ease forwards;
   text-shadow: 0 1px 0 rgba(200, 168, 107, 0.25);
-  width: 82px;             /* 锁死 4 列诗精确宽度 */
+  width: 100px;            /* 略宽于理论值 82px，容纳字体实际渲染宽度偏差 */
 }
 .top-poem-banner .poem-scroll-text span {
   display: inline-block;   /* 🚀 在 vertical-rl 下，inline-block 会从右向左完美呈一列列排列 */
@@ -3329,7 +3330,7 @@ body.fit-fill iframe {
   }
   .top-poem-banner .poem-scroll-text {
     font-size: 11px;
-    width: 68px;             /* 🚀 移动端锁定 4 列精确宽度 */
+    width: 84px;             /* 略宽于理论值 68px，容纳字体渲染偏差 */
   }
   .top-poem-banner .poem-scroll-text span {
     margin-left: 8px;
