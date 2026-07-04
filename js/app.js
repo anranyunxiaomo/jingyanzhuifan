@@ -712,8 +712,8 @@ new Vue({
     selectAnime(aid, skipHashUpdate = false) {
       if (!aid) return;
       
-      // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字
-      if (typeof aid === 'string' && !/^\d+$/.test(aid)) {
+      // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字 (排除 anich_ 开头的独有 ID)
+      if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_')) {
         const match = aid.match(/\d+/);
         if (match) {
           aid = match[0];
