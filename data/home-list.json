@@ -1,6 +1,34 @@
 {
   "latest": [
     {
+      "AID": 20260247,
+      "Href": "/detail/20260247",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
+      "Title": "提欧奥特曼"
+    },
+    {
+      "AID": 20260205,
+      "Href": "/detail/20260205",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
+      "Title": "无职转生Ⅲ 到了异世界就拿出真本事"
+    },
+    {
+      "AID": 20260097,
+      "Href": "/detail/20260097",
+      "NewTitle": "第14集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
+      "Title": "入间同学入魔了 第四季"
+    },
+    {
+      "AID": 20260194,
+      "Href": "/detail/20260194",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260194.jpg",
+      "Title": "正后方的神威"
+    },
+    {
       "AID": 20260209,
       "Href": "/detail/20260209",
       "NewTitle": "第01集",
@@ -55,34 +83,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
       "Title": "令和的斑小姐"
-    },
-    {
-      "AID": 20260214,
-      "Href": "/detail/20260214",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260214.jpg",
-      "Title": "LV999的村民"
-    },
-    {
-      "AID": 20260073,
-      "Href": "/detail/20260073",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
-      "Title": "冰之城墙"
-    },
-    {
-      "AID": 20260189,
-      "Href": "/detail/20260189",
-      "NewTitle": "第1集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260189.jpg",
-      "Title": "世界在起舞"
-    },
-    {
-      "AID": 20260200,
-      "Href": "/detail/20260200",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
-      "Title": "尼古喵喵"
     },
     {
       "AID": "anich_33391",
@@ -857,12 +857,12 @@
         "namefornew": "第14集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260097,
         "wd": 6,
         "name": "入间同学入魔了 第四季",
-        "mtime": "2026-06-27 22:47:31",
-        "namefornew": "18:55 第13集",
+        "mtime": "2026-07-04 20:58:42",
+        "namefornew": "18:55 第14集",
         "anich_id": 38016
       },
       {

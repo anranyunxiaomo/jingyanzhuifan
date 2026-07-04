@@ -1592,6 +1592,14 @@
     "UpToDate": "01:00 第11集"
   },
   {
+    "AID": 20260247,
+    "Title": "提欧奥特曼",
+    "Pinyin": "toatm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
+    "Status": "连载",
+    "UpToDate": "第01集"
+  },
+  {
     "AID": 20170018,
     "Title": "青之驱魔师 京都不净王篇",
     "Pinyin": "qzqms jdbjwp",
@@ -1944,12 +1952,28 @@
     "UpToDate": "更新至更新中"
   },
   {
+    "AID": 20260205,
+    "Title": "无职转生Ⅲ 到了异世界就拿出真本事",
+    "Pinyin": "wzzsⅲ dlysjjnczbs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
+    "Status": "连载",
+    "UpToDate": "第01集"
+  },
+  {
     "AID": 20140109,
     "Title": "白银的意志 ARGEVOLLEN",
     "Pinyin": "bydyz argevollen",
     "Cover": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
     "Status": "完结",
     "UpToDate": "第24集(完结)"
+  },
+  {
+    "AID": 20260194,
+    "Title": "正后方的神威",
+    "Pinyin": "zhfdsw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260194.jpg",
+    "Status": "连载",
+    "UpToDate": "第01集"
   },
   {
     "AID": 20260067,
