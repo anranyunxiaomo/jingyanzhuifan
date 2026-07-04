@@ -3260,7 +3260,7 @@ body.fit-fill iframe {
 /* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
 .top-poem-banner .poem-scroll-text {
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  width: 70px;             /* 🔒 固定宽度，防止 Flex 容器下由于 vertical-rl 的浏览器 Bug 造成右侧大片空白 */
   font-family: 'Noto Serif SC', 'STKaiti', 'KaiTi', serif;
   font-size: 13px;         /* 13px × 1.25 × 8字 = 130px，完整显示一行诗 */
   font-weight: 700;
@@ -3322,6 +3322,11 @@ body.fit-fill iframe {
     font-size: 8px;
     padding: 3px 2px;
     margin-bottom: 2px;
+  }
+  .top-poem-banner .poem-scroll-text {
+    font-size: 11px;
+    line-height: 1.15;
+    width: 60px;
   }
 }
 
