@@ -1,0 +1,24 @@
+{
+  "video": {
+    "id": "anich_38413",
+    "name": "斩神 第2季",
+    "cover": "https://wework.qpic.cn/wwpic3az/74044_dWWuBRa7TleYvl0_1782883840/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38413_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38413_2"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

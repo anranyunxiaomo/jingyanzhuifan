@@ -1,0 +1,44 @@
+{
+  "video": {
+    "id": "anich_35230",
+    "name": "少女波子汽水",
+    "cover": "https://wework.qpic.cn/wwpic3az/389477_gtoGXo1OTkivsT8_1782934243/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_35230_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_35230_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_35230_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_35230_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_35230_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_35230_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_35230_7"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

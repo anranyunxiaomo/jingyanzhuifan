@@ -1,0 +1,64 @@
+{
+  "video": {
+    "id": "anich_38267",
+    "name": "躲在超市后门抽烟的两人",
+    "cover": "https://wework.qpic.cn/wwpic3az/233459_J4BHO077RpKCVE4_1782617503/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38267_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38267_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38267_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38267_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38267_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38267_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38267_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38267_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38267_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38267_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38267_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38267_12"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

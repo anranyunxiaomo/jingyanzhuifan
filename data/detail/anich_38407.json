@@ -1,0 +1,28 @@
+{
+  "video": {
+    "id": "anich_38407",
+    "name": "X战警97 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/318848_bWmAKWgBQh6v4dT_1782909067/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38407_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38407_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38407_3"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

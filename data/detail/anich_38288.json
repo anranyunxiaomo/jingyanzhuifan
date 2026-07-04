@@ -1,0 +1,32 @@
+{
+  "video": {
+    "id": "anich_38288",
+    "name": "我与超人的冒险 第三季",
+    "cover": "https://wework.qpic.cn/wwpic3az/272878_23uhym5FSzWQAyQ_1725945151/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38288_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38288_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38288_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38288_4"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

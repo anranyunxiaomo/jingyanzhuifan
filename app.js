@@ -315,7 +315,8 @@ new Vue({
       if (!aid) return;
       
       // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字
-      if (typeof aid === 'string' && !/^\d+$/.test(aid)) {
+      // 特例：若是 anich_ 开头的独有新番/国漫 ID，则不进行纯数字提炼，保留整体作为唯一详情键
+      if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_')) {
         const match = aid.match(/\d+/);
         if (match) {
           aid = match[0];

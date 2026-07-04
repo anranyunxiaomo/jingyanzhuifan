@@ -347,8 +347,91 @@ def run_static_fallback(id_map, age_index):
         with open(HOME_LIST_PATH, "w", encoding="utf-8") as f:
             json.dump(home, f, ensure_ascii=False, indent=2)
         print(f"[OK] 首页周更表静态标注完成: 共 {marked_home} 个条目")
+
+    # 对缓存的 AniCh 独有新番/国漫详情进行增量更新
+    if os.path.exists(ONLY_PATH):
+        try:
+            with open(ONLY_PATH, "r", encoding="utf-8") as f:
+                anich_only_cached = json.load(f)
+            sync_anich_only_details(anich_only_cached)
+        except Exception as e:
+            print(f"[WARN] 无法读取独有番剧缓存进行静态更新: {e}")
         
     print("\n🎉 降级静态同步全部顺利完成！")
+
+def sync_anich_only_details(anich_only_items):
+    if not anich_only_items:
+        return
+        
+    print("\n[VOD] 开始同步 AniCh 独有新番与国漫的详情页...")
+    sync_count = 0
+    
+    for item in anich_only_items:
+        bid = item['id']
+        title = item['title']
+        img = item.get('image', '')
+        # 兼容处理集数获取
+        ep_val = item.get('ep', 1)
+        max_eps = 1
+        if isinstance(ep_val, int):
+            max_eps = ep_val
+        else:
+            # 从 "第12集" 或 "更新至第12集" 中提取数字
+            m = re.search(r'\d+', str(ep_val))
+            if m:
+                max_eps = int(m.group())
+                
+        detail_path = os.path.join(DETAIL_DIR, f"anich_{bid}.json")
+        
+        detail = {}
+        if os.path.exists(detail_path):
+            with open(detail_path, "r", encoding="utf-8") as f:
+                try:
+                    detail = json.load(f)
+                except:
+                    pass
+
+        # 构建标准的 VOD 详情格式
+        video = detail.setdefault("video", {})
+        video["id"] = f"anich_{bid}"
+        video["name"] = title
+        video["cover"] = img
+        video["company"] = "AniCh 独有"
+        video["type"] = "TV"
+        
+        playlists = video.setdefault("playlists", {})
+        existing_anich = playlists.get("anich_m3u8", [])
+        ep_dict = {}
+        for ep in existing_anich:
+            if ep and len(ep) >= 2:
+                ep_dict[ep[0]] = ep[1]
+                
+        updated = False
+        for ep_idx in range(1, max_eps + 1):
+            ep_label = f"第{ep_idx:02d}集"
+            if ep_label in ep_dict and ep_dict[ep_label] and not ep_dict[ep_label].startswith("anich_placeholder_"):
+                continue
+                
+            placeholder_val = f"anich_placeholder_{bid}_{ep_idx}"
+            if ep_label not in ep_dict or ep_dict[ep_label] != placeholder_val:
+                ep_dict[ep_label] = placeholder_val
+                updated = True
+                
+        if updated or not os.path.exists(detail_path):
+            new_eps = [[label, url] for label, url in sorted(
+                ep_dict.items(),
+                key=lambda x: int(re.search(r'\d+', x[0]).group()) if re.search(r'\d+', x[0]) else 0
+            ) if url]
+            
+            video["playlists"]["anich_m3u8"] = new_eps
+            detail.setdefault("player_label_arr", {})["anich_m3u8"] = "AniCh"
+            
+            with open(detail_path, "w", encoding="utf-8") as f:
+                json.dump(detail, f, ensure_ascii=False, indent=2)
+            print(f"  ✓ AniCh 独有: {title} (anich_{bid}) 已同步 {max_eps} 集占位符")
+            sync_count += 1
+            
+    print(f"[OK] AniCh 独有详情页同步完毕。共同步: {sync_count} 部番剧")
 
 # ──────────────────────────────────────────────
 # 4. 主运行逻辑
@@ -537,6 +620,10 @@ def main():
             json.dump(home, f, ensure_ascii=False, indent=2)
             
         print(f"[OK] 首页更新完毕。标注了 {marked_home} 个已有番剧，添加了 {added_latest} 个 AniCh 独有新番")
+        
+        # 💡 同步 AniCh 独有新番/国漫的播放详情文件
+        sync_anich_only_details(anich_only)
+        
         print("\n🎉 AniCh 全量数据爬取与增量占位符生成成功！")
 
 if __name__ == '__main__':

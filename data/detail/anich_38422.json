@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38422",
+    "name": "骸骨骑士大人异世界冒险中 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/646217_2pE7PgRKSNuEEcu_1783020663/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38422_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

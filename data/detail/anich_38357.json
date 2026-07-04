@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38357",
+    "name": "暗黑灯火",
+    "cover": "https://wework.qpic.cn/wwpic3az/214192_i4UJFGBCQsW56yy_1783020663/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38357_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

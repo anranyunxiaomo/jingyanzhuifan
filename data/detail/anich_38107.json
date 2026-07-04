@@ -1,0 +1,64 @@
+{
+  "video": {
+    "id": "anich_38107",
+    "name": "盘龙",
+    "cover": "https://wework.qpic.cn/wwpic3az/439085_HUdJKoPpRc-0nt__1778009442/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38107_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38107_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38107_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38107_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38107_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38107_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38107_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38107_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38107_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38107_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38107_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38107_12"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38375",
+    "name": "成长秀～向日葵马戏团～",
+    "cover": "https://wework.qpic.cn/wwpic3az/635120_X_2g92qbTGmAAar_1783107044/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38375_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

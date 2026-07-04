@@ -1,0 +1,52 @@
+{
+  "video": {
+    "id": "anich_38282",
+    "name": "天赋长生，我出卖寿命成神",
+    "cover": "https://wework.qpic.cn/wwpic3az/503709_xF77hanzSAK-92h_1781119848/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38282_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38282_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38282_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38282_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38282_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38282_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38282_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38282_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38282_9"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}
