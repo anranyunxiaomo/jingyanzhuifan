@@ -174,7 +174,7 @@ new Vue({
       const labelArr = this.animeDetail.player_label_arr || {};
       
       // 合法可播放的常规 M3U8 H5 线路白名单
-      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8'];
+      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8'];
       
       const lines = [];
       for (const key in playlists) {
