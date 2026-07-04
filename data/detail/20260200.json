@@ -38,6 +38,56 @@
           "age_f3adGAH9PTmpmaHDrL8dMIiP2ik8%2FDG2k%2F%2Bnq9dvHNygZ28KJkffm2nSHodE8HVuxc5MkXwkhl5bwkD0lv3qMDlm0WG2cWNjHIisaq%2BHU3zMd8Ys",
           "https://v.lzcdn31.com/20260703/7865_42615174/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38374_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38374_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38374_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38374_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38374_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38374_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38374_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38374_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38374_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38374_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38374_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38374_12"
+        ]
       ]
     },
     "area": "日本",
@@ -146,7 +196,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

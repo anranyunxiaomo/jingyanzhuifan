@@ -41,3 +41,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# AniCh Private Configuration
+.anich_token
+data/.anich_token
+scratch/

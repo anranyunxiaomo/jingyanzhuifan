@@ -373,6 +373,64 @@
           "age_076cU2epeM5uY6fLCbVGPTGefMnyJg13AwZ70%2B8Xe0LYQWWbLbvt%2B%2BP2lgvj%2B2CVV5xjxAnkVjVOFXCPXMJQ1CnFt4d4a0051rLoww",
           "https://cdn.wlcdn88.com:777/376eb6e5/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37947_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37947_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37947_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37947_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37947_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37947_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37947_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37947_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37947_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37947_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37947_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37947_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37947_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37947_14"
+        ]
       ]
     },
     "area": "日本",
@@ -481,7 +539,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

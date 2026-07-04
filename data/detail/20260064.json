@@ -699,6 +699,112 @@
           "age_f4beBbkjW%2B15uXin4x%2Fh6vTb5r4wz0JAQXhTZeYQQkkq4Gmba1Lmz4tKzzfT8oZgoWhLkF3XPHkvQ46VEEUdIif7vGCAosPqYTr8Ag",
           "https://cdn.wlcdn88.com:777/10362d40/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37736_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37736_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37736_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37736_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37736_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37736_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37736_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37736_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37736_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37736_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37736_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37736_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37736_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37736_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_37736_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_37736_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_37736_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_37736_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_37736_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_37736_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_37736_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_37736_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_37736_23"
+        ],
+        [
+          "第24集",
+          "anich_placeholder_37736_24"
+        ],
+        [
+          "第25集",
+          "anich_placeholder_37736_25"
+        ],
+        [
+          "第26集",
+          "anich_placeholder_37736_26"
+        ]
       ]
     },
     "area": "日本",
@@ -809,7 +915,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -817,6 +817,20 @@
           "age_6797zaN40gEfCcUd1RFt7f%2BG1U876Wyf%2FBwBvZ%2F40EayXA0DOnjclAVnhhaEnwTPTuG9Ofx1yaEO7x4vOKwMRNZDSMQeEhQ58aR2d4H6j5fkFtvj%2BA193n4X4oxpmzs",
           "https://v8.qqqrst.com/sdv8/202406/30/az7uERZ4mG14/video/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38419_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38419_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38419_3"
+        ]
       ]
     },
     "area": "日本",
@@ -950,7 +964,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

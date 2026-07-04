@@ -50,6 +50,15 @@ jobs:
         run: |
           python update_data.py
 
+      # 4b. AniCh 自动化新番抓取与增量占位符生成 (带 Token 认证，Actions 全自动秒级同步)
+      - name: Sync AniCh anime data
+        timeout-minutes: 5
+        continue-on-error: true
+        env:
+          ANICH_TOKEN: ${{ secrets.ANICH_TOKEN }}
+        run: |
+          python scripts/anich_crawler.py
+
       # 5. 安全同步并自动推回静态数据 JSON（"物理备份与强覆盖对齐" 无冲突版）
       - name: Commit and push static data changes
         run: |

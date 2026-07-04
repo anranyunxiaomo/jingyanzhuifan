@@ -92,7 +92,8 @@ new Vue({
       const labelArr = this.animeDetail.player_label_arr || {};
       
       // 合法可播放的常规 M3U8 H5 线路白名单
-      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8'];
+      // anich_m3u8: AniCh 直链线路，ep[1] 直接是真实 m3u8 URL，不需要解析站
+      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8'];
       
       const lines = [];
       for (const key in playlists) {
@@ -385,7 +386,7 @@ new Vue({
       this.activeEpisodeIndex = -1; // 切换线路时重置选中的集数
     },
     
-    playEpisode(epIdx) {
+    async playEpisode(epIdx) {
       if (this.guardTimer) {
         clearInterval(this.guardTimer);
         this.guardTimer = null;
@@ -396,8 +397,21 @@ new Vue({
       if (!ep) return;
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
-      const epToken = ep[1];          // 加密 token 或直链 url
+      let epToken = ep[1];          // 加密 token 或直链 url
       const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
+
+      // 💡 AniCh 占位符前端实时解密 (无感极速解析)
+      if (this.activeLineKey === 'anich_m3u8' && epToken && epToken.startsWith('anich_placeholder_')) {
+        const parts = epToken.split('_');
+        const anichId = parts[2];
+        const epNum = parts[3];
+        const resolved = await this.resolveAnichUrl(anichId, epNum);
+        if (resolved) {
+          epToken = resolved;
+        } else {
+          console.error("[AniCh Resolver] Failed to resolve URL from placeholder");
+        }
+      }
 
       // 💡 物理阻击第 3 方浏览器或扩展的视频进度自动恢复：
       // 无刷新更新浏览器地址栏的 URL 参数，将 location.href 强制和当前番剧、集数和时间戳动态绑定。
@@ -423,18 +437,18 @@ new Vue({
           playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
         }
         console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
+      } else if (this.activeLineKey === 'anich_m3u8') {
+        // AniCh 直链线路：ep[1] 本身就是真实 m3u8/mp4 URL，直接播放，不套解析站
+        playUrl = epToken;
+        console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
       } else {
-        // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
-        // 💡 修复：如果常规线路被加密成了 age_ 开头，且我们有 realUrl，就优先传 realUrl 给解析站
-        // 否则把 age_ 传给第三方解析站(如 m3u8.tv) 会导致 404
+        // 常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         const targetUrlToResolve = realUrl ? realUrl : epToken;
         
         if (this.activeEngineKey === 'default') {
-          // 如果 target 还是 age_ 开头，说明它是个漏网之鱼的加密 Token，必须用官方解密
           if (targetUrlToResolve.startsWith('age_')) {
               playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
           } else {
-              // 常规真实 m3u8 链接，用 xmflv.com 专属 VIP 接口代理 (替代已失效的 m3u8.tv)
               playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
           }
           console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
@@ -588,6 +602,85 @@ new Vue({
           console.log(`[IFRAME PLAYING] Loaded fresh with URL: ${this.activePlayUrl}`);
         }, 120);
       });
+    },
+
+    async resolveAnichUrl(anichId, epNum) {
+      console.log(`[AniCh Resolver] Resolving real stream URL for ID=${anichId}, Ep=${epNum}...`);
+      try {
+        const targetUrl = `https://ani.emmmm.eu.org/vod/${anichId}/${epNum}`;
+        const response = await fetch(targetUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid vod response format");
+        }
+        
+        // 1. 解码 Protobuf 里面的 Base64
+        const protoBytes = new Uint8Array(data);
+        const urls = [];
+        let current = [];
+        
+        for (let i = 0; i < protoBytes.length; i++) {
+          const b = protoBytes[i];
+          if (b >= 32 && b <= 126) {
+            current.push(String.fromCharCode(b));
+          } else {
+            if (current.length >= 15) {
+              const s = current.join("");
+              if (s.includes("aHR0") || s.includes("aHR")) {
+                let idx = s.indexOf("aHR0");
+                if (idx < 0) idx = s.indexOf("aHR");
+                let b64Raw = s.substring(idx);
+                b64Raw = b64Raw.replace(/aHR[A-Z]0/g, "aHR0");
+                const b64Clean = b64Raw.replace(/[^A-Za-z0-9+/=]/g, "");
+                try {
+                  const decoded = atob(b64Clean);
+                  if (decoded.startsWith("http")) {
+                    urls.push(decoded);
+                  }
+                } catch (e) {}
+              }
+            }
+            current = [];
+          }
+        }
+        
+        // 2. 按优先级挑选最佳地址
+        const URL_PRIORITY = [
+          "xgct-video.vzcdn.net",
+          "app.emmmm.eu.org.cdn.cloudflare.net",
+          "giri.girigirilove.top",
+          "yhdmm3u8.top",
+          "92cj.com",
+          ".m3u8",
+          ".mp4"
+        ];
+        
+        let finalUrl = null;
+        for (const pattern of URL_PRIORITY) {
+          for (const url of urls) {
+            if (url.toLowerCase().includes(pattern)) {
+              finalUrl = url;
+              break;
+            }
+          }
+          if (finalUrl) break;
+        }
+        if (!finalUrl && urls.length > 0) {
+          finalUrl = urls[0];
+        }
+        
+        if (finalUrl) {
+          console.log("[AniCh Resolver] Resolved successfully:", finalUrl.substring(0, 60));
+          return finalUrl;
+        }
+        throw new Error("No video URL found in stream");
+      } catch (err) {
+        console.error("[AniCh Resolver] Failed to resolve:", err);
+        return null;
+      }
     },
     
     forceResetProgressAndReplay() {
