@@ -3261,18 +3261,25 @@ body.fit-fill iframe {
 /* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
 .top-poem-banner .poem-scroll-text {
   writing-mode: vertical-rl;
-  width: 70px;             /* 🔒 固定宽度，防止 Flex 容器下由于 vertical-rl 的浏览器 Bug 造成右侧大片空白 */
   font-family: 'Noto Serif SC', 'STKaiti', 'KaiTi', serif;
   font-size: 13px;         /* 13px × 1.25 × 8字 = 130px，完整显示一行诗 */
   font-weight: 700;
   color: rgba(44, 26, 14, 0.82);
   letter-spacing: 0.02em;
-  line-height: 1.25;       /* 精确：每字高 = 13 × 1.25 = 16.25px */
   height: 100%;            /* 继承 banner-poem 的 130px */
-  white-space: nowrap;     /* 禁止自动换列，由 <br> 控制分列 */
   overflow: visible;       /* 宽度自然延伸，外层 clip-path 裁切 */
   animation: inkFadeIn 1.2s ease forwards;
   text-shadow: 0 1px 0 rgba(200, 168, 107, 0.25);
+  width: fit-content;      /* 🚀 宽度由四列内容及边距自适应撑开 */
+}
+.top-poem-banner .poem-scroll-text span {
+  display: inline-block;   /* 🚀 在 vertical-rl 下，inline-block 会从右向左完美呈一列列排列 */
+  margin-left: 10px;       /* 🚀 100% 精准控制每一列之间的间距，解决第一列被莫名撑大问题 */
+  white-space: nowrap;
+  line-height: 1.25;
+}
+.top-poem-banner .poem-scroll-text span:last-child {
+  margin-left: 0;          /* 最后一列（最左侧）无需左侧外边距 */
 }
 
 @keyframes inkFadeIn {
@@ -3326,8 +3333,11 @@ body.fit-fill iframe {
   }
   .top-poem-banner .poem-scroll-text {
     font-size: 11px;
+    width: fit-content;
+  }
+  .top-poem-banner .poem-scroll-text span {
+    margin-left: 8px;
     line-height: 1.15;
-    width: 60px;
   }
 }
 
