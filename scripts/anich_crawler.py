@@ -344,19 +344,59 @@ def run_static_fallback(id_map, age_index):
                     h_item["anich_id"] = id_map[h_aid]["anich_id"]
                     marked_home += 1
 
+        # 同样在静态降级中追加 AniCh 独有新番到 latest (直接从 search_index.json 提取以 anich_ 开头的所有独有动漫)
+        anich_only_source = []
+        if os.path.exists(SEARCH_INDEX_PATH):
+            try:
+                with open(SEARCH_INDEX_PATH, "r", encoding="utf-8") as f:
+                    idx_list = json.load(f)
+                for entry in idx_list:
+                    aid_str = str(entry.get("AID", ""))
+                    if aid_str.startswith("anich_"):
+                        try:
+                            bid = int(aid_str.split("_")[1])
+                            anich_only_source.append({
+                                "id": bid,
+                                "title": entry.get("Title", ""),
+                                "image": entry.get("Cover", ""),
+                                "ep": entry.get("UpToDate", "第01集")
+                            })
+                        except:
+                            pass
+            except Exception as e:
+                print(f"[WARN] 静态降级中无法从 search_index 提取独有番剧: {e}")
+                
+        existing_anich_ids_in_latest = {item.get("anich_id") for item in home.get("latest", []) if "anich_id" in item}
+        added_latest = 0
+        for entry in anich_only_source[:25]:
+            anich_id = entry["id"]
+            if anich_id in existing_anich_ids_in_latest:
+                continue
+                
+            anich_item = {
+                "AID": f"anich_{anich_id}",
+                "anich_id": anich_id,
+                "source": "anich",
+                "Href": f"/detail/anich_{anich_id}",
+                "NewTitle": f"更新至第{entry.get('ep', 1)}集" if isinstance(entry.get('ep'), int) else f"更新至{entry.get('ep', '第01集')}",
+                "PicSmall": entry.get("image", ""),
+                "Title": entry["title"],
+            }
+            home.setdefault("latest", []).append(anich_item)
+            added_latest += 1
+        print(f"[OK] 首页静态追加了 {added_latest} 个 AniCh 独有新番到最近更新")
+
         with open(HOME_LIST_PATH, "w", encoding="utf-8") as f:
             json.dump(home, f, ensure_ascii=False, indent=2)
         print(f"[OK] 首页周更表静态标注完成: 共 {marked_home} 个条目")
 
     # 对缓存的 AniCh 独有新番/国漫详情进行增量更新
-    if os.path.exists(ONLY_PATH):
+    if 'anich_only_source' in locals() and anich_only_source:
         try:
-            with open(ONLY_PATH, "r", encoding="utf-8") as f:
-                anich_only_cached = json.load(f)
-            sync_anich_only_details(anich_only_cached)
-            sync_search_index(anich_only_cached)
+            sync_anich_only_details(anich_only_source)
+            sync_search_index(anich_only_source)
         except Exception as e:
-            print(f"[WARN] 无法读取独有番剧缓存进行静态更新: {e}")
+            print(f"[WARN] 静态详情更新失败: {e}")
         
     print("\n🎉 降级静态同步全部顺利完成！")
 
@@ -649,20 +689,48 @@ def main():
                     h_item["anich_id"] = updated_map[h_aid]["anich_id"]
                     marked_home += 1
                     
-        # 首页 latest 列表追加 AniCh 独有新番
+        # 首页 latest 列表追加 AniCh 独有新番 (直接从 search_index.json 提取以 anich_ 开头的所有独有动漫)
+        anich_only_source = []
+        if os.path.exists(SEARCH_INDEX_PATH):
+            try:
+                with open(SEARCH_INDEX_PATH, "r", encoding="utf-8") as f:
+                    idx_list = json.load(f)
+                for entry in idx_list:
+                    aid_str = str(entry.get("AID", ""))
+                    if aid_str.startswith("anich_"):
+                        # 兼容提取数字 ID 作为 anich_id
+                        try:
+                            bid = int(aid_str.split("_")[1])
+                            anich_only_source.append({
+                                "id": bid,
+                                "title": entry.get("Title", ""),
+                                "image": entry.get("Cover", ""),
+                                "ep": entry.get("UpToDate", "第01集")
+                            })
+                        except:
+                            pass
+            except Exception as e:
+                print(f"[WARN] 无法从 search_index 提取独有番剧: {e}")
+                
+        # 融入当前的增量数据
+        seen_ids = {x['id'] for x in anich_only_source}
+        for entry in anich_only:
+            if entry['id'] not in seen_ids:
+                anich_only_source.append(entry)
+                
         existing_anich_ids_in_latest = {item.get("anich_id") for item in home.get("latest", []) if "anich_id" in item}
         added_latest = 0
-        for entry in anich_only[:20]:
+        for entry in anich_only_source[:25]:
             anich_id = entry["id"]
             if anich_id in existing_anich_ids_in_latest:
                 continue
                 
             anich_item = {
-                "AID": 0,
+                "AID": f"anich_{anich_id}",
                 "anich_id": anich_id,
                 "source": "anich",
                 "Href": f"/detail/anich_{anich_id}",
-                "NewTitle": f"更新至第{entry['ep']}集",
+                "NewTitle": f"更新至第{entry.get('ep', 1)}集" if isinstance(entry.get('ep'), int) else f"更新至{entry.get('ep', '第01集')}",
                 "PicSmall": entry.get("image", ""),
                 "Title": entry["title"],
             }
@@ -675,21 +743,8 @@ def main():
         print(f"[OK] 首页更新完毕。标注了 {marked_home} 个已有番剧，添加了 {added_latest} 个 AniCh 独有新番")
         
         # 💡 同步 AniCh 独有新番/国漫的播放详情文件与搜索索引
-        # 读取以前全部的独有缓存进行全量对齐，防止增量漏项
-        all_anich_only = list(anich_only)
-        if os.path.exists(ONLY_PATH):
-            try:
-                with open(ONLY_PATH, "r", encoding="utf-8") as f:
-                    cached_only = json.load(f)
-                seen_ids = {x['id'] for x in all_anich_only}
-                for c_item in cached_only:
-                    if c_item['id'] not in seen_ids:
-                        all_anich_only.append(c_item)
-            except Exception as e:
-                print(f"[WARN] 读取独有缓存失败: {e}")
-                
-        sync_anich_only_details(all_anich_only)
-        sync_search_index(all_anich_only)
+        sync_anich_only_details(anich_only_source)
+        sync_search_index(anich_only_source)
         
         print("\n🎉 AniCh 全量数据爬取与增量占位符生成成功！")
 
