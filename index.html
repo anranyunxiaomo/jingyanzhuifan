@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260704T1415">
+  <link rel="stylesheet" href="css/style.css?v=20260704T1420">
 </head>
 <body class="loader-active">
 
@@ -115,24 +115,26 @@
           <!-- 1. 背景宣纸圆盘 -->
           <circle cx="50" cy="50" r="45" fill="url(#inkGlow)"/>
 
-          <!-- 2. 东方红日（点睛之笔） -->
-          <circle cx="68" cy="32" r="5.5" fill="#D9607A" opacity="0.88"/>
+          <!-- 2. 东方红日（点睛之笔，位于飞雁前方的天际） -->
+          <circle cx="70" cy="30" r="5.5" fill="#D9607A" opacity="0.88"/>
 
-          <!-- 3. 写意晕染远山（平缓双峰，水墨留白） -->
+          <!-- 3. 写意烟雨远山（平缓水墨双峰，形成留白意境） -->
           <path d="M 16,72 C 30,58 45,58 58,72 C 65,65 76,65 84,72 L 84,82 L 16,82 Z" fill="url(#mountainGrad)" opacity="0.5"/>
 
-          <!-- 4. 书法写意孤雁（展翅飞腾） -->
-          <g transform="translate(48, 50) scale(1)">
-            <!-- 雁翼与身体：双翼展开，线条极致流畅 -->
-            <path d="M -22,-3 
-                     C -13,-11 -5,-3 -1,4 
-                     C 3,-3 11,-11 20,-3 
-                     C 13,2 4,1 0,10 
-                     C -4,1 -13,2 -22,-3 Z" 
+          <!-- 4. 书法写意孤雁（翱翔姿态，朝向右上方展翅冲天，彻底避免小树苗既视感） -->
+          <g transform="translate(50, 50) scale(1.15)">
+            <path d="M -20,12 
+                     C -12,8 -6,6 -2,4 
+                     C -6,-4 -12,-12 -16,-18 
+                     C -9,-11 -1,-3 3,2 
+                     C 6,-4 10,-10 12,-16 
+                     C 12,-9 9,-2 5,5 
+                     C 11,4 17,2 23,-1
+                     C 25,-2.5 28,-1.5 27,1
+                     C 25,2.5 20,4.5 16,5
+                     C 9,6 2,8 -2,9
+                     C -8,10 -14,11 -20,12 Z" 
                   fill="#D9607A"/>
-            <!-- 前倾的雁颈与圆头 -->
-            <path d="M 0,6 C 2,11 3.5,14 5.5,17.5" stroke="#D9607A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <circle cx="6.5" cy="19.5" r="2.2" fill="#D9607A"/>
           </g>
 
           <!-- 5. 月洞门双圆细线框（极致精细工艺感） -->
