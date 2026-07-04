@@ -100,8 +100,16 @@ new Vue({
       if (this.catalogSort === 'title') {
         list = [...list].sort((a, b) => a.Title.localeCompare(b.Title, 'zh'));
       } else {
-        // 默认：AID 倒序（越新越靠前）
-        list = [...list].sort((a, b) => Number(b.AID) - Number(a.AID));
+        list = [...list].sort((a, b) => {
+          const aidA = String(a.AID);
+          const aidB = String(b.AID);
+          const isNumA = /^\d+$/.test(aidA);
+          const isNumB = /^\d+$/.test(aidB);
+          if (isNumA && isNumB) {
+            return Number(aidB) - Number(aidA);
+          }
+          return aidB.localeCompare(aidA);
+        });
       }
       return list;
     },
@@ -318,9 +326,129 @@ new Vue({
   },
   
   methods: {
-    // ==========================================================================
-    // 💾 缓存及预加载助手服务
-    // ==========================================================================
+    async resolveAnichUrl(anichId, epNum) {
+      console.log(`[AniCh Resolver] Resolving real stream URL for ID=${anichId}, Ep=${epNum}...`);
+      const domains = [
+        "https://ani.emmmm.eu.org",
+        "https://api.emmmm.eu.org",
+        "https://jingyanff.xyz/anich-proxy"
+      ];
+      
+      let response = null;
+      let lastError = null;
+      
+      for (const domain of domains) {
+        try {
+          const targetUrl = `${domain}/vod/${anichId}/${epNum}`;
+          const res = await fetch(targetUrl);
+          if (res.ok) {
+            response = res;
+            console.log(`[AniCh Resolver] Fetched successfully from: ${domain}`);
+            break;
+          } else {
+            console.warn(`[AniCh Resolver] Domain ${domain} returned status: ${res.status}`);
+          }
+        } catch (err) {
+          lastError = err;
+          console.warn(`[AniCh Resolver] Failed to fetch from ${domain}, trying next...`);
+        }
+      }
+      
+      if (!response) {
+        console.error("[AniCh Resolver] All backup domains failed to resolve. last error:", lastError);
+        return null;
+      }
+      
+      try {
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid vod response format");
+        }
+        
+        const protoBytes = new Uint8Array(data);
+        const urls = [];
+        let current = [];
+        
+        for (let i = 0; i < protoBytes.length; i++) {
+          const b = protoBytes[i];
+          if (b >= 32 && b <= 126) {
+            current.push(String.fromCharCode(b));
+          } else {
+            if (current.length >= 15) {
+              const s = current.join("");
+              if (s.includes("aHR0") || s.includes("aHR")) {
+                let idx = s.indexOf("aHR0");
+                if (idx < 0) idx = s.indexOf("aHR");
+                let b64Raw = s.substring(idx);
+                b64Raw = b64Raw.replace(/aHR[A-Z]0/g, "aHR0");
+                const b64Clean = b64Raw.replace(/[^A-Za-z0-9+/=]/g, "");
+                try {
+                  const decoded = atob(b64Clean);
+                  if (decoded.startsWith("http")) {
+                    urls.push(decoded);
+                  }
+                } catch (e) {}
+              }
+            }
+            current = [];
+          }
+        }
+        
+        const URL_PRIORITY = [
+          "xgct-video.vzcdn.net",
+          "app.emmmm.eu.org.cdn.cloudflare.net",
+          "giri.girigirilove.top",
+          "yhdmm3u8.top",
+          "92cj.com",
+          ".m3u8",
+          ".mp4"
+        ];
+        
+        let finalUrl = null;
+        for (const pattern of URL_PRIORITY) {
+          for (const url of urls) {
+            if (url.toLowerCase().includes(pattern)) {
+              finalUrl = url;
+              break;
+            }
+          }
+          if (finalUrl) break;
+        }
+        if (!finalUrl && urls.length > 0) {
+          finalUrl = urls[0];
+        }
+        
+        if (finalUrl) {
+          console.log("[AniCh Resolver] Resolved successfully:", finalUrl.substring(0, 60));
+          return finalUrl;
+        }
+        throw new Error("No video URL found in stream");
+      } catch (err) {
+        console.error("[AniCh Resolver] Failed to resolve:", err);
+        return null;
+      }
+    },
+
+    async axiosGetViaProxy(targetUrl) {
+      const PROXIES = [
+        "https://corsproxy.io/?url=",
+        "https://api.codetabs.com/v1/proxy?quest=",
+        "https://api.allorigins.win/raw?url="
+      ];
+      let lastErr = null;
+      for (const proxyBase of PROXIES) {
+        try {
+          const proxiedUrl = proxyBase + encodeURIComponent(targetUrl);
+          const res = await axios.get(proxiedUrl, { timeout: 5000 });
+          if (res && res.data) {
+            return res;
+          }
+        } catch (err) {
+          lastErr = err;
+        }
+      }
+      throw lastErr || new Error("All CORS proxies exhausted and failed");
+    },
     preloadImage(url) {
       if (!url) return;
       const img = new Image();
@@ -709,7 +837,7 @@ new Vue({
       this.activeEpisodeIndex = -1; // 切换线路时重置选中的集数
     },
     
-    playEpisode(epIdx) {
+    async playEpisode(epIdx) {
       if (this.guardTimer) {
         clearInterval(this.guardTimer);
         this.guardTimer = null;
@@ -720,8 +848,22 @@ new Vue({
       if (!ep) return;
       
       this.activeEpisodeName = ep[0]; // 剧集名，如 "第01集"
-      const epToken = ep[1];          // 加密 token 或直链 url
-      const realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
+      let epToken = ep[1];          // 加密 token 或直链 url
+      let realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
+
+      // 💡 AniCh 占位符前端实时解密 (无感极速解析)
+      if (this.activeLineKey === 'anich_m3u8' && epToken && epToken.startsWith('anich_placeholder_')) {
+        const parts = epToken.split('_');
+        const anichId = parts[2];
+        const epNum = parts[3];
+        const resolved = await this.resolveAnichUrl(anichId, epNum);
+        if (resolved) {
+          epToken = resolved;
+          realUrl = resolved; // 💡 强行设为直链触发原生 DPlayer 播放
+        } else {
+          console.error("[AniCh Resolver] Failed to resolve URL from placeholder");
+        }
+      }
 
       // 防止第三方进度插件恢复：更新 hash 地址（必须保持 hash 格式，路由器依赖 #/detail/:id）
       // ⚠️ 不能改为 query 参数格式，否则刷新时路由器识别不到 detail/:id，跳回首页
@@ -736,7 +878,7 @@ new Vue({
       let playUrl = "";
       
       if (isVip) {
-        // 如果是官方加密/VIP线路，必须强行使用 AGE 合作的 default 解析源，才能解密播放，否则会报“不支持的视频平台”
+        // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
         const playerJx = this.animeDetail.player_jx || {};
         const jxBase = playerJx.vip || playerJx.zj;
         if (jxBase) {
@@ -745,18 +887,18 @@ new Vue({
           playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
         }
         console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
+      } else if (this.activeLineKey === 'anich_m3u8') {
+        // AniCh 直链线路：ep[1] 本身就是真实 m3u8/mp4 URL，直接播放，不套解析站
+        playUrl = epToken;
+        console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
-        // 💡 修复：如果常规线路被加密成了 age_ 开头，且我们有 realUrl，就优先传 realUrl 给解析站
-        // 否则把 age_ 传给第三方解析站(如 m3u8.tv) 会导致 404
         const targetUrlToResolve = realUrl ? realUrl : epToken;
         
         if (this.activeEngineKey === 'default') {
-          // 如果 target 还是 age_ 开头，说明它是个漏网之鱼的加密 Token，必须用官方解密
           if (targetUrlToResolve.startsWith('age_')) {
               playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
           } else {
-              // 常规真实 m3u8 链接，用 xmflv.com 专属 VIP 接口代理 (替代已失效的 m3u8.tv)
               playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
           }
           console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
