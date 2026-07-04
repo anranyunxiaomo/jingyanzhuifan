@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/hls.js@1.5.8/dist/hls.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.css">
   <script src="https://unpkg.com/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260704T1410">
+  <link rel="stylesheet" href="css/style.css?v=20260704T1415">
 </head>
 <body class="loader-active">
 
@@ -99,68 +99,45 @@
       <div class="brand" @click="goHome">
         <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <clipPath id="moonGate">
-              <circle cx="50" cy="50" r="42"/>
-            </clipPath>
+            <!-- 宣纸温润底色渐变 -->
+            <radialGradient id="inkGlow" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+              <stop offset="0%" stop-color="#FFFDFB"/>
+              <stop offset="70%" stop-color="#FAF4EE"/>
+              <stop offset="100%" stop-color="#F2E7DC"/>
+            </radialGradient>
+            <!-- 远山淡淡的烟雨晕染渐变 -->
+            <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(217, 96, 122, 0.05)"/>
+              <stop offset="100%" stop-color="rgba(217, 96, 122, 0.58)"/>
+            </linearGradient>
           </defs>
 
-          <g clip-path="url(#moonGate)">
-            <!-- 宣纸天空 -->
-            <rect x="0" y="0" width="100" height="100" fill="#FAF4EE"/>
+          <!-- 1. 背景宣纸圆盘 -->
+          <circle cx="50" cy="50" r="45" fill="url(#inkGlow)"/>
 
-            <!-- ── 山峦叠层（贝塞尔曲线柔化山顶，由远到近） ── -->
-            <!-- 远山左（最淡） -->
-            <path d="M -2,80 Q 16,48 34,80 Z" fill="#a62c19" opacity="0.28"/>
-            <!-- 远山右 -->
-            <path d="M 66,80 Q 82,44 100,80 Z" fill="#a62c19" opacity="0.32"/>
-            <!-- 中景左山 -->
-            <path d="M 8,80 Q 30,46 52,80 Z" fill="#a62c19" opacity="0.52"/>
-            <!-- 中景右山 -->
-            <path d="M 48,80 Q 70,42 93,80 Z" fill="#a62c19" opacity="0.48"/>
-            <!-- 主峰（最高最深，中心） -->
-            <path d="M 20,80 Q 50,18 80,80 Z" fill="#a62c19" opacity="0.82"/>
-            <!-- 山脚地面 -->
-            <rect x="0" y="80" width="100" height="22" fill="#a62c19" opacity="0.9"/>
+          <!-- 2. 东方红日（点睛之笔） -->
+          <circle cx="68" cy="32" r="5.5" fill="#D9607A" opacity="0.88"/>
 
-            <!-- ── 三雁·V字南飞编队 ── -->
-            <!-- 飞行朝向：颈部指向左下=偏南方 -->
+          <!-- 3. 写意晕染远山（平缓双峰，水墨留白） -->
+          <path d="M 16,72 C 30,58 45,58 58,72 C 65,65 76,65 84,72 L 84,82 L 16,82 Z" fill="url(#mountainGrad)" opacity="0.5"/>
 
-            <!-- 头雁（最大，居中领飞） -->
-            <g transform="translate(50,42)">
-              <!-- 左翼弧 -->
-              <path d="M 0,0 C -3,-4 -8,-4 -12,-1" stroke="#a62c19" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-              <!-- 右翼弧 -->
-              <path d="M 0,0 C 3,-3 8,-3 12,-0.5" stroke="#a62c19" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-              <!-- 雁身 -->
-              <ellipse cx="0" cy="0.5" rx="3.5" ry="2.2" fill="#a62c19"/>
-              <!-- 颈朝左下（南向） -->
-              <path d="M -1,2 C -2,4 -3,6 -4,8" stroke="#a62c19" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <!-- 头 -->
-              <circle cx="-4.5" cy="9" r="2" fill="#a62c19"/>
-            </g>
-
-            <!-- 左翼雁（中等，头雁左后方） -->
-            <g transform="translate(32,30)">
-              <path d="M 0,0 C -2.5,-3.2 -6.5,-3 -9.5,-0.5" stroke="#a62c19" stroke-width="1.9" fill="none" stroke-linecap="round"/>
-              <path d="M 0,0 C 2.5,-2.5 6,-2.2 9,-0.2" stroke="#a62c19" stroke-width="1.9" fill="none" stroke-linecap="round"/>
-              <ellipse cx="0" cy="0.5" rx="2.8" ry="1.8" fill="#a62c19"/>
-              <path d="M -0.8,2 C -1.5,3.5 -2.2,5 -3,6.5" stroke="#a62c19" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-              <circle cx="-3.5" cy="7.5" r="1.6" fill="#a62c19"/>
-            </g>
-
-            <!-- 右翼雁（稍小，头雁右后方） -->
-            <g transform="translate(68,31)">
-              <path d="M 0,0 C -2,-3 -5.5,-2.8 -8.5,-0.5" stroke="#a62c19" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-              <path d="M 0,0 C 2,-2.5 5.5,-2 8,-0.2" stroke="#a62c19" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-              <ellipse cx="0" cy="0.5" rx="2.4" ry="1.5" fill="#a62c19"/>
-              <path d="M -0.6,1.8 C -1.2,3 -1.8,4.5 -2.5,6" stroke="#a62c19" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              <circle cx="-3" cy="7" r="1.4" fill="#a62c19"/>
-            </g>
+          <!-- 4. 书法写意孤雁（展翅飞腾） -->
+          <g transform="translate(48, 50) scale(1)">
+            <!-- 雁翼与身体：双翼展开，线条极致流畅 -->
+            <path d="M -22,-3 
+                     C -13,-11 -5,-3 -1,4 
+                     C 3,-3 11,-11 20,-3 
+                     C 13,2 4,1 0,10 
+                     C -4,1 -13,2 -22,-3 Z" 
+                  fill="#D9607A"/>
+            <!-- 前倾的雁颈与圆头 -->
+            <path d="M 0,6 C 2,11 3.5,14 5.5,17.5" stroke="#D9607A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <circle cx="6.5" cy="19.5" r="2.2" fill="#D9607A"/>
           </g>
 
-          <!-- 月洞门双圆框 -->
-          <circle cx="50" cy="50" r="44" stroke="#a62c19" stroke-width="2.8" fill="none"/>
-          <circle cx="50" cy="50" r="40" stroke="#a62c19" stroke-width="0.8" fill="none" opacity="0.38"/>
+          <!-- 5. 月洞门双圆细线框（极致精细工艺感） -->
+          <circle cx="50" cy="50" r="45" stroke="#D9607A" stroke-width="1.6" fill="none" opacity="0.95"/>
+          <circle cx="50" cy="50" r="42.2" stroke="#D9607A" stroke-width="0.5" fill="none" opacity="0.32"/>
         </svg>
         <span class="logo-art">景雁</span>
       </div>
