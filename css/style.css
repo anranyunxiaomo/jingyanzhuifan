@@ -3240,8 +3240,8 @@ body.fit-fill iframe {
   letter-spacing: 1px;
 }
 
-/* 诗词组：绝对定位钉在横幅右侧，内容严格裁切防溢出 */
 .top-poem-banner .top-banner-poem {
+  position: absolute;          /* 🚀 绝对定位，脱离文档流以靠右对齐 */
   right: 2rem;                 /* 🚀 在横幅不溢出后，改回 2rem 以实现与左边 2rem padding 的完美等高对称 */
   top: 50%;
   transform: translateY(-50%);
