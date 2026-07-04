@@ -442,11 +442,14 @@ async def main_async():
                     title = video.get("name")
                     if title and aid_str not in seen_aids:
                         pinyin_code = get_pinyin_initials(title)
+                        entry_aid = aid_str
+                        if aid_str.isdigit():
+                            entry_aid = int(aid_str)
                         index_data.append({
-                            "AID": int(aid_str),
+                            "AID": entry_aid,
                             "Title": title,
                             "Pinyin": pinyin_code,
-                            "Cover": video.get("cover", ""),
+                            "Cover": video.get("cover", "") or video.get("pic", ""),
                             "Status": video.get("status", "连载"),
                             "UpToDate": video.get("uptodate", "更新中")
                         })
