@@ -354,6 +354,7 @@ def run_static_fallback(id_map, age_index):
             with open(ONLY_PATH, "r", encoding="utf-8") as f:
                 anich_only_cached = json.load(f)
             sync_anich_only_details(anich_only_cached)
+            sync_search_index(anich_only_cached)
         except Exception as e:
             print(f"[WARN] 无法读取独有番剧缓存进行静态更新: {e}")
         
@@ -432,6 +433,58 @@ def sync_anich_only_details(anich_only_items):
             sync_count += 1
             
     print(f"[OK] AniCh 独有详情页同步完毕。共同步: {sync_count} 部番剧")
+
+def sync_search_index(anich_only_items):
+    if not anich_only_items or not os.path.exists(SEARCH_INDEX_PATH):
+        return
+        
+    with open(SEARCH_INDEX_PATH, "r", encoding="utf-8") as f:
+        try:
+            search_index = json.load(f)
+        except:
+            search_index = []
+            
+    existing_aids = {str(item.get("AID")) for item in search_index}
+    updated = False
+    
+    for item in anich_only_items:
+        bid = item['id']
+        title = item['title']
+        aid_str = f"anich_{bid}"
+        
+        # 兼容提取集数
+        ep_val = item.get('ep', 1)
+        if isinstance(ep_val, int):
+            new_up = f"更新至第{ep_val}集"
+        else:
+            m = re.search(r'\d+', str(ep_val))
+            new_up = f"更新至第{m.group()}集" if m else f"更新至{ep_val}"
+            
+        if aid_str in existing_aids:
+            for idx, entry in enumerate(search_index):
+                if str(entry.get("AID")) == aid_str:
+                    if entry.get("UpToDate") != new_up:
+                        entry["UpToDate"] = new_up
+                        updated = True
+                    break
+            continue
+            
+        entry = {
+            "AID": aid_str,
+            "Title": title,
+            "Pinyin": title.lower().replace(" ", ""),
+            "Cover": item.get("image", ""),
+            "Status": "连载",
+            "UpToDate": new_up
+        }
+        search_index.append(entry)
+        existing_aids.add(aid_str)
+        updated = True
+        
+    if updated:
+        with open(SEARCH_INDEX_PATH, "w", encoding="utf-8") as f:
+            json.dump(search_index, f, ensure_ascii=False, indent=2)
+        print(f"[OK] 全局搜索索引 data/search_index.json 已同步 (更新了 AniCh 独有资源)")
 
 # ──────────────────────────────────────────────
 # 4. 主运行逻辑
@@ -621,8 +674,22 @@ def main():
             
         print(f"[OK] 首页更新完毕。标注了 {marked_home} 个已有番剧，添加了 {added_latest} 个 AniCh 独有新番")
         
-        # 💡 同步 AniCh 独有新番/国漫的播放详情文件
-        sync_anich_only_details(anich_only)
+        # 💡 同步 AniCh 独有新番/国漫的播放详情文件与搜索索引
+        # 读取以前全部的独有缓存进行全量对齐，防止增量漏项
+        all_anich_only = list(anich_only)
+        if os.path.exists(ONLY_PATH):
+            try:
+                with open(ONLY_PATH, "r", encoding="utf-8") as f:
+                    cached_only = json.load(f)
+                seen_ids = {x['id'] for x in all_anich_only}
+                for c_item in cached_only:
+                    if c_item['id'] not in seen_ids:
+                        all_anich_only.append(c_item)
+            except Exception as e:
+                print(f"[WARN] 读取独有缓存失败: {e}")
+                
+        sync_anich_only_details(all_anich_only)
+        sync_search_index(all_anich_only)
         
         print("\n🎉 AniCh 全量数据爬取与增量占位符生成成功！")
 
