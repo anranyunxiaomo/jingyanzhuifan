@@ -3203,10 +3203,8 @@ body.fit-fill iframe {
   text-align: center;
 }
 
-/* 🖋 独立古风诗歌顶部横幅 */
 .top-poem-banner {
   position: relative;
-  width: 100%;
   height: 160px;
   background: var(--bg-secondary);
   border: 1px solid rgba(217, 96, 122, 0.16);
@@ -3218,6 +3216,7 @@ body.fit-fill iframe {
   padding: 0 2rem;
   background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.85) 0%, rgba(255, 253, 251, 0.98) 60%, rgba(255, 248, 245, 0.9) 100%);
   overflow: hidden;            /* 裁切所有溢出内容 */
+  box-sizing: border-box;      /* 🚀 声明 border-box，配合去除 width 彻底消灭溢出，与下方完全持平 */
 }
 
 /* 诗歌独立容器内左侧文字 */
@@ -3243,8 +3242,7 @@ body.fit-fill iframe {
 
 /* 诗词组：绝对定位钉在横幅右侧，内容严格裁切防溢出 */
 .top-poem-banner .top-banner-poem {
-  position: absolute;
-  right: 0;                    /* 与 banner-container 右边缘精准持平 */
+  right: 2rem;                 /* 🚀 在横幅不溢出后，改回 2rem 以实现与左边 2rem padding 的完美等高对称 */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -3316,6 +3314,7 @@ body.fit-fill iframe {
     letter-spacing: 0.5px;
   }
   .top-poem-banner .top-banner-poem {
+    right: 1.2rem;             /* 🚀 平板端同步适配为 1.2rem 定位，达成等高对称 */
     height: 105px;
     gap: 0.4rem;
   }
