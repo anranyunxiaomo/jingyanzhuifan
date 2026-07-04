@@ -606,12 +606,38 @@ new Vue({
 
     async resolveAnichUrl(anichId, epNum) {
       console.log(`[AniCh Resolver] Resolving real stream URL for ID=${anichId}, Ep=${epNum}...`);
-      try {
-        const targetUrl = `https://ani.emmmm.eu.org/vod/${anichId}/${epNum}`;
-        const response = await fetch(targetUrl);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+      const domains = [
+        "https://ani.emmmm.eu.org",
+        "https://api.emmmm.eu.org",
+        "https://jingyanff.xyz/anich-proxy" // 你的自建反代域名兜底 (防污染、防屏蔽)
+      ];
+      
+      let response = null;
+      let lastError = null;
+      
+      for (const domain of domains) {
+        try {
+          const targetUrl = `${domain}/vod/${anichId}/${epNum}`;
+          const res = await fetch(targetUrl);
+          if (res.ok) {
+            response = res;
+            console.log(`[AniCh Resolver] Fetched successfully from: ${domain}`);
+            break;
+          } else {
+            console.warn(`[AniCh Resolver] Domain ${domain} returned status: ${res.status}`);
+          }
+        } catch (err) {
+          lastError = err;
+          console.warn(`[AniCh Resolver] Failed to fetch from ${domain}, trying next...`);
         }
+      }
+      
+      if (!response) {
+        console.error("[AniCh Resolver] All backup domains failed to resolve. last error:", lastError);
+        return null;
+      }
+      
+      try {
         const data = await response.json();
         if (!Array.isArray(data)) {
           throw new Error("Invalid vod response format");
