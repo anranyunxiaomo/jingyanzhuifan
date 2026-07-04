@@ -3213,12 +3213,11 @@ body.fit-fill iframe {
   border-radius: 6px;
   margin-bottom: 1.2rem;
   box-shadow: var(--glass-shadow);
-  display: grid;
-  grid-template-columns: auto minmax(0, 45%); /* 🔒 还原原 Grid 约束，左侧自然宽，右侧最大 45%，防止挤压左侧 */
+  display: flex;
   align-items: center;
   padding: 0 2rem;
   background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.85) 0%, rgba(255, 253, 251, 0.98) 60%, rgba(255, 248, 245, 0.9) 100%);
-  overflow: hidden; /* 🔒 裁切所有溢出内容 */
+  overflow: hidden;            /* 裁切所有溢出内容 */
 }
 
 /* 诗歌独立容器内左侧文字 */
@@ -3242,19 +3241,18 @@ body.fit-fill iframe {
   letter-spacing: 1px;
 }
 
-/* 诗词容器：填满 Grid 右列，内容靠右显示，禁止溢出 */
+/* 诗词组：绝对定位钉在横幅右侧，彻底避免 Grid/Flex 宽度计算溢出 Bug */
 .top-poem-banner .top-banner-poem {
+  position: absolute;
+  right: 2rem;                 /* 与横幅内边距对齐 */
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: row;
-  align-items: flex-end;       /* 底部对齐，印章贴底落款 */
-  justify-content: flex-end;   /* 内容靠右 */
+  align-items: flex-end;       /* 印章底部落款对齐 */
   gap: 10px;
   height: 130px;
-  overflow: hidden;            /* 严格裁切溢出内容 */
-  padding: 0.4rem 0;
-  padding-bottom: 0.6rem;      /* 底部留白，印章不贴边 */
   opacity: 0.95;
-  width: 100%;                 /* 🚀 填满 Grid 右列，不溢出，不留宽度失真 */
 }
 
 /* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
@@ -3266,10 +3264,10 @@ body.fit-fill iframe {
   color: rgba(44, 26, 14, 0.82);
   letter-spacing: 0.02em;
   height: 100%;            /* 继承 banner-poem 的 130px */
-  overflow: visible;       /* 宽度自然延伸，外层 clip-path 裁切 */
+  overflow: hidden;        /* 防止内容向右溢出 */
   animation: inkFadeIn 1.2s ease forwards;
   text-shadow: 0 1px 0 rgba(200, 168, 107, 0.25);
-  width: 82px;             /* 🚀 锁死 4 列诗精确宽度，彻底消灭右侧大空白，防止印章被推出裁剪 */
+  width: 82px;             /* 锁死 4 列诗精确宽度 */
 }
 .top-poem-banner .poem-scroll-text span {
   display: inline-block;   /* 🚀 在 vertical-rl 下，inline-block 会从右向左完美呈一列列排列 */
