@@ -1488,8 +1488,8 @@ new Vue({
       
       console.log(`[ROUTER] URL hash change matched: "${hash}"`);
       
-      // 正则动态适配 detail/<AID> 结构
-      const match = hash.match(/detail\/([0-9]+)/);
+      // 正则动态适配 detail/<AID> 结构 (兼容带 anich_ 前缀的字符串 ID)
+      const match = hash.match(/detail\/(\w+)/);
       if (match) {
         const aid = match[1];
         console.log(`[ROUTER] Target route is detail page. AID: ${aid}`);
