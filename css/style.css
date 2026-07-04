@@ -3256,6 +3256,7 @@ body.fit-fill iframe {
   opacity: 0.95;
   width: fit-content;      /* 🚀 避免被 100% 撑大导致宽度失真 */
   margin-left: auto;       /* 🚀 在 Grid 网格列里自然靠最右侧对齐 */
+  margin-right: 2.2rem;    /* 🚀 增加右侧外边距，使右侧诗句到右边缘留白与左侧对称 */
 }
 
 /* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
@@ -3318,9 +3319,9 @@ body.fit-fill iframe {
     letter-spacing: 0.5px;
   }
   .top-poem-banner .top-banner-poem {
-    right: 1.2rem;
     height: 105px;
     gap: 0.4rem;
+    margin-right: 1.2rem;    /* 🚀 平板移动端微调右间距保持对称 */
   }
   .top-poem-banner .poem-char {
     font-size: 11px;
