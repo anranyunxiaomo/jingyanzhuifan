@@ -278,7 +278,9 @@ def main():
     if not token:
         print("[WARN] 未找到用户 Token。将尝试免密直连访问（可能因风控返回 500/unauthorized）")
     else:
-        print("[OK] 成功加载 Token。已启用动态时间戳容错认证。")
+        # 安全脱敏打印，用于核对 GitHub Secrets 是否配置正确
+        print(f"[OK] 成功加载 Token。长度: {len(token)} 字节 | 前6位: {token[:6]} | 后6位: {token[-6:]}")
+        print("[INFO] 已启用动态时间戳容错认证。")
 
     # 2. 抓取 latest 列表
     raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", token)
