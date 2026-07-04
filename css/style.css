@@ -3244,7 +3244,7 @@ body.fit-fill iframe {
 /* 诗词组：绝对定位钉在横幅右侧，内容严格裁切防溢出 */
 .top-poem-banner .top-banner-poem {
   position: absolute;
-  right: 2rem;                 /* 与横幅内边距对齐 */
+  right: 0;                    /* 与 banner-container 右边缘精准持平 */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
