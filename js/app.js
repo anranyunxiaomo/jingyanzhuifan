@@ -626,7 +626,7 @@ new Vue({
       }
 
       // 1. 在后台拉取最新首页数据
-      axios.get('data/home-list.json')
+      axios.get('data/home-list.json?_t=' + new Date().getTime())
         .then(response => {
           const data = response.data || {};
           
@@ -649,7 +649,7 @@ new Vue({
           }
           
           // 获取轮播图
-          axios.get('data/slipic.json')
+          axios.get('data/slipic.json?_t=' + new Date().getTime())
             .then(res => {
               const banners = res.data || [];
               this.bannerList = banners; // 💡 始终赋值
@@ -684,7 +684,7 @@ new Vue({
         });
 
       // 2. 在后台拉取最新搜索与分类索引数据库
-      axios.get('data/search_index.json')
+      axios.get('data/search_index.json?_t=' + new Date().getTime())
         .then(response => {
           const newData = response.data || [];
           this.searchIndex = newData; // 💡 始终赋值
@@ -780,7 +780,7 @@ new Vue({
       };
 
       // 💾 2. 后台获取最新数据以进行验证及热更新
-      axios.get(`data/detail/${aid}.json`)
+      axios.get(`data/detail/${aid}.json?_t=` + new Date().getTime())
         .then(response => {
           handleFetchedDetail(response.data);
         })
