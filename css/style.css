@@ -3270,7 +3270,7 @@ body.fit-fill iframe {
   overflow: visible;       /* 宽度自然延伸，外层 clip-path 裁切 */
   animation: inkFadeIn 1.2s ease forwards;
   text-shadow: 0 1px 0 rgba(200, 168, 107, 0.25);
-  width: fit-content;      /* 🚀 宽度由四列内容及边距自适应撑开 */
+  width: 82px;             /* 🚀 锁死 4 列诗精确宽度，彻底消灭右侧大空白，防止印章被推出裁剪 */
 }
 .top-poem-banner .poem-scroll-text span {
   display: inline-block;   /* 🚀 在 vertical-rl 下，inline-block 会从右向左完美呈一列列排列 */
@@ -3302,6 +3302,7 @@ body.fit-fill iframe {
   margin-bottom: 4px;
   font-size: clamp(9px, 1.1vw, 12px);
   padding: 4px 2.5px;
+  animation: sealFadeIn 0.7s ease-out 0.4s forwards; /* 🚀 延迟缩短为 0.4秒，避免首屏长时间空白 */
 }
 
 /* 自适应媒体查询覆盖：保证在 iPad 和手机端无遮挡且适配完美 */
@@ -3332,7 +3333,7 @@ body.fit-fill iframe {
   }
   .top-poem-banner .poem-scroll-text {
     font-size: 11px;
-    width: fit-content;
+    width: 68px;             /* 🚀 移动端锁定 4 列精确宽度 */
   }
   .top-poem-banner .poem-scroll-text span {
     margin-left: 8px;
