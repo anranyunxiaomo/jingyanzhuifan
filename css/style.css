@@ -3242,20 +3242,19 @@ body.fit-fill iframe {
   letter-spacing: 1px;
 }
 
-/* 诗词容器：靠右对齐，高度固定，自然不溢出 */
+/* 诗词容器：填满 Grid 右列，内容靠右显示，禁止溢出 */
 .top-poem-banner .top-banner-poem {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;       /* 底部对齐，印章贴底落款 */
+  justify-content: flex-end;   /* 内容靠右 */
   gap: 10px;
   height: 130px;
-  overflow: hidden;
-  clip-path: inset(0);   /* 核弹级裁切，transform 也拦不住 */
+  overflow: hidden;            /* 严格裁切溢出内容 */
   padding: 0.4rem 0;
+  padding-bottom: 0.6rem;      /* 底部留白，印章不贴边 */
   opacity: 0.95;
-  width: fit-content;      /* 🚀 避免被 100% 撑大导致宽度失真 */
-  margin-left: auto;       /* 🚀 在 Grid 网格列里自然靠最右侧对齐 */
+  width: 100%;                 /* 🚀 填满 Grid 右列，不溢出，不留宽度失真 */
 }
 
 /* 竖排诗文：单一元素，writing-mode 控制流向，高度受限自动换行 */
@@ -3296,13 +3295,12 @@ body.fit-fill iframe {
   font-size: clamp(10px, 1.1vw, 13px);
 }
 
-/* 将印章单独对齐到最左侧诗句的底部（经典落款位，且不溢出） */
+/* 印章：对齐底部落款位 */
 .top-poem-banner .poem-seal {
-  align-self: flex-end; 
-  margin-bottom: 4px;
+  flex-shrink: 0;              /* 不允许印章被压缩 */
   font-size: clamp(9px, 1.1vw, 12px);
   padding: 4px 2.5px;
-  animation: sealFadeIn 0.7s ease-out 0.4s forwards; /* 🚀 延迟缩短为 0.4秒，避免首屏长时间空白 */
+  animation: sealFadeIn 0.7s ease-out 0.4s forwards;
 }
 
 /* 自适应媒体查询覆盖：保证在 iPad 和手机端无遮挡且适配完美 */
