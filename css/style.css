@@ -3213,10 +3213,10 @@ body.fit-fill iframe {
   border-radius: 6px;
   margin-bottom: 1.2rem;
   box-shadow: var(--glass-shadow);
-  display: grid;
-  grid-template-columns: auto minmax(0, 45%); /* 🔒 Grid 硬约束：左侧自然宽，右侧最大 45%，不溢出 */
+  display: flex;                                    /* 🚀 布局重构：使用 Flex 两端对齐，干掉右侧空白 */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 3.5rem 0 2rem;                         /* 🎨 右侧 padding 增宽至 3.5rem，让诗歌优雅向左回退 */
   background-image: linear-gradient(135deg, rgba(250, 244, 238, 0.85) 0%, rgba(255, 253, 251, 0.98) 60%, rgba(255, 248, 245, 0.9) 100%);
   overflow: hidden; /* 🔒 裁切所有溢出内容 */
 }
@@ -3300,7 +3300,7 @@ body.fit-fill iframe {
 @media (max-width: 768px) {
   .top-poem-banner {
     height: 125px; /* 平板/手机端稍扁一些 */
-    padding: 0 1.2rem;
+    padding: 0 2.2rem 0 1.2rem;
   }
   .gufeng-brand-stamp {
     font-size: 1.1rem;
