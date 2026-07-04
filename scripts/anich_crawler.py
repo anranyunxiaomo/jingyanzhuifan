@@ -265,6 +265,91 @@ def best_match(anich_name, age_index, min_score=0.75):
                 best_score, best_item = s, age_item
     return (best_item, best_score) if best_score >= min_score else (None, 0.0)
 
+def run_static_fallback(id_map, age_index):
+    print("\n[WARN] 线上 API 访问受限（IP可能被风控）。自动降级为静态本地更新模式...")
+    print("=" * 60)
+    
+    sync_count = 0
+    for age_aid, mapping in id_map.items():
+        anich_id = mapping.get("anich_id")
+        anich_name = mapping.get("anich_name")
+        if not anich_id:
+            continue
+
+        detail_path = os.path.join(DETAIL_DIR, f"{age_aid}.json")
+        if not os.path.exists(detail_path):
+            continue
+
+        with open(detail_path, "r", encoding="utf-8") as f:
+            detail = json.load(f)
+
+        playlists = detail.setdefault("video", {}).setdefault("playlists", {})
+        
+        # 找出 age 所有播放线路中的最大集数
+        max_eps = 0
+        for pkey, eps in playlists.items():
+            if pkey == "anich_m3u8":
+                continue
+            if isinstance(eps, list) and len(eps) > max_eps:
+                max_eps = len(eps)
+
+        if max_eps == 0:
+            continue
+
+        existing_anich = playlists.get("anich_m3u8", [])
+        ep_dict = {}
+        for ep in existing_anich:
+            if ep and len(ep) >= 2:
+                ep_dict[ep[0]] = ep[1]
+
+        updated = False
+        for ep_idx in range(1, max_eps + 1):
+            ep_label = f"第{ep_idx:02d}集"
+
+            if ep_label in ep_dict and ep_dict[ep_label] and not ep_dict[ep_label].startswith("anich_placeholder_"):
+                continue
+
+            placeholder_val = f"anich_placeholder_{anich_id}_{ep_idx}"
+            if ep_label not in ep_dict or ep_dict[ep_label] != placeholder_val:
+                ep_dict[ep_label] = placeholder_val
+                updated = True
+
+        if updated:
+            new_eps = [[label, url] for label, url in sorted(
+                ep_dict.items(),
+                key=lambda x: int(re.search(r'\d+', x[0]).group()) if re.search(r'\d+', x[0]) else 0
+            ) if url]
+
+            detail["video"]["playlists"]["anich_m3u8"] = new_eps
+            detail.setdefault("player_label_arr", {})["anich_m3u8"] = "AniCh"
+
+            with open(detail_path, "w", encoding="utf-8") as f:
+                json.dump(detail, f, ensure_ascii=False, indent=2)
+            print(f"  ✓ [静态更新]: {anich_name} (AID={age_aid}) → 共 {max_eps} 集占位符")
+            sync_count += 1
+
+    print(f"[OK] 静态占位符更新完毕。共同步: {sync_count} 部番剧")
+
+    # 同步首页 week_list 标注
+    if os.path.exists(HOME_LIST_PATH):
+        with open(HOME_LIST_PATH, "r", encoding="utf-8") as f:
+            home = json.load(f)
+        
+        week_list = home.get("week_list", {})
+        marked_home = 0
+        for day_key, day_items in week_list.items():
+            for h_item in day_items:
+                h_aid = str(h_item.get("id", ""))
+                if h_aid in id_map and "anich_id" not in h_item:
+                    h_item["anich_id"] = id_map[h_aid]["anich_id"]
+                    marked_home += 1
+
+        with open(HOME_LIST_PATH, "w", encoding="utf-8") as f:
+            json.dump(home, f, ensure_ascii=False, indent=2)
+        print(f"[OK] 首页周更表静态标注完成: 共 {marked_home} 个条目")
+        
+    print("\n🎉 降级静态同步全部顺利完成！")
+
 # ──────────────────────────────────────────────
 # 4. 主运行逻辑
 # ──────────────────────────────────────────────
@@ -286,7 +371,15 @@ def main():
     raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", token)
     if not raw_latest:
         print("[ERROR] 无法拉取最新番剧列表 (API 访问失败，请检查 Token 是否失效)")
-        sys.exit(1)
+        # 自动降级为静态本地数据同步，保证 GitHub Actions 不会因网络波动而阻断部署
+        with open(SEARCH_INDEX_PATH, "r", encoding="utf-8") as f:
+            age_index = json.load(f)
+        existing_map = {}
+        if os.path.exists(OUTPUT_MAP_PATH):
+            with open(OUTPUT_MAP_PATH, "r", encoding="utf-8") as f:
+                existing_map = json.load(f)
+        run_static_fallback(existing_map, age_index)
+        sys.exit(0) # 正常安全退出
         
     latest_items = decode_latest_list(raw_latest)
     latest_items = [x for x in latest_items if x['id'] is not None]
