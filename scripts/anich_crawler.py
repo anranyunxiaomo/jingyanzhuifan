@@ -297,6 +297,46 @@ def format_episode_title(ep):
     return ep_str
 
 
+def clean_and_align_id_map(existing_map, age_index):
+    """
+    终极全量洗白对齐：清洗历史脏 Key 映射，将所有以 anich_ 开头的空壳映射，重新在全量 age 索引库中进行名字对齐！
+    """
+    cleaned_map = {}
+    dirty_keys_resolved = 0
+    
+    for key, val in existing_map.items():
+        if key.startswith("anich_"):
+            title = val.get("anich_name")
+            bid = val.get("anich_id")
+            if title and bid:
+                # 重新模糊对齐
+                age_item, score = best_match(title, age_index)
+                if age_item:
+                    aid_str = str(age_item["AID"])
+                    if aid_str not in cleaned_map:
+                        cleaned_map[aid_str] = {
+                            "anich_id": bid,
+                            "anich_name": title,
+                            "age_name": age_item["Title"],
+                            "confidence": round(score, 4),
+                            "anich_image": val.get("anich_image", "")
+                        }
+                        dirty_keys_resolved += 1
+                        
+                        # 物理删除废弃空壳 JSON 文件
+                        old_only_path = os.path.join(DETAIL_DIR, f"anich_{bid}.json")
+                        if os.path.exists(old_only_path):
+                            try: os.remove(old_only_path)
+                            except: pass
+        else:
+            cleaned_map[key] = val
+            
+    if dirty_keys_resolved > 0:
+        print(f"\n[CLEANER] 成功全量清洗对齐了 {dirty_keys_resolved} 个历史错位空壳映射！")
+        
+    return cleaned_map
+
+
 def run_static_fallback(id_map, age_index):
     print("\n[WARN] 线上 API 访问受限（IP可能被风控）。自动降级为静态本地更新模式...")
     print("=" * 60)
@@ -596,8 +636,8 @@ def main():
         if os.path.exists(OUTPUT_MAP_PATH):
             with open(OUTPUT_MAP_PATH, "r", encoding="utf-8") as f:
                 existing_map = json.load(f)
-                # 💡 强力清洗：物理剔除历史错位生成的 anich_ 前缀键值，触发重新对齐
-                existing_map = {k: v for k, v in existing_map.items() if not k.startswith("anich_")}
+                # 💡 全量洗白对齐：清洗历史脏 Key 映射，重新对齐到 AGE 真实 ID 上
+                existing_map = clean_and_align_id_map(existing_map, age_index)
         run_static_fallback(existing_map, age_index)
         sys.exit(0) # 正常安全退出
         
@@ -613,8 +653,8 @@ def main():
     if os.path.exists(OUTPUT_MAP_PATH):
         with open(OUTPUT_MAP_PATH, "r", encoding="utf-8") as f:
             existing_map = json.load(f)
-            # 💡 强力清洗：物理剔除历史错位生成的 anich_ 前缀键值，触发重新对齐
-            existing_map = {k: v for k, v in existing_map.items() if not k.startswith("anich_")}
+            # 💡 全量洗白对齐：清洗历史脏 Key 映射，重新对齐到 AGE 真实 ID 上
+            existing_map = clean_and_align_id_map(existing_map, age_index)
 
     # 4. Fuzzy Match 对齐更新映射表
     updated_map = dict(existing_map)

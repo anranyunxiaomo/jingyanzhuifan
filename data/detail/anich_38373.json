@@ -1,0 +1,28 @@
+{
+  "video": {
+    "id": "anich_38373",
+    "name": "穹庐下的魔女",
+    "cover": "https://wework.qpic.cn/wwpic3az/900967_VHC5PYK5SSqMGfz_1782617492/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38373_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38373_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38373_3"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}
