@@ -314,7 +314,17 @@ def run_static_fallback(id_map, age_index):
                 ep_dict[ep_label] = placeholder_val
                 updated = True
 
-        if updated:
+        # 💡 在静态回退写回前，强行清理超出 max_eps 的旧占位符脏数据！
+        has_dirty_placeholder = False
+        for label, url in list(ep_dict.items()):
+            m = re.search(r'\d+', label)
+            if m:
+                label_ep_idx = int(m.group())
+                if url.startswith("anich_placeholder_") and label_ep_idx > max_eps:
+                    del ep_dict[label]
+                    has_dirty_placeholder = True
+
+        if updated or has_dirty_placeholder:
             new_eps = [[label, url] for label, url in sorted(
                 ep_dict.items(),
                 key=lambda x: int(re.search(r'\d+', x[0]).group()) if re.search(r'\d+', x[0]) else 0
@@ -325,7 +335,7 @@ def run_static_fallback(id_map, age_index):
 
             with open(detail_path, "w", encoding="utf-8") as f:
                 json.dump(detail, f, ensure_ascii=False, indent=2)
-            print(f"  ✓ [静态更新]: {anich_name} (AID={age_aid}) → 共 {max_eps} 集占位符")
+            print(f"  ✓ [静态更新]: {anich_name} (AID={age_aid}) → 共 {max_eps} 集占位符 (已清理冗余)")
             sync_count += 1
 
     print(f"[OK] 静态占位符更新完毕。共同步: {sync_count} 部番剧")
@@ -642,9 +652,15 @@ def main():
                 ep_dict[ep[0]] = ep[1]
 
         updated_vod = False
+        valid_ep_labels = set() # 💡 记录所有 AniCh 上真正已更新（非空标题）的集数标签
+        
         for ep_info in eps_list:
+            if not ep_info.get('title'):
+                continue
+                
             ep_idx = ep_info['sort']
             ep_label = f"第{ep_idx:02d}集"
+            valid_ep_labels.add(ep_label)
 
             # 核心安全规则：真实直链绝对不覆盖
             if ep_label in ep_dict and ep_dict[ep_label] and not ep_dict[ep_label].startswith("anich_placeholder_"):
@@ -655,7 +671,14 @@ def main():
                 ep_dict[ep_label] = placeholder_val
                 updated_vod = True
 
-        if updated_vod:
+        # 💡 无论是否新增占位符，只要发现旧 playlists 里的 placeholder 数目不在已更新列表中，就强行剔除脏数据！
+        has_dirty_placeholder = False
+        for label, url in list(ep_dict.items()):
+            if url.startswith("anich_placeholder_") and label not in valid_ep_labels:
+                del ep_dict[label]
+                has_dirty_placeholder = True
+
+        if updated_vod or has_dirty_placeholder:
             new_eps = [[label, url] for label, url in sorted(
                 ep_dict.items(),
                 key=lambda x: int(re.search(r'\d+', x[0]).group()) if re.search(r'\d+', x[0]) else 0
@@ -666,7 +689,7 @@ def main():
 
             with open(detail_path, "w", encoding="utf-8") as f:
                 json.dump(detail, f, ensure_ascii=False, indent=2)
-            print(f"  ✓ {title} (AID={age_aid}) 已同步集数，注入了占位符")
+            print(f"  ✓ {title} (AID={age_aid}) 已同步集数，注入并清理了占位符")
             sync_count += 1
             
         time.sleep(0.15)
