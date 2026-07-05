@@ -361,6 +361,21 @@ new Vue({
   },
   
   methods: {
+    triggerFallbackBanners() {
+      const list = this.recommendList.slice(0, 4);
+      const fallbackBanners = list.map(item => ({
+        html: item.Title,
+        AID: item.AID,
+        style: item.PicSmall
+      }));
+      
+      this.bannerList = fallbackBanners;
+      
+      const fallbackBStr = JSON.stringify(fallbackBanners);
+      localStorage.setItem('jyzf_banner_list_cache', fallbackBStr);
+      // 预加载轮播大图
+      fallbackBanners.forEach(b => this.preloadImage(b.style));
+    },
     async resolveAnichUrl(anichId, epNum) {
       console.log(`[AniCh Resolver] Resolving real stream URL for ID=${anichId}, Ep=${epNum}...`);
       const domains = [
@@ -665,31 +680,22 @@ new Vue({
           axios.get('data/slipic.json?_t=' + new Date().getTime())
             .then(res => {
               const banners = res.data || [];
-              this.bannerList = banners; // 💡 始终赋值
-              
-              const cachedBStr = localStorage.getItem('jyzf_banner_list_cache');
-              const newBStr = JSON.stringify(banners);
-              if (newBStr !== cachedBStr) {
-                localStorage.setItem('jyzf_banner_list_cache', newBStr);
-                // 预加载轮播大图
-                banners.forEach(b => this.preloadImage(b.style));
+              if (banners.length > 0) {
+                this.bannerList = banners; // 💡 始终赋值
+                
+                const cachedBStr = localStorage.getItem('jyzf_banner_list_cache');
+                const newBStr = JSON.stringify(banners);
+                if (newBStr !== cachedBStr) {
+                  localStorage.setItem('jyzf_banner_list_cache', newBStr);
+                  // 预加载轮播大图
+                  banners.forEach(b => this.preloadImage(b.style));
+                }
+              } else {
+                this.triggerFallbackBanners();
               }
             })
             .catch(() => {
-              // 降级：从 latest 或 recommend 中拼凑出轮播图
-              const list = this.recommendList.slice(0, 4);
-              const fallbackBanners = list.map(item => ({
-                html: item.Title,
-                AID: item.AID,
-                style: item.PicSmall
-              }));
-              
-              this.bannerList = fallbackBanners; // 💡 始终赋值
-              
-              const fallbackBStr = JSON.stringify(fallbackBanners);
-              if (fallbackBStr !== localStorage.getItem('jyzf_banner_list_cache')) {
-                localStorage.setItem('jyzf_banner_list_cache', fallbackBStr);
-              }
+              this.triggerFallbackBanners();
             });
         })
         .catch(err => {
