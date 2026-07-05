@@ -22,6 +22,16 @@
           "第2集",
           "age_c8161FdhOiv3vRgiJHGGDK%2BQDnawfL1k78j8R3iri2OW5vn1En8%2FB2FG5JRfOhrlcIKF%2BimAz1qC%2F8lwkZ8Uo77n"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38373_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38373_2"
+        ]
       ]
     },
     "area": "日本",
@@ -131,7 +141,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

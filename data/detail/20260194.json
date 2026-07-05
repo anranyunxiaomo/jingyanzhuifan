@@ -46,6 +46,12 @@
           "age_a4be79rRPLB1jiX9gHISsz%2FNCZ7fiS6GXJYSqJWWRwFk%2BfWO%2FqGNrLwm62p0PmesfL95tnAeA%2BZmAlr4IHWgCvjGZ7mM%2Fx%2BsJVDf8y93FKMj39ZF",
           "https://v.lzcdn31.com/20260704/7988_341f3376/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38401_1"
+        ]
       ]
     },
     "area": "日本",
@@ -155,7 +161,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {
