@@ -265,6 +265,38 @@ def best_match(anich_name, age_index, min_score=0.75):
                 best_score, best_item = s, age_item
     return (best_item, best_score) if best_score >= min_score else (None, 0.0)
 
+
+def format_episode_title(ep):
+    """
+    智能将集数值格式化为符合前端卡片展示的 NewTitle
+    """
+    if not ep:
+        return "更新中"
+        
+    if isinstance(ep, int):
+        return f"更新至第{ep:02d}集"
+        
+    ep_str = str(ep).strip()
+    
+    # 如果已经是完备的集数标签，直接返回
+    if ep_str.startswith("更新至"):
+        return ep_str
+        
+    # 如果是 "更新中"、"连载"、"完结" 等状态词，直接返回
+    if ep_str in ["更新中", "连载", "完结", "已完结"]:
+        if ep_str == "更新中" or ep_str == "连载":
+            return "连载中"
+        return ep_str
+        
+    # 提取其中的集数数字
+    m = re.search(r'\d+', ep_str)
+    if m:
+        num = int(m.group())
+        return f"更新至第{num:02d}集"
+        
+    return ep_str
+
+
 def run_static_fallback(id_map, age_index):
     print("\n[WARN] 线上 API 访问受限（IP可能被风控）。自动降级为静态本地更新模式...")
     print("=" * 60)
@@ -388,7 +420,7 @@ def run_static_fallback(id_map, age_index):
                 "anich_id": anich_id,
                 "source": "anich",
                 "Href": f"/detail/anich_{anich_id}",
-                "NewTitle": f"更新至第{entry.get('ep', 1)}集" if isinstance(entry.get('ep'), int) else f"更新至{entry.get('ep', '第01集')}",
+                "NewTitle": format_episode_title(entry.get('ep')),
                 "PicSmall": entry.get("image", ""),
                 "Title": entry["title"],
             }
@@ -753,7 +785,7 @@ def main():
                 "anich_id": anich_id,
                 "source": "anich",
                 "Href": f"/detail/anich_{anich_id}",
-                "NewTitle": f"更新至第{entry.get('ep', 1)}集" if isinstance(entry.get('ep'), int) else f"更新至{entry.get('ep', '第01集')}",
+                "NewTitle": format_episode_title(entry.get('ep')),
                 "PicSmall": entry.get("image", ""),
                 "Title": entry["title"],
             }

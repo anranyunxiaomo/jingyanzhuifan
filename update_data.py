@@ -248,6 +248,47 @@ except ImportError:
     def get_pinyin_initials(text):
         return ""
 
+
+def calculate_uptodate(video):
+    """
+    根据 video 数据结构中的 playlists，智能计算并生成最精准的 UpToDate 集数文字
+    """
+    playlists = video.get("playlists", {})
+    if not playlists or not isinstance(playlists, dict):
+        return video.get("uptodate") or "更新中"
+        
+    max_ep_num = 0
+    max_ep_label = ""
+    
+    # 统计所有线路中的最大集数
+    for pkey, eps in playlists.items():
+        if not isinstance(eps, list):
+            continue
+        for ep in eps:
+            if isinstance(ep, list) and len(ep) >= 1:
+                label = str(ep[0]).strip()
+                # 尝试从 "第03集"、"第12集" 等字眼提取出数字
+                m = re.search(r'\d+', label)
+                if m:
+                    num = int(m.group())
+                    if num > max_ep_num:
+                        max_ep_num = num
+                        max_ep_label = label
+                else:
+                    if not max_ep_label:
+                        max_ep_label = label
+                        
+    if max_ep_label:
+        if not max_ep_label.startswith("更新至"):
+            m = re.search(r'\d+', max_ep_label)
+            if m:
+                return f"更新至第{int(m.group()):02d}集"
+            return f"更新至{max_ep_label}"
+        return max_ep_label
+        
+    return video.get("uptodate") or "更新中"
+
+
 def load_search_index():
     if os.path.exists(SEARCH_INDEX_PATH):
         try:
@@ -565,7 +606,7 @@ async def main_async():
                             "Pinyin": pinyin_code,
                             "Cover": video.get("cover", "") or video.get("pic", ""),
                             "Status": video.get("status", "连载"),
-                            "UpToDate": video.get("uptodate", "更新中")
+                            "UpToDate": calculate_uptodate(video)
                         })
                         seen_aids.add(aid_str)
             except Exception as e:
