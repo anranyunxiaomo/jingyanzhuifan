@@ -1,6 +1,20 @@
 {
   "latest": [
     {
+      "AID": 20260064,
+      "Href": "/detail/20260064",
+      "NewTitle": "第23集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
+      "Title": "名侦探光之美少女！"
+    },
+    {
+      "AID": 20260225,
+      "Href": "/detail/20260225",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260225.jpg",
+      "Title": "才女的侍从 在满是高岭之花的贵族学校暗中照顾（毫无生活自理能力的）学院第一大小姐"
+    },
+    {
       "AID": 20260222,
       "Href": "/detail/20260222",
       "NewTitle": "第01集",
@@ -69,20 +83,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
       "Title": "说出你们先走我断后的十年后 我成为了传说"
-    },
-    {
-      "AID": 20260247,
-      "Href": "/detail/20260247",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
-      "Title": "提欧奥特曼"
-    },
-    {
-      "AID": 20260205,
-      "Href": "/detail/20260205",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
-      "Title": "无职转生Ⅲ 到了异世界就拿出真本事"
     },
     {
       "AID": "anich_38422",
@@ -845,11 +845,11 @@
         "namefornew": "第11集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260064,
         "wd": 0,
         "name": "名侦探光之美少女！",
-        "mtime": "2026-06-29 00:58:31",
+        "mtime": "2026-07-05 13:37:17",
         "namefornew": "07:30 第23集",
         "anich_id": 37736
       },
