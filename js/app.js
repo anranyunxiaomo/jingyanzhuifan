@@ -66,6 +66,7 @@ new Vue({
     // H5 播放器状态管理
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
+    activeBlobUrl: '',     // 前端重写 M3U8 生成 spacing 的 Blob URL
     
     // 追番收藏夹
     favorites: [],
@@ -189,6 +190,14 @@ new Vue({
           }
         }
       }
+      
+      // 💡 降级排序：把 anich_m3u8 强行排到所有其他线路的最后，默认让常规不需要反代流量的线路排在第一位！
+      lines.sort((a, b) => {
+        if (a.key === 'anich_m3u8') return 1;
+        if (b.key === 'anich_m3u8') return -1;
+        return 0;
+      });
+      
       return lines;
     },
     
@@ -344,6 +353,9 @@ new Vue({
     window.removeEventListener('resize', this.handleResize);
     if (this.hashRouteHandler) {
       window.removeEventListener('hashchange', this.hashRouteHandler);
+    }
+    if (this.activeBlobUrl) {
+      try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
     }
   },
   
@@ -956,7 +968,7 @@ new Vue({
         this.isIframeMode = false;
         this.activePlayUrl = realUrl;
 
-        // 销毁上一次的播放器实例
+        // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
           try { 
             this.dpInstance.off('timeupdate');
@@ -965,6 +977,12 @@ new Vue({
             this.dpInstance.destroy(); 
           } catch(e) {}
           this.dpInstance = null;
+        }
+
+        // 💡 释放上一次生成的 Blob URL 防止内存泄漏
+        if (this.activeBlobUrl) {
+          try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
+          this.activeBlobUrl = '';
         }
 
         const container = document.getElementById('dplayer');
@@ -978,13 +996,87 @@ new Vue({
         // 双层 $nextTick：第一层等 Vue 销毁旧元素，第二层等新 #dplayer 插入 DOM
         // 避免 getElementById('dplayer') 返回 null 导致 DPlayer 初始化失败
         this.$nextTick(() => {
-          this.$nextTick(() => {
+          this.$nextTick(async () => {
           try {
             const proxyUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent(capturedRealUrl) +
                              "&client=" + encodeURIComponent(this.clientId) +
                              "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '') +
                              "&episode=" + encodeURIComponent(capturedEpName) +
                              "&session=" + encodeURIComponent(this.activeSessionId);
+
+            let finalVideoUrl = proxyUrl;
+            let videoType = 'hls';
+
+            // 💡 检测当前浏览器是否原生支持直接播放 M3U8（如移动端微信、Safari、大部分手机浏览器等）
+            const testVideo = document.createElement('video');
+            const isNativeHls = !!(testVideo.canPlayType('application/x-mpegURL') || testVideo.canPlayType('application/vnd.apple.mpegurl'));
+
+            // 💡 如果是 AniCh 线路 of M3U8 直链播放，为了规避字节跳动 CDN 切片跨域 CORS 拦截问题，
+            // 我们在前端实时下载 M3U8 并重写其中所有分片与解密 Key 的 URL，最后生成 Blob URL 播放！
+            if (this.activeLineKey === 'anich_m3u8' && (capturedRealUrl.includes('.m3u8') || capturedRealUrl.includes('/m3u8'))) {
+              if (isNativeHls) {
+                // 💡 移动端/Safari 原生支持 M3U8，直接播放经过主代理的 M3U8，所有 TS 切片会自动由系统原生拉取，不需要走任何代理，请求数骤降至 1 次！
+                console.log("[SMART ROUTER] Native HLS supported. Using direct stream to save request quota.");
+                finalVideoUrl = proxyUrl;
+                videoType = 'normal'; // 原生 video 模式
+              } else {
+                // 💡 PC 端不支持原生 HLS，必须使用 hls.js 模拟解码，由于 CORS 限制，必须在前端实时重写所有分片
+                console.log("[SMART ROUTER] PC client detected. Downloading & rewriting playlist in frontend...");
+                try {
+                  const res = await fetch(proxyUrl);
+                  if (res.ok) {
+                    const m3u8Text = await res.text();
+                    const lines = m3u8Text.split('\n');
+                    const urlObj = new URL(capturedRealUrl);
+                    const basePath = urlObj.href.substring(0, urlObj.href.lastIndexOf('/') + 1);
+                    
+                    const modifiedLines = lines.map(line => {
+                      line = line.trim();
+                      if (!line) return '';
+                      if (line.startsWith('#')) {
+                        // 💡 替换可能的解密密钥 (AES) URI 地址
+                        if (line.includes('URI=')) {
+                          return line.replace(/URI="([^"]+)"/g, (match, keyUrl) => {
+                            let absKeyUrl = keyUrl;
+                            if (!keyUrl.startsWith('http://') && !keyUrl.startsWith('https://')) {
+                              if (keyUrl.startsWith('/')) {
+                                absKeyUrl = urlObj.origin + keyUrl;
+                              } else {
+                                absKeyUrl = basePath + keyUrl;
+                              }
+                            }
+                            const proxiedKey = "https://jingyanff.xyz/?url=" + encodeURIComponent(absKeyUrl);
+                            return `URI="${proxiedKey}"`;
+                          });
+                        }
+                        return line;
+                      }
+                      
+                      // 💡 替换 TS 视频分片 URL 地址，全部走代理反代中转
+                      let absoluteUrl = line;
+                      if (!line.startsWith('http://') && !line.startsWith('https://')) {
+                        if (line.startsWith('/')) {
+                          absoluteUrl = urlObj.origin + line;
+                        } else {
+                          absoluteUrl = basePath + line;
+                        }
+                      }
+                      return "https://jingyanff.xyz/?url=" + encodeURIComponent(absoluteUrl);
+                    });
+                    
+                    const modifiedText = modifiedLines.join('\n');
+                    const blob = new Blob([modifiedText], { type: 'application/x-mpegURL' });
+                    this.activeBlobUrl = URL.createObjectURL(blob);
+                    finalVideoUrl = this.activeBlobUrl;
+                    console.log("[SMART ROUTER] Rewrite successful. Generated Blob URL:", finalVideoUrl);
+                  } else {
+                    console.warn("[SMART ROUTER] Failed to fetch M3U8 text, fallback to direct proxyUrl");
+                  }
+                } catch (fetchErr) {
+                  console.error("[SMART ROUTER] Error rewriting M3U8:", fetchErr);
+                }
+              }
+            }
 
             const dp = new DPlayer({
               container: document.getElementById('dplayer'),
@@ -993,8 +1085,8 @@ new Vue({
               playsinline: true,
               id: capturedAnimeId + "_" + capturedEpName,
               video: {
-                url: proxyUrl,
-                type: 'hls'   // 使用 DPlayer 内置 HLS 支持（稳定可靠）
+                url: finalVideoUrl,
+                type: videoType
               }
             });
               this.dpInstance = dp;
@@ -1100,6 +1192,7 @@ new Vue({
                 }, 1500);
               }
 
+              let playbackStarted = false;
               dp.on('loadedmetadata', () => {
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
@@ -1162,7 +1255,6 @@ new Vue({
               } catch(e) {}
 
               // 保险③：8 秒超时保险——HLS.js 有时静默重试从不触发 fatal，靠此兜底
-              let playbackStarted = false;
               const fallbackTimer = setTimeout(() => {
                 if (!playbackStarted) {
                   fallbackToIframe('8s timeout, no playback detected');
@@ -1383,6 +1475,10 @@ new Vue({
       if (this.dpInstance) {
         try { this.dpInstance.destroy(); } catch(e) {}
         this.dpInstance = null;
+      }
+      if (this.activeBlobUrl) {
+        try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
+        this.activeBlobUrl = '';
       }
       this.isIframeMode = false;
       
