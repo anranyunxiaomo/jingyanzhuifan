@@ -67,6 +67,7 @@ new Vue({
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
     activeBlobUrl: '',     // 前端重写 M3U8 生成 spacing 的 Blob URL
+    anichRequestCount: 0,  // AniCh 线路播放累积计数，用于额度预警
     
     // 追番收藏夹
     favorites: [],
@@ -885,6 +886,10 @@ new Vue({
       let epToken = ep[1];          // 加密 token 或直链 url
       let realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
+      // 💡 累加 AniCh 线路播放计数，并在点播 >=3 次后前端高亮额度红色警报
+      if (this.activeLineKey === 'anich_m3u8') {
+        this.anichRequestCount += 1;
+      }
       // 💡 AniCh 占位符前端实时解密 (无感极速解析)
       if (this.activeLineKey === 'anich_m3u8' && epToken && epToken.startsWith('anich_placeholder_')) {
         const parts = epToken.split('_');
@@ -1004,7 +1009,7 @@ new Vue({
                              "&episode=" + encodeURIComponent(capturedEpName) +
                              "&session=" + encodeURIComponent(this.activeSessionId);
 
-            let finalVideoUrl = proxyUrl;
+            let finalVideoUrl = capturedRealUrl; // 💡 常规线路默认直连播放，不经过代理，实现零 Workers 额度损耗！
             let videoType = 'hls';
 
             // 💡 检测当前浏览器是否原生支持直接播放 M3U8（如移动端微信、Safari、大部分手机浏览器等）

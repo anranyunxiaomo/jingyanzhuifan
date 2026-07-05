@@ -94,6 +94,106 @@ class AgeM3u8Sniffer:
             return None
 
 
+def fetch_from_backup_cms(title):
+    """
+    顺序/并发搜索暴风、非凡、量子、红牛、金鹰、快车六大资源网，并将它们返回的所有可用 m3u8 线路在本地进行去重合并！
+    """
+    cms_apis = [
+        {"name": "暴风资源网", "url": "https://bfzyapi.com/api.php/provide/vod/"},
+        {"name": "非凡资源网", "url": "https://ffzyapi.com/api.php/provide/vod/"},
+        {"name": "量子资源网", "url": "https://lzzyapi.com/api.php/provide/vod/"},
+        {"name": "红牛资源网", "url": "https://www.hongniuzy2.com/api.php/provide/vod/"},
+        {"name": "金鹰资源网", "url": "https://jyzyapi.com/provide/vod/"},
+        {"name": "快车资源网", "url": "https://kczyapi.com/api.php/provide/vod/"}
+    ]
+    
+    merged_playlists = {}
+    matched_vod_name = None
+    
+    for cms in cms_apis:
+        search_url = f"{cms['url']}?ac=detail&wd={title}"
+        try:
+            r = session.get(search_url, timeout=8)
+            if r.status_code == 200:
+                data = r.json()
+                if data.get("code") == 1 and data.get("list"):
+                    # 寻找最匹配的项目 (完全相等优先，包含次之)
+                    target_vod = None
+                    for vod in data["list"]:
+                        if vod.get("vod_name") == title:
+                            target_vod = vod
+                            break
+                    if not target_vod:
+                        for vod in data["list"]:
+                            if title in vod.get("vod_name", "") or vod.get("vod_name", "") in title:
+                                target_vod = vod
+                                break
+                    if not target_vod:
+                        target_vod = data["list"][0]
+                    
+                    matched_vod_name = target_vod.get("vod_name", title)
+                    
+                    # 开始解析播放列表
+                    from_str = target_vod.get("vod_play_from", "")
+                    url_str = target_vod.get("vod_play_url", "")
+                    
+                    from_list = from_str.split("$$$")
+                    url_list = url_str.split("$$$")
+                    
+                    for idx, line_key in enumerate(from_list):
+                        # 确定当前源的映射 Key
+                        mapped_key = "bfzym3u8"
+                        if "ffm3u8" in line_key or "ffzy" in line_key:
+                            mapped_key = "ffm3u8"
+                        elif "lzm3u8" in line_key or "lzzy" in line_key:
+                            mapped_key = "lzm3u8"
+                        elif "wjm3u8" in line_key or "wjzy" in line_key:
+                            mapped_key = "wjm3u8"
+                        elif "hnm3u8" in line_key or "hnzy" in line_key:
+                            mapped_key = "hnm3u8"
+                        elif "kym3u8" in line_key or "kczy" in line_key:
+                            mapped_key = "kym3u8"
+                        elif "m3u8" in line_key:
+                            # 兜底模糊归类
+                            if "bf" in line_key: mapped_key = "bfzym3u8"
+                            elif "ff" in line_key: mapped_key = "ffm3u8"
+                            elif "lz" in line_key: mapped_key = "lzm3u8"
+                            elif "hn" in line_key: mapped_key = "hnm3u8"
+                            elif "kc" in line_key: mapped_key = "kym3u8"
+                            else: mapped_key = "wjm3u8"
+                        
+                        if idx < len(url_list):
+                            eps_str = url_list[idx]
+                            eps = []
+                            for ep_item in eps_str.split("#"):
+                                if "$" in ep_item:
+                                    name_url = ep_item.split("$")
+                                    if len(name_url) >= 2:
+                                        eps.append([name_url[0], name_url[1]])
+                            if eps:
+                                # 💡 合并到大列表里，如果线路已存在，则不重复覆盖（优先使用排在前面的源）
+                                if mapped_key not in merged_playlists:
+                                    merged_playlists[mapped_key] = eps
+                                    print(f"    [CMS MERGE] Merged line '{mapped_key}' from {cms['name']} for '{title}'")
+        except Exception as e:
+            print(f"[DEBUG] Fetch from {cms['name']} failed: {e}")
+            
+    if merged_playlists:
+        return {
+            "video": {
+                "name": matched_vod_name or title,
+                "playlists": merged_playlists
+            },
+            "player_label_arr": {
+                "bfzym3u8": "暴风备用",
+                "ffm3u8": "非凡备用",
+                "lzm3u8": "量子备用",
+                "wjm3u8": "无尽备用"
+            }
+        }
+    return None
+
+
 def fetch_api_base():
     """获取最新的 API 域名配置"""
     urls = [
@@ -337,6 +437,11 @@ async def main_async():
         print(f"[{counter}/{min(len(aids_to_fetch), limit)}] [CACHE MISS] Fetching detail for AID: {aid} ({title})...")
         detail_data = request_api(f"detail/{aid}")
         
+        # 💡 多源数据聚合：如果主 API 没有获取到（可能是该动漫已下架或 AGE 库无此资源），则尝试从暴风资源网检索补齐
+        if not detail_data:
+            print(f"  [BACKUP SEARCH] AID: {aid} not found in primary API. Searching title '{title}' on Storm CMS...")
+            detail_data = fetch_from_backup_cms(title)
+        
         if detail_data:
             fetched_details[aid] = (detail_data, detail_path, title)
             
@@ -372,6 +477,15 @@ async def main_async():
                 
                 for i, ep in enumerate(eps):
                     ep_token = ep[1]
+                    
+                    # 💡 优化：如果该 Token 已经是 M3U8 真实直链（如暴风、非凡等），则直接回填为 realUrl，跳过云端嗅探！
+                    if ep_token.startswith('http') and ('.m3u8' in ep_token or '/m3u8' in ep_token):
+                        if len(ep) == 2:
+                            ep.append(ep_token)
+                        elif len(ep) >= 3:
+                            ep[2] = ep_token
+                        continue
+                        
                     cached_url = local_cache.get((pkey, ep_token))
                     if cached_url:
                         if len(ep) == 2:
