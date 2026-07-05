@@ -568,12 +568,28 @@
     "UpToDate": "更新至第01集"
   },
   {
+    "AID": 20140101,
+    "Title": "恶魔之谜",
+    "Pinyin": "emzm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140101.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
+  },
+  {
     "AID": 20060065,
     "Title": "奇幻贵公子",
     "Pinyin": "qhggz",
     "Cover": "https://cdn.aqdstatic.com:966/age/20060065.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集"
+  },
+  {
+    "AID": 20140130,
+    "Title": "花舞少女",
+    "Pinyin": "hwsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140130.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
   },
   {
     "AID": 20220248,
@@ -1006,6 +1022,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
+  },
+  {
+    "AID": 20190439,
+    "Title": "白蛇：缘起",
+    "Pinyin": "bs：yq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190439.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至正片"
   },
   {
     "AID": 20170044,
@@ -1574,6 +1598,22 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 20170095,
+    "Title": "Just Because!",
+    "Pinyin": "just because!",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170095.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 20010004,
+    "Title": "皇家国教骑士团",
+    "Pinyin": "hjgjqst",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20010004.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集"
   },
   {
     "AID": 20260064,
@@ -2240,6 +2280,14 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 20060037,
+    "Title": "犬神",
+    "Pinyin": "qs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20060037.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第26集"
+  },
+  {
     "AID": 20190022,
     "Title": "同居人是猫",
     "Pinyin": "tjrsm",
@@ -2262,6 +2310,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
+  },
+  {
+    "AID": 20210034,
+    "Title": "装甲娘战机",
+    "Pinyin": "zjnzj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20210034.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
   },
   {
     "AID": 20250269,
@@ -2318,6 +2374,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
+  },
+  {
+    "AID": 20190110,
+    "Title": "信长老师的年幼妻子",
+    "Pinyin": "xzlsdnyqz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
   },
   {
     "AID": 20260223,
@@ -2512,6 +2576,14 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 20110029,
+    "Title": "女神异闻录4",
+    "Pinyin": "nsywl4",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20110029.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第26集"
+  },
+  {
     "AID": 20200243,
     "Title": "池袋西口公园",
     "Pinyin": "cdxkgy",
@@ -2702,6 +2774,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250235.jpg",
     "Status": "连载",
     "UpToDate": "更新至第36集"
+  },
+  {
+    "AID": 20130074,
+    "Title": "我要成为世界最强偶像",
+    "Pinyin": "wycwsjzqox",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130074.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集"
   },
   {
     "AID": 20190174,
