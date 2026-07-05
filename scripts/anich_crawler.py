@@ -596,6 +596,8 @@ def main():
         if os.path.exists(OUTPUT_MAP_PATH):
             with open(OUTPUT_MAP_PATH, "r", encoding="utf-8") as f:
                 existing_map = json.load(f)
+                # 💡 强力清洗：物理剔除历史错位生成的 anich_ 前缀键值，触发重新对齐
+                existing_map = {k: v for k, v in existing_map.items() if not k.startswith("anich_")}
         run_static_fallback(existing_map, age_index)
         sys.exit(0) # 正常安全退出
         
@@ -611,6 +613,8 @@ def main():
     if os.path.exists(OUTPUT_MAP_PATH):
         with open(OUTPUT_MAP_PATH, "r", encoding="utf-8") as f:
             existing_map = json.load(f)
+            # 💡 强力清洗：物理剔除历史错位生成的 anich_ 前缀键值，触发重新对齐
+            existing_map = {k: v for k, v in existing_map.items() if not k.startswith("anich_")}
 
     # 4. Fuzzy Match 对齐更新映射表
     updated_map = dict(existing_map)
@@ -641,6 +645,15 @@ def main():
                 "anich_image": item["image"]
             }
             print(f"  ✅ [{score:.2f}] {title} → {age_item['Title']} (AID={aid_str})")
+            
+            # 💡 物理清道夫：既然已经匹配到真实的 AGE AID，就立刻清除磁盘上废弃的旧 anich_only 缓存文件，防止索引冲突！
+            old_only_path = os.path.join(DETAIL_DIR, f"anich_{bid}.json")
+            if os.path.exists(old_only_path):
+                try:
+                    os.remove(old_only_path)
+                    print(f"    [CLEANER] Removed deprecated only-cache: anich_{bid}.json")
+                except Exception as e:
+                    print(f"    [CLEANER] Failed to remove {old_only_path}: {e}")
         else:
             anich_only.append(item)
             
