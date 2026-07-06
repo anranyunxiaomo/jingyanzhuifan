@@ -1127,6 +1127,18 @@ new Vue({
             });
               this.dpInstance = dp;
               
+              // 💡 强力播放状态清洗：一旦视频从缓冲中恢复并真正起播画面，强制隐藏任何虚假的报错 DOM 和加载圈，确保良好的视觉观感
+              dp.on('playing', () => {
+                const dpEl = document.querySelector('.dplayer');
+                if (dpEl) {
+                  dpEl.classList.remove('dplayer-error', 'dplayer-loading');
+                  const errorVideo = dpEl.querySelector('.dplayer-error-video');
+                  if (errorVideo) errorVideo.style.display = 'none';
+                  const errorText = dpEl.querySelector('.dplayer-error');
+                  if (errorText) errorText.style.display = 'none';
+                }
+              });
+              
               // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
               this.$nextTick(() => {
                 const rightIcons = document.querySelector('.dplayer-icons-right');
@@ -1339,12 +1351,12 @@ new Vue({
                 if (playbackStarted && fallbackTimer) clearTimeout(fallbackTimer);
                 
                 // 💡 双重保障：只要视频开始走字正常播放，就立刻隐藏任何因非致命警告被错误弹出的“视频加载失败”遮罩层
-                const container = document.getElementById('dplayer');
-                if (container && (container.classList.contains('dplayer-error') || container.classList.contains('dplayer-loading'))) {
-                  container.classList.remove('dplayer-error', 'dplayer-loading');
-                  const errorVideo = container.querySelector('.dplayer-error-video');
+                const dpEl = document.querySelector('.dplayer');
+                if (dpEl && (dpEl.classList.contains('dplayer-error') || dpEl.classList.contains('dplayer-loading'))) {
+                  dpEl.classList.remove('dplayer-error', 'dplayer-loading');
+                  const errorVideo = dpEl.querySelector('.dplayer-error-video');
                   if (errorVideo) errorVideo.style.display = 'none';
-                  const errorText = container.querySelector('.dplayer-error');
+                  const errorText = dpEl.querySelector('.dplayer-error');
                   if (errorText) errorText.style.display = 'none';
                 }
               });
