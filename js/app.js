@@ -48,6 +48,8 @@ new Vue({
     activeEpisodeIndex: -1, // 当前选中的集数索引
     activePlayUrl: '', // 正在播放的 iframe 链接
     activeEpisodeName: '', // 正在播放的剧集名称
+    currentAnichBackupUrls: [], // 💡 缓存当前这一集的所有备用播放源
+    currentAnichUrlIndex: 0, // 💡 当前播放的备用源索引
     dplayerKey: 'dplayer_init', // DPlayer DOM 容器的物理隔离 Key
     guardTimer: null, // 高频归零阻截定时器
     clientId: '', // 景雁分析：唯一观众代号
@@ -454,19 +456,25 @@ new Vue({
           ".mp4"
         ];
         
-        let finalUrl = null;
+        // 💡 根据优先级对所有获取到的 URL 进行排序
+        const sortedUrls = [];
         for (const pattern of URL_PRIORITY) {
           for (const url of urls) {
-            if (url.toLowerCase().includes(pattern)) {
-              finalUrl = url;
-              break;
+            if (url.toLowerCase().includes(pattern) && !sortedUrls.includes(url)) {
+              sortedUrls.push(url);
             }
           }
-          if (finalUrl) break;
         }
-        if (!finalUrl && urls.length > 0) {
-          finalUrl = urls[0];
+        for (const url of urls) {
+          if (!sortedUrls.includes(url)) {
+            sortedUrls.push(url);
+          }
         }
+        
+        this.currentAnichBackupUrls = sortedUrls;
+        this.currentAnichUrlIndex = 0;
+        
+        let finalUrl = sortedUrls.length > 0 ? sortedUrls[0] : null;
         
         if (finalUrl) {
           console.log("[AniCh Resolver] Resolved successfully:", finalUrl.substring(0, 60));
@@ -1101,6 +1109,30 @@ new Vue({
               }
             });
               this.dpInstance = dp;
+              
+              // 💡 强力自愈播放重试机制：当 DPlayer 加载失败或发生网络错误（如 DNS 污染、被墙）时，自动尝试切换至下一个备用源播放
+              dp.on('error', () => {
+                if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
+                  this.currentAnichUrlIndex++;
+                  if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
+                    const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
+                    console.warn(`[VOD FAILBACK] Stream failed. Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
+                    
+                    // 利用 DPlayer 自带的精美提示气泡通知用户
+                    dp.notice("当前播放源加载超时，正在自动为您加载备用播放源...", 4000);
+                    
+                    // 重新载入视频并播放
+                    dp.switchVideo({
+                      url: nextBackupUrl,
+                      type: videoType // 保持原有的 HLS/MP4 类型
+                    });
+                    dp.play();
+                  } else {
+                    console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
+                    dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
+                  }
+                }
+              });
               
               // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
               this.$nextTick(() => {
