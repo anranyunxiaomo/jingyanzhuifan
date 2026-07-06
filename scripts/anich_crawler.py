@@ -829,12 +829,31 @@ def main():
     print("\n[VOD] 开始同步集数占位符...")
     sync_count = 0
     
+    # 💡 强力增量过滤机制：收集当前最新列表中有更新活跃的 AniCh 番剧 ID 集合
+    active_anich_ids = {x['id'] for x in latest_items if x.get('id') is not None}
+    
     for age_aid, mapping in updated_map.items():
         bid = mapping["anich_id"]
         title = mapping["anich_name"]
         
         detail_path = os.path.join(DETAIL_DIR, f"{age_aid}.json")
         if not os.path.exists(detail_path):
+            continue
+
+        # 💡 提前读取本地文件以判断是否为新番或空占位符状态
+        detail = {}
+        try:
+            with open(detail_path, "r", encoding="utf-8") as f:
+                detail = json.load(f)
+        except:
+            pass
+            
+        playlists = detail.setdefault("video", {}).setdefault("playlists", {})
+        existing_anich = playlists.get("anich_m3u8", [])
+        
+        # 💡 黄金增量守卫：只有当该番剧被列在今日最新更新中，或者本地甚至还没有任何 AniCh 播放列表时，才去网络请求！
+        # 否则说明属于未更新的历史老番，直接 100% 跳过网络请求，彻底避免每次构建去无差别的刷几百次 API 导致 5 分钟超时！
+        if bid not in active_anich_ids and existing_anich:
             continue
 
         # 获取该番剧的最新集数
@@ -846,12 +865,6 @@ def main():
             continue
             
         eps_list = sorted(eps_list, key=lambda x: x['sort'])
-        
-        with open(detail_path, "r", encoding="utf-8") as f:
-            detail = json.load(f)
-
-        playlists = detail.setdefault("video", {}).setdefault("playlists", {})
-        existing_anich = playlists.get("anich_m3u8", [])
 
         ep_dict = {}
         for ep in existing_anich:
