@@ -187,16 +187,24 @@ def decode_episodes_list(data):
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
 def curl_get_raw(url, token_str, timeout=8):
-    # 💡 强力代理中转防封锁：若在线上 GitHub Actions 运行，或者直连失败，强制走自建的 CF Worker 代理以绕过机房 IP 屏蔽
+    # 💡 强力代理中转防封锁：若在线上 GitHub Actions 运行，或者直连失败，强制走代理池以避开机房 IP 屏蔽与下划线 Header 过滤
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     
     import urllib.parse
     
-    def execute_curl(target_url, use_proxy=False):
+    # 💡 容灾代理池：结合自建反代与多个全球公开的高速跨域代理，消除单点故障与头信息过滤
+    PROXIES = [
+        "https://jingyanff.xyz/?url=",
+        "https://corsproxy.io/?url=",
+        "https://api.allorigins.win/raw?url=",
+        "https://api.codetabs.com/v1/proxy?quest="
+    ]
+    
+    def execute_curl(target_url, proxy_base=None):
         final_target = target_url
-        if use_proxy:
+        if proxy_base:
             encoded_url = urllib.parse.quote(target_url, safe='')
-            final_target = f"https://jingyanff.xyz/?url={encoded_url}"
+            final_target = f"{proxy_base}{encoded_url}"
             
         # 1. 尝试无 Token 访问（免登录接口）
         if not token_str:
@@ -227,23 +235,27 @@ def curl_get_raw(url, token_str, timeout=8):
                 if "unauthorized" not in res_str:
                     return r.stdout  # 成功！
                     
-            time.sleep(0.2)
+            time.sleep(0.15)
         return None
 
-    # A. 线上环境无条件首选代理 (Azure IP 100% 被 AniCh 接口屏蔽)
+    # A. 线上环境无条件遍历代理池进行中转 (Azure IP 100% 被屏蔽)
     if is_github_actions:
-        res = execute_curl(url, use_proxy=True)
-        if res:
-            return res
+        for p_base in PROXIES:
+            res = execute_curl(url, proxy_base=p_base)
+            if res:
+                return res
+        return None
             
-    # B. 本地直连测试
-    res = execute_curl(url, use_proxy=False)
+    # B. 本地优先直连测试
+    res = execute_curl(url, proxy_base=None)
     if res:
         return res
         
-    # C. 本地直连失败，兜底走代理
-    if not is_github_actions:
-        return execute_curl(url, use_proxy=True)
+    # C. 本地直连失败，兜底轮询代理池
+    for p_base in PROXIES:
+        res = execute_curl(url, proxy_base=p_base)
+        if res:
+            return res
         
     return None
 
