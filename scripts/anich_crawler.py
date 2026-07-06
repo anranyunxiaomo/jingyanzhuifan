@@ -187,39 +187,63 @@ def decode_episodes_list(data):
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
 def curl_get_raw(url, token_str, timeout=8):
-    # 1. 尝试无 Token 访问（免登录接口）
-    if not token_str:
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", url]
-        r = subprocess.run(cmd, capture_output=True)
-        return r.stdout if r.returncode == 0 else None
-        
-    # 2. 带有 Token 认证，并进行时钟偏差容错重试
-    # 尝试 5 个不同的时钟偏移量（单位：秒）：+60 (原版), 0, -60, +120, -120
-    offsets = [60, 0, -60, 120, -120]
+    # 💡 强力代理中转防封锁：若在线上 GitHub Actions 运行，或者直连失败，强制走自建的 CF Worker 代理以绕过机房 IP 屏蔽
+    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     
-    for offset in offsets:
-        # 动态计算该时钟偏移下的 header
-        timestamp_ms = int(time.time() * 1000) + (offset * 1000)
-        time_hex = hex(timestamp_ms)[2:]
+    import urllib.parse
+    
+    def execute_curl(target_url, use_proxy=False):
+        final_target = target_url
+        if use_proxy:
+            encoded_url = urllib.parse.quote(target_url, safe='')
+            final_target = f"https://jingyanff.xyz/?url={encoded_url}"
+            
+        # 1. 尝试无 Token 访问（免登录接口）
+        if not token_str:
+            cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", final_target]
+            r = subprocess.run(cmd, capture_output=True)
+            return r.stdout if r.returncode == 0 else None
+            
+        # 2. 带有 Token 认证，并进行时钟偏差容错重试
+        offsets = [60, 0, -60, 120, -120]
+        for offset in offsets:
+            timestamp_ms = int(time.time() * 1000) + (offset * 1000)
+            time_hex = hex(timestamp_ms)[2:]
+            
+            token_bytes = token_str.encode('utf-8')
+            f1 = b'\x0a' + to_varint(len(token_bytes)) + token_bytes
+            time_bytes = time_hex.encode('utf-8')
+            f2 = b'\x12' + to_varint(len(time_bytes)) + time_bytes
+            
+            proto_bytes = f1 + f2
+            auth_header = ','.join(str(b) for b in proto_bytes)
+            
+            cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
+                   "-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", final_target]
+            
+            r = subprocess.run(cmd, capture_output=True)
+            if r.returncode == 0:
+                res_str = r.stdout.decode('utf-8', errors='ignore')
+                if "unauthorized" not in res_str:
+                    return r.stdout  # 成功！
+                    
+            time.sleep(0.2)
+        return None
+
+    # A. 线上环境无条件首选代理 (Azure IP 100% 被 AniCh 接口屏蔽)
+    if is_github_actions:
+        res = execute_curl(url, use_proxy=True)
+        if res:
+            return res
+            
+    # B. 本地直连测试
+    res = execute_curl(url, use_proxy=False)
+    if res:
+        return res
         
-        token_bytes = token_str.encode('utf-8')
-        f1 = b'\x0a' + to_varint(len(token_bytes)) + token_bytes
-        time_bytes = time_hex.encode('utf-8')
-        f2 = b'\x12' + to_varint(len(time_bytes)) + time_bytes
-        
-        proto_bytes = f1 + f2
-        auth_header = ','.join(str(b) for b in proto_bytes)
-        
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
-               "-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", url]
-        
-        r = subprocess.run(cmd, capture_output=True)
-        if r.returncode == 0:
-            res_str = r.stdout.decode('utf-8', errors='ignore')
-            if "unauthorized" not in res_str:
-                return r.stdout  # 成功！
-                
-        time.sleep(0.2)
+    # C. 本地直连失败，兜底走代理
+    if not is_github_actions:
+        return execute_curl(url, use_proxy=True)
         
     return None
 
