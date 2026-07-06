@@ -12,6 +12,11 @@ on:
   repository_dispatch:
     types: [resolve_anime_on_demand]
 
+# 💡 并发控制：同一个 Pages 部署工作流同一时间只运行一个，后触发的自动取消旧实例，消除部署锁死冲突！
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 
 permissions:
   contents: write # 必须赋予写权限以允许推送 JSON 数据回仓库
