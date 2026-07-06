@@ -904,6 +904,22 @@ new Vue({
     },
     
     async playEpisode(epIdx) {
+      // 💡 强力防逃逸：在任何异步解析（如 resolveAnichUrl）开始前，同步且干净地销毁上一次的播放器，彻底切断后台声音残留
+      if (this.dpInstance) {
+        try {
+          this.dpInstance.off('timeupdate');
+          this.dpInstance.off('loadedmetadata');
+          this.dpInstance.off('error');
+          this.dpInstance.destroy();
+        } catch(e) {}
+        this.dpInstance = null;
+      }
+      this.activePlayUrl = '';
+      if (this.activeBlobUrl) {
+        try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
+        this.activeBlobUrl = '';
+      }
+
       if (this.guardTimer) {
         clearInterval(this.guardTimer);
         this.guardTimer = null;
@@ -1241,17 +1257,30 @@ new Vue({
               }
 
               let playbackStarted = false;
-              dp.on('loadedmetadata', () => {
-                if (savedTime > 3) {
-                  console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
-                  dp.seek(savedTime);
+              let hasRestoredProgress = false;
+              const restoreProgress = () => {
+                if (hasRestoredProgress) return;
+                if (savedTime > 3 && dp && dp.video) {
+                  const duration = dp.video.duration;
+                  if (duration && !isNaN(duration)) {
+                    hasRestoredProgress = true;
+                    console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s (duration=${duration}s)`);
+                    dp.seek(savedTime);
+                  }
                 }
-              });
+              };
+              dp.on('loadedmetadata', restoreProgress);
+              dp.on('canplay', restoreProgress);
 
               dp.on('timeupdate', () => {
                 if (!dp || !dp.video) return;
                 const currentTime = dp.video.currentTime;
                 const duration = dp.video.duration;
+                
+                // 💡 兜底保险：若 loadedmetadata/canplay 时时长尚未解析出，在播放的首次 timeupdate 里再次尝试恢复
+                if (!hasRestoredProgress && savedTime > 3) {
+                  restoreProgress();
+                }
                 // ✅ 一旦真正开始播放，标记已播放，防止超时误降级
                 if (currentTime > 0.1) playbackStarted = true;
                 if (currentTime > 3 && duration && (duration - currentTime > 10)) {
