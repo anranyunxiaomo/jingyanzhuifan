@@ -1,0 +1,68 @@
+{
+  "video": {
+    "id": "anich_38441",
+    "name": "相反的你和我 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/878668_q7bjMsG1QymTope_1783279860/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38441_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38441_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38441_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38441_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38441_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38441_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38441_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38441_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38441_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38441_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38441_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38441_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_38441_13"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

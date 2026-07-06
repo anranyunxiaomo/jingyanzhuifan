@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38377",
+    "name": "鬼的新娘",
+    "cover": "https://wework.qpic.cn/wwpic3az/620350_7bxkCqo2ThutHxF_1783207857/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38377_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

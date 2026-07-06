@@ -1,0 +1,56 @@
+{
+  "video": {
+    "id": "anich_38133",
+    "name": "穿越时空成仙帝，系统迟到八万年",
+    "cover": "https://wework.qpic.cn/wwpic3az/929838_c5RJs4JqR2SNUVA_1778131846/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38133_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38133_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38133_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38133_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38133_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38133_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38133_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38133_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38133_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38133_10"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

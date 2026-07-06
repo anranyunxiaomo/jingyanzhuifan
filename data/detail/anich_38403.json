@@ -1,0 +1,52 @@
+{
+  "video": {
+    "id": "anich_38403",
+    "name": "山海契约",
+    "cover": "https://wework.qpic.cn/wwpic3az/476869_ft-pBNDpRsqnk7l_1782675059/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38403_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38403_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38403_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38403_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38403_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38403_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38403_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38403_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38403_9"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

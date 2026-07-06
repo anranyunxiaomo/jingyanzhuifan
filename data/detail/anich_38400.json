@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38400",
+    "name": "蹂躏王国",
+    "cover": "https://wework.qpic.cn/wwpic3az/530461_ZdWzBtybTo6FVZT_1779798672/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38400_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

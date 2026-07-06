@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38385",
+    "name": "最强出涸皇子的暗跃帝位争夺 虽然对帝位没兴趣，但我不想死所以让我弟当皇帝吧",
+    "cover": "https://wework.qpic.cn/wwpic3az/960206_zswOURJ0TFGeXZ-_1783193456/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38385_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

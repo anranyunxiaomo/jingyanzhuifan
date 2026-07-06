@@ -1,0 +1,24 @@
+{
+  "video": {
+    "id": "anich_38391",
+    "name": "Les Aventures fantastiques de Sacré-Cœur",
+    "cover": "https://wework.qpic.cn/wwpic3az/142571_m41NoKEST3yJnCA_1782621076/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38391_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38391_2"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

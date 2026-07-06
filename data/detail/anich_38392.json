@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38392",
+    "name": "转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们",
+    "cover": "https://wework.qpic.cn/wwpic3az/41731_TtwW2AuvT-uvt8S_1782621076/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38392_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

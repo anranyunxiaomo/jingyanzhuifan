@@ -250,5 +250,47 @@
     "age_name": "暗黑灯火",
     "confidence": 1.0,
     "anich_image": "https://wework.qpic.cn/wwpic3az/558037_hBrTSWRFQfKl3sQ_1783193457/300"
+  },
+  "20260183": {
+    "anich_id": 38444,
+    "anich_name": "碧蓝航线：微速前行！ 第二季",
+    "age_name": "碧蓝航线 微速前行 第二季",
+    "confidence": 0.9167,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/971368_CV9_7alqSZ-Cc9A_1783315857/300"
+  },
+  "20260166": {
+    "anich_id": 38380,
+    "anich_name": "再见，拉拉",
+    "age_name": "再见，拉拉",
+    "confidence": 1.0,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/625177_8aiLcknGStak61q_1783193447/300"
+  },
+  "20260181": {
+    "anich_id": 38428,
+    "anich_name": "正相反的你与我 第二季",
+    "age_name": "相反的你和我 第二季",
+    "confidence": 0.8,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/567339_I1dw-0mhRH-yeGp_1768739446/300"
+  },
+  "20260225": {
+    "anich_id": 38389,
+    "anich_name": "才女的侍从 在满是高岭之花的贵族学校暗中照顾（毫无生活自理能力的）学院第一大小姐",
+    "age_name": "才女的侍从 在满是高岭之花的贵族学校暗中照顾（毫无生活自理能力的）学院第一大小姐",
+    "confidence": 1.0,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/331277_Axa_bVYhQCeAkWC_1783229444/300"
+  },
+  "20260211": {
+    "anich_id": 38387,
+    "anich_name": "世界最强的后卫 ～迷宫国的新人探索者～",
+    "age_name": "世界最强的后卫 ～迷宫国的新人探索者～",
+    "confidence": 1.0,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/324204_rtD1FKiYS12xfgP_1783294245/300"
+  },
+  "20190015": {
+    "anich_id": 38360,
+    "anich_name": "二十世纪电气目录",
+    "age_name": "二十世纪电气目录",
+    "confidence": 1.0,
+    "anich_image": "https://wework.qpic.cn/wwpic3az/66703_XE3RLjNBQt6bjy5_1782617486/300"
   }
 }

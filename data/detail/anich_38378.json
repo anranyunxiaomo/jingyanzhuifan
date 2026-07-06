@@ -1,0 +1,20 @@
+{
+  "video": {
+    "id": "anich_38378",
+    "name": "『你们先走我断后』，于是10年后我成为了传说",
+    "cover": "https://wework.qpic.cn/wwpic3az/507679_54Jr52zXTV2ghj7_1782621100/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38378_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}
