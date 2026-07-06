@@ -186,13 +186,61 @@ def decode_episodes_list(data):
 # ──────────────────────────────────────────────
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
+GLOBAL_PROXY = None
+
+def get_free_proxies():
+    # 💡 从 GitHub 公开维护的高频免费 HTTP 代理列表抓取
+    proxy_urls = [
+        "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt",
+        "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"
+    ]
+    proxies = []
+    for p_url in proxy_urls:
+        cmd = ["curl", "-s", "--max-time", "5", p_url]
+        r = subprocess.run(cmd, capture_output=True)
+        if r.returncode == 0 and r.stdout:
+            lines = r.stdout.decode('utf-8', errors='ignore').split('\n')
+            for line in lines:
+                line = line.strip()
+                if line and ":" in line and not line.startswith("#"):
+                    proxies.append(line)
+            if proxies:
+                break
+    return proxies
+
+def find_working_proxy():
+    global GLOBAL_PROXY
+    if GLOBAL_PROXY:
+        return GLOBAL_PROXY
+        
+    print("[PROXY] Fetching active proxies for secure HTTP CONNECT tunnel...")
+    try:
+        proxies = get_free_proxies()
+    except Exception as e:
+        print(f"[PROXY] Error fetching proxy list: {e}")
+        return None
+        
+    if not proxies:
+        print("[PROXY] No proxies found in public lists.")
+        return None
+        
+    print(f"[PROXY] Got {len(proxies)} public proxies. Testing top list for HTTPS connectivity...")
+    # 只测前 20 个活跃的，超时时间 2 秒快速判定
+    for p in proxies[:20]:
+        test_cmd = ["curl", "-s", "--fail", "--max-time", "2", "-x", f"http://{p}", "https://www.baidu.com"]
+        r = subprocess.run(test_cmd, capture_output=True)
+        if r.returncode == 0:
+            print(f"[PROXY] Success! Selected secure proxy: http://{p}")
+            GLOBAL_PROXY = f"http://{p}"
+            return GLOBAL_PROXY
+    print("[PROXY] No active proxies passed the test, falling back to CDN proxy pool.")
+    return None
+
 def curl_get_raw(url, token_str, timeout=3):
-    # 💡 强力代理中转防封锁：若在线上 GitHub Actions 运行，或者直连失败，强制走代理池以避开机房 IP 屏蔽与下划线 Header 过滤
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
-    
     import urllib.parse
     
-    # 💡 容灾代理池：结合自建反代与多个全球公开的高速跨域代理，消除单点故障与头信息过滤
+    # 💡 备份反代池（当动态隧道代理失效时兜底使用）
     PROXIES = [
         "https://jingyanff.xyz/?url=",
         "https://corsproxy.io/?url=",
@@ -200,15 +248,19 @@ def curl_get_raw(url, token_str, timeout=3):
         "https://api.codetabs.com/v1/proxy?quest="
     ]
     
-    def execute_curl(target_url, proxy_base=None):
+    def execute_curl(target_url, proxy_base=None, use_http_tunnel=None):
         final_target = target_url
         if proxy_base:
             encoded_url = urllib.parse.quote(target_url, safe='')
             final_target = f"{proxy_base}{encoded_url}"
             
+        cmd_prefix = ["curl", "-s", "--fail", "--max-time", str(timeout)]
+        if use_http_tunnel:
+            cmd_prefix += ["-x", use_http_tunnel]
+            
         # 1. 尝试无 Token 访问（免登录接口）
         if not token_str:
-            cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", final_target]
+            cmd = cmd_prefix + ["-H", f"User-Agent: {ANICH_UA}", final_target]
             r = subprocess.run(cmd, capture_output=True)
             return r.stdout if r.returncode == 0 else None
             
@@ -226,8 +278,7 @@ def curl_get_raw(url, token_str, timeout=3):
             proto_bytes = f1 + f2
             auth_header = ','.join(str(b) for b in proto_bytes)
             
-            cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
-                   "-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", final_target]
+            cmd = cmd_prefix + ["-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", final_target]
             
             r = subprocess.run(cmd, capture_output=True)
             if r.returncode == 0:
@@ -238,22 +289,29 @@ def curl_get_raw(url, token_str, timeout=3):
             time.sleep(0.15)
         return None
 
-    # A. 线上环境无条件遍历代理池进行中转 (Azure IP 100% 被屏蔽)
+    # A. 线上环境：首选动态代理隧道，避开下划线过滤并绕过 IP 屏蔽
     if is_github_actions:
+        tunnel = find_working_proxy()
+        if tunnel:
+            res = execute_curl(url, proxy_base=None, use_http_tunnel=tunnel)
+            if res:
+                return res
+        
+        # 备选：走反代池
         for p_base in PROXIES:
-            res = execute_curl(url, proxy_base=p_base)
+            res = execute_curl(url, proxy_base=p_base, use_http_tunnel=None)
             if res:
                 return res
         return None
             
     # B. 本地优先直连测试
-    res = execute_curl(url, proxy_base=None)
+    res = execute_curl(url, proxy_base=None, use_http_tunnel=None)
     if res:
         return res
         
     # C. 本地直连失败，兜底轮询代理池
     for p_base in PROXIES:
-        res = execute_curl(url, proxy_base=p_base)
+        res = execute_curl(url, proxy_base=p_base, use_http_tunnel=None)
         if res:
             return res
         
