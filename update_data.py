@@ -45,6 +45,31 @@ def fetch_html_via_scraper_api(url):
     return None
 
 
+def is_sensitive_anime(name, plot, tags):
+    """判定番剧是否属于黄色或敏感内容 (Naughty Content Filter)"""
+    name = (name or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    # 1. 严格的分类与标签黑名单 (里番、肉番、凌辱、18禁、无修正、成人)
+    sensitive_genres = ["里番", "肉番", "凌辱", "18禁", "无修正", "成人"]
+    for genre in sensitive_genres:
+        if genre in plot or genre in tags:
+            return True
+            
+    # 2. 标题模糊匹配黑名单
+    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教"]
+    for s_name in sensitive_names:
+        if s_name in name:
+            # 💡 规避误伤：比如“催眠麦克风”是正常的音乐企划番剧，不应拦截
+            if "催眠" in name and "催眠麦克风" in name:
+                continue
+            return True
+            
+    return False
+
+
+
 
 # 备用域名列表
 BACKUP_DOMAINS = [
@@ -419,6 +444,9 @@ async def main_async():
                         video = detail.get("video", {})
                         title = video.get("name")
                         if title and aid_str not in seen_aids:
+                            # 💡 过滤黄色/敏感番剧
+                            if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")):
+                                continue
                             pinyin_code = get_pinyin_initials(title)
                             entry_aid = aid_str
                             if aid_str.isdigit():
@@ -627,10 +655,17 @@ async def main_async():
             try:
                 with open(detail_path, 'r', encoding='utf-8') as f:
                     local_detail = json.load(f)
+                    
+                # 💡 如果本地已有缓存，且该动漫已被判定为黄色/敏感内容，直接跳过处理与抓取，节省流量
+                video_cached = local_detail.get("video", {})
+                if is_sensitive_anime(video_cached.get("name", title), video_cached.get("plot", ""), video_cached.get("tags", "")):
+                    print(f"  [FILTERED] Skipping mature/sensitive anime: {title} (AID: {aid})")
+                    continue
             except Exception:
                 pass
 
         # B. 智能增量判定：如果本地详情已存在，且当前动漫今天没有更新（或者虽然更新了但集数已匹配），直接使用本地缓存！
+
         if local_detail:
             should_skip_api = False
             new_title = info.get('new_title', '')
@@ -778,6 +813,9 @@ async def main_async():
                     video = detail.get("video", {})
                     title = video.get("name")
                     if title and aid_str not in seen_aids:
+                        # 💡 过滤黄色/敏感番剧
+                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")):
+                            continue
                         pinyin_code = get_pinyin_initials(title)
                         entry_aid = aid_str
                         if aid_str.isdigit():
