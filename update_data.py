@@ -69,6 +69,22 @@ def is_sensitive_anime(name, plot, tags):
     return False
 
 
+def check_anime_sensitive_by_aid(aid, title):
+    """通过本地详情缓存辅助校验动漫是否敏感"""
+    if not aid:
+        return is_sensitive_anime(title, "", "")
+    detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
+    if os.path.exists(detail_path):
+        try:
+            with open(detail_path, 'r', encoding='utf-8') as f:
+                video = json.load(f).get("video", {})
+                return is_sensitive_anime(video.get("name", title), video.get("plot", ""), video.get("tags", ""))
+        except Exception:
+            pass
+    return is_sensitive_anime(title, "", "")
+
+
+
 
 
 # 备用域名列表
@@ -534,12 +550,12 @@ async def main_async():
             if "latest" in home_data and isinstance(home_data["latest"], list):
                 home_data["latest"] = [
                     item for item in home_data["latest"]
-                    if not is_sensitive_anime(item.get("Title"), "", "")
+                    if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
                 ]
             if "recommend" in home_data and isinstance(home_data["recommend"], list):
                 home_data["recommend"] = [
                     item for item in home_data["recommend"]
-                    if not is_sensitive_anime(item.get("Title"), "", "")
+                    if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
                 ]
             if "week_list" in home_data and isinstance(home_data["week_list"], dict):
                 cleaned_week = {}
@@ -547,7 +563,7 @@ async def main_async():
                     if isinstance(animes, list):
                         cleaned_week[day] = [
                             item for item in animes
-                            if not is_sensitive_anime(item.get("name"), "", "")
+                            if not check_anime_sensitive_by_aid(item.get("id"), item.get("name"))
                         ]
                     else:
                         cleaned_week[day] = animes
@@ -791,7 +807,7 @@ async def main_async():
                     real_m3u8 = AgeM3u8Sniffer.sniff_m3u8_link(task["parse_url"])
                     return task, real_m3u8
 
-                with ThreadPoolExecutor(max_workers=10) as executor:
+                with ThreadPoolExecutor(max_workers=5) as executor:
                     results = list(executor.map(sniff_worker, tasks_to_sniff))
                 
                 for task, real_m3u8 in results:
