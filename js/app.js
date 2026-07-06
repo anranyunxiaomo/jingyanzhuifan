@@ -1600,18 +1600,62 @@ new Vue({
     // ==========================================================================
     // 🧭 导航及交互控制
     // ==========================================================================
-    goHome(skipHashUpdate = false) {
-      console.log('[DEBUG ROUTER] goHome() called. skipHashUpdate:', skipHashUpdate);
-      // 安全销毁 DPlayer 实例，防止声音残留
+    cleanupPlayer() {
+      console.log('[DEBUG PLAYER] cleanupPlayer() executing physical sweep...');
+      // 1. 物理级强行释放 DPlayer 原生 video，切断解码与音频上下文
       if (this.dpInstance) {
-        try { this.dpInstance.destroy(); } catch(e) {}
+        try {
+          if (this.dpInstance.video) {
+            this.dpInstance.video.pause();
+            this.dpInstance.video.src = '';
+            this.dpInstance.video.load();
+          }
+        } catch (e) {
+          console.warn('[PLAYER] Failed to pause/clear video src:', e);
+        }
+        try {
+          this.dpInstance.off('timeupdate');
+          this.dpInstance.off('loadedmetadata');
+          this.dpInstance.off('error');
+          this.dpInstance.destroy();
+        } catch (e) {
+          console.warn('[PLAYER] Failed to destroy dpInstance:', e);
+        }
         this.dpInstance = null;
       }
+      
+      // 2. 强行掐断所有的 iframe 播放与移除，释放后台解析页面内存
+      try {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+          try {
+            iframe.src = 'about:blank';
+            iframe.remove();
+          } catch (e) {}
+        });
+      } catch (e) {}
+      
+      // 3. 释放 Blob URL
       if (this.activeBlobUrl) {
         try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
         this.activeBlobUrl = '';
       }
+      this.activePlayUrl = '';
       this.isIframeMode = false;
+      
+      // 4. 强行清除 Chrome 右上角挂载的全局媒体会话卡片状态，强制使其闭合
+      if ('mediaSession' in navigator) {
+        try {
+          navigator.mediaSession.metadata = null;
+          navigator.mediaSession.playbackState = 'none';
+        } catch (e) {}
+      }
+    },
+
+    goHome(skipHashUpdate = false) {
+      console.log('[DEBUG ROUTER] goHome() called. skipHashUpdate:', skipHashUpdate);
+      // 调用物理垃圾清理防残留
+      this.cleanupPlayer();
       
       this.currentAnimeId = null;
       this.currentPage = 'home'; // 重置到首页视图
@@ -1715,23 +1759,9 @@ new Vue({
       
       console.log(`[ROUTER] URL hash change matched: "${hash}"`);
       
-      // 💡 强力垃圾回收防残留：只要路由离开详情页，无条件强制销毁 DPlayer 并清空 Iframe 播放地址，彻底防止后台声音残留
       const isDetailPage = hash.includes('detail/');
       if (!isDetailPage) {
-        if (this.dpInstance) {
-          try {
-            this.dpInstance.off('timeupdate');
-            this.dpInstance.off('loadedmetadata');
-            this.dpInstance.off('error');
-            this.dpInstance.destroy();
-          } catch (e) {}
-          this.dpInstance = null;
-        }
-        this.activePlayUrl = '';
-        if (this.activeBlobUrl) {
-          try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
-          this.activeBlobUrl = '';
-        }
+        this.cleanupPlayer();
       }
       
       // 正则动态适配 detail/<AID> 结构 (兼容带 anich_ 前缀 of 字符串 ID)
