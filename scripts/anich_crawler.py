@@ -528,6 +528,11 @@ def sync_anich_only_details(anich_only_items, token_str=None):
     print("\n[VOD] 开始同步 AniCh 独有新番与国漫的详情页...")
     sync_count = 0
     
+    # 💡 强力批次限额控制：防止单次 Actions 请求网络次数过多导致 5 分钟超时，每次运行最多只抓取 8 部缺失的详情
+    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+    max_api_fetches = 8 if is_github_actions else 9999
+    api_fetched_count = 0
+    
     for item in anich_only_items:
         bid = item['id']
         title = item['title']
@@ -574,12 +579,14 @@ def sync_anich_only_details(anich_only_items, token_str=None):
         
         detail_updated = False
         if not local_intro or not local_airdate or video.get("premiere") == "暂无":
-            print(f"  [API] 本地缺少详情，正在通过 API 抓取: {title} (anich_{bid})...")
-            detail_url = f"https://ani.emmmm.eu.org/bangumi/detail/{bid}"
-            raw_json = curl_get_raw(detail_url, token_str)
-            if raw_json:
-                try:
-                    info = json.loads(raw_json.decode('utf-8', errors='replace'))
+            if api_fetched_count < max_api_fetches:
+                print(f"  [API] 本地缺少详情，正在通过 API 抓取 ({api_fetched_count+1}/{max_api_fetches}): {title} (anich_{bid})...")
+                detail_url = f"https://ani.emmmm.eu.org/bangumi/detail/{bid}"
+                raw_json = curl_get_raw(detail_url, token_str)
+                api_fetched_count += 1
+                if raw_json:
+                    try:
+                        info = json.loads(raw_json.decode('utf-8', errors='replace'))
                     # A. 提取并格式化首播时间
                     airdate_ts = info.get("airdate")
                     if airdate_ts:
