@@ -20,7 +20,18 @@
           "anich_placeholder_38440_3"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-07-03",
+    "time_format_3": "2026-07-03 00:00:00",
+    "intro": "Q版小剧场",
+    "intro_clean": "Q版小剧场",
+    "intro_html": "Q版小剧场",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

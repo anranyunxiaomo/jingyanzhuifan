@@ -20,7 +20,17 @@
           "anich_placeholder_38448_3"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-05-29",
+    "time_format_3": "2026-05-29 00:00:00",
+    "plot": "动画 动作冒险 奇幻",
+    "tags": "动画 动作冒险 奇幻",
+    "plot_arr": [
+      "动画",
+      "动作冒险",
+      "奇幻"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

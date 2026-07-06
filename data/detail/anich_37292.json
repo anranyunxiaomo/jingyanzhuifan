@@ -744,7 +744,16 @@
           "anich_placeholder_37292_184"
         ]
       ]
-    }
+    },
+    "time_format_2": "2023-01-01",
+    "time_format_3": "2023-01-01 00:00:00",
+    "plot": "动画 儿童",
+    "tags": "动画 儿童",
+    "plot_arr": [
+      "动画",
+      "儿童"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

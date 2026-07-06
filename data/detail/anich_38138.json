@@ -44,7 +44,16 @@
           "anich_placeholder_38138_9"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-05-07",
+    "time_format_3": "2026-05-07 00:00:00",
+    "plot": "动画 动作冒险",
+    "tags": "动画 动作冒险",
+    "plot_arr": [
+      "动画",
+      "动作冒险"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

@@ -12,7 +12,18 @@
           "anich_placeholder_38427_1"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-07-05",
+    "time_format_3": "2026-07-05 08:00:00",
+    "intro": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "intro_clean": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "intro_html": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

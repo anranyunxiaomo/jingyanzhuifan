@@ -44,7 +44,24 @@
           "anich_placeholder_38407_9"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-07-01",
+    "time_format_3": "2026-07-01 00:00:00",
+    "intro": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.\r\n",
+    "intro_clean": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.",
+    "intro_html": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.<br />",
+    "plot": "动画 动作冒险 奇幻 2026 美国 WEB 漫画改",
+    "tags": "动画 动作冒险 奇幻 2026 美国 WEB 漫画改",
+    "plot_arr": [
+      "动画",
+      "动作冒险",
+      "奇幻",
+      "2026",
+      "美国",
+      "WEB",
+      "漫画改"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

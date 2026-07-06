@@ -212,7 +212,15 @@
           "anich_placeholder_37244_51"
         ]
       ]
-    }
+    },
+    "time_format_2": "2025-07-22",
+    "time_format_3": "2025-07-22 00:00:00",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

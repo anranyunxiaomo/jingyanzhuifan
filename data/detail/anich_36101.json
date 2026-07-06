@@ -2832,7 +2832,15 @@
           "anich_placeholder_36101_706"
         ]
       ]
-    }
+    },
+    "time_format_2": "2018-06-26",
+    "time_format_3": "2018-06-26 00:00:00",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

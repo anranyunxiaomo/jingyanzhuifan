@@ -116,7 +116,17 @@
           "anich_placeholder_37590_27"
         ]
       ]
-    }
+    },
+    "time_format_2": "2026-01-04",
+    "time_format_3": "2026-01-04 00:00:00",
+    "plot": "动画 家庭 喜剧",
+    "tags": "动画 家庭 喜剧",
+    "plot_arr": [
+      "动画",
+      "家庭",
+      "喜剧"
+    ],
+    "writer": "暂缺/见简介"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"
