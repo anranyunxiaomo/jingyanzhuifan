@@ -86,8 +86,14 @@ jobs:
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
             git add data/
-            git commit -m "chore(data): auto-update anime static databases"
-            git push origin main
+            
+            # 💡 强力保险：在 commit 前，再次检查 pull --rebase 后是否还有真正发生改变的 Diff
+            if ! git diff --cached --quiet; then
+              git commit -m "chore(data): auto-update anime static databases"
+              git push origin main
+            else
+              echo "[INFO] No unique changes remaining after git pull. Skipping commit."
+            fi
           else
             echo "[INFO] No data changes detected. Skipping push."
           fi
