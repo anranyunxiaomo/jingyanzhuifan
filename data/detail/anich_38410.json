@@ -1,19 +1,19 @@
 {
   "video": {
-    "id": "anich_38422",
-    "name": "骸骨骑士大人异世界冒险中 第二季",
-    "cover": "https://wework.qpic.cn/wwpic3az/646217_2pE7PgRKSNuEEcu_1783020663/300",
+    "id": "anich_38410",
+    "name": "择日飞升",
+    "cover": "https://wework.qpic.cn/wwpic3az/949294_RW5QurHgSoO9sUZ_1783279842/300",
     "company": "AniCh 独有",
     "type": "TV",
     "playlists": {
       "anich_m3u8": [
         [
           "第01集",
-          "anich_placeholder_38422_1"
+          "anich_placeholder_38410_1"
         ],
         [
           "第02集",
-          "anich_placeholder_38422_2"
+          "anich_placeholder_38410_2"
         ]
       ]
     }

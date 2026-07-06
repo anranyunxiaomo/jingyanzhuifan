@@ -658,6 +658,24 @@ def main():
             existing_map = json.load(f)
             # 💡 全量洗白对齐：清洗历史脏 Key 映射，重新对齐到 AGE 真实 ID 上
             existing_map = clean_and_align_id_map(existing_map, age_index)
+            
+            # 💡 强力清扫漏网之鱼：如果映射表里已经将该番剧绑定到了 AGE 纯数字真 AID 上，
+            # 那么磁盘上如果还残留有它以前作为 anich_only 产生的旧缓存 json，直接无条件强行删除！
+            cleaned_count = 0
+            for age_aid, mapping in existing_map.items():
+                if str(age_aid).isdigit():
+                    anich_id = mapping.get("anich_id")
+                    if anich_id:
+                        deprecated_path = os.path.join(DETAIL_DIR, f"anich_{anich_id}.json")
+                        if os.path.exists(deprecated_path):
+                            try:
+                                os.remove(deprecated_path)
+                                cleaned_count += 1
+                                print(f"    [CLEANER] Removed residual deprecated cache: anich_{anich_id}.json")
+                            except:
+                                pass
+            if cleaned_count > 0:
+                print(f"[CLEANER] 磁盘清扫完毕。共强行抹除了 {cleaned_count} 个残留空壳缓存 JSON。")
 
     # 4. Fuzzy Match 对齐更新映射表
     updated_map = dict(existing_map)

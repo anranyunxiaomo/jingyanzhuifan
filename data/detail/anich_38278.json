@@ -1,0 +1,40 @@
+{
+  "video": {
+    "id": "anich_38278",
+    "name": "城隍录",
+    "cover": "https://wework.qpic.cn/wwpic3az/93200_Rj_9EJmIQNyJ_GR_1781047862/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38278_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38278_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38278_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38278_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38278_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38278_6"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

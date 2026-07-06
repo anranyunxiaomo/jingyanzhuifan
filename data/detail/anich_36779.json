@@ -1,0 +1,108 @@
+{
+  "video": {
+    "id": "anich_36779",
+    "name": "非人哉 第3季",
+    "cover": "https://wework.qpic.cn/wwpic3az/642125_27uwrwVQT9-DyW1_1782822665/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_36779_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_36779_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_36779_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_36779_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_36779_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_36779_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_36779_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_36779_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_36779_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_36779_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_36779_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_36779_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_36779_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_36779_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_36779_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_36779_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_36779_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_36779_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_36779_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_36779_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_36779_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_36779_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_36779_23"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}
