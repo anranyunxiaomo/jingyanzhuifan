@@ -1131,8 +1131,10 @@ new Vue({
             }
 
             const dplayerContainer = document.getElementById('dplayer');
-            if (!dplayerContainer) {
-              throw new Error("DPlayer container element '#dplayer' not found in DOM");
+            // 💡 黄金防线：不仅检测容器是否存在，更要检测该容器是否依然在真实的 DOM 树中挂载！
+            // 防止由于前面的 await fetch 异步耗时期间发生路由切走或 DOM 销毁，导致传入 detached 孤立节点触发 DPlayer 内部 null 报错
+            if (!dplayerContainer || !document.body.contains(dplayerContainer)) {
+              throw new Error("DPlayer container element '#dplayer' is detached or not found in DOM");
             }
 
             const dp = new DPlayer({
