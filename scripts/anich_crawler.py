@@ -186,7 +186,7 @@ def decode_episodes_list(data):
 # ──────────────────────────────────────────────
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
-def curl_get_raw(url, token_str, timeout=8):
+def curl_get_raw(url, token_str, timeout=3):
     # 💡 强力代理中转防封锁：若在线上 GitHub Actions 运行，或者直连失败，强制走代理池以避开机房 IP 屏蔽与下划线 Header 过滤
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     
@@ -213,7 +213,7 @@ def curl_get_raw(url, token_str, timeout=8):
             return r.stdout if r.returncode == 0 else None
             
         # 2. 带有 Token 认证，并进行时钟偏差容错重试
-        offsets = [60, 0, -60, 120, -120]
+        offsets = [60, 0, -60]
         for offset in offsets:
             timestamp_ms = int(time.time() * 1000) + (offset * 1000)
             time_hex = hex(timestamp_ms)[2:]
@@ -528,9 +528,9 @@ def sync_anich_only_details(anich_only_items, token_str=None):
     print("\n[VOD] 开始同步 AniCh 独有新番与国漫的详情页...")
     sync_count = 0
     
-    # 💡 强力批次限额控制：防止单次 Actions 请求网络次数过多导致 5 分钟超时，每次运行最多只抓取 8 部缺失的详情
+    # 💡 强力批次限额控制：防止单次 Actions 请求网络次数过多导致 5 分钟超时，每次运行最多只抓取 3 部缺失的详情
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
-    max_api_fetches = 8 if is_github_actions else 9999
+    max_api_fetches = 3 if is_github_actions else 9999
     api_fetched_count = 0
     
     for item in anich_only_items:
