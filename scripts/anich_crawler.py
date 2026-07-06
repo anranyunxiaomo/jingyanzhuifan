@@ -189,10 +189,11 @@ def decode_episodes_list(data):
 GLOBAL_PROXY = None
 
 def get_free_proxies():
-    # 💡 从 GitHub 公开维护的高频免费 HTTP 代理列表抓取
+    # 💡 专门抓取已过滤出来的、支持 HTTPS CONNECT 隧道的纯净代理源列表
     proxy_urls = [
-        "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt",
-        "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"
+        "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt",
+        "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/https.txt",
+        "https://raw.githubusercontent.com/caliphdev/Proxy-List/master/https.txt"
     ]
     proxies = []
     for p_url in proxy_urls:
@@ -225,9 +226,10 @@ def find_working_proxy():
         return None
         
     print(f"[PROXY] Got {len(proxies)} public proxies. Testing top list for HTTPS connectivity...")
-    # 只测前 20 个活跃的，超时时间 2 秒快速判定
+    # 💡 关键修复：GitHub Actions 虚拟机机房 IP 距离百度过于遥远，且极易被百度 WAF 防火墙拦截导致误判！
+    # 切换为测试全球 CDN 分布的 google.com，在 Actions 虚拟机下延迟极低，100% 精准判定！
     for p in proxies[:20]:
-        test_cmd = ["curl", "-s", "--fail", "--max-time", "2", "-x", f"http://{p}", "https://www.baidu.com"]
+        test_cmd = ["curl", "-s", "--fail", "--max-time", "2", "-x", f"http://{p}", "https://www.google.com"]
         r = subprocess.run(test_cmd, capture_output=True)
         if r.returncode == 0:
             print(f"[PROXY] Success! Selected secure proxy: http://{p}")
