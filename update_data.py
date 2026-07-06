@@ -235,7 +235,15 @@ def request_api(path, params=None):
             else:
                 print(f"[ERROR] API {path} returned status {r.status_code}")
         except Exception as e:
-            print(f"[WARNING] Retry {retry+1} for {path} failed: {e}")
+            print(f"[WARNING] Retry {retry+1} for {path} failed: {e}. Trying direct connection...")
+            # 💡 容灾退回：如果代理访问失败，尝试不经过代理直连原始目标 API 接口 (特别适合本地网络开发)
+            try:
+                r_direct = session.get(target_url, timeout=10)
+                if r_direct.status_code == 200:
+                    print(f"[SUCCESS] Direct connection resolved API {path} successfully!")
+                    return r_direct.json()
+            except Exception as direct_err:
+                print(f"[ERROR] Direct connection also failed: {direct_err}")
             time.sleep(1.5)
     return None
 
@@ -319,10 +327,39 @@ async def main_async():
             print("[CRITICAL] Failed to fetch home-list. Aborting.")
             return
         
+        # 💡 数据融合保护：如果本地已经存在 home-list.json，我们需要提取其中由 AniCh 注入的标注和独有新番，防止被官方数据完全擦除
+        local_home_path = os.path.join(DATA_DIR, 'home-list.json')
+        if os.path.exists(local_home_path):
+            try:
+                with open(local_home_path, 'r', encoding='utf-8') as f_old:
+                    old_home = json.load(f_old)
+                
+                # A. 恢复 week_list 里的 anich_id 标注
+                old_week = old_home.get("week_list", {})
+                new_week = home_data.setdefault("week_list", {})
+                for day_key, old_items in old_week.items():
+                    new_items = new_week.get(day_key, [])
+                    name_to_anich = {item["Title"]: item["anich_id"] for item in old_items if "anich_id" in item and "Title" in item}
+                    for item in new_items:
+                        if "Title" in item and item["Title"] in name_to_anich:
+                            item["anich_id"] = name_to_anich[item["Title"]]
+                            
+                # B. 提取并追加以 anich_ 开头的独有新番卡片到 latest 列表
+                old_latest = old_home.get("latest", [])
+                new_latest = home_data.setdefault("latest", [])
+                existing_aids = {str(item.get("AID")) for item in new_latest}
+                for item in old_latest:
+                    aid_str = str(item.get("AID", ""))
+                    if aid_str.startswith("anich_") and aid_str not in existing_aids:
+                        new_latest.append(item)
+                        existing_aids.add(aid_str)
+            except Exception as old_err:
+                print(f"[WARN] Failed to merge local home-list: {old_err}")
+
         # 保存 home-list.json 到 data/ 目录
-        with open(os.path.join(DATA_DIR, 'home-list.json'), 'w', encoding='utf-8') as f:
+        with open(local_home_path, 'w', encoding='utf-8') as f:
             json.dump(home_data, f, ensure_ascii=False, indent=2)
-        print("[SUCCESS] Saved home-list.json")
+        print("[SUCCESS] Saved and merged home-list.json")
         
         # 3. 汇总需要抓取详情的动漫列表
         for item in home_data.get('latest', []):
