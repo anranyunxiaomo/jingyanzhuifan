@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'data/**'
   schedule:
     # 每 4 小时自动运行一次 (UTC 时间，对应北京时间的 4, 8, 12, 16, 20, 24 点左右)
     - cron: '0 */4 * * *'
