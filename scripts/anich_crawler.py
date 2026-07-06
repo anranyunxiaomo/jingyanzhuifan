@@ -257,6 +257,9 @@ def similarity(a, b):
 def best_match(anich_name, age_index, min_score=0.75):
     best_item, best_score = None, 0.0
     for age_item in age_index:
+        # 💡 破解幽灵回音：在匹配真 AID 时，无条件忽略所有以 anich_ 开头的本地独有索引项！
+        if str(age_item.get("AID", "")).startswith("anich_"):
+            continue
         age_title = age_item.get("Title", "")
         for s_a, s_b in [(anich_name, age_title),
                           (strip_season(anich_name), strip_season(age_title))]:
