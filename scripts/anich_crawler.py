@@ -201,12 +201,10 @@ def curl_get_raw(url, token_str, timeout=5):
             return r.stdout
         return None
         
-    # B. 本地开发调试：优先使用本地时钟重试直连
-    # 1. 尝试无 Token 访问（免登录接口）
+    # B. 本地开发调试：
+    # 1. 💡 防刷大闸拦截：如果没有传入 Token，说明处于防刷拦截下，直接不发起网络请求返回 None！
     if not token_str:
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", url]
-        r = subprocess.run(cmd, capture_output=True)
-        return r.stdout if r.returncode == 0 else None
+        return None
         
     # 2. 带有 Token 认证，并进行时钟偏差容错重试
     offsets = [60, 0, -60]
