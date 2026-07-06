@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "anich_38288",
+    "name": "我与超人的冒险 第三季",
+    "cover": "https://wework.qpic.cn/wwpic3az/124617_l8i4Qt0qRIa9lRd_1783279860/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38288_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38288_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38288_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38288_4"
+        ]
+      ]
+    },
+    "time_format_2": "2026-06-14",
+    "time_format_3": "2026-06-14 00:00:00",
+    "plot": "动画 喜剧 动作冒险 奇幻 我与超人的冒险 欧美 dc",
+    "tags": "动画 喜剧 动作冒险 奇幻 我与超人的冒险 欧美 dc",
+    "plot_arr": [
+      "动画",
+      "喜剧",
+      "动作冒险",
+      "奇幻",
+      "我与超人的冒险",
+      "欧美",
+      "dc"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "美国",
+    "year": "2026",
+    "uptodate": "第04集",
+    "premiere": "2026-06-14"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

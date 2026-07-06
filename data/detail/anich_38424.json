@@ -1,0 +1,34 @@
+{
+  "video": {
+    "id": "anich_38424",
+    "name": "攻壳机动队 THE GHOST IN THE SHELL 特别篇",
+    "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38424_1"
+        ]
+      ]
+    },
+    "time_format_2": "2026-07-04",
+    "time_format_3": "2026-07-04 00:00:00",
+    "plot": "动画 动作冒险 奇幻",
+    "tags": "动画 动作冒险 奇幻",
+    "plot_arr": [
+      "动画",
+      "动作冒险",
+      "奇幻"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "2026-07-04"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

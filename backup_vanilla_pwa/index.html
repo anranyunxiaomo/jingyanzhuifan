@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0c0c0e">
+  <title>番剧助手 - 纯云端 PWA</title>
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css?v=3.0.0">
+  
+  <!-- Hls.js & Artplayer CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/artplayer-plugin-danmuku/dist/artplayer-plugin-danmuku.js"></script>
+</head>
+<body>
+
+  <!-- iOS 风格顶部通知 Toast -->
+  <div id="ios-toast" class="ios-toast-wrapper">
+    <div class="ios-toast-content card-glass">
+      <div class="toast-icon">📢</div>
+      <div class="toast-body">
+        <h4 id="toast-title">新番已到账</h4>
+        <p id="toast-desc">您订阅的番剧已有最新一集下载完成，点击立即观看。</p>
+      </div>
+      <button id="btn-toast-action" class="toast-action-btn">观看</button>
+    </div>
+  </div>
+
+  <!-- PWA 全屏背景发光 -->
+  <div class="ambient-glow"></div>
+
+  <!-- 应用容器 -->
+  <div class="app-container">
+    
+    <!-- 头部导航 -->
+    <header class="app-header">
+      <div class="header-content">
+        <h1 class="logo-text">番剧助手</h1>
+        <div class="status-indicators">
+          <span id="indicator-github" class="status-dot red" title="GitHub 未连接"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 主体视口 -->
+    <main class="app-viewport">
+      
+      <!-- TAB 1: 播放库 (默认显示) -->
+      <section id="view-library" class="view-section active">
+        <div class="section-header">
+          <h2>云端播放库</h2>
+          <button id="btn-refresh-files" class="btn-icon" title="刷新视频列表">
+            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          </button>
+        </div>
+        <div id="media-list" class="list-container">
+          <div class="empty-state">
+            <p>请先在“设置”中完成 GitHub 配置</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: 点播下载 -->
+      <section id="view-subscriptions" class="view-section">
+        <!-- 新版：全网即时点播搜索 -->
+        <div class="section-header">
+          <h2>全网番剧搜索点播</h2>
+        </div>
+
+        <div class="search-box-wrapper card-glass" style="display: flex; gap: 10px; align-items: center;">
+          <input type="text" id="input-global-search" placeholder="🔍 输入番剧中文名或关键字..." style="flex: 1; background: none; border: none; outline: none; color: #fff;">
+          <button id="btn-global-search" class="btn-primary-action" style="padding: 6px 14px; font-size: 12px; margin: 0;">搜索</button>
+        </div>
+
+        <!-- 全网搜索结果展示列表 -->
+        <div id="global-search-results" class="list-container" style="max-height: 320px; overflow-y: auto; margin-bottom: 24px; display: none;">
+          <!-- 动态渲染全网搜索结果 -->
+        </div>
+
+        <!-- 备用：最新番剧更新流 -->
+        <div class="section-header">
+          <h2>今日新番更新流</h2>
+          <button id="btn-refresh-rss" class="btn-icon" title="刷新最新资源">
+            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          </button>
+        </div>
+
+        <!-- 最新番剧列表 -->
+        <div id="latest-rss-list" class="list-container latest-feed-list" style="max-height: 280px; overflow-y: auto;">
+          <div class="empty-state">
+            <p>加载最新番剧资源中...</p>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 32px;">
+          <h2>常驻订阅 (自动跟更)</h2>
+          <button id="btn-add-sub" class="btn-primary-action">
+            <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            新建订阅
+          </button>
+        </div>
+        
+        <!-- 用户现有的订阅列表 -->
+        <div id="subscription-list" class="list-container">
+          <div class="empty-state">
+            <p>正在拉取订阅中...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: 系统设置 -->
+      <section id="view-settings" class="view-section">
+        <div class="section-header">
+          <h2>系统设置</h2>
+        </div>
+        
+        <div class="settings-form">
+          <!-- GitHub 配置 -->
+          <div class="settings-group card-glass">
+            <h3>GitHub 核心配置 (同步中心)</h3>
+            <div class="input-row">
+              <label for="input-gh-pat">GitHub PAT (个人访问令牌)</label>
+              <input type="password" id="input-gh-pat" placeholder="ghp_xxxxxxxxxxxx">
+            </div>
+            <div class="input-row">
+              <label for="input-gh-repo">私有仓库名 (格式: username/repo)</label>
+              <input type="text" id="input-gh-repo" placeholder="username/AutoBangumi-cloud">
+            </div>
+            <p class="settings-tip">
+              <strong>零配置说明：</strong>本项目不需要您注册或配置任何第三方网盘、S3 存储服务。您仅需在此处提供您的 GitHub PAT（具备 repo 读写权限）和仓库名。PWA 将在本地浏览器直接保存配置，实现 0 Secrets 极速点播。
+            </p>
+          </div>
+          
+          <button id="btn-save-settings" class="btn-submit">保存配置</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 底部 Tab 导航栏 -->
+    <nav class="app-tabbar">
+      <button class="tab-item active" data-target="view-library">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <span class="tab-label">追番历史</span>
+      </button>
+      <button class="tab-item" data-target="view-subscriptions">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="tab-label">新番点播</span>
+      </button>
+      <button class="tab-item" data-target="view-settings">
+        <svg class="tab-icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <span class="tab-label">设置</span>
+      </button>
+    </nav>
+
+    <!-- 全屏播放器模态层 -->
+    <div id="player-modal" class="modal-overlay">
+      <div class="modal-content card-glass" style="max-width: 800px; height: 85vh; display: flex; flex-direction: column;">
+        <div class="modal-header" style="flex-shrink: 0;">
+          <h3 id="player-title">番剧播放</h3>
+          <button id="btn-close-player" class="btn-close">✕</button>
+        </div>
+        <div class="player-wrapper" style="flex: 1; position: relative; overflow: hidden; background: #000;">
+          <div id="artplayer-container" style="width: 100%; height: 100%; display: none;"></div>
+          <div id="player-iframe-container" style="width: 100%; height: 100%; display: none; background: #000;"></div>
+        </div>
+        <!-- 弹弹Play 弹幕快捷控制栏 (轻应用标配) -->
+        <div id="danmaku-ctrl-bar" style="flex-shrink: 0; display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: rgba(255,255,255,0.06); border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; flex-wrap: wrap;">
+          <label style="display: flex; align-items: center; gap: 4px; color: #e2e2e7; cursor: pointer;">
+            <input type="checkbox" id="chk-danmaku-show" checked style="width: 14px; height: 14px; accent-color: var(--color-primary);"> 开启弹幕
+          </label>
+          <span style="color: rgba(255,255,255,0.15)">|</span>
+          <div style="display: flex; align-items: center; gap: 6px; color: #e2e2e7;">
+            <span>透明度:</span>
+            <input type="range" id="range-danmaku-op" min="0.1" max="1.0" step="0.1" value="0.8" style="width: 60px; height: 4px; background: rgba(255,255,255,0.2); outline: none; border-radius: 2px; cursor: pointer;">
+          </div>
+          <span style="color: rgba(255,255,255,0.15)">|</span>
+          <div style="display: flex; align-items: center; gap: 6px; color: #e2e2e7;">
+            <span>字号:</span>
+            <select id="sel-danmaku-size" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 2px 4px; font-size: 10px; color: #fff;">
+              <option value="15">小</option>
+              <option value="18" selected>中</option>
+              <option value="23">大</option>
+            </select>
+          </div>
+          <span id="danmaku-status-text" style="color: #34c759; font-size: 11px; margin-left: auto; font-weight: 500;">
+            等待播放...
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 点播番剧详情选集弹窗 (动态渲染) -->
+    <div id="sub-modal" class="modal-overlay">
+      <div class="modal-content card-glass form-modal" style="max-width: 650px; max-height: 85vh; display: flex; flex-direction: column;">
+        <div class="modal-header" style="flex-shrink: 0;">
+          <h3 id="detail-title">番剧详情</h3>
+          <button id="btn-close-sub-modal" class="btn-close">✕</button>
+        </div>
+        <div id="detail-modal-body" class="modal-body" style="flex: 1; overflow-y: auto; padding: 20px;">
+          <!-- 动态塞入海报、简介、线路和集数列表 -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./app.js?v=3.0.0"></script>
+</body>
+</html>

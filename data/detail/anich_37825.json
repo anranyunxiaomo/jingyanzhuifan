@@ -1,0 +1,172 @@
+{
+  "video": {
+    "id": "anich_37825",
+    "name": "RoboGobo 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/741350_ou4CE50SRr6mu5T_1743633010/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37825_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37825_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37825_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37825_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37825_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37825_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37825_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37825_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37825_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37825_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37825_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37825_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37825_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37825_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_37825_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_37825_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_37825_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_37825_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_37825_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_37825_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_37825_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_37825_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_37825_23"
+        ],
+        [
+          "第24集",
+          "anich_placeholder_37825_24"
+        ],
+        [
+          "第25集",
+          "anich_placeholder_37825_25"
+        ],
+        [
+          "第26集",
+          "anich_placeholder_37825_26"
+        ],
+        [
+          "第27集",
+          "anich_placeholder_37825_27"
+        ],
+        [
+          "第28集",
+          "anich_placeholder_37825_28"
+        ],
+        [
+          "第29集",
+          "anich_placeholder_37825_29"
+        ],
+        [
+          "第30集",
+          "anich_placeholder_37825_30"
+        ],
+        [
+          "第31集",
+          "anich_placeholder_37825_31"
+        ],
+        [
+          "第32集",
+          "anich_placeholder_37825_32"
+        ],
+        [
+          "第33集",
+          "anich_placeholder_37825_33"
+        ],
+        [
+          "第34集",
+          "anich_placeholder_37825_34"
+        ],
+        [
+          "第35集",
+          "anich_placeholder_37825_35"
+        ]
+      ]
+    },
+    "time_format_2": "2026-02-16",
+    "time_format_3": "2026-02-16 00:00:00",
+    "plot": "动画 家庭 喜剧 动作冒险 奇幻",
+    "tags": "动画 家庭 喜剧 动作冒险 奇幻",
+    "plot_arr": [
+      "动画",
+      "家庭",
+      "喜剧",
+      "动作冒险",
+      "奇幻"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "美国",
+    "year": "2026",
+    "uptodate": "第35集",
+    "premiere": "2026-02-16"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

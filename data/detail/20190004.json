@@ -1,0 +1,219 @@
+{
+  "video": {
+    "id": 20190004,
+    "name_other": "LoveLive! Sunshine!! The School Idol Movie Over the Rainbow",
+    "company": "SUNRISE",
+    "name": "Love Live! Sunshine!! 剧场版 彩虹之上",
+    "type": "剧场版",
+    "writer": "矢立肇",
+    "name_original": "ラブライブ！サンシャイン!! The School Idol Movie Over the Rainbow",
+    "plot": "励志 校园 百合 歌舞",
+    "plot_arr": [
+      "励志",
+      "校园",
+      "百合",
+      "歌舞"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "正片",
+          "age_3157WpG63cwB%2FZMbE1Fx1CCgW19YHILP6ntiBOWmbf62%2Fs1wX%2FFfgWFexK1FLbgOLY9ZG4EH9KDAj1qb5%2FBPEJmqMDt4SzVeIavi"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "L",
+    "website": "http://www.lovelive-anime.jp/uranohoshi/sp_movie_theater.php",
+    "star": 3,
+    "status": "完结",
+    "uptodate": "全集",
+    "time_format_1": "20190726002807",
+    "time_format_2": "2019-07-26",
+    "time_format_3": "2019-07-26 00:28:07",
+    "time": 1564072087,
+    "tags": "励志 校园 百合 歌舞",
+    "tags_arr": [
+      "励志",
+      "校园",
+      "百合",
+      "歌舞"
+    ],
+    "intro": "由电击G's magazine（AMW）×Lantis ×SUNRISE 三间制作公司所共同作的企画的跨媒体作品《LoveLive!》，其同名延伸作品《LoveLive! Sunshine!!》在二期动画播毕后随即告知将推出全新的剧场版动画，内容为完全新作。\r\n故事发生在静冈县沼津市海边的小镇、位於内浦的私立浦之星女子学院。 在这间骏河湾一隅的小小高中里面，以2年级的高海千歌为中心的9名少女，怀抱著远大的梦想挺身而出。 那就是，要成为闪闪发光的“学园偶像”！ 只要努力不懈梦想一定会实现──。现在只需要朝著那闪耀的目标，奋不顾身地勇往直前就行了！从此，少女们“ 大家一起实现的故事”（学园偶像计划）就此展开！",
+    "intro_html": "由电击G's magazine（AMW）×Lantis ×SUNRISE 三间制作公司所共同作的企画的跨媒体作品《LoveLive!》，其同名延伸作品《LoveLive! Sunshine!!》在二期动画播毕后随即告知将推出全新的剧场版动画，内容为完全新作。<br />故事发生在静冈县沼津市海边的小镇、位於内浦的私立浦之星女子学院。 在这间骏河湾一隅的小小高中里面，以2年级的高海千歌为中心的9名少女，怀抱著远大的梦想挺身而出。 那就是，要成为闪闪发光的“学园偶像”！ 只要努力不懈梦想一定会实现──。现在只需要朝著那闪耀的目标，奋不顾身地勇往直前就行了！从此，少女们“ 大家一起实现的故事”（学园偶像计划）就此展开！",
+    "intro_clean": "由电击G's magazine（AMW）×Lantis ×SUNRISE 三间制作公司所共同作的企画的跨媒体作品《LoveLive!》，其同名延伸作品《LoveLive! Sunshine!!》在二期动画播毕后随即告知将推出全新的剧场版动画，内容为完全新作。故事发生在静冈县沼津市海边的小镇、位於内浦的私立浦之星女子学院。 在这间骏河湾一隅的小小高中里面，以2年级的高海千歌为中心的9名少女，怀抱著远大的梦想挺身而出。 那就是，要成为闪闪发光的“学园偶像”！ 只要努力不懈梦想一定会实现──。现在只需要朝著那闪耀的目标，奋不顾身地勇往直前就行了！从此，少女们“ 大家一起实现的故事”（学园偶像计划）就此展开！",
+    "series": "Love Live!",
+    "net_disk": null,
+    "resource": "",
+    "year": 2019,
+    "season": 1,
+    "premiere": "2019-01-04",
+    "rank_cnt": "3.00w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20190004.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "42",
+    "collect_cnt": "266"
+  },
+  "series": [
+    {
+      "AID": 20130111,
+      "Href": "/detail/20130111",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130111.jpg",
+      "Title": "Love Live!"
+    },
+    {
+      "AID": 20140138,
+      "Href": "/detail/20140138",
+      "NewTitle": "[TV 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140138.jpg",
+      "Title": "Love Live! 第二季"
+    },
+    {
+      "AID": 20150144,
+      "Href": "/detail/20150144",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150144.jpg",
+      "Title": "Love Live! The School Idol Movie"
+    },
+    {
+      "AID": 20160081,
+      "Href": "/detail/20160081",
+      "NewTitle": "[TV 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160081.jpg",
+      "Title": "Love Live! Sunshine!!"
+    },
+    {
+      "AID": 20170105,
+      "Href": "/detail/20170105",
+      "NewTitle": "[TV 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170105.jpg",
+      "Title": "Love Live! Sunshine!! 第二季"
+    },
+    {
+      "AID": 20200162,
+      "Href": "/detail/20200162",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200162.jpg",
+      "Title": "Love Live! 虹咲学园校园偶像同好会"
+    },
+    {
+      "AID": 20200237,
+      "Href": "/detail/20200237",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200237.jpg",
+      "Title": "Love Live! Superstar!!"
+    },
+    {
+      "AID": 20220054,
+      "Href": "/detail/20220054",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220054.jpg",
+      "Title": "Love Live! 虹咲学园校园偶像同好会 第二季"
+    },
+    {
+      "AID": 20220073,
+      "Href": "/detail/20220073",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220073.jpg",
+      "Title": "Love Live! Superstar!! 第二季"
+    },
+    {
+      "AID": 20230033,
+      "Href": "/detail/20230033",
+      "NewTitle": "第15集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230033.jpg",
+      "Title": "Love Live! 虹咲学园校园偶像同好会 短篇动画"
+    },
+    {
+      "AID": 20240204,
+      "Href": "/detail/20240204",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240204.jpg",
+      "Title": "Love Live! Superstar!! 第三季"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20080070,
+      "Href": "/detail/20080070",
+      "NewTitle": "第51集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080070.jpg",
+      "Title": "守护甜心 第二季"
+    },
+    {
+      "AID": 20020024,
+      "Href": "/detail/20020024",
+      "NewTitle": "第06集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020024.jpg",
+      "Title": "热带雨林的爆笑生活DELUXE"
+    },
+    {
+      "AID": 20110123,
+      "Href": "/detail/20110123",
+      "NewTitle": "第10集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110123.jpg",
+      "Title": "武装神姬 月下天使"
+    },
+    {
+      "AID": 20210236,
+      "Href": "/detail/20210236",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210236.jpg",
+      "Title": "海贼王女"
+    },
+    {
+      "AID": 20050025,
+      "Href": "/detail/20050025",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050025.jpg",
+      "Title": "出云战记"
+    },
+    {
+      "AID": 20260139,
+      "Href": "/detail/20260139",
+      "NewTitle": "第1集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260139.jpg",
+      "Title": "飙马野郎 JOJO的奇妙冒险"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

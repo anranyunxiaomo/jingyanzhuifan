@@ -1,0 +1,343 @@
+{
+  "video": {
+    "id": 20130006,
+    "name_other": "我的青春恋爱喜剧果然有问题",
+    "company": "Brain's Base",
+    "name": "我的青春恋爱物语果然有问题",
+    "type": "TV",
+    "writer": "渡航",
+    "name_original": "やはり俺の青春ラブコメはまちがっている。",
+    "plot": "校园 青春 爱情",
+    "plot_arr": [
+      "校园",
+      "青春",
+      "爱情"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "第01话",
+          "age_1ed88iLM25qpy2PntmNejlJcfsdbyvapnm40KLFPpMIhrI50UO9VPKkN1LstcOpX9U9zR%2Ff8tJ2zJKhvPNKOSIYdC3bYpY%2FOcNE"
+        ],
+        [
+          "第02话",
+          "age_9605wMkCqADtElnGLGRN4M0cQpGMDsY6Vx1BEeIVgBrzuDrit3YqjEfYCkKYBA3adXYiAwZF5X9%2BxB0PD7yNZnJD18ydYEyS70A"
+        ],
+        [
+          "第03话",
+          "age_a177KmqHm604Pa3kVBlnF3yzAW9hMkqZZG21yagEc9HmAGzlOh%2FOZRmp19E6WUsRPPPlzOisQDbZM55cjGXl1dEGeJQmc7kWITo"
+        ],
+        [
+          "第04话",
+          "age_d19aohDB%2BVC%2BWzWnrc40St1Us8LJIIV9gW9Bp%2BBTWao3z0arLmZXG3hCAKcQnAo3TT0lDLtXultEuGYOZITiKxnQOsPKk%2F31aUA"
+        ],
+        [
+          "第05话",
+          "age_819egtfUcc34BydtKV5JZpxzUBAMQMhB71Qc7OiMUQkxKNOFRRjMQ%2BYy2vp4PpEMRxVyV7A3crCAeuvJ7sIWA9bkjIfzUgkIc60"
+        ],
+        [
+          "第06话",
+          "age_89b7CFNllFmFE54Rg2hrrzxLBbQoxlDSJUINSQ5rZEI0k3bFUscZpU%2Fcs6rQu%2BVrMaeZjegdMgN%2FRuY7SeU3iWHG1rqbVGwsZ6U"
+        ],
+        [
+          "第07话",
+          "age_bdaeqV0CbomcY7VU%2Ft86dZmpTG343OF%2BIavZN6SpjRSaVcNMfLGdKW%2Br7tICl7hucu1IflUD24jVVWMwiGfGXgltPLdr9gbP6vQ"
+        ],
+        [
+          "第08话",
+          "age_17c1mtXb8r6gZflBxcA10a0dVNgb2u3YORj0XKX6eA9xhh%2F7eM8lkuBFGYFIsfaBWsLK9bvE5rLukMJKelKPhcXI8jPXfJeedVM"
+        ],
+        [
+          "第09话",
+          "age_65feUgpMK9aFYlvfngSi2IdB9hBsateDFeFpIQJB8XPp3b8Dl0kcdxcViE31OcLPqjob6IsFShJQLm8Do5PM5Se%2FWFOgXDN6drI"
+        ],
+        [
+          "第10话",
+          "age_db0f6YK%2B6xMVQWDBZlJYj4%2FyJ7yn3UsLKlzUN0uUyv935xCLRtoNXbiI6vNbRhAqTOgHpmSmut5mFQbFpkWvnqOASykpQ6qVWKc"
+        ],
+        [
+          "第11话",
+          "age_51f6KkpQwbZ0u6OxrA1WccJrYgHref51a5R6NJwDDQswQfIVTVzabXfvr%2BKOW1aILVeIX%2BoaskgIbgPnuhAtoqsEJYw2EW1SzSE"
+        ],
+        [
+          "第12话",
+          "age_53ddWAf8jPauGhZT3fJlxcA3AKpl3TcT2EZkYwCWTEPQ0MbeuKZ8UOVhQN20qT6dA5FkEelD9a9pB2G6%2BZSsl%2B%2FFk5SrOP2PkPo"
+        ],
+        [
+          "第13话",
+          "age_f700eNCUWbFs7eNLUWtcDUIsqPGeYC4ozJb98jyh9jxNwRCzz5ndgHEQIgMd0d0XZ8TIXwPm3hYTgToUX6iPZ4oe3dseH8EM9tY"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1话",
+          "age_d6a0fgxIm7dSMi1aX9lPThz9csid2Q1ddgkf%2FUu9XLhgUxVFD%2FDUjMaE995nIDjAlAzMFLyTXhQ8Ss8JhAnqBdqso3aNk%2BUFGwY",
+          "https://64.32.20.246/play/DbDq38nd/index.m3u8"
+        ],
+        [
+          "第2话",
+          "age_190er%2FfVL92P%2FE8Sc2TF1g%2Fip5NNAENE7dyJ%2BBeJhf4F0T5HcBVCB4yyDfh39vyTvHUvrRTsrmObB9pwo3Tu9L3HAbwMxOGiCKI",
+          "https://64.32.20.246/play/1aK83Qnb/index.m3u8"
+        ],
+        [
+          "第3话",
+          "age_d1afvv0vIyacTbhnqnewZiGpn7OsWu5%2B1F4djI4mFyd%2BHM4zVnNmPjq3hW2Y%2Fgzg5Xv04F8GrXChkIt1fp29Ol0cTd5MCzLfpCM",
+          "https://64.32.20.246/play/YaOg38Na/index.m3u8"
+        ],
+        [
+          "第4话",
+          "age_c41fVX3jW4tdmI5nM9ezci6psMFcoXAKAJT4sRFE3QHx4onHLc4NEYNOym4Mtsl%2Bja1t7zB5BlIEeZbULux%2FtZnJWVcCgmgyv6w",
+          "https://64.32.20.246/play/5eVv3Q1e/index.m3u8"
+        ],
+        [
+          "第5话",
+          "age_cdb3i635aVp8sbTDbtftlGQV8%2B8Lb07hzb6O%2BSEV4y2GNeKF9H%2BpZTm23KeWmrWdCyEeuBRvLXpY33%2FrVgnURR6yjDFsdgTGU3s",
+          "https://64.32.20.246/play/QeZ87W6b/index.m3u8"
+        ],
+        [
+          "第6话",
+          "age_4bfaufmkk2LNibCtYFHQTxzyxOls4%2BtKvFchgvg3stHqPegGzeae99BW%2Fx1eRXuHcsBMLaiiHru%2BJj8TO7LLxG4CqznXHCGecaE",
+          "https://64.32.20.246/play/Rb46M96e/index.m3u8"
+        ],
+        [
+          "第7话",
+          "age_648eTDSC%2Bx3elyeyVBq9D5bAxM5YKgTyOTcIo3NikVdiXKDwwWiUMazI3FG3W91WveJk6PR%2BwaPRlTYImlTUvvjX8o7RmJrcotU",
+          "https://64.32.20.246/play/yb83Q9oa/index.m3u8"
+        ],
+        [
+          "第8话",
+          "age_a8f0pnJNK1Qkn5txJKkiyjZ5MuzISBXoVy6DiN3bgCwhdGhO8mlsPQMxzhbiABo3qrwNX4n%2Bx9ELWbkac%2Fzny%2F%2BTLW%2FJ311T1OM",
+          "https://64.32.20.246/play/lejYpn5d/index.m3u8"
+        ],
+        [
+          "第9话",
+          "age_b99d3y0b3Tfgj%2F0gBw3AeDyAmRE06b3r03vBVJIJjUxBvM8DR%2B6thzjlscotVlX63gc80tJnIvUpGE6C3VIEtFPthXhAld7WrKk",
+          "https://64.32.20.246/play/penRwzle/index.m3u8"
+        ],
+        [
+          "第10话",
+          "age_d3fdl3Z68cW19aMws1Gu0BrWrnUzq5leaNu3NiBju1nGBOCarUEhbUoj0D4vAKpTsqaCMrf9ysqikBmkdkL1pxH%2FSCvwQDLZQ20",
+          "https://64.32.20.246/play/Yer2AY6e/index.m3u8"
+        ],
+        [
+          "第11话",
+          "age_6030ueLEzsrHFaAjiEt02hLqEIWGM1Gd3uddYBpY8eAPO1Z%2FE2YyiLPG0%2Bvxz5llOcQ187fJxoyBB4KjtYJPW5FdPIss30zRjO4",
+          "https://64.32.20.246/play/PdywLmWa/index.m3u8"
+        ],
+        [
+          "第12话",
+          "age_8c0aQPrhH3G%2FAKiBZRRPug0%2F%2FoXaMEVCHX4j05nzcFopjfRIYEjYdhkQcGbEzOvdW9rFxBT4DNy4VfZescPmH1NvNq1kKqQ397k",
+          "https://64.32.20.246/play/1aK836nb/index.m3u8"
+        ],
+        [
+          "第13话",
+          "age_51c0PuvcWaCXmjCNn652e%2FpP9JicYnZh8dImedgrFwCG36LL6cbOVKuLgrQdzwQimoI3LBFwqeFXcd8b3%2FIuZRLtmRBIKKVRfNY",
+          "https://64.32.20.246/play/YaOg3ZNa/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_e76fB3HnmVzYxnSDRnaR%2FzpE9gkDJH3uOhNiiL8EFpudJLTn%2B3QopyZv8eIkBTcKGjYTA5FBxRe0qjH0ACHCvC2mjyFb63b8uS8ti%2FeRL1M17YVgioA61Q",
+          "https://vip1.lz-cdn5.com/20220501/13482_d1eee714/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_dbfbIoMoyd6L5kKhJFNJ%2Bfq1C6P6bJf6p9h%2Fx8rrC%2FiBRU0iggl02BvjLfCPa%2Fej7xeNddsbxjbYKXafYWU7xozPNOHWZeUab%2FiuEVbMh0CQYCjt2G2jcg",
+          "https://vip1.lz-cdn5.com/20220501/13483_1daed3d5/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_8802FqnY4VLONMm1frIWdiQ5qXsXJVK9hq%2B8pbHM%2BXkRaWBDtuILy2MPI%2BGBYLjrB3QPRfsoPmsK37vopRH7%2BsLF4ozfyUR7s9LvdxP3v8uhxYG1gVV4iQ",
+          "https://vip1.lz-cdn5.com/20220501/13488_f77b28cc/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_d1a1AP6jW29ak57vG0w62m6Syem%2BEL8Rsxu3i98nAnkC9ZrRnTDQa69%2B5DICmOeMuxblqafLrzo8%2BrMwYcFu4DIv09KU8V4zzP2C%2BOWJTtyYIn0PpqhDag",
+          "https://vip1.lz-cdn5.com/20220501/13489_d89e59bf/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_4e67TiCnWrrRMB1Jd1ixl86yfAp7p3QLNJc1g3lExJq1g6KIQIga4ART2LOYLh17W8qswMJKmTTd3%2BO3EI4lb%2Bw9rHfAeGxufyKSgCKtl%2BAZOrCc8%2BcPZA",
+          "https://vip1.lz-cdn5.com/20220501/13495_fda47eef/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_eb86a0dAvFU%2BSsU1nk3KL8GBJ59BG26KuPUjadjaB%2F3W7y3vp9s%2FPbp9N7XI4T8x3vcV8%2B6eIQ%2Ff9%2F38s8vvj%2FtFpqBXvziQjt4%2BwqZapcnzhRjgYBAJ7A",
+          "https://vip1.lz-cdn5.com/20220501/13496_67ae51ed/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_173bGSGLokECaS%2FiRQaQ7SXm%2BbeujLQjqqQcxSbQMbacF5TjgwdkCiXpDjGvuN%2FW4vOLyN%2FD3RTNH5h1pDQumxAS87s6Jx6BRtfFTMyuyPTYhZ80ngpbHg",
+          "https://vip1.lz-cdn5.com/20220501/13503_c2b6bd0d/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_4c6djetVxuKIqISAcYHsenK5RDYfeD7V4HLyqF0WiFJADHNBqBq6KloPbjXCZUeh6h6GiZW7oDxA92x09b0lvN2EWVxv635ljnkpnc9wbnC%2Fao5kI7KSJA",
+          "https://vip1.lz-cdn5.com/20220501/13504_6bec3553/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_1567nosyIqbzBNpIy2m%2FBYpTn%2BBcWDc0jOePE37krn3Z9xtauEaq2mF7MEvcHzCtGxElcZ3aacLYu2Q0LPLPZWYMGYr4uwiJ6tcUPaM8iBq6CVD12TXCzQ",
+          "https://vip1.lz-cdn5.com/20220501/13505_cdeb8b83/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_e4a5bWYgSbXTq9%2BrWn6UBdR8t%2Beq%2FE4NGiZjYrpEFdg9uXr63G0A3bRXf2nA79%2BkYIpx6q%2FupzzQqbiPuKnRhNXU8NRWiIqBnNVkoLRi9Uj0vV63tQ",
+          "https://v1.cdnlz1.com/20241215/24676_587f6cbb/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_8038%2BBEubd6EfssjKRCTdeYvFcDd0SZdUlKlDMomKx%2Brlcl5J425f8GlWQbPGwVab7vcExIAdMVVkeyWRKBmknMhGlWLSE7%2BbIzletfJ9gg2cfyMktqoDw",
+          "https://vip1.lz-cdn5.com/20220501/13512_3c6f7b58/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_34f2CZ6T8Kt0L6voltQ3hYKFvcsXLmPJcxp2efC0XAByNEymlKO%2F5FCrFQP32EqoYPwmJqIk3d9ChDnrkOKdcZB3BYcga93iAEYvs5Mj14fIeTzP2phL3A",
+          "https://vip1.lz-cdn5.com/20220501/13513_6a84a13d/index.m3u8"
+        ],
+        [
+          "第13集",
+          "age_6919FH9QojDEMoqHe7CmfN9x8h4DQwLwfz1s8sPdTXQVfRdEwrtGkZOFK%2BC8VqqxTx0x0mS2FLL2UpUd3Mih%2FyZlTC0rIwTTBxuYpJGKjFxI5PPebSPEUw",
+          "https://vip1.lz-cdn5.com/20220501/13519_488a703c/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "W",
+    "website": "http://www.tbs.co.jp/anime/oregairu/1st",
+    "star": 4,
+    "status": "完结",
+    "uptodate": "第13话",
+    "time_format_1": "20170603165459",
+    "time_format_2": "2017-06-03",
+    "time_format_3": "2017-06-03 16:54:59",
+    "time": 1496480099,
+    "tags": "搞笑 励志 校园 青春 爱情 后宫 治愈 剧情 伪娘 轻小说",
+    "tags_arr": [
+      "搞笑",
+      "励志",
+      "校园",
+      "青春",
+      "爱情",
+      "后宫",
+      "治愈",
+      "剧情",
+      "伪娘",
+      "轻小说"
+    ],
+    "intro": "电视动画《我的青春恋爱物语果然有问题。》改编自轻小说家渡航原作的同名轻小说，动画一直制作到原作小说第6卷（文化祭Episode）为止。作品在2012年7月9日宣布TV动画化决定，\r\n别扭的，没有朋友，没有女朋友，对着那些讴歌青春的同学吐槽着“他们都是骗子，都在说谎，快点爆发把我”的男主角的爱情物语，将来的梦想是“不工作”——\r\n这样的高中生八幡被生活指导老师的带到了学校第一美少女雪乃所属的“侍奉部”，与美少女意想不到的相遇……怎么想都是恋爱故事的展开吧！？\r\n但是雪乃却无论如何都原谅不了八幡那令人残念的糟糕性格！\r\n不断轮回着的充满问题的青春——我的青春，到底怎么了！？",
+    "intro_html": "电视动画《我的青春恋爱物语果然有问题。》改编自轻小说家渡航原作的同名轻小说，动画一直制作到原作小说第6卷（文化祭Episode）为止。作品在2012年7月9日宣布TV动画化决定，<br />别扭的，没有朋友，没有女朋友，对着那些讴歌青春的同学吐槽着“他们都是骗子，都在说谎，快点爆发把我”的男主角的爱情物语，将来的梦想是“不工作”——<br />这样的高中生八幡被生活指导老师的带到了学校第一美少女雪乃所属的“侍奉部”，与美少女意想不到的相遇……怎么想都是恋爱故事的展开吧！？<br />但是雪乃却无论如何都原谅不了八幡那令人残念的糟糕性格！<br />不断轮回着的充满问题的青春——我的青春，到底怎么了！？",
+    "intro_clean": "电视动画《我的青春恋爱物语果然有问题。》改编自轻小说家渡航原作的同名轻小说，动画一直制作到原作小说第6卷（文化祭Episode）为止。作品在2012年7月9日宣布TV动画化决定，别扭的，没有朋友，没有女朋友，对着那些讴歌青春的同学吐槽着“他们都是骗子，都在说谎，快点爆发把我”的男主角的爱情物语，将来的梦想是“不工作”——这样的高中生八幡被生活指导老师的带到了学校第一美少女雪乃所属的“侍奉部”，与美少女意想不到的相遇……怎么想都是恋爱故事的展开吧！？但是雪乃却无论如何都原谅不了八幡那令人残念的糟糕性格！不断轮回着的充满问题的青春——我的青春，到底怎么了！？",
+    "series": "我的青春恋爱物语果然有问题",
+    "net_disk": null,
+    "resource": "BDRIP",
+    "year": 2013,
+    "season": 4,
+    "premiere": "2013-04-04",
+    "rank_cnt": "111.6w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "404",
+    "collect_cnt": "5,864"
+  },
+  "series": [
+    {
+      "AID": 20150017,
+      "Href": "/detail/20150017",
+      "NewTitle": "第13话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150017.jpg",
+      "Title": "我的青春恋爱物语果然有问题 第二季"
+    },
+    {
+      "AID": 20190129,
+      "Href": "/detail/20190129",
+      "NewTitle": "第12话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190129.jpg",
+      "Title": "我的青春恋爱物语果然有问题 第三季"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20130006,
+      "Href": "/detail/20130006",
+      "NewTitle": "第13话",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
+      "Title": "我的青春恋爱物语果然有问题"
+    },
+    {
+      "AID": 20140018,
+      "Href": "/detail/20140018",
+      "NewTitle": "第2集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140018.jpg",
+      "Title": "野良神OAD"
+    },
+    {
+      "AID": 20180243,
+      "Href": "/detail/20180243",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180243.jpg",
+      "Title": "超时空要塞Δ 激情的女武神"
+    },
+    {
+      "AID": 20050010,
+      "Href": "/detail/20050010",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050010.jpg",
+      "Title": "AIR"
+    },
+    {
+      "AID": 20230058,
+      "Href": "/detail/20230058",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230058.jpg",
+      "Title": "德凯奥特曼最终章 向着旅途的彼岸"
+    },
+    {
+      "AID": 20200229,
+      "Href": "/detail/20200229",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200229.jpg",
+      "Title": "宝石幻想光芒重现"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

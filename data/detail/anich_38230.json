@@ -1,0 +1,76 @@
+{
+  "video": {
+    "id": "anich_38230",
+    "name": "依娜和恰恰 第三季",
+    "cover": "https://wework.qpic.cn/wwpic3az/685889_U3D0newGSRmsGgq_1779885056/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38230_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38230_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38230_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38230_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38230_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38230_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38230_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38230_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38230_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38230_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38230_11"
+        ]
+      ]
+    },
+    "time_format_2": "2026-04-23",
+    "time_format_3": "2026-04-23 00:00:00",
+    "intro": "适龄适性，科学教养，继续守护孩子们的同理心与责任感。从暖心的日常小事，到奇妙的自然探索，再到趣味满满的中华文化之旅，我们陪宝贝一起解锁世界，开阔眼界。超有趣的律动唱跳游戏，让成长充满欢声笑语！",
+    "intro_clean": "适龄适性，科学教养，继续守护孩子们的同理心与责任感。从暖心的日常小事，到奇妙的自然探索，再到趣味满满的中华文化之旅，我们陪宝贝一起解锁世界，开阔眼界。超有趣的律动唱跳游戏，让成长充满欢声笑语！",
+    "intro_html": "适龄适性，科学教养，继续守护孩子们的同理心与责任感。从暖心的日常小事，到奇妙的自然探索，再到趣味满满的中华文化之旅，我们陪宝贝一起解锁世界，开阔眼界。超有趣的律动唱跳游戏，让成长充满欢声笑语！",
+    "plot": "动画 儿童",
+    "tags": "动画 儿童",
+    "plot_arr": [
+      "动画",
+      "儿童"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2026",
+    "uptodate": "第11集",
+    "premiere": "2026-04-23"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

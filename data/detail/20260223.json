@@ -1,0 +1,200 @@
+{
+  "video": {
+    "id": 20260223,
+    "name_other": "The Cat and the Dragon / Neko to Ryuu",
+    "company": "OLM",
+    "name": "猫与龙",
+    "type": "TV",
+    "writer": "Amara (宝岛社)",
+    "name_original": "猫と竜",
+    "plot": "治愈 奇幻",
+    "plot_arr": [
+      "治愈",
+      "奇幻"
+    ],
+    "playlists": {
+      "xigua": [
+        [
+          "第01集",
+          "age_ae27M4UBob91ZVAeePS1PiQsKfiaJSNGNqCkwbDc5%2FHG9D8Adetlbtlt1qbjK7tUW31tuUyVcEe2lT2QOVGGAYSS"
+        ],
+        [
+          "第02集",
+          "age_d0ce2IoS7bhihmggZSAbClBOzDGTEXw1YJ53Y9GEcAFbfQd66W1x1jtW%2Fdmknewvgq5V9%2FGazSzZnWIZi3wYZowa"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_371b6AHevA%2F1YXTAstOgY4C6ZtnToElVut6oOKiw06kilzm1pWPoU2cikuPN0sRq%2B7xOQaPDCrm3tvih9ISsIWwHU9jRXFeZ856fV339jRpDndsrZAP55zXa",
+          "https://vip.ffzy-plays.com/20260627/55213_b8c7803c/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_f2f4psmxTkNziCSSnfVS7AAMi%2FSGGsnWCQnizfrxQYOFDyx%2FtjHcQTyMT6V4wEHQTBqtAzBrcdXNYDRr6hqiMq%2F0y870OYGBNmQECSORG6NH%2F1zlmx%2BNQCPW",
+          "https://vip.ffzy-plays.com/20260704/55400_2d65649f/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_d6d8lNHA9xtB9S8Ii4GK13Aqc14WDXu7%2BnmZA4aTM5dqBlal3KlwdmvsCm4gj%2Bsp6zQcG9E%2F9vuZXjTVj8JKCdxLQZwFrnFCFNS8qaCQxA8wEXIE7OQoSLIO%2Fd4",
+          "https://v.baofeng11.com/video/maoyulong/6d88360a16d9/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_228e9ENJkhVAhm35J5SqghrgIsV%2B%2FwuyZCkKj6NaOMDSBnuNnz%2FX3vbZKCV%2Fi0JqgQ4CILahfCaMM%2ByHkhHCTrBW2WKA9dJvenPY5nDzYWkWgd%2FeXz5fhtIONBA",
+          "https://v.baofeng11.com/video/maoyulong/c06bc1d3d500/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_005fOSqtkHRXiMwgCHZuWovedTS7CfPcYcS8m7lP5Yd4oX%2FqtXBFA5Biem8dnqQqK%2Bal6EQzdxqr1i%2B8g7GlS1cElJoNKOPXyeLvRnN4WWzmxWA%2BVehkxmY4",
+          "https://v1.ppqrrs.com/202606/27/mHtFtm6eNp96/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_b3a0yUaF%2BuV4A901ygZ4wEwZGCH1EyZAEYlbJgFKqSxMaBJm0dSSx4GHvM%2BVMld32HOI%2Fc%2BEZf8dikRrrkoHKxK858U80z85UoEosL6DzMcbyZ9pbUpiMM5cN0Ezu1c",
+          "https://v2.ppqrrs.com/wjv2/202607/04/MJjcQgYCQb94/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_766cvWNSYD3WFOW0GRTzki7v7GIVGvAvTEU8jCHjyy4IU4w3MYktPKL6b1Q6ppFbBdUMcWQN24JqrLf2QH6KCtc5wl3YntfpKbzfQPgloC56EFaN",
+          "https://v.lzcdn31.com/20260627/7730_5d3b5ffc/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_f0653bpUHOZ%2FaAMVfFRgCwC9Jpt8tqtFGe3DdvtuWxC05n473zv6%2ByUOJDVGvhkrN73jukv84Tepwlq5YLPx57tEZ6sdkE7r1%2FnnjXyjHu0GLzfE",
+          "https://v.lzcdn31.com/20260704/7995_03d0f849/index.m3u8"
+        ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38383_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38383_2"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "M",
+    "website": "暂缺",
+    "star": 0,
+    "status": "连载",
+    "uptodate": "20:30 第02集",
+    "time_format_1": "20260704225034",
+    "time_format_2": "2026-07-04",
+    "time_format_3": "2026-07-04 22:50:34",
+    "time": 1783176634,
+    "tags": "治愈 奇幻",
+    "tags_arr": [
+      "治愈",
+      "奇幻"
+    ],
+    "intro": "在深邃的森林深处，一只会喷火的龙，与一群能操纵魔法的猫咪一同生活着。\r\n这只在出生前便失去亲生父母的龙，被一只偶然相遇的母猫抚养长大。对猫咪们而言，它只是只能在天空飞翔、会吐出火焰的「有点特别的猫」，迎接进了家族之中。\r\n生活在森林中的猫咪们，各自拥有截然不同的个性与生活方式。龙仿佛是为了报答母猫的恩情，始终陪伴在森林里的猫咪们身边，并守护着它们。猫咪们亲昵地称呼它为「翅膀大叔」。\r\n而在人类眼中，这只龙则被敬畏地称为——猫龙……",
+    "intro_html": "在深邃的森林深处，一只会喷火的龙，与一群能操纵魔法的猫咪一同生活着。<br />这只在出生前便失去亲生父母的龙，被一只偶然相遇的母猫抚养长大。对猫咪们而言，它只是只能在天空飞翔、会吐出火焰的「有点特别的猫」，迎接进了家族之中。<br />生活在森林中的猫咪们，各自拥有截然不同的个性与生活方式。龙仿佛是为了报答母猫的恩情，始终陪伴在森林里的猫咪们身边，并守护着它们。猫咪们亲昵地称呼它为「翅膀大叔」。<br />而在人类眼中，这只龙则被敬畏地称为——猫龙……",
+    "intro_clean": "在深邃的森林深处，一只会喷火的龙，与一群能操纵魔法的猫咪一同生活着。这只在出生前便失去亲生父母的龙，被一只偶然相遇的母猫抚养长大。对猫咪们而言，它只是只能在天空飞翔、会吐出火焰的「有点特别的猫」，迎接进了家族之中。生活在森林中的猫咪们，各自拥有截然不同的个性与生活方式。龙仿佛是为了报答母猫的恩情，始终陪伴在森林里的猫咪们身边，并守护着它们。猫咪们亲昵地称呼它为「翅膀大叔」。而在人类眼中，这只龙则被敬畏地称为——猫龙……",
+    "series": "猫与龙",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 7,
+    "premiere": "2026-07-04",
+    "rank_cnt": "1.38w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260223.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "50",
+    "collect_cnt": "369"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20190021,
+      "Href": "/detail/20190021",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190021.jpg",
+      "Title": "格林笔记"
+    },
+    {
+      "AID": 20180080,
+      "Href": "/detail/20180080",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180080.jpg",
+      "Title": "甜蜜惩罚"
+    },
+    {
+      "AID": 20210381,
+      "Href": "/detail/20210381",
+      "NewTitle": "第22集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210381.jpg",
+      "Title": "本剑仙绝不吃软饭"
+    },
+    {
+      "AID": 20190430,
+      "Href": "/detail/20190430",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190430.jpg",
+      "Title": "武动乾坤"
+    },
+    {
+      "AID": 20090067,
+      "Href": "/detail/20090067",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090067.jpg",
+      "Title": "小鸠"
+    },
+    {
+      "AID": 20200093,
+      "Href": "/detail/20200093",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200093.jpg",
+      "Title": "言语如苏打般涌现"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

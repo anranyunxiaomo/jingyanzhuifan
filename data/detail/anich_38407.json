@@ -1,0 +1,73 @@
+{
+  "video": {
+    "id": "anich_38407",
+    "name": "X战警97 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/318848_bWmAKWgBQh6v4dT_1782909067/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38407_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38407_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38407_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38407_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38407_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38407_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38407_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38407_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38407_9"
+        ]
+      ]
+    },
+    "time_format_2": "2026-07-01",
+    "time_format_3": "2026-07-01 00:00:00",
+    "intro": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.\r\n",
+    "intro_clean": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.",
+    "intro_html": "X-Men ’97 Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men’s absence.<br />",
+    "plot": "动画 动作冒险 奇幻 2026 美国 WEB 漫画改",
+    "tags": "动画 动作冒险 奇幻 2026 美国 WEB 漫画改",
+    "plot_arr": [
+      "动画",
+      "动作冒险",
+      "奇幻",
+      "2026",
+      "美国",
+      "WEB",
+      "漫画改"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "美国",
+    "year": "2026",
+    "uptodate": "第09集",
+    "premiere": "2026-07-01"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

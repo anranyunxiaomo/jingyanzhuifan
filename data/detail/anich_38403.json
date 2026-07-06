@@ -1,0 +1,65 @@
+{
+  "video": {
+    "id": "anich_38403",
+    "name": "山海契约",
+    "cover": "https://wework.qpic.cn/wwpic3az/476869_ft-pBNDpRsqnk7l_1782675059/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38403_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38403_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38403_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38403_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38403_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38403_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38403_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38403_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38403_9"
+        ]
+      ]
+    },
+    "time_format_2": "2026-06-28",
+    "time_format_3": "2026-06-28 00:00:00",
+    "plot": "动画 动作冒险",
+    "tags": "动画 动作冒险",
+    "plot_arr": [
+      "动画",
+      "动作冒险"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2026",
+    "uptodate": "第09集",
+    "premiere": "2026-06-28"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

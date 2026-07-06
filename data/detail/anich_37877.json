@@ -1,0 +1,156 @@
+{
+  "video": {
+    "id": "anich_37877",
+    "name": "嘟拉语文",
+    "cover": "https://wework.qpic.cn/wwpic3az/489454_7-x-gCp-ScqHq_k_1773016261/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37877_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37877_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37877_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37877_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37877_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37877_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37877_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37877_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37877_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37877_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37877_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37877_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37877_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37877_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_37877_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_37877_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_37877_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_37877_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_37877_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_37877_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_37877_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_37877_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_37877_23"
+        ],
+        [
+          "第24集",
+          "anich_placeholder_37877_24"
+        ],
+        [
+          "第25集",
+          "anich_placeholder_37877_25"
+        ],
+        [
+          "第26集",
+          "anich_placeholder_37877_26"
+        ],
+        [
+          "第27集",
+          "anich_placeholder_37877_27"
+        ],
+        [
+          "第28集",
+          "anich_placeholder_37877_28"
+        ],
+        [
+          "第29集",
+          "anich_placeholder_37877_29"
+        ],
+        [
+          "第30集",
+          "anich_placeholder_37877_30"
+        ],
+        [
+          "第31集",
+          "anich_placeholder_37877_31"
+        ],
+        [
+          "第32集",
+          "anich_placeholder_37877_32"
+        ]
+      ]
+    },
+    "time_format_2": "2025-12-01",
+    "time_format_3": "2025-12-01 00:00:00",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2025",
+    "uptodate": "第32集",
+    "premiere": "2025-12-01"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

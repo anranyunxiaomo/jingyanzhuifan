@@ -1,0 +1,42 @@
+{
+  "video": {
+    "id": "anich_38330",
+    "name": "The Michael Rizzo Gets Arrested and Grounded Show",
+    "cover": "https://wework.qpic.cn/wwpic3az/204697_ZcYoRhFaTZKlDHm_1782084679/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38330_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38330_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38330_3"
+        ]
+      ]
+    },
+    "time_format_2": "2026-06-21",
+    "time_format_3": "2026-06-21 00:00:00",
+    "plot": "动画 喜剧 犯罪",
+    "tags": "动画 喜剧 犯罪",
+    "plot_arr": [
+      "动画",
+      "喜剧",
+      "犯罪"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "美国",
+    "year": "2026",
+    "uptodate": "第03集",
+    "premiere": "2026-06-21"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

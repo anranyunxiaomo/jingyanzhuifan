@@ -1,0 +1,132 @@
+{
+  "video": {
+    "id": "anich_36779",
+    "name": "非人哉 第3季",
+    "cover": "https://wework.qpic.cn/wwpic3az/642125_27uwrwVQT9-DyW1_1782822665/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_36779_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_36779_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_36779_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_36779_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_36779_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_36779_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_36779_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_36779_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_36779_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_36779_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_36779_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_36779_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_36779_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_36779_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_36779_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_36779_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_36779_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_36779_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_36779_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_36779_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_36779_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_36779_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_36779_23"
+        ]
+      ]
+    },
+    "time_format_2": "2025-07-22",
+    "time_format_3": "2025-07-22 00:00:00",
+    "intro": "中国古典神话传说中的“著名”精怪是如何在现代社会生存下去，他们成为了我们身边有着神仙特色的宅女、暖男、上班族、犬系男友，他们上演着生活中搞笑而怪诞的小故事，关乎快乐、关乎友情……",
+    "intro_clean": "中国古典神话传说中的“著名”精怪是如何在现代社会生存下去，他们成为了我们身边有着神仙特色的宅女、暖男、上班族、犬系男友，他们上演着生活中搞笑而怪诞的小故事，关乎快乐、关乎友情……",
+    "intro_html": "中国古典神话传说中的“著名”精怪是如何在现代社会生存下去，他们成为了我们身边有着神仙特色的宅女、暖男、上班族、犬系男友，他们上演着生活中搞笑而怪诞的小故事，关乎快乐、关乎友情……",
+    "plot": "动画 喜剧 奇幻 日常 搞笑 漫画改 国产 日常 泡面番 2025",
+    "tags": "动画 喜剧 奇幻 日常 搞笑 漫画改 国产 日常 泡面番 2025",
+    "plot_arr": [
+      "动画",
+      "喜剧",
+      "奇幻",
+      "日常",
+      "搞笑",
+      "漫画改",
+      "国产",
+      "日常",
+      "泡面番",
+      "2025"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2025",
+    "uptodate": "第23集",
+    "premiere": "2025-07-22"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

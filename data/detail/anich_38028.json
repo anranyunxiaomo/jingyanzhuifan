@@ -1,0 +1,97 @@
+{
+  "video": {
+    "id": "anich_38028",
+    "name": "大道独行之蝶龙变",
+    "cover": "https://wework.qpic.cn/wwpic3az/378852__nM5CP0-Rm-kunJ_1775478650/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38028_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38028_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38028_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38028_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38028_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38028_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38028_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38028_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38028_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38028_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38028_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38028_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_38028_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_38028_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_38028_15"
+        ]
+      ]
+    },
+    "time_format_2": "2026-04-06",
+    "time_format_3": "2026-04-06 00:00:00",
+    "intro": "洛离从⼩被困于⽆灵之地银州⼤陆，成为天绝杀堂的第⼀杀⼿。⽗亲慈云⼤师牺牲⾃⼰为洛离换来⼀线⽣机，让其逃离银州，前往中天主世界去寻找真正的修仙之路。",
+    "intro_clean": "洛离从⼩被困于⽆灵之地银州⼤陆，成为天绝杀堂的第⼀杀⼿。⽗亲慈云⼤师牺牲⾃⼰为洛离换来⼀线⽣机，让其逃离银州，前往中天主世界去寻找真正的修仙之路。",
+    "intro_html": "洛离从⼩被困于⽆灵之地银州⼤陆，成为天绝杀堂的第⼀杀⼿。⽗亲慈云⼤师牺牲⾃⼰为洛离换来⼀线⽣机，让其逃离银州，前往中天主世界去寻找真正的修仙之路。",
+    "plot": "动画 动作冒险 剧情 国产 玄幻 中国 战斗",
+    "tags": "动画 动作冒险 剧情 国产 玄幻 中国 战斗",
+    "plot_arr": [
+      "动画",
+      "动作冒险",
+      "剧情",
+      "国产",
+      "玄幻",
+      "中国",
+      "战斗"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2026",
+    "uptodate": "第15集",
+    "premiere": "2026-04-06"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

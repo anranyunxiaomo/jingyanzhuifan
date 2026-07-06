@@ -1,0 +1,35 @@
+{
+  "video": {
+    "id": "anich_38427",
+    "name": "마마+마마",
+    "cover": "https://wework.qpic.cn/wwpic3az/31826_csy5Vg3XRWKBBAG_1783099858/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38427_1"
+        ]
+      ]
+    },
+    "time_format_2": "2026-07-05",
+    "time_format_3": "2026-07-05 08:00:00",
+    "intro": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "intro_clean": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "intro_html": "One day, Mom splits into two. They look identical — it’s impossible to tell which one is real. When her son starts saying strange things, she grows anxious and irritated. “Then get rid of one,” she tells him. But which one should he choose? Why did she divide in two? Who’s really broken — the mother, or the son?",
+    "plot": "动画",
+    "tags": "动画",
+    "plot_arr": [
+      "动画"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "韩国",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "2026-07-05"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

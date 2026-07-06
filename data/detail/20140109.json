@@ -1,0 +1,480 @@
+{
+  "video": {
+    "id": 20140109,
+    "name_other": "白银的意志 安格弗伦 / 白银意志",
+    "company": "XEBEC",
+    "name": "白银的意志 ARGEVOLLEN",
+    "type": "TV",
+    "writer": "AIOS",
+    "name_original": "白銀の意思 アルジェヴォルン",
+    "plot": "科幻 机战 战争",
+    "plot_arr": [
+      "科幻",
+      "机战",
+      "战争"
+    ],
+    "playlists": {
+      "tt": [
+        [
+          "第01集",
+          "age_5e88DaU59zoBHPPC02cPNP%2BxrCkckdL7aRttefLUOcCn0yASoONV2F6KgPVcE0XIUKFAeariEv6w9iQnR%2BnBe9xGV6udWWBzdr2EOHCoppG2xxBY1b2Ra%2F4OeFEr9zqeqiXlqvzoy6sInJmdHAgEF77J1GwAq02eSje7Xu3qtqeRbQQoZBM"
+        ],
+        [
+          "第02集",
+          "age_d03crKoVBtfx96Ww3PG1iJ09hpJBzl7e3rTFUlsDlBmhBKn4SDEKAomQlw6ZqjEyyogEl1QqZZr6K5S6mb6Y76pTqojpwgww6dIINQXQ%2FUZTDVhksJtEawiFG4WtKjIOqmx9HAbGSJ9UlqYNjBZ41G7szuWZ5PLRWrmQQ9x2wEQpT1zDRio"
+        ],
+        [
+          "第03集",
+          "age_c837v0PlEHS39D4gmdvrNPiqLIxkTd34kL%2FjivCvyH74r8DeUIQnQfHGbiqFgYnkJcoo0ToY6x%2FzgEfQHu5rod1ad8ca3iU9%2BDAcsHeEi8QxUgPB7rBycTJ6pNsHFX5rU2R6vYvkVC72MsQeJnPGFZ59urI5uqvbj2ktHtFElmUNeQMGAyU"
+        ],
+        [
+          "第04集",
+          "age_df3195AdQjo9vWV3WvMs01tzZ0qV2moeT%2BC4%2FFgRZgls72iTYqVzw1Ey0QK8MjtdjDmL%2BexKKQ1uzE%2FUNIBAcL2W0yM9KibVfvJs1VL8fEbj7YEdnKsCFzsopE0G%2FvRH97I5jcUm1HoW9AaeWaTMMswAPDlezLhNXpi58o9AyZT6kJAssbI"
+        ],
+        [
+          "第05集",
+          "age_c3ba1J0Z4b2to%2BkwO1pEjkuj0t3eypfTSs7QOEIdjhLTZdlKUm8n49PhtA3jxXo6i746hglBvY4d%2FVjLGUGwHD4CcbbGBVUjH1dwRI8OBW0r8uTmysKj6N2nYEK%2BOsoI%2Fyw5Lgnuq3MFbV%2BPMcmL5y7sRMMya6KYBIK5Z2%2BSbtirVVKEE9Q"
+        ],
+        [
+          "第06集",
+          "age_7e3dThswwI294Ui2MZUBXaBtjOCQ1zooNHNerDTW6XkL5tVQBOxrPEodTT%2BHYuZnPxA5kzDs8bhztWyGGsmwr0BlHlfec%2F%2FAXKiLDxBMd67xW7ytLarcwRDCrUxXfwwGuxMrKuN%2BprN1JcTajsdgWiCibDstiR2Yoia4KUUHxWUYeA0KPiI"
+        ],
+        [
+          "第07集",
+          "age_f47df7PWOWvSjiYLVCIoQit0y9Z7zafkwHlfUo8Yv7LpWDWJKGzROYgWPH3q0S85gXky96lr98tvVu0IFC%2Bri86gMdljjQb8VasIhMpbCRSIipcsdr6EacqAoUZO2DkNUgPCO3CZ%2FALDEKdtILmb1PdTayJVTtciZ5Zw%2F5awP8NjLn7frlU"
+        ],
+        [
+          "第08集",
+          "age_ec37qw0%2FUIfj3nD3UAMczPMdp5XXSFzWwOb%2BhKFjcOU7zf7E%2FI8GKaLESqp%2BRwpemaI8YboxzIcjjUDr0AdLTjGx8Q%2FQPe5ioz%2BvX9g%2FNuEB1OpCQOwQpvbj9x2lbzQ8nQpohojRUzeVFRRUf0iA1OB3d57y%2Bx2cONEOJ61M1Meetzca4iE"
+        ],
+        [
+          "第09集",
+          "age_28440Yh%2B8AIr8b9DGsBIR7FX6Fz9wWHE6Q1Mwx8b2cGUxLtzmIp63%2Fw3KYWFa4bjxTCN443j2w1EPVNyGgxV4Dcig0Jcz8IDzsy1NVL2mjMCWk3F4qBY%2BgAhMA294mX2GC41KXQgDEJegWOKxtDKrJhvHXaLHg5%2F47DpewZ7iFYlDhorkbU"
+        ],
+        [
+          "第10集",
+          "age_a615b5uY1f4B1liNxXdZ%2BLAd9ZXxtDDG%2FMUH9ZZYsp0zWMGZIIkeBsxofhW6iPv2OkOrn4ZMAUPxC8flfnS%2F2sFYItMwUBcYy%2BzvsOXlR4p9wzF2sPKICqOqdGP2flc5nwl1%2BKebAmkSMLyVHgQrreF0933A%2BuCvg0vphvvvW11QZTAKtN0"
+        ],
+        [
+          "第11集",
+          "age_ece1t4t7vuFXmex9orwLNhqCkME8gZakV2jF1tnODA%2BLBVAbr1iSEcpboJSvrzgAdD%2FDEU9H7bBCw2Zh8312OpNOdNt8ZlUwFlJSwgt%2FJBl8bks1iZONE201BBE80wKMBKsrYoXIBK%2FrAhr214IFo6%2FjizgCmtSZ41BPEU%2F2qzMam8qUHW4"
+        ],
+        [
+          "第12集",
+          "age_0654Z0iC9otlo9P79hbdYgNzN9b%2Bhx3%2FsDBrMKBbDNaat8VfNR9W%2BQ%2FHGCRgd9GmC2Dxtmmby4UqPpUeMb4EDe9axxMINLro1ZyzjRsvSD6nbIycgU4g%2B5Z3lnC9LXeXGvRQxNBNj6NFx%2BQj9%2F%2F2kMh3m9sOkTUmX60A3d1bKweuyX5oO%2BI"
+        ],
+        [
+          "第13集",
+          "age_382aG6%2BG%2BYqfLTzKFUXDt%2B9ulTz8Fh88sUfIm1WUB1gDeperCsiG0DDkJoJL0R5k2oP0zVNkzBAlD7DGK8uYmhn9uRfiKmMw7%2BgAP4Qu2m6R9rHUJsIwj%2BjpMY60MYb9c1jB1aDg6%2FMC8fsMLPFZP8GT4DGdLe9JWTxxoxKn4%2BNoBmaLFQ0"
+        ],
+        [
+          "第14集",
+          "age_eff7N%2Bf5%2F%2F5Idzpc%2BEYkYv%2FArCvjT27zbDOjxkEGF3dYWC1wxH3SWo7JzunSsyea6rCsZikKpfsTf2ZUPu6O1uLyk6%2B%2FJGcgAHK%2FHrq1BniaMQHLUfL5m2SB6XPVdfOSfoQ8VquF%2Brmi6D1Kol03yHjRaLq9y5zCLG7BPdgDcRDXoTulaas"
+        ],
+        [
+          "第15集",
+          "age_59608hGSmgXrwntKj%2FSSwxZapgGHYY7h1fJVXo5Lsl1ysrw%2F59LFkgBPsWItMgTzcdsWYlkl3cHVWeR9FxwVvZlZYw0vqTT7ORF3tcJzZ0Uwpq%2F2%2FXCiazv93X2JS7IalMxJIpSKaryi7wIKyFRnRK8PZH25SjyiHyc5qltiCQnlH3SkXgs"
+        ],
+        [
+          "第16集",
+          "age_16f0bQk%2BU5RVoGaRNX1NkE42epHCRulOylrW8PKtc7eta3aO41i99ivg5kwCflzpQ4eIiNXgfl2iIXcU6Rqu%2BMYqdjG6k51%2FqQ%2BIMR8t2zfdU%2B9nS8LrGX%2F12DZ%2Fsdpw1GaDI2GDeR5UIzX%2BDFIwbKAeDavIwsywgSeHLtnZJz0OD7LSEyI"
+        ],
+        [
+          "第17集",
+          "age_a42djhmVzacLPD9xK9OljFAPl7RsjeFQlR42lDLRDr8B6tT85r7vUPMjnOeahEJox1k087UhRabv9mmzIuX%2FI7HdawbJ%2F5Rj%2FZR8MrfCzg9JBccUXW0Yuj6YZwTrGoMqU6m5rr7tMLFujzXe%2FejE1Dc7EuaIVM4LqW2u1Hbrfx3nWss7Iow"
+        ],
+        [
+          "第18集",
+          "age_936bmfrITZQISbcb1Z3Q28x7%2F0aVLOfqHeHovG4XjmpQ6tRqcnXiTFX932V6sAZfSBa8e57ckyhm8y5Z6%2FF71HoKPFavwZlw97Z9c%2FkjhSimMOp7i8d2TbOPcTTMb3r0mAFKeNS00LzpU%2FXrWChoZy1gtCpedT2iTP8NYHwk%2Bq6R8pTxnQ0"
+        ],
+        [
+          "第19集",
+          "age_b8e1LmBg97GBb0IvVzzCZ9roTMzYarJovdhW2ZmihdVc91TjLHdrT%2BHcS3CPCLuDDHoBZPo52Ac%2BGa1mFapGDEPH48ACpHe39ZPcumQUFGIg2au7BgAYGjj4p9R7p0y33AlNJ9abEbHWqYN%2BFUrKJcYU0F37GYS0cwqs3NgsrLAVyYg8mLs"
+        ],
+        [
+          "第20集",
+          "age_7b2eWTUQLf9yqYBqUA0J3JrSEtsAydTe2aITDvKKGyB2%2BVCaeqHBYy5VWxiyuYBpdyx0TRK7pCbRFkv7nu6pSAn9TbixUAxd4MrxJaVuudnYEONHb2L0rOnDFsb%2BORO4Yb103piw5Ko2iUEw1KxER0u63hVop2fPLXh9EL0VjTGhmlK8ajo"
+        ],
+        [
+          "第21集",
+          "age_65c501JPSgrSioWHYcaF%2F4zPT5DR%2F1FrKHkBsKONvHjE5aYahPFyRoo32NXP7ABUqLRmggCQdowyV59cfk8o12k2%2F1TM%2BcWmLCQnSyWafFUKiRBd39XQTROioF5tid1teiFuFVl0nJm7QCI%2BPTV7uPYj3CjU9HgZ6g5qY9smjT8cA5mIAUc"
+        ],
+        [
+          "第22集",
+          "age_3f7fg7InyHVG5iWhRrpOkuru%2B8hu9nZGC0YgpFtJiEPzgWjDsWnUaVqdhQWUq1vnHfygRTJlo%2BmfqJbrr7cWaWWT488zQ2Kg1kGlcgU4UpA%2FNdFoN1tQDQo%2FfX14FfYSB0esde7ljyU8wRZvqOKxbm042VO1aneff3TkVhIpRTic38kdrdM"
+        ],
+        [
+          "第23集",
+          "age_987chgGS8Y5I2ovvcH5jXu4gAV1pFc9pWqGHAmOtAKjL4p4D4vNpnvtdgvPIB3FN7seDzg48zWozXSjYgJe8%2FgYA0jAdZ9Ul2ZR2xnuUWfW5MM%2FPKqciIUC7AwdcX6RmOLsOezQtFVzEYjT4F%2Bm1GG36hTEtkYENsVMkgEDGWdj3rXrt15g"
+        ],
+        [
+          "第24集",
+          "age_9ef2XIL1Yq35X0%2FaNTzEcmtk%2Fc%2Bwdl%2ByoNhj4%2FyiLNvRgDxMjRiGzKh1AIwF6VTYT5YP8yirrA3rmFTIUugOqPNQgd%2BOquoflROQasObTL5vwhzEYwiiiJcnyDXvUK1QxJKn%2FhYlvQCU9h3dXE71xhfUUPV7%2FPM0zz5xH6Km6gTZaW4VHm4"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_ec421xA4nkHsUuRhrW0iSZhkak0WbmXAy6n0bwAW3aTrLzm6nd2CMtxfvESTb0ctyE9RnLpTArOh6L2obTPpJVFGKB2%2BZm2%2F6eHeIlBBjID3yARp%2F4DzA9UtNijwSlVRonJ3iJTuukGN",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/27a4762f64c6/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_0b25KGPJGEIj233DpP97CZZ4zXJU5vKUQ7CdFH1PkEdzwq8H3ga1UG3pMDQSrRRQruCwQOxQdxJBlj%2Fw4exkkUi9thmHY%2BY5mYjlrSXfuze1yeO%2F%2Bha9zKB7NakY9VKxFA4LRlWRruC0",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/b855348101e6/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_a43eQXm8PhUdFzVUOuWsQI6Q5FrYDn%2BB5cqQ9Iv1dZNAi2rzSrj3OIy4p%2FRKLRtBEkH4ovj8Xk3PA7SPeSLt6AOQI%2BLPXtBMYIAGWoItejKhjpvgi63Ppb7Ni3T5diPuwM%2BlyK9dm0uN",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/8e4d47e11ccc/index.m3u8"
+        ],
+        [
+          "第4集",
+          "age_be15rMUWBJGKLsx%2BzKbs%2FgcaFM%2FLd7EvzdmPh%2Bmi3%2FdONAngVQFWKayUpvFrpjChfPqUCKlOLMC6b0JKbopIQ6yuveB6jajn69XKZWSMERJB9Xfd2ytAw79z1zM%2BE7y7qXuoWPfgy5xg",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/febacdbcb9c0/index.m3u8"
+        ],
+        [
+          "第5集",
+          "age_0cccso9t%2Fh8EchbLdbmCD%2FQ4YpXyZv%2Be2kjpLmOKvvYZnHSStoIsY69adenlwpkCQn9Soa7954Gdsrl0AxXtkqq04FDOLIIwJvnDWmHajVxmSgQOqsQcHeoxbc8hO%2BLdIyB6ZL0H6TvR",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/11eeaf2760ee/index.m3u8"
+        ],
+        [
+          "第6集",
+          "age_8f4eggegrTQ6ipqJYWpNsVHYfSWJJ0xEmPxGJUdbRKOvTMdRfTV%2BWgfh5v94Gf1qYjzPvt%2Fnpz3OvmCkytJGJylpJSoYDWIVz6NcR432TAt1akbmAWQ6sFNgTfv2nGujs4LUCD6ct3j4",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/83d5b44d04df/index.m3u8"
+        ],
+        [
+          "第7集",
+          "age_81efflJ8JYdbHS6WeCX5N3Wv6j08sU8x73ULpIf6N8rUQVqjN2YfAEiS2baFdbDbnU1HMIiB5GNiBYNGqyl9PbR9QmS8nFsSnhlcmyrMAZ%2BU%2FWFacbWnPYYuARgtMXFhF3FDckHhhYYN",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/1ddbdf9248a9/index.m3u8"
+        ],
+        [
+          "第8集",
+          "age_e8232DASIQbpASsJQo3lVh4oCOhkNLy%2BcPteghpwQlO6jxXCSEJJCohd2%2BEZ%2FFqrt4XASEaoOThgJ0PuRAq9a5I2zYo7Md5agtAqhA1TSmpVtdXaeJRuHTu34XtAgXJHVi%2BPTozuD8Et",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/84c463cf04f2/index.m3u8"
+        ],
+        [
+          "第9集",
+          "age_4db5bpS8%2BDQxSf5H0UVGMSOySt4GLm%2FhUIatJN7FU1IqNIX%2Bi9XM2pVAXA6g2jZKos1ta7Q6BAKuIxPcobGvhHKWZAcpD27x1ZBaPhTix%2Bs%2BRjE8Wb0Wsq5Kt%2FurgXxKorzrGc7B3AYu",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/1124a6a31f8a/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_d26fn%2F1IK4fmPuucQ6U2jlUNIgxuZIviXuu%2FlA1zifw2bYxNJ9hkwtQIztXuz2fXrKAshEXWiQMdAvvkjEOZpNSHULQ8%2FYvUEggKz%2FWJBzXbi8k5yo7FNfXTVfRlrgNiRhWgOUZ1",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第10集/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_215cnHu%2BT5lBKctlhtej6RTWR%2BD%2FADhwr7uR6tQAxgMTIR6FLi6qbn5F5t7mLItgm%2F9jIWOgQ9Y7nHFri9zkjRNVqV0KOUHDzMCkdLpSuycVDVxtyapFfjPUZwPnyLkviTBO7woxBuhw",
+          "https://s3.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/348449928724/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_e4e8aHBi6eJnQGgVMXGKf0ITerlEI%2FnWLzLjZPbvuBdLFjzRiv2%2Fir%2FiBJh77wD%2BvULfew5VsKd6JI05CikcrPpaIBN%2BDtWbP8TQWfb47DQhjFvGP6Oj9dIOTNXtShLz6ZwKqvtc",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第12集/index.m3u8"
+        ],
+        [
+          "第13集",
+          "age_fd93OC5UbWBPGhRMHCRStFkGKkyUsmHEG56LU35iCWsFxEIzYxzQ8P8J9AjraX%2BGRohergMNgWQxt5YcW5jLFr%2Bu2CzNZ96c%2Fp4JctwfM%2FRG3%2FVpKyIqlSyzPxRx8hB58Xv%2BuV3j",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第13集/index.m3u8"
+        ],
+        [
+          "第14集",
+          "age_4f1dcDvjhQ4flzmDET%2BJYon%2B94vP5BN1eIP8XUfow%2BCo4PLw4sOlCv%2BioSxuXaEqZyIc8C%2BVfwYZ72360a%2FRDK3IWpKSUebeNT%2BKVDS4VokvTHorm%2BkZQVeiK6NXYME%2BYQloW%2BQW",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第14集/index.m3u8"
+        ],
+        [
+          "第15集",
+          "age_9c6eFb8IXN8r39tFSBnz0pn4psyJxnZfvsFz%2ByTnr7GuTZuN8rp0f4ZiteppbvtuqL9z2uCHa%2B7TtnmvFCOYoJBolz5LPplGjnwAO9Y6SKELPyTLpj6%2FyoAMcTuz5nHEFXm1vdJV",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第15集/index.m3u8"
+        ],
+        [
+          "第16集",
+          "age_e29foGp5PAPjr16rTJdGwjSUoMTKPb46JI05LQEULxkijZhaTIvQawQOJlIYijWqawKaxy%2Bz119S1Fp%2BtVLy6XxZ7iHaH%2B%2BMLNF8SlMTL64kRq3O5EElgaDErqYGaoCPKxJ0TIvd",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第16集/index.m3u8"
+        ],
+        [
+          "第17集",
+          "age_abe4868vDExGK92iC4aWa%2BF%2Bpwe4JMyDBJc9EXFNXl0eitkk6ccFjWcewmVx2pR7BuAJT9MBkFcYbq2taTyF73pNuGZIiDRxV5maFRdeJ8kUp27qM9JQeF0%2FIMw8078CSezfNjIg",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第17集/index.m3u8"
+        ],
+        [
+          "第18集",
+          "age_4a53p2AsM3xfmAnaVEQ5EnN6i6KG7ZJhAutXp8ZQO2qLOA3ic11W6b6hMR2cjU4RTsAtoUw2zd%2FRtmeLouolFjR%2Fq9%2B3A%2FQk6lysjh080exHzRuW4A3q1jawAuF6ROmaecappPi2",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第18集/index.m3u8"
+        ],
+        [
+          "第19集",
+          "age_4c8en3Xuv%2B5dF%2F%2FtiUKpTgx8M93NsWGVhr%2BfdUtWQ8e8kfMNlIVDWrxCvsa7ZTwSX71F0FAgLG26BL18KUGPxL79KqJyyiMfzPlnWrT7bkvGWEieJs4PATL0OZG3lfdmM42SviXF",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第19集/index.m3u8"
+        ],
+        [
+          "第20集",
+          "age_a2c1cU1xIKHUmemPX0uOltllE4gMVzUAI5VI7h66Jbv9UUZA27wARkcjdZPaS7ZoQrOqfnmfzNqqAGvaVCV9fPKKV9sgRN9cDsO8lget639PlhS%2FDPbnMU9ryI2Vw%2Fi9%2BM857z5r",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第20集/index.m3u8"
+        ],
+        [
+          "第21集",
+          "age_902bKkkgv9LrkTqqJZ%2FWiGgIInoM86UQjx%2BZ2T%2Btaskcn%2FD6fRGafxBnKqxQBtHw3dmgLHNwh0TNDNpyFnPdPHTl79E5gdIg4VsTeMbU6w%2Fv6Bf1KcooAlOTrB0hZ9KIcR9kmBFK",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第21集/index.m3u8"
+        ],
+        [
+          "第22集",
+          "age_2087hsvVzpTrL9C24LXhlauP9zD8fy7TDLCyOMsRWfgWiR4Y7qP19LQZ%2BAtAAAklB373KMBRhACDdD3UWzDRBPmZt6wT8f8AXnxgygE4U8WoOye6zy7zV3oHJSN6u930BB62KtZnoYeL",
+          "https://s3.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/e6ec29ea8435/index.m3u8"
+        ],
+        [
+          "第23集",
+          "age_476b1DhpImIH%2FK%2Bdv3DtGndylxSyjCGgg5a6jaMm8n6YCsGZEiCGAacbkf5mXUnDoQdugR4Kpv8tjufrPVAjq8QM1u3IzXwf66MijZU9Y1v22qaDz9pXv6J%2FEQXVg0FBT24kdwe%2B",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第23集/index.m3u8"
+        ],
+        [
+          "第24集",
+          "age_b48cpqjrCRjTQ8t4fAeTIlcsGTgEyUeyvNU4%2F5%2FsAEAEg%2B6eX4in4%2FZpT3G2woGsRaCjL2Zror1FoVlWHyiNTNKl1XfS2H7CNllIkdt62WLgk1dOTiFJHhoz7hWPYQsKhAWGXTv0",
+          "https://c1.rrcdnbf2.com/video/baiyindeyizhiARGEVOLLEN/第24集/index.m3u8"
+        ],
+        [
+          "第25集",
+          "age_4a7827FSwZSL4yMbPVD7RrFxXtf49RsGS5TML%2F%2FverGxm6qGTbPgBdexr3rWkA9AXiubPVsdITGbglPIFm72xD6zNw4GgovTxUBjMAPeOknyR561uQNnNuVTyL8T9AytrJ%2FDoFNZqeqV",
+          "https://s2.bfllvip.com/video/baiyindeyizhiARGEVOLLEN/d4d977f1ea6d/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_6029KyEmlfWaf0FtzUtUksaO3VLRGIujwQYtHhU9cUTVpn8yvIBNgXPfndEzL2gSCEF8h8cbEzuKDyH9E0zkj03z2UMbUnx%2BDks1j78MiU2MaI8sxg",
+          "https://v.cdnlz19.com/20240210/13120_b8275ca5/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_a2cdo%2BJs2nKsvUv%2BaRrWv2%2FVc2f2CGbzOw3%2BzB852ud2lksiiAEaHkHPfbPnabqGy1j8m894RBkU5BjWQnNThCQmxw%2ByvVs3tM2mjBQOz4E81sPSow",
+          "https://v.cdnlz19.com/20240210/13123_1fa29cc7/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_d263re81sZ6JSuiqCy%2BLknU9EM8mI3cwJH%2Bv1SBA3VrQLOOde9iuxEChWr5UBB9ae3m3RfPN5EdZbzq%2FCeAv%2Bq0WlgCkGmnmRU8iLkZZ1Wdui4%2F7eg",
+          "https://v.cdnlz19.com/20240210/13121_196ed6c0/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_a506ZWz%2F6ash0ZspgCS8xTJc8Vm0hsCDfldJpZ0i%2Fwoy7JXS7FJARPegpcNsd9CrIl%2Bu76lhcDnPB%2BPbvMJgguuW1jNFYkWaZARs7%2BFirs%2BLbkXz3w",
+          "https://v.cdnlz19.com/20240210/13124_efceeb8f/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_0eeeyoUqaM1XRP4pmJW%2ByIlMHrAjoFfbTUiscANJP0fLZG6ZylsLNR8TtddBJAKny52X21Y%2F0%2Fqfb25I6mBs7S0xC5KD6sRAmmwZJ00apWmEPtX5KA",
+          "https://v.cdnlz19.com/20240210/13128_31c0417f/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_c9318jZohemN5JJ4hTvO4nfiAL1YhvoeBlYgY0i8RpEmLdQOfzmi2mpOXi4azRvfHrULA6%2BYZUtN67Eprd%2BsQ%2B8P%2Bjvo2nE91IbyWZs6NoSoEOnHcQ",
+          "https://v.cdnlz19.com/20240210/13125_a51615f8/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_dbbe2YS5Bpz%2Bf%2B8E9e6GxxexBYBnHNOXe8o1s5NonE3k2ARrUvgdu%2F7AaErbvYd38vqL5DjYLChEhIo7F%2BmTf4GAD8uUPQS755n7uCAmggMQBn1BNA",
+          "https://v.cdnlz19.com/20240210/13126_933a7226/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_a0e36CfsiUP8DTYD5vsPi2LAamx6z0u%2BAWhztc4cZKpnw0B95V01%2B9FXqQKa0%2BfF1giu%2Bm98TBc0aKKxzSJx1AHgd69Sy%2B%2FLrCZJLJ3BHOY3b9Lxdg",
+          "https://v.cdnlz19.com/20240210/13127_b2072d2e/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_e91cevmGvucE%2F0iawT0gef1oSxlhiAk%2BMjSlM9LpuEdVSQF99FROU1DC%2FOmhg1znNZxNHQxjHT2nnjYkz039WfEpZg4npvlqkD3w0skElyiyLDMNkQ",
+          "https://v.cdnlz19.com/20240210/13129_28b6d780/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_59be%2ByIHmAetG02coEBPuaDVZYW%2FHtG5LXJOc%2B7PhcvryQRCj2db9yVPGzWTHwFGrhHfUSAZt1s4pCeNcn0Z1p4wwI8CMMsn5EO3kJwRD6rNBVGw2g",
+          "https://v.cdnlz19.com/20240210/13131_f17898a6/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_13dajFP2GJM6ntyuxX2qLVHLHKDbgRBiDw0QqWP0ZT9s5ZD5I%2B5%2BeWXMGuxz7XLQCFR6lYgM8fpMUN%2BFM5ORoIotm1b5o4vrkt0tWqvFPFsfFS5HbQ",
+          "https://v.cdnlz19.com/20240210/13130_7c559b3b/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_cb21CHiG9Y2QLz8c1LD0RN7NF1JUTZlmpciHdnhPM%2FFh2etBr8zTgnjWFAgB%2FfMlI30QxK7nYaavFrT6YbsjyHEnTrWUW37ewnmsR82AVTAcHxw63Q",
+          "https://v.cdnlz19.com/20240210/13132_930dcaf2/index.m3u8"
+        ],
+        [
+          "第13集",
+          "age_565bEXlg3aoEzC36igPpL3xYHBN4k5rMe8RlTZCOim8YsEWps6f28UlfY27ffdk0AyrYV3Zh2q%2BbbYRQ4%2BXSWMKDYlagAaCVk425GTf%2B606XhHZDIA",
+          "https://v.cdnlz19.com/20240210/13133_d65adffb/index.m3u8"
+        ],
+        [
+          "第14集",
+          "age_82edZl4neCeksPqEue34H6BQ4ASCDcoZ9EGAYJvWHaDcC55AEnyx5IQyfWDqcBib%2BW1Ftuz%2FIMjz9ZZorzgx%2FJ7olxGiA93ShrPqEfFfk7655jnMyw",
+          "https://v.cdnlz19.com/20240210/13134_f1d43a27/index.m3u8"
+        ],
+        [
+          "第15集",
+          "age_ca2ficH5KlQjkj1X1LvWe9GdAeLTMftF2hv%2ByjyUnF%2BJc6fKoZmrE8mDlTSjYSbUwYgiBNTYJDkZ30STKWFRactqaMDDHCz9HU8We7kELiOMkhMzeQ",
+          "https://v.cdnlz19.com/20240210/13135_78359f36/index.m3u8"
+        ],
+        [
+          "第16集",
+          "age_0784PZCoweEs9XLIYrPV7QNAw763CWcKJNVuP3fqz%2Bm5BwykKHLAL0wdmnONRKdUKdxwExmajMxTviPhbjw55Bf0tHZhDofqoMZG4glieSeiGU7beQ",
+          "https://v.cdnlz19.com/20240210/13137_8ef74658/index.m3u8"
+        ],
+        [
+          "第17集",
+          "age_9bcaH32wbEEVrAoG8z1VEqG87U9zqbu%2FxyO3rMKQQheL82I%2FoPDadWyyTMuvpOFbI%2FdnNm0CxfUnil8pYY0s6UJxJoYvPoxfAhqjkwBHYUQsFFUowg",
+          "https://v.cdnlz19.com/20240210/13139_43a8f2a5/index.m3u8"
+        ],
+        [
+          "第18集",
+          "age_4b59HURRiWpjJpiHR9mt%2BVATMwaDMOoNCz7ZPS0BCJuyxwLOuYZ3w1mRQu5RWlp%2FmCTaRs%2FbUZzVi%2BznIAK3IY%2Fda6rioVMFeJDfomXnuVcaOJz3zw",
+          "https://v.cdnlz19.com/20240210/13136_3819e82e/index.m3u8"
+        ],
+        [
+          "第19集",
+          "age_6fe6pIHPnt1LWAxS83cKFgY%2Bf%2B0Vcy3pYYoI8JZONmOddMNVrwgpWDCd8pRNqw0KaVkD%2BMKkfwpcYgGBhBs5XvZgDz3nfk8Z6qBcPYWHgfdxnRxcsQ",
+          "https://v.cdnlz19.com/20240210/13138_b5fd9a78/index.m3u8"
+        ],
+        [
+          "第20集",
+          "age_c52cSNkYUFroiNYwOj%2BBiCCTkwJIvHpJvp6mVQaasf0BzUvFJMp0tOOAA2TKv1NOFR9qtcWf7nZkvv9%2FgBh6vsyligjyrUtJaYli6p6qXYtZ2jvFag",
+          "https://v.cdnlz19.com/20240210/13140_4d43b94d/index.m3u8"
+        ],
+        [
+          "第21集",
+          "age_4febPcjR0hqY5UK1rWxQHqy468fnsfqaQ5L%2FO%2BeWlCrR2zxPn7mhYWB7qcxMqzr9gFR88%2BFCf73MFHn7ROhrUDANKLr9%2FkvWQeQQL%2FJXKrsAqiM1aQ",
+          "https://v.cdnlz19.com/20240210/13141_a6a36346/index.m3u8"
+        ],
+        [
+          "第22集",
+          "age_214bxxIQtDYxiFEwmdS3MeYmUFD1RUtmgfAA64IcDA79c%2BgrNZBOoz38jY9Jk6SQ878mCusJGSm571xIR9PhcSMeYx7l7%2FHQPnTt2oapKGHsnWnMUA",
+          "https://v.cdnlz19.com/20240210/13142_1f5bb719/index.m3u8"
+        ],
+        [
+          "第23集",
+          "age_27b1YD1nUlpE9%2B3eIuan6Lf7tdysRSm3pL9tj460qtvA4GdE1dF8qzcbUMnc3SotQdBPSDF8kEW3dUKvEtZizXDs5tJpyh3pGN876hyBGsGUL1yM3w",
+          "https://v.cdnlz19.com/20240210/13143_7ecc8b3a/index.m3u8"
+        ],
+        [
+          "第24集",
+          "age_b156kzRL1z4rsxSd6J3GFKoMeq%2B8%2BAEktYzAqoXx7KPL5P9jcMsVSG%2FDcJL2ubJKsT1YT0XciYnj7VyJCpwda%2BBw4uviE%2BEjPCc3%2B0KmtgE9Qp5oQQ",
+          "https://v.cdnlz19.com/20240210/13146_101bf4c6/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "B",
+    "website": "http://www.argevollen.com",
+    "star": 3,
+    "status": "完结",
+    "uptodate": "第24集(完结)",
+    "time_format_1": "20170920190021",
+    "time_format_2": "2017-09-20",
+    "time_format_3": "2017-09-20 19:00:21",
+    "time": 1505905221,
+    "tags": "科幻 机战 战争",
+    "tags_arr": [
+      "科幻",
+      "机战",
+      "战争"
+    ],
+    "intro": "《白银的意志 ARGEVOLLEN》是由大槻敦史所监督、XEBEC制作的原创机器人动画。在2014年3月22日AnimeJapan2014的舞台活动当中宣布了动画从2014年夏天开始播出的消息，同时也是官方首次公布作品的标题。 电视动画于2014年7月3日开始播放。\r\n自 Arandas 联合王国（Kingdom of Arandas alliance）建国以来与 Ingelmia 诸国统合体（The Countries Unification of Ingelmia）的战事发生以来，二国一直以中间的不落要塞“Great Wall”为分界陷入胶着的状态。\r\n在 Arandas 联合王国的东方山地有个驻扎于此的独立第八部队，其新兵 Susumu Tokimune 在初阵时即面临了袭击人民的 Ingelmia 军，不顾可能遭遇敌袭与陷阱的危险，Susumu 在前往支援的途中遇到了技师 Jamie Hazaford 以及她所乘载并运送着的 白银Trail Krieger“ARGEVOLLEN”；以此小小的偶然为分界，第八独立部队将大大的撼动“Great Wall”深闭的大门。",
+    "intro_html": "《白银的意志 ARGEVOLLEN》是由大槻敦史所监督、XEBEC制作的原创机器人动画。在2014年3月22日AnimeJapan2014的舞台活动当中宣布了动画从2014年夏天开始播出的消息，同时也是官方首次公布作品的标题。 电视动画于2014年7月3日开始播放。<br />自 Arandas 联合王国（Kingdom of Arandas alliance）建国以来与 Ingelmia 诸国统合体（The Countries Unification of Ingelmia）的战事发生以来，二国一直以中间的不落要塞“Great Wall”为分界陷入胶着的状态。<br />在 Arandas 联合王国的东方山地有个驻扎于此的独立第八部队，其新兵 Susumu Tokimune 在初阵时即面临了袭击人民的 Ingelmia 军，不顾可能遭遇敌袭与陷阱的危险，Susumu 在前往支援的途中遇到了技师 Jamie Hazaford 以及她所乘载并运送着的 白银Trail Krieger“ARGEVOLLEN”；以此小小的偶然为分界，第八独立部队将大大的撼动“Great Wall”深闭的大门。",
+    "intro_clean": "《白银的意志 ARGEVOLLEN》是由大槻敦史所监督、XEBEC制作的原创机器人动画。在2014年3月22日AnimeJapan2014的舞台活动当中宣布了动画从2014年夏天开始播出的消息，同时也是官方首次公布作品的标题。 电视动画于2014年7月3日开始播放。自 Arandas 联合王国（Kingdom of Arandas alliance）建国以来与 Ingelmia 诸国统合体（The Countries Unification of Ingelmia）的战事发生以来，二国一直以中间的不落要塞“Great Wall”为分界陷入胶着的状态。在 Arandas 联合王国的东方山地有个驻扎于此的独立第八部队，其新兵 Susumu Tokimune 在初阵时即面临了袭击人民的 Ingelmia 军，不顾可能遭遇敌袭与陷阱的危险，Susumu 在前往支援的途中遇到了技师 Jamie Hazaford 以及她所乘载并运送着的 白银Trail Krieger“ARGEVOLLEN”；以此小小的偶然为分界，第八独立部队将大大的撼动“Great Wall”深闭的大门。",
+    "series": "白银的意志",
+    "net_disk": null,
+    "resource": "",
+    "year": 2014,
+    "season": 7,
+    "premiere": "2014-07-03",
+    "rank_cnt": "6.95w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "29",
+    "collect_cnt": "145"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20260191,
+      "Href": "/detail/20260191",
+      "NewTitle": "PV",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
+      "Title": "Let's Go 怪奇组"
+    },
+    {
+      "AID": 20070039,
+      "Href": "/detail/20070039",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070039.jpg",
+      "Title": "死神剧场版2 钻石星尘的反叛 另一个冰轮丸"
+    },
+    {
+      "AID": 20180076,
+      "Href": "/detail/20180076",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180076.jpg",
+      "Title": "立花馆恋爱三角铃"
+    },
+    {
+      "AID": 20210371,
+      "Href": "/detail/20210371",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210371.jpg",
+      "Title": "爸妈来自二次元"
+    },
+    {
+      "AID": 20220391,
+      "Href": "/detail/20220391",
+      "NewTitle": "第12集，完结",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220391.jpg",
+      "Title": "名侦探柯南 犯人犯泽先生"
+    },
+    {
+      "AID": 20160195,
+      "Href": "/detail/20160195",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160195.jpg",
+      "Title": "银魂 爱染香篇"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

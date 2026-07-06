@@ -1,0 +1,41 @@
+{
+  "video": {
+    "id": "anich_38447",
+    "name": "航海王 女英雄们的故事",
+    "cover": "https://wework.qpic.cn/wwpic3az/390721_4QBDe3RgTXyP5wo_1783301452/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38447_1"
+        ]
+      ]
+    },
+    "time_format_2": "2026-07-05",
+    "time_format_3": "2026-07-05 08:00:00",
+    "intro": "After buying a pair of shoes that end up hurting her feet, Nami returns to the shop feeling dissatisfied. There, she meets Lebno, the designer, who tells her, \"I'll make you a brand-new pair from scratch—but only if you’ll be my model.\" The shoes are crafted by the artisan Miucha, leading to an unexpected and stylish encounter.",
+    "intro_clean": "After buying a pair of shoes that end up hurting her feet, Nami returns to the shop feeling dissatisfied. There, she meets Lebno, the designer, who tells her, \"I'll make you a brand-new pair from scratch—but only if you’ll be my model.\" The shoes are crafted by the artisan Miucha, leading to an unexpected and stylish encounter.",
+    "intro_html": "After buying a pair of shoes that end up hurting her feet, Nami returns to the shop feeling dissatisfied. There, she meets Lebno, the designer, who tells her, \"I'll make you a brand-new pair from scratch—but only if you’ll be my model.\" The shoes are crafted by the artisan Miucha, leading to an unexpected and stylish encounter.",
+    "plot": "动画 喜剧 动作 2026年7月 东映动画 TV 2026",
+    "tags": "动画 喜剧 动作 2026年7月 东映动画 TV 2026",
+    "plot_arr": [
+      "动画",
+      "喜剧",
+      "动作",
+      "2026年7月",
+      "东映动画",
+      "TV",
+      "2026"
+    ],
+    "writer": "暂缺/见简介",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "2026-07-05"
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

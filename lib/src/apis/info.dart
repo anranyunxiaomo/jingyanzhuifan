@@ -1,0 +1,16 @@
+
+
+import 'package:dio/dio.dart';
+import 'package:xs/src/config.dart';
+
+final api = AppConfig.createDio();
+
+class InfoApi {
+  // 最新
+  static Future<Response> checkUpdate() async {
+    const url = 'https://api.github.com/repos/Sle2p/xs.cx/releases/latest';
+    final response =
+        await api.get(url, options: Options(responseType: ResponseType.json));
+    return response;
+  }
+}
