@@ -75,7 +75,11 @@
       "Engi",
       "漫画改"
     ],
-    "writer": "暂缺/见简介"
+    "writer": "暂缺/见简介",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第13集",
+    "premiere": "2026-04-12"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"
