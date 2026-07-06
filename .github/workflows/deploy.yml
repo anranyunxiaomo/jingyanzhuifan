@@ -102,15 +102,3 @@ jobs:
           else
             echo "[INFO] No data changes detected. Skipping push."
           fi
-
-      # 6. 使用 GitHub 官方原生方式上传静态网页产物
-      - name: Upload static files artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.' # 部署当前目录的所有静态网页文件
-
-      # 7. 部署到 GitHub Pages 托管服务
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
