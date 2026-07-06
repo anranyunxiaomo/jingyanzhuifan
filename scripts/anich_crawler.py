@@ -587,44 +587,44 @@ def sync_anich_only_details(anich_only_items, token_str=None):
                 if raw_json:
                     try:
                         info = json.loads(raw_json.decode('utf-8', errors='replace'))
-                    # A. 提取并格式化首播时间
-                    airdate_ts = info.get("airdate")
-                    if airdate_ts:
-                        import datetime
-                        dt = datetime.datetime.fromtimestamp(airdate_ts / 1000.0, datetime.timezone.utc)
-                        # 转换到北京时间 (UTC+8)
-                        dt_bj = dt.astimezone(datetime.timezone(datetime.timedelta(hours=8)))
-                        video["time_format_2"] = dt_bj.strftime("%Y-%m-%d")
-                        video["time_format_3"] = dt_bj.strftime("%Y-%m-%d %H:%M:%S")
+                        # A. 提取并格式化首播时间
+                        airdate_ts = info.get("airdate")
+                        if airdate_ts:
+                            import datetime
+                            dt = datetime.datetime.fromtimestamp(airdate_ts / 1000.0, datetime.timezone.utc)
+                            # 转换到北京时间 (UTC+8)
+                            dt_bj = dt.astimezone(datetime.timezone(datetime.timedelta(hours=8)))
+                            video["time_format_2"] = dt_bj.strftime("%Y-%m-%d")
+                            video["time_format_3"] = dt_bj.strftime("%Y-%m-%d %H:%M:%S")
+                            
+                            # 💡 同步补全前端所需的首播日期与年份
+                            video["premiere"] = dt_bj.strftime("%Y-%m-%d")
+                            video["year"] = dt_bj.strftime("%Y")
                         
-                        # 💡 同步补全前端所需的首播日期与年份
-                        video["premiere"] = dt_bj.strftime("%Y-%m-%d")
-                        video["year"] = dt_bj.strftime("%Y")
-                    
-                    # B. 提取剧情简介
-                    overview = info.get("overview", "")
-                    if overview:
-                        video["intro"] = overview
-                        video["intro_clean"] = overview.replace("\r\n", "").replace("\n", "")
-                        video["intro_html"] = overview.replace("\r\n", "<br />").replace("\n", "<br />")
+                        # B. 提取剧情简介
+                        overview = info.get("overview", "")
+                        if overview:
+                            video["intro"] = overview
+                            video["intro_clean"] = overview.replace("\r\n", "").replace("\n", "")
+                            video["intro_html"] = overview.replace("\r\n", "<br />").replace("\n", "<br />")
+                            
+                        # C. 提取分类标签
+                        genres = info.get("genres", [])
+                        marks = [m.get("name") for m in info.get("marks", []) if m.get("name")]
+                        tags_list = genres + marks[:4]
+                        if tags_list:
+                            video["plot"] = " ".join(tags_list)
+                            video["tags"] = " ".join(tags_list)
+                            video["plot_arr"] = tags_list
+                            
+                        # 💡 提取地区
+                        regions = info.get("region", [])
+                        if regions and regions[0]:
+                            video["area"] = regions[0]
                         
-                    # C. 提取分类标签
-                    genres = info.get("genres", [])
-                    marks = [m.get("name") for m in info.get("marks", []) if m.get("name")]
-                    tags_list = genres + marks[:4]
-                    if tags_list:
-                        video["plot"] = " ".join(tags_list)
-                        video["tags"] = " ".join(tags_list)
-                        video["plot_arr"] = tags_list
-                        
-                    # 💡 提取地区
-                    regions = info.get("region", [])
-                    if regions and regions[0]:
-                        video["area"] = regions[0]
-                    
-                    detail_updated = True
-                except Exception as ex:
-                    print(f"    [WARN] 解析详情失败: {ex}")
+                        detail_updated = True
+                    except Exception as ex:
+                        print(f"    [WARN] 解析详情失败: {ex}")
         
         playlists = video.setdefault("playlists", {})
         existing_anich = playlists.get("anich_m3u8", [])
