@@ -184,15 +184,6 @@
       "Title": "パンの赤ちゃん"
     },
     {
-      "AID": "anich_38400",
-      "anich_id": 38400,
-      "source": "anich",
-      "Href": "/detail/anich_38400",
-      "NewTitle": "更新至第01集",
-      "PicSmall": "https://wework.qpic.cn/wwpic3az/530461_ZdWzBtybTo6FVZT_1779798672/300",
-      "Title": "蹂躏王国"
-    },
-    {
       "AID": "anich_33097",
       "anich_id": 33097,
       "source": "anich",
@@ -594,14 +585,6 @@
         "name": "茉莉花酱的好感度正在崩坏",
         "mtime": "2026-06-08 20:16:45",
         "namefornew": "第8集(完结)"
-      },
-      {
-        "isnew": 0,
-        "id": 20260147,
-        "wd": 1,
-        "name": "淫狱团地",
-        "mtime": "2026-06-22 00:22:49",
-        "namefornew": "全12集,(完结)"
       },
       {
         "isnew": 1,

@@ -529,6 +529,30 @@ async def main_async():
             except Exception as old_err:
                 print(f"[WARN] Failed to merge local home-list: {old_err}")
 
+        # 💡 对 home-list 进行敏感/黄色动漫清洗，防止首页和每日更新显示它们
+        if isinstance(home_data, dict):
+            if "latest" in home_data and isinstance(home_data["latest"], list):
+                home_data["latest"] = [
+                    item for item in home_data["latest"]
+                    if not is_sensitive_anime(item.get("Title"), "", "")
+                ]
+            if "recommend" in home_data and isinstance(home_data["recommend"], list):
+                home_data["recommend"] = [
+                    item for item in home_data["recommend"]
+                    if not is_sensitive_anime(item.get("Title"), "", "")
+                ]
+            if "week_list" in home_data and isinstance(home_data["week_list"], dict):
+                cleaned_week = {}
+                for day, animes in home_data["week_list"].items():
+                    if isinstance(animes, list):
+                        cleaned_week[day] = [
+                            item for item in animes
+                            if not is_sensitive_anime(item.get("name"), "", "")
+                        ]
+                    else:
+                        cleaned_week[day] = animes
+                home_data["week_list"] = cleaned_week
+
         # 保存 home-list.json 到 data/ 目录
         with open(local_home_path, 'w', encoding='utf-8') as f:
             json.dump(home_data, f, ensure_ascii=False, indent=2)
