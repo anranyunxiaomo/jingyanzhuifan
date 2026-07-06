@@ -5,14 +5,11 @@
     "cover": "https://wework.qpic.cn/wwpic3az/530461_ZdWzBtybTo6FVZT_1779798672/300",
     "company": "AniCh 独有",
     "type": "TV",
-    "playlists": {
-      "anich_m3u8": [
-        [
-          "第01集",
-          "anich_placeholder_38400_1"
-        ]
-      ]
-    },
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "2026-07-03",
+    "writer": "暂缺/见简介",
     "time_format_2": "2026-07-03",
     "time_format_3": "2026-07-03 00:00:00",
     "intro": "エロアニメ界の巨匠、鬼才「むらかみてるあき」が手掛ける。\r\n原作には、「ZION」女騎士シリーズのOVA化第一弾！\r\n\r\n千年の歴史を誇るエルフが治めるエルド王国に魔の手が近づき、\r\n孕み産むためだけの雌に堕ちていく・・・。\r\n\r\nクラリス：エルフの王女。高貴・清楚・崇高な魂の持ち主。予知ができる。\r\nレオナ：近衛女騎士。巨乳で凛々しくクール。剣豪で礼儀礼節を重んじる。",
@@ -27,7 +24,14 @@
       "凌辱",
       "游戏改"
     ],
-    "writer": "暂缺/见简介"
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38400_1"
+        ]
+      ]
+    }
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

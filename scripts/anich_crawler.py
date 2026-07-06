@@ -485,7 +485,7 @@ def run_static_fallback(id_map, age_index):
         
     print("\n🎉 降级静态同步全部顺利完成！")
 
-def sync_anich_only_details(anich_only_items):
+def sync_anich_only_details(anich_only_items, token_str=None):
     if not anich_only_items:
         return
         
@@ -525,6 +525,64 @@ def sync_anich_only_details(anich_only_items):
         video["company"] = "AniCh 独有"
         video["type"] = "TV"
         
+        # 💡 初始化和默认赋值，保证即使 API 挂了前端也能渲染这些字段
+        video["area"] = video.get("area") or "日本"
+        video["year"] = video.get("year") or "2026"
+        video["uptodate"] = f"第{max_eps:02d}集"
+        video["premiere"] = video.get("premiere") or "暂无"
+        video["writer"] = "暂缺/见简介"
+        
+        # 💡 强力增量补全：若本地详情缺少 intro 简介或首播时间，才通过网络向 AniCh 详情接口抓取
+        local_intro = video.get("intro", "")
+        local_airdate = video.get("time_format_2", "")
+        
+        detail_updated = False
+        if not local_intro or not local_airdate or video.get("premiere") == "暂无":
+            print(f"  [API] 本地缺少详情，正在通过 API 抓取: {title} (anich_{bid})...")
+            detail_url = f"https://ani.emmmm.eu.org/bangumi/detail/{bid}"
+            raw_json = curl_get_raw(detail_url, token_str)
+            if raw_json:
+                try:
+                    info = json.loads(raw_json.decode('utf-8', errors='replace'))
+                    # A. 提取并格式化首播时间
+                    airdate_ts = info.get("airdate")
+                    if airdate_ts:
+                        import datetime
+                        dt = datetime.datetime.fromtimestamp(airdate_ts / 1000.0, datetime.timezone.utc)
+                        # 转换到北京时间 (UTC+8)
+                        dt_bj = dt.astimezone(datetime.timezone(datetime.timedelta(hours=8)))
+                        video["time_format_2"] = dt_bj.strftime("%Y-%m-%d")
+                        video["time_format_3"] = dt_bj.strftime("%Y-%m-%d %H:%M:%S")
+                        
+                        # 💡 同步补全前端所需的首播日期与年份
+                        video["premiere"] = dt_bj.strftime("%Y-%m-%d")
+                        video["year"] = dt_bj.strftime("%Y")
+                    
+                    # B. 提取剧情简介
+                    overview = info.get("overview", "")
+                    if overview:
+                        video["intro"] = overview
+                        video["intro_clean"] = overview.replace("\r\n", "").replace("\n", "")
+                        video["intro_html"] = overview.replace("\r\n", "<br />").replace("\n", "<br />")
+                        
+                    # C. 提取分类标签
+                    genres = info.get("genres", [])
+                    marks = [m.get("name") for m in info.get("marks", []) if m.get("name")]
+                    tags_list = genres + marks[:4]
+                    if tags_list:
+                        video["plot"] = " ".join(tags_list)
+                        video["tags"] = " ".join(tags_list)
+                        video["plot_arr"] = tags_list
+                        
+                    # 💡 提取地区
+                    regions = info.get("region", [])
+                    if regions and regions[0]:
+                        video["area"] = regions[0]
+                    
+                    detail_updated = True
+                except Exception as ex:
+                    print(f"    [WARN] 解析详情失败: {ex}")
+        
         playlists = video.setdefault("playlists", {})
         existing_anich = playlists.get("anich_m3u8", [])
         ep_dict = {}
@@ -543,7 +601,7 @@ def sync_anich_only_details(anich_only_items):
                 ep_dict[ep_label] = placeholder_val
                 updated = True
                 
-        if updated or not os.path.exists(detail_path):
+        if updated or detail_updated or not os.path.exists(detail_path):
             new_eps = [[label, url] for label, url in sorted(
                 ep_dict.items(),
                 key=lambda x: int(re.search(r'\d+', x[0]).group()) if re.search(r'\d+', x[0]) else 0
@@ -554,7 +612,7 @@ def sync_anich_only_details(anich_only_items):
             
             with open(detail_path, "w", encoding="utf-8") as f:
                 json.dump(detail, f, ensure_ascii=False, indent=2)
-            print(f"  ✓ AniCh 独有: {title} (anich_{bid}) 已同步 {max_eps} 集占位符")
+            print(f"  ✓ AniCh 独有: {title} (anich_{bid}) 已同步 {max_eps} 集占位符与详情")
             sync_count += 1
             
     print(f"[OK] AniCh 独有详情页同步完毕。共同步: {sync_count} 部番剧")
@@ -872,7 +930,7 @@ def main():
         print(f"[OK] 首页更新完毕。标注了 {marked_home} 个已有番剧，添加了 {added_latest} 个 AniCh 独有新番")
         
         # 💡 同步 AniCh 独有新番/国漫的播放详情文件与搜索索引
-        sync_anich_only_details(anich_only_source)
+        sync_anich_only_details(anich_only_source, token)
         sync_search_index(anich_only_source)
         
         print("\n🎉 AniCh 全量数据爬取与增量占位符生成成功！")

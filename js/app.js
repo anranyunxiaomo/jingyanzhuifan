@@ -1258,6 +1258,17 @@ new Vue({
                         url: nextBackupUrl,
                         type: videoType // 保持原有的 HLS/MP4 播放类型不变
                       });
+                      
+                      // 💡 强力清空报错 DOM 状态，防止“视频加载失败”的遮罩层在成功切换播放后依然顽固显示
+                      const container = document.getElementById('dplayer');
+                      if (container) {
+                        container.classList.remove('dplayer-error');
+                        const errorVideo = container.querySelector('.dplayer-error-video');
+                        if (errorVideo) errorVideo.style.display = 'none';
+                        const errorText = container.querySelector('.dplayer-error');
+                        if (errorText) errorText.style.display = 'none';
+                      }
+                      
                       dp.play();
                       return; // 💡 成功进入切换自愈重试，直接拦截退出，绝不执行下面的降级销毁！
                     }
@@ -1309,6 +1320,16 @@ new Vue({
               // timeupdate 里设置了 playbackStarted = true 时需要清除计时器
               dp.on('timeupdate', () => {
                 if (playbackStarted && fallbackTimer) clearTimeout(fallbackTimer);
+                
+                // 💡 双重保障：只要视频开始走字正常播放，就立刻隐藏任何因非致命警告被错误弹出的“视频加载失败”遮罩层
+                const container = document.getElementById('dplayer');
+                if (container && (container.classList.contains('dplayer-error') || container.classList.contains('dplayer-loading'))) {
+                  container.classList.remove('dplayer-error', 'dplayer-loading');
+                  const errorVideo = container.querySelector('.dplayer-error-video');
+                  if (errorVideo) errorVideo.style.display = 'none';
+                  const errorText = container.querySelector('.dplayer-error');
+                  if (errorText) errorText.style.display = 'none';
+                }
               });
 
             console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);

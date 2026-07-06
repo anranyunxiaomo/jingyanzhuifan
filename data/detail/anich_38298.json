@@ -44,7 +44,11 @@
       "漫画改",
       "武侠"
     ],
-    "writer": "暂缺/见简介"
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2026",
+    "uptodate": "第05集",
+    "premiere": "2026-06-11"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

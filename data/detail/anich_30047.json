@@ -756,7 +756,11 @@
       "网文改",
       "仙侠"
     ],
-    "writer": "暂缺/见简介"
+    "writer": "暂缺/见简介",
+    "area": "中国",
+    "year": "2020",
+    "uptodate": "第181集",
+    "premiere": "2020-07-25"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

@@ -357,7 +357,11 @@
       "辛普森",
       "美国"
     ],
-    "writer": "暂缺/见简介"
+    "writer": "暂缺/见简介",
+    "area": "美国",
+    "year": "1987",
+    "uptodate": "第83集",
+    "premiere": "1987-04-19"
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"
