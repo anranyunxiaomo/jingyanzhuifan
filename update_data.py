@@ -19,6 +19,33 @@ SEARCH_INDEX_PATH = os.path.join(DATA_DIR, 'search_index.json')
 
 os.makedirs(DETAIL_DIR, exist_ok=True)
 
+# ScraperAPI 配置 (每月免费 5000 次额度，自动实现国内住宅代理、过 CF 5秒盾及 JS 动态渲染)
+SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "9b5919ce9fcc48b957baf6c205188173")
+
+def fetch_html_via_scraper_api(url):
+    """通过 ScraperAPI 抓取并渲染动态网页（带 JS 渲染与防 CF 盾，强制分配中国内地 IP 出口）"""
+    if not SCRAPER_API_KEY:
+        return None
+    try:
+        payload = {
+            'api_key': SCRAPER_API_KEY,
+            'url': url,
+            'render': 'true',       # 💡 开启云端 Headless Chrome 动态执行 JS 渲染
+            'country_code': 'cn'    # 💡 强制分配中国大陆境内的 IP 访问，彻底绕过海外 IP 版权限制
+        }
+        print(f"  [SCRAPER_API] Sending request with JS rendering (CN Proxy) for: {url}")
+        # ScraperAPI 响应慢，超时时间设为 60 秒
+        r = requests.get('https://api.scraperapi.com/', params=payload, timeout=60)
+        if r.status_code == 200:
+            return r.text
+        else:
+            print(f"  [SCRAPER_API ERROR] Status {r.status_code} for {url}")
+    except Exception as e:
+        print(f"  [SCRAPER_API EXCEPTION] Request failed for {url}: {e}")
+    return None
+
+
+
 # 备用域名列表
 BACKUP_DOMAINS = [
     "https://api.agedm.io/v2/",
@@ -79,19 +106,58 @@ class AgeM3u8Sniffer:
     
     @classmethod
     def sniff_m3u8_link(cls, parse_url):
+        # 1. 优先普通请求直连抓取（速度快，降低 ScraperAPI 资源消耗）
         try:
             r = session.get(parse_url, headers=cls.headers, timeout=8)
             if r.status_code == 200:
                 text_clean = r.text.replace("\\/", "/")
-                m3u8_matches = re.findall(r'["\']((?:https?:)?//[^"\']+\.m3u8[^"\']*)["\']', text_clean)
+                
+                # A. 尝试直接从 <video src="..."> 提取
+                video_src_matches = re.findall(r'<video[^>]+src=["\']([^"\']+)["\']', text_clean)
+                if video_src_matches:
+                    real_url = video_src_matches[0].replace("&amp;", "&")
+                    if real_url.startswith("//"): real_url = "https:" + real_url
+                    return real_url
+                
+                # B. 兜底正则匹配 m3u8 和 mp4
+                m3u8_matches = re.findall(r'["\']((?:https?:)?//[^"\']+\.(?:m3u8|mp4)[^"\']*)["\']', text_clean)
                 if m3u8_matches:
-                    real_m3u8 = m3u8_matches[0]
-                    if real_m3u8.startswith("//"):
-                        real_m3u8 = "https:" + real_m3u8
-                    return real_m3u8
-            return None
+                    real_url = m3u8_matches[0].replace("&amp;", "&")
+                    if real_url.startswith("//"): real_url = "https:" + real_url
+                    return real_url
         except Exception:
-            return None
+            pass
+
+        # 2. 如果直连请求失败（可能被 WAF 5秒盾阻拦或需要动态执行 JS），则降级调用 ScraperAPI 渲染获取
+        if SCRAPER_API_KEY:
+            try:
+                print(f"  [SCRAPER_API FALLBACK] Normal request failed. Retrying '{parse_url}' via ScraperAPI...")
+                html = fetch_html_via_scraper_api(parse_url)
+                if html:
+                    text_clean = html.replace("\\/", "/")
+                    
+                    # A. 提取渲染后最终生成的 <video src="..."> 直链 (最强逻辑，无视一切动态 JS 加密)
+                    video_src_matches = re.findall(r'<video[^>]+src=["\']([^"\']+)["\']', text_clean)
+                    if video_src_matches:
+                        real_url = video_src_matches[0].replace("&amp;", "&")
+                        if real_url.startswith("//"): real_url = "https:" + real_url
+                        print(f"    [SCRAPER_API SUCCESS] Successfully extracted stream from <video src>: {real_url}")
+                        return real_url
+                    
+                    # B. 兜底正则匹配 m3u8 和 mp4
+                    m3u8_matches = re.findall(r'["\']((?:https?:)?//[^"\']+\.(?:m3u8|mp4)[^"\']*)["\']', text_clean)
+                    if m3u8_matches:
+                        real_url = m3u8_matches[0].replace("&amp;", "&")
+                        if real_url.startswith("//"): real_url = "https:" + real_url
+                        print(f"    [SCRAPER_API SUCCESS] Successfully sniffed stream via regex: {real_url}")
+                        return real_url
+            except Exception as e:
+                print(f"[ERROR] ScraperAPI sniff failed for {parse_url}: {e}")
+
+        return None
+
+
+
 
 
 def fetch_from_backup_cms(title):

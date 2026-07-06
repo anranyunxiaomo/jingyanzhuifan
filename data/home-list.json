@@ -1,6 +1,20 @@
 {
   "latest": [
     {
+      "AID": 20260112,
+      "Href": "/detail/20260112",
+      "NewTitle": "第14集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260112.jpg",
+      "Title": "摩绪"
+    },
+    {
+      "AID": 20260232,
+      "Href": "/detail/20260232",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260232.jpg",
+      "Title": "北斗神拳 拳王军杂兵们的挽歌 第2季"
+    },
+    {
       "AID": 20260183,
       "Href": "/detail/20260183",
       "NewTitle": "第01集",
@@ -69,20 +83,6 @@
       "NewTitle": "第23集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
       "Title": "名侦探光之美少女！"
-    },
-    {
-      "AID": 20260225,
-      "Href": "/detail/20260225",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260225.jpg",
-      "Title": "才女的侍从 在满是高岭之花的贵族学校暗中照顾（毫无生活自理能力的）学院第一大小姐"
-    },
-    {
-      "AID": 20260222,
-      "Href": "/detail/20260222",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260222.jpg",
-      "Title": "鬼之花嫁"
     },
     {
       "AID": "anich_33391",
@@ -595,13 +595,12 @@
         "namefornew": "全12集,(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260112,
         "wd": 1,
         "name": "摩绪",
-        "mtime": "2026-06-29 20:14:46",
-        "namefornew": "12:00 第13集",
-        "anich_id": 37925
+        "mtime": "2026-07-06 20:40:21",
+        "namefornew": "12:00 第14集"
       },
       {
         "isnew": 0,
@@ -641,8 +640,7 @@
         "wd": 1,
         "name": "欺诈游戏",
         "mtime": "2026-07-01 22:33:19",
-        "namefornew": "23:00 第13集",
-        "anich_id": 37947
+        "namefornew": "23:00 第13集"
       },
       {
         "isnew": 0,
@@ -708,8 +706,7 @@
         "wd": 2,
         "name": "左撇子艾伦",
         "mtime": "2026-07-01 00:25:41",
-        "namefornew": "第13集(完结)",
-        "anich_id": 37927
+        "namefornew": "第13集(完结)"
       }
     ],
     "3": [
@@ -833,8 +830,7 @@
         "wd": 4,
         "name": "元祖！BanG Dream Chan",
         "mtime": "2026-07-02 23:02:49",
-        "namefornew": "21:00 第39集",
-        "anich_id": 37003
+        "namefornew": "21:00 第39集"
       },
       {
         "isnew": 0,
@@ -858,8 +854,7 @@
         "wd": 4,
         "name": "冰之城墙",
         "mtime": "2026-07-03 00:30:39",
-        "namefornew": "22:56 第14集(完结)",
-        "anich_id": 37934
+        "namefornew": "22:56 第14集(完结)"
       },
       {
         "isnew": 0,
@@ -917,8 +912,7 @@
         "wd": 5,
         "name": "宝可梦 地平线",
         "mtime": "2026-05-22 23:39:57",
-        "namefornew": "17:55 第142集",
-        "anich_id": 32100
+        "namefornew": "17:55 第142集"
       },
       {
         "isnew": 0,
@@ -950,8 +944,7 @@
         "wd": 5,
         "name": "神之水滴",
         "mtime": "2026-07-04 00:26:16",
-        "namefornew": "23:30 第13集",
-        "anich_id": 37930
+        "namefornew": "23:30 第13集"
       },
       {
         "isnew": 0,
@@ -959,8 +952,7 @@
         "wd": 5,
         "name": "关于我转生变成史莱姆这档事 第四季",
         "mtime": "2026-07-04 00:25:11",
-        "namefornew": "23:00 第13集",
-        "anich_id": 38041
+        "namefornew": "23:00 第13集"
       },
       {
         "isnew": 0,
@@ -1042,8 +1034,7 @@
         "wd": 6,
         "name": "入间同学入魔了 第四季",
         "mtime": "2026-07-04 20:58:42",
-        "namefornew": "18:55 第13集",
-        "anich_id": 38016
+        "namefornew": "18:55 第13集"
       },
       {
         "isnew": 0,
@@ -1101,8 +1092,7 @@
         "wd": 0,
         "name": "黄泉使者",
         "mtime": "2026-07-05 01:10:45",
-        "namefornew": "00:00 第13集",
-        "anich_id": 37919
+        "namefornew": "00:00 第13集"
       },
       {
         "isnew": 0,
@@ -1174,8 +1164,7 @@
         "wd": 0,
         "name": "名侦探光之美少女！",
         "mtime": "2026-07-05 13:37:17",
-        "namefornew": "07:30 第23集",
-        "anich_id": 37736
+        "namefornew": "07:30 第23集"
       },
       {
         "isnew": 1,
@@ -1183,8 +1172,7 @@
         "wd": 0,
         "name": "数码宝贝 BEATBREAK",
         "mtime": "2026-07-05 22:13:30",
-        "namefornew": "08:00 第37集",
-        "anich_id": 37025
+        "namefornew": "08:00 第37集"
       },
       {
         "isnew": 0,
@@ -1208,8 +1196,7 @@
         "wd": 0,
         "name": "拜托了偶像公主",
         "mtime": "2026-07-05 22:14:46",
-        "namefornew": "08:30 第14集",
-        "anich_id": 38007
+        "namefornew": "08:30 第14集"
       },
       {
         "isnew": 0,
@@ -1289,8 +1276,7 @@
         "wd": 0,
         "name": "黑猫与魔女的教室",
         "mtime": "2026-07-05 23:59:56",
-        "namefornew": "23:00 已完结",
-        "anich_id": 37949
+        "namefornew": "23:00 已完结"
       },
       {
         "isnew": 0,
