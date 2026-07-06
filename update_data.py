@@ -651,6 +651,31 @@ async def main_async():
                 
     save_search_index(index_data)
     print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+    
+    # 💡 强力 Cache Busting：自动更新 index.html 中的 JS 和 CSS 版本号为当前最新时间戳，彻底干掉浏览器强缓存
+    print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
+    try:
+        index_path = "index.html"
+        if os.path.exists(index_path):
+            with open(index_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            import datetime
+            tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
+            now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
+            
+            import re
+            content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
+            content = re.sub(r'js/app\.js\?v=[0-9a-zA-Z_]+', f'js/app.js?v={now_str}', content)
+            
+            with open(index_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f"[SUCCESS] Updated index.html asset versions to: {now_str}")
+        else:
+            print("[WARNING] index.html not found, skipping Cache Busting.")
+    except Exception as cache_err:
+        print(f"[ERROR] Failed to update asset versions: {cache_err}")
+
     print("[FINISHED] Anime data static generation complete!")
 
 def main():
