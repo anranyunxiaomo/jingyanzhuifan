@@ -102,11 +102,3 @@ jobs:
           else
             echo "[INFO] No data changes detected. Skipping push."
           fi
-
-      # 6. 一键将根目录下的所有静态资源与数据全自动同步部署到远程 gh-pages 分支，自动触发 Pages 上线 ！！！
-      - name: Deploy to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: '.'
-          branch: gh-pages
-          clean: true
