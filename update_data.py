@@ -316,6 +316,85 @@ def save_search_index(index_data):
 async def main_async():
     print("[START] Start updating anime data...")
     
+    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+    event_name = os.environ.get("GITHUB_EVENT_NAME")
+    force_network = os.environ.get("FORCE_NETWORK") == "true"
+    
+    # 💡 黄金防刷闸防线：只有当在线上且为定时任务(schedule)或手动单次点触发(workflow_dispatch)，
+    # 或者是本地开发环境且显式带上 FORCE_NETWORK=true 时，才激活网络并去拉取 API！
+    # 如果是日常普通的 push 代码构建，强制直接降级为纯本地静态 VOD 更新，API 请求数 100% 锁死为 0！
+    run_network = False
+    if is_github_actions:
+        if event_name in ["schedule", "workflow_dispatch"]:
+            run_network = True
+    else:
+        if force_network:
+            run_network = True
+
+    # 💡 提前拦截退出的静态更新模式（不走网络，零 API 消耗）
+    if not run_network:
+        print("=" * 60)
+        print("🛡️  [GUARD] 检测到非定时网络同步运行（当前为日常 Push 构建或本地普通运行）。")
+        print("💡 为了保护 AGE API 额度，已自动强制拦截跳过网络数据同步！")
+        print("🚀 本次运行将跳过所有网络 API 访问，仅在本地重建静态索引。")
+        print("=" * 60)
+        
+        # 1. 重建本地搜索索引
+        print("\n[INDEX] Rebuilding search_index.json from all local details...")
+        index_data = []
+        seen_aids = set()
+        for filename in os.listdir(DETAIL_DIR):
+            if filename.endswith(".json"):
+                aid_str = filename[:-5]
+                detail_file_path = os.path.join(DETAIL_DIR, filename)
+                try:
+                    with open(detail_file_path, 'r', encoding='utf-8') as f:
+                        detail = json.load(f)
+                        video = detail.get("video", {})
+                        title = video.get("name")
+                        if title and aid_str not in seen_aids:
+                            pinyin_code = get_pinyin_initials(title)
+                            entry_aid = aid_str
+                            if aid_str.isdigit():
+                                entry_aid = int(aid_str)
+                            index_data.append({
+                                "AID": entry_aid,
+                                "Title": title,
+                                "Pinyin": pinyin_code,
+                                "Cover": video.get("cover", "") or video.get("pic", ""),
+                                "Status": video.get("status", "连载"),
+                                "UpToDate": calculate_uptodate(video)
+                            })
+                            seen_aids.add(aid_str)
+                except Exception as e:
+                    print(f"[WARNING] Failed to parse detail file {filename}: {e}")
+        save_search_index(index_data)
+        print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+        
+        # 2. 执行静态 Cache Busting
+        print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
+        try:
+            index_path = "index.html"
+            if os.path.exists(index_path):
+                with open(index_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                import datetime
+                tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
+                now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
+                import re
+                content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
+                content = re.sub(r'js/app\.js\?v=[0-9a-zA-Z_]+', f'js/app.js?v={now_str}', content)
+                with open(index_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                print(f"[SUCCESS] Updated index.html asset versions to: {now_str}")
+            else:
+                print("[WARNING] index.html not found, skipping Cache Busting.")
+        except Exception as cache_err:
+            print(f"[ERROR] Failed to update asset versions: {cache_err}")
+            
+        print("[FINISHED] Anime data static generation complete!")
+        return
+
     aids_to_fetch = {}
     recently_updated_aids = set()
     
@@ -649,6 +728,13 @@ async def main_async():
             except Exception as e:
                 print(f"[WARNING] Failed to parse detail file {filename}: {e}")
                 
+    else:
+        print("=" * 60)
+        print("🛡️  [GUARD] 检测到非定时网络同步运行（当前为日常 Push 构建或本地普通运行）。")
+        print("💡 为了保护 AGE API 额度，已自动强制拦截跳过网络数据同步！")
+        print("🚀 本次运行将跳过所有网络 API 访问。")
+        print("=" * 60)
+        
     save_search_index(index_data)
     print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
     
