@@ -446,28 +446,45 @@ new Vue({
           }
         }
         
-        const URL_PRIORITY = [
-          "xgct-video.vzcdn.net",
-          "app.emmmm.eu.org.cdn.cloudflare.net",
-          "giri.girigirilove.top",
-          "yhdmm3u8.top",
-          "92cj.com",
-          ".m3u8",
-          ".mp4"
-        ];
+        // 💡 双源智能分类排序：直接播放的国内/快速 CDN 放在前面，需要走我们代理的 (Cloudflare/被墙/emmmm) 放在后面
+        const directUrls = [];
+        const proxyUrls = [];
         
-        // 💡 根据优先级对所有获取到的 URL 进行排序
-        const sortedUrls = [];
-        for (const pattern of URL_PRIORITY) {
-          for (const url of urls) {
-            if (url.toLowerCase().includes(pattern) && !sortedUrls.includes(url)) {
-              sortedUrls.push(url);
-            }
+        for (const url of urls) {
+          const isProxyDomain = url.includes('cloudflare') || url.includes('.cf.') || url.includes('emmmm.eu.org');
+          if (isProxyDomain) {
+            proxyUrls.push(url);
+          } else {
+            directUrls.push(url);
           }
         }
-        for (const url of urls) {
-          if (!sortedUrls.includes(url)) {
-            sortedUrls.push(url);
+        
+        // 直连线路内部，按原先的优先级规则进行微调排序
+        const directPriority = [
+          "vzcdn.net",
+          "girigirilove.top",
+          "yhdmm3u8.top",
+          "92cj.com"
+        ];
+        directUrls.sort((a, b) => {
+          let idxA = directPriority.findIndex(p => a.includes(p));
+          let idxB = directPriority.findIndex(p => b.includes(p));
+          if (idxA === -1) idxA = 99;
+          if (idxB === -1) idxB = 99;
+          return idxA - idxB;
+        });
+        
+        const sortedUrls = [...directUrls, ...proxyUrls];
+        
+        // 💡 历史成功源节点记忆读取：若用户先前成功播放过该集的某个备用源，直接提取并置顶为首选 URL，防止重复请求报错
+        const hist = this.watchHistory.find(h => h.AID === String(this.currentAnimeId) && h.EpName === this.activeEpisodeName && h.LineKey === 'anich_m3u8');
+        if (hist && hist.AnichUrl && sortedUrls.includes(hist.AnichUrl)) {
+          const targetUrl = hist.AnichUrl;
+          const idx = sortedUrls.indexOf(targetUrl);
+          if (idx > -1) {
+            sortedUrls.splice(idx, 1);
+            sortedUrls.unshift(targetUrl);
+            console.log(`[VOD MEMORY] Prioritize successful historical URL:`, targetUrl.substring(0, 60));
           }
         }
         
@@ -1429,6 +1446,7 @@ new Vue({
         EpName:     epName,
         EpIdx:      epIdx,
         LineKey:    lineKey,
+        AnichUrl:   lineKey === 'anich_m3u8' && this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0 ? this.currentAnichBackupUrls[this.currentAnichUrlIndex] : null,
         Progress:   Math.floor(currentTime),   // 秒
         Duration:   Math.floor(duration) || 0, // 秒
         UpdatedAt:  Date.now()
@@ -1651,7 +1669,26 @@ new Vue({
       
       console.log(`[ROUTER] URL hash change matched: "${hash}"`);
       
-      // 正则动态适配 detail/<AID> 结构 (兼容带 anich_ 前缀的字符串 ID)
+      // 💡 强力垃圾回收防残留：只要路由离开详情页，无条件强制销毁 DPlayer 并清空 Iframe 播放地址，彻底防止后台声音残留
+      const isDetailPage = hash.includes('detail/');
+      if (!isDetailPage) {
+        if (this.dpInstance) {
+          try {
+            this.dpInstance.off('timeupdate');
+            this.dpInstance.off('loadedmetadata');
+            this.dpInstance.off('error');
+            this.dpInstance.destroy();
+          } catch (e) {}
+          this.dpInstance = null;
+        }
+        this.activePlayUrl = '';
+        if (this.activeBlobUrl) {
+          try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
+          this.activeBlobUrl = '';
+        }
+      }
+      
+      // 正则动态适配 detail/<AID> 结构 (兼容带 anich_ 前缀 of 字符串 ID)
       const match = hash.match(/detail\/(\w+)/);
       if (match) {
         const aid = match[1];
