@@ -103,15 +103,10 @@ jobs:
             echo "[INFO] No data changes detected. Skipping push."
           fi
 
-      # 6. 一键将根目录下的所有静态资源与数据全自动部署发布到 GitHub Pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # 6. 一键将根目录下的所有静态资源与数据全自动同步部署到远程 gh-pages 分支，自动触发 Pages 上线 ！！！
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: '.'
+          branch: gh-pages
+          clean: true
