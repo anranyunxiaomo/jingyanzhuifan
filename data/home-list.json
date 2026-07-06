@@ -1,6 +1,27 @@
 {
   "latest": [
     {
+      "AID": 20260175,
+      "Href": "/detail/20260175",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260175.jpg",
+      "Title": "碧蓝之海 第三季"
+    },
+    {
+      "AID": 20260185,
+      "Href": "/detail/20260185",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260185.jpg",
+      "Title": "斗球儿弹子"
+    },
+    {
+      "AID": 20260220,
+      "Href": "/detail/20260220",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260220.jpg",
+      "Title": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车"
+    },
+    {
       "AID": 20260189,
       "Href": "/detail/20260189",
       "NewTitle": "第02集",
@@ -62,27 +83,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
       "Title": "超超超超超喜欢你的100个女朋友 第三季"
-    },
-    {
-      "AID": 20260211,
-      "Href": "/detail/20260211",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260211.jpg",
-      "Title": "世界最强的后卫 ～迷宫国的新人探索者～"
-    },
-    {
-      "AID": 20260115,
-      "Href": "/detail/20260115",
-      "NewTitle": "第14集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260115.jpg",
-      "Title": "拜托了偶像公主"
-    },
-    {
-      "AID": 20250235,
-      "Href": "/detail/20250235",
-      "NewTitle": "第37集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250235.jpg",
-      "Title": "数码宝贝 BEATBREAK"
     },
     {
       "AID": "anich_33391",
@@ -492,88 +492,88 @@
   ],
   "recommend": [
     {
-      "AID": 20170124,
-      "Href": "/detail/20170124",
-      "NewTitle": "第21集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170124.jpg",
-      "Title": "我的天劫女友"
+      "AID": 20100006,
+      "Href": "/detail/20100006",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100006.jpg",
+      "Title": "笨蛋测验召唤兽"
     },
     {
-      "AID": 20180083,
-      "Href": "/detail/20180083",
+      "AID": 20120078,
+      "Href": "/detail/20120078",
+      "NewTitle": "[OVA 01-06]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120078.jpg",
+      "Title": "解谜公主是名侦探"
+    },
+    {
+      "AID": 20170034,
+      "Href": "/detail/20170034",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180083.jpg",
-      "Title": "罪人与龙共舞"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170034.jpg",
+      "Title": "雏子的笔记"
     },
     {
-      "AID": 20180157,
-      "Href": "/detail/20180157",
-      "NewTitle": "[TV 01-10]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180157.jpg",
-      "Title": "后街女孩"
-    },
-    {
-      "AID": 20020008,
-      "Href": "/detail/20020008",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020008.jpg",
-      "Title": "青出于蓝"
-    },
-    {
-      "AID": 20180078,
-      "Href": "/detail/20180078",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180078.jpg",
-      "Title": "赛马娘 Pretty Derby"
-    },
-    {
-      "AID": 20160061,
-      "Href": "/detail/20160061",
-      "NewTitle": "[TV 01-13 ]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160061.jpg",
-      "Title": "发条精灵战记 天镜的极北之星"
-    },
-    {
-      "AID": 20180002,
-      "Href": "/detail/20180002",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180002.jpg",
-      "Title": "刀使巫女"
-    },
-    {
-      "AID": 20160047,
-      "Href": "/detail/20160047",
-      "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160047.jpg",
-      "Title": "Classica Loid"
-    },
-    {
-      "AID": 20110017,
-      "Href": "/detail/20110017",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110017.jpg",
-      "Title": "对某飞行员的追忆"
-    },
-    {
-      "AID": 20160085,
-      "Href": "/detail/20160085",
+      "AID": 20060026,
+      "Href": "/detail/20060026",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160085.jpg",
-      "Title": "梦幻之星Online2"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060026.jpg",
+      "Title": "娇蛮之吻"
     },
     {
-      "AID": 20160070,
-      "Href": "/detail/20160070",
+      "AID": 20190031,
+      "Href": "/detail/20190031",
+      "NewTitle": "[TV 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190031.jpg",
+      "Title": "魔法纪录 魔法少女小圆外传"
+    },
+    {
+      "AID": 20180040,
+      "Href": "/detail/20180040",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180040.jpg",
+      "Title": "妖精森林的小不点"
+    },
+    {
+      "AID": 20130007,
+      "Href": "/detail/20130007",
       "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
-      "Title": "告白实行委员会剧场版 从很久以前就喜欢你了"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
+      "Title": "命运石之门 负荷领域的既视感"
     },
     {
-      "AID": 20190119,
-      "Href": "/detail/20190119",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190119.jpg",
-      "Title": "公主连结！Re:Dive"
+      "AID": 20110058,
+      "Href": "/detail/20110058",
+      "NewTitle": "[TV 00-12+OVA]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
+      "Title": "丹特丽安的书架"
+    },
+    {
+      "AID": 20070014,
+      "Href": "/detail/20070014",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070014.jpg",
+      "Title": "幸运星"
+    },
+    {
+      "AID": 20030008,
+      "Href": "/detail/20030008",
+      "NewTitle": "第26集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030008.jpg",
+      "Title": "初音岛"
+    },
+    {
+      "AID": 20120069,
+      "Href": "/detail/20120069",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120069.jpg",
+      "Title": "只有神知道的世界 天理篇"
+    },
+    {
+      "AID": 20160132,
+      "Href": "/detail/20160132",
+      "NewTitle": "第14集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160132.jpg",
+      "Title": "星期一的丰满"
     }
   ],
   "week_list": {
@@ -632,7 +632,7 @@
         "wd": 1,
         "name": "欺诈游戏",
         "mtime": "2026-07-01 22:33:19",
-        "namefornew": "23:00 第13集"
+        "namefornew": "23:00 第14集"
       },
       {
         "isnew": 0,
@@ -1263,7 +1263,7 @@
         "namefornew": "22:00 第10集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260083,
         "wd": 0,
         "name": "黑猫与魔女的教室",
