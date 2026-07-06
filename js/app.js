@@ -1110,30 +1110,6 @@ new Vue({
             });
               this.dpInstance = dp;
               
-              // 💡 强力自愈播放重试机制：当 DPlayer 加载失败或发生网络错误（如 DNS 污染、被墙）时，自动尝试切换至下一个备用源播放
-              dp.on('error', () => {
-                if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
-                  this.currentAnichUrlIndex++;
-                  if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
-                    const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
-                    console.warn(`[VOD FAILBACK] Stream failed. Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
-                    
-                    // 利用 DPlayer 自带的精美提示气泡通知用户
-                    dp.notice("当前播放源加载超时，正在自动为您加载备用播放源...", 4000);
-                    
-                    // 重新载入视频并播放
-                    dp.switchVideo({
-                      url: nextBackupUrl,
-                      type: videoType // 保持原有的 HLS/MP4 类型
-                    });
-                    dp.play();
-                  } else {
-                    console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
-                    dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
-                  }
-                }
-              });
-              
               // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
               this.$nextTick(() => {
                 const rightIcons = document.querySelector('.dplayer-icons-right');
@@ -1265,6 +1241,33 @@ new Vue({
               // ─── 降级函数（复用，避免重复代码）───────────────────────
               const fallbackToIframe = (reason) => {
                 if (this._hasFallenBack) return; // 防止多次触发
+                
+                // 💡 强力自愈拦截：如果是 AniCh 独有线路，绝对不降级到 iframe，而是尝试切换到下一个备用 M3U8 CDN 链接！
+                if (this.activeLineKey === 'anich_m3u8') {
+                  if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
+                    this.currentAnichUrlIndex++;
+                    if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
+                      const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
+                      console.warn(`[VOD FAILBACK] Stream failed (${reason}). Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
+                      
+                      // 使用 DPlayer 内置气泡贴心提示用户
+                      dp.notice("当前播放源加载超时，正在自动为您加载备用播放源...", 4000);
+                      
+                      // 重新载入视频并播放
+                      dp.switchVideo({
+                        url: nextBackupUrl,
+                        type: videoType // 保持原有的 HLS/MP4 播放类型不变
+                      });
+                      dp.play();
+                      return; // 💡 成功进入切换自愈重试，直接拦截退出，绝不执行下面的降级销毁！
+                    }
+                  }
+                  console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
+                  dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
+                  return; // 💡 哪怕所有备用源都试过了，我们也保持 DPlayer，绝不退回到 iframe！
+                }
+                
+                // 常规 AGE 动漫线路：依然走原有的 iframe 降级
                 this._hasFallenBack = true;
                 console.warn(`[FALLBACK → iframe] reason: ${reason}`);
                 if (this.dpInstance) {
