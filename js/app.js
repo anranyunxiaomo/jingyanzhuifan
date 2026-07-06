@@ -1130,8 +1130,13 @@ new Vue({
               }
             }
 
+            const dplayerContainer = document.getElementById('dplayer');
+            if (!dplayerContainer) {
+              throw new Error("DPlayer container element '#dplayer' not found in DOM");
+            }
+
             const dp = new DPlayer({
-              container: document.getElementById('dplayer'),
+              container: dplayerContainer,
               autoplay: true,
               screenshot: false,
               playsinline: true,
