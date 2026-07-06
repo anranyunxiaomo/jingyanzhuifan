@@ -505,6 +505,9 @@ new Vue({
         this.$nextTick(() => {
           setTimeout(() => {
             try {
+              const isHls = capturedRealUrl.includes('.m3u8') || capturedRealUrl.includes('.m3u');
+              const playType = isHls ? 'hls' : 'normal';
+              
               const dp = new DPlayer({
                 container: document.getElementById('dplayer'),
                 autoplay: true,
@@ -517,7 +520,7 @@ new Vue({
                        "&anime=" + encodeURIComponent(this.animeDetail ? this.animeDetail.video.name : '未知动漫') +
                        "&episode=" + encodeURIComponent(capturedEpName) +
                        "&session=" + encodeURIComponent(this.activeSessionId),
-                  type: 'hls'
+                  type: playType
                 }
               });
               this.dpInstance = dp;
