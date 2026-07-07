@@ -166,6 +166,16 @@ export default {
         }
 
         if (cachedUrl) {
+          if (cachedUrl === "__FAILED__") {
+            return new Response(JSON.stringify({ 
+              success: false, 
+              error: '该资源今日解析失败，已开启 10 分钟防刷熔断保护。', 
+              failedMark: true 
+            }), {
+              status: 429,
+              headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+            });
+          }
           return new Response(JSON.stringify({ success: true, url: cachedUrl, cached: true }), {
             status: 200,
             headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
@@ -214,7 +224,11 @@ export default {
             headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
           });
         } else {
-          return new Response(JSON.stringify({ success: false, error: 'Failed to extract video stream from target HTML' }), {
+          // 💡 失败熔断安全机制：将该失效资源标记为 __FAILED__ 并缓存 10 分钟，防止短时间内无限制刷爆 ScraperAPI 额度！
+          if (env.JYZF_LOGS) {
+            await env.JYZF_LOGS.put("resolve_cache:" + targetUrl, "__FAILED__", { expirationTtl: 600 });
+          }
+          return new Response(JSON.stringify({ success: false, error: 'Failed to extract video stream from target HTML', failedMark: true }), {
             status: 404,
             headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
           });

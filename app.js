@@ -455,12 +455,17 @@ new Vue({
           // 调用云端 Worker 中转解析接口
           const resolveApiUrl = `https://jingyanff.xyz/api/resolve?url=${encodeURIComponent(jxTargetUrl)}`;
           const response = await fetch(resolveApiUrl);
-          if (response.ok) {
-            const data = await response.json();
-            if (data && data.success && data.url) {
-              console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
-              playUrl = data.url; // 成功！直接起播
-            }
+          let data = null;
+          try {
+            data = await response.json();
+          } catch(e) {}
+          
+          if (response.ok && data && data.success && data.url) {
+            console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
+            playUrl = data.url; // 成功！直接起播
+          } else if (data && data.failedMark) {
+            // 💡 提示用户视频已失效，并自动进入熔断保护，防止反复请求
+            alert("该集视频源暂时失效，已开启 10 分钟防刷锁保护。请切换其他播放线路或稍后再试。");
           }
         } catch (err) {
           console.warn("[DYNAMIC RESOLVER] Cloud decrypt failed, falling back to ad resolver.", err);
