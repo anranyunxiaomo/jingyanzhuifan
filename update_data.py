@@ -814,10 +814,19 @@ async def main_async():
                 with open(detail_path, 'r', encoding='utf-8') as f:
                     local_detail = json.load(f)
                     
-                # 💡 如果本地已有缓存，且该动漫已被判定为黄色/敏感内容，直接跳过处理与抓取，节省流量
+                # 💡 如果本地已有缓存，且该动漫已被判定为非国日漫/黄色/敏感/低幼内容，直接强清删除并跳过处理
                 video_cached = local_detail.get("video", {})
-                if is_sensitive_anime(video_cached.get("name", title), video_cached.get("plot", ""), video_cached.get("tags", "")) or is_kids_anime(video_cached.get("name", title), video_cached.get("plot", ""), video_cached.get("tags", "")):
-                    print(f"  [FILTERED] Skipping mature/sensitive/kids anime: {title} (AID: {aid})")
+                t_cached = video_cached.get("name", title)
+                p_cached = video_cached.get("plot", "")
+                tags_cached = video_cached.get("tags", "")
+                a_cached = video_cached.get("area", "")
+                if is_sensitive_anime(t_cached, p_cached, tags_cached) or is_kids_anime(t_cached, p_cached, tags_cached) or is_unwanted_area_anime(t_cached, a_cached, p_cached, tags_cached):
+                    print(f"  [FILTERED] skipping & deleting unwanted anime: {title} (AID: {aid})")
+                    if os.path.exists(detail_path):
+                        try:
+                            os.remove(detail_path)
+                        except:
+                            pass
                     continue
             except Exception:
                 pass
@@ -859,6 +868,20 @@ async def main_async():
             detail_data = fetch_from_backup_cms(title)
         
         if detail_data:
+            video_api = detail_data.get("video", {})
+            t_api = video_api.get("name", title)
+            p_api = video_api.get("plot", "")
+            tags_api = video_api.get("tags", "")
+            a_api = video_api.get("area", "")
+            if is_sensitive_anime(t_api, p_api, tags_api) or is_kids_anime(t_api, p_api, tags_api) or is_unwanted_area_anime(t_api, a_api, p_api, tags_api):
+                print(f"  [API FILTERED] Discarded non-whitelist/sensitive/kids anime from API response: {t_api} (AID: {aid})")
+                if os.path.exists(detail_path):
+                    try:
+                        os.remove(detail_path)
+                    except:
+                        pass
+                continue
+                
             fetched_details[aid] = (detail_data, detail_path, title)
             
             # 读取本地已有的缓存，做增量直链同步
