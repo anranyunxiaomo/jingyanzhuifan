@@ -837,8 +837,12 @@ async def main_async():
             should_skip_api = False
             new_title = info.get('new_title', '')
             
+            # 💡 完结过滤核心：如果本地已缓存详情且状态为“完结”/“已完结”/“全集”，说明不会再有更新，直接 100% 跳过 API 请求！
+            status_cached = video_cached.get("status", "") if isinstance(video_cached, dict) else ""
+            if "完结" in status_cached or "全集" in status_cached:
+                should_skip_api = True
             # 💡 增量核心：如果该动漫在最近 2 页更新列表里找不到，说明今天全站根本没有它新集数的任何更新，100% 可信跳过 API！
-            if aid not in recently_updated_aids:
+            elif aid not in recently_updated_aids:
                 should_skip_api = True
             else:
                 if not new_title:
