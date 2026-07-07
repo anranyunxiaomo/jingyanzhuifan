@@ -106,25 +106,32 @@ def is_sensitive_anime(name, plot, tags):
 
 
 def is_unwanted_area_anime(title, area, plot="", tags=""):
-    """判定是否属于需要清理的欧美、海外及无关非精品动漫"""
+    """只保留国产动漫和日漫，其他所有地区（包括韩国/台湾/香港/欧美/海外）一律强力清洗 (Whitelist Region Control)"""
     title = (title or "").lower()
     area = (area or "").lower()
     plot = (plot or "").lower()
     tags = (tags or "").lower()
     
-    # 1. 强力地区黑名单：只要地区属于欧美、海外、美国、法国、德国、英国、加拿大、意大利、印度等
-    unwanted_areas = ["欧美", "美国", "法国", "德国", "英国", "加拿大", "意大利", "西班牙", "俄罗斯", "印度", "欧美动漫", "海外动漫"]
-    for u_area in unwanted_areas:
-        if u_area in area or u_area in plot or u_area in tags:
+    # 1. 强力地区白名单限制：如果地区不为空，必须属于中国大陆或日本地区，否则直接强清
+    if area.strip():
+        whitelist_regions = ["日本", "中国", "大陆", "国产", "日漫", "国漫", "jp", "cn"]
+        has_whitelist = False
+        for region in whitelist_regions:
+            if region in area:
+                # 💡 排除台湾和香港
+                if "台湾" in area or "香港" in area:
+                    continue
+                has_whitelist = True
+                break
+        if not has_whitelist:
+            return True # 不在白名单内的国家地区（如韩国、台湾、香港、欧美、印度等），直接拦截！
+            
+    # 2. 补充标签匹配：即使地区为空，若剧情简介或标签中出现“欧美”、“海外”字样，也进行拦截
+    unwanted_keywords = ["欧美", "海外", "美国", "法国", "德国", "英国", "印度", "欧美动漫", "海外动漫"]
+    for kw in unwanted_keywords:
+        if kw in plot or kw in tags:
             return True
             
-    # 2. 强力片名及标签匹配：如果分类包含“欧美”、“海外”
-    plot_words = set(w.strip() for w in plot.replace("/", " ").split() if w.strip())
-    tags_words = set(w.strip() for w in tags.replace("/", " ").split() if w.strip())
-    unwanted_genres = {"欧美", "海外", "欧美动漫", "海外动漫"}
-    if unwanted_genres.intersection(plot_words) or unwanted_genres.intersection(tags_words):
-        return True
-        
     return False
 
 
