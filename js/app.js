@@ -213,21 +213,26 @@ new Vue({
         }
       }
       
-      // 💡 黄金体验排序法则：根据播放兼容性与速度给线路进行权重打分，将最优质的 DPlayer 原生直连源顶格展示！
+      // 💡 黄金体验排序法则：根据播放兼容性与速度给线路进行权重打分，将最优质、最稳定的 DPlayer 原生直连源顶格展示！
       lines.sort((a, b) => {
         const getScore = (line) => {
           const eps = playlists[line.key];
           const firstEp = eps ? eps[0] : null;
           const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
           
-          if (hasRealUrl) return 10; // 🥇 已经被我们云端回填直链的线路，100% 采用 DPlayer 原生秒开，排在最前面
-          if (line.key === 'anich_m3u8') return 9; // 🥈 AniCh 线路，全直连 HLS 播放，排在第二
+          // 🥇 最稳定直连第一梯队：常规 M3U8 直链采集白名单 与 AniCh 专属源，100% 稳定 DPlayer 免广告秒开
+          const STABLE_DPLAYER_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8'];
+          if (STABLE_DPLAYER_KEYS.includes(line.key)) {
+            return 10;
+          }
           
-          // 常规 M3U8 采集白名单线路，同样直连 DPlayer
-          const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8'];
-          if (ALLOWED_KEYS.includes(line.key)) return 8; // 🥉 常规采集直连源，第三梯队
+          // 🥈 备用直连第二梯队：西瓜 (xigua) 或其他被回填了直链但官方防盗链极严、极易报错降级 iframe 广告站的线路
+          if (hasRealUrl) {
+            return 5;
+          }
           
-          return 0; // ⚠️ 只能降级走 iframe 广告解析站的 VIP 线路，垫底
+          // ⚠️ 垫底梯队：必须走 iframe 广告解析站的加密 VIP 线路
+          return 0;
         };
         
         return getScore(b) - getScore(a); // 分数高的排在前面
