@@ -9,8 +9,67 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-
-
+    // ==========================================
+    // 🔑 功能 A：AniCh 反向代理与自动 Protobuf 鉴权 (/anich-proxy)
+    // ==========================================
+    if (url.pathname.startsWith('/anich-proxy')) {
+      const realPath = url.pathname.replace('/anich-proxy', '');
+      const targetUrlStr = `https://ani.emmmm.eu.org${realPath}${url.search}`;
+      
+      const newHeaders = new Headers(request.headers);
+      newHeaders.set('User-Agent', 'eu.org.emmmm.anich Android 1.5.18');
+      
+      // 💡 核心安全机制：自动根据环境变量中的 ANICH_TOKEN 动态生成下划线 Protobuf 认证头
+      const token = env.ANICH_TOKEN || '';
+      if (token) {
+        const toVarint = (val) => {
+          const res = [];
+          while (true) {
+            let towrite = val & 0x7f;
+            val >>>= 7;
+            towrite = Number(towrite);
+            if (val !== 0) {
+              towrite |= 0x80;
+            }
+            res.push(towrite);
+            if (val === 0) break;
+          }
+          return res;
+        };
+        const timestampMs = Date.now() + 60000;
+        const timeHex = timestampMs.toString(16);
+        const tokenBytes = new TextEncoder().encode(token);
+        const timeBytes = new TextEncoder().encode(timeHex);
+        
+        const f1 = [0x0a, ...toVarint(tokenBytes.length), ...tokenBytes];
+        const f2 = [0x12, ...toVarint(timeBytes.length), ...timeBytes];
+        const protoBytes = [...f1, ...f2];
+        const authHeader = protoBytes.join(',');
+        
+        newHeaders.set('_', authHeader);
+      }
+      
+      try {
+        const response = await fetch(targetUrlStr, {
+          method: request.method,
+          headers: newHeaders,
+          body: request.body,
+          redirect: 'follow'
+        });
+        
+        const newResponseHeaders = new Headers(response.headers);
+        newResponseHeaders.set('Access-Control-Allow-Origin', '*');
+        newResponseHeaders.set('Access-Control-Allow-Headers', '*');
+        
+        return new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: newResponseHeaders
+        });
+      } catch (err) {
+        return new Response('Proxy Error: ' + err.stack, { status: 500 });
+      }
+    }
 
     // ==========================================
     // 📈 功能 B：拉取日志数据 /api/logs
