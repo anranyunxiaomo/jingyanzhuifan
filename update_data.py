@@ -112,8 +112,8 @@ def is_unwanted_area_anime(title, area, plot="", tags=""):
     plot = (plot or "").lower()
     tags = (tags or "").lower()
     
-    # 1. 强力地区黑名单：只要地区属于欧美、海外、美国、法国、德国、英国、加拿大、意大利等
-    unwanted_areas = ["欧美", "美国", "法国", "德国", "英国", "加拿大", "意大利", "西班牙", "俄罗斯", "欧美动漫", "海外动漫"]
+    # 1. 强力地区黑名单：只要地区属于欧美、海外、美国、法国、德国、英国、加拿大、意大利、印度等
+    unwanted_areas = ["欧美", "美国", "法国", "德国", "英国", "加拿大", "意大利", "西班牙", "俄罗斯", "印度", "欧美动漫", "海外动漫"]
     for u_area in unwanted_areas:
         if u_area in area or u_area in plot or u_area in tags:
             return True
@@ -555,6 +555,42 @@ async def main_async():
                     print(f"[WARNING] Failed to parse detail file {filename}: {e}")
         save_search_index(index_data)
         print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+        
+        # 💡 本地首页列表 (home-list.json) 强制过滤重写，防止历史低幼或欧美海外动漫遗留展示
+        local_home_path = os.path.join(DATA_DIR, 'home-list.json')
+        if os.path.exists(local_home_path):
+            try:
+                with open(local_home_path, 'r', encoding='utf-8') as f_home:
+                    home_data = json.load(f_home)
+                
+                if isinstance(home_data, dict):
+                    if "latest" in home_data and isinstance(home_data["latest"], list):
+                        home_data["latest"] = [
+                            item for item in home_data["latest"]
+                            if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
+                        ]
+                    if "recommend" in home_data and isinstance(home_data["recommend"], list):
+                        home_data["recommend"] = [
+                            item for item in home_data["recommend"]
+                            if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
+                        ]
+                    if "week_list" in home_data and isinstance(home_data["week_list"], dict):
+                        cleaned_week = {}
+                        for day, animes in home_data["week_list"].items():
+                            if isinstance(animes, list):
+                                cleaned_week[day] = [
+                                    item for item in animes
+                                    if not check_anime_sensitive_by_aid(item.get("id"), item.get("name"))
+                                ]
+                            else:
+                                cleaned_week[day] = animes
+                        home_data["week_list"] = cleaned_week
+                
+                with open(local_home_path, 'w', encoding='utf-8') as f_home_w:
+                    json.dump(home_data, f_home_w, ensure_ascii=False, indent=2)
+                print("[SUCCESS] Local home-list.json cleaned and re-written.")
+            except Exception as clean_home_err:
+                print(f"[WARNING] Failed to clean local home-list.json: {clean_home_err}")
         
         # 2. 执行静态 Cache Busting
         print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
