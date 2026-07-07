@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260707T1052">
+  <link rel="stylesheet" href="css/style.css?v=20260707T1532">
 </head>
 <body class="loader-active">
 
@@ -646,14 +646,13 @@
                 :key="activePlayUrl"
                 class="video-iframe"
                 scrolling="no" 
-                allowfullscreen="true" 
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true"
+                allowfullscreen
+                webkitallowfullscreen
+                mozallowfullscreen
                 allow="fullscreen; autoplay; encrypted-media"
                 frameborder="no" 
                 allowtransparency="yes"
                 referrerpolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"
               ></iframe>
               
               <!-- 💡 仅在 iframe 降级模式下展示的悬浮画面比例控制器，不占用外部物理空间 -->
@@ -900,7 +899,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260707T1052"></script>
+<script src="js/app.js?v=20260707T1532"></script>
 
 </body>
 </html>
