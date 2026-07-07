@@ -4,10 +4,11 @@
 A123TV 自动化新番获取与数据合并脚本 (极致轻量按需版 + 空番自动搜索回填)
 ===================================================================
 1. 编译期仅提取选集结构和页面路径，不爬取任何单集直链，播放时由前端动态嗅探。
-2. 增量热更新：抓取 A123TV 的国漫和日漫最新列表 (前 3 页) 进行对齐合并。
+2. 增量热更新：抓取 A123TV 的国漫和日漫最新列表 (前 3 页) 进行对齐合并，
+   对未匹配的独占番，在本地新建 a123_ 前缀详情，丰富流媒体片源。
 3. 🌿 黄金拯救逻辑 (Empty Anime Auto-Resolver)：
-   自动扫描本地所有无播放源或空线路的“空壳番剧”，并在 A123TV 上进行标题搜索，
-   若搜索到同名番剧，直接抓取其结构并回填写入 playlists["a123_line1"]，起死回生！
+   自动扫描本地所有无播放源或空线路、甚至仅有预告/PV的“伪有源”空壳番剧，
+   并在 A123TV 上进行标题搜索并回填结构，实现 100% 起死回生！
 """
 
 import os
@@ -93,10 +94,6 @@ def fetch_a123_category_page(cat_id, page):
     return []
 
 def search_a123_by_title(title_keyword):
-    """
-    通过 A123TV 的搜索 URL 进行标题检索
-    URL 格式：https://a123tv.com/s/{wd}.html
-    """
     encoded_wd = urllib.parse.quote(title_keyword)
     url = f"https://a123tv.com/s/{encoded_wd}.html"
     try:
@@ -148,7 +145,7 @@ def main():
     # 1. 读取本地已有的搜索索引
     search_index = load_search_index()
     existing_map = {}
-    empty_aids = [] # 无源/空壳番剧的 (AID, Title, Path) 元组列表
+    empty_aids = []
     
     for entry in search_index:
         title = entry.get("Title")
@@ -166,9 +163,6 @@ def main():
                         detail = json.load(f)
                         playlists = detail.get("video", {}).get("playlists", {})
                         
-                        # 判定空壳动漫标准：
-                        # - playlists 为空
-                        # - 或者所有的 playlist 里面集数长度都为 0
                         is_empty = False
                         if not playlists:
                             is_empty = True
@@ -176,6 +170,17 @@ def main():
                             has_valid_ep = False
                             for pkey, eps in playlists.items():
                                 if eps and len(eps) > 0:
+                                    # 💡 强力排除伪有源番：如果某线路下虽然有数据，但都是预告、PV、特报等，
+                                    # 或者全剧只有 1-2 集且标题包含 pv/预告/特报/特报pv/宣传，我们视其为空壳！
+                                    if len(eps) <= 2:
+                                        all_pv = True
+                                        for ep in eps:
+                                            ep_name = ep[0].lower()
+                                            if not ('pv' in ep_name or '预告' in ep_name or '特报' in ep_name or '宣传' in ep_name):
+                                                all_pv = False
+                                                break
+                                        if all_pv:
+                                            continue
                                     has_valid_ep = True
                                     break
                             if not has_valid_ep:
@@ -186,7 +191,7 @@ def main():
                 except Exception:
                     pass
 
-    print(f"[INFO] Loaded search index. Detected {len(empty_aids)} empty shell animes needing stream rescue.")
+    print(f"[INFO] Loaded search index. Detected {len(empty_aids)} empty/PV-only shell animes needing stream rescue.")
 
     # ──────────────────────────────────────────────
     # 🌟 核心增量拯救环节 (Rescue Empty Shell Animes)
@@ -196,13 +201,13 @@ def main():
         print("🌿 [RESCUE] Starting Empty Shell Anime Rescue...")
         print("-" * 50)
         
-        # 限制单次运行拯救的空壳番剧最大数（如 15 个，细水长流，防 API 被封锁）
+        # 限制单次运行拯救的空壳番剧最大数（防 API 被封锁）
         rescue_limit = 15
         rescued_count = 0
         
         for aid, title, path in empty_aids:
             if rescued_count >= rescue_limit:
-                print(f"[RESCUE] Replaced limit of {rescue_limit} rescues. Pausing remaining.")
+                print(f"[RESCUE] Reached limit of {rescue_limit} rescues. Pausing remaining.")
                 break
                 
             print(f"  [RESCUING] Searching A123TV for empty anime: '{title}' (AID: {aid})")
@@ -245,7 +250,7 @@ def main():
             time.sleep(0.5)
 
     # ──────────────────────────────────────────────
-    # 2. 爬取 A123TV 国漫和日漫前 3 页更新数据 (常规同步)
+    # 2. 爬取 A123TV 国漫和日漫前 3 页更新数据 (常规同步 + 独占新建)
     # ──────────────────────────────────────────────
     print("\n" + "-" * 50)
     print("🔄 [SYNC] Synchronizing A123TV latest categories...")
@@ -275,8 +280,10 @@ def main():
             detail_filename = f"{aid}.json"
             print(f"[{i+1}/{len(a123_list)}] [MATCHED] A123: '{title}' ---> Local AID: {aid}")
         else:
-            # 独占新番暂时忽略
-            continue
+            # 💡 释放独占新番：对于 A123 列表里拥有的独占国漫/日漫，在本地新建 a123_ 前缀详情文件，丰富片源
+            aid = f"a123_{slug}"
+            detail_filename = f"{aid}.json"
+            print(f"[{i+1}/{len(a123_list)}] [EXCLUSIVE] A123: '{title}' ---> New entry '{aid}'")
 
         detail_path = os.path.join(DETAIL_DIR, detail_filename)
         
@@ -288,10 +295,10 @@ def main():
             except Exception:
                 pass
 
-        if not local_detail:
-            continue
-
-        playlists = local_detail.setdefault("video", {}).setdefault("playlists", {})
+        playlists = {}
+        if local_detail:
+            playlists = local_detail.setdefault("video", {}).setdefault("playlists", {})
+            
         a123_playlist = playlists.get("a123_line1", [])
         
         # 抓取详情页集数链接大小
@@ -302,9 +309,30 @@ def main():
             continue
             
         if len(a123_playlist) != len(episodes):
-            playlists["a123_line1"] = episodes
-            print(f"  [UPDATED] Merged 'a123_line1' ({len(episodes)} EPs) into {detail_filename}")
-            
+            if local_detail:
+                playlists["a123_line1"] = episodes
+                print(f"  [UPDATED] Merged 'a123_line1' ({len(episodes)} EPs) into {detail_filename}")
+            else:
+                # 新建独占番详情 JSON
+                local_detail = {
+                    "video": {
+                        "id": aid,
+                        "name": title,
+                        "cover": f"https://i1.a123tv.com/v/0x/{slug}.jpg",
+                        "pic": "",
+                        "plot": "国产动漫" if "1301" in anime["info"] else "日韩动漫",
+                        "plot_arr": [],
+                        "tags": "",
+                        "status": f"更新至{len(episodes)}集",
+                        "playlists": {
+                            "a123_line1": episodes
+                        }
+                    },
+                    "player_vip": "",
+                    "player_jx": {}
+                }
+                print(f"  [CREATED] Created new exclusive detail JSON structure for {title}")
+                
             with open(detail_path, 'w', encoding='utf-8') as f:
                 json.dump(local_detail, f, ensure_ascii=False, indent=2)
         else:
