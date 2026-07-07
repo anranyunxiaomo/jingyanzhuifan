@@ -55,7 +55,8 @@ new Vue({
     clientId: '', // 景雁分析：唯一观众代号
     activeSessionId: '', // 景雁分析：当前播放会话 ID
     lastLogProgressTime: 0, // 景雁分析：上次上报的播放秒数
-    
+    showLoadingToast: false, // 是否显示加载提示框
+    loadingText: '', // 加载提示文字
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
@@ -182,14 +183,28 @@ new Vue({
       
       const lines = [];
       for (const key in playlists) {
-        if (ALLOWED_KEYS.includes(key) && playlists[key] && playlists[key].length > 0) {
-          const isVip = vipList.includes(key);
-          if (!isVip) {
-            lines.push({
-              key: key,
-              title: labelArr[key] || key,
-              isVip: false
-            });
+        const eps = playlists[key];
+        if (eps && eps.length > 0) {
+          // A. 默认在常规白名单中的线路，放行
+          let isAllowed = ALLOWED_KEYS.includes(key);
+          
+          // B. 💡 黄金放行法则：如果任何原本被屏蔽的线路（如 xigua, panda），已经被爬虫嗅探并回填了真实视频直链（即 ep[2] 存在且以 http 开头），则无条件放行！
+          if (!isAllowed) {
+            const firstEp = eps[0];
+            if (Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http')) {
+              isAllowed = true;
+            }
+          }
+          
+          if (isAllowed) {
+            const isVip = vipList.includes(key);
+            if (!isVip) {
+              lines.push({
+                key: key,
+                title: labelArr[key] || key,
+                isVip: false
+              });
+            }
           }
         }
       }
@@ -969,22 +984,55 @@ new Vue({
       
       let playUrl = "";
       
-      if (isVip) {
-        // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
-        const playerJx = this.animeDetail.player_jx || {};
-        const jxBase = playerJx.vip || playerJx.zj;
-        if (jxBase) {
-          playUrl = jxBase + epToken;
-        } else {
-          playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
+      // 💡 黄金云端按需解密：如果是需要嗅探的加密老番直链，尝试使用自建 Worker + ScraperAPI 云解密
+      // 如此能实现 100% 屏蔽第三方解析站网页里的菠菜和牛皮癣广告，直接使用干净的原生 DPlayer 播放！
+      if (epToken && epToken.startsWith('age_') && !realUrl) {
+        const jxTargetUrl = "https://jx.wuzhoupai.com:8443/vip/?url=" + epToken;
+        console.log("[DYNAMIC RESOLVER] Cache miss or on-demand trigger. Resolving via Worker: " + epToken);
+        
+        this.showLoadingToast = true;
+        this.loadingText = "正在云端解密防盗链直链 (首次解析需15秒)...";
+        
+        try {
+          // 调用云端 Worker 中转解析接口
+          const resolveApiUrl = `https://jingyanff.xyz/api/resolve?url=${encodeURIComponent(jxTargetUrl)}`;
+          const response = await fetch(resolveApiUrl);
+          let data = null;
+          try {
+            data = await response.json();
+          } catch(e) {}
+          
+          if (response.ok && data && data.success && data.url) {
+            console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
+            playUrl = data.url; // 成功！直接起播
+          } else if (data && data.failedMark) {
+            // 💡 提示用户视频已失效，并自动进入熔断保护，防止重复请求
+            alert("该集视频源暂时失效，已开启每日防刷锁保护。请切换其他播放线路或明日再试。");
+          }
+        } catch (err) {
+          console.warn("[DYNAMIC RESOLVER] Cloud decrypt failed, falling back to ad resolver.", err);
+        } finally {
+          this.showLoadingToast = false;
         }
-        console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
-      } else if (this.activeLineKey === 'anich_m3u8') {
-        // AniCh 直链线路：ep[1] 本身就是真实 m3u8/mp4 URL，直接播放，不套解析站
-        playUrl = epToken;
-        console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
-      } else {
-        // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
+      }
+      
+      if (!playUrl) {
+        if (isVip) {
+          // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
+          const playerJx = this.animeDetail.player_jx || {};
+          const jxBase = playerJx.vip || playerJx.zj;
+          if (jxBase) {
+            playUrl = jxBase + epToken;
+          } else {
+            playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
+          }
+          console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
+        } else if (this.activeLineKey === 'anich_m3u8') {
+          // AniCh 直链线路：ep[1] 本身就是真实 m3u8/mp4 URL，直接播放，不套解析站
+          playUrl = epToken;
+          console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
+        } else {
+          // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         const targetUrlToResolve = realUrl ? realUrl : epToken;
         
         if (this.activeEngineKey === 'default') {
