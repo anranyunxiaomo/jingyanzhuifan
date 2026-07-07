@@ -72,21 +72,29 @@ def get_main_title(title):
     t = re.sub(r'[a-zA-Z\-_：:\s]+.*$', '', t)
     return t.strip() if t.strip() else title
 
-def is_kids_anime(title):
+def is_kids_anime(title, plot="", tags=""):
     """判定是否属于给低幼少儿看的动漫"""
-    if not title:
-        return False
-    # 低幼少儿动漫特征词黑名单（模糊匹配）
+    title = (title or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    # 1. 强力分类与标签黑名单：任何分类或者标签中含有“儿童”、“少儿”、“幼儿”、“儿歌”、“早教”
+    kids_genres = ["儿童", "少儿", "幼儿", "儿歌", "早教"]
+    for genre in kids_genres:
+        if genre in plot or genre in tags:
+            return True
+            
+    # 2. 标题模糊匹配黑名单
     kids_keywords = [
         '乐高', '城市守卫者', '超级警长', '汪汪队', '小猪佩奇', '熊出没', '喜羊羊', 
         '巴啦啦小魔仙', '超级飞侠', '托马斯', '天线宝宝', '爱探险的朵拉', '儿歌', 
         '巧虎', '猪猪侠', '萌鸡小队', '早教', '幼儿', '宝宝巴士', '恐龙战队', 
         '大头儿子', '贝瓦儿歌', '爆笑虫子', '猫和老鼠', '小马宝莉'
     ]
-    title_clean = str(title).lower()
     for kw in kids_keywords:
-        if kw in title_clean:
+        if kw in title:
             return True
+            
     return False
 
 def parse_anime_list_html(html):
