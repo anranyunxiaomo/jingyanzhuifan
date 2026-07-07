@@ -105,10 +105,33 @@ def is_sensitive_anime(name, plot, tags):
     return False
 
 
+def is_unwanted_area_anime(title, area, plot="", tags=""):
+    """判定是否属于需要清理的欧美、海外及无关非精品动漫"""
+    title = (title or "").lower()
+    area = (area or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    # 1. 强力地区黑名单：只要地区属于欧美、海外、美国、法国、德国、英国、加拿大、意大利等
+    unwanted_areas = ["欧美", "美国", "法国", "德国", "英国", "加拿大", "意大利", "西班牙", "俄罗斯", "欧美动漫", "海外动漫"]
+    for u_area in unwanted_areas:
+        if u_area in area or u_area in plot or u_area in tags:
+            return True
+            
+    # 2. 强力片名及标签匹配：如果分类包含“欧美”、“海外”
+    plot_words = set(w.strip() for w in plot.replace("/", " ").split() if w.strip())
+    tags_words = set(w.strip() for w in tags.replace("/", " ").split() if w.strip())
+    unwanted_genres = {"欧美", "海外", "欧美动漫", "海外动漫"}
+    if unwanted_genres.intersection(plot_words) or unwanted_genres.intersection(tags_words):
+        return True
+        
+    return False
+
+
 def check_anime_sensitive_by_aid(aid, title):
-    """通过本地详情缓存辅助校验动漫是否敏感或属于低幼"""
+    """通过本地详情缓存辅助校验动漫是否敏感、属于低幼、或属于无关欧美海外片源"""
     if not aid:
-        return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "")
+        return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "")
     detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
     if os.path.exists(detail_path):
         try:
@@ -117,10 +140,13 @@ def check_anime_sensitive_by_aid(aid, title):
                 t = video.get("name", title)
                 p = video.get("plot", "")
                 tags_val = video.get("tags", "")
-                return is_sensitive_anime(t, p, tags_val) or is_kids_anime(t, p, tags_val)
+                a = video.get("area", "")
+                return (is_sensitive_anime(t, p, tags_val) or 
+                        is_kids_anime(t, p, tags_val) or 
+                        is_unwanted_area_anime(t, a, p, tags_val))
         except Exception:
             pass
-    return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "")
+    return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "")
 
 
 
@@ -509,8 +535,8 @@ async def main_async():
                         video = detail.get("video", {})
                         title = video.get("name")
                         if title and aid_str not in seen_aids:
-                            # 💡 过滤黄色/敏感番剧与低幼少儿动漫
-                            if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")):
+                            # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
+                            if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")):
                                 continue
                             pinyin_code = get_pinyin_initials(title)
                             entry_aid = aid_str
@@ -902,11 +928,11 @@ async def main_async():
                     video = detail.get("video", {})
                     title = video.get("name")
                     if title and aid_str not in seen_aids:
-                        # 💡 过滤黄色/敏感番剧与低幼少儿动漫
-                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")):
+                        # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
+                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")):
                             try:
                                 os.remove(detail_file_path)
-                                print(f"  [CLEANUP] Deleted kids/sensitive local JSON: {filename} ({title})")
+                                print(f"  [CLEANUP] Deleted kids/sensitive/western/foreign local JSON: {filename} ({title})")
                             except:
                                 pass
                             continue
