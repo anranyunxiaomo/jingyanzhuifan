@@ -1,0 +1,136 @@
+{
+  "video": {
+    "id": 20260190,
+    "name_other": "铁锅料理王",
+    "company": "TROYCA",
+    "name": "炒翻天",
+    "type": "TV",
+    "writer": "西条真二",
+    "name_original": "鉄鍋のジャン！",
+    "plot": "竞技",
+    "plot_arr": [
+      "竞技"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "pv",
+          "age_e9c4KFH8xIV0372GGc7NDTkkZUIAZ9DjEUe%2FANwIy6QmMf1Hg7qDZu8AV0qF%2BO9qML6c8ZeFIMBv%2BAhTv8QSp7YrB%2BXm0nQbvQ",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "C",
+    "website": "暂缺",
+    "star": 0,
+    "status": "未播放",
+    "uptodate": "pv",
+    "time_format_1": "20260622150327",
+    "time_format_2": "2026-06-22",
+    "time_format_3": "2026-06-22 15:03:27",
+    "time": 1782111807,
+    "tags": "竞技",
+    "tags_arr": [
+      "竞技"
+    ],
+    "intro": "以“料理是胜负”为信念、“中国菜霸王”秋山阶一郎的孙子秋山酱在祖父过世后，遵照其遗愿到五番町饭店去见习，目的是想要挑战有“中华大帝”之称的五番町睦十，他在那里与睦十的孙女、秉持“料理是心”的五番町雾子相遇，两人因为南辕北辙的信念结下梁子，并力图打倒对方……",
+    "intro_html": "以“料理是胜负”为信念、“中国菜霸王”秋山阶一郎的孙子秋山酱在祖父过世后，遵照其遗愿到五番町饭店去见习，目的是想要挑战有“中华大帝”之称的五番町睦十，他在那里与睦十的孙女、秉持“料理是心”的五番町雾子相遇，两人因为南辕北辙的信念结下梁子，并力图打倒对方……",
+    "intro_clean": "以“料理是胜负”为信念、“中国菜霸王”秋山阶一郎的孙子秋山酱在祖父过世后，遵照其遗愿到五番町饭店去见习，目的是想要挑战有“中华大帝”之称的五番町睦十，他在那里与睦十的孙女、秉持“料理是心”的五番町雾子相遇，两人因为南辕北辙的信念结下梁子，并力图打倒对方……",
+    "series": "炒翻天",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 7,
+    "premiere": "2026-07-05",
+    "rank_cnt": "1,023",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260190.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "1",
+    "collect_cnt": "97"
+  },
+  "series": [],
+  "similar": [
+    {
+      "AID": 20220244,
+      "Href": "/detail/20220244",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220244.jpg",
+      "Title": "进击的巨人 最终季 完结篇 前篇"
+    },
+    {
+      "AID": 20220148,
+      "Href": "/detail/20220148",
+      "NewTitle": "第45集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220148.jpg",
+      "Title": "Delicious Party 光之美少女"
+    },
+    {
+      "AID": 20150189,
+      "Href": "/detail/20150189",
+      "NewTitle": "第17集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150189.jpg",
+      "Title": "龙珠剧场版合集"
+    },
+    {
+      "AID": 20220052,
+      "Href": "/detail/20220052",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220052.jpg",
+      "Title": "蔷薇王的葬列"
+    },
+    {
+      "AID": 20200061,
+      "Href": "/detail/20200061",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200061.jpg",
+      "Title": "成群结伴！西顿学园"
+    },
+    {
+      "AID": 20000079,
+      "Href": "/detail/20000079",
+      "NewTitle": "第76集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000079.jpg",
+      "Title": "果酱男孩"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}

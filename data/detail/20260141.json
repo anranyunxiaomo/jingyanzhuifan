@@ -1,0 +1,144 @@
+{
+  "video": {
+    "id": 20260141,
+    "name_other": "暂缺",
+    "company": "ENGI",
+    "name": "小鲨鱼去郊游 第二季",
+    "type": "WEB",
+    "writer": "ペンギンボックス",
+    "name_original": "おでかけ子ザメ シーズン2",
+    "plot": "泡面番",
+    "plot_arr": [
+      "泡面番"
+    ],
+    "playlists": {
+      "bilibili": [
+        [
+          "pv",
+          "age_9bb0MYXlLMUwnSHQvwMWeamazjoPre4zCKJzqdidbV%2B%2B3CnikwsOPTv9nxb5hk9cZ%2BHNiOihQDPam%2BKyWH%2F1%2FaUgAKLQ%2Bl0SM84",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "X",
+    "website": "https://odekake-kozame.com/",
+    "star": 0,
+    "status": "未播放",
+    "uptodate": "PV",
+    "time_format_1": "20260318162628",
+    "time_format_2": "2026-03-18",
+    "time_format_3": "2026-03-18 16:26:28",
+    "time": 1773822388,
+    "tags": "泡面番",
+    "tags_arr": [
+      "泡面番"
+    ],
+    "intro": "和大家一起玩耍的常去的公园，以及稍微远一点的地方。\r\n与久违的朋友相视而笑，或是互道初次见面的问候。\r\n在幼鲨的周围，闪闪发光的瞬间如星星般零星地绽放着。\r\n美味的气息在风中飘荡，前所未见的景色逐渐展现出来，\r\n虽然是第一次，却找到了一个让心灵感到轻松而温暖的地方，\r\n每走一步，世界便悄然变换着色彩。\r\n将会迎来怎样的一天呢？又会有怎样的际遇在等待着呢？\r\n胸中深处泛起一阵小小的悸动，\r\n今天会是个怎样有趣的日子呢？」\r\n小鲨鱼宝宝的温馨冒险与外出之旅，\r\n又要开始了！",
+    "intro_html": "和大家一起玩耍的常去的公园，以及稍微远一点的地方。<br />与久违的朋友相视而笑，或是互道初次见面的问候。<br />在幼鲨的周围，闪闪发光的瞬间如星星般零星地绽放着。<br />美味的气息在风中飘荡，前所未见的景色逐渐展现出来，<br />虽然是第一次，却找到了一个让心灵感到轻松而温暖的地方，<br />每走一步，世界便悄然变换着色彩。<br />将会迎来怎样的一天呢？又会有怎样的际遇在等待着呢？<br />胸中深处泛起一阵小小的悸动，<br />今天会是个怎样有趣的日子呢？」<br />小鲨鱼宝宝的温馨冒险与外出之旅，<br />又要开始了！",
+    "intro_clean": "和大家一起玩耍的常去的公园，以及稍微远一点的地方。与久违的朋友相视而笑，或是互道初次见面的问候。在幼鲨的周围，闪闪发光的瞬间如星星般零星地绽放着。美味的气息在风中飘荡，前所未见的景色逐渐展现出来，虽然是第一次，却找到了一个让心灵感到轻松而温暖的地方，每走一步，世界便悄然变换着色彩。将会迎来怎样的一天呢？又会有怎样的际遇在等待着呢？胸中深处泛起一阵小小的悸动，今天会是个怎样有趣的日子呢？」小鲨鱼宝宝的温馨冒险与外出之旅，又要开始了！",
+    "series": "小鲨鱼去郊游",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 4,
+    "premiere": "2026-04-12",
+    "rank_cnt": "736",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260141.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "1",
+    "collect_cnt": "19"
+  },
+  "series": [
+    {
+      "AID": 20230171,
+      "Href": "/detail/20230171",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230171.jpg",
+      "Title": "小鲨鱼去郊游"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20060046,
+      "Href": "/detail/20060046",
+      "NewTitle": "已完结",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060046.jpg",
+      "Title": "家庭教师"
+    },
+    {
+      "AID": 20090062,
+      "Href": "/detail/20090062",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090062.jpg",
+      "Title": "圣母在上 第四季"
+    },
+    {
+      "AID": 20060082,
+      "Href": "/detail/20060082",
+      "NewTitle": "第26集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060082.jpg",
+      "Title": "西蒙"
+    },
+    {
+      "AID": 20210026,
+      "Href": "/detail/20210026",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210026.jpg",
+      "Title": "刀剑神域 进击篇 无星之夜的咏叹调"
+    },
+    {
+      "AID": 20080018,
+      "Href": "/detail/20080018",
+      "NewTitle": "第11集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080018.jpg",
+      "Title": "亲吻姐姐OAD"
+    },
+    {
+      "AID": 20220138,
+      "Href": "/detail/20220138",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220138.jpg",
+      "Title": "键等 第二季"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
