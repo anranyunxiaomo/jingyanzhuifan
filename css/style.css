@@ -3323,6 +3323,7 @@ body.fit-fill iframe {
     line-height: 1.1;
   }
   .top-poem-banner .poem-seal {
+    display: inline-block !important; /* 💡 强制覆盖通用 display: none 隐藏，还原古风印章 */
     font-size: 8px;
     padding: 3px 2px;
     margin-bottom: 2px;
@@ -3360,6 +3361,7 @@ body.fit-fill iframe {
     line-height: 1.1;
   }
   .top-poem-banner .poem-seal {
+    display: inline-block !important; /* 💡 强制覆盖通用 display: none 隐藏，还原古风印章 */
     font-size: 7.5px;
     padding: 2px 1px;
     margin-bottom: 1px;
