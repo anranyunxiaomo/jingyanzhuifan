@@ -330,6 +330,30 @@ new Vue({
   },
   
   created() {
+    // 💡 版本缓存自愈机制：每次代码发布/数据更新，如果本地版本与 JYZF_VERSION 不一致，强制清空 LocalStorage
+    try {
+      const currentVersion = window.JYZF_VERSION || 'default';
+      const localVersion = localStorage.getItem('jyzf_app_version');
+      if (localVersion !== currentVersion) {
+        console.warn(`[CACHE CLEAR] Version mismatch (local: ${localVersion}, current: ${currentVersion}). Clearing details & search index cache...`);
+        localStorage.removeItem('jyzf_search_index_cache');
+        localStorage.removeItem('jyzf_home_list_cache');
+        localStorage.removeItem('jyzf_banner_list_cache');
+        
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('jyzf_detail_cache_')) {
+            keysToRemove.push(key);
+          }
+        }
+        keysToRemove.forEach(k => localStorage.removeItem(k));
+        localStorage.setItem('jyzf_app_version', currentVersion);
+      }
+    } catch (e) {
+      console.warn('[CACHE CLEAR] Error checking app version cache:', e);
+    }
+
     // ⚡ 防止"Flash of Homepage"：在任何渲染前提前读取 hash，
     // 如果目标是详情页，立即设置 currentAnimeId，
     // Vue 初始渲染就直接走详情页骨架，跳过首页 → 不再出现"刷新闪首页"
