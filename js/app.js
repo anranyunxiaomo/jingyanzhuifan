@@ -1457,6 +1457,13 @@ new Vue({
               const fallbackToIframe = (reason) => {
                 if (this._hasFallenBack) return; // 防止多次触发
                 
+                // 💡 A123 极速源拦截：绝对不降级到 iframe 流氓广告播放器
+                if (this.activeLineKey === 'a123_line1') {
+                  console.warn(`[A123 FALLBACK PREVENTED] reason: ${reason}`);
+                  dp.notice("当前视频切片加载较慢，请稍等或尝试手动点击播放...", 4000);
+                  return; // 💡 强行拦截退出，不降级销毁！
+                }
+                
                 // 💡 强力自愈拦截：如果是 AniCh 独有线路，绝对不降级到 iframe，而是尝试切换到下一个备用 M3U8 CDN 链接！
                 if (this.activeLineKey === 'anich_m3u8') {
                   if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
