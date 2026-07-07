@@ -55,6 +55,7 @@ jobs:
 
       # 4. AniCh 自动化新番抓取与增量占位符生成 (带 Token 认证，Actions 全自动秒级同步，自动补齐独有详情)
       - name: Sync AniCh anime data
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         timeout-minutes: 5
         continue-on-error: true
         env:
@@ -64,6 +65,7 @@ jobs:
 
       # 4b. 执行爬虫数据抓取与全局索引库重构（整合刚刚补齐的独有番剧详情）
       - name: Fetch and staticize anime data
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         timeout-minutes: 8
         continue-on-error: true    # 数据抓取失败不阻断页面部署
         run: |
@@ -71,6 +73,7 @@ jobs:
 
       # 5. 安全同步并自动推回静态数据 JSON（"物理备份与强覆盖对齐" 无冲突版）
       - name: Commit and push static data changes
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         run: |
           # A. 确保本地切回真实的 main 分支并跟踪远程，防止 detached HEAD 游离
           git checkout -B main
