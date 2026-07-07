@@ -464,8 +464,8 @@ new Vue({
             console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
             playUrl = data.url; // 成功！直接起播
           } else if (data && data.failedMark) {
-            // 💡 提示用户视频已失效，并自动进入熔断保护，防止反复请求
-            alert("该集视频源暂时失效，已开启 10 分钟防刷锁保护。请切换其他播放线路或稍后再试。");
+            // 💡 提示用户视频已失效，并自动进入熔断保护，防止重复请求
+            alert("该集视频源暂时失效，已开启每日防刷锁保护。请切换其他播放线路或明日再试。");
           }
         } catch (err) {
           console.warn("[DYNAMIC RESOLVER] Cloud decrypt failed, falling back to ad resolver.", err);
