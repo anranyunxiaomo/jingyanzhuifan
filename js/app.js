@@ -1068,16 +1068,31 @@ new Vue({
       this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       this.lastLogProgressTime = 0;
 
+      // 💡 智能直连判定：如果播放链接本身就是常规的 M3U8/MP4 直链（如非凡、暴风、无尽等采集源），
+      // 我们直接将其标记为 finalRealUrl！强行让其进入 DPlayer 原生轨道秒开，彻底解决外部 iframe 解析站卡顿 15 秒的严重痛点！
+      let finalRealUrl = realUrl;
+      const isDirectUrl = epToken && (
+        epToken.startsWith('http://') || 
+        epToken.startsWith('https://') || 
+        epToken.includes('.m3u8') || 
+        epToken.includes('.mp4') || 
+        epToken.includes('/m3u8') || 
+        epToken.includes('/mp4')
+      );
+      if (isDirectUrl && !epToken.startsWith('age_')) {
+        finalRealUrl = epToken;
+      }
+
       // ✅ 变量捕获闭包锁定
       const capturedAnimeId = String(this.currentAnimeId);
       const capturedEpName = String(this.activeEpisodeName);
-      const capturedRealUrl = realUrl;
+      const capturedRealUrl = finalRealUrl;
       const capturedIframeUrl = playUrl;
 
-      // 1. 如果存在预解析直链，优先尝试使用原生 DPlayer 播放，并走我们自己免墙的专属代理中转
-      if (realUrl) {
+      // 1. 如果存在直链，优先尝试使用原生 DPlayer 播放
+      if (finalRealUrl) {
         this.isIframeMode = false;
-        this.activePlayUrl = realUrl;
+        this.activePlayUrl = finalRealUrl;
 
         // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
