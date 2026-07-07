@@ -198,11 +198,14 @@ new Vue({
           
           if (isAllowed) {
             const isVip = vipList.includes(key);
-            if (!isVip) {
+            // 💡 升级 VIP 放行法：即使是被标记为 VIP 的加密线路，只要已经被我们回填了直链，就不再是无效的 VIP，我们必须展示它！
+            const firstEp = eps[0];
+            const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
+            if (!isVip || hasRealUrl) {
               lines.push({
                 key: key,
                 title: labelArr[key] || key,
-                isVip: false
+                isVip: isVip && !hasRealUrl ? true : false
               });
             }
           }
