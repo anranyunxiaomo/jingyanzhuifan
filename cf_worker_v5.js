@@ -138,6 +138,96 @@ export default {
     }
 
     // ==========================================
+    // 🔑 功能 D：老番 / 未解析加密集数按需实时解密 (/api/resolve)
+    // ==========================================
+    if (url.pathname === '/api/resolve') {
+      if (request.method === 'OPTIONS') {
+        return new Response('', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Methods': 'GET, OPTIONS'
+          }
+        });
+      }
+
+      const targetUrl = url.searchParams.get('url');
+      if (!targetUrl) {
+        return new Response(JSON.stringify({ error: 'url parameter required' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+
+      try {
+        let cachedUrl = null;
+        if (env.JYZF_LOGS) {
+          cachedUrl = await env.JYZF_LOGS.get("resolve_cache:" + targetUrl);
+        }
+
+        if (cachedUrl) {
+          return new Response(JSON.stringify({ success: true, url: cachedUrl, cached: true }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+          });
+        }
+
+        // 💡 缓存未命中，调用 ScraperAPI 实时进行云端动态渲染
+        const apiKey = env.SCRAPER_API_KEY || '9b5919ce9fcc48b957baf6c205188173';
+        const scraperUrl = `https://api.scraperapi.com/?api_key=${apiKey}&url=${encodeURIComponent(targetUrl)}&render=true&country_code=cn`;
+        
+        const res = await fetch(scraperUrl);
+        if (!res.ok) {
+          throw new Error(`ScraperAPI returned status: ${res.status}`);
+        }
+
+        const html = await res.text();
+        const htmlClean = html.replace(/\\\//g, '/');
+
+        // 正则提取 A 计划: <video src="...">
+        let realUrl = null;
+        const videoMatches = htmlClean.match(/<video[^>]+src=["']([^"']+)["']/i);
+        if (videoMatches) {
+          realUrl = videoMatches[1].replace(/&amp;/g, '&');
+        }
+
+        // 正则提取 B 计划: 兜底检索 .m3u8 或者是 .mp4 地址
+        if (!realUrl) {
+          const streamMatches = htmlClean.match(/["']((?:https?:)?\/\/[^"']+\.(?:m3u8|mp4)[^"']*)["']/i);
+          if (streamMatches) {
+            realUrl = streamMatches[1].replace(/&amp;/g, '&');
+          }
+        }
+
+        if (realUrl) {
+          if (realUrl.startsWith('//')) {
+            realUrl = 'https:' + realUrl;
+          }
+
+          // 写入 KV 数据库进行 4 小时短期缓存 (CDN 直链通常有时效性)
+          if (env.JYZF_LOGS) {
+            await env.JYZF_LOGS.put("resolve_cache:" + targetUrl, realUrl, { expirationTtl: 14400 });
+          }
+
+          return new Response(JSON.stringify({ success: true, url: realUrl, cached: false }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+          });
+        } else {
+          return new Response(JSON.stringify({ success: false, error: 'Failed to extract video stream from target HTML' }), {
+            status: 404,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+          });
+        }
+      } catch (err) {
+        return new Response(JSON.stringify({ success: false, error: err.message }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+    }
+
+    // ==========================================
     // 🔒 功能 C：原有 M3U8 跨域中转代理
     // ==========================================
     let targetUrlStr = url.searchParams.get('url');

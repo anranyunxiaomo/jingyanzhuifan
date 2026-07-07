@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260706T2226">
+  <link rel="stylesheet" href="css/style.css?v=20260707T1052">
 </head>
 <body class="loader-active">
 
@@ -679,6 +679,12 @@
                 <span>下一集</span>
               </button>
             </template>
+            
+            <!-- 💡 景雁云端动态解析加载遮罩 (毛玻璃拟态 glassmorphism) -->
+            <div class="dynamic-resolver-loading" v-if="showLoadingToast">
+              <div class="resolver-spinner"></div>
+              <p class="resolver-loading-text">{{ loadingText }}</p>
+            </div>
           </div>
           <div class="playing-info" v-if="activePlayUrl">
             <!-- 标题行 -->
@@ -894,7 +900,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260706T2226"></script>
+<script src="js/app.js?v=20260707T1052"></script>
 
 </body>
 </html>
