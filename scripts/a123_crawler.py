@@ -5,10 +5,10 @@ A123TV 自动化新番获取与数据合并脚本 (极致轻量按需版 + 空�
 ===================================================================
 1. 编译期仅提取选集结构和页面路径，不爬取任何单集直链，播放时由前端动态嗅探。
 2. 增量热更新：抓取 A123TV 的国漫和日漫最新列表 (前 3 页) 进行对齐合并，
-   对未匹配的独占番，在本地新建 a123_ 前缀详情，丰富流媒体片源。
+   对未匹配的独占番，在本地新建 a123_ 前缀详情文件，丰富片源。
 3. 🌿 黄金拯救逻辑 (Empty Anime Auto-Resolver)：
    自动扫描本地所有无播放源或空线路、甚至仅有预告/PV的“伪有源”空壳番剧，
-   并在 A123TV 上进行标题搜索并回填结构，实现 100% 起死回生！
+   并在 A123TV 上进行标题搜索并回填结构，如果全名搜索失败，自动使用“中文主标题”二次拯救匹配！
 """
 
 import os
@@ -61,6 +61,34 @@ def clean_title(title):
     t = "".join(ch for ch in t if ch.isalnum())
     return t
 
+def get_main_title(title):
+    """
+    提取中文主标题（切除所有英文后缀及修饰词）
+    例如：'怪物弹珠 DEADVERSE RELOADED' -> '怪物弹珠'
+    """
+    if not title:
+        return ""
+    t = re.sub(r'[\(\[\{（【].*?[\)\]\}）】]', '', title)
+    t = re.sub(r'[a-zA-Z\-_：:\s]+.*$', '', t)
+    return t.strip() if t.strip() else title
+
+def is_kids_anime(title):
+    """判定是否属于给低幼少儿看的动漫"""
+    if not title:
+        return False
+    # 低幼少儿动漫特征词黑名单（模糊匹配）
+    kids_keywords = [
+        '乐高', '城市守卫者', '超级警长', '汪汪队', '小猪佩奇', '熊出没', '喜羊羊', 
+        '巴啦啦小魔仙', '超级飞侠', '托马斯', '天线宝宝', '爱探险的朵拉', '儿歌', 
+        '巧虎', '猪猪侠', '萌鸡小队', '早教', '幼儿', '宝宝巴士', '恐龙战队', 
+        '大头儿子', '贝瓦儿歌', '爆笑虫子', '猫和老鼠', '小马宝莉'
+    ]
+    title_clean = str(title).lower()
+    for kw in kids_keywords:
+        if kw in title_clean:
+            return True
+    return False
+
 def parse_anime_list_html(html):
     """从 HTML 文本中解析卡片列表"""
     items = []
@@ -72,7 +100,8 @@ def parse_anime_list_html(html):
         href = m.group("href")
         title = m.group("title").strip()
         info = m.group("info").strip()
-        if "里番" in info or "淫狱" in title or "催眠" in title:
+        # 💡 强力阻断低幼少儿和敏感词
+        if "里番" in info or "淫狱" in title or "催眠" in title or is_kids_anime(title):
             continue
         items.append({
             "title": title,
@@ -150,6 +179,8 @@ def main():
     for entry in search_index:
         title = entry.get("Title")
         aid = entry.get("AID")
+        if is_kids_anime(title):
+            continue
         if title and aid:
             cleaned = clean_title(title)
             if cleaned:
@@ -171,7 +202,7 @@ def main():
                             for pkey, eps in playlists.items():
                                 if eps and len(eps) > 0:
                                     # 💡 强力排除伪有源番：如果某线路下虽然有数据，但都是预告、PV、特报等，
-                                    # 或者全剧只有 1-2 集且标题包含 pv/预告/特报/特报pv/宣传，我们视其为空壳！
+                                    # 或者全剧只有 1-2 集且标题包含 pv/预告/特报/特报pv/宣传/特报，我们视其为空壳！
                                     if len(eps) <= 2:
                                         all_pv = True
                                         for ep in eps:
@@ -212,7 +243,7 @@ def main():
                 
             print(f"  [RESCUING] Searching A123TV for empty anime: '{title}' (AID: {aid})")
             
-            # 发起搜索
+            # A. 优先全名搜索
             search_results = search_a123_by_title(title)
             time.sleep(0.5)
             
@@ -224,6 +255,20 @@ def main():
                     matched_slug = res["slug"]
                     break
                     
+            # B. 💡 如果全名没有精确对准，使用 get_main_title 提取出中文主标题进行二次模糊拯救匹配
+            if not matched_slug:
+                main_title = get_main_title(title)
+                if main_title != title:
+                    print(f"    [FUZZY RETRY] Exact match failed. Retrying with main title: '{main_title}'")
+                    search_results = search_a123_by_title(main_title)
+                    time.sleep(0.5)
+                    
+                    cleaned_main = clean_title(main_title)
+                    for res in search_results:
+                        if clean_title(res["title"]) == cleaned_main:
+                            matched_slug = res["slug"]
+                            break
+            
             if matched_slug:
                 print(f"    [MATCHED] Found A123 source: slug='{matched_slug}'. Fetching structure...")
                 episodes = fetch_anime_episodes_structure(matched_slug)
@@ -245,7 +290,7 @@ def main():
                     except Exception as merge_err:
                         print(f"    [ERROR] Failed to merge rescued data for {title}: {merge_err}")
             else:
-                print(f"    [FAILED] No exact name matched on A123TV for '{title}'")
+                print(f"    [FAILED] No name matched on A123TV for '{title}'")
             
             time.sleep(0.5)
 
@@ -280,7 +325,6 @@ def main():
             detail_filename = f"{aid}.json"
             print(f"[{i+1}/{len(a123_list)}] [MATCHED] A123: '{title}' ---> Local AID: {aid}")
         else:
-            # 💡 释放独占新番：对于 A123 列表里拥有的独占国漫/日漫，在本地新建 a123_ 前缀详情文件，丰富片源
             aid = f"a123_{slug}"
             detail_filename = f"{aid}.json"
             print(f"[{i+1}/{len(a123_list)}] [EXCLUSIVE] A123: '{title}' ---> New entry '{aid}'")

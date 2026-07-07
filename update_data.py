@@ -45,6 +45,24 @@ def fetch_html_via_scraper_api(url):
     return None
 
 
+def is_kids_anime(title):
+    """判定是否属于给低幼少儿看的动漫"""
+    if not title:
+        return False
+    # 低幼少儿动漫特征词黑名单（模糊匹配）
+    kids_keywords = [
+        '乐高', '城市守卫者', '超级警长', '汪汪队', '小猪佩奇', '熊出没', '喜羊羊', 
+        '巴啦啦小魔仙', '超级飞侠', '托马斯', '天线宝宝', '爱探险的朵拉', '儿歌', 
+        '巧虎', '猪猪侠', '萌鸡小队', '早教', '幼儿', '宝宝巴士', '恐龙战队', 
+        '大头儿子', '贝瓦儿歌', '爆笑虫子', '猫和老鼠', '小马宝莉'
+    ]
+    title_clean = str(title).lower()
+    for kw in kids_keywords:
+        if kw in title_clean:
+            return True
+    return False
+
+
 def is_sensitive_anime(name, plot, tags):
     """判定番剧是否属于黄色或敏感内容 (Naughty Content Filter)"""
     name = (name or "").lower()
@@ -70,18 +88,19 @@ def is_sensitive_anime(name, plot, tags):
 
 
 def check_anime_sensitive_by_aid(aid, title):
-    """通过本地详情缓存辅助校验动漫是否敏感"""
+    """通过本地详情缓存辅助校验动漫是否敏感或属于低幼"""
     if not aid:
-        return is_sensitive_anime(title, "", "")
+        return is_sensitive_anime(title, "", "") or is_kids_anime(title)
     detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
     if os.path.exists(detail_path):
         try:
             with open(detail_path, 'r', encoding='utf-8') as f:
                 video = json.load(f).get("video", {})
-                return is_sensitive_anime(video.get("name", title), video.get("plot", ""), video.get("tags", ""))
+                t = video.get("name", title)
+                return is_sensitive_anime(t, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(t)
         except Exception:
             pass
-    return is_sensitive_anime(title, "", "")
+    return is_sensitive_anime(title, "", "") or is_kids_anime(title)
 
 
 
@@ -863,8 +882,13 @@ async def main_async():
                     video = detail.get("video", {})
                     title = video.get("name")
                     if title and aid_str not in seen_aids:
-                        # 💡 过滤黄色/敏感番剧
-                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")):
+                        # 💡 过滤黄色/敏感番剧与低幼少儿动漫
+                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title):
+                            try:
+                                os.remove(detail_file_path)
+                                print(f"  [CLEANUP] Deleted kids/sensitive local JSON: {filename} ({title})")
+                            except:
+                                pass
                             continue
                         pinyin_code = get_pinyin_initials(title)
                         entry_aid = aid_str
