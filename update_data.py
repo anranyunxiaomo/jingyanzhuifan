@@ -423,6 +423,16 @@ def save_search_index(index_data):
 async def main_async():
     print("[START] Start updating anime data...")
     
+    # 💡 触发 A123TV 爬取与对齐合并脚本，增量注入 A123TV 独占番及直连线路
+    print("\n[A123TV INTEGRATION] Triggering A123TV crawler and data alignment...")
+    try:
+        import subprocess
+        crawler_path = os.path.join(BASE_DIR, "scripts", "a123_crawler.py")
+        subprocess.run([sys.executable, crawler_path], check=True)
+        print("[A123TV INTEGRATION] Successfully integrated A123TV data!\n")
+    except Exception as e:
+        print(f"[A123TV INTEGRATION ERROR] Failed to run a123_crawler.py: {e}\n")
+
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     event_name = os.environ.get("GITHUB_EVENT_NAME")
     force_network = os.environ.get("FORCE_NETWORK") == "true"

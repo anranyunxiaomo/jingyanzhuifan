@@ -179,8 +179,8 @@ new Vue({
       const vipList = (this.animeDetail.player_vip || '').split(',');
       const labelArr = this.animeDetail.player_label_arr || {};
       
-      // 合法可播放的常规 M3U8 H5 线路白名单
-      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8'];
+      // 合法可播放的常规 M3U8 H5 线路白名单 (包含 A123 极速源)
+      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
       
       const lines = [];
       for (const key in playlists) {
@@ -203,9 +203,11 @@ new Vue({
             const firstEp = eps[0];
             const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
             if (!isVip || hasRealUrl) {
+              let lineTitle = labelArr[key] || key;
+              if (key === 'a123_line1') lineTitle = 'A123 极速源';
               lines.push({
                 key: key,
-                title: labelArr[key] || key,
+                title: lineTitle,
                 isVip: isVip && !hasRealUrl ? true : false
               });
             }
@@ -220,8 +222,8 @@ new Vue({
           const firstEp = eps ? eps[0] : null;
           const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
           
-          // 🥇 最稳定直连第一梯队：常规 M3U8 直链采集白名单 与 AniCh 专属源，100% 稳定 DPlayer 免广告秒开
-          const STABLE_DPLAYER_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8'];
+          // 🥇 最稳定直连第一梯队：常规 M3U8 直链采集白名单、A123 极速直连源 与 AniCh 专属源，100% 稳定 DPlayer 免广告秒开
+          const STABLE_DPLAYER_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
           if (STABLE_DPLAYER_KEYS.includes(line.key)) {
             return 10;
           }
@@ -991,6 +993,36 @@ new Vue({
           this.activePlayUrl = '';
           alert("【播放提示】当前 AniCh 视频直链解析失败，请尝试在上方切换为其它常规播放线路（如：非凡、暴风等常规源）！");
           return;
+        }
+      }
+
+      // 💡 A123TV 播放页跨域直链按需嗅探提取 (极致省流 0 API 消耗)
+      if (epToken && epToken.startsWith('/v/') && epToken.endsWith('.html') && !realUrl) {
+        this.showLoadingToast = true;
+        this.loadingText = "正在从 A123TV 跨域提取极速播放直链...";
+        try {
+          const targetUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent("https://a123tv.com" + epToken);
+          const response = await fetch(targetUrl);
+          if (response.ok) {
+            const htmlText = await response.text();
+            // 匹配 data-src 里的 M3U8
+            const match = htmlText.match(/data-src="([^"]+\.m3u8[^"]*)"/);
+            if (match) {
+              const m3u8Url = match[1];
+              realUrl = m3u8Url;
+              // 💡 存入内存，供该会话内后续无感重播
+              if (ep.length === 2) {
+                ep.push(m3u8Url);
+              } else if (ep.length >= 3) {
+                ep[2] = m3u8Url;
+              }
+              console.log("[A123 RESOLVER] Extracted stream successfully:", m3u8Url);
+            }
+          }
+        } catch (err) {
+          console.warn("[A123 RESOLVER] Failed to fetch target page:", err);
+        } finally {
+          this.showLoadingToast = false;
         }
       }
 
