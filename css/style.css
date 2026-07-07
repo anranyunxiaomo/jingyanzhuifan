@@ -3403,7 +3403,7 @@ body.fit-fill iframe {
   z-index: 2147483647 !important;
 }
 
-/* 💡 景雁全局网页全屏 (Web Fullscreen - DOM 逃逸版) 强制覆盖样式 */
+/* 💡 景雁全局网页全屏 (Web Fullscreen) 强制覆盖样式 */
 .player-panel-web-fullscreen {
   position: fixed !important;
   top: 0 !important;
@@ -3413,9 +3413,13 @@ body.fit-fill iframe {
   z-index: 2147483646 !important; /* 极高层级，遮盖一切 */
   margin: 0 !important;
   padding: 0 !important;
-  background: #000 !important;
+  background: #000000 !important; /* 纯黑色背景，绝无百边 */
   border-radius: 0 !important;
   border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
 }
 
 .player-panel-web-fullscreen .video-iframe,
@@ -3423,31 +3427,7 @@ body.fit-fill iframe {
   width: 100% !important;
   height: 100% !important;
   border-radius: 0 !important;
-}
-
-/* 💡 景雁移动端竖屏握持下，强行旋转 90 度横屏全屏样式 (DOM 逃逸版) */
-.player-panel-landscape-force {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vh !important; /* 物理高度作为视觉宽度 */
-  height: 100vw !important; /* 物理宽度作为视觉高度 */
-  z-index: 2147483646 !important; /* 极高层级 */
-  transform: translate(100vw, 0) rotate(90deg) !important;
-  transform-origin: top left !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: #000 !important;
-  border-radius: 0 !important;
   border: none !important;
-  overflow: hidden !important;
-}
-
-.player-panel-landscape-force .video-iframe,
-.player-panel-landscape-force .video-dplayer {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 0 !important;
 }
 
 /* 网页全屏模式下的返回/退出全屏浮动按钮 */

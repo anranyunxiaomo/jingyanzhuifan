@@ -1820,23 +1820,6 @@ new Vue({
     // 💡 监听窗口尺寸变化
     handleResize() {
       this.screenWidth = window.innerWidth;
-      
-      // 💡 网页全屏状态下，动态校准屏幕物理旋转方向，防止画面倒转或变形
-      if (this.isWebFullscreen) {
-        const innerContainer = document.querySelector('.player-container-inner');
-        if (innerContainer) {
-          const isPortrait = window.innerHeight > window.innerWidth;
-          const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-          
-          if (isMobileDevice && isPortrait) {
-            innerContainer.classList.remove('player-panel-web-fullscreen');
-            innerContainer.classList.add('player-panel-landscape-force');
-          } else {
-            innerContainer.classList.remove('player-panel-landscape-force');
-            innerContainer.classList.add('player-panel-web-fullscreen');
-          }
-        }
-      }
     },
     
     // 💡 画面比例切换服务 (循环切换：等比 -> 铺满/裁剪 -> 强制拉伸)
@@ -1867,14 +1850,7 @@ new Vue({
             htmlEl.classList.add('webfullscreen-active');
           }
           
-          const isPortrait = window.innerHeight > window.innerWidth;
-          const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-          
-          if (isMobileDevice && isPortrait) {
-            innerContainer.classList.add('player-panel-landscape-force');
-          } else {
-            innerContainer.classList.add('player-panel-web-fullscreen');
-          }
+          innerContainer.classList.add('player-panel-web-fullscreen');
           document.body.style.overflow = 'hidden'; // 禁用 body 滚动
           
           // 💡 监听物理 Esc 按键以直接退出全屏
