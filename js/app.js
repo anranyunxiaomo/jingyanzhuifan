@@ -1047,6 +1047,7 @@ new Vue({
           console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
       }
+    }
 
       const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
       const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
