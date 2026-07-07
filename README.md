@@ -68,3 +68,4 @@
      `https://你的Worker名字.你的用户名.workers.dev`
    * 回到你的追番网页，开启“免拦截中转”，在输入框中填入该链接，点击 **`应用并刷新`**。
    * 此时你就可以直接在 GitHub Pages 上免去一切 Mixed Content 拦截，顺畅看番了！
+
