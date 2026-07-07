@@ -120,3 +120,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # 7. 双轨备份：同步自动部署发布到 Cloudflare Pages ！！！
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'jyzf' # 💡 默认 CF Pages 项目名设为 jyzf (支持在 CF 网页后台一键同名创建)
+          directory: '.'
+
