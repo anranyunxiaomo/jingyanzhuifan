@@ -213,11 +213,24 @@ new Vue({
         }
       }
       
-      // 💡 降级排序：把 anich_m3u8 强行排到所有其他线路的最后，默认让常规不需要反代流量的线路排在第一位！
+      // 💡 黄金体验排序法则：根据播放兼容性与速度给线路进行权重打分，将最优质的 DPlayer 原生直连源顶格展示！
       lines.sort((a, b) => {
-        if (a.key === 'anich_m3u8') return 1;
-        if (b.key === 'anich_m3u8') return -1;
-        return 0;
+        const getScore = (line) => {
+          const eps = playlists[line.key];
+          const firstEp = eps ? eps[0] : null;
+          const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
+          
+          if (hasRealUrl) return 10; // 🥇 已经被我们云端回填直链的线路，100% 采用 DPlayer 原生秒开，排在最前面
+          if (line.key === 'anich_m3u8') return 9; // 🥈 AniCh 线路，全直连 HLS 播放，排在第二
+          
+          // 常规 M3U8 采集白名单线路，同样直连 DPlayer
+          const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8'];
+          if (ALLOWED_KEYS.includes(line.key)) return 8; // 🥉 常规采集直连源，第三梯队
+          
+          return 0; // ⚠️ 只能降级走 iframe 广告解析站的 VIP 线路，垫底
+        };
+        
+        return getScore(b) - getScore(a); // 分数高的排在前面
       });
       
       return lines;
