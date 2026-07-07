@@ -1,0 +1,78 @@
+{
+  "video": {
+    "id": "a123_wudonggankun51",
+    "name": "武动干坤 5",
+    "cover": "https://i1.a123tv.com/v/0x/wudonggankun51.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至12集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://svip.high24-playback.com/20250101/14741_2c8ccd28/index.m3u8",
+          "https://svip.high24-playback.com/20250101/14741_2c8ccd28/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://svip.high24-playback.com/20250101/14740_8edc0079/index.m3u8",
+          "https://svip.high24-playback.com/20250101/14740_8edc0079/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://svip.yyzy-play.vip/20250109/20761_902b1b98/index.m3u8",
+          "https://svip.yyzy-play.vip/20250109/20761_902b1b98/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://svip.high24-playback.com/20250116/16314_7d8137db/index.m3u8",
+          "https://svip.high24-playback.com/20250116/16314_7d8137db/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://svip.high25-playback.com/20250116/17281_a51bd0f9/index.m3u8",
+          "https://svip.high25-playback.com/20250116/17281_a51bd0f9/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://svip.high25-playback.com/20250116/17280_77d2fda0/index.m3u8",
+          "https://svip.high25-playback.com/20250116/17280_77d2fda0/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://svip.high25-playback.com/20250116/17279_e1dc5f77/index.m3u8",
+          "https://svip.high25-playback.com/20250116/17279_e1dc5f77/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://svip.high25-playback.com/20250116/17278_15dc3a08/index.m3u8",
+          "https://svip.high25-playback.com/20250116/17278_15dc3a08/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://svip.high25-playback.com/20250116/17277_dfafd4d4/index.m3u8",
+          "https://svip.high25-playback.com/20250116/17277_dfafd4d4/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://svip.high24-playback.com/20250116/16349_98eefee7/index.m3u8",
+          "https://svip.high24-playback.com/20250116/16349_98eefee7/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://svip.high24-playback.com/20250116/16348_5d3d8551/index.m3u8",
+          "https://svip.high24-playback.com/20250116/16348_5d3d8551/index.m3u8"
+        ],
+        [
+          "第12集",
+          "https://svip.high24-playback.com/20250116/16347_d35211f1/index.m3u8",
+          "https://svip.high24-playback.com/20250116/16347_d35211f1/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

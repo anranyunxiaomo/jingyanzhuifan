@@ -1,0 +1,68 @@
+{
+  "video": {
+    "id": "a123_lelebianlidian",
+    "name": "乐乐便利店",
+    "cover": "https://i1.a123tv.com/v/0x/lelebianlidian.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至10集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://vod1.maowushi.com/20260204/Kqk3TdyK/index.m3u8",
+          "https://vod1.maowushi.com/20260204/Kqk3TdyK/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://vod1.maowushi.com/20260204/VOKpBbaD/index.m3u8",
+          "https://vod1.maowushi.com/20260204/VOKpBbaD/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://vod1.maowushi.com/20260211/iM7pSwIf/index.m3u8",
+          "https://vod1.maowushi.com/20260211/iM7pSwIf/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://vod1.maowushi.com/20260218/hl3sxpeC/index.m3u8",
+          "https://vod1.maowushi.com/20260218/hl3sxpeC/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://vod1.maowushi.com/20260225/0VDe8Ire/index.m3u8",
+          "https://vod1.maowushi.com/20260225/0VDe8Ire/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://vod1.maowushi.com/20260304/R1rsw3fM/index.m3u8",
+          "https://vod1.maowushi.com/20260304/R1rsw3fM/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://vod1.maowushi.com/20260311/1qC0xf1a/index.m3u8",
+          "https://vod1.maowushi.com/20260311/1qC0xf1a/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://vod1.maowushi.com/20260318/oVETcUpn/index.m3u8",
+          "https://vod1.maowushi.com/20260318/oVETcUpn/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://vod1.maowushi.com/20260325/GbLuZKEe/index.m3u8",
+          "https://vod1.maowushi.com/20260325/GbLuZKEe/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://vod1.maowushi.com/20260401/VZgDPX5d/index.m3u8",
+          "https://vod1.maowushi.com/20260401/VZgDPX5d/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

@@ -1,0 +1,66 @@
+{
+  "video": {
+    "id": "a123_youshouyan5",
+    "name": "有兽焉 5",
+    "cover": "https://i1.a123tv.com/v/0x/youshouyan5.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至12集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/youshouyan5/5qz24ucz0.html"
+        ],
+        [
+          "第02集",
+          "/v/youshouyan5/5qz24ucz1.html"
+        ],
+        [
+          "第03集",
+          "/v/youshouyan5/5qz24ucz2.html"
+        ],
+        [
+          "第04集",
+          "/v/youshouyan5/5qz24ucz3.html"
+        ],
+        [
+          "第05集",
+          "/v/youshouyan5/5qz24ucz4.html"
+        ],
+        [
+          "第06集",
+          "/v/youshouyan5/5qz24ucz5.html"
+        ],
+        [
+          "第07集",
+          "/v/youshouyan5/5qz24ucz6.html"
+        ],
+        [
+          "第08集",
+          "/v/youshouyan5/5qz24ucz7.html"
+        ],
+        [
+          "第09集",
+          "/v/youshouyan5/5qz24ucz8.html"
+        ],
+        [
+          "第10集",
+          "/v/youshouyan5/5qz24ucz9.html"
+        ],
+        [
+          "第11集",
+          "/v/youshouyan5/5qz24ucz10.html"
+        ],
+        [
+          "第12集",
+          "/v/youshouyan5/5qz24ucz11.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

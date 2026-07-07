@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_fengwuyaochu",
+    "name": "风物妖厨",
+    "cover": "https://i1.a123tv.com/v/0x/fengwuyaochu.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至8集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/fengwuyaochu/8z29tfz0.html"
+        ],
+        [
+          "第02集",
+          "/v/fengwuyaochu/8z29tfz1.html"
+        ],
+        [
+          "第03集",
+          "/v/fengwuyaochu/8z29tfz2.html"
+        ],
+        [
+          "第04集",
+          "/v/fengwuyaochu/8z29tfz3.html"
+        ],
+        [
+          "第05集",
+          "/v/fengwuyaochu/8z29tfz4.html"
+        ],
+        [
+          "第06集",
+          "/v/fengwuyaochu/8z29tfz5.html"
+        ],
+        [
+          "第07集",
+          "/v/fengwuyaochu/8z29tfz6.html"
+        ],
+        [
+          "第08集",
+          "/v/fengwuyaochu/8z29tfz7.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

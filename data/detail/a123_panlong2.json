@@ -1,0 +1,53 @@
+{
+  "video": {
+    "id": "a123_panlong2",
+    "name": "盘龙",
+    "cover": "https://i1.a123tv.com/v/0x/panlong2.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至7集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://v1.zuidazym3u8.com/yyv1/202604/30/WU0ZwUdqR127/video/index.m3u8",
+          "https://v1.zuidazym3u8.com/yyv1/202604/30/WU0ZwUdqR127/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://v6.zuidazym3u8.com/yyv6/202604/30/Mi88Sv389s19/video/index.m3u8",
+          "https://v6.zuidazym3u8.com/yyv6/202604/30/Mi88Sv389s19/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://v1.zuidazym3u8.com/yyv1/202604/30/1WgBjD3KkM27/video/index.m3u8",
+          "https://v1.zuidazym3u8.com/yyv1/202604/30/1WgBjD3KkM27/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://v14.zuidazym3u8.com/yyv14/202605/07/vSVbDGMPi924/video/index.m3u8",
+          "https://v14.zuidazym3u8.com/yyv14/202605/07/vSVbDGMPi924/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://v14.zuidazym3u8.com/yyv14/202605/13/bWJBbhau6w27/video/index.m3u8",
+          "https://v14.zuidazym3u8.com/yyv14/202605/13/bWJBbhau6w27/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://v1.zuidazym3u8.com/yyv1/202605/20/F7KDv1yhg324/video/index.m3u8",
+          "https://v1.zuidazym3u8.com/yyv1/202605/20/F7KDv1yhg324/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://v13.zuidazym3u8.com/yyv13/202605/27/XGc5Lp4g8J19/video/index.m3u8",
+          "https://v13.zuidazym3u8.com/yyv13/202605/27/XGc5Lp4g8J19/video/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

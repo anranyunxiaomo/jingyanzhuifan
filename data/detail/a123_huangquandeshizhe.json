@@ -1,0 +1,54 @@
+{
+  "video": {
+    "id": "a123_huangquandeshizhe",
+    "name": "黄泉的使者",
+    "cover": "https://i1.a123tv.com/v/0x/huangquandeshizhe.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至9集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/huangquandeshizhe/mz3o37z0.html"
+        ],
+        [
+          "第02集",
+          "/v/huangquandeshizhe/mz3o37z1.html"
+        ],
+        [
+          "第03集",
+          "/v/huangquandeshizhe/mz3o37z2.html"
+        ],
+        [
+          "第04集",
+          "/v/huangquandeshizhe/mz3o37z3.html"
+        ],
+        [
+          "第05集",
+          "/v/huangquandeshizhe/mz3o37z4.html"
+        ],
+        [
+          "第06集",
+          "/v/huangquandeshizhe/mz3o37z5.html"
+        ],
+        [
+          "第07集",
+          "/v/huangquandeshizhe/mz3o37z6.html"
+        ],
+        [
+          "第08集",
+          "/v/huangquandeshizhe/mz3o37z7.html"
+        ],
+        [
+          "第09集",
+          "/v/huangquandeshizhe/mz3o37z8.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

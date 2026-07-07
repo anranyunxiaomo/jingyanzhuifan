@@ -1,0 +1,68 @@
+{
+  "video": {
+    "id": "a123_yeluolijinliuxin",
+    "name": "叶罗丽金鎏心",
+    "cover": "https://i1.a123tv.com/v/0x/yeluolijinliuxin.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至10集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://v6.zuidazym3u8.com/yyv6/202605/01/Xbk1tVKFkJ24/video/index.m3u8",
+          "https://v6.zuidazym3u8.com/yyv6/202605/01/Xbk1tVKFkJ24/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://v1.zuidazym3u8.com/yyv1/202605/01/mnUzC6Wwef24/video/index.m3u8",
+          "https://v1.zuidazym3u8.com/yyv1/202605/01/mnUzC6Wwef24/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://v6.zuidazym3u8.com/yyv6/202605/02/ZsfpPR92jw27/video/index.m3u8",
+          "https://v6.zuidazym3u8.com/yyv6/202605/02/ZsfpPR92jw27/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://v5.zuidazym3u8.com/yyv5/202605/02/vS51RNcbZi19/video/index.m3u8",
+          "https://v5.zuidazym3u8.com/yyv5/202605/02/vS51RNcbZi19/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://v14.zuidazym3u8.com/yyv14/202605/03/nrE0Wcwupt19/video/index.m3u8",
+          "https://v14.zuidazym3u8.com/yyv14/202605/03/nrE0Wcwupt19/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://v6.zuidazym3u8.com/yyv6/202605/03/YwseDeXMbJ24/video/index.m3u8",
+          "https://v6.zuidazym3u8.com/yyv6/202605/03/YwseDeXMbJ24/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://v4.zuidazym3u8.com/yyv4/202605/04/2Q9YC28LG324/video/index.m3u8",
+          "https://v4.zuidazym3u8.com/yyv4/202605/04/2Q9YC28LG324/video/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://v4.zuidazym3u8.com/yyv4/202605/04/wYzbxwSVaJ27/video/index.m3u8",
+          "https://v4.zuidazym3u8.com/yyv4/202605/04/wYzbxwSVaJ27/video/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://v3.zuidazym3u8.com/yyv3/202605/05/B6Yv0mrjan19/video/index.m3u8",
+          "https://v3.zuidazym3u8.com/yyv3/202605/05/B6Yv0mrjan19/video/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://v5.zuidazym3u8.com/yyv5/202605/05/SPAYF7tWbw27/video/index.m3u8",
+          "https://v5.zuidazym3u8.com/yyv5/202605/05/SPAYF7tWbw27/video/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

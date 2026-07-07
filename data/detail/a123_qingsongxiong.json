@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_qingsongxiong",
+    "name": "轻松熊",
+    "cover": "https://i1.a123tv.com/v/0x/qingsongxiong.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至8集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/qingsongxiong/8z2unqz0.html"
+        ],
+        [
+          "第03集",
+          "/v/qingsongxiong/8z2unqz1.html"
+        ],
+        [
+          "第04集",
+          "/v/qingsongxiong/8z2unqz2.html"
+        ],
+        [
+          "第05集",
+          "/v/qingsongxiong/8z2unqz3.html"
+        ],
+        [
+          "第06集",
+          "/v/qingsongxiong/8z2unqz4.html"
+        ],
+        [
+          "第07集",
+          "/v/qingsongxiong/8z2unqz5.html"
+        ],
+        [
+          "第08集",
+          "/v/qingsongxiong/8z2unqz6.html"
+        ],
+        [
+          "第09集",
+          "/v/qingsongxiong/8z2unqz7.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

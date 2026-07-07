@@ -1,0 +1,68 @@
+{
+  "video": {
+    "id": "a123_daxiaqingshanggong",
+    "name": "大侠请上功",
+    "cover": "https://i1.a123tv.com/v/0x/daxiaqingshanggong.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至10集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/13/Fi4rQY7RQZ23/video/index.m3u8",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/13/Fi4rQY7RQZ23/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/13/FhnrRvuwtR22/video/index.m3u8",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/13/FhnrRvuwtR22/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/20/8dEhn3Hnn324/video/index.m3u8",
+          "https://v6.kuaichezym3u8.com/yyv6/202505/20/8dEhn3Hnn324/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://v4.kuaichezym3u8.com/yyv4/202505/27/4XF5P42uLf23/video/index.m3u8",
+          "https://v4.kuaichezym3u8.com/yyv4/202505/27/4XF5P42uLf23/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://v14.kuaichezym3u8.com/yyv14/202506/03/T2KE061ERU23/video/index.m3u8",
+          "https://v14.kuaichezym3u8.com/yyv14/202506/03/T2KE061ERU23/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://v13.kuaichezym3u8.com/yyv13/202506/10/738wRzUysg19/video/index.m3u8",
+          "https://v13.kuaichezym3u8.com/yyv13/202506/10/738wRzUysg19/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://v14.kuaichezym3u8.com/yyv14/202506/17/2KDDnd6CMx24/video/index.m3u8",
+          "https://v14.kuaichezym3u8.com/yyv14/202506/17/2KDDnd6CMx24/video/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://v13.kuaichezym3u8.com/yyv13/202506/24/J8jcCmrBtr23/video/index.m3u8",
+          "https://v13.kuaichezym3u8.com/yyv13/202506/24/J8jcCmrBtr23/video/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://v14.kuaichezym3u8.com/yyv14/202507/01/BFhw7icLjN19/video/index.m3u8",
+          "https://v14.kuaichezym3u8.com/yyv14/202507/01/BFhw7icLjN19/video/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://v13.kuaichezym3u8.com/yyv13/202507/08/NTeLwYng3y21/video/index.m3u8",
+          "https://v13.kuaichezym3u8.com/yyv13/202507/08/NTeLwYng3y21/video/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

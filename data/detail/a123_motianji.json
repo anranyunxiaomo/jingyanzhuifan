@@ -1,0 +1,82 @@
+{
+  "video": {
+    "id": "a123_motianji",
+    "name": "魔天记",
+    "cover": "https://i1.a123tv.com/v/0x/motianji.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至16集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/motianji/5cz1w3hz0.html"
+        ],
+        [
+          "第02集",
+          "/v/motianji/5cz1w3hz1.html"
+        ],
+        [
+          "第03集",
+          "/v/motianji/5cz1w3hz2.html"
+        ],
+        [
+          "第04集",
+          "/v/motianji/5cz1w3hz3.html"
+        ],
+        [
+          "第05集",
+          "/v/motianji/5cz1w3hz4.html"
+        ],
+        [
+          "第06集",
+          "/v/motianji/5cz1w3hz5.html"
+        ],
+        [
+          "第07集",
+          "/v/motianji/5cz1w3hz6.html"
+        ],
+        [
+          "第08集",
+          "/v/motianji/5cz1w3hz7.html"
+        ],
+        [
+          "第09集",
+          "/v/motianji/5cz1w3hz8.html"
+        ],
+        [
+          "第10集",
+          "/v/motianji/5cz1w3hz9.html"
+        ],
+        [
+          "第11集",
+          "/v/motianji/5cz1w3hz10.html"
+        ],
+        [
+          "第12集",
+          "/v/motianji/5cz1w3hz11.html"
+        ],
+        [
+          "第13集",
+          "/v/motianji/5cz1w3hz12.html"
+        ],
+        [
+          "第14集",
+          "/v/motianji/5cz1w3hz13.html"
+        ],
+        [
+          "第15集",
+          "/v/motianji/5cz1w3hz14.html"
+        ],
+        [
+          "第16集",
+          "/v/motianji/5cz1w3hz15.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

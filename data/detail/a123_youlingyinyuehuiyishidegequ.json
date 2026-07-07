@@ -1,0 +1,46 @@
+{
+  "video": {
+    "id": "a123_youlingyinyuehuiyishidegequ",
+    "name": "幽灵音乐会：遗失的歌曲",
+    "cover": "https://i1.a123tv.com/v/0x/youlingyinyuehuiyishidegequ.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至7集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz0.html"
+        ],
+        [
+          "第02集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz1.html"
+        ],
+        [
+          "第03集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz2.html"
+        ],
+        [
+          "第04集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz3.html"
+        ],
+        [
+          "第05集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz4.html"
+        ],
+        [
+          "第06集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz5.html"
+        ],
+        [
+          "第07集",
+          "/v/youlingyinyuehuiyishidegequ/wz30rpz6.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

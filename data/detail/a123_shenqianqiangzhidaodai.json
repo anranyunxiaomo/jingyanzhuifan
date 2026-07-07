@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_shenqianqiangzhidaodai",
+    "name": "深潜强制倒带",
+    "cover": "https://i1.a123tv.com/v/0x/shenqianqiangzhidaodai.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至8集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/shenqianqiangzhidaodai/63z3is2z0.html"
+        ],
+        [
+          "第02集",
+          "/v/shenqianqiangzhidaodai/63z3is2z1.html"
+        ],
+        [
+          "第03集",
+          "/v/shenqianqiangzhidaodai/63z3is2z2.html"
+        ],
+        [
+          "第04集",
+          "/v/shenqianqiangzhidaodai/63z3is2z3.html"
+        ],
+        [
+          "第05集",
+          "/v/shenqianqiangzhidaodai/63z3is2z4.html"
+        ],
+        [
+          "第06集",
+          "/v/shenqianqiangzhidaodai/63z3is2z5.html"
+        ],
+        [
+          "第07集",
+          "/v/shenqianqiangzhidaodai/63z3is2z6.html"
+        ],
+        [
+          "第08集",
+          "/v/shenqianqiangzhidaodai/63z3is2z7.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

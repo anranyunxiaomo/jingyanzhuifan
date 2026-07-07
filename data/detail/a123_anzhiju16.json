@@ -1,0 +1,70 @@
+{
+  "video": {
+    "id": "a123_anzhiju16",
+    "name": "暗芝居 16",
+    "cover": "https://i1.a123tv.com/v/0x/anzhiju16.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至13集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/anzhiju16/61z1lnnz0.html"
+        ],
+        [
+          "第02集",
+          "/v/anzhiju16/61z1lnnz1.html"
+        ],
+        [
+          "第03集",
+          "/v/anzhiju16/61z1lnnz2.html"
+        ],
+        [
+          "第04集",
+          "/v/anzhiju16/61z1lnnz3.html"
+        ],
+        [
+          "第05集",
+          "/v/anzhiju16/61z1lnnz4.html"
+        ],
+        [
+          "第06集",
+          "/v/anzhiju16/61z1lnnz5.html"
+        ],
+        [
+          "第07集",
+          "/v/anzhiju16/61z1lnnz6.html"
+        ],
+        [
+          "第08集",
+          "/v/anzhiju16/61z1lnnz7.html"
+        ],
+        [
+          "第09集",
+          "/v/anzhiju16/61z1lnnz8.html"
+        ],
+        [
+          "第10集",
+          "/v/anzhiju16/61z1lnnz9.html"
+        ],
+        [
+          "第11集",
+          "/v/anzhiju16/61z1lnnz10.html"
+        ],
+        [
+          "第12集",
+          "/v/anzhiju16/61z1lnnz11.html"
+        ],
+        [
+          "第13集",
+          "/v/anzhiju16/61z1lnnz12.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

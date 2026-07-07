@@ -1,0 +1,54 @@
+{
+  "video": {
+    "id": "a123_guxiong",
+    "name": "孤雄",
+    "cover": "https://i1.a123tv.com/v/0x/guxiong.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至9集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/guxiong/5fz1jyiz0.html"
+        ],
+        [
+          "第02集",
+          "/v/guxiong/5fz1jyiz1.html"
+        ],
+        [
+          "第03集",
+          "/v/guxiong/5fz1jyiz2.html"
+        ],
+        [
+          "第04集",
+          "/v/guxiong/5fz1jyiz3.html"
+        ],
+        [
+          "第05集",
+          "/v/guxiong/5fz1jyiz4.html"
+        ],
+        [
+          "第06集",
+          "/v/guxiong/5fz1jyiz5.html"
+        ],
+        [
+          "第07集",
+          "/v/guxiong/5fz1jyiz6.html"
+        ],
+        [
+          "第08集",
+          "/v/guxiong/5fz1jyiz7.html"
+        ],
+        [
+          "第09集",
+          "/v/guxiong/5fz1jyiz8.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

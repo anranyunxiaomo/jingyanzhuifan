@@ -1,0 +1,88 @@
+{
+  "video": {
+    "id": "a123_linglong21",
+    "name": "灵笼 2",
+    "cover": "https://i1.a123tv.com/v/0x/linglong21.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至14集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "前瞻篇",
+          "https://hd.ijycnd.com/play/9avN2lMa/index.m3u8",
+          "https://hd.ijycnd.com/play/9avN2lMa/index.m3u8"
+        ],
+        [
+          "第01集",
+          "https://hd.ijycnd.com/play/7e56yZXa/index.m3u8",
+          "https://hd.ijycnd.com/play/7e56yZXa/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://hd.ijycnd.com/play/QbY2ELYd/index.m3u8",
+          "https://hd.ijycnd.com/play/QbY2ELYd/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://hd.ijycnd.com/play/YerJ9WKe/index.m3u8",
+          "https://hd.ijycnd.com/play/YerJ9WKe/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://hd.ijycnd.com/play/qaQQvp0a/index.m3u8",
+          "https://hd.ijycnd.com/play/qaQQvp0a/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://hd.ijycnd.com/play/Pdy0zNnb/index.m3u8",
+          "https://hd.ijycnd.com/play/Pdy0zNnb/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://hd.ijycnd.com/play/YaOOzzga/index.m3u8",
+          "https://hd.ijycnd.com/play/YaOOzzga/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://hd.ijycnd.com/play/RdGDO57e/index.m3u8",
+          "https://hd.ijycnd.com/play/RdGDO57e/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://hd.ijycnd.com/play/mepE311a/index.m3u8",
+          "https://hd.ijycnd.com/play/mepE311a/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://hd.ijycnd.com/play/lejx31Wb/index.m3u8",
+          "https://hd.ijycnd.com/play/lejx31Wb/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://hd.ijycnd.com/play/1aMMk6Ba/index.m3u8",
+          "https://hd.ijycnd.com/play/1aMMk6Ba/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://hd.ijycnd.com/play/YaOQlGrd/index.m3u8",
+          "https://hd.ijycnd.com/play/YaOQlGrd/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://hd.ijycnd.com/play/1aKM8jYd/index.m3u8",
+          "https://hd.ijycnd.com/play/1aKM8jYd/index.m3u8"
+        ],
+        [
+          "第12集完结",
+          "https://hd.ijycnd.com/play/1aM05z1e/index.m3u8",
+          "https://hd.ijycnd.com/play/1aM05z1e/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

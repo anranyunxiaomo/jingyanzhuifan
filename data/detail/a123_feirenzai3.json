@@ -1,0 +1,78 @@
+{
+  "video": {
+    "id": "a123_feirenzai3",
+    "name": "非人哉 3",
+    "cover": "https://i1.a123tv.com/v/0x/feirenzai3.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至12集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第01集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第01集/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第02集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第02集/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第03集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第03集/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第04集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第04集/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第05集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第05集/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第06集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第06集/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第07集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第07集/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第08集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第08集/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第09集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第09集/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第10集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第10集/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第11集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第11集/index.m3u8"
+        ],
+        [
+          "第12集",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第12集/index.m3u8",
+          "https://v.fengbao8.com/video/feirenzaidisanji/第12集/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}
