@@ -1222,6 +1222,7 @@ new Vue({
               
               // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
               this.$nextTick(() => {
+                if (!this.isMobile) return; // 💡 PC 端不注入画面比例按钮，保持绝对纯净
                 const rightIcons = document.querySelector('.dplayer-icons-right');
                 if (rightIcons) {
                   // 防重复清理

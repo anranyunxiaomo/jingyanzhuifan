@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260707T1537">
+  <link rel="stylesheet" href="css/style.css?v=20260707T1604">
 </head>
 <body class="loader-active">
 
@@ -655,9 +655,9 @@
                 referrerpolicy="no-referrer"
               ></iframe>
               
-              <!-- 💡 仅在 iframe 降级模式下展示的悬浮画面比例控制器，不占用外部物理空间 -->
+              <!-- 💡 仅在 iframe 降级模式下的移动端展示悬浮画面比例控制器，不占用外部物理空间 -->
               <button 
-                v-if="isIframeMode"
+                v-if="isIframeMode && isMobile"
                 class="iframe-fit-btn"
                 @click="toggleVideoFit"
               >
@@ -667,9 +667,9 @@
                 </svg>
                 <span>比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满' : '拉伸') }}</span>
               </button>
-              <!-- 💡 iframe 模式下一集悬浮按钮 -->
+              <!-- 💡 iframe 模式下的移动端下一集悬浮按钮 -->
               <button
-                v-if="isIframeMode && hasNextEpisode"
+                v-if="isIframeMode && hasNextEpisode && isMobile"
                 class="iframe-fit-btn iframe-next-btn"
                 @click="playNextEpisode"
                 style="right: auto; left: 8px;"
@@ -899,7 +899,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260707T1537"></script>
+<script src="js/app.js?v=20260707T1604"></script>
 
 </body>
 </html>
