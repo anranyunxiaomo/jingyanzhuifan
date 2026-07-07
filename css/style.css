@@ -3398,3 +3398,91 @@ body.fit-fill iframe {
   100% { transform: rotate(360deg); }
 }
 
+/* 💡 确保悬浮控制按钮和退出按钮强行置于最上层，防止被播放器遮挡 */
+.iframe-fit-btn, .exit-webfullscreen-btn {
+  z-index: 2147483647 !important;
+}
+
+/* 💡 景雁全局网页全屏 (Web Fullscreen - DOM 逃逸版) 强制覆盖样式 */
+.player-panel-web-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 2147483646 !important; /* 极高层级，遮盖一切 */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.player-panel-web-fullscreen .video-iframe,
+.player-panel-web-fullscreen .video-dplayer {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+/* 💡 景雁移动端竖屏握持下，强行旋转 90 度横屏全屏样式 (DOM 逃逸版) */
+.player-panel-landscape-force {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vh !important; /* 物理高度作为视觉宽度 */
+  height: 100vw !important; /* 物理宽度作为视觉高度 */
+  z-index: 2147483646 !important; /* 极高层级 */
+  transform: translate(100vw, 0) rotate(90deg) !important;
+  transform-origin: top left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+.player-panel-landscape-force .video-iframe,
+.player-panel-landscape-force .video-dplayer {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+/* 网页全屏模式下的返回/退出全屏浮动按钮 */
+.exit-webfullscreen-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(44, 30, 32, 0.85); /* 深黛墨色半透明 */
+  border: 1px solid rgba(226, 109, 128, 0.45); /* 桃花红细边 */
+  color: #FAF4EE;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+}
+
+.exit-webfullscreen-btn:hover {
+  background: var(--accent-gold-hover);
+  border-color: var(--accent-gold);
+  transform: scale(1.05);
+}
+
+/* 💡 移动端悬浮比例和全屏按钮的定位 */
+.ratio-btn {
+  right: 88px !important; /* 往左平移与全屏并排 */
+}
+.webfullscreen-btn {
+  right: 12px !important;
+}
+

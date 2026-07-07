@@ -44,6 +44,7 @@ new Vue({
     // 详情页数据
     animeDetail: null,
     detailError: false, // 💡 新增：详情加载错误状态标记
+    isWebFullscreen: false, // 💡 新增：是否处于全局网页全屏状态
     activeLineKey: '', // 当前选中的播放线路
     activeEpisodeIndex: -1, // 当前选中的集数索引
     activePlayUrl: '', // 正在播放的 iframe 链接
@@ -1249,21 +1250,15 @@ new Vue({
                   if (fsBtn) {
                     fsBtn.before(btn);
                     
-                    // 💡 苹果移动端(iOS/iPad)横屏全屏特种防御：
-                    // 在 iOS Safari 下，原生不支持容器全屏，点击全屏无反应。
-                    // 只要检测到 iOS 握持，直接在此捕获阶段拦截点击，同步呼起原生 <video> 视频全屏，100% 自动物理横屏播放！
-                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                    if (isIOS) {
+                    // 💡 移动端(手机/平板)横屏全屏特种防御：
+                    // 在移动设备下，直接在此捕获阶段拦截点击，同步呼起我们自己实现的“完美 DOM 逃逸式网页全屏/旋转全屏”！
+                    // 彻底解决系统原生全屏在 iOS/iPad 锁定竖屏时无法自动旋转横屏的物理缺陷，且排版 100% 完美满屏！
+                    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    if (isMobileDevice) {
                       fsBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         e.preventDefault();
-                        try {
-                          if (dp.video && typeof dp.video.webkitEnterFullscreen === 'function') {
-                            dp.video.webkitEnterFullscreen();
-                          }
-                        } catch(err) {
-                          console.warn("[iOS Fullscreen] webkitEnterFullscreen failed", err);
-                        }
+                        this.toggleWebFullscreen();
                       }, true); // true: 捕获模式，强制在 DPlayer 默认回调之前拦截并阻断！
                     }
                   } else {
@@ -1814,6 +1809,23 @@ new Vue({
     // 💡 监听窗口尺寸变化
     handleResize() {
       this.screenWidth = window.innerWidth;
+      
+      // 💡 网页全屏状态下，动态校准屏幕物理旋转方向，防止画面倒转或变形
+      if (this.isWebFullscreen) {
+        const innerContainer = document.querySelector('.player-container-inner');
+        if (innerContainer) {
+          const isPortrait = window.innerHeight > window.innerWidth;
+          const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          
+          if (isMobileDevice && isPortrait) {
+            innerContainer.classList.remove('player-panel-web-fullscreen');
+            innerContainer.classList.add('player-panel-landscape-force');
+          } else {
+            innerContainer.classList.remove('player-panel-landscape-force');
+            innerContainer.classList.add('player-panel-web-fullscreen');
+          }
+        }
+      }
     },
     
     // 💡 画面比例切换服务 (循环切换：等比 -> 铺满/裁剪 -> 强制拉伸)
@@ -1827,6 +1839,44 @@ new Vue({
       // 通过全局 Body 级别 class 与 CSS !important 强行锁定 object-fit，100% 确保全屏下视频拉伸生效。
       document.body.classList.remove('fit-contain', 'fit-cover', 'fit-fill');
       document.body.classList.add('fit-' + this.videoFitMode);
+    },
+
+    // 💡 景雁全局网页全屏控制方法 (DOM 逃逸版：支持 DPlayer / Iframe)
+    toggleWebFullscreen() {
+      this.isWebFullscreen = !this.isWebFullscreen;
+      
+      const placeholder = document.querySelector('.player-wrapper');
+      const innerContainer = document.querySelector('.player-container-inner');
+      
+      if (innerContainer) {
+        if (this.isWebFullscreen) {
+          // 💡 黄金 DOM 逃逸：直接将播放容器挂载到 body 下，彻底绕过父级 class/Vue transform 导致的 fixed 定位失效问题！
+          document.body.appendChild(innerContainer);
+          
+          const isPortrait = window.innerHeight > window.innerWidth;
+          const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          
+          if (isMobileDevice && isPortrait) {
+            innerContainer.classList.add('player-panel-landscape-force');
+          } else {
+            innerContainer.classList.add('player-panel-web-fullscreen');
+          }
+          document.body.style.overflow = 'hidden'; // 禁用 body 滚动
+        } else {
+          // 💡 移回占位 placeholder 内部
+          if (placeholder) {
+            placeholder.appendChild(innerContainer);
+          }
+          innerContainer.classList.remove('player-panel-web-fullscreen', 'player-panel-landscape-force');
+          document.body.style.overflow = '';
+        }
+      }
+      
+      if (this.dpInstance) {
+        this.$nextTick(() => {
+          try { this.dpInstance.resize(); } catch(e) {}
+        });
+      }
     },
     
     // 💡 路由解析服务 (全面防错、支持 Trailing Slash、Query String，正则静默提取)
