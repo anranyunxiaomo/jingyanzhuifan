@@ -1862,6 +1862,16 @@ new Vue({
             innerContainer.classList.add('player-panel-web-fullscreen');
           }
           document.body.style.overflow = 'hidden'; // 禁用 body 滚动
+          
+          // 💡 监听物理 Esc 按键以直接退出全屏
+          this._escHandler = (e) => {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+              if (this.isWebFullscreen) {
+                this.toggleWebFullscreen();
+              }
+            }
+          };
+          window.addEventListener('keydown', this._escHandler);
         } else {
           // 💡 移回占位 placeholder 内部
           if (placeholder) {
@@ -1869,6 +1879,12 @@ new Vue({
           }
           innerContainer.classList.remove('player-panel-web-fullscreen', 'player-panel-landscape-force');
           document.body.style.overflow = '';
+          
+          // 💡 退出时解绑 Esc 事件，防内存泄漏
+          if (this._escHandler) {
+            window.removeEventListener('keydown', this._escHandler);
+            this._escHandler = null;
+          }
         }
       }
       
