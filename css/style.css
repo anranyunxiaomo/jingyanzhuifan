@@ -3339,7 +3339,38 @@ body.fit-fill iframe {
 
 @media (max-width: 520px) {
   .top-poem-banner {
-    display: none; /* 手机竖屏尺寸（超小屏）完全隐藏此独立顶栏，保证首屏直奔推荐列表，体验更顺畅 */
+    height: 98px; /* 手机端高度紧凑 */
+    padding: 0 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .gufeng-brand-stamp {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+  }
+  .gufeng-brand-sub {
+    display: none; /* 手机超小屏隐藏超长副歌，避免重叠挤压 */
+  }
+  .top-poem-banner .top-banner-poem {
+    right: 0.8rem;
+    height: 80px;
+    gap: 0.25rem;
+  }
+  .top-poem-banner .poem-char {
+    font-size: 9.5px;
+    line-height: 1.1;
+  }
+  .top-poem-banner .poem-seal {
+    font-size: 7.5px;
+    padding: 2px 1px;
+    margin-bottom: 1px;
+  }
+  .top-poem-banner .poem-scroll-text {
+    font-size: 9.5px;
+    width: 68px;
+  }
+  .top-poem-banner .poem-scroll-text span {
+    margin-left: 5px;
+    line-height: 1.1;
   }
 }
 
