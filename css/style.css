@@ -3488,3 +3488,19 @@ body.fit-fill iframe {
   right: 12px !important;
 }
 
+/* 💡 当全局网页全屏激活时，必须强制清除播放器所有层级父容器的 transform 属性！
+   这是为了保证 fixed 网页全屏能完美以 100% 覆盖整个浏览器，且彻底避免因为移动 DOM 节点导致视频重新请求、重新加载的严重 Bug！ */
+.webfullscreen-active #app,
+.webfullscreen-active .main-container,
+.webfullscreen-active .detail-content,
+.webfullscreen-active .detail-header,
+.webfullscreen-active .player-panel,
+.webfullscreen-active .player-wrapper {
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+  perspective: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+

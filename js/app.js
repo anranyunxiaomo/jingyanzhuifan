@@ -1250,15 +1250,26 @@ new Vue({
                   if (fsBtn) {
                     fsBtn.before(btn);
                     
-                    // 💡 移动端(手机/平板)横屏全屏特种防御：
-                    // 在移动设备下，直接在此捕获阶段拦截点击，同步呼起我们自己实现的“完美 DOM 逃逸式网页全屏/旋转全屏”！
-                    // 彻底解决系统原生全屏在 iOS/iPad 锁定竖屏时无法自动旋转横屏的物理缺陷，且排版 100% 完美满屏！
+                    // 💡 移动端(手机/平板)系统原生全屏特种适配：
+                    // 为了让手机/平板获得包裹整个物理屏幕（无浏览器地址栏）的真全屏体验，且保证 100% 视频不重新请求、不丢失播放进度，
+                    // 我们在移动端拦截默认事件，直接向底层的 <video> 标签调起苹果系统的 webkitEnterFullscreen 或是 requestFullscreen API！
                     const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                     if (isMobileDevice) {
                       fsBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         e.preventDefault();
-                        this.toggleWebFullscreen();
+                        try {
+                          if (dp.video) {
+                            if (typeof dp.video.webkitEnterFullscreen === 'function') {
+                              dp.video.webkitEnterFullscreen();
+                            } else if (typeof dp.video.requestFullscreen === 'function') {
+                              dp.video.requestFullscreen();
+                            }
+                          }
+                        } catch(err) {
+                          console.warn("[Mobile Fullscreen] Native fullscreen call failed, fallback to webfullscreen", err);
+                          this.toggleWebFullscreen();
+                        }
                       }, true); // true: 捕获模式，强制在 DPlayer 默认回调之前拦截并阻断！
                     }
                   } else {
@@ -1841,17 +1852,20 @@ new Vue({
       document.body.classList.add('fit-' + this.videoFitMode);
     },
 
-    // 💡 景雁全局网页全屏控制方法 (DOM 逃逸版：支持 DPlayer / Iframe)
+    // 💡 景雁全局网页全屏控制方法 (无 DOM 移动版：专门服务于 iframe 模式，防止 DOM 转移触发 iframe 重新加载)
     toggleWebFullscreen() {
       this.isWebFullscreen = !this.isWebFullscreen;
       
-      const placeholder = document.querySelector('.player-wrapper');
+      const htmlEl = document.documentElement;
       const innerContainer = document.querySelector('.player-container-inner');
       
       if (innerContainer) {
         if (this.isWebFullscreen) {
-          // 💡 黄金 DOM 逃逸：直接将播放容器挂载到 body 下，彻底绕过父级 class/Vue transform 导致的 fixed 定位失效问题！
-          document.body.appendChild(innerContainer);
+          // 💡 给根节点 HTML 打上标记，用 CSS 强制阻断所有父级 transform 样式！
+          // 彻底破解 position: fixed 网页全屏定位崩塌的 Bug，且 100% 视频无需重新请求！
+          if (htmlEl) {
+            htmlEl.classList.add('webfullscreen-active');
+          }
           
           const isPortrait = window.innerHeight > window.innerWidth;
           const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -1873,9 +1887,9 @@ new Vue({
           };
           window.addEventListener('keydown', this._escHandler);
         } else {
-          // 💡 移回占位 placeholder 内部
-          if (placeholder) {
-            placeholder.appendChild(innerContainer);
+          // 💡 退出全屏，清除标记类，恢复 DOM
+          if (htmlEl) {
+            htmlEl.classList.remove('webfullscreen-active');
           }
           innerContainer.classList.remove('player-panel-web-fullscreen', 'player-panel-landscape-force');
           document.body.style.overflow = '';
