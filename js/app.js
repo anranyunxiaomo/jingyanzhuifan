@@ -1254,6 +1254,17 @@ new Vue({
               }
             }
 
+            // 💡 A123 极速源移动端原生播放适配：在移动端，使用浏览器的原生 video 进行 HLS 解码，
+            // 彻底防止 hls.js 在手机端浏览器由于 MSE/硬件加速兼容性报错而导致的频繁闪退和 iframe 流氓降级！
+            if (this.activeLineKey === 'a123_line1') {
+              if (isNativeHls) {
+                console.log("[SMART ROUTER] A123 Native HLS stream enabled on mobile client.");
+                videoType = 'normal';
+              } else {
+                videoType = 'hls';
+              }
+            }
+
             const dplayerContainer = document.getElementById('dplayer');
             // 💡 黄金防线：不仅检测容器是否存在，更要检测该容器是否依然在真实的 DOM 树中挂载！
             // 防止由于前面的 await fetch 异步耗时期间发生路由切走或 DOM 销毁，导致传入 detached 孤立节点触发 DPlayer 内部 null 报错
