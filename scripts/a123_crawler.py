@@ -78,18 +78,28 @@ def is_kids_anime(title, plot="", tags=""):
     plot = (plot or "").lower()
     tags = (tags or "").lower()
     
-    # 1. 强力分类与标签黑名单：任何分类或者标签中含有“儿童”、“少儿”、“幼儿”、“儿歌”、“早教”
-    kids_genres = ["儿童", "少儿", "幼儿", "儿歌", "早教"]
-    for genre in kids_genres:
-        if genre in plot or genre in tags:
-            return True
-            
-    # 2. 标题模糊匹配黑名单
+    # 1. 规避误伤特权词
+    if "问题儿童" in title:
+        return False
+        
+    # 2. 精准分类与标签匹配：分词后做交集校验，规避“问题儿童”、“玩具箱”等词的局部误匹配
+    plot_words = set(w.strip() for w in plot.replace("/", " ").split() if w.strip())
+    tags_words = set(w.strip() for w in tags.replace("/", " ").split() if w.strip())
+    kids_classes = {"儿童", "少儿", "幼儿", "亲子", "早教", "儿歌", "子供向"}
+    
+    if kids_classes.intersection(plot_words) or kids_classes.intersection(tags_words):
+        return True
+        
+    # 3. 强力标题及特定黑名单（模糊匹配）
     kids_keywords = [
-        '乐高', '城市守卫者', '超级警长', '汪汪队', '小猪佩奇', '熊出没', '喜羊羊', 
-        '巴啦啦小魔仙', '超级飞侠', '托马斯', '天线宝宝', '爱探险的朵拉', '儿歌', 
-        '巧虎', '猪猪侠', '萌鸡小队', '早教', '幼儿', '宝宝巴士', '恐龙战队', 
-        '大头儿子', '贝瓦儿歌', '爆笑虫子', '猫和老鼠', '小马宝莉'
+        '乐高', '城市守卫者', '超级警长', '汪汪队', '小猪佩奇', '熊出没', '喜羊羊', '灰太狼',
+        '巴啦啦小魔仙', '超级飞侠', '托马斯', '天线宝宝', '爱探险的朵拉', '儿歌', '早教', '启蒙',
+        '巧虎', '猪猪侠', '萌鸡小队', '宝宝巴士', '大头儿子', '贝瓦', '爆笑虫子', 
+        '小马宝莉', '快乐酷宝', '舞法天女', '精灵梦叶罗丽', '叶罗丽', '神奇宝贝少儿版',
+        '巨神战击队', '火力少年王', '赛尔号', '洛克王国', '奥拉星', '开心超人', '果宝特攻', 
+        '神兽金刚', '飓风战魂', '爆裂飞车', '雷速登', '巴啦啦', '开心宝贝', '小鲤鱼历险记', 
+        '神兵小将', '蓝猫淘气', '咖宝车神', '大卫，不可以', '皮诺和西诺比', 'ピノ＆シノビー',
+        '依娜和恰恰'
     ]
     for kw in kids_keywords:
         if kw in title:
