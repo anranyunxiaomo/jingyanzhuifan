@@ -1245,9 +1245,29 @@ new Vue({
                   btn.onmouseleave = () => btn.style.opacity = '0.8';
                   
                   const fsBtn = rightIcons.querySelector('.dplayer-full-icon');
-                  // insertBefore 要求严格父子关系，fsBtn.before() 更安全
-                  if (fsBtn) fsBtn.before(btn);
-                  else rightIcons.appendChild(btn);
+                  if (fsBtn) {
+                    fsBtn.before(btn);
+                    
+                    // 💡 苹果移动端(iOS/iPad)横屏全屏特种防御：
+                    // 在 iOS Safari 下，原生不支持容器全屏，点击全屏无反应。
+                    // 只要检测到 iOS 握持，直接在此捕获阶段拦截点击，同步呼起原生 <video> 视频全屏，100% 自动物理横屏播放！
+                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                    if (isIOS) {
+                      fsBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        try {
+                          if (dp.video && typeof dp.video.webkitEnterFullscreen === 'function') {
+                            dp.video.webkitEnterFullscreen();
+                          }
+                        } catch(err) {
+                          console.warn("[iOS Fullscreen] webkitEnterFullscreen failed", err);
+                        }
+                      }, true); // true: 捕获模式，强制在 DPlayer 默认回调之前拦截并阻断！
+                    }
+                  } else {
+                    rightIcons.appendChild(btn);
+                  }
                   
                   btn.addEventListener('click', (e) => {
                     e.preventDefault();
