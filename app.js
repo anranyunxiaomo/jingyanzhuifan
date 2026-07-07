@@ -97,14 +97,28 @@ new Vue({
       
       const lines = [];
       for (const key in playlists) {
-        if (ALLOWED_KEYS.includes(key) && playlists[key] && playlists[key].length > 0) {
-          const isVip = vipList.includes(key);
-          if (!isVip) {
-            lines.push({
-              key: key,
-              title: labelArr[key] || key,
-              isVip: false
-            });
+        const eps = playlists[key];
+        if (eps && eps.length > 0) {
+          // A. 默认在常规白名单中的线路，放行
+          let isAllowed = ALLOWED_KEYS.includes(key);
+          
+          // B. 💡 黄金放行法则：如果任何原本被屏蔽的线路（如 xigua, panda），已经被爬虫嗅探并回填了真实视频直链（即 ep[2] 存在且以 http 开头），则无条件放行！
+          if (!isAllowed) {
+            const firstEp = eps[0];
+            if (Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http')) {
+              isAllowed = true;
+            }
+          }
+          
+          if (isAllowed) {
+            const isVip = vipList.includes(key);
+            if (!isVip) {
+              lines.push({
+                key: key,
+                title: labelArr[key] || key,
+                isVip: false
+              });
+            }
           }
         }
       }
