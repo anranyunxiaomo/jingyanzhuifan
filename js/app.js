@@ -1171,7 +1171,7 @@ new Vue({
                           absoluteUrl = basePath + line;
                         }
                       }
-                      return "https://jingyanff.xyz/?url=" + encodeURIComponent(absoluteUrl);
+                      return absoluteUrl;
                     });
                     
                     const modifiedText = modifiedLines.join('\n');
