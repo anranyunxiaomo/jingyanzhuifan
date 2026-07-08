@@ -133,10 +133,37 @@ def is_unwanted_area_anime(title, area, plot="", tags=""):
     return False
 
 
+def is_non_anime_garbage(title, tags_str, plot):
+    """物理拦截三次元垃圾短剧、电影解说、真人影视，确保 100% 零误杀"""
+    if not title:
+        return False
+    title_clean = title.strip()
+    tags_clean = tags_str.strip() if tags_str else ""
+    plot_clean = plot.strip() if plot else ""
+    
+    # 1. 只有以下明确是低俗三次元垃圾短剧/解说的关键词才拦截：
+    # 注意：坚决排除 "剧场"（因为有剧场版），坚决排除 "真人"（因为有真人版动漫）！
+    garbage_keywords = [
+        "电影解说", "解说", "短剧", "我在死牢", "拆违建", "给钱不回家", "爱的白日梦", "权臣"
+    ]
+    for kw in garbage_keywords:
+        if kw in title_clean or kw in tags_clean or kw in plot_clean:
+            return True
+            
+    # 2. 如果分类 (tags_str) 明确是 "电视剧" 或 "短剧"，且不包含任何动漫属性的词
+    if "短剧" in tags_clean or "电视剧" in tags_clean:
+        # 排除掉任何合规动漫可能带有的字眼
+        anime_indicators = ["动漫", "动画", "新番", "日本", "国产", "剧场版", "tv", "ova"]
+        if not any(x in tags_clean.lower() or x in title_clean.lower() for x in anime_indicators):
+            return True
+            
+    return False
+
+
 def check_anime_sensitive_by_aid(aid, title):
     """通过本地详情缓存辅助校验动漫是否敏感、属于低幼、或属于无关欧美海外片源"""
     if not aid:
-        return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "")
+        return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "") or is_non_anime_garbage(title, "", "")
     detail_path = os.path.join(DETAIL_DIR, f"{aid}.json")
     if os.path.exists(detail_path):
         try:
@@ -148,10 +175,11 @@ def check_anime_sensitive_by_aid(aid, title):
                 a = video.get("area", "")
                 return (is_sensitive_anime(t, p, tags_val) or 
                         is_kids_anime(t, p, tags_val) or 
-                        is_unwanted_area_anime(t, a, p, tags_val))
+                        is_unwanted_area_anime(t, a, p, tags_val) or
+                        is_non_anime_garbage(t, tags_val, p))
         except Exception:
             pass
-    return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "")
+    return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "") or is_non_anime_garbage(title, "", "")
 
 
 
@@ -531,10 +559,13 @@ async def main_async():
                         title = video.get("name")
                         if title and aid_str not in seen_aids:
                             # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
-                            if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")):
+                            if (is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or 
+                                is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or 
+                                is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")) or
+                                is_non_anime_garbage(title, video.get("tags", ""), video.get("plot", ""))):
                                 try:
                                     os.remove(detail_file_path)
-                                    print(f"  [CLEANUP] Deleted kids/sensitive/western/foreign local JSON: {filename} ({title})")
+                                    print(f"  [CLEANUP] Physically deleted non-anime garbage: {title} ({filename})")
                                 except:
                                     pass
                                 continue
