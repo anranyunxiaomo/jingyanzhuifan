@@ -373,92 +373,137 @@
       "NewTitle": "更新至第04集",
       "PicSmall": "https://wework.qpic.cn/wwpic3az/421900_g4H-Jg2rS1W098d_1783279855/300",
       "Title": "百日成王"
+    },
+    {
+      "AID": "anich_38429",
+      "anich_id": 38429,
+      "source": "anich",
+      "Href": "/detail/anich_38429",
+      "NewTitle": "更新至第01集",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/413201_Sm4k5L0eQi6PkWy_1783107051/300",
+      "Title": "魔法光源股份有限公司 第二季"
+    },
+    {
+      "AID": "anich_37877",
+      "anich_id": 37877,
+      "source": "anich",
+      "Href": "/detail/anich_37877",
+      "NewTitle": "更新至第32集",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/489454_7-x-gCp-ScqHq_k_1773016261/300",
+      "Title": "嘟拉语文"
+    },
+    {
+      "AID": "anich_38413",
+      "anich_id": 38413,
+      "source": "anich",
+      "Href": "/detail/anich_38413",
+      "NewTitle": "更新至第02集",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/74044_dWWuBRa7TleYvl0_1782883840/300",
+      "Title": "斩神 第2季"
+    },
+    {
+      "AID": "anich_38385",
+      "anich_id": 38385,
+      "source": "anich",
+      "Href": "/detail/anich_38385",
+      "NewTitle": "更新至第01集",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/960206_zswOURJ0TFGeXZ-_1783193456/300",
+      "Title": "最强出涸皇子的暗跃帝位争夺 虽然对帝位没兴趣，但我不想死所以让我弟当皇帝吧"
+    },
+    {
+      "AID": "anich_38278",
+      "anich_id": 38278,
+      "source": "anich",
+      "Href": "/detail/anich_38278",
+      "NewTitle": "更新至第06集",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/93200_Rj_9EJmIQNyJ_GR_1781047862/300",
+      "Title": "城隍录"
     }
   ],
   "recommend": [
     {
-      "AID": 20140028,
-      "Href": "/detail/20140028",
+      "AID": 20000025,
+      "Href": "/detail/20000025",
+      "NewTitle": "[TV 01-50]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000025.jpg",
+      "Title": "最游记"
+    },
+    {
+      "AID": 20150005,
+      "Href": "/detail/20150005",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140028.jpg",
-      "Title": "月刊少女野崎君"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150005.jpg",
+      "Title": "铳皇无尽的法夫纳"
     },
     {
-      "AID": 20170107,
-      "Href": "/detail/20170107",
-      "NewTitle": "[TV 01-24+WEB00-",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170107.jpg",
-      "Title": "魔法使的新娘"
-    },
-    {
-      "AID": 20100050,
-      "Href": "/detail/20100050",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100050.jpg",
-      "Title": "神隐之狼"
-    },
-    {
-      "AID": 20100003,
-      "Href": "/detail/20100003",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100003.jpg",
-      "Title": "缘之空"
-    },
-    {
-      "AID": 20120070,
-      "Href": "/detail/20120070",
+      "AID": 20140059,
+      "Href": "/detail/20140059",
       "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120070.jpg",
-      "Title": "三人行必有我妹"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
+      "Title": "未确认进行式"
     },
     {
-      "AID": 20050018,
-      "Href": "/detail/20050018",
+      "AID": 20060014,
+      "Href": "/detail/20060014",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060014.jpg",
+      "Title": "地上最强新娘"
+    },
+    {
+      "AID": 20190202,
+      "Href": "/detail/20190202",
+      "NewTitle": "[TV 01-23]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
+      "Title": "入间同学入魔了"
+    },
+    {
+      "AID": 20180236,
+      "Href": "/detail/20180236",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180236.jpg",
+      "Title": "魔法少女奈叶 Detonation"
+    },
+    {
+      "AID": 20170115,
+      "Href": "/detail/20170115",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170115.jpg",
+      "Title": "牙狼 -VANISHING LINE-"
+    },
+    {
+      "AID": 20110031,
+      "Href": "/detail/20110031",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050018.jpg",
-      "Title": "我的主人爱作怪"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
+      "Title": "露蒂的玩具"
     },
     {
-      "AID": 20190138,
-      "Href": "/detail/20190138",
+      "AID": 20200313,
+      "Href": "/detail/20200313",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200313.jpg",
+      "Title": "铁路浪漫谭"
+    },
+    {
+      "AID": 20160158,
+      "Href": "/detail/20160158",
       "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
-      "Title": "拾又之国"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160158.jpg",
+      "Title": "小桃小栗 Love Love物语"
     },
     {
-      "AID": 20190111,
-      "Href": "/detail/20190111",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190111.jpg",
-      "Title": "水果篮子"
-    },
-    {
-      "AID": 20140069,
-      "Href": "/detail/20140069",
+      "AID": 20180028,
+      "Href": "/detail/20180028",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140069.jpg",
-      "Title": "一周的朋友"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180028.jpg",
+      "Title": "摇曳露营△"
     },
     {
-      "AID": 20190030,
-      "Href": "/detail/20190030",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190030.jpg",
-      "Title": "盾之勇者成名录"
-    },
-    {
-      "AID": 20170024,
-      "Href": "/detail/20170024",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170024.jpg",
-      "Title": "时钟机关之星"
-    },
-    {
-      "AID": 20190093,
-      "Href": "/detail/20190093",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190093.jpg",
-      "Title": "八十龟酱观察日记"
+      "AID": 20060001,
+      "Href": "/detail/20060001",
+      "NewTitle": "[TV 01-26]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
+      "Title": "传颂之物"
     }
   ],
   "week_list": {
