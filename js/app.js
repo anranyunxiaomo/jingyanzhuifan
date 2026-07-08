@@ -1754,6 +1754,7 @@ new Vue({
       this.activePlayUrl = '';
       this.$nextTick(() => {
         this.activePlayUrl = capturedIframeUrl;
+        this.stopLoadingAnimation(); // 💡 终极修复：iframe 模式下立即关闭外层缓冲圈，让网页露出来正常播放！
         console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
       });
     },
