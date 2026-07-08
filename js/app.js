@@ -1363,7 +1363,56 @@ new Vue({
                 type: videoType
               }
             });
-              this.dpInstance = dp;
+            this.dpInstance = dp;
+
+            // 💡 移动端 H5 物理同层属性强行注入 (支持微信同层播放器与完美全屏)
+            const videoEl = dplayerContainer.querySelector('.dplayer-video');
+            if (videoEl) {
+              videoEl.setAttribute('playsinline', 'true');
+              videoEl.setAttribute('webkit-playsinline', 'true');
+              videoEl.setAttribute('x5-playsinline', 'true');
+              videoEl.setAttribute('x5-video-player-type', 'h5-page');
+              videoEl.setAttribute('x5-video-player-fullscreen', 'true');
+            }
+
+            // 💡 双击视频画面拉起原生全屏 (智能触屏手势适配)
+            let lastTap = 0;
+            dplayerContainer.addEventListener('touchend', (e) => {
+              if (e.target.closest('.dplayer-controller') || e.target.closest('.dplayer-menu')) {
+                return; // 避开控制栏和菜单操作，防止误触
+              }
+              const currentTime = new Date().getTime();
+              const tapLength = currentTime - lastTap;
+              if (tapLength < 300 && tapLength > 0) {
+                e.preventDefault();
+                try {
+                  if (dp.video) {
+                    if (typeof dp.video.webkitEnterFullscreen === 'function') {
+                      dp.video.webkitEnterFullscreen();
+                    } else if (typeof dp.video.requestFullscreen === 'function') {
+                      dp.video.requestFullscreen();
+                    }
+                  }
+                } catch(err) {}
+              }
+              lastTap = currentTime;
+            });
+
+            // 💡 DPlayer 内置全屏切换事件强行劫持并转换为原生全屏播放
+            dp.on('fullscreen', () => {
+              const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+              if (isMobileDevice && dp.video) {
+                try {
+                  if (typeof dp.video.webkitEnterFullscreen === 'function') {
+                    dp.video.webkitEnterFullscreen();
+                  } else if (typeof dp.video.requestFullscreen === 'function') {
+                    dp.video.requestFullscreen();
+                  }
+                } catch (err) {
+                  console.warn("[Mobile Fullscreen] Native override failed:", err);
+                }
+              }
+            });
               
               // 💡 强力播放状态清洗：一旦视频从缓冲中恢复并真正起播画面，强制隐藏任何虚假的报错 DOM 和加载圈，确保良好的视觉观感
               dp.on('playing', () => {
@@ -1386,37 +1435,10 @@ new Vue({
                 this.stopLoadingAnimation();
               });
               
-              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“下一集”和移动端全屏特殊拦截
+              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“下一集”
               this.$nextTick(() => {
                 const ri = document.querySelector('.dplayer-icons-right');
                 if (!ri) return;
-
-                // 1. 移动端(手机/平板)系统原生全屏特种适配
-                const fsBtn = ri.querySelector('.dplayer-full-icon');
-                if (fsBtn) {
-                  const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                  if (isMobileDevice) {
-                    // 移除旧的以防重复绑定
-                    const newFsBtn = fsBtn.cloneNode(true);
-                    fsBtn.parentNode.replaceChild(newFsBtn, fsBtn);
-                    newFsBtn.addEventListener('click', (e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      try {
-                        if (dp.video) {
-                          if (typeof dp.video.webkitEnterFullscreen === 'function') {
-                            dp.video.webkitEnterFullscreen();
-                          } else if (typeof dp.video.requestFullscreen === 'function') {
-                            dp.video.requestFullscreen();
-                          }
-                        }
-                      } catch(err) {
-                        console.warn("[Mobile Fullscreen] Native fullscreen failed, fallback to webfullscreen", err);
-                        this.toggleWebFullscreen();
-                      }
-                    }, true);
-                  }
-                }
 
                 // 2. ▶‖ 下一集按钮注入：仅在有下一集时显示，插在全屏按钮左边
                 if (this.hasNextEpisode) {
