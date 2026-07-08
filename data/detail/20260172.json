@@ -78,7 +78,19 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "1",
-    "collect_cnt": "89"
+    "collect_cnt": "89",
+    "related": [
+      {
+        "id": "anich_38424",
+        "title": "攻壳机动队 THE GHOST IN THE SHELL 特别篇",
+        "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300"
+      },
+      {
+        "id": "anich_38369",
+        "title": "攻壳机动队 THE GHOST IN THE SHELL",
+        "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300"
+      }
+    ]
   },
   "series": [
     {

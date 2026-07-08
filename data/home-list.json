@@ -1328,5 +1328,644 @@
         "namefornew": "23:30 第1集"
       }
     ]
-  }
+  },
+  "healing_list": [
+    {
+      "AID": 20170012,
+      "Title": "亚人酱有话要说",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170012.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170012"
+    },
+    {
+      "AID": 20140037,
+      "Title": "中二病也要谈恋爱！ 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140037"
+    },
+    {
+      "AID": 20260180,
+      "Title": "花样少男少女 第2季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260180"
+    },
+    {
+      "AID": 20140099,
+      "Title": "搞姬日常",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140099.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140099"
+    },
+    {
+      "AID": 20110055,
+      "Title": "摇曳百合",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110055.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20110055"
+    },
+    {
+      "AID": 20260181,
+      "Title": "相反的你和我 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260181"
+    },
+    {
+      "AID": 20190396,
+      "Title": "紫罗兰永恒花园 外传 - 永远与自动手记人偶 -",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20190396"
+    },
+    {
+      "AID": 20260197,
+      "Title": "少女怪兽焦糖味",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260197"
+    },
+    {
+      "AID": 20140108,
+      "Title": "寻找失去的未来",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140108.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140108"
+    },
+    {
+      "AID": 20000024,
+      "Title": "我家也有外星人",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000024.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20000024"
+    },
+    {
+      "AID": 20120007,
+      "Title": "冰菓",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120007.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20120007"
+    },
+    {
+      "AID": 20260089,
+      "Title": "小书痴的下克上 〜为了成为图书管理员而不择手段〜 第四季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260089.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260089"
+    },
+    {
+      "AID": 20190174,
+      "Title": "超次元游戏 海王星～涅普的暑假～",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190174.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20190174"
+    },
+    {
+      "AID": 20040001,
+      "Title": "妖精的旋律",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040001.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20040001"
+    },
+    {
+      "AID": 20260082,
+      "Title": "女仆小姐的贪吃日常",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260082"
+    },
+    {
+      "AID": 20170096,
+      "Title": "少女终末旅行",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170096.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170096"
+    },
+    {
+      "AID": 20100052,
+      "Title": "剧场版 快要坏掉的八音盒",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20100052"
+    },
+    {
+      "AID": 20250249,
+      "Title": "考拉绘日记",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250249.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20250249"
+    },
+    {
+      "AID": 20110025,
+      "Title": "回转企鹅罐",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110025.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20110025"
+    },
+    {
+      "AID": "anich_32275",
+      "Title": "小鲨鱼去郊游",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/469409_ROgeFpJKRHCuO5p_1725945632/300",
+      "NewTitle": "完结",
+      "Href": "/detail/anich_32275"
+    },
+    {
+      "AID": 20260108,
+      "Title": "楠木邸的神明庭院",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260108.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260108"
+    },
+    {
+      "AID": 20100064,
+      "Title": "侵略！乌贼娘",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100064.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20100064"
+    },
+    {
+      "AID": 20170034,
+      "Title": "雏子的笔记",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170034.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170034"
+    },
+    {
+      "AID": 20260077,
+      "Title": "关于邻家的天使大人不知不觉把我惯成了废人这档子事 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260077.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260077"
+    },
+    {
+      "AID": 20260076,
+      "Title": "异世界悠闲农家 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260076.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260076"
+    },
+    {
+      "AID": 20170062,
+      "Title": "NEW GAME! 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170062.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170062"
+    },
+    {
+      "AID": 20150084,
+      "Title": "若叶女孩",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150084.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20150084"
+    },
+    {
+      "AID": "a123_29suidanshenmaoxianjiaderichan",
+      "Title": "29岁单身冒险家的日常",
+      "PicSmall": "https://i1.a123tv.com/v/0x/29suidanshenmaoxianjiaderichan.jpg",
+      "NewTitle": "更新至12集",
+      "Href": "/detail/a123_29suidanshenmaoxianjiaderichan"
+    },
+    {
+      "AID": 20200227,
+      "Title": "成神之日",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200227.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20200227"
+    },
+    {
+      "AID": 20200067,
+      "Title": "隐瞒之事",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200067.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20200067"
+    },
+    {
+      "AID": 20200071,
+      "Title": "安达与岛村",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200071.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20200071"
+    },
+    {
+      "AID": 20180040,
+      "Title": "妖精森林的小不点",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180040.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180040"
+    },
+    {
+      "AID": 20260200,
+      "Title": "尼古喵喵",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260200"
+    },
+    {
+      "AID": 20160039,
+      "Title": "玻璃之花与崩坏的世界",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160039.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20160039"
+    },
+    {
+      "AID": "a123_xianwangderichangshenghuo5",
+      "Title": "仙王的日常生活 5",
+      "PicSmall": "https://i1.a123tv.com/v/0x/xianwangderichangshenghuo5.jpg",
+      "NewTitle": "更新至12集",
+      "Href": "/detail/a123_xianwangderichangshenghuo5"
+    },
+    {
+      "AID": 20130076,
+      "Title": "有顶天家族",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20130076"
+    },
+    {
+      "AID": "anich_36779",
+      "Title": "非人哉 第3季",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/642125_27uwrwVQT9-DyW1_1782822665/300",
+      "NewTitle": "完结",
+      "Href": "/detail/anich_36779"
+    },
+    {
+      "AID": 20260080,
+      "Title": "上伊那牡丹，酒醉身姿似百合花般",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260080.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260080"
+    },
+    {
+      "AID": 20160104,
+      "Title": "田中君总是如此慵懒",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160104.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20160104"
+    },
+    {
+      "AID": "anich_38363",
+      "Title": "描绘直至生命尽头",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/197079_fCj5S1uCQFyuWT__1782934243/300",
+      "NewTitle": "完结",
+      "Href": "/detail/anich_38363"
+    },
+    {
+      "AID": 20180311,
+      "Title": "夏目友人帐剧场版 ～缘结空蝉～",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180311.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180311"
+    },
+    {
+      "AID": 20170057,
+      "Title": "妖怪公寓的幽雅日常",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170057.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170057"
+    },
+    {
+      "AID": 20160132,
+      "Title": "星期一的丰满",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160132.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20160132"
+    },
+    {
+      "AID": 20190366,
+      "Title": "恋爱小行星",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20190366"
+    },
+    {
+      "AID": 20250251,
+      "Title": "会动的！从前从前有只猫 世界喵童话",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250251.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20250251"
+    },
+    {
+      "AID": 20120014,
+      "Title": "中二病也要谈恋爱！",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120014.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20120014"
+    },
+    {
+      "AID": "anich_38050",
+      "Title": "小鲨鱼去郊游 第二季",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/469409_ROgeFpJKRHCuO5p_1725945632/300",
+      "NewTitle": "完结",
+      "Href": "/detail/anich_38050"
+    },
+    {
+      "AID": 20190022,
+      "Title": "同居人是猫",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190022.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20190022"
+    },
+    {
+      "AID": 20260223,
+      "Title": "猫与龙",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260223.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260223"
+    },
+    {
+      "AID": 20110031,
+      "Title": "露蒂的玩具",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20110031"
+    },
+    {
+      "AID": 20110027,
+      "Title": "电波女与青春男",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110027.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20110027"
+    },
+    {
+      "AID": 20180126,
+      "Title": "Happy Sugar Life",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180126.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180126"
+    },
+    {
+      "AID": 20070010,
+      "Title": "悠久之翼",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070010.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20070010"
+    },
+    {
+      "AID": 20180189,
+      "Title": "终将成为你",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180189.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180189"
+    },
+    {
+      "AID": 20140069,
+      "Title": "一周的朋友",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140069.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140069"
+    },
+    {
+      "AID": 20180081,
+      "Title": "妖怪旅馆营业中",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180081.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180081"
+    },
+    {
+      "AID": 20160152,
+      "Title": "蓝海少女",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160152.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20160152"
+    },
+    {
+      "AID": 20260202,
+      "Title": "画完这个再去死",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260202"
+    },
+    {
+      "AID": 20140120,
+      "Title": "爱丝卡&罗吉的炼金工房～黄昏天空之炼金术士～",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140120.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140120"
+    },
+    {
+      "AID": 20190111,
+      "Title": "水果篮子",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190111.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20190111"
+    },
+    {
+      "AID": 20170095,
+      "Title": "Just Because!",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170095.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170095"
+    },
+    {
+      "AID": 20080009,
+      "Title": "真实之泪",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080009.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20080009"
+    },
+    {
+      "AID": 20100006,
+      "Title": "笨蛋测验召唤兽",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100006.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20100006"
+    },
+    {
+      "AID": 20080002,
+      "Title": "夏目友人帐",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080002.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20080002"
+    },
+    {
+      "AID": 20170067,
+      "Title": "GAMERS电玩咖",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170067.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170067"
+    },
+    {
+      "AID": 20100060,
+      "Title": "荒川爆笑团",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100060.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20100060"
+    },
+    {
+      "AID": 20230207,
+      "Title": "葬送的芙莉莲",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230207.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20230207"
+    },
+    {
+      "AID": "a123_dagongzaidekaowenrichang",
+      "Title": "打工仔的拷问日常",
+      "PicSmall": "https://i1.a123tv.com/v/0x/dagongzaidekaowenrichang.jpg",
+      "NewTitle": "更新至12集",
+      "Href": "/detail/a123_dagongzaidekaowenrichang"
+    },
+    {
+      "AID": 20260090,
+      "Title": "一叠间漫画咖啡屋生活！",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260090.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260090"
+    },
+    {
+      "AID": 20080059,
+      "Title": "糖果男孩",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080059.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20080059"
+    },
+    {
+      "AID": 20180229,
+      "Title": "邻家的吸血鬼小妹",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180229"
+    },
+    {
+      "AID": 20260182,
+      "Title": "超超超超超喜欢你的100个女朋友 第三季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260182"
+    },
+    {
+      "AID": 20240172,
+      "Title": "悲喜渔生",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240172.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20240172"
+    },
+    {
+      "AID": 20110017,
+      "Title": "对某飞行员的追忆",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110017.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20110017"
+    },
+    {
+      "AID": 20170196,
+      "Title": "请问您今天要来点兔子吗？？～Dear My Sister～",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170196.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170196"
+    },
+    {
+      "AID": "anich_35003",
+      "Title": "正能量企鹅",
+      "PicSmall": "https://wework.qpic.cn/wwpic3az/694667_kele7KIRRGO5R4h_1743813011/300",
+      "NewTitle": "完结",
+      "Href": "/detail/anich_35003"
+    },
+    {
+      "AID": 20180028,
+      "Title": "摇曳露营△",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180028.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20180028"
+    },
+    {
+      "AID": 20260141,
+      "Title": "小鲨鱼去郊游 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260141.jpg",
+      "NewTitle": "未播放",
+      "Href": "/detail/20260141"
+    },
+    {
+      "AID": 20140059,
+      "Title": "未确认进行式",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140059"
+    },
+    {
+      "AID": "a123_qingsongxiong",
+      "Title": "轻松熊",
+      "PicSmall": "https://i1.a123tv.com/v/0x/qingsongxiong.jpg",
+      "NewTitle": "更新至8集",
+      "Href": "/detail/a123_qingsongxiong"
+    },
+    {
+      "AID": 20130025,
+      "Title": "银之匙",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130025.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20130025"
+    },
+    {
+      "AID": 20260101,
+      "Title": "神之水滴",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260101"
+    },
+    {
+      "AID": 20170046,
+      "Title": "Urara迷路帖",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170046.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20170046"
+    },
+    {
+      "AID": 20260068,
+      "Title": "灰原同学重返过去，开启所向无敌的第二轮青春游戏",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260068.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260068"
+    },
+    {
+      "AID": 20140130,
+      "Title": "花舞少女",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140130.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20140130"
+    },
+    {
+      "AID": 20260029,
+      "Title": "葬送的芙莉莲 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260029.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20260029"
+    },
+    {
+      "AID": 20260183,
+      "Title": "碧蓝航线 微速前行 第二季",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260183.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260183"
+    },
+    {
+      "AID": 20250041,
+      "Title": "不知为何我和尼特且宅的女忍者开始了同居生活",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250041.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20250041"
+    },
+    {
+      "AID": 20160158,
+      "Title": "小桃小栗 Love Love物语",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160158.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20160158"
+    },
+    {
+      "AID": 20010006,
+      "Title": "魔力女管家",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010006.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20010006"
+    },
+    {
+      "AID": 20260199,
+      "Title": "我家的弟弟们真是让您费心了",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260199.jpg",
+      "NewTitle": "连载",
+      "Href": "/detail/20260199"
+    }
+  ]
 }

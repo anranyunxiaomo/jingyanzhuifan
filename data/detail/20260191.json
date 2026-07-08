@@ -50,7 +50,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": 0,
-    "collect_cnt": "40"
+    "collect_cnt": "40",
+    "related": [
+      {
+        "id": "anich_38367",
+        "title": "Let's Go 怪奇组",
+        "cover": "https://wework.qpic.cn/wwpic3az/611206_pbbvkKr5Rhiz7Re_1783279842/300"
+      }
+    ]
   },
   "series": [],
   "similar": [

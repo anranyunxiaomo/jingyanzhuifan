@@ -33,7 +33,14 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第01集",
-    "premiere": "2026-07-05"
+    "premiere": "2026-07-05",
+    "related": [
+      {
+        "id": "20260190",
+        "title": "炒翻天",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260190.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

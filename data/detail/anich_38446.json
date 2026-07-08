@@ -81,7 +81,14 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第13集",
-    "premiere": "2026-07-07"
+    "premiere": "2026-07-07",
+    "related": [
+      {
+        "id": "20260171",
+        "title": "铠真传 武士军团 第2部分",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260171.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

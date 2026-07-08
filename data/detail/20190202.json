@@ -233,7 +233,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "598",
-    "collect_cnt": "1,839"
+    "collect_cnt": "1,839",
+    "related": [
+      {
+        "id": "20260097",
+        "title": "入间同学入魔了 第四季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260097.jpg"
+      }
+    ]
   },
   "series": [
     {

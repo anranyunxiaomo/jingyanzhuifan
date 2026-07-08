@@ -71,7 +71,14 @@
           "https://svip.high24-playback.com/20250116/16347_d35211f1/index.m3u8"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "a123_wudonggankun61",
+        "title": "武动干坤 6",
+        "cover": "https://i1.a123tv.com/v/0x/wudonggankun61.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

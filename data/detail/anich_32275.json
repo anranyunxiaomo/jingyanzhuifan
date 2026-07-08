@@ -319,7 +319,19 @@
     "area": "日本",
     "year": "2023",
     "uptodate": "第73集",
-    "premiere": "2023-08-01"
+    "premiere": "2023-08-01",
+    "related": [
+      {
+        "id": "anich_38050",
+        "title": "小鲨鱼去郊游 第二季",
+        "cover": "https://wework.qpic.cn/wwpic3az/469409_ROgeFpJKRHCuO5p_1725945632/300"
+      },
+      {
+        "id": "20260141",
+        "title": "小鲨鱼去郊游 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260141.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

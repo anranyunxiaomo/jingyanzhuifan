@@ -71,7 +71,14 @@
           "https://play.ly166.com:65/videos/20251204/6931af5980eee9b955d70409/011dd2/index.m3u8"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "a123_wudonggankun51",
+        "title": "武动干坤 5",
+        "cover": "https://i1.a123tv.com/v/0x/wudonggankun51.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

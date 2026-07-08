@@ -349,7 +349,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "13",
-    "collect_cnt": "375"
+    "collect_cnt": "375",
+    "related": [
+      {
+        "id": "a123_zuanshiwangpai4",
+        "title": "钻石王牌 4",
+        "cover": "https://i1.a123tv.com/v/0x/zuanshiwangpai4.jpg"
+      }
+    ]
   },
   "series": [
     {

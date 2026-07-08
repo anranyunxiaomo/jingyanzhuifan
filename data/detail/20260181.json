@@ -59,7 +59,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "9",
-    "collect_cnt": "290"
+    "collect_cnt": "290",
+    "related": [
+      {
+        "id": "a123_xiangfandenihewo",
+        "title": "相反的你和我",
+        "cover": "https://i1.a123tv.com/v/0x/xiangfandenihewo.jpg"
+      }
+    ]
   },
   "series": [
     {

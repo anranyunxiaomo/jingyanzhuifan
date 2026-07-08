@@ -424,7 +424,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "637",
-    "collect_cnt": "5,834"
+    "collect_cnt": "5,834",
+    "related": [
+      {
+        "id": "20260098",
+        "title": "关于我转生变成史莱姆这档事 第四季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260098.jpg"
+      }
+    ]
   },
   "series": [
     {

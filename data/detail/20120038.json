@@ -155,7 +155,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "702",
-    "collect_cnt": "5,312"
+    "collect_cnt": "5,312",
+    "related": [
+      {
+        "id": "20140086",
+        "title": "刀剑神域 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20140086.jpg"
+      }
+    ]
   },
   "series": [
     {

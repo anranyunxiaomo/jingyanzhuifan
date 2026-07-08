@@ -867,7 +867,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "4,929",
-    "collect_cnt": "4.18w"
+    "collect_cnt": "4.18w",
+    "related": [
+      {
+        "id": "20260029",
+        "title": "葬送的芙莉莲 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260029.jpg"
+      }
+    ]
   },
   "series": [
     {

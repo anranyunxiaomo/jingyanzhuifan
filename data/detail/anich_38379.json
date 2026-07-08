@@ -36,7 +36,14 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第02集",
-    "premiere": "2026-06-30"
+    "premiere": "2026-06-30",
+    "related": [
+      {
+        "id": "20260221",
+        "title": "无自觉圣女今天也无意识地释放力量",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260221.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

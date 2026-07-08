@@ -79,7 +79,19 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第13集",
-    "premiere": "2026-04-12"
+    "premiere": "2026-04-12",
+    "related": [
+      {
+        "id": "anich_32275",
+        "title": "小鲨鱼去郊游",
+        "cover": "https://wework.qpic.cn/wwpic3az/469409_ROgeFpJKRHCuO5p_1725945632/300"
+      },
+      {
+        "id": "20260141",
+        "title": "小鲨鱼去郊游 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260141.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

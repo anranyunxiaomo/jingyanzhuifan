@@ -50,7 +50,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "1",
-    "collect_cnt": "15"
+    "collect_cnt": "15",
+    "related": [
+      {
+        "id": "anich_38446",
+        "title": "铠真传 武士军团 第2部分",
+        "cover": "https://wework.qpic.cn/wwpic3az/624405_DMWJzTVeSb6xjLL_1783279855/300"
+      }
+    ]
   },
   "series": [],
   "similar": [

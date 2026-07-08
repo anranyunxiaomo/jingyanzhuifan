@@ -33,7 +33,14 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第01集",
-    "premiere": "2026-07-05"
+    "premiere": "2026-07-05",
+    "related": [
+      {
+        "id": "20260244",
+        "title": "航海王 女英雄们的故事",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260244.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

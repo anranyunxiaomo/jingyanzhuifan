@@ -34,7 +34,14 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第01集",
-    "premiere": "2026-07-07"
+    "premiere": "2026-07-07",
+    "related": [
+      {
+        "id": "20260203",
+        "title": "与你相恋到生命尽头",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260203.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

@@ -476,7 +476,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "608",
-    "collect_cnt": "4,153"
+    "collect_cnt": "4,153",
+    "related": [
+      {
+        "id": "20180220",
+        "title": "关于我转生变成史莱姆这档事",
+        "cover": "https://cdn.aqdstatic.com:966/age/20180220.jpg"
+      }
+    ]
   },
   "series": [
     {

@@ -439,7 +439,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "537",
-    "collect_cnt": "6,812"
+    "collect_cnt": "6,812",
+    "related": [
+      {
+        "id": "20230207",
+        "title": "葬送的芙莉莲",
+        "cover": "https://cdn.aqdstatic.com:966/age/20230207.jpg"
+      }
+    ]
   },
   "series": [
     {

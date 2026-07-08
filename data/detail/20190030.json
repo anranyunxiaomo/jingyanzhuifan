@@ -304,7 +304,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "1,310",
-    "collect_cnt": "3,789"
+    "collect_cnt": "3,789",
+    "related": [
+      {
+        "id": "a123_dunzhiyongzhechengminglu4",
+        "title": "盾之勇者成名录 4",
+        "cover": "https://i1.a123tv.com/v/0x/dunzhiyongzhechengminglu4.jpg"
+      }
+    ]
   },
   "series": [
     {

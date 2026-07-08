@@ -17,6 +17,8 @@ new Vue({
     recommendList: [],
     weekList: {},
     weekListKeys: [],
+    healingList: [],
+    isAllHealingShown: false,
     
     // 幻灯片控制
     currentBannerIndex: 0,
@@ -91,6 +93,13 @@ new Vue({
   },
   
   computed: {
+    displayedHealingList() {
+      if (!this.healingList) return [];
+      if (this.isAllHealingShown) {
+        return this.healingList;
+      }
+      return this.healingList.slice(0, 15);
+    },
     // 💡 动态判断是否为手机移动端 (屏幕宽度 <= 768px)
     isMobile() {
       return this.screenWidth <= 768;
@@ -757,6 +766,7 @@ new Vue({
           this.recommendList = data.recommend || [];
           this.weekList = data.week_list || {};
           this.weekListKeys = Object.keys(this.weekList);
+          this.healingList = data.healing_list || [];
         }
         
         const cachedIndex = localStorage.getItem('jyzf_search_index_cache');
@@ -782,6 +792,7 @@ new Vue({
           this.recommendList = data.recommend || [];
           this.weekList = data.week_list || {};
           this.weekListKeys = Object.keys(this.weekList);
+          this.healingList = data.healing_list || [];
           
           const cachedStr = localStorage.getItem('jyzf_home_list_cache');
           const newStr = JSON.stringify(data);

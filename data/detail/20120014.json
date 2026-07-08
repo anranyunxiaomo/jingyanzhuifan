@@ -305,7 +305,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "382",
-    "collect_cnt": "7,833"
+    "collect_cnt": "7,833",
+    "related": [
+      {
+        "id": "20140037",
+        "title": "中二病也要谈恋爱！ 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20140037.jpg"
+      }
+    ]
   },
   "series": [
     {

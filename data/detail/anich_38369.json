@@ -33,7 +33,19 @@
     "area": "日本",
     "year": "2026",
     "uptodate": "第01集",
-    "premiere": "2026-07-07"
+    "premiere": "2026-07-07",
+    "related": [
+      {
+        "id": "anich_38424",
+        "title": "攻壳机动队 THE GHOST IN THE SHELL 特别篇",
+        "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300"
+      },
+      {
+        "id": "20260172",
+        "title": "攻壳机动队 THE GHOST IN THE SHELL",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260172.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "anich_m3u8": "AniCh"

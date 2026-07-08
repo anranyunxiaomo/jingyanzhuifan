@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260708T2323">
+  <link rel="stylesheet" href="css/style.css?v=20260708T2332">
   <script>window.JYZF_VERSION = "20260708T1017";</script>
 </head>
 <body class="loader-active">
@@ -606,6 +606,48 @@
           </div>
         </div>
       </section>
+
+      <!-- 2.4 豆瓣 9分+ 治愈系番剧大赏 section -->
+      <section class="list-section" style="margin-top: 2rem;" v-if="healingList && healingList.length > 0">
+        <div class="section-title-wrapper">
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <h2 class="section-title">豆瓣 9分+ 治愈系番剧大赏</h2>
+        </div>
+        
+        <div class="grid-list">
+          <div 
+            class="anime-card" 
+            v-for="item in displayedHealingList" 
+            :key="item.AID"
+            @click="selectAnime(item.AID)"
+          >
+            <div class="card-cover-wrapper">
+              <div class="card-tag">{{ item.NewTitle }}</div>
+              <div class="card-overlay">
+                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <img :src="getProxiedImageUrl(item.PicSmall)" :alt="item.Title" class="card-cover" referrerpolicy="no-referrer" @error="handleImageError($event, item.AID)">
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">{{ item.Title }}</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-more-wrapper" v-if="healingList.length > 15">
+          <button class="btn btn-show-more" @click="isAllHealingShown = !isAllHealingShown">
+            <span v-if="!isAllHealingShown">展开查看更多 (共 {{ healingList.length }} 部)</span>
+            <span v-else>收起全部数据</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;transition: transform 0.3s;" :style="{ transform: isAllHealingShown ? 'rotate(180deg)' : 'none' }">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+      </section>
     </div></div> <!-- 关闭 v-if="!currentAnimeId" 首页包装器 -->
 
     <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
@@ -878,6 +920,34 @@
             该线路暂无可用剧集
           </div>
         </div>
+
+        <!-- 3.4 系列关联推荐海报墙 -->
+        <div class="related-series-panel" v-if="animeDetail.video.related && animeDetail.video.related.length > 0">
+          <div class="panel-header">
+            <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+            <h3>同系列关联推荐</h3>
+          </div>
+          <div class="related-list-wrapper">
+            <div 
+              class="related-item-card" 
+              v-for="item in animeDetail.video.related" 
+              :key="item.id"
+              @click="selectAnime(item.id)"
+            >
+              <div class="related-cover-wrapper">
+                <img :src="getProxiedImageUrl(item.cover)" :alt="item.title" class="related-cover" referrerpolicy="no-referrer" @error="handleImageError($event, item.id)">
+              </div>
+              <div class="related-info">
+                <h4 class="related-title" :title="item.title">{{ item.title }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <div class="detail-error-card" v-else-if="detailError">
@@ -935,7 +1005,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260708T2323"></script>
+<script src="js/app.js?v=20260708T2332"></script>
 
 </body>
 </html>

@@ -413,7 +413,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "924",
-    "collect_cnt": "5,914"
+    "collect_cnt": "5,914",
+    "related": [
+      {
+        "id": "a123_reconglingkaishideyishijieshen13",
+        "title": "Re：从零开始的异世界生活 4",
+        "cover": "https://i1.a123tv.com/v/0x/reconglingkaishideyishijieshen13.jpg"
+      }
+    ]
   },
   "series": [
     {

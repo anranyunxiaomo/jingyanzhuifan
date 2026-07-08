@@ -4510,7 +4510,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "7",
-    "collect_cnt": "55"
+    "collect_cnt": "55",
+    "related": [
+      {
+        "id": "anich_38447",
+        "title": "航海王 女英雄们的故事",
+        "cover": "https://wework.qpic.cn/wwpic3az/390721_4QBDe3RgTXyP5wo_1783301452/300"
+      }
+    ]
   },
   "series": [
     {

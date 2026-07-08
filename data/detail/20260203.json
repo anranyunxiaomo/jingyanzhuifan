@@ -71,7 +71,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "21",
-    "collect_cnt": "385"
+    "collect_cnt": "385",
+    "related": [
+      {
+        "id": "anich_38358",
+        "title": "与你相恋到生命尽头",
+        "cover": "https://wework.qpic.cn/wwpic3az/4793_TKszpomFTNCkv9E_1783279843/300"
+      }
+    ]
   },
   "series": [],
   "similar": [
