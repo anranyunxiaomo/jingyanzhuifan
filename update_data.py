@@ -1022,12 +1022,7 @@ async def main_async():
             except Exception as e:
                 print(f"[WARNING] Failed to parse detail file {filename}: {e}")
                 
-    else:
-        print("=" * 60)
-        print("🛡️  [GUARD] 检测到非定时网络同步运行（当前为日常 Push 构建或本地普通运行）。")
-        print("💡 为了保护 AGE API 额度，已自动强制拦截跳过网络数据同步！")
-        print("🚀 本次运行将跳过所有网络 API 访问。")
-        print("=" * 60)
+
         
     save_search_index(index_data)
     print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
