@@ -1026,6 +1026,22 @@ new Vue({
       let epToken = ep[1];          // 加密 token 或直链 url
       let realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
+      // 💡 A123 线路：如果内存没有直链，先尝试从浏览器的 localStorage 中读取 24 小时内的缓存，实现 0 网络请求瞬间秒开！
+      if (!realUrl && epToken && epToken.startsWith('/v/') && epToken.endsWith('.html')) {
+        const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${epIdx}`;
+        const cachedItem = localStorage.getItem(cacheKey);
+        if (cachedItem) {
+          try {
+            const cacheObj = JSON.parse(cachedItem);
+            if (new Date().getTime() - cacheObj.time < 86400000) { // 24小时内有效
+              console.log("[A123 CACHE] localStorage hit! Stream URL:", cacheObj.url);
+              realUrl = cacheObj.url;
+              ep[2] = realUrl; // 写入内存
+            }
+          } catch(e) {}
+        }
+      }
+
       // 💡 累加 AniCh 线路播放计数，并在点播 >=3 次后前端高亮额度红色警报
       if (this.activeLineKey === 'anich_m3u8') {
         this.anichRequestCount += 1;
@@ -1069,7 +1085,17 @@ new Vue({
               } else if (ep.length >= 3) {
                 ep[2] = m3u8Url;
               }
-              console.log("[A123 RESOLVER] Extracted stream successfully:", m3u8Url);
+              
+              // 💡 持久化缓存：写入 localStorage，24小时内起播无需再次请求嗅探域名！
+              try {
+                const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${epIdx}`;
+                localStorage.setItem(cacheKey, JSON.stringify({
+                  url: m3u8Url,
+                  time: new Date().getTime()
+                }));
+              } catch(e) {}
+              
+              console.log("[A123 RESOLVER] Extracted stream successfully and cached to localStorage:", m3u8Url);
             }
           }
         } catch (err) {
@@ -1492,10 +1518,24 @@ new Vue({
               const fallbackToIframe = (reason) => {
                 if (this._hasFallenBack) return; // 防止多次触发
                 
-                // 💡 A123 极速源拦截：绝对不降级到 iframe 流氓广告播放器
+                // 💡 A123 极速源报错自愈：当发生加载错误时，说明缓存的直链可能已过期失效，清空本地与内存缓存并自动重新嗅探！
                 if (this.activeLineKey === 'a123_line1') {
-                  console.warn(`[A123 FALLBACK PREVENTED] reason: ${reason}`);
-                  dp.notice("当前视频切片加载较慢，请稍等或尝试手动点击播放...", 4000);
+                  console.warn(`[A123 FAILBACK] reason: ${reason}. Clearing cache and retrying resolver...`);
+                  
+                  const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${this.activeEpisodeIndex}`;
+                  localStorage.removeItem(cacheKey);
+                  
+                  const ep = this.activeEpisodes[this.activeEpisodeIndex];
+                  if (ep && ep.length >= 3) {
+                    ep[2] = ""; // 强行清空内存缓存
+                  }
+                  
+                  dp.notice("播放源已失效，正在为您自动重新获取新鲜源并起播...", 4000);
+                  
+                  // 延时重新执行播放（这会重新触发 fetch url 解析）
+                  setTimeout(() => {
+                    this.playEpisode(this.activeEpisodeIndex);
+                  }, 600);
                   return; // 💡 强行拦截退出，不降级销毁！
                 }
                 
