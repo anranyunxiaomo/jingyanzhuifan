@@ -194,7 +194,7 @@ def curl_get_raw(url, token_str, timeout=5):
     # 线上 Actions 直接把目标域名指向我们自建的 anich-proxy 转发中转，
     # 避开机房 IP 封锁与下划线 Header 在外网中转中的过滤流失，实现 100% 绝对连通！
     if is_github_actions:
-        proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jingyanff.xyz/anich-proxy")
+        proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jyzf-proxy.anranyunxiaomo.workers.dev/anich-proxy")
         cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", proxied_url]
         r = subprocess.run(cmd, capture_output=True)
         if r.returncode == 0:
@@ -231,8 +231,7 @@ def curl_get_raw(url, token_str, timeout=5):
                 
         time.sleep(0.15)
         
-    # 3. 本地直连失败（例如被墙），兜底走自建的云端中转
-    proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jingyanff.xyz/anich-proxy")
+    proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jyzf-proxy.anranyunxiaomo.workers.dev/anich-proxy")
     cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", proxied_url]
     r = subprocess.run(cmd, capture_output=True)
     if r.returncode == 0:
