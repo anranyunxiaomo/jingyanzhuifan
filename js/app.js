@@ -1178,8 +1178,13 @@ new Vue({
           } catch(e) {}
           
           if (response.ok && data && data.success && data.url) {
-            console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
-            playUrl = data.url; // 成功！直接起播
+            if (!data.url.startsWith('blob:')) {
+              console.log("[DYNAMIC RESOLVER] Resolved successfully from Cloud!", data.url);
+              realUrl = data.url; // 💡 成功！升级为真直连源，写入 realUrl ！！！
+              ep[2] = data.url;   // 存入内存，供重播
+            } else {
+              console.warn("[DYNAMIC RESOLVER] Cloud Decryptor returned restricted Blob URL. Falling back to default parser.");
+            }
           } else if (data && data.failedMark) {
             // 💡 提示用户视频已失效，并自动进入熔断保护，防止重复请求
             alert("该集视频源暂时失效，已开启每日防刷锁保护。请切换其他播放线路或明日再试。");
@@ -1193,7 +1198,7 @@ new Vue({
         }
       }
       
-      if (!playUrl) {
+      if (!realUrl) {
         if (isVip) {
           // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
           const playerJx = this.animeDetail.player_jx || {};
@@ -1210,30 +1215,33 @@ new Vue({
           console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
         } else {
           // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
-        const targetUrlToResolve = realUrl ? realUrl : epToken;
-        
-        if (this.activeEngineKey === 'default') {
-          if (targetUrlToResolve.startsWith('age_')) {
-              playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
+          const targetUrlToResolve = realUrl ? realUrl : epToken;
+          
+          if (this.activeEngineKey === 'default') {
+            if (targetUrlToResolve.startsWith('age_')) {
+                playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
+            } else {
+                playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
+            }
+            console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
           } else {
-              playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
+            playUrl = this.activeEngineKey + targetUrlToResolve;
+            console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
           }
-          console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
-        } else {
-          playUrl = this.activeEngineKey + targetUrlToResolve;
-          console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
       }
-    }
 
       const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
       const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
       // 💡 修复：禁止将内部进度参数作为 Query 附加到第三方解析站 URL 上（会导致解析站 404/500）
-      // 仅在哈希中安全传递进度和防缓存标记，Hash 不会发送给远端服务器！
+      // 仅在哈希中安全传递进度 and 防缓存标记，Hash 不会发送给远端服务器！
       const hashParams = savedTime > 3 ? `#t=${savedTime}&_t=${new Date().getTime()}` : `#t=0.01&_t=${new Date().getTime()}`;
-      playUrl = playUrl + hashParams;
-      if (playUrl.startsWith('http://')) {
-        playUrl = playUrl.replace('http://', 'https://');
+      
+      if (playUrl) {
+        playUrl = playUrl + hashParams;
+        if (playUrl.startsWith('http://')) {
+          playUrl = playUrl.replace('http://', 'https://');
+        }
       }
 
       // ✅ 初始化/生成全新播放会话 ID 和进度打点计数器
@@ -1256,7 +1264,7 @@ new Vue({
         finalRealUrl = epToken;
       }
 
-      // ✅ 变量捕获闭包锁定
+      // ✅ 变量捕获闭包锁定（必须放在异步云解密之后，确保能获取到更新后的 realUrl/playUrl ！！！）
       const capturedAnimeId = String(this.currentAnimeId);
       const capturedEpName = String(this.activeEpisodeName);
       const capturedRealUrl = finalRealUrl;
