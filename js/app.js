@@ -1535,21 +1535,39 @@ new Vue({
                   return; // 💡 哪怕所有备用源都试过了，我们也保持 DPlayer，绝不退回到 iframe！
                 }
                 
-                // 常规 AGE 动漫线路：依然走原有的 iframe 降级
-                this._hasFallenBack = true;
-                console.warn(`[FALLBACK → iframe] reason: ${reason}`);
-                if (this.dpInstance) {
-                  try {
-                    this.dpInstance.off('timeupdate');
-                    this.dpInstance.off('loadedmetadata');
-                    this.dpInstance.off('error');
-                    this.dpInstance.destroy();
-                  } catch(e) {}
-                  this.dpInstance = null;
+                // 💡 终极跨线路自愈：坚决不发生 iframe 降级，而是自动寻找其他备用播放线路并重新拉起 DPlayer！
+                console.warn(`[DPLAYER FAILBACK] reason: ${reason}`);
+                
+                const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
+                const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
+                  const list = rawPlayUrl[key];
+                  return list && list.length > 0;
+                });
+                
+                // 找到一个与当前报错线路不同的备用线路
+                const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
+                
+                if (backupLineKey) {
+                  console.log(`[DPlayer Self-Healing] Auto switching from ${this.activeLineKey} to backup line: ${backupLineKey}`);
+                  if (this.dpInstance) {
+                    this.dpInstance.notice(`当前播放源加载超时，正在为您自动切换至备用高速源...`, 4000);
+                  }
+                  
+                  const currentEpIdx = this.activeEpisodeIndex;
+                  this.activeLineKey = backupLineKey;
+                  
+                  // 稍微延时，重新触发 DPlayer 实例化
+                  setTimeout(() => {
+                    this.playEpisode(currentEpIdx);
+                  }, 600);
+                  return;
                 }
-                this.isIframeMode = true;
-                this.activePlayUrl = '';
-                this.$nextTick(() => { this.activePlayUrl = capturedIframeUrl; });
+                
+                // 所有备用线路都试过了依然失败，在 DPlayer 里优雅呈现公告
+                console.error("[DPlayer Self-Healing] All lines failed.");
+                if (this.dpInstance) {
+                  this.dpInstance.notice("抱歉，当前所有播放线路均加载失败，视频可能已失效，请点击上方反馈问题。", 6000);
+                }
               };
 
               // 保险①：DPlayer 自身 error 事件
@@ -1591,9 +1609,22 @@ new Vue({
 
             console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
           } catch(e) {
-            console.error("[DPlayer Init Failed] Falling back to Iframe:", e);
-            this.isIframeMode = true;
-            this.activePlayUrl = capturedIframeUrl;
+            console.error("[DPlayer Init Failed] Triggering Self-Healing:", e);
+            const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
+            const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
+              const list = rawPlayUrl[key];
+              return list && list.length > 0;
+            });
+            const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
+            if (backupLineKey) {
+              const currentEpIdx = this.activeEpisodeIndex;
+              this.activeLineKey = backupLineKey;
+              setTimeout(() => {
+                this.playEpisode(currentEpIdx);
+              }, 600);
+              return;
+            }
+            alert("DPlayer 播放器初始化失败，请尝试刷新页面。");
           }
           }); // 第二层 $nextTick 结束
         }); // 第一层 $nextTick 结束
