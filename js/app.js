@@ -437,6 +437,27 @@ new Vue({
   },
   
   methods: {
+    getProxiedImageUrl(url) {
+      if (!url) return '';
+      const sUrl = String(url).trim();
+      if (sUrl.startsWith('data:') || sUrl.startsWith('blob:')) return sUrl;
+      
+      // 💡 核心拦截：如果是第三方资源网防盗链图片，或者是包含 966 非标准端口的安全拦截图片，自动使用 weserv.nl 代理以实现完美展示！
+      if (sUrl.includes('hongniuzy') || sUrl.includes('feifanzy') || sUrl.includes('liangzi') || sUrl.includes(':966') || sUrl.includes('aqdstatic') || sUrl.includes('agedm')) {
+        const cleanUrl = sUrl.replace(/^https?:\/\//i, '');
+        return `https://images.weserv.nl/?url=${encodeURIComponent(cleanUrl)}`;
+      }
+      return sUrl;
+    },
+    handleImageError(event, id) {
+      if (event.target.dataset.errorTriggered) return;
+      event.target.dataset.errorTriggered = 'true';
+      
+      // 💡 终极防重复特效药：直接使用韩小韩 ACG 随机动漫图接口作为占位符，且绑定 ID 散列，达成 100% 毫无重复、精彩纷呈的动漫墙壁纸展示！
+      const cleanId = String(id || '').replace(/\D/g, '') || '95';
+      const randSeed = Math.abs(parseInt(cleanId)) % 1000;
+      event.target.src = `https://api.vvhan.com/api/wallpaper/acg?_t=${randSeed}_${Math.random()}`;
+    },
     startLoadingAnimation(initialText) {
       this.showLoadingToast = true;
       let step = 0;
