@@ -58,6 +58,7 @@ new Vue({
     lastLogProgressTime: 0, // 景雁分析：上次上报的播放秒数
     showLoadingToast: false, // 是否显示加载提示框
     loadingText: '', // 加载提示文字
+    loadingTextInterval: null,
     
     // 解析引擎库 (纯 HTTPS 保证 GitHub Pages 无 Mixed Content 跨域阻断)
     jxEngines: [
@@ -426,6 +427,35 @@ new Vue({
   },
   
   methods: {
+    startLoadingAnimation(initialText) {
+      this.showLoadingToast = true;
+      let step = 0;
+      const loadingSteps = [
+        "🔍 正在为您检索并校验极速播放源...",
+        "⚡ 已连通云端专线，正在穿透解密...",
+        "🛡️ 正在进行线路优化与安全广告拦截...",
+        "🎬 解析成功！视频分片正在准备就绪...",
+        "🚀 正在进行最后的缓冲，请稍等片刻..."
+      ];
+      this.loadingText = initialText || loadingSteps[0];
+      
+      if (this.loadingTextInterval) clearInterval(this.loadingTextInterval);
+      this.loadingTextInterval = setInterval(() => {
+        step++;
+        if (step < loadingSteps.length) {
+          this.loadingText = loadingSteps[step];
+        } else {
+          this.loadingText = "🚀 视频分片缓冲中，马上为您起播...";
+        }
+      }, 1600);
+    },
+    stopLoadingAnimation() {
+      this.showLoadingToast = false;
+      if (this.loadingTextInterval) {
+        clearInterval(this.loadingTextInterval);
+        this.loadingTextInterval = null;
+      }
+    },
     triggerFallbackBanners() {
       const list = this.recommendList.slice(0, 4);
       const fallbackBanners = list.map(item => ({
@@ -1022,8 +1052,7 @@ new Vue({
 
       // 💡 A123TV 播放页跨域直链按需嗅探提取 (极致省流 0 API 消耗)
       if (epToken && epToken.startsWith('/v/') && epToken.endsWith('.html') && !realUrl) {
-        this.showLoadingToast = true;
-        this.loadingText = "正在从 A123TV 跨域提取极速播放直链...";
+        this.startLoadingAnimation("正在从 A123TV 跨域提取极速播放直链...");
         try {
           const targetUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent("https://a123tv.com" + epToken);
           const response = await fetch(targetUrl);
@@ -1045,8 +1074,7 @@ new Vue({
           }
         } catch (err) {
           console.warn("[A123 RESOLVER] Failed to fetch target page:", err);
-        } finally {
-          this.showLoadingToast = false;
+          this.stopLoadingAnimation();
         }
       }
 
@@ -1068,8 +1096,7 @@ new Vue({
         const jxTargetUrl = "https://jx.wuzhoupai.com:8443/vip/?url=" + epToken;
         console.log("[DYNAMIC RESOLVER] Cache miss or on-demand trigger. Resolving via Worker: " + epToken);
         
-        this.showLoadingToast = true;
-        this.loadingText = "正在云端解密防盗链直链 (首次解析需15秒)...";
+        this.startLoadingAnimation("正在云端解密防盗链直链 (首次解析需15秒)...");
         
         try {
           // 调用云端 Worker 中转解析接口
@@ -1086,11 +1113,13 @@ new Vue({
           } else if (data && data.failedMark) {
             // 💡 提示用户视频已失效，并自动进入熔断保护，防止重复请求
             alert("该集视频源暂时失效，已开启每日防刷锁保护。请切换其他播放线路或明日再试。");
+            this.stopLoadingAnimation();
+          } else {
+            this.stopLoadingAnimation();
           }
         } catch (err) {
           console.warn("[DYNAMIC RESOLVER] Cloud decrypt failed, falling back to ad resolver.", err);
-        } finally {
-          this.showLoadingToast = false;
+          this.stopLoadingAnimation();
         }
       }
       
@@ -1311,6 +1340,7 @@ new Vue({
               
               // 💡 强力播放状态清洗：一旦视频从缓冲中恢复并真正起播画面，强制隐藏任何虚假的报错 DOM 和加载圈，确保良好的视觉观感
               dp.on('playing', () => {
+                this.stopLoadingAnimation(); // 💡 终极视频起播！淡出并销毁云端动态解析遮罩层
                 const dpEl = document.querySelector('.dplayer');
                 if (dpEl) {
                   dpEl.classList.remove('dplayer-error', 'dplayer-loading');
@@ -1320,79 +1350,49 @@ new Vue({
                   if (errorText) errorText.style.display = 'none';
                 }
               });
-              
-              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“画面比例”切换键
-              this.$nextTick(() => {
-                if (!this.isMobile) return; // 💡 PC 端不注入画面比例按钮，保持绝对纯净
-                const rightIcons = document.querySelector('.dplayer-icons-right');
-                if (rightIcons) {
-                  // 防重复清理
-                  const existBtn = rightIcons.querySelector('.dplayer-fit-icon');
-                  if (existBtn) existBtn.remove();
-                  
-                  const btn = document.createElement('button');
-                  btn.className = 'dplayer-icon dplayer-fit-icon';
-                  btn.style.width = 'auto';
-                  btn.style.padding = '0 12px';
-                  btn.style.color = '#fff';
-                  btn.style.fontSize = '12px';
-                  btn.style.background = 'transparent';
-                  btn.style.border = 'none';
-                  btn.style.cursor = 'pointer';
-                  btn.style.opacity = '0.8';
-                  btn.style.transition = 'opacity 0.2s';
-                  btn.innerHTML = `<span class="fit-text">比例: ${this.videoFitMode === 'contain' ? '等比' : (this.videoFitMode === 'cover' ? '铺满' : '拉伸')}</span>`;
-                  
-                  btn.onmouseenter = () => btn.style.opacity = '1';
-                  btn.onmouseleave = () => btn.style.opacity = '0.8';
-                  
-                  const fsBtn = rightIcons.querySelector('.dplayer-full-icon');
-                  if (fsBtn) {
-                    fsBtn.before(btn);
-                    
-                    // 💡 移动端(手机/平板)系统原生全屏特种适配：
-                    // 为了让手机/平板获得包裹整个物理屏幕（无浏览器地址栏）的真全屏体验，且保证 100% 视频不重新请求、不丢失播放进度，
-                    // 我们在移动端拦截默认事件，直接向底层的 <video> 标签调起苹果系统的 webkitEnterFullscreen 或是 requestFullscreen API！
-                    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                    if (isMobileDevice) {
-                      fsBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        try {
-                          if (dp.video) {
-                            if (typeof dp.video.webkitEnterFullscreen === 'function') {
-                              dp.video.webkitEnterFullscreen();
-                            } else if (typeof dp.video.requestFullscreen === 'function') {
-                              dp.video.requestFullscreen();
-                            }
-                          }
-                        } catch(err) {
-                          console.warn("[Mobile Fullscreen] Native fullscreen call failed, fallback to webfullscreen", err);
-                          this.toggleWebFullscreen();
-                        }
-                      }, true); // true: 捕获模式，强制在 DPlayer 默认回调之前拦截并阻断！
-                    }
-                  } else {
-                    rightIcons.appendChild(btn);
-                  }
-                  
-                  btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.toggleVideoFit();
-                    const textSpan = btn.querySelector('.fit-text');
-                    if (textSpan) {
-                      const labels = { contain: '等比', cover: '铺满', fill: '拉伸' };
-                      textSpan.textContent = '比例: ' + labels[this.videoFitMode];
-                    }
-                  });
-                }
+
+              dp.on('error', () => {
+                this.stopLoadingAnimation();
               });
 
-              // ▶‖ 下一集按钮注入：仅在有下一集时显示，插在比例按钮左边
+              dp.on('destroy', () => {
+                this.stopLoadingAnimation();
+              });
+              
+              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“下一集”和移动端全屏特殊拦截
               this.$nextTick(() => {
                 const ri = document.querySelector('.dplayer-icons-right');
-                if (ri && this.hasNextEpisode) {
+                if (!ri) return;
+
+                // 1. 移动端(手机/平板)系统原生全屏特种适配
+                const fsBtn = ri.querySelector('.dplayer-full-icon');
+                if (fsBtn) {
+                  const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                  if (isMobileDevice) {
+                    // 移除旧的以防重复绑定
+                    const newFsBtn = fsBtn.cloneNode(true);
+                    fsBtn.parentNode.replaceChild(newFsBtn, fsBtn);
+                    newFsBtn.addEventListener('click', (e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      try {
+                        if (dp.video) {
+                          if (typeof dp.video.webkitEnterFullscreen === 'function') {
+                            dp.video.webkitEnterFullscreen();
+                          } else if (typeof dp.video.requestFullscreen === 'function') {
+                            dp.video.requestFullscreen();
+                          }
+                        }
+                      } catch(err) {
+                        console.warn("[Mobile Fullscreen] Native fullscreen failed, fallback to webfullscreen", err);
+                        this.toggleWebFullscreen();
+                      }
+                    }, true);
+                  }
+                }
+
+                // 2. ▶‖ 下一集按钮注入：仅在有下一集时显示，插在全屏按钮左边
+                if (this.hasNextEpisode) {
                   const existNext = ri.querySelector('.dplayer-next-icon');
                   if (existNext) existNext.remove();
 
@@ -1418,8 +1418,8 @@ new Vue({
                   nextBtn.onmouseenter = () => nextBtn.style.opacity = '1';
                   nextBtn.onmouseleave = () => nextBtn.style.opacity = '0.8';
 
-                  const fitBtn = ri.querySelector('.dplayer-fit-icon');
-                  if (fitBtn) fitBtn.before(nextBtn);
+                  const currentFsBtn = ri.querySelector('.dplayer-full-icon');
+                  if (currentFsBtn) currentFsBtn.before(nextBtn);
                   else ri.appendChild(nextBtn);
 
                   nextBtn.addEventListener('click', (e) => {
