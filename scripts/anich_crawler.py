@@ -187,21 +187,6 @@ def decode_episodes_list(data):
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
 def curl_get_raw(url, token_str, timeout=5):
-    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
-    
-    # 💡 终极云端 Worker 代理拦截：
-    # 既然我们在 jingyanff.xyz 部署了具备云端自动鉴权能力的 Worker，
-    # 线上 Actions 直接把目标域名指向我们自建的 anich-proxy 转发中转，
-    # 避开机房 IP 封锁与下划线 Header 在外网中转中的过滤流失，实现 100% 绝对连通！
-    if is_github_actions:
-        proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jyzf-proxy.anranyunxiaomo.workers.dev/anich-proxy")
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", proxied_url]
-        r = subprocess.run(cmd, capture_output=True)
-        if r.returncode == 0:
-            return r.stdout
-        return None
-        
-    # B. 本地开发调试：
     # 1. 💡 防刷大闸拦截：如果没有传入 Token，说明处于防刷拦截下，直接不发起网络请求返回 None！
     if not token_str:
         return None
@@ -231,11 +216,6 @@ def curl_get_raw(url, token_str, timeout=5):
                 
         time.sleep(0.15)
         
-    proxied_url = url.replace("https://ani.emmmm.eu.org", "https://jyzf-proxy.anranyunxiaomo.workers.dev/anich-proxy")
-    cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), "-H", f"User-Agent: {ANICH_UA}", proxied_url]
-    r = subprocess.run(cmd, capture_output=True)
-    if r.returncode == 0:
-        return r.stdout
         
     return None
 
