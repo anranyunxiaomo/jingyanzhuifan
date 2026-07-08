@@ -3349,7 +3349,14 @@ body.fit-fill iframe {
     letter-spacing: 1px;
   }
   .gufeng-brand-sub {
-    display: none; /* 手机超小屏隐藏超长副歌，避免重叠挤压 */
+    display: block !important; /* 💡 强制手机端显示，永不隐藏 */
+    font-size: 8.5px;
+    color: var(--text-muted);
+    opacity: 0.85;
+    line-height: 1.35;
+    white-space: normal;       /* 💡 允许自动折行 */
+    max-width: 140px;          /* 💡 限制宽度，防止向右挤压古诗 */
+    margin-top: 1px;
   }
   .top-poem-banner .top-banner-poem {
     right: 0.8rem;
