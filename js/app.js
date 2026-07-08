@@ -315,6 +315,7 @@ new Vue({
 
     // 当页面有新元素添加时刷新 Lucide 图标
     currentAnimeId() {
+      this.stopLoadingAnimation(); // 💡 切换番剧时，强制清理任何残留的加载 HUD 和定时器
       this.$nextTick(() => {
         if (typeof lucide !== 'undefined') {
           lucide.createIcons();
@@ -344,7 +345,7 @@ new Vue({
         const keysToRemove = [];
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
-          if (key && key.startsWith('jyzf_detail_cache_')) {
+          if (key && (key.startsWith('jyzf_detail_cache_') || key.startsWith('jyzf_resolved_a123_'))) {
             keysToRemove.push(key);
           }
         }
