@@ -192,37 +192,48 @@ new Vue({
       // 合法可播放的常规 M3U8 H5 线路白名单 (包含 A123 极速源)
       const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
       
-      const lines = [];
-      for (const key in playlists) {
-        const eps = playlists[key];
-        if (eps && eps.length > 0) {
-          // A. 默认在常规白名单中的线路，放行
-          let isAllowed = ALLOWED_KEYS.includes(key);
-          
-          // B. 💡 黄金放行法则：如果任何原本被屏蔽的线路（如 xigua, panda），已经被爬虫嗅探并回填了真实视频直链（即 ep[2] 存在且以 http 开头），则无条件放行！
-          if (!isAllowed) {
-            const firstEp = eps[0];
-            if (Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http')) {
-              isAllowed = true;
+      let lines = [];
+      
+      // 💡 辅助函数：根据规则收集线路
+      const gatherLines = (forceAllowAll = false) => {
+        const result = [];
+        for (const key in playlists) {
+          const eps = playlists[key];
+          if (eps && eps.length > 0) {
+            let isAllowed = ALLOWED_KEYS.includes(key) || forceAllowAll;
+            
+            if (!isAllowed) {
+              const firstEp = eps[0];
+              if (Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http')) {
+                isAllowed = true;
+              }
             }
-          }
-          
-          if (isAllowed) {
-            const isVip = vipList.includes(key);
-            // 💡 升级 VIP 放行法：即使是被标记为 VIP 的加密线路，只要已经被我们回填了直链，就不再是无效的 VIP，我们必须展示它！
-            const firstEp = eps[0];
-            const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
-            if (!isVip || hasRealUrl) {
-              let lineTitle = labelArr[key] || key;
-              if (key === 'a123_line1') lineTitle = 'A123 极速源';
-              lines.push({
-                key: key,
-                title: lineTitle,
-                isVip: isVip && !hasRealUrl ? true : false
-              });
+            
+            if (isAllowed) {
+              const isVip = vipList.includes(key);
+              const firstEp = eps[0];
+              const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
+              if (!isVip || hasRealUrl || forceAllowAll) {
+                let lineTitle = labelArr[key] || key;
+                if (key === 'a123_line1') lineTitle = 'A123 极速源';
+                if (key === 'xigua') lineTitle = '官方直连源';
+                result.push({
+                  key: key,
+                  title: lineTitle,
+                  isVip: isVip && !hasRealUrl ? true : false
+                });
+              }
             }
           }
         }
+        return result;
+      };
+      
+      lines = gatherLines(false);
+      
+      // 💡 容灾保底防线：如果常规线路全部被过滤为空，说明这是一部纯官方源的老旧番剧，我们强行放行所有线路以展示剧集！！！
+      if (lines.length === 0) {
+        lines = gatherLines(true);
       }
       
       // 💡 黄金体验排序法则：根据播放兼容性与速度给线路进行权重打分，将最优质、最稳定的 DPlayer 原生直连源顶格展示！
