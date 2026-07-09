@@ -1,48 +1,47 @@
+/* ==========================================================================
+   🏮 景雁动漫 · 水墨赛博粉色美学设计系统
+   Cyber-Classical Ink · Pink Oriental Design System
+   ========================================================================== */
+
 :root {
-  /* ════════════════════════════════════════════════════════
-     🏮 水墨赛博 · 深黑东方美学设计系统
-     Cyber-Classical Ink · Dark Oriental Design System
-     ════════════════════════════════════════════════════════ */
+  /* 🏮 宣纸底色系 — 绢本杏白为魂（保持原始主色调）*/
+  --bg-primary:    #FAF4EE;          /* 宣纸杏白：经典宣纸色，如绢本底色 */
+  --bg-secondary:  #FFFDFB;          /* 凝脂玉：温润白玉色，卡片面板背景 */
+  --bg-card:       #FDF9F5;          /* 绢本：略微暖调的卡片背景 */
+  --bg-elevated:   #FFFFFF;          /* 弹窗/浮层：纯白提升 */
+  --bg-hover:      rgba(255,59,95,0.04);
 
-  /* 🌑 深黑底色系 — 以徽墨黑为魂，带微蓝冷调 */
-  --bg-primary:    #0D0F14;          /* 深墨：碳黑，带轻微蓝灰冷调 */
-  --bg-secondary:  #111520;          /* 次背景：稍亮深蓝墨 */
-  --bg-card:       #181C28;          /* 卡片磨砂背景 */
-  --bg-elevated:   #1E2235;          /* 弹窗/浮层背景 */
-  --bg-hover:      rgba(255,59,95,0.06); /* 悬停微红背景 */
+  /* 📜 墨色文字系 */
+  --text-main:     #2C1E20;          /* 深黛墨：徽墨黑，带微褐古典质感 */
+  --text-muted:    #8E7A7D;          /* 晚香褐：灰褐色辅助文字 */
+  --text-dim:      #C4AEB0;          /* 极淡褐辅助 */
+  --text-light:    #FAF4EE;
 
-  /* 🪶 宣纸文字色（暗底上的米白字）*/
-  --text-main:     #E8DDD0;          /* 宣纸米白：在暗底如绢纸上的毛笔字 */
-  --text-muted:    #6B7080;          /* 灰蓝辅助 */
-  --text-dim:      #3D4255;          /* 极淡辅助 */
-  --text-light:    #E8DDD0;
-
-  /* ⚡ 霓虹朱砂红 × 流金双主色 */
+  /* ⚡ 霓虹朱砂红（主色调，绝对不改）*/
   --accent-gold:        #FF3B5F;     /* 霓虹朱砂红 */
-  --accent-gold-hover:  #FF1A45;     /* 深绛：重压后印泥暗红 */
-  --accent-gold-light:  rgba(255,59,95,0.08);
-  --accent-sakura:      rgba(255,59,95,0.15);
-  --accent-ink:         rgba(255,59,95,0.05);
+  --accent-gold-hover:  #D91A3F;     /* 深绛红：重压后的印泥红 */
+  --accent-gold-light:  rgba(255,59,95,0.06);
+  --accent-sakura:      rgba(240,180,195,0.55);
+  --accent-ink:         rgba(44,30,32,0.06);
 
-  /* 🥇 流金科技线 */
-  --tech-gold:      #D4AF37;         /* 流金 */
-  --tech-gold-glow: rgba(212,175,55,0.5);
-  --tech-glow:      rgba(255,59,95,0.45);
-  /* ↑ 浑天仪网格线：加强到肉眼清晰可见 */
-  --tech-grid:      rgba(212,175,55,0.10);
+  /* 🥇 流金科技线（主色调，绝对不改）*/
+  --tech-gold:      #D4AF37;
+  --tech-gold-glow: rgba(212,175,55,0.35);
+  --tech-glow:      rgba(255,59,95,0.2);
+  /* 浑天仪网格：0.035→0.07，在浅底下稍可辨而不刺眼 */
+  --tech-grid:      rgba(212,175,55,0.07);
 
-  /* 🪟 磨砂玻璃系统 */
-  --glass-bg:     rgba(18,21,32,0.85);
-  --glass-border: rgba(212,175,55,0.18);
-  --glass-shadow: 0 12px 48px -12px rgba(255,59,95,0.25),
-                  0 0 0 1px rgba(212,175,55,0.12);
+  /* 🪟 磨砂玻璃系统（浅色系）*/
+  --glass-bg:     rgba(255,253,251,0.92);
+  --glass-border: rgba(255,59,95,0.15);
+  --glass-shadow: 0 12px 48px -12px rgba(255,59,95,0.12),
+                  0 4px 0 rgba(255,59,95,0.04);
 
-  /* 🌊 霓虹光晕 glow 系统 */
-  --glow-red:  0 0 20px rgba(255,59,95,0.55), 0 0 60px rgba(255,59,95,0.2);
-  --glow-gold: 0 0 20px rgba(212,175,55,0.55), 0 0 60px rgba(212,175,55,0.2);
-  --glow-dual: 0 0 20px rgba(255,59,95,0.4), 0 0 40px rgba(212,175,55,0.25);
+  /* ✨ 粉色系微光晕 */
+  --glow-red:  0 0 16px rgba(255,59,95,0.25), 0 0 40px rgba(255,59,95,0.1);
+  --glow-gold: 0 0 16px rgba(212,175,55,0.3), 0 0 40px rgba(212,175,55,0.12);
 
-  /* 🎋 3D 三维物理弹性阻尼缓动 */
+  /* 🎋 3D 物理弹性缓动 */
   --ease-silk:   cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-ink:    cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,6 +51,7 @@
   --font-family: 'Noto Serif SC', 'Playfair Display', Georgia, "PingFang SC", serif;
   --font-sans:   'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
 }
+
 
 
 [v-cloak] {
@@ -86,11 +86,11 @@ body.loader-active {
 body {
   font-family: var(--font-family);
   background-color: var(--bg-primary);
-  /* 🌑 深黑墨底 + 双色霓虹辐射晕染 */
+  /* 🏮 侠客山水晕染多层叠加背景 */
   background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(255,59,95,0.12) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 85%, rgba(212,175,55,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(255,59,95,0.06) 0%, transparent 40%);
+    radial-gradient(ellipse at 15% 15%, rgba(255, 59, 95, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(44, 30, 32, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(240, 180, 195, 0.05) 0%, transparent 40%);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
@@ -121,18 +121,15 @@ body::before {
   transform-origin: center center;
 }
 
-/* 🔴 右下角朱砂霓虹辐射光球（科技感重点） */
+/* 🏮 3D 水墨山峦画卷层 */
 body::after {
   content: '';
   position: fixed;
-  bottom: -15vh; right: -10vw;
-  width: 55vw;
+  bottom: -5vh; right: -5vw;
+  width: 45vw;
   height: 55vh;
   background:
-    radial-gradient(ellipse at 100% 100%,
-      rgba(255,59,95,0.18) 0%,
-      rgba(212,175,55,0.08) 40%,
-      transparent 72%);
+    radial-gradient(ellipse at 100% 100%, rgba(44, 30, 32, 0.06) 0%, transparent 75%);
   z-index: -1;
   pointer-events: none;
   transform: translateZ(-150px) scale(1.5);
@@ -157,17 +154,16 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 100;
-  /* 🌑 深色磨砂毛玻璃 Header */
-  background: rgba(13, 15, 20, 0.88);
-  backdrop-filter: blur(24px) saturate(1.6);
-  -webkit-backdrop-filter: blur(24px) saturate(1.6);
-  /* 🏮 三线分层底边：朱砂红主线 + 流金霓虹微光 */
-  border-bottom: 1px solid rgba(212,175,55,0.12);
+  background: rgba(255, 253, 251, 0.92);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: none;
   box-shadow:
-    0 1px 0 rgba(255,59,95,0.25),
-    0 2px 0 rgba(255,59,95,0.08),
-    0 0 40px rgba(255,59,95,0.06),
-    0 8px 32px rgba(0,0,0,0.4);
+    0 1px 0 rgba(217, 96, 122, 0.12),
+    0 2px 0 rgba(217, 96, 122, 0.06),
+    0 3px 0 rgba(184, 64, 96, 0.8),
+    0 4px 20px rgba(184, 64, 96, 0.06),
+    0 8px 32px rgba(44, 30, 32, 0.04);
 }
 
 /* 主内容视图容器（首页/番剧库）—— 3D 转场动画挂载根节点 */
@@ -288,20 +284,17 @@ body::after {
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(255,59,95,0.04);
-  border: 1px solid rgba(255,59,95,0.2);
-  border-radius: 2px;
+  background: rgba(226, 109, 128, 0.03);
+  border: 1px solid rgba(226, 109, 128, 0.25);
+  border-radius: 4px;
   padding: 0.5rem 1rem;
   transition: var(--transition-smooth);
 }
 
 .search-box:focus-within {
-  background: rgba(18,21,32,0.95);
-  border-color: var(--accent-gold);
-  box-shadow:
-    0 0 0 1px rgba(255,59,95,0.25),
-    0 0 20px rgba(255,59,95,0.2),
-    0 4px 20px rgba(0,0,0,0.4);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: var(--accent-gold-hover);
+  box-shadow: 0 4px 20px rgba(226, 109, 128, 0.08);
 }
 
 .search-icon {
@@ -343,16 +336,13 @@ body::after {
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: rgba(18, 21, 32, 0.97);
-  border: 1px solid rgba(212,175,55,0.2);
-  border-radius: 2px;
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.6),
-    0 0 0 1px rgba(255,59,95,0.1);
+  background: rgba(255, 253, 251, 0.98);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(226, 109, 128, 0.1);
   max-height: 380px;
   overflow-y: auto;
   z-index: 10;
-  backdrop-filter: blur(16px);
 }
 
 .result-item {
@@ -362,7 +352,7 @@ body::after {
   padding: 0.8rem 1.2rem;
   cursor: pointer;
   transition: var(--transition-smooth);
-  border-bottom: 1px solid rgba(212,175,55,0.06);
+  border-bottom: 1px solid rgba(226, 109, 128, 0.08);
 }
 
 .result-item:last-child {
@@ -370,8 +360,7 @@ body::after {
 }
 
 .result-item:hover {
-  background: rgba(255,59,95,0.08);
-  border-left: 2px solid var(--accent-gold);
+  background: var(--accent-gold-light);
 }
 
 .result-cover {
@@ -379,7 +368,7 @@ body::after {
   height: 56px;
   object-fit: cover;
   border-radius: 2px;
-  border: 1px solid rgba(212,175,55,0.25);
+  border: 1px solid rgba(226, 109, 128, 0.2);
 }
 
 .result-title {
@@ -460,27 +449,27 @@ body::after {
   transition: background-position 8s var(--ease-silk), opacity 0.6s var(--ease-silk);
 }
 
-/* 🌑 深色沙滩遗址遮罩：左测黑色渐变→右侧半透呼现画面 */
+/* 🏮 侠客山水遣罩：宣纸渐变从左侧如薄雾蔓延，右侧半透呢现山水画意 */
 .banner-slide::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
     linear-gradient(to right,
-      rgba(13,15,20,0.97) 0%,
-      rgba(13,15,20,0.82) 28%,
-      rgba(13,15,20,0.42) 58%,
-      rgba(13,15,20,0.05) 100%);
+      rgba(250, 244, 238, 0.97) 0%,
+      rgba(250, 244, 238, 0.82) 30%,
+      rgba(250, 244, 238, 0.32) 65%,
+      rgba(250, 244, 238, 0.05) 100%);
   z-index: 1;
 }
 
-/* 🏮 底部暴戴淨渐层：增强沉浈感 */
+/* 🏮 底部薄雾：下沉晕染，增强画卷质感 */
 .banner-slide::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-    rgba(13,15,20,0.75) 0%,
+    rgba(250, 244, 238, 0.6) 0%,
     transparent 35%);
   z-index: 1;
   pointer-events: none;
@@ -573,12 +562,11 @@ body::after {
   font-size: clamp(14px, 1.7vw, 21px);
   font-weight: 700;
   line-height: 1.25;
-  /* 暗底上的宣纸米白 */
-  color: rgba(232, 221, 208, 0.9);
+  color: rgba(44, 26, 14, 0.83);
   opacity: 0;
   animation: inkDrop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  text-shadow: 0 1px 0 rgba(212,175,55,0.25),
-               0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 0 rgba(200, 168, 107, 0.28),
+               0 2px 5px rgba(44, 26, 14, 0.12);
   will-change: transform, opacity, filter;
 }
 
@@ -669,18 +657,15 @@ body::after {
 
 .banner-tag {
   display: inline-block;
-  /* 深色磨砂玻琳 + 霓虹红字 */
-  background: rgba(255,59,95,0.1);
-  color: var(--accent-gold);
-  border: 1px solid rgba(255,59,95,0.4);
+  background: var(--bg-primary);
+  color: var(--accent-gold-hover);
+  border: 1px solid var(--accent-gold);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.25rem 0.8rem;
-  border-radius: 1px;
+  border-radius: 2px;
   margin-bottom: 1.2rem;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(255,59,95,0.5);
-  box-shadow: 0 0 12px rgba(255,59,95,0.15);
+  letter-spacing: 1px;
 }
 
 .banner-title {
@@ -691,7 +676,6 @@ body::after {
   color: var(--text-main);
   margin-bottom: 2rem;
   letter-spacing: 1.5px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
 .btn {
@@ -767,21 +751,18 @@ body::after {
   max-width: 1200px;
   margin: clamp(0.5rem, 2.5vw, 2.2rem) auto;
   padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 2.5rem);
-  /* 🌑 深色磨砂玻璃主面板 */
-  background: rgba(17, 21, 32, 0.75);
-  border: 1px solid rgba(212,175,55,0.12);
-  border-top: 2px solid rgba(255,59,95,0.4);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(217, 96, 122, 0.25);
   box-shadow:
-    0 0 0 1px rgba(255,59,95,0.06) inset,
-    0 24px 80px -20px rgba(0,0,0,0.7),
-    0 0 80px rgba(255,59,95,0.04);
+    0 24px 80px -20px rgba(44, 30, 32, 0.1),
+    0 0 0 1px rgba(255, 253, 251, 0.9) inset,
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
   position: relative;
-  border-radius: 2px;
+  border-radius: 4px;
   z-index: 1;
   box-sizing: border-box;
   width: calc(100% - clamp(0.4rem, 2vw, 2rem) * 2);
   overflow-x: hidden;
-  backdrop-filter: blur(12px);
 
   transform-origin: center;
   animation: scrollUnroll 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -795,7 +776,7 @@ body::after {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px solid rgba(212,175,55,0.06);
+  border: 1px solid rgba(226, 109, 128, 0.15);
   pointer-events: none;
 }
 
@@ -906,8 +887,8 @@ body::after {
 }
 
 .tab-btn {
-  background: rgba(18,21,32,0.8);
-  border: 1px solid rgba(212,175,55,0.15);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(226, 109, 128, 0.3);
   color: var(--text-muted);
   padding: 0.6rem 1.4rem;
   border-radius: 0;
@@ -939,16 +920,16 @@ body::after {
 }
 
 .tab-btn:hover {
-  background: rgba(255,59,95,0.06);
+  background: rgba(255, 253, 251, 0.98);
   color: var(--text-main);
-  border-color: rgba(255,59,95,0.3);
+  border-color: rgba(226, 109, 128, 0.4);
 }
 
 .tab-btn.active {
   background: var(--accent-gold);
   color: white !important;
   border-color: var(--accent-gold);
-  box-shadow: 0 0 16px rgba(255,59,95,0.4);
+  box-shadow: 0 4px 16px rgba(255, 59, 95, 0.25);
 }
 
 .tab-btn.active::after {
@@ -964,21 +945,18 @@ body::after {
   gap: 2rem;
 }
 
-/* 🐉 水墨赛博·深色挂轴画框（流金轴木 + 深色磨砂玻璃）*/
+/* 🏮 挂轴画框（画轴上下轴木设计）*/
 .anime-card {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: rgba(24, 28, 40, 0.9);
-  border: 1px solid rgba(212,175,55,0.12);
-  padding: 10px 8px;
-  border-top: 2px solid var(--tech-gold);
-  border-bottom: 2px solid rgba(212,175,55,0.25);
+  background: #FDF9F5;
+  border: 1px solid rgba(255, 59, 95, 0.18);
+  padding: 12px 10px;
+  border-top: 3px solid #C8A882;
+  border-bottom: 3px solid #C8A882;
   position: relative;
-  box-shadow:
-    0 4px 20px -6px rgba(0,0,0,0.7),
-    0 0 0 1px rgba(255,59,95,0.04) inset;
-  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px -6px rgba(44, 30, 32, 0.1);
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1102,16 +1080,15 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 💥 霓虹侠客悬停：3D + 红金双色霓虹成象 */
+/* 💥 霓虹侠客悬停：3D 反射 + 红金双色微光（第一次设计稏见管效果）*/
 .anime-card:hover {
-  transform: translateY(-12px) scale(1.03) rotateX(5deg) rotateY(-4deg);
+  transform: translateY(-10px) scale(1.03) rotateX(5deg) rotateY(-4deg);
   box-shadow:
-    -8px 24px 48px -10px rgba(255,59,95,0.45),
-    0 0 0 1px rgba(212,175,55,0.65),
-    0 0 30px rgba(255,59,95,0.2),
-    0 0 60px rgba(212,175,55,0.1),
-    inset 0 1px 0 rgba(212,175,55,0.2);
-  border-color: rgba(255,59,95,0.7);
+    -8px 20px 40px -10px rgba(255, 59, 95, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    0 0 20px rgba(255, 59, 95, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 59, 95, 0.45);
   border-top-color: var(--tech-gold);
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
@@ -1202,14 +1179,12 @@ body::after {
 /* 播放器面板 */
 .player-panel {
   grid-column: 1 / 3;
-  background: rgba(18,21,32,0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(212,175,55,0.15);
-  border-radius: 2px;
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
   padding: 1.5rem;
-  box-shadow:
-    0 0 0 1px rgba(255,59,95,0.06) inset,
-    0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: var(--glass-shadow);
 }
 
 .player-wrapper {
@@ -1320,11 +1295,11 @@ body::after {
 }
 
 .engine-select {
-  background: rgba(18,21,32,0.8);
-  border: 1px solid rgba(212,175,55,0.2);
+  background: rgba(226, 109, 128, 0.04);
+  border: 1px solid var(--glass-border);
   color: var(--text-main);
   padding: 0.4rem 0.8rem;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.85rem;
   font-weight: 600;
   outline: none;
@@ -1334,19 +1309,19 @@ body::after {
 
 .engine-select:focus, .engine-select:hover {
   border-color: var(--accent-gold);
-  background: rgba(255,59,95,0.08);
-  box-shadow: 0 0 12px rgba(255,59,95,0.2);
+  background: white;
+  box-shadow: 0 4px 15px rgba(226, 109, 128, 0.08);
 }
 
 .proxy-tunnel-btn {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(18,21,32,0.7);
-  border: 1px solid rgba(212,175,55,0.15);
+  background: rgba(226, 109, 128, 0.04);
+  border: 1px solid var(--glass-border);
   color: var(--text-muted);
   padding: 0.4rem 0.8rem;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -1354,17 +1329,17 @@ body::after {
 }
 
 .proxy-tunnel-btn.active {
-  background: rgba(255,59,95,0.1);
+  background: var(--accent-gold-light);
   border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  box-shadow: 0 0 16px rgba(255,59,95,0.25);
+  color: var(--accent-gold-hover);
+  box-shadow: 0 4px 15px rgba(226, 109, 128, 0.1);
   animation: pinkPulse 2s infinite;
 }
 
 .proxy-tunnel-btn:hover {
   border-color: var(--accent-gold);
   color: var(--text-main);
-  background: rgba(255,59,95,0.06);
+  background: rgba(226, 109, 128, 0.04);
 }
 
 .tunnel-icon {
