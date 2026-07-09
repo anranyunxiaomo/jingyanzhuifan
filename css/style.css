@@ -4,42 +4,41 @@
    ========================================================================== */
 
 :root {
-  /* 🏮 黛粉墨底色系 — 绛紫温润为骨，水墨赛博粉色调 */
-  --bg-primary:    #160E12;          /* 深绛墨：碳黑带温润紫红调，绝妙深粉墨背景 */
-  --bg-secondary:  #1F151B;          /* 次绛墨：稍微明亮的深紫粉色，面板背景 */
-  --bg-card:       rgba(39, 26, 34, 0.85); /* 桃木磨砂玻璃卡片背景 */
-  --bg-elevated:   #2C1D27;          /* 绛红墨：浮层面板 */
-  --bg-hover:      rgba(255, 59, 127, 0.08); /* 霓虹粉微悬停 */
+  /* 🏮 宣纸底色系 — 绢本杏白为魂（保持原始主色调）*/
+  --bg-primary:    #FAF4EE;          /* 宣纸杏白：经典宣纸色，如绢本底色 */
+  --bg-secondary:  #FFFDFB;          /* 凝脂玉：温润白玉色，卡片面板背景 */
+  --bg-card:       #FDF9F5;          /* 绢本：略微暖调的卡片背景 */
+  --bg-elevated:   #FFFFFF;          /* 弹窗/浮层：纯白提升 */
+  --bg-hover:      rgba(255,59,95,0.04);
 
-  /* 📜 宣纸米粉字色系 */
-  --text-main:     #FFE3EB;          /* 雪樱粉白：高亮粉白，墨底上的毛笔字 */
-  --text-muted:    #A88E99;          /* 烟雨粉灰：灰紫粉，诗意辅助色 */
-  --text-dim:      #5B434F;          /* 绛灰：极淡辅助 */
-  --text-light:    #FFE3EB;
+  /* 📜 墨色文字系 */
+  --text-main:     #2C1E20;          /* 深黛墨：徽墨黑，带微褐古典质感 */
+  --text-muted:    #8E7A7D;          /* 晚香褐：灰褐色辅助文字 */
+  --text-dim:      #C4AEB0;          /* 极淡褐辅助 */
+  --text-light:    #FAF4EE;
 
-  /* ⚡ 霓虹朱砂粉/桃花红 (赛博核心) */
-  --accent-gold:        #FF2A7A;     /* 霓虹朱砂粉：高饱和发光粉红 */
-  --accent-gold-hover:  #FF0055;     /* 深霓红：高亮赛博红 */
-  --accent-gold-light:  rgba(255, 42, 122, 0.09);
-  --accent-sakura:      rgba(255, 95, 160, 0.25);
-  --accent-ink:         rgba(255, 42, 122, 0.04);
+  /* ⚡ 霓虹朱砂红（主色调，绝对不改）*/
+  --accent-gold:        #FF3B5F;     /* 霓虹朱砂红 */
+  --accent-gold-hover:  #D91A3F;     /* 深绛红 */
+  --accent-gold-light:  rgba(255,59,95,0.06);
+  --accent-sakura:      rgba(240,180,195,0.55);
+  --accent-ink:         rgba(44,30,32,0.06);
 
-  /* 🥇 浑天仪流金科技线 */
-  --tech-gold:      #E8C56B;         /* 流金：尊贵古风淡金，勾勒金轴与刻度 */
-  --tech-gold-glow: rgba(232, 197, 107, 0.45);
-  --tech-glow:      rgba(255, 42, 122, 0.4);
-  /* 浑天仪粉色电磁经纬网格线 */
-  --tech-grid:      rgba(255, 42, 122, 0.09);
+  /* 🥇 流金科技线（主色调，绝对不改）*/
+  --tech-gold:      #D4AF37;
+  --tech-gold-glow: rgba(212,175,55,0.35);
+  --tech-glow:      rgba(255,59,95,0.2);
+  --tech-grid:      rgba(212,175,55,0.07);
 
-  /* 🪟 磨砂玻璃系统 (深粉墨赛博) */
-  --glass-bg:     rgba(31, 21, 27, 0.82);
-  --glass-border: rgba(255, 42, 122, 0.22);
-  --glass-shadow: 0 12px 48px -12px rgba(255, 42, 122, 0.35),
-                  0 0 0 1px rgba(232, 197, 107, 0.15);
+  /* 🪟 磨砂玻璃系统（浅色系）*/
+  --glass-bg:     rgba(255,253,251,0.92);
+  --glass-border: rgba(255,59,95,0.15);
+  --glass-shadow: 0 12px 48px -12px rgba(255,59,95,0.12),
+                  0 4px 0 rgba(255,59,95,0.04);
 
-  /* ✨ 赛博霓虹双色微光晕 */
-  --glow-red:  0 0 20px rgba(255, 42, 122, 0.6), 0 0 50px rgba(255, 42, 122, 0.25);
-  --glow-gold: 0 0 20px rgba(232, 197, 107, 0.55), 0 0 50px rgba(232, 197, 107, 0.2);
+  /* ✨ 粉色系微光晕 */
+  --glow-red:  0 0 16px rgba(255,59,95,0.25), 0 0 40px rgba(255,59,95,0.1);
+  --glow-gold: 0 0 16px rgba(212,175,55,0.3), 0 0 40px rgba(212,175,55,0.12);
 
   /* 🎋 3D 物理弹性缓动 */
   --ease-silk:   cubic-bezier(0.22, 1, 0.36, 1);
@@ -86,11 +85,11 @@ body.loader-active {
 body {
   font-family: var(--font-family);
   background-color: var(--bg-primary);
-  /* 🏮 墨底霓虹桃红晕染多层叠加背景 */
+  /* 🏮 侠客山水晕染多层叠加背景 */
   background-image:
-    radial-gradient(ellipse at 10% 10%, rgba(255, 42, 122, 0.15) 0%, transparent 45%),
-    radial-gradient(ellipse at 90% 90%, rgba(232, 197, 107, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(255, 42, 122, 0.08) 0%, transparent 40%);
+    radial-gradient(ellipse at 15% 15%, rgba(255, 59, 95, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(44, 30, 32, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(240, 180, 195, 0.05) 0%, transparent 40%);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
@@ -125,11 +124,11 @@ body::before {
 body::after {
   content: '';
   position: fixed;
-  bottom: -10vh; right: -10vw;
-  width: 55vw;
+  bottom: -5vh; right: -5vw;
+  width: 45vw;
   height: 55vh;
   background:
-    radial-gradient(ellipse at 100% 100%, rgba(255, 42, 122, 0.16) 0%, rgba(31, 21, 27, 0.4) 60%, transparent 80%);
+    radial-gradient(ellipse at 100% 100%, rgba(44, 30, 32, 0.06) 0%, transparent 75%);
   z-index: -1;
   pointer-events: none;
   transform: translateZ(-150px) scale(1.5);
@@ -154,15 +153,16 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(22, 14, 18, 0.88);
-  backdrop-filter: blur(24px) saturate(1.6);
-  -webkit-backdrop-filter: blur(24px) saturate(1.6);
-  border-bottom: 1px solid rgba(255, 42, 122, 0.2);
+  background: rgba(255, 253, 251, 0.92);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: none;
   box-shadow:
-    0 1px 0 rgba(255, 42, 122, 0.25),
-    0 2px 0 rgba(255, 42, 122, 0.08),
-    0 0 40px rgba(255, 42, 122, 0.06),
-    0 8px 32px rgba(0, 0, 0, 0.55);
+    0 1px 0 rgba(217, 96, 122, 0.12),
+    0 2px 0 rgba(217, 96, 122, 0.06),
+    0 3px 0 rgba(184, 64, 96, 0.8),
+    0 4px 20px rgba(184, 64, 96, 0.06),
+    0 8px 32px rgba(44, 30, 32, 0.04);
 }
 
 /* 主内容视图容器（首页/番剧库）—— 3D 转场动画挂载根节点 */
@@ -272,7 +272,7 @@ body::after {
 }
 
 /* 搜索容器 */
-.search-wrapper {
+.app-search-wrapper {
   position: relative;
   flex: 1 1 0;
   /* 关键：防止 flex 子项超出容器 */
@@ -280,32 +280,23 @@ body::after {
   max-width: 520px;
 }
 
-.search-box {
+.app-search-box {
   display: flex;
   align-items: center;
-  background: rgba(255, 42, 122, 0.05);
-  border: 1px solid rgba(255, 42, 122, 0.22);
+  background: rgba(226, 109, 128, 0.03);
+  border: 1px solid rgba(226, 109, 128, 0.25);
   border-radius: 4px;
   padding: 0.5rem 1rem;
   transition: var(--transition-smooth);
 }
 
-.search-box:focus-within {
-  background: rgba(31, 21, 27, 0.98);
-  border-color: var(--accent-gold);
-  box-shadow:
-    0 0 0 1px rgba(255, 42, 122, 0.2),
-    0 0 20px rgba(255, 42, 122, 0.35);
+.app-search-box:focus-within {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: var(--accent-gold-hover);
+  box-shadow: 0 4px 20px rgba(226, 109, 128, 0.08);
 }
 
-.search-icon {
-  width: 1.1rem;
-  height: 1.1rem;
-  color: var(--accent-gold-hover);
-  margin-right: 0.5rem;
-}
-
-.search-box input {
+.app-search-box input {
   border: none;
   background: transparent;
   outline: none;
@@ -315,10 +306,9 @@ body::after {
   font-family: var(--font-family); /* 改为古典宋体字，输入时充满国风韵味 */
 }
 
-.search-box input::placeholder {
+.app-search-box input::placeholder {
   color: var(--text-muted);
 }
-
 .clear-icon {
   width: 1.1rem;
   height: 1.1rem;
@@ -337,14 +327,13 @@ body::after {
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: rgba(22, 14, 18, 0.98);
-  border: 1px solid rgba(255, 42, 122, 0.25);
+  background: rgba(255, 253, 251, 0.98);
+  border: 1px solid var(--glass-border);
   border-radius: 4px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 40px rgba(226, 109, 128, 0.1);
   max-height: 380px;
   overflow-y: auto;
   z-index: 10;
-  backdrop-filter: blur(16px);
 }
 
 .result-item {
@@ -460,10 +449,10 @@ body::after {
   inset: 0;
   background:
     linear-gradient(to right,
-      rgba(22, 14, 18, 0.98) 0%,
-      rgba(22, 14, 18, 0.82) 30%,
-      rgba(22, 14, 18, 0.42) 65%,
-      rgba(22, 14, 18, 0.05) 100%);
+      rgba(250, 244, 238, 0.97) 0%,
+      rgba(250, 244, 238, 0.82) 30%,
+      rgba(250, 244, 238, 0.32) 65%,
+      rgba(250, 244, 238, 0.05) 100%);
   z-index: 1;
 }
 
@@ -473,7 +462,7 @@ body::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-    rgba(22, 14, 18, 0.75) 0%,
+    rgba(250, 244, 238, 0.6) 0%,
     transparent 35%);
   z-index: 1;
   pointer-events: none;
@@ -756,14 +745,12 @@ body::after {
   max-width: 1200px;
   margin: clamp(0.5rem, 2.5vw, 2.2rem) auto;
   padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 2.5rem);
-  background: rgba(31, 21, 27, 0.85);
-  border: 1px solid rgba(255, 42, 122, 0.22);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(217, 96, 122, 0.25);
   box-shadow:
-    0 24px 80px -20px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(255, 42, 122, 0.08),
-    0 0 0 1px rgba(255, 42, 122, 0.08) inset;
+    0 24px 80px -20px rgba(44, 30, 32, 0.1),
+    0 0 0 1px rgba(255, 253, 251, 0.9) inset,
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
   position: relative;
   border-radius: 4px;
   z-index: 1;
@@ -783,7 +770,7 @@ body::after {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px solid rgba(232, 197, 107, 0.16);
+  border: 1px solid rgba(226, 109, 128, 0.15);
   pointer-events: none;
 }
 
@@ -959,16 +946,15 @@ body::after {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: rgba(43, 29, 37, 0.85);
-  border: 1px solid rgba(255, 42, 122, 0.2);
+  background: #FEFBF8;
+  border: 1px solid rgba(255, 59, 95, 0.12);
   padding: 10px 8px;
-  border-top: 3px solid var(--tech-gold);
-  border-bottom: 3px solid var(--tech-gold);
+  border-top: 3px solid #B89A74;
+  border-bottom: 3px solid #B89A74;
   position: relative;
   box-shadow:
-    0 6px 20px -8px rgba(0, 0, 0, 0.6),
-    0 1px 0 rgba(255, 42, 122, 0.08) inset;
-  backdrop-filter: blur(12px);
+    0 4px 16px -6px rgba(44, 30, 32, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1020,7 +1006,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle, rgba(255, 42, 122, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(226, 109, 128, 0.14) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -1;
@@ -1035,8 +1021,8 @@ body::after {
   aspect-ratio: 3 / 4;
   border-radius: 0;
   overflow: hidden;
-  background: rgba(255, 42, 122, 0.05);
-  border: 1px solid rgba(255, 42, 122, 0.22);
+  background: rgba(217, 96, 122, 0.03);
+  border: 1px solid rgba(217, 96, 122, 0.18);
   transition: var(--transition-smooth);
 }
 
@@ -1096,11 +1082,11 @@ body::after {
 .anime-card:hover {
   transform: translateY(-10px) scale(1.03) rotateX(5deg) rotateY(-4deg);
   box-shadow:
-    -8px 20px 40px -10px rgba(255, 42, 122, 0.45),
-    0 0 0 1px rgba(232, 197, 107, 0.6),
-    0 0 25px rgba(255, 42, 122, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 42, 122, 0.6);
+    -6px 18px 40px -8px rgba(184, 64, 96, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.45),
+    0 4px 20px rgba(255, 59, 95, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 59, 95, 0.38);
   border-top-color: var(--tech-gold);
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
@@ -1109,8 +1095,8 @@ body::after {
 .anime-card:active {
   transform: translateY(-4px) scale(0.97) rotateX(1deg) rotateY(-1deg);
   box-shadow:
-    -4px 8px 18px -8px rgba(255, 42, 122, 0.35),
-    0 0 0 1px rgba(232, 197, 107, 0.3);
+    -4px 8px 18px -8px rgba(255,59,95,0.35),
+    0 0 0 1px rgba(212,175,55,0.4);
   transition: transform 0.15s var(--ease-silk);
 }
 
@@ -3846,11 +3832,11 @@ body.fit-fill iframe {
     left: 0;
     right: 0;
     height: calc(64px + env(safe-area-inset-bottom, 12px));
-    background: rgba(22, 14, 18, 0.94);
+    background: rgba(255, 253, 251, 0.96);
     backdrop-filter: blur(20px) saturate(1.5);
     -webkit-backdrop-filter: blur(20px) saturate(1.5);
-    border-top: 1px solid rgba(255, 42, 122, 0.22);
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(217, 96, 122, 0.18);
+    box-shadow: 0 -4px 24px rgba(184, 64, 96, 0.06);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -3884,8 +3870,8 @@ body.fit-fill iframe {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(255, 42, 122, 0.04);
-    border: 1px solid rgba(255, 42, 122, 0.15);
+    background: rgba(217, 96, 122, 0.04);
+    border: 1px solid rgba(217, 96, 122, 0.15);
     transition: all 0.3s ease;
     color: var(--text-muted);
   }
@@ -3899,30 +3885,30 @@ body.fit-fill iframe {
     color: var(--accent-gold);
   }
   .mobile-bottom-nav .nav-item.active .nav-icon-wrapper {
-    background: rgba(255, 42, 122, 0.15);
+    background: rgba(217, 96, 122, 0.15);
     border-color: var(--accent-gold);
     color: var(--accent-gold);
-    box-shadow: 0 0 12px rgba(255, 42, 122, 0.4);
+    box-shadow: 0 0 12px rgba(217, 96, 122, 0.35);
     transform: translateY(-4px) scale(1.1);
   }
 
   /* 🏮 红灯笼微光特效 */
   .mobile-bottom-nav .nav-item.active .lantern-icon {
-    box-shadow: 0 0 15px rgba(255, 42, 122, 0.6);
+    box-shadow: 0 0 15px rgba(217, 96, 122, 0.5);
     border-color: var(--accent-gold);
     color: var(--accent-gold);
   }
 
   /* 📜 竹简发光特效 */
   .mobile-bottom-nav .nav-item.active .scroll-icon {
-    box-shadow: 0 0 15px rgba(232, 197, 107, 0.4);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     border-color: var(--tech-gold);
     color: var(--tech-gold);
   }
   
   /* 🖋 狼毫笔尖发光 */
   .mobile-bottom-nav .nav-item.active .brush-icon {
-    box-shadow: 0 0 15px rgba(255, 42, 122, 0.5);
+    box-shadow: 0 0 15px rgba(217, 96, 122, 0.4);
     border-color: var(--accent-gold);
     color: var(--accent-gold);
   }
@@ -3946,9 +3932,9 @@ body.fit-fill iframe {
 @media (min-width: 1025px) {
   body {
     background-image:
-      radial-gradient(ellipse at 300px 15%, rgba(255, 42, 122, 0.12) 0%, transparent 45%),
-      radial-gradient(ellipse at 90% 90%, rgba(232, 197, 107, 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 0%, rgba(255, 42, 122, 0.06) 0%, transparent 40%);
+      radial-gradient(ellipse at 300px 15%, rgba(255, 59, 95, 0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 0%, rgba(255, 59, 95, 0.04) 0%, transparent 40%);
   }
 
   /* Header 变形为左侧固定分栏 */
@@ -3959,12 +3945,12 @@ body.fit-fill iframe {
     bottom: 0;
     width: 300px;
     height: 100vh;
-    background: rgba(22, 14, 18, 0.95);
+    background: rgba(255, 253, 251, 0.95);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border-right: 1px solid rgba(255, 42, 122, 0.22);
+    border-right: 1px solid rgba(217, 96, 122, 0.18);
     border-bottom: none;
-    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.6);
+    box-shadow: 6px 0 24px rgba(184, 64, 96, 0.05);
     padding: 3.5rem 1.8rem;
     z-index: 100;
   }
@@ -3984,10 +3970,10 @@ body.fit-fill iframe {
     align-items: flex-start;
     gap: 0.6rem;
     padding: 1.2rem;
-    background: rgba(31, 21, 27, 0.8);
-    border: 1px solid rgba(255, 42, 122, 0.15);
+    background: rgba(253, 249, 245, 0.9);
+    border: 1px solid rgba(217, 96, 122, 0.15);
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(184, 64, 96, 0.05);
     width: 100%;
     box-sizing: border-box;
   }
@@ -4020,21 +4006,21 @@ body.fit-fill iframe {
     justify-content: center;
     padding: 0.9rem 1.5rem;
     border-radius: 4px;
-    background: rgba(255, 42, 122, 0.05);
-    border: 1px solid rgba(255, 42, 122, 0.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(217, 96, 122, 0.04);
+    border: 1px solid rgba(217, 96, 122, 0.18);
+    box-shadow: 0 4px 12px rgba(184, 64, 96, 0.05);
   }
 
   .catalog-nav-btn:hover {
-    background: rgba(255, 42, 122, 0.12);
+    background: rgba(217, 96, 122, 0.08);
     border-color: var(--accent-gold);
-    box-shadow: 0 0 15px rgba(255, 42, 122, 0.35);
+    box-shadow: 0 0 15px rgba(217, 96, 122, 0.2);
   }
 
   .catalog-nav-btn--active {
     background: var(--accent-gold) !important;
     border-color: var(--accent-gold) !important;
-    box-shadow: 0 0 20px rgba(255, 42, 122, 0.5) !important;
+    box-shadow: 0 0 20px rgba(255, 59, 95, 0.4) !important;
   }
 
   /* Main 内容区向右平移 */
