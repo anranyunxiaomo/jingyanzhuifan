@@ -3,29 +3,35 @@
    ========================================================================== */
 
 :root {
-  /* 🏮 顶级高级设计系统 - 绯桃侠客色系 */
+  /* 🏮 顶级高级设计系统 - 水墨赛博 3D 东方美学色系 (Cyber-Classical Ink 3D System) */
   --bg-primary: #FAF4EE;             /* 宣纸杏白：经典宣纸色，如绢本底色 */
   --bg-secondary: #FFFDFB;           /* 凝脂玉：温润白玉色，卡片面板背景 */
   --text-main: #2C1E20;              /* 深黛墨：徽墨黑，带微褐古典质感 */
   --text-muted: #8E7A7D;             /* 晚香褐：灰褐色辅助文字 */
   --text-light: #FAF4EE;
 
-  --accent-gold: #D9607A;            /* 绯桃深红：更饱和的侠客血色朱砂 */
-  --accent-gold-hover: #B84060;      /* 绛紫红：深邃的古印章重压色 */
-  --accent-gold-light: rgba(217, 96, 122, 0.06);
-  --accent-sakura: rgba(240, 180, 195, 0.55); /* 飞花粉：樱花瓣薄透色 */
+  /* ⚡ 霓虹朱砂红与科技流金偏光线 */
+  --accent-gold: #FF3B5F;            /* 霓虹朱砂红：极富现代科技冲击力的亮朱砂 */
+  --accent-gold-hover: #D91A3F;      /* 深绛红：重力按压后的印泥红 */
+  --accent-gold-light: rgba(255, 59, 95, 0.05);
+  --accent-sakura: rgba(240, 180, 195, 0.55);
   --accent-ink: rgba(44, 30, 32, 0.06);       /* 淡墨：水墨晕染底色 */
 
-  --glass-bg: rgba(255, 253, 251, 0.94);
-  --glass-border: rgba(217, 96, 122, 0.22);
-  --glass-shadow: 0 12px 48px -12px rgba(184, 64, 96, 0.1);
+  --tech-gold: #D4AF37;              /* 流金：科技经纬刻度流金色 */
+  --tech-gold-glow: rgba(212, 175, 55, 0.35); /* 流金霓虹微光 */
+  --tech-glow: rgba(255, 59, 95, 0.25);       /* 朱砂红霓虹微光 */
+  --tech-grid: rgba(212, 175, 55, 0.035);     /* 浑天仪发丝经纬网格线颜色 */
 
-  /* 🏮 三段丝滑缓动：快入 → 柔中 → 余韵慢出，如剑气收势 */
+  --glass-bg: rgba(255, 253, 251, 0.93);
+  --glass-border: rgba(255, 59, 95, 0.18);
+  --glass-shadow: 0 12px 48px -12px rgba(255, 59, 95, 0.12);
+
+  /* 🏮 3D 三维物理弹性阻尼缓动 */
   --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* ⚡ 阻尼更强的 3D 机械弹动 */
   --ease-ink: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: all 0.45s var(--ease-silk);
-  --transition-spring: all 0.5s var(--ease-spring);
+  --transition-smooth: all 0.4s var(--ease-silk);
+  --transition-spring: all 0.35s var(--ease-spring);
 
   --font-family: 'Noto Serif SC', 'Playfair Display', Georgia, "PingFang SC", serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
@@ -65,9 +71,9 @@ body {
   background-color: var(--bg-primary);
   /* 🏮 侠客山水晕染多层叠加背景 */
   background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(217, 96, 122, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 85%, rgba(140, 80, 100, 0.05) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 0%, rgba(240, 180, 195, 0.06) 0%, transparent 40%);
+    radial-gradient(ellipse at 15% 15%, rgba(255, 59, 95, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(44, 30, 32, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(240, 180, 195, 0.05) 0%, transparent 40%);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
@@ -75,35 +81,58 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   position: relative;
   overflow-x: hidden;
+  
+  /* ⚡ 开启 3D 立体透视空间 */
+  perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
-/* 🏮 侠客山水：固定背景纹理层（丝绸织锦菱格纹 + 淡墨边角晕染） */
+/* 🪐 宣纸与全屏浑天仪金色精密网格叠加层 (带有 3D 后退感) */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background-image:
-    /* 丝绸菱形织锦纹（旋转45° 的网格组合） */
-    linear-gradient(45deg, rgba(217, 96, 122, 0.025) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(217, 96, 122, 0.025) 1px, transparent 1px),
-    /* 大网格宣纸基底格 */
-    linear-gradient(rgba(217, 96, 122, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 96, 122, 0.015) 1px, transparent 1px);
-  background-size: 28px 28px, 28px 28px, 56px 56px, 56px 56px;
+    /* 浑天仪发丝经纬菱形交错格 */
+    linear-gradient(45deg, var(--tech-grid) 0.5px, transparent 0.5px),
+    linear-gradient(-45deg, var(--tech-grid) 0.5px, transparent 0.5px),
+    /* 经纬刻度辅助网格线 */
+    linear-gradient(var(--tech-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 64px 64px, 64px 64px;
   z-index: -2;
   pointer-events: none;
+  /* ⚡ 物理后退 300px 以产生真 3D 滚屏差 */
+  transform: translateZ(-300px) scale(2);
+  transform-origin: center center;
 }
 
-/* 🏮 侠客山水画卷：右侧边角淡入水墨山峦装饰 */
+/* 🏮 3D 水墨山峦画卷层 (带有 3D 中景后退感) */
 body::after {
   content: '';
   position: fixed;
-  bottom: 0; right: 0;
-  width: 40vw;
-  height: 50vh;
+  bottom: -5vh; right: -5vw;
+  width: 45vw;
+  height: 55vh;
   background:
-    radial-gradient(ellipse at 100% 100%, rgba(44, 30, 32, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse at 100% 100%, rgba(44, 30, 32, 0.06) 0%, transparent 75%);
   z-index: -1;
+  pointer-events: none;
+  /* ⚡ 物理后退 150px */
+  transform: translateZ(-150px) scale(1.5);
+  transform-origin: right bottom;
+}
+
+/* 📜 全局宣纸纸张手工噪点物理叠层 (固定于最顶层，mix-blend-mode 叠加) */
+.paper-noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 0.045;
+  /* 选用经典的数字白噪音，混合出真实的纸浆颗粒感 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
   pointer-events: none;
 }
 
@@ -125,6 +154,14 @@ body::after {
     0 3px 0 rgba(184, 64, 96, 0.8),
     0 4px 20px rgba(184, 64, 96, 0.06),
     0 8px 32px rgba(44, 30, 32, 0.04);
+}
+
+/* 主内容视图容器（首页/番剧库）—— 3D 转场动画挂载根节点 */
+.app-main-content {
+  transform-style: preserve-3d;
+  perspective: 1400px;
+  transform-origin: left center;
+  will-change: transform, opacity, filter;
 }
 
 .header-container {
@@ -178,7 +215,7 @@ body::after {
   align-items: center;
 }
 
-/* 🏮 景雁专属：古典朱泥“阴刻印章” (Yin Stamp) */
+/* 🏮 景雁专属：古典朱泥“3D阴刻印章” (3D Yin Stamp with 3D Embossing) */
 .logo-art::after {
   content: '景雁'; 
   display: inline-block;
@@ -195,8 +232,14 @@ body::after {
   border-radius: 1px; /* 极其方正 */
   line-height: 1;
   letter-spacing: 1px;
-  box-shadow: 0 2px 6px rgba(226, 109, 128, 0.25);
-  border: none;
+  
+  /* ⚡ 3D 金石篆刻凹凸光影与微流金框线 */
+  box-shadow: 
+    inset 1px 1.5px 2px rgba(0, 0, 0, 0.4), 
+    inset -0.5px -0.5px 1px rgba(255, 255, 255, 0.25),
+    0 2px 6px rgba(255, 59, 95, 0.25);
+  border: 0.5px solid rgba(212, 175, 55, 0.35);
+  
   transition: transform 0.3s ease;
 }
 
@@ -896,7 +939,7 @@ body::after {
   flex-direction: column;
   cursor: pointer;
   background: #FDF9F5; /* 绢本宣纸色 */
-  border: 1px solid rgba(226, 109, 128, 0.18);
+  border: 1px solid rgba(255, 59, 95, 0.18);
   padding: 12px 10px; /* 绢边留白装裱 */
   border-top: 3px solid #8E6D70; /* 🏮 上轴：檀木色木轴边 */
   border-bottom: 3px solid #8E6D70; /* 🏮 下轴：木轴收尾 */
@@ -906,6 +949,11 @@ body::after {
   /* 🏮 动画交互：挂接 staggered cascade 竹简/画轴顺次徐徐滑落动效 */
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  /* ⚡ 3D 透视参数 */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
 
 /* staggered 延迟，让卡片像竹简那样顺次滚落 */
@@ -1022,15 +1070,24 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 🏮 侠客悬停：玉石折射 + 水墨涌动 + 弹性上浮 */
+/* 🏮 侠客悬停：3D 物理变焦偏光 + 流金 spotlight + 3D 反射阴影 */
 .anime-card:hover {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-10px) scale(1.02) rotateX(4deg) rotateY(-4deg);
   box-shadow:
-    0 20px 48px -12px rgba(184, 64, 96, 0.28),
-    0 0 0 1px rgba(217, 96, 122, 0.35),
+    -8px 16px 36px -10px rgba(255, 59, 95, 0.24),
+    0 0 0 1px rgba(212, 175, 55, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  border-color: rgba(217, 96, 122, 0.5);
+  border-color: rgba(255, 59, 95, 0.5);
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
+}
+
+/* ⚡ 东方科技力反馈：点击弹性按压下陷 */
+.anime-card:active {
+  transform: translateY(-4px) scale(0.97) rotateX(1deg) rotateY(-1deg);
+  box-shadow:
+    -4px 8px 18px -8px rgba(255, 59, 95, 0.18),
+    0 0 0 1px rgba(212, 175, 55, 0.35);
+  transition: transform 0.15s var(--ease-silk);
 }
 
 .anime-card:hover::after {
@@ -3573,17 +3630,34 @@ body.fit-fill iframe {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  background: #FDF9F5; /* 绢本宣纸色 */
+  border: 1px solid rgba(255, 59, 95, 0.15);
+  padding: 8px 6px;
+  border-top: 2.5px solid #8E6D70; /* 迷你画轴 */
+  border-bottom: 2.5px solid #8E6D70;
+  position: relative;
+  box-shadow: 0 4px 12px -4px rgba(44, 30, 32, 0.08);
+  
+  /* ⚡ 3D 透视参数 */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
 
 .related-item-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: var(--glass-shadow);
+  /* ⚡ 3D 偏光悬浮 */
+  transform: translateY(-6px) scale(1.02) rotateX(4deg) rotateY(-4deg);
+  border-color: rgba(255, 59, 95, 0.4);
+  box-shadow:
+    -6px 12px 28px -8px rgba(255, 59, 95, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+.related-item-card:active {
+  /* ⚡ 东方科技力反馈：点击弹性按压下陷 */
+  transform: translateY(-2px) scale(0.97) rotateX(1deg) rotateY(-1deg);
+  box-shadow:
+    -3px 6px 14px -6px rgba(255, 59, 95, 0.15);
 }
 
 .related-cover-wrapper {
@@ -3591,14 +3665,16 @@ body.fit-fill iframe {
   width: 100%;
   aspect-ratio: 3/4;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.2);
+  background: #EAE3DA;
+  border-radius: 2px;
+  transform: translateZ(10px); /* ⚡ 卡面立体浮起 */
 }
 
 .related-cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s var(--ease-silk);
 }
 
 .related-item-card:hover .related-cover {
@@ -3606,17 +3682,118 @@ body.fit-fill iframe {
 }
 
 .related-info {
-  padding: 6px 8px;
+  padding: 6px 4px;
   text-align: center;
 }
 
 .related-title {
-  font-size: 0.8rem;
-  color: var(--text-primary);
+  font-size: 0.78rem;
+  color: var(--text-main);
   margin: 0;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   🏮 东方美学转场动效与交互反馈 (3D Transition & Interaction Animations)
+   ========================================================================== */
+
+/* 1. 3D 屏风折叠退场 (3D Folded Screen Transition) */
+.fold-exit-active {
+  transform-origin: left center;
+  animation: foldScreenExit 0.45s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards !important;
+  pointer-events: none;
+}
+
+@keyframes foldScreenExit {
+  0% {
+    transform: rotateY(0deg) translateZ(0) opacity(1);
+    filter: blur(0);
+  }
+  100% {
+    transform: rotateY(38deg) translateZ(-250px) translateX(-40px) opacity(0);
+    filter: blur(4px);
+  }
+}
+
+/* 2. 3D 画轴展屏进场 (3D Handscroll Unroll Enter Transition) */
+.unroll-prepare {
+  transform: scaleX(0.01) translateZ(-150px) !important;
+  transform-origin: center center !important;
+  opacity: 0 !important;
+  clip-path: inset(0 49% 0 49%) !important;
+}
+
+.unroll-enter-active {
+  animation: scrollUnrollEnter 0.5s var(--ease-silk) forwards !important;
+}
+
+@keyframes scrollUnrollEnter {
+  0% {
+    transform: scaleX(0.01) translateZ(-150px);
+    opacity: 0;
+    clip-path: inset(0 49% 0 49%);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1) translateZ(0);
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* 3. 3D 屏风伸展进场 (详情页返回主页时，主页 3D 展平) */
+.fold-enter-active {
+  transform-origin: left center;
+  animation: foldScreenEnter 0.5s var(--ease-silk) forwards !important;
+}
+
+@keyframes foldScreenEnter {
+  0% {
+    transform: rotateY(38deg) translateZ(-250px) translateX(-40px) opacity(0);
+    filter: blur(4px);
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(0) translateX(0) opacity(1);
+    filter: blur(0);
+  }
+}
+
+/* 4. 水墨晕开点击涟漪效果 (Ink Splash Click Effect) */
+.ink-ripple-container {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 9999;
+}
+
+.ink-ripple-dot {
+  position: absolute;
+  border-radius: 50%;
+  /* 从水墨重色到羽化扩散 */
+  background: radial-gradient(circle, var(--text-main) 0%, rgba(44, 30, 32, 0.16) 40%, rgba(255, 59, 95, 0.04) 65%, transparent 75%);
+  transform: scale(0);
+  opacity: 0.85;
+  pointer-events: none;
+  transform-origin: center center;
+  animation: inkSplashAnimation 0.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes inkSplashAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(3.8);
+    opacity: 0;
+  }
 }
 

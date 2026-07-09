@@ -45,6 +45,9 @@ new Vue({
     
     // 详情页数据
     animeDetail: null,
+    mainContentTransitionClass: '', // 3D 屏风折叠转场类
+    detailTransitionClass: '',      // 3D 画轴拉开转场类
+    isTransitioning: false,         // 转场防重入锁标记
     detailError: false, // 💡 新增：详情加载错误状态标记
     isWebFullscreen: false, // 💡 新增：是否处于全局网页全屏状态
     activeLineKey: '', // 当前选中的播放线路
@@ -455,12 +458,42 @@ new Vue({
     
     // 初始化视频铺满模式的 body class 绑定，消除全屏状态下视频留黑
     document.body.classList.add('fit-' + this.videoFitMode);
+
+    // 🖤 水墨赛博：全局水墨晕染点击反馈监听
+    this.inkRippleHandler = (e) => {
+      const target = e.target.closest('.btn, .fav-toggle-btn, .anime-card, .related-item-card, .page-btn, .detail-tab-btn, .filter-btn, .back-nav');
+      if (!target) return;
+      
+      const rect = target.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const container = document.createElement('div');
+      container.className = 'ink-ripple-container';
+      
+      const ripple = document.createElement('div');
+      ripple.className = 'ink-ripple-dot';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      container.appendChild(ripple);
+      target.style.position = target.style.position || 'relative';
+      target.appendChild(container);
+      
+      setTimeout(() => {
+        container.remove();
+      }, 550);
+    };
+    document.addEventListener('click', this.inkRippleHandler);
   },
   
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
     if (this.hashRouteHandler) {
       window.removeEventListener('hashchange', this.hashRouteHandler);
+    }
+    if (this.inkRippleHandler) {
+      document.removeEventListener('click', this.inkRippleHandler);
     }
     if (this.activeBlobUrl) {
       try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
@@ -912,6 +945,7 @@ new Vue({
     // ==========================================================================
     selectAnime(aid, skipHashUpdate = false) {
       if (!aid) return;
+      if (this.isTransitioning) return;
       
       // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字 (排除 anich_ 开头的独有 ID)
       if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_')) {
@@ -920,105 +954,129 @@ new Vue({
           aid = match[0];
         }
       }
-      
-      console.log('[DEBUG ROUTER] selectAnime() called. aid:', aid, 'skipHashUpdate:', skipHashUpdate);
-      this.currentAnimeId = aid;
-      this.detailError = false; // 💡 重置错误状态
-      
-      try {
-        localStorage.setItem('jyzf_last_page', 'detail/' + aid); // 💾 同步更新本地路由缓存
-      } catch (e) {
-        console.warn('[ROUTER] localStorage.setItem failed in selectAnime:', e);
-      }
-      
-      if (skipHashUpdate !== true) {
-        window.location.hash = '#/detail/' + aid;
-        console.log('[DEBUG ROUTER] selectAnime() set window.location.hash to #/detail/' + aid);
-      }
-      window.scrollTo(0, 0); // 瞬间置顶
-      this.detailTab = 'episodes'; // 默认选择选集 Tab
-      
-      // 💾 1. 首先尝试从 LocalStorage 中读取详情缓存 (实现零延迟秒开)
-      const cached = this.getDetailFromCache(aid);
-      if (cached) {
-        console.log(`[CACHE HIT] 瞬间从缓存渲染动漫 (AID: ${aid})`);
-        this.animeDetail = cached;
-        this.initializePlayerLine();
-      } else {
-        // 无缓存时初始化状态
-        this.animeDetail = null;
-        this.activeLineKey = '';
-        this.activeEpisodeIndex = -1;
-        this.activePlayUrl = '';
-        this.activeEpisodeName = '';
-      }
 
-      // 💾 定义后台请求数据的比对和状态刷新处理器
-      const handleFetchedDetail = (fetchedData) => {
-        if (!fetchedData) return;
-        const changed = this.hasDetailChanged(this.animeDetail, fetchedData);
+      // 真正执行详情数据和路由切换的内嵌函数
+      const doLoad = () => {
+        console.log('[DEBUG ROUTER] selectAnime() actual load. aid:', aid, 'skipHashUpdate:', skipHashUpdate);
+        this.currentAnimeId = aid;
+        this.detailError = false; // 💡 重置错误状态
         
-        if (changed || !this.animeDetail) {
-          console.log(`[CACHE UPDATE] 动漫数据 (AID: ${aid}) 存在新变动（封面或 m3u8 地址已更新），自动刷新并存盘...`);
-          
-          const prevEpIdx = this.activeEpisodeIndex;
-          this.animeDetail = fetchedData;
-          this.saveDetailToCache(aid, fetchedData);
-          
-          // 如果用户还没有点播具体集数，则重新初始化线路
-          if (prevEpIdx === -1) {
-            this.initializePlayerLine();
-          } else {
-            // 如果已在播放，保持当前线路选择，除非该线路被删掉了
-            const lines = this.availableLines;
-            if (this.activeLineKey && !lines.some(l => l.key === this.activeLineKey) && lines.length > 0) {
-              this.activeLineKey = lines[0].key;
-            }
-          }
-        } else {
-          console.log(`[CACHE VALID] 动漫数据 (AID: ${aid}) 未发生改变，本地缓存有效`);
+        try {
+          localStorage.setItem('jyzf_last_page', 'detail/' + aid); // 💾 同步更新本地路由缓存
+        } catch (e) {
+          console.warn('[ROUTER] localStorage.setItem failed in selectAnime:', e);
         }
+        
+        if (skipHashUpdate !== true) {
+          window.location.hash = '#/detail/' + aid;
+          console.log('[DEBUG ROUTER] selectAnime() set window.location.hash to #/detail/' + aid);
+        }
+        window.scrollTo(0, 0); // 瞬间置顶
+        this.detailTab = 'episodes'; // 默认选择选集 Tab
+        
+        // 💾 1. 首先尝试从 LocalStorage 中读取详情缓存 (实现零延迟秒开)
+        const cached = this.getDetailFromCache(aid);
+        if (cached) {
+          console.log(`[CACHE HIT] 瞬间从缓存渲染动漫 (AID: ${aid})`);
+          this.animeDetail = cached;
+          this.initializePlayerLine();
+        } else {
+          // 无缓存时初始化状态
+          this.animeDetail = null;
+          this.activeLineKey = '';
+          this.activeEpisodeIndex = -1;
+          this.activePlayUrl = '';
+          this.activeEpisodeName = '';
+        }
+
+        // 💾 定义后台请求数据的比对和状态刷新处理器
+        const handleFetchedDetail = (fetchedData) => {
+          if (!fetchedData) return;
+          const changed = this.hasDetailChanged(this.animeDetail, fetchedData);
+          
+          if (changed || !this.animeDetail) {
+            console.log(`[CACHE UPDATE] 动漫数据 (AID: ${aid}) 存在新变动（封面或 m3u8 地址已更新），自动刷新并存盘...`);
+            
+            const prevEpIdx = this.activeEpisodeIndex;
+            this.animeDetail = fetchedData;
+            this.saveDetailToCache(aid, fetchedData);
+            
+            // 如果用户还没有点播具体集数，则重新初始化线路
+            if (prevEpIdx === -1) {
+              this.initializePlayerLine();
+            } else {
+              // 如果已在播放，保持当前线路选择，除非该线路被删掉了
+              const lines = this.availableLines;
+              if (this.activeLineKey && !lines.some(l => l.key === this.activeLineKey) && lines.length > 0) {
+                this.activeLineKey = lines[0].key;
+              }
+            }
+          } else {
+            console.log(`[CACHE VALID] 动漫数据 (AID: ${aid}) 未发生改变，本地缓存有效`);
+          }
+        };
+
+        // 💾 2. 后台获取最新数据以进行验证及热更新
+        axios.get(`data/detail/${aid}.json?_t=` + new Date().getTime())
+          .then(response => {
+            handleFetchedDetail(response.data);
+          })
+          .catch(err => {
+            console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 获取失败，转入云端 API 后台拉取...`);
+            
+            const AGE_API_BASE = "https://api.agedm.io/v2/";
+            const targetUrl = `${AGE_API_BASE}detail/${aid}`;
+            this.axiosGetViaProxy(targetUrl)
+              .then(response => {
+                const resData = response.data;
+                let fetchedData = null;
+                if (resData && resData.video) {
+                  fetchedData = resData;
+                } else if (resData && resData.data) {
+                  fetchedData = resData.data;
+                }
+                
+                if (fetchedData) {
+                  handleFetchedDetail(fetchedData);
+                } else {
+                  throw new Error("云端详情接口返回的格式无效");
+                }
+              })
+              .catch(apiErr => {
+                console.error("云端详情拉取失败！", apiErr);
+                // 如果既无缓存又同步失败，则显示本页错误提示卡片而不回退首页
+                if (!this.animeDetail) {
+                  this.detailError = true;
+                  this.$nextTick(() => {
+                    if (typeof lucide !== 'undefined') {
+                      lucide.createIcons();
+                    }
+                  });
+                }
+              });
+          });
       };
 
-      // 💾 2. 后台获取最新数据以进行验证及热更新
-      axios.get(`data/detail/${aid}.json?_t=` + new Date().getTime())
-        .then(response => {
-          handleFetchedDetail(response.data);
-        })
-        .catch(err => {
-          console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 获取失败，转入云端 API 后台拉取...`);
+      // 🪐 时序控制：如果是从首页/番剧库进入，播放 3D 转场动画
+      if (this.currentPage !== 'detail' || !this.currentAnimeId) {
+        this.isTransitioning = true;
+        this.mainContentTransitionClass = 'fold-exit-active';
+        
+        setTimeout(() => {
+          this.mainContentTransitionClass = '';
+          this.currentPage = 'detail';
+          doLoad();
           
-          const AGE_API_BASE = "https://api.agedm.io/v2/";
-          const targetUrl = `${AGE_API_BASE}detail/${aid}`;
-          this.axiosGetViaProxy(targetUrl)
-            .then(response => {
-              const resData = response.data;
-              let fetchedData = null;
-              if (resData && resData.video) {
-                fetchedData = resData;
-              } else if (resData && resData.data) {
-                fetchedData = resData.data;
-              }
-              
-              if (fetchedData) {
-                handleFetchedDetail(fetchedData);
-              } else {
-                throw new Error("云端详情接口返回的格式无效");
-              }
-            })
-            .catch(apiErr => {
-              console.error("云端详情拉取失败！", apiErr);
-              // 如果既无缓存又同步失败，则显示本页错误提示卡片而不回退首页
-              if (!this.animeDetail) {
-                this.detailError = true;
-                this.$nextTick(() => {
-                  if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                  }
-                });
-              }
-            });
-        });
+          this.detailTransitionClass = 'unroll-enter-active';
+          setTimeout(() => {
+            this.detailTransitionClass = '';
+            this.isTransitioning = false;
+          }, 500);
+        }, 380);
+      } else {
+        // 在详情页内跳转同系列推荐，直接执行无转场快速加载
+        doLoad();
+      }
     },
     
     initializePlayerLine() {
@@ -2013,40 +2071,63 @@ new Vue({
     },
 
     goHome(skipHashUpdate = false) {
+      if (this.isTransitioning) return;
       console.log('[DEBUG ROUTER] goHome() called. skipHashUpdate:', skipHashUpdate);
-      // 调用物理垃圾清理防残留
-      this.cleanupPlayer();
       
-      this.currentAnimeId = null;
-      this.currentPage = 'home'; // 重置到首页视图
-      
-      try {
-        localStorage.setItem('jyzf_last_page', 'home'); // 💾 同步更新本地路由缓存
-      } catch (e) {
-        console.warn('[ROUTER] localStorage.setItem failed in goHome:', e);
-      }
-      
-      // 🎋 切换回首页时，如果之前未展示过动画，且处于首页视图，启动动画锁定计时器
-      if (!this.zhujianAnimated) {
-        setTimeout(() => {
-          this.zhujianAnimated = true;
-        }, 2600);
-      }
-      
-      if (skipHashUpdate !== true) {
-        window.location.hash = '#/';
-        console.log('[DEBUG ROUTER] goHome() set window.location.hash to #/');
-      }
-      window.scrollTo(0, 0); // 🏮 瞬间置顶，平稳过渡到首页
-      this.animeDetail = null;
-      this.activePlayUrl = '';
-      this.activeEpisodeName = '';
-      this.searchQuery = '';
-      this.$nextTick(() => {
-        if (typeof lucide !== 'undefined') {
-          lucide.createIcons();
+      const doReset = () => {
+        // 调用物理垃圾清理防残留
+        this.cleanupPlayer();
+        
+        this.currentAnimeId = null;
+        this.currentPage = 'home'; // 重置到首页视图
+        
+        try {
+          localStorage.setItem('jyzf_last_page', 'home'); // 💾 同步更新本地路由缓存
+        } catch (e) {
+          console.warn('[ROUTER] localStorage.setItem failed in goHome:', e);
         }
-      });
+        
+        // 🎋 切换回首页时，如果之前未展示过动画，且处于首页视图，启动动画锁定计时器
+        if (!this.zhujianAnimated) {
+          setTimeout(() => {
+            this.zhujianAnimated = true;
+          }, 2600);
+        }
+        
+        if (skipHashUpdate !== true) {
+          window.location.hash = '#/';
+          console.log('[DEBUG ROUTER] goHome() set window.location.hash to #/');
+        }
+        window.scrollTo(0, 0); // 🏮 瞬间置顶，平稳过渡到首页
+        this.animeDetail = null;
+        this.activePlayUrl = '';
+        this.activeEpisodeName = '';
+        this.searchQuery = '';
+        this.$nextTick(() => {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        });
+      };
+
+      // 🪐 时序控制：从详情页返回首页，播放古典画轴卷起与主页屏风展平动画
+      if (this.currentPage === 'detail' || this.currentAnimeId) {
+        this.isTransitioning = true;
+        this.detailTransitionClass = 'unroll-prepare'; // 画轴瞬间收窄卷起
+        this.mainContentTransitionClass = 'fold-enter-active'; // 首页呈屏风展开进场
+        
+        setTimeout(() => {
+          this.detailTransitionClass = '';
+          doReset();
+          
+          setTimeout(() => {
+            this.mainContentTransitionClass = '';
+            this.isTransitioning = false;
+          }, 150);
+        }, 380);
+      } else {
+        doReset();
+      }
     },
 
     // 📚 进入番剧库页
