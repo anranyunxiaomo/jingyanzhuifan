@@ -360,7 +360,9 @@ body::after {
 }
 
 .result-item:hover {
-  background: var(--accent-gold-light);
+  background: rgba(255, 59, 95, 0.06);
+  border-left: 4px solid var(--accent-gold);
+  padding-left: calc(1.2rem - 4px);
 }
 
 .result-cover {
@@ -399,13 +401,13 @@ body::after {
   height: clamp(155px, 35vw, 420px);
   border-radius: 2px;
   overflow: hidden;
-  /* 🌟 深色沉浸式装帧：朱砂红双金线 + 魔法背光 */
+  /* 🏮 流金单线装帧 + 朱砂红晕相背光 */
   box-shadow:
-    0 0 0 1px rgba(255,59,95,0.6),
-    0 0 0 4px rgba(13,15,20,1),
-    0 0 0 5px rgba(212,175,55,0.35),
-    0 0 40px rgba(255,59,95,0.2),
-    0 20px 80px -15px rgba(0,0,0,0.7);
+    0 0 0 1px rgba(212,175,55,0.5),
+    0 0 0 5px var(--bg-secondary),
+    0 0 0 6px rgba(255,59,95,0.25),
+    0 20px 60px -12px rgba(184, 64, 96, 0.18),
+    0 4px 20px rgba(44, 30, 32, 0.06);
   padding: 6px;
   background: var(--bg-secondary);
 }
@@ -854,14 +856,13 @@ body::after {
 
 .section-title {
   font-family: var(--font-family);
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: var(--text-main);
-  letter-spacing: 2px;
-  padding-left: 10px;
-  /* 霓虹红竹简书签 + 霓虹 glow */
+  letter-spacing: -0.5px;
+  padding-left: 12px;
   border-left: 4px solid var(--accent-gold);
-  text-shadow: 0 0 20px rgba(255,59,95,0.25);
+  position: relative;
 }
 
 .list-section {
@@ -929,7 +930,10 @@ body::after {
   background: var(--accent-gold);
   color: white !important;
   border-color: var(--accent-gold);
-  box-shadow: 0 4px 16px rgba(255, 59, 95, 0.25);
+  box-shadow:
+    0 4px 16px rgba(255, 59, 95, 0.3),
+    0 0 0 2px rgba(255, 59, 95, 0.1);
+  text-shadow: 0 1px 2px rgba(184,64,96,0.3);
 }
 
 .tab-btn.active::after {
@@ -950,13 +954,15 @@ body::after {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: #FDF9F5;
-  border: 1px solid rgba(255, 59, 95, 0.18);
-  padding: 12px 10px;
-  border-top: 3px solid #C8A882;
-  border-bottom: 3px solid #C8A882;
+  background: #FEFBF8;
+  border: 1px solid rgba(255, 59, 95, 0.12);
+  padding: 10px 8px;
+  border-top: 3px solid #B89A74;
+  border-bottom: 3px solid #B89A74;
   position: relative;
-  box-shadow: 0 6px 18px -6px rgba(44, 30, 32, 0.1);
+  box-shadow:
+    0 4px 16px -6px rgba(44, 30, 32, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1084,11 +1090,11 @@ body::after {
 .anime-card:hover {
   transform: translateY(-10px) scale(1.03) rotateX(5deg) rotateY(-4deg);
   box-shadow:
-    -8px 20px 40px -10px rgba(255, 59, 95, 0.2),
-    0 0 0 1px rgba(212, 175, 55, 0.4),
-    0 0 20px rgba(255, 59, 95, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 59, 95, 0.45);
+    -6px 18px 40px -8px rgba(184, 64, 96, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.45),
+    0 4px 20px rgba(255, 59, 95, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 59, 95, 0.38);
   border-top-color: var(--tech-gold);
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
