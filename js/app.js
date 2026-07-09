@@ -1057,7 +1057,14 @@ new Vue({
           });
       };
 
-      // 🪐 时序控制：如果是从首页/番剧库进入，播放 3D 转场动画
+      // 🪐 时序控制：skipHashUpdate=true 表示路由直接加载（页面刷新/分享链接），跳过转场直接渲染
+      if (skipHashUpdate === true) {
+        this.currentPage = 'detail';
+        doLoad();
+        return;
+      }
+
+      // 从首页/番剧库进入，播放 3D 屏风折叠→画轴展开转场动画
       if (this.currentPage !== 'detail' || !this.currentAnimeId) {
         this.isTransitioning = true;
         this.mainContentTransitionClass = 'fold-exit-active';
@@ -1066,12 +1073,18 @@ new Vue({
           this.mainContentTransitionClass = '';
           this.currentPage = 'detail';
           doLoad();
-          
-          this.detailTransitionClass = 'unroll-enter-active';
-          setTimeout(() => {
-            this.detailTransitionClass = '';
-            this.isTransitioning = false;
-          }, 500);
+
+          // 先设置 unroll-prepare（初始收缩态），等一帧后触发动画
+          this.detailTransitionClass = 'unroll-prepare';
+          this.$nextTick(() => {
+            requestAnimationFrame(() => {
+              this.detailTransitionClass = 'unroll-enter-active';
+              setTimeout(() => {
+                this.detailTransitionClass = '';
+                this.isTransitioning = false;
+              }, 520);
+            });
+          });
         }, 380);
       } else {
         // 在详情页内跳转同系列推荐，直接执行无转场快速加载
@@ -2110,21 +2123,18 @@ new Vue({
         });
       };
 
-      // 🪐 时序控制：从详情页返回首页，播放古典画轴卷起与主页屏风展平动画
+      // 🪐 时序控制：从详情页返回首页，短暂 fade 后切换视图
       if (this.currentPage === 'detail' || this.currentAnimeId) {
         this.isTransitioning = true;
-        this.detailTransitionClass = 'unroll-prepare'; // 画轴瞬间收窄卷起
         this.mainContentTransitionClass = 'fold-enter-active'; // 首页呈屏风展开进场
         
+        // 直接切换，不给 detail 加收起动效（避免影响可见性）
+        doReset();
+        
         setTimeout(() => {
-          this.detailTransitionClass = '';
-          doReset();
-          
-          setTimeout(() => {
-            this.mainContentTransitionClass = '';
-            this.isTransitioning = false;
-          }, 150);
-        }, 380);
+          this.mainContentTransitionClass = '';
+          this.isTransitioning = false;
+        }, 520);
       } else {
         doReset();
       }
