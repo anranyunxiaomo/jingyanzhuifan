@@ -1,0 +1,197 @@
+{
+  "video": {
+    "id": 20150062,
+    "name_other": "约会大作战 万由里审判",
+    "company": "Production IMS",
+    "name": "约会大作战剧场版 万由里裁决",
+    "type": "剧场版",
+    "writer": "橘公司",
+    "name_original": "劇場版デート・ア・ライブ 万由里ジャッジメント",
+    "plot": "搞笑 校园 后宫 奇幻",
+    "plot_arr": [
+      "搞笑",
+      "校园",
+      "后宫",
+      "奇幻"
+    ],
+    "playlists": {
+      "zjm3u8": [
+        [
+          "正片",
+          "age_808dk24bHSI1aq9ERJDvqoS8m4EiwTFxyFDyQEPY8atd3aMAdJTB%2BqeHQA878XeojAzupuUE%2B7%2FeOZ7HdL4zEKb8ajlVsQov%2FmZW7%2FQJ9XssFZthJY3rOVcsu30hhAQw5HLdfCADrv2L%2BWZs",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "Y",
+    "website": "http://date-a-live-anime.com/movie",
+    "star": 4,
+    "status": "完结",
+    "uptodate": "全集",
+    "time_format_1": "20180328221105",
+    "time_format_2": "2018-03-28",
+    "time_format_3": "2018-03-28 22:11:05",
+    "time": 1522246265,
+    "tags": "搞笑 战斗 校园 冒险 后宫 悬疑 奇幻 美少女 轻小说",
+    "tags_arr": [
+      "搞笑",
+      "战斗",
+      "校园",
+      "冒险",
+      "后宫",
+      "悬疑",
+      "奇幻",
+      "美少女",
+      "轻小说"
+    ],
+    "intro": "《约会大作战：万由里裁决》是由元永庆太郎指导，白根秀树脚本，电视动画第二季的动画制作公司Production IMS负责制作，根据橘公司原作的轻小说《约会大作战》而创作的动画电影，剧情为原创。\r\n某天男主角五河士道早晨醒来发现天空上漂浮着一颗神秘的球体，除了五河士道本人和狂三外其他人都无法看见这个球体，而根据琴里所在的Ratatoskr分析，这颗黑乎乎的球体的真身是精灵们对于五河士道的恋情，由于每个人都想独占士道，这种无处发泄且力量庞大的恋爱怨念形成了黑乎乎的球形思念体……",
+    "intro_html": "《约会大作战：万由里裁决》是由元永庆太郎指导，白根秀树脚本，电视动画第二季的动画制作公司Production IMS负责制作，根据橘公司原作的轻小说《约会大作战》而创作的动画电影，剧情为原创。<br />某天男主角五河士道早晨醒来发现天空上漂浮着一颗神秘的球体，除了五河士道本人和狂三外其他人都无法看见这个球体，而根据琴里所在的Ratatoskr分析，这颗黑乎乎的球体的真身是精灵们对于五河士道的恋情，由于每个人都想独占士道，这种无处发泄且力量庞大的恋爱怨念形成了黑乎乎的球形思念体……",
+    "intro_clean": "《约会大作战：万由里裁决》是由元永庆太郎指导，白根秀树脚本，电视动画第二季的动画制作公司Production IMS负责制作，根据橘公司原作的轻小说《约会大作战》而创作的动画电影，剧情为原创。某天男主角五河士道早晨醒来发现天空上漂浮着一颗神秘的球体，除了五河士道本人和狂三外其他人都无法看见这个球体，而根据琴里所在的Ratatoskr分析，这颗黑乎乎的球体的真身是精灵们对于五河士道的恋情，由于每个人都想独占士道，这种无处发泄且力量庞大的恋爱怨念形成了黑乎乎的球形思念体……",
+    "series": "约会大作战",
+    "net_disk": null,
+    "resource": "",
+    "year": 2015,
+    "season": 7,
+    "premiere": "2015-08-22",
+    "rank_cnt": "12.5w",
+    "cover": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "85",
+    "collect_cnt": "1,661"
+  },
+  "series": [
+    {
+      "AID": 20130009,
+      "Href": "/detail/20130009",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130009.jpg",
+      "Title": "约会大作战"
+    },
+    {
+      "AID": 20140034,
+      "Href": "/detail/20140034",
+      "NewTitle": "第11集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140034.jpg",
+      "Title": "约会大作战 第二季"
+    },
+    {
+      "AID": 20190088,
+      "Href": "/detail/20190088",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190088.jpg",
+      "Title": "约会大作战 第三季"
+    },
+    {
+      "AID": 20200245,
+      "Href": "/detail/20200245",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200245.jpg",
+      "Title": "约战狂三外传 虚或实篇"
+    },
+    {
+      "AID": 20200338,
+      "Href": "/detail/20200338",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200338.jpg",
+      "Title": "约战狂三外传 红或白篇"
+    },
+    {
+      "AID": 20210129,
+      "Href": "/detail/20210129",
+      "NewTitle": "第12话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210129.jpg",
+      "Title": "约会大作战 第四季"
+    },
+    {
+      "AID": 20240021,
+      "Href": "/detail/20240021",
+      "NewTitle": "第20240411期",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240021.jpg",
+      "Title": "约会大作战 第五季"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20200317,
+      "Href": "/detail/20200317",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200317.jpg",
+      "Title": "大贵族"
+    },
+    {
+      "AID": 20130076,
+      "Href": "/detail/20130076",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
+      "Title": "有顶天家族"
+    },
+    {
+      "AID": 20160135,
+      "Href": "/detail/20160135",
+      "NewTitle": "第12集+OVA(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160135.jpg",
+      "Title": "文豪野犬 第二季"
+    },
+    {
+      "AID": 20200147,
+      "Href": "/detail/20200147",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200147.jpg",
+      "Title": "里世界郊游"
+    },
+    {
+      "AID": 20170127,
+      "Href": "/detail/20170127",
+      "NewTitle": "第58话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170127.jpg",
+      "Title": "未来卡 搭档对战 第四季"
+    },
+    {
+      "AID": 20240015,
+      "Href": "/detail/20240015",
+      "NewTitle": "第08集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240015.jpg",
+      "Title": "刀剑乱舞 回 -虚传 燃烧的本能寺-"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
