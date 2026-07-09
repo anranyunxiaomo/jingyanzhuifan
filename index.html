@@ -922,7 +922,7 @@
         </div>
 
         <!-- 3.4 系列关联推荐海报墙 -->
-        <div class="related-series-panel" v-if="animeDetail.video.related && animeDetail.video.related.length > 0">
+        <div class="related-series-panel" v-if="relatedList && relatedList.length > 0">
           <div class="panel-header">
             <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="7" height="7" />
@@ -935,7 +935,7 @@
           <div class="related-list-wrapper">
             <div 
               class="related-item-card" 
-              v-for="item in animeDetail.video.related" 
+              v-for="item in relatedList" 
               :key="item.id"
               @click="selectAnime(item.id)"
             >

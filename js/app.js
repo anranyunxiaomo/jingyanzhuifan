@@ -93,6 +93,26 @@ new Vue({
   },
   
   computed: {
+    relatedList() {
+      if (!this.animeDetail) return [];
+      // 优先使用官方最外层的 series 字段 (格式为 [{ AID, Title, PicSmall }])
+      if (this.animeDetail.series && Array.isArray(this.animeDetail.series) && this.animeDetail.series.length > 0) {
+        return this.animeDetail.series.map(item => ({
+          id: String(item.AID),
+          title: item.Title,
+          cover: item.PicSmall
+        }));
+      }
+      // 其次使用我们计算注入的 video.related 字段
+      if (this.animeDetail.video && this.animeDetail.video.related && Array.isArray(this.animeDetail.video.related)) {
+        return this.animeDetail.video.related.map(item => ({
+          id: String(item.id),
+          title: item.title,
+          cover: item.cover
+        }));
+      }
+      return [];
+    },
     displayedHealingList() {
       if (!this.healingList) return [];
       if (this.isAllHealingShown) {
