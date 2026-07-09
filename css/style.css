@@ -186,14 +186,14 @@ body::after {
   min-width: 0;
 }
 
-.brand {
+.app-brand {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   cursor: pointer;
   user-select: none;
 }
-.brand .logo-icon {
+.app-brand .logo-icon {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
@@ -202,11 +202,11 @@ body::after {
               filter 0.3s ease;
   filter: drop-shadow(0 2px 6px rgba(166, 44, 25, 0.22));
 }
-.brand:hover .logo-icon {
+.app-brand:hover .logo-icon {
   transform: translateY(-2px) scale(1.07);
   filter: drop-shadow(0 5px 14px rgba(166, 44, 25, 0.38));
 }
-.brand:active .logo-icon {
+.app-brand:active .logo-icon {
   transform: scale(0.96);
   filter: drop-shadow(0 1px 3px rgba(166, 44, 25, 0.15));
 }
@@ -253,7 +253,7 @@ body::after {
 }
 
 /* 🏮 交互动效：悬停时触发“重压落印”动效 */
-.brand:hover .logo-art::after {
+.app-brand:hover .logo-art::after {
   animation: stampPress 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
@@ -3835,7 +3835,7 @@ body.fit-fill iframe {
   .app-header .catalog-nav-btn {
     display: none !important;
   }
-  .app-header .search-wrapper {
+  .app-header .app-search-wrapper {
     max-width: 100%;
     margin-right: 0;
   }
@@ -3979,7 +3979,7 @@ body.fit-fill iframe {
   }
 
   /* 双语古典墨底 LOGO */
-  .brand {
+  .app-brand {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.6rem;
@@ -3992,7 +3992,7 @@ body.fit-fill iframe {
     box-sizing: border-box;
   }
 
-  .brand::after {
+  .app-brand::after {
     content: 'JINGYAN ZHUANFAN';
     display: block;
     font-size: 0.65rem;
@@ -4004,12 +4004,12 @@ body.fit-fill iframe {
   }
 
   /* 搜索框在侧栏中拉长 */
-  .search-wrapper {
+  .app-search-wrapper {
     width: 100%;
     max-width: 100%;
   }
 
-  .search-box {
+  .app-search-box {
     width: 100%;
     box-sizing: border-box;
   }
