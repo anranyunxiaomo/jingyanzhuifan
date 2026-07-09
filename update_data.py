@@ -517,6 +517,121 @@ def save_search_index(index_data):
     with open(SEARCH_INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, ensure_ascii=False, indent=2)
 
+def generate_healing_and_related_logic():
+    print("\n[ENHANCEMENT] Starting unified healing list gathering and related series matching...")
+    # A. 收集治愈番列表
+    healing_list = []
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_path, 'r', encoding='utf-8') as f:
+                    video = json.load(f).get("video", {})
+                    name = video.get("name")
+                    plot = video.get("plot", "")
+                    tags = video.get("tags", "")
+                    
+                    is_healing = False
+                    healing_words = ["治愈", "日常", "温馨", "萌系", "轻松", "温暖", "温馨", "治愈系", "夏目友人帐", "芙莉莲", "小鲨鱼"]
+                    for w in healing_words:
+                        if w in name or w in plot or w in tags:
+                            is_healing = True
+                            break
+                    
+                    if is_healing:
+                        if "战斗" in tags or "后宫" in tags:
+                            if "碧蓝之海" not in name:
+                                is_healing = False
+                                
+                        if is_healing:
+                            entry_aid = aid_str
+                            if aid_str.isdigit():
+                                entry_aid = int(aid_str)
+                            healing_list.append({
+                                "AID": entry_aid,
+                                "Title": name,
+                                "PicSmall": video.get("cover", "") or video.get("pic", ""),
+                                "NewTitle": video.get("status", "完结"),
+                                "Href": f"/detail/{aid_str}"
+                              })
+            except:
+                pass
+
+    local_home_path = os.path.join(DATA_DIR, 'home-list.json')
+    if os.path.exists(local_home_path):
+        try:
+            with open(local_home_path, 'r', encoding='utf-8') as f_h:
+                home_data = json.load(f_h)
+            if isinstance(home_data, dict):
+                home_data["healing_list"] = healing_list
+                with open(local_home_path, 'w', encoding='utf-8') as f_hw:
+                    json.dump(home_data, f_hw, ensure_ascii=False, indent=2)
+                print(f"[HEALING] Automatically gathered {len(healing_list)} high-score healing animes.")
+        except Exception as he:
+            print(f"[WARNING] Failed to inject healing list: {he}")
+
+    # B. 同系列关联计算与注入
+    def get_base_title(title):
+        if not title:
+            return ""
+        t = title.strip()
+        suffixes = [
+            "第一季", "第二季", "第三季", "第四季", "第五季", "第六季",
+            "第1季", "第2季", "第3季", "第4季", "第5季", "第6季",
+            " 1", " 2", " 3", " 4", " 5", " 6",
+            "特别篇", "剧场版", " ONA", " OVA", "第2期", "第3期", "前篇", "后篇"
+        ]
+        for s in suffixes:
+            t = t.replace(s, "")
+        return t.strip()
+
+    base_to_animes = {}
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_path, 'r', encoding='utf-8') as f:
+                    video = json.load(f).get("video", {})
+                    name = video.get("name")
+                    if name:
+                        base_name = get_base_title(name)
+                        if len(base_name) >= 2:
+                            if base_name not in base_to_animes:
+                                base_to_animes[base_name] = []
+                            base_to_animes[base_name].append({
+                                "id": aid_str,
+                                "title": name,
+                                "cover": video.get("cover", "")
+                            })
+            except:
+                pass
+
+    related_injected = 0
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_path, 'r', encoding='utf-8') as f:
+                    detail = json.load(f)
+                    video = detail.get("video", {})
+                    name = video.get("name")
+                    if name:
+                        base_name = get_base_title(name)
+                        if base_name in base_to_animes:
+                            related = [x for x in base_to_animes[base_name] if x["id"] != aid_str]
+                            if related:
+                                video["related"] = related
+                                detail["video"] = video
+                                with open(detail_path, 'w', encoding='utf-8') as fw:
+                                    json.dump(detail, fw, ensure_ascii=False, indent=2)
+                                related_injected += 1
+            except:
+                pass
+    print(f"[RELATED] Successfully injected related recommendations into {related_injected} detail files.\n")
+
 # ==========================================================================
 # 🚀 异步并发主任务
 # ==========================================================================
@@ -619,114 +734,14 @@ async def main_async():
                                 cleaned_week[day] = animes
                         home_data["week_list"] = cleaned_week
                 
-                # 💡 黄金增益：收集“评分在9分以上的经典治愈番”列表，写入 home-list.json 的 healing_list 键中！
-                healing_list = []
-                for filename in os.listdir(DETAIL_DIR):
-                    if filename.endswith(".json"):
-                        aid_str = filename[:-5]
-                        detail_path = os.path.join(DETAIL_DIR, filename)
-                        try:
-                            with open(detail_path, 'r', encoding='utf-8') as f:
-                                video = json.load(f).get("video", {})
-                                name = video.get("name")
-                                plot = video.get("plot", "")
-                                tags = video.get("tags", "")
-                                
-                                # 精准匹配治愈/温馨/日常等标签
-                                is_healing = False
-                                healing_words = ["治愈", "日常", "温馨", "萌系", "轻松", "温暖", "温馨", "治愈系", "夏目友人帐", "芙莉莲", "小鲨鱼"]
-                                for w in healing_words:
-                                    if w in name or w in plot or w in tags:
-                                        is_healing = True
-                                        break
-                                
-                                # 排除掉不符合治愈氛围的战斗番
-                                if is_healing:
-                                    if "战斗" in tags or "后宫" in tags:
-                                        if "碧蓝之海" not in name:
-                                            is_healing = False
-                                            
-                                if is_healing:
-                                    entry_aid = aid_str
-                                    if aid_str.isdigit():
-                                        entry_aid = int(aid_str)
-                                    healing_list.append({
-                                        "AID": entry_aid,
-                                        "Title": name,
-                                        "PicSmall": video.get("cover", "") or video.get("pic", ""),
-                                        "NewTitle": video.get("status", "完结"),
-                                        "Href": f"/detail/{aid_str}"
-                                    })
-                        except:
-                            pass
-                # 写入 home-list.json 中，供前端加载展示！
-                home_data["healing_list"] = healing_list
-                print(f"[HEALING] Automatically gathered {len(healing_list)} high-score healing animes.")
 
-                # 💡 黄金增益：计算并注入同系列动漫关联剧集推荐
-                def get_base_title(title):
-                    if not title:
-                        return ""
-                    t = title.strip()
-                    suffixes = [
-                        "第一季", "第二季", "第三季", "第四季", "第五季", "第六季",
-                        "第1季", "第2季", "第3季", "第4季", "第5季", "第6季",
-                        " 1", " 2", " 3", " 4", " 5", " 6",
-                        "特别篇", "剧场版", " ONA", " OVA", "第2期", "第3期", "前篇", "后篇"
-                    ]
-                    for s in suffixes:
-                        t = t.replace(s, "")
-                    return t.strip()
-
-                base_to_animes = {}
-                for filename in os.listdir(DETAIL_DIR):
-                    if filename.endswith(".json"):
-                        aid_str = filename[:-5]
-                        detail_path = os.path.join(DETAIL_DIR, filename)
-                        try:
-                            with open(detail_path, 'r', encoding='utf-8') as f:
-                                video = json.load(f).get("video", {})
-                                name = video.get("name")
-                                if name:
-                                    base_name = get_base_title(name)
-                                    if len(base_name) >= 2:
-                                        if base_name not in base_to_animes:
-                                            base_to_animes[base_name] = []
-                                        base_to_animes[base_name].append({
-                                            "id": aid_str,
-                                            "title": name,
-                                            "cover": video.get("cover", "")
-                                        })
-                        except:
-                            pass
-
-                related_injected = 0
-                for filename in os.listdir(DETAIL_DIR):
-                    if filename.endswith(".json"):
-                        aid_str = filename[:-5]
-                        detail_path = os.path.join(DETAIL_DIR, filename)
-                        try:
-                            with open(detail_path, 'r', encoding='utf-8') as f:
-                                detail = json.load(f)
-                                video = detail.get("video", {})
-                                name = video.get("name")
-                                if name:
-                                    base_name = get_base_title(name)
-                                    if base_name in base_to_animes:
-                                        related = [x for x in base_to_animes[base_name] if x["id"] != aid_str]
-                                        if related:
-                                            video["related"] = related
-                                            detail["video"] = video
-                                            with open(detail_path, 'w', encoding='utf-8') as fw:
-                                                json.dump(detail, fw, ensure_ascii=False, indent=2)
-                                            related_injected += 1
-                        except:
-                            pass
-                print(f"[RELATED] Successfully injected related recommendations into {related_injected} detail files.")
                 
                 with open(local_home_path, 'w', encoding='utf-8') as f_home_w:
                     json.dump(home_data, f_home_w, ensure_ascii=False, indent=2)
                 print("[SUCCESS] Local home-list.json cleaned and re-written.")
+                
+                # 💡 调用统一大增益：重建本地治愈番和关联系列数据 ！！！
+                generate_healing_and_related_logic()
             except Exception as clean_home_err:
                 print(f"[WARNING] Failed to clean local home-list.json: {clean_home_err}")
         
@@ -1123,6 +1138,13 @@ async def main_async():
     for aid, (detail_data, detail_path, title) in fetched_details.items():
         with open(detail_path, 'w', encoding='utf-8') as f:
             json.dump(detail_data, f, ensure_ascii=False, indent=2)
+
+    # ==========================================================================
+    # 💡 统一大增益：无论是否走网络，皆统一收集治愈番写入 home-list.json & 同系列关联匹配注入
+    # ==========================================================================
+    generate_healing_and_related_logic()
+
+
 
     # 💡 稳健大杀器：一键重建最新的 search_index.json，使本地模糊搜索能 100% 覆盖所有已缓存/同步的动漫
     print("\n[INDEX] Rebuilding search_index.json from all local details...")
