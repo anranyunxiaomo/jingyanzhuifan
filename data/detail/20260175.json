@@ -20,6 +20,12 @@
           "age_e9fa6eSjCKwy0n5%2Bl1O35fs7GgHmnW2Q23%2FnPVqbaux6A4F0BPGebjBvonECl1vOC5gb9ZmMpvHHmVLiQi%2BPPIwj",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38445_1"
+        ]
       ]
     },
     "area": "日本",
@@ -152,7 +158,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

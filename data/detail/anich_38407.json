@@ -1,0 +1,37 @@
+{
+  "video": {
+    "id": "anich_38407",
+    "name": "X战警97 第二季",
+    "cover": "https://wework.qpic.cn/wwpic3az/271128_4bTw0KQ_S06j4Ft_1783553503/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第04集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38407_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38407_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38407_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38407_4"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

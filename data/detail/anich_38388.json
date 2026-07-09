@@ -1,0 +1,25 @@
+{
+  "video": {
+    "id": "anich_38388",
+    "name": "奇招百出的维多利亚",
+    "cover": "https://wework.qpic.cn/wwpic3az/621980_SLv5gMEcR2-6OYJ_1783513874/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38388_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

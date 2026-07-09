@@ -740,8 +740,20 @@ def main():
         print("🚀 本次运行将跳过所有网络 API 访问。")
         print("=" * 60)
 
-    # 2. 抓取 latest 列表
-    raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", token)
+    # 2. 抓取 latest 列表 (优先使用本地旁路 latest.bin 绕过 Cloudflare 盾 ！！！)
+    local_bin_file = os.path.join(BASE_DIR, "latest.bin")
+    raw_latest = None
+    if os.path.exists(local_bin_file):
+        print("\n[BYPASS] 🚀 检测到本地存在 latest.bin 旁路数据源，已自动绕过 Cloudflare 盾直接进行解析！")
+        try:
+            with open(local_bin_file, "rb") as f_bin:
+                raw_latest = f_bin.read()
+        except Exception as bin_err:
+            print(f"[WARNING] 读取本地 latest.bin 失败: {bin_err}")
+
+    if not raw_latest:
+        raw_latest = curl_get_raw(f"{ANICH_API_BASE}/bangumi/latest", token)
+        
     if not raw_latest:
         print("[ERROR] 无法拉取最新番剧列表 (API 访问失败，请检查 Token 是否失效)")
         # 自动降级为静态本地数据同步，保证 GitHub Actions 不会因网络波动而阻断部署

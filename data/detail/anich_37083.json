@@ -1,0 +1,181 @@
+{
+  "video": {
+    "id": "anich_37083",
+    "name": "无尾熊绘日记",
+    "cover": "https://wework.qpic.cn/wwpic3az/998064_M_hohytuTVmhAoy_1761247829/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第40集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37083_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37083_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37083_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37083_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37083_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37083_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37083_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37083_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37083_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37083_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37083_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37083_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37083_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37083_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_37083_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_37083_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_37083_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_37083_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_37083_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_37083_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_37083_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_37083_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_37083_23"
+        ],
+        [
+          "第24集",
+          "anich_placeholder_37083_24"
+        ],
+        [
+          "第25集",
+          "anich_placeholder_37083_25"
+        ],
+        [
+          "第26集",
+          "anich_placeholder_37083_26"
+        ],
+        [
+          "第27集",
+          "anich_placeholder_37083_27"
+        ],
+        [
+          "第28集",
+          "anich_placeholder_37083_28"
+        ],
+        [
+          "第29集",
+          "anich_placeholder_37083_29"
+        ],
+        [
+          "第30集",
+          "anich_placeholder_37083_30"
+        ],
+        [
+          "第31集",
+          "anich_placeholder_37083_31"
+        ],
+        [
+          "第32集",
+          "anich_placeholder_37083_32"
+        ],
+        [
+          "第33集",
+          "anich_placeholder_37083_33"
+        ],
+        [
+          "第34集",
+          "anich_placeholder_37083_34"
+        ],
+        [
+          "第35集",
+          "anich_placeholder_37083_35"
+        ],
+        [
+          "第36集",
+          "anich_placeholder_37083_36"
+        ],
+        [
+          "第37集",
+          "anich_placeholder_37083_37"
+        ],
+        [
+          "第38集",
+          "anich_placeholder_37083_38"
+        ],
+        [
+          "第39集",
+          "anich_placeholder_37083_39"
+        ],
+        [
+          "第40集",
+          "anich_placeholder_37083_40"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

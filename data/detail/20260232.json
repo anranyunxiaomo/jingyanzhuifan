@@ -26,6 +26,12 @@
           "age_b593sRg81hlmXaGri7DD8CL3d95jZKroWyNPfOpfbGHm6IccRdxOjln%2F5rqwV%2FEXQxQKpBMQSXFFxNqMjyu1Wkc4LVipPy343%2BC8%2B%2BPg6%2B7olc01wgMk%2FxMDKnCdNVp19rPOKN89rguMzchukoU6jdxlNkgXVRwxHanLkA",
           "https://s1.fengbao9.com/video/beidoushenquanquanwangjunzabingmendewange/e536e91c3824/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38453_1"
+        ]
       ]
     },
     "area": "日本",
@@ -178,7 +184,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

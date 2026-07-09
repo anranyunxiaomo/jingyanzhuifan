@@ -1,0 +1,48 @@
+{
+  "video": {
+    "id": "anich_38302",
+    "name": "云深不知梦 特别篇",
+    "cover": "https://wework.qpic.cn/wwpic3az/981568_Yf8YY2DRSjGp3Oc_1783553451/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第05集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38302_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38302_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38302_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38302_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38302_5"
+        ]
+      ]
+    },
+    "related": [
+      {
+        "id": "a123_yunshenbuzhimeng",
+        "title": "云深不知梦",
+        "cover": "https://i1.a123tv.com/v/0x/yunshenbuzhimeng.jpg"
+      }
+    ]
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

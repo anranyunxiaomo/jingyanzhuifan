@@ -70,6 +70,56 @@
           "第12集完结",
           "/v/yinvyouxishijieduilurenjuesehe1/4sz16xxz11.html"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38452_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38452_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38452_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38452_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38452_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38452_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38452_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38452_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_38452_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_38452_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_38452_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_38452_12"
+        ]
       ]
     },
     "area": "日本",
@@ -188,7 +238,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "anich_m3u8": "AniCh"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -1,0 +1,53 @@
+{
+  "video": {
+    "id": "anich_38391",
+    "name": "Les Aventures fantastiques de Sacré-Cœur",
+    "cover": "https://wework.qpic.cn/wwpic3az/142571_m41NoKEST3yJnCA_1782621076/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第08集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38391_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38391_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38391_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38391_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38391_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38391_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38391_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_38391_8"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

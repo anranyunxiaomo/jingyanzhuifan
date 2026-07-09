@@ -45,9 +45,42 @@
           "https://v13.zuidazym3u8.com/yyv13/202605/27/XGc5Lp4g8J19/video/index.m3u8",
           "https://v13.zuidazym3u8.com/yyv13/202605/27/XGc5Lp4g8J19/video/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38107_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_38107_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_38107_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_38107_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_38107_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_38107_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_38107_7"
+        ]
       ]
     }
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
 }

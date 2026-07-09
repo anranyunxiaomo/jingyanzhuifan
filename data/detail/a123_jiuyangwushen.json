@@ -160,9 +160,134 @@
           "https://v1.ppqrrs.com/202605/26/sZ41vUwNvx93/video/index.m3u8",
           "https://v1.ppqrrs.com/202605/26/sZ41vUwNvx93/video/index.m3u8"
         ]
+      ],
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_37439_1"
+        ],
+        [
+          "第02集",
+          "anich_placeholder_37439_2"
+        ],
+        [
+          "第03集",
+          "anich_placeholder_37439_3"
+        ],
+        [
+          "第04集",
+          "anich_placeholder_37439_4"
+        ],
+        [
+          "第05集",
+          "anich_placeholder_37439_5"
+        ],
+        [
+          "第06集",
+          "anich_placeholder_37439_6"
+        ],
+        [
+          "第07集",
+          "anich_placeholder_37439_7"
+        ],
+        [
+          "第08集",
+          "anich_placeholder_37439_8"
+        ],
+        [
+          "第09集",
+          "anich_placeholder_37439_9"
+        ],
+        [
+          "第10集",
+          "anich_placeholder_37439_10"
+        ],
+        [
+          "第11集",
+          "anich_placeholder_37439_11"
+        ],
+        [
+          "第12集",
+          "anich_placeholder_37439_12"
+        ],
+        [
+          "第13集",
+          "anich_placeholder_37439_13"
+        ],
+        [
+          "第14集",
+          "anich_placeholder_37439_14"
+        ],
+        [
+          "第15集",
+          "anich_placeholder_37439_15"
+        ],
+        [
+          "第16集",
+          "anich_placeholder_37439_16"
+        ],
+        [
+          "第17集",
+          "anich_placeholder_37439_17"
+        ],
+        [
+          "第18集",
+          "anich_placeholder_37439_18"
+        ],
+        [
+          "第19集",
+          "anich_placeholder_37439_19"
+        ],
+        [
+          "第20集",
+          "anich_placeholder_37439_20"
+        ],
+        [
+          "第21集",
+          "anich_placeholder_37439_21"
+        ],
+        [
+          "第22集",
+          "anich_placeholder_37439_22"
+        ],
+        [
+          "第23集",
+          "anich_placeholder_37439_23"
+        ],
+        [
+          "第24集",
+          "anich_placeholder_37439_24"
+        ],
+        [
+          "第25集",
+          "anich_placeholder_37439_25"
+        ],
+        [
+          "第26集",
+          "anich_placeholder_37439_26"
+        ],
+        [
+          "第27集",
+          "anich_placeholder_37439_27"
+        ],
+        [
+          "第28集",
+          "anich_placeholder_37439_28"
+        ],
+        [
+          "第29集",
+          "anich_placeholder_37439_29"
+        ],
+        [
+          "第30集",
+          "anich_placeholder_37439_30"
+        ]
       ]
     }
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
 }

@@ -1,0 +1,25 @@
+{
+  "video": {
+    "id": "anich_38395",
+    "name": "不虐待我的继母与继姐",
+    "cover": "https://wework.qpic.cn/wwpic3az/771449_yX0bPF-3QECksRs_1783553435/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38395_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}

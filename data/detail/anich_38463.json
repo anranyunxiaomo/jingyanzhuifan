@@ -1,0 +1,25 @@
+{
+  "video": {
+    "id": "anich_38463",
+    "name": "太岁",
+    "cover": "https://wework.qpic.cn/wwpic3az/565166_ePpRmveDTNSEjLQ_1783546262/300",
+    "company": "AniCh 独有",
+    "type": "TV",
+    "area": "日本",
+    "year": "2026",
+    "uptodate": "第01集",
+    "premiere": "暂无",
+    "writer": "暂缺/见简介",
+    "playlists": {
+      "anich_m3u8": [
+        [
+          "第01集",
+          "anich_placeholder_38463_1"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "anich_m3u8": "AniCh"
+  }
+}
