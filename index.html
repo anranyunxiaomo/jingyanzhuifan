@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260709T1002">
-  <script>window.JYZF_VERSION = "20260708T1017";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260709T1525">
+  <script>window.JYZF_VERSION = "20260709T1525";</script>
 </head>
 <body class="loader-active">
 
@@ -993,6 +993,45 @@
     </div>
     </transition>
   </main>
+
+  <!-- 🏮 国风拟物底栏 (iPhone/移动端专用) -->
+  <nav class="mobile-bottom-nav" aria-label="移动端底栏">
+    <button class="nav-item" :class="{ active: currentPage === 'home' && !currentAnimeId }" @click="goHome">
+      <div class="nav-icon-wrapper lantern-icon">
+        <!-- 🏮 红灯笼图标 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="2" x2="12" y2="4" />
+          <line x1="12" y1="20" x2="12" y2="22" />
+          <rect x="7" y="4" width="10" height="16" rx="4" />
+          <path d="M7 8h10M7 16h10" />
+          <path d="M12 4c2.5 0 4 3.5 4 8s-1.5 8-4 8-4-3.5-4-8 1.5-8 4-8z" />
+        </svg>
+      </div>
+      <span>山门首页</span>
+    </button>
+    <button class="nav-item" :class="{ active: currentPage === 'catalog' && !currentAnimeId }" @click="goCatalog">
+      <div class="nav-icon-wrapper scroll-icon">
+        <!-- 📜 古书卷/竹简图标 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          <path d="M8 6h10M8 10h10M8 14h6"/>
+        </svg>
+      </div>
+      <span>番剧天卷</span>
+    </button>
+    <button class="nav-item" :class="{ active: currentAnimeId }" @click="goLatestHistory">
+      <div class="nav-icon-wrapper brush-icon">
+        <!-- 🖋 墨笔/狼毫图标 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          <path d="M3 21l3-3-1.5-1.5z" fill="currentColor"/>
+        </svg>
+      </div>
+      <span>墨笔留痕</span>
+    </button>
+  </nav>
 
   <!-- 极简白金底部 -->
   <footer class="app-footer">

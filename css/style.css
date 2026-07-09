@@ -4,42 +4,42 @@
    ========================================================================== */
 
 :root {
-  /* 🏮 宣纸底色系 — 绢本杏白为魂（保持原始主色调）*/
-  --bg-primary:    #FAF4EE;          /* 宣纸杏白：经典宣纸色，如绢本底色 */
-  --bg-secondary:  #FFFDFB;          /* 凝脂玉：温润白玉色，卡片面板背景 */
-  --bg-card:       #FDF9F5;          /* 绢本：略微暖调的卡片背景 */
-  --bg-elevated:   #FFFFFF;          /* 弹窗/浮层：纯白提升 */
-  --bg-hover:      rgba(255,59,95,0.04);
+  /* 🏮 黛粉墨底色系 — 绛紫温润为骨，水墨赛博粉色调 */
+  --bg-primary:    #160E12;          /* 深绛墨：碳黑带温润紫红调，绝妙深粉墨背景 */
+  --bg-secondary:  #1F151B;          /* 次绛墨：稍微明亮的深紫粉色，面板背景 */
+  --bg-card:       rgba(39, 26, 34, 0.85); /* 桃木磨砂玻璃卡片背景 */
+  --bg-elevated:   #2C1D27;          /* 绛红墨：浮层面板 */
+  --bg-hover:      rgba(255, 59, 127, 0.08); /* 霓虹粉微悬停 */
 
-  /* 📜 墨色文字系 */
-  --text-main:     #2C1E20;          /* 深黛墨：徽墨黑，带微褐古典质感 */
-  --text-muted:    #8E7A7D;          /* 晚香褐：灰褐色辅助文字 */
-  --text-dim:      #C4AEB0;          /* 极淡褐辅助 */
-  --text-light:    #FAF4EE;
+  /* 📜 宣纸米粉字色系 */
+  --text-main:     #FFE3EB;          /* 雪樱粉白：高亮粉白，墨底上的毛笔字 */
+  --text-muted:    #A88E99;          /* 烟雨粉灰：灰紫粉，诗意辅助色 */
+  --text-dim:      #5B434F;          /* 绛灰：极淡辅助 */
+  --text-light:    #FFE3EB;
 
-  /* ⚡ 霓虹朱砂红（主色调，绝对不改）*/
-  --accent-gold:        #FF3B5F;     /* 霓虹朱砂红 */
-  --accent-gold-hover:  #D91A3F;     /* 深绛红：重压后的印泥红 */
-  --accent-gold-light:  rgba(255,59,95,0.06);
-  --accent-sakura:      rgba(240,180,195,0.55);
-  --accent-ink:         rgba(44,30,32,0.06);
+  /* ⚡ 霓虹朱砂粉/桃花红 (赛博核心) */
+  --accent-gold:        #FF2A7A;     /* 霓虹朱砂粉：高饱和发光粉红 */
+  --accent-gold-hover:  #FF0055;     /* 深霓红：高亮赛博红 */
+  --accent-gold-light:  rgba(255, 42, 122, 0.09);
+  --accent-sakura:      rgba(255, 95, 160, 0.25);
+  --accent-ink:         rgba(255, 42, 122, 0.04);
 
-  /* 🥇 流金科技线（主色调，绝对不改）*/
-  --tech-gold:      #D4AF37;
-  --tech-gold-glow: rgba(212,175,55,0.35);
-  --tech-glow:      rgba(255,59,95,0.2);
-  /* 浑天仪网格：0.035→0.07，在浅底下稍可辨而不刺眼 */
-  --tech-grid:      rgba(212,175,55,0.07);
+  /* 🥇 浑天仪流金科技线 */
+  --tech-gold:      #E8C56B;         /* 流金：尊贵古风淡金，勾勒金轴与刻度 */
+  --tech-gold-glow: rgba(232, 197, 107, 0.45);
+  --tech-glow:      rgba(255, 42, 122, 0.4);
+  /* 浑天仪粉色电磁经纬网格线 */
+  --tech-grid:      rgba(255, 42, 122, 0.09);
 
-  /* 🪟 磨砂玻璃系统（浅色系）*/
-  --glass-bg:     rgba(255,253,251,0.92);
-  --glass-border: rgba(255,59,95,0.15);
-  --glass-shadow: 0 12px 48px -12px rgba(255,59,95,0.12),
-                  0 4px 0 rgba(255,59,95,0.04);
+  /* 🪟 磨砂玻璃系统 (深粉墨赛博) */
+  --glass-bg:     rgba(31, 21, 27, 0.82);
+  --glass-border: rgba(255, 42, 122, 0.22);
+  --glass-shadow: 0 12px 48px -12px rgba(255, 42, 122, 0.35),
+                  0 0 0 1px rgba(232, 197, 107, 0.15);
 
-  /* ✨ 粉色系微光晕 */
-  --glow-red:  0 0 16px rgba(255,59,95,0.25), 0 0 40px rgba(255,59,95,0.1);
-  --glow-gold: 0 0 16px rgba(212,175,55,0.3), 0 0 40px rgba(212,175,55,0.12);
+  /* ✨ 赛博霓虹双色微光晕 */
+  --glow-red:  0 0 20px rgba(255, 42, 122, 0.6), 0 0 50px rgba(255, 42, 122, 0.25);
+  --glow-gold: 0 0 20px rgba(232, 197, 107, 0.55), 0 0 50px rgba(232, 197, 107, 0.2);
 
   /* 🎋 3D 物理弹性缓动 */
   --ease-silk:   cubic-bezier(0.22, 1, 0.36, 1);
@@ -86,11 +86,11 @@ body.loader-active {
 body {
   font-family: var(--font-family);
   background-color: var(--bg-primary);
-  /* 🏮 侠客山水晕染多层叠加背景 */
+  /* 🏮 墨底霓虹桃红晕染多层叠加背景 */
   background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(255, 59, 95, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 85%, rgba(44, 30, 32, 0.04) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 0%, rgba(240, 180, 195, 0.05) 0%, transparent 40%);
+    radial-gradient(ellipse at 10% 10%, rgba(255, 42, 122, 0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 90%, rgba(232, 197, 107, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 42, 122, 0.08) 0%, transparent 40%);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
@@ -121,15 +121,15 @@ body::before {
   transform-origin: center center;
 }
 
-/* 🏮 3D 水墨山峦画卷层 */
+/* 🏮 3D 水墨山峦画卷层 + 霓虹底光 */
 body::after {
   content: '';
   position: fixed;
-  bottom: -5vh; right: -5vw;
-  width: 45vw;
+  bottom: -10vh; right: -10vw;
+  width: 55vw;
   height: 55vh;
   background:
-    radial-gradient(ellipse at 100% 100%, rgba(44, 30, 32, 0.06) 0%, transparent 75%);
+    radial-gradient(ellipse at 100% 100%, rgba(255, 42, 122, 0.16) 0%, rgba(31, 21, 27, 0.4) 60%, transparent 80%);
   z-index: -1;
   pointer-events: none;
   transform: translateZ(-150px) scale(1.5);
@@ -154,16 +154,15 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 253, 251, 0.92);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border-bottom: none;
+  background: rgba(22, 14, 18, 0.88);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border-bottom: 1px solid rgba(255, 42, 122, 0.2);
   box-shadow:
-    0 1px 0 rgba(217, 96, 122, 0.12),
-    0 2px 0 rgba(217, 96, 122, 0.06),
-    0 3px 0 rgba(184, 64, 96, 0.8),
-    0 4px 20px rgba(184, 64, 96, 0.06),
-    0 8px 32px rgba(44, 30, 32, 0.04);
+    0 1px 0 rgba(255, 42, 122, 0.25),
+    0 2px 0 rgba(255, 42, 122, 0.08),
+    0 0 40px rgba(255, 42, 122, 0.06),
+    0 8px 32px rgba(0, 0, 0, 0.55);
 }
 
 /* 主内容视图容器（首页/番剧库）—— 3D 转场动画挂载根节点 */
@@ -284,17 +283,19 @@ body::after {
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(226, 109, 128, 0.03);
-  border: 1px solid rgba(226, 109, 128, 0.25);
+  background: rgba(255, 42, 122, 0.05);
+  border: 1px solid rgba(255, 42, 122, 0.22);
   border-radius: 4px;
   padding: 0.5rem 1rem;
   transition: var(--transition-smooth);
 }
 
 .search-box:focus-within {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: var(--accent-gold-hover);
-  box-shadow: 0 4px 20px rgba(226, 109, 128, 0.08);
+  background: rgba(31, 21, 27, 0.98);
+  border-color: var(--accent-gold);
+  box-shadow:
+    0 0 0 1px rgba(255, 42, 122, 0.2),
+    0 0 20px rgba(255, 42, 122, 0.35);
 }
 
 .search-icon {
@@ -336,13 +337,14 @@ body::after {
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: rgba(255, 253, 251, 0.98);
-  border: 1px solid var(--glass-border);
+  background: rgba(22, 14, 18, 0.98);
+  border: 1px solid rgba(255, 42, 122, 0.25);
   border-radius: 4px;
-  box-shadow: 0 12px 40px rgba(226, 109, 128, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   max-height: 380px;
   overflow-y: auto;
   z-index: 10;
+  backdrop-filter: blur(16px);
 }
 
 .result-item {
@@ -352,7 +354,7 @@ body::after {
   padding: 0.8rem 1.2rem;
   cursor: pointer;
   transition: var(--transition-smooth);
-  border-bottom: 1px solid rgba(226, 109, 128, 0.08);
+  border-bottom: 1px solid rgba(255, 42, 122, 0.08);
 }
 
 .result-item:last-child {
@@ -370,7 +372,7 @@ body::after {
   height: 56px;
   object-fit: cover;
   border-radius: 2px;
-  border: 1px solid rgba(226, 109, 128, 0.2);
+  border: 1px solid rgba(255, 42, 122, 0.22);
 }
 
 .result-title {
@@ -451,17 +453,17 @@ body::after {
   transition: background-position 8s var(--ease-silk), opacity 0.6s var(--ease-silk);
 }
 
-/* 🏮 侠客山水遣罩：宣纸渐变从左侧如薄雾蔓延，右侧半透呢现山水画意 */
+/* 🏮 侠客山水遮罩：暗粉色渐变从左侧如薄雾蔓延，右侧半透呈现山水画意 */
 .banner-slide::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
     linear-gradient(to right,
-      rgba(250, 244, 238, 0.97) 0%,
-      rgba(250, 244, 238, 0.82) 30%,
-      rgba(250, 244, 238, 0.32) 65%,
-      rgba(250, 244, 238, 0.05) 100%);
+      rgba(22, 14, 18, 0.98) 0%,
+      rgba(22, 14, 18, 0.82) 30%,
+      rgba(22, 14, 18, 0.42) 65%,
+      rgba(22, 14, 18, 0.05) 100%);
   z-index: 1;
 }
 
@@ -471,7 +473,7 @@ body::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-    rgba(250, 244, 238, 0.6) 0%,
+    rgba(22, 14, 18, 0.75) 0%,
     transparent 35%);
   z-index: 1;
   pointer-events: none;
@@ -659,8 +661,8 @@ body::after {
 
 .banner-tag {
   display: inline-block;
-  background: var(--bg-primary);
-  color: var(--accent-gold-hover);
+  background: rgba(255, 42, 122, 0.12);
+  color: var(--accent-gold);
   border: 1px solid var(--accent-gold);
   font-size: 0.75rem;
   font-weight: 700;
@@ -668,6 +670,7 @@ body::after {
   border-radius: 2px;
   margin-bottom: 1.2rem;
   letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(255, 42, 122, 0.25);
 }
 
 .banner-title {
@@ -685,7 +688,7 @@ body::after {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.6rem;
-  border-radius: 4px; /* 直角 */
+  border-radius: 4px;
   font-size: 0.9rem;
   font-weight: 700;
   border: none;
@@ -697,13 +700,13 @@ body::after {
   background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
   color: white;
   border: 1px solid var(--accent-gold-hover);
-  box-shadow: 0 4px 15px rgba(226, 109, 128, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 42, 122, 0.3);
   font-family: var(--font-family);
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(226, 109, 128, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 42, 122, 0.45), 0 0 10px rgba(255, 42, 122, 0.2);
 }
 
 .banner-dots {
@@ -753,12 +756,14 @@ body::after {
   max-width: 1200px;
   margin: clamp(0.5rem, 2.5vw, 2.2rem) auto;
   padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 2.5rem);
-  background: var(--bg-secondary);
-  border: 1px solid rgba(217, 96, 122, 0.25);
+  background: rgba(31, 21, 27, 0.85);
+  border: 1px solid rgba(255, 42, 122, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow:
-    0 24px 80px -20px rgba(44, 30, 32, 0.1),
-    0 0 0 1px rgba(255, 253, 251, 0.9) inset,
-    0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    0 24px 80px -20px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(255, 42, 122, 0.08),
+    0 0 0 1px rgba(255, 42, 122, 0.08) inset;
   position: relative;
   border-radius: 4px;
   z-index: 1;
@@ -778,7 +783,7 @@ body::after {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px solid rgba(226, 109, 128, 0.15);
+  border: 1px solid rgba(232, 197, 107, 0.16);
   pointer-events: none;
 }
 
@@ -954,15 +959,16 @@ body::after {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: #FEFBF8;
-  border: 1px solid rgba(255, 59, 95, 0.12);
+  background: rgba(43, 29, 37, 0.85);
+  border: 1px solid rgba(255, 42, 122, 0.2);
   padding: 10px 8px;
-  border-top: 3px solid #B89A74;
-  border-bottom: 3px solid #B89A74;
+  border-top: 3px solid var(--tech-gold);
+  border-bottom: 3px solid var(--tech-gold);
   position: relative;
   box-shadow:
-    0 4px 16px -6px rgba(44, 30, 32, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    0 6px 20px -8px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 42, 122, 0.08) inset;
+  backdrop-filter: blur(12px);
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1014,7 +1020,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle, rgba(226, 109, 128, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 42, 122, 0.22) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -1;
@@ -1029,8 +1035,8 @@ body::after {
   aspect-ratio: 3 / 4;
   border-radius: 0;
   overflow: hidden;
-  background: rgba(217, 96, 122, 0.03);
-  border: 1px solid rgba(217, 96, 122, 0.18);
+  background: rgba(255, 42, 122, 0.05);
+  border: 1px solid rgba(255, 42, 122, 0.22);
   transition: var(--transition-smooth);
 }
 
@@ -1086,15 +1092,15 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 💥 霓虹侠客悬停：3D 反射 + 红金双色微光（第一次设计稏见管效果）*/
+/* 💥 霓虹侠客悬停：3D 反射 + 红金双色霓虹发光 (水墨赛博) */
 .anime-card:hover {
   transform: translateY(-10px) scale(1.03) rotateX(5deg) rotateY(-4deg);
   box-shadow:
-    -6px 18px 40px -8px rgba(184, 64, 96, 0.2),
-    0 0 0 1px rgba(212, 175, 55, 0.45),
-    0 4px 20px rgba(255, 59, 95, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  border-color: rgba(255, 59, 95, 0.38);
+    -8px 20px 40px -10px rgba(255, 42, 122, 0.45),
+    0 0 0 1px rgba(232, 197, 107, 0.6),
+    0 0 25px rgba(255, 42, 122, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 42, 122, 0.6);
   border-top-color: var(--tech-gold);
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
@@ -1103,8 +1109,8 @@ body::after {
 .anime-card:active {
   transform: translateY(-4px) scale(0.97) rotateX(1deg) rotateY(-1deg);
   box-shadow:
-    -4px 8px 18px -8px rgba(255,59,95,0.35),
-    0 0 0 1px rgba(212,175,55,0.4);
+    -4px 8px 18px -8px rgba(255, 42, 122, 0.35),
+    0 0 0 1px rgba(232, 197, 107, 0.3);
   transition: transform 0.15s var(--ease-silk);
 }
 
@@ -3814,4 +3820,235 @@ body.fit-fill iframe {
     opacity: 0;
   }
 }
+
+/* ==========================================================================
+   🏮 全平台国风视觉重构适配 (PC Sidebar & Mobile Bottom Nav)
+   ========================================================================== */
+
+/* 📱 1. iPhone 竖屏专用国风拟物底栏 (≤768px) */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 16px));
+  }
+  
+  /* 隐藏顶部 header 中重复的“番剧库”按钮，让顶部保持极简 */
+  .app-header .catalog-nav-btn {
+    display: none !important;
+  }
+  .app-header .search-wrapper {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(64px + env(safe-area-inset-bottom, 12px));
+    background: rgba(22, 14, 18, 0.94);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border-top: 1px solid rgba(255, 42, 122, 0.22);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px 1rem calc(env(safe-area-inset-bottom, 12px) - 6px) 1rem;
+    z-index: 1000;
+  }
+
+  .mobile-bottom-nav .nav-item {
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    padding: 6px 0;
+    width: 28%;
+    position: relative;
+  }
+
+  /* 拟物拟墨图标容器 */
+  .mobile-bottom-nav .nav-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 42, 122, 0.04);
+    border: 1px solid rgba(255, 42, 122, 0.15);
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+  }
+  .mobile-bottom-nav .nav-icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* 激活状态 */
+  .mobile-bottom-nav .nav-item.active {
+    color: var(--accent-gold);
+  }
+  .mobile-bottom-nav .nav-item.active .nav-icon-wrapper {
+    background: rgba(255, 42, 122, 0.15);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    box-shadow: 0 0 12px rgba(255, 42, 122, 0.4);
+    transform: translateY(-4px) scale(1.1);
+  }
+
+  /* 🏮 红灯笼微光特效 */
+  .mobile-bottom-nav .nav-item.active .lantern-icon {
+    box-shadow: 0 0 15px rgba(255, 42, 122, 0.6);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  /* 📜 竹简发光特效 */
+  .mobile-bottom-nav .nav-item.active .scroll-icon {
+    box-shadow: 0 0 15px rgba(232, 197, 107, 0.4);
+    border-color: var(--tech-gold);
+    color: var(--tech-gold);
+  }
+  
+  /* 🖋 狼毫笔尖发光 */
+  .mobile-bottom-nav .nav-item.active .brush-icon {
+    box-shadow: 0 0 15px rgba(255, 42, 122, 0.5);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .mobile-bottom-nav span {
+    font-family: var(--font-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (min-width: 769px) {
+  /* 在非移动端上隐藏底栏 */
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
+
+/* 🖥 2. PC 宽屏专用左侧流线深灰墨磨砂分栏 (≥1025px) */
+@media (min-width: 1025px) {
+  body {
+    background-image:
+      radial-gradient(ellipse at 300px 15%, rgba(255, 42, 122, 0.12) 0%, transparent 45%),
+      radial-gradient(ellipse at 90% 90%, rgba(232, 197, 107, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 0%, rgba(255, 42, 122, 0.06) 0%, transparent 40%);
+  }
+
+  /* Header 变形为左侧固定分栏 */
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100vh;
+    background: rgba(22, 14, 18, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-right: 1px solid rgba(255, 42, 122, 0.22);
+    border-bottom: none;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.6);
+    padding: 3.5rem 1.8rem;
+    z-index: 100;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 3rem;
+    padding: 0;
+  }
+
+  /* 双语古典墨底 LOGO */
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1.2rem;
+    background: rgba(31, 21, 27, 0.8);
+    border: 1px solid rgba(255, 42, 122, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .brand::after {
+    content: 'JINGYAN ZHUANFAN';
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    margin-top: 2px;
+  }
+
+  /* 搜索框在侧栏中拉长 */
+  .search-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 番剧库导航按钮在侧栏中变为菜单项 */
+  .catalog-nav-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    border-radius: 4px;
+    background: rgba(255, 42, 122, 0.05);
+    border: 1px solid rgba(255, 42, 122, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .catalog-nav-btn:hover {
+    background: rgba(255, 42, 122, 0.12);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(255, 42, 122, 0.35);
+  }
+
+  .catalog-nav-btn--active {
+    background: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 20px rgba(255, 42, 122, 0.5) !important;
+  }
+
+  /* Main 内容区向右平移 */
+  .app-main {
+    margin-left: 330px;
+    width: calc(100% - 360px);
+    max-width: 1200px;
+    min-height: calc(100vh - 4.4rem);
+  }
+
+  /* 详情播放页面布局微调 */
+  .detail-container {
+    grid-template-columns: 1.8fr 1fr;
+  }
+}
+
 

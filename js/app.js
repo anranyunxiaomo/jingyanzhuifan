@@ -2165,6 +2165,15 @@ new Vue({
       window.scrollTo(0, 0);
     },
     
+    // 🖋 移动端拟物底栏：墨笔留痕 (播放最新历史)
+    goLatestHistory() {
+      if (this.watchHistory && this.watchHistory.length > 0) {
+        this.resumeFromHistory(this.watchHistory[0]);
+      } else {
+        alert('「墨痕未染」暂无播放历史记录');
+      }
+    },
+    
     handleSearchBlur() {
       // 稍微延迟关闭匹配框，防止点击下拉项时直接触发 blur 导致点击失效
       setTimeout(() => {
