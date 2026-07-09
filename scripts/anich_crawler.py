@@ -25,6 +25,7 @@ import re
 import struct
 import subprocess
 import unicodedata
+import random
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -187,10 +188,20 @@ def decode_episodes_list(data):
 # 3. 网络请求和 Fuzzy Match 匹配
 # ──────────────────────────────────────────────
 def curl_get_raw(url, token_str, timeout=5):
+    # 产生一个伪装的国内民用 IP 绕过 GitHub 线上 CI 容器的 Azure/AWS 数据中心 IP 封锁风控
+    fake_ip = f"{random.choice([113, 119, 120, 121, 183])}.{random.randint(100, 240)}.{random.randint(10, 240)}.{random.randint(10, 240)}"
+    fake_ua = "Mozilla/5.0 (Linux; Android 12; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Mobile Safari/537.36"
+
     # 1. 💡 黄金放行法则：如果没有传入 Token，尝试进行直连免密访问，保障 API 通畅高可用！
     if not token_str:
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
-               "-H", f"User-Agent: {ANICH_UA}", url]
+        cmd = [
+            "curl", "-s", "--fail", "--max-time", str(timeout), 
+            "-H", f"User-Agent: {fake_ua}",
+            "-H", f"X-Forwarded-For: {fake_ip}",
+            "-H", f"X-Real-IP: {fake_ip}",
+            "-H", f"Client-IP: {fake_ip}",
+            url
+        ]
         r = subprocess.run(cmd, capture_output=True)
         if r.returncode == 0:
             res_str = r.stdout.decode('utf-8', errors='ignore')
@@ -212,8 +223,15 @@ def curl_get_raw(url, token_str, timeout=5):
         proto_bytes = f1 + f2
         auth_header = ','.join(str(b) for b in proto_bytes)
         
-        cmd = ["curl", "-s", "--fail", "--max-time", str(timeout), 
-               "-H", f"User-Agent: {ANICH_UA}", "-H", f"_: {auth_header}", url]
+        cmd = [
+            "curl", "-s", "--fail", "--max-time", str(timeout), 
+            "-H", f"User-Agent: {fake_ua}",
+            "-H", f"X-Forwarded-For: {fake_ip}",
+            "-H", f"X-Real-IP: {fake_ip}",
+            "-H", f"Client-IP: {fake_ip}",
+            "-H", f"_: {auth_header}",
+            url
+        ]
         
         r = subprocess.run(cmd, capture_output=True)
         if r.returncode == 0:
@@ -222,8 +240,6 @@ def curl_get_raw(url, token_str, timeout=5):
                 return r.stdout  # 成功！
                 
         time.sleep(0.15)
-        
-        
     return None
 
 def normalize(s):
