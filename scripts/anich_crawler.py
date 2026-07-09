@@ -195,7 +195,7 @@ def curl_get_raw(url, token_str, timeout=5):
     # 1. 💡 黄金放行法则：如果没有传入 Token，尝试进行直连免密访问，保障 API 通畅高可用！
     if not token_str:
         cmd = [
-            "curl", "-s", "--fail", "--max-time", str(timeout), 
+            "curl", "-s", "--max-time", str(timeout), 
             "-H", f"User-Agent: {fake_ua}",
             "-H", f"X-Forwarded-For: {fake_ip}",
             "-H", f"X-Real-IP: {fake_ip}",
@@ -205,6 +205,9 @@ def curl_get_raw(url, token_str, timeout=5):
         r = subprocess.run(cmd, capture_output=True)
         if r.returncode == 0:
             res_str = r.stdout.decode('utf-8', errors='ignore')
+            if "cloudflare" in res_str.lower() or "attention required" in res_str.lower():
+                print("[WAF] ⚡️ 检测到 Cloudflare 盾安全防护，直连 API 被 403 拦截！")
+                return None
             if "unauthorized" not in res_str:
                 return r.stdout
         return None
@@ -224,7 +227,7 @@ def curl_get_raw(url, token_str, timeout=5):
         auth_header = ','.join(str(b) for b in proto_bytes)
         
         cmd = [
-            "curl", "-s", "--fail", "--max-time", str(timeout), 
+            "curl", "-s", "--max-time", str(timeout), 
             "-H", f"User-Agent: {fake_ua}",
             "-H", f"X-Forwarded-For: {fake_ip}",
             "-H", f"X-Real-IP: {fake_ip}",
@@ -236,6 +239,9 @@ def curl_get_raw(url, token_str, timeout=5):
         r = subprocess.run(cmd, capture_output=True)
         if r.returncode == 0:
             res_str = r.stdout.decode('utf-8', errors='ignore')
+            if "cloudflare" in res_str.lower() or "attention required" in res_str.lower():
+                print("[WAF] ⚡️ 检测到 Cloudflare 盾安全防护，带 Token 的 API 请求被 403 拦截！")
+                return None
             if "unauthorized" not in res_str:
                 return r.stdout  # 成功！
                 
