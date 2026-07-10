@@ -144,87 +144,7 @@ body::after {
 /* ==========================================================================
    Header & 搜索栏 
    ========================================================================== */
-/* ──────────────────────────────────────────────────────────────────────────
-   finesse §3 — 墨夜霓虹 / 赛博画廊 双栏布局体系 (PC)
-   ────────────────────────────────────────────────────────────────────────── */
-.layout-container {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-}
-
-@media (min-width: 1025px) {
-  /* 左侧固定立轴导航 */
-  .app-header {
-    width: 280px !important;
-    height: 100vh !important;
-    position: sticky !important;
-    top: 0 !important;
-    flex-shrink: 0;
-    background: var(--bg-secondary) !important;
-    border-right: 1px solid rgba(255, 45, 120, 0.08) !important;
-    border-bottom: none !important;
-    padding: 3rem 1.8rem !important;
-    box-shadow: 4px 0 32px rgba(44, 30, 32, 0.02) !important;
-    z-index: 100;
-  }
-  
-  .app-header .header-container {
-    flex-direction: column !important;
-    height: 100% !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding: 0 !important;
-    gap: 2.5rem !important;
-    width: 100% !important;
-    max-width: none !important;
-  }
-
-  /* 搜索框在侧边栏占满宽度 */
-  .app-header .app-search-wrapper {
-    width: 100% !important;
-    max-width: none !important;
-    order: 3;
-    margin-top: auto; /* 置底 */
-  }
-
-  /* 导航按钮垂直排列 */
-  .app-header .catalog-nav-btn {
-    width: 100% !important;
-    justify-content: flex-start !important;
-    padding: 0.8rem 1.2rem !important;
-    background: rgba(255, 45, 120, 0.03) !important;
-    border: 1px solid rgba(255, 45, 120, 0.08) !important;
-    border-radius: 4px !important;
-    order: 2;
-  }
-
-  .app-header .app-brand {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1.2rem !important;
-    order: 1;
-  }
-
-  .app-header .logo-art {
-    font-size: 2.2rem !important;
-  }
-
-  /* 右侧主画面展示区 */
-  .app-main {
-    flex: 1 !important;
-    min-width: 0 !important;
-    margin: 2rem !important;
-    padding: 2.5rem !important;
-    max-width: none !important;
-    width: auto !important;
-    border-radius: 6px !important;
-    border: 1px solid rgba(255, 45, 120, 0.12) !important;
-    box-shadow: 0 16px 64px -16px rgba(44, 30, 32, 0.06) !important;
-  }
-}
-
+/* 🏮 景雁导航栏基本布局设定 */
 .app-header {
   position: sticky;
   top: 0;
@@ -4077,3 +3997,85 @@ body.fit-fill iframe {
     opacity: 0;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   finesse §3 — 墨夜霓虹 / 赛博画廊 双栏布局体系 (PC)
+   ────────────────────────────────────────────────────────────────────────── */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 1025px) {
+  /* 左侧固定立轴导航 */
+  .app-header {
+    width: 280px !important;
+    height: 100vh !important;
+    position: sticky !important;
+    top: 0 !important;
+    flex-shrink: 0;
+    background: var(--bg-secondary) !important;
+    border-right: 1.5px solid rgba(255, 45, 120, 0.1) !important;
+    border-bottom: none !important;
+    padding: 3rem 1.8rem !important;
+    box-shadow: 4px 0 32px rgba(44, 30, 32, 0.02) !important;
+    z-index: 100;
+  }
+  
+  .app-header .header-container {
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* 搜索框在侧边栏占满宽度 */
+  .app-header .app-search-wrapper {
+    width: 100% !important;
+    max-width: none !important;
+    order: 3;
+    margin-top: auto; /* 置底 */
+  }
+
+  /* 导航按钮垂直排列 */
+  .app-header .catalog-nav-btn {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 0.8rem 1.2rem !important;
+    background: rgba(255, 45, 120, 0.03) !important;
+    border: 1px solid rgba(255, 45, 120, 0.08) !important;
+    border-radius: 4px !important;
+    order: 2;
+  }
+
+  .app-header .app-brand {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.2rem !important;
+    order: 1;
+  }
+
+  .app-header .logo-art {
+    font-size: 2.2rem !important;
+  }
+
+  /* 右侧主画面展示区 */
+  .app-main {
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 2rem !important;
+    padding: 2.5rem !important;
+    max-width: none !important;
+    width: auto !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(255, 45, 120, 0.12) !important;
+    box-shadow: 0 16px 64px -16px rgba(44, 30, 32, 0.06) !important;
+  }
+}
+
