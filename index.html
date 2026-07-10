@@ -552,7 +552,7 @@
         <div class="grid-list">
           <div 
             class="anime-card" 
-            v-for="item in latestList" 
+            v-for="item in latestList.slice(0, 10)" 
             :key="item.AID"
             @click="selectAnime(item.AID)"
           >
