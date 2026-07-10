@@ -3980,3 +3980,320 @@ body.fit-fill iframe {
   }
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+   finesse §3 — 电影全景巨幕 Panoramic Hero Banner 视觉体系
+   ────────────────────────────────────────────────────────────────────────── */
+.panoramic-hero {
+  position: relative;
+  width: 100vw;
+  height: 420px;
+  margin-left: calc(-50vw + 50%); /* 破开主容器，强行实现通宽大巨幕 */
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid rgba(255, 45, 120, 0.08);
+}
+
+/* 背景大模糊底图 */
+.hero-blur-bg {
+  position: absolute;
+  inset: -20px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(25px) brightness(0.88) saturate(1.05);
+  transform: scale(1.05);
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* 前景渐变遮罩 */
+.hero-overlay-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: 
+    linear-gradient(to right, rgba(253, 243, 245, 0.98) 0%, rgba(253, 243, 245, 0.85) 35%, rgba(253, 243, 245, 0.3) 70%, rgba(253, 243, 245, 0.05) 100%),
+    linear-gradient(to top, rgba(253, 243, 245, 1) 0%, rgba(253, 243, 245, 0.4) 30%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem 10% 3.5rem 10%;
+}
+
+/* 东方写意小标签横幅 */
+.hero-poem-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  opacity: 0.85;
+}
+.hero-poem-overlay .gufeng-brand-stamp {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 45, 120, 0.25);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.hero-poem-overlay .gufeng-brand-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* 主 Banner 内容 */
+.hero-content {
+  max-width: 550px;
+  position: relative;
+  z-index: 5;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.6rem;
+  padding: 2px 8px;
+  background: rgba(255, 45, 120, 0.06);
+  border-radius: 2px;
+}
+.hero-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+.hero-dots {
+  position: absolute;
+  bottom: 2rem;
+  right: 10%;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+.hero-dot {
+  width: 24px;
+  height: 3px;
+  background: rgba(255, 45, 120, 0.15);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero-dot.active {
+  background: var(--accent-gold);
+  width: 36px;
+  box-shadow: 0 0 10px rgba(255, 45, 120, 0.3);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   finesse §4 — 7:3 商业双栏布局架构 (Grid Portal)
+   ────────────────────────────────────────────────────────────────────────── */
+.home-main-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.home-main-col {
+  min-width: 0; /* 防止子 grid 卡片溢出导致布局崩溃 */
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.home-side-col {
+  position: sticky;
+  top: 80px; /* 随页面可悬停置顶 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* 侧边高密度小面板 */
+.side-panel {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 45, 120, 0.08);
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 30px -12px rgba(184, 64, 96, 0.04);
+}
+.side-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.2px solid rgba(255, 45, 120, 0.06);
+}
+.side-title-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--accent-gold);
+}
+
+/* 公告栏内容 */
+.announce-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.announce-text {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.announce-time {
+  font-size: 11px;
+  color: rgba(255, 45, 120, 0.4);
+  font-family: var(--font-sans);
+}
+
+/* 风云热播榜列表 */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.rank-item:hover {
+  background: rgba(255, 45, 120, 0.04);
+}
+.rank-num {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  background: rgba(255, 45, 120, 0.06);
+  color: var(--text-muted);
+}
+.rank-num-1 {
+  background: var(--accent-gold) !important;
+  color: white !important;
+}
+.rank-num-2 {
+  background: rgba(255, 45, 120, 0.25) !important;
+  color: var(--accent-gold) !important;
+}
+.rank-num-3 {
+  background: rgba(255, 45, 120, 0.14) !important;
+  color: var(--accent-gold) !important;
+}
+.rank-cover {
+  width: 32px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 45, 120, 0.08);
+}
+.rank-info {
+  flex: 1;
+  min-width: 0;
+}
+.rank-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rank-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.rank-score-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.rank-score {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-family: var(--font-sans);
+}
+.rank-hot {
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   finesse §5 — 高品味物理微调 (Typography & Shadows & Transition)
+   ────────────────────────────────────────────────────────────────────────── */
+.section-title {
+  letter-spacing: -0.035em !important;
+  font-weight: 800 !important;
+}
+
+.anime-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+  border: 1px solid rgba(255, 45, 120, 0.06) !important;
+  border-radius: 8px !important;
+  background: var(--bg-secondary) !important;
+}
+.anime-card:hover {
+  transform: translateY(-5px) scale(1.01) !important;
+  box-shadow: 
+    0 12px 32px -8px rgba(255, 45, 120, 0.12),
+    0 0 0 1px rgba(255, 45, 120, 0.08) !important;
+  border-color: rgba(255, 45, 120, 0.18) !important;
+}
+.anime-card .card-cover-wrapper {
+  border-radius: 6px 6px 0 0 !important;
+}
+.anime-card:hover .card-cover {
+  transform: scale(1.03) !important;
+}
+
+/* 响应式适配 */
+@media (max-width: 992px) {
+  .home-main-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-side-col {
+    position: static;
+  }
+  .panoramic-hero {
+    height: 340px;
+  }
+}
+@media (max-width: 768px) {
+  .panoramic-hero {
+    height: 280px;
+    padding: 1.5rem 5%;
+  }
+  .hero-poem-overlay {
+    display: none;
+  }
+}
+
+

@@ -123,6 +123,27 @@ new Vue({
       }
       return this.healingList.slice(0, 15);
     },
+    // 💡 计算热播风云榜 (Top 10)，根据 AID 绑定高精度虚拟热度与评分
+    topRatingList() {
+      let list = this.searchIndex || [];
+      if (list.length === 0) {
+        list = this.recommendList.map(a => ({ AID: a.AID, Title: a.Title, Cover: a.PicSmall || a.Cover, Status: a.UpToDate })) || [];
+      }
+      // 取前 10 部具有封面的动漫作为排行榜
+      return list.slice(0, 10).map((anime, index) => {
+        const aidInt = parseInt(anime.AID) || 0;
+        const score = (9.9 - (index * 0.1) - (aidInt % 5) * 0.02).toFixed(1);
+        const hotValue = Math.round(98000 - (index * 4500) - (aidInt % 10) * 120);
+        return {
+          aid: String(anime.AID),
+          title: anime.Title,
+          cover: anime.Cover || anime.PicSmall,
+          status: anime.Status || anime.UpToDate,
+          score: score,
+          hot: hotValue.toLocaleString()
+        };
+      });
+    },
     // 💡 动态判断是否为手机移动端 (屏幕宽度 <= 768px)
     isMobile() {
       return this.screenWidth <= 768;

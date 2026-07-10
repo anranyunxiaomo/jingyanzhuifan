@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260710T1627">
-  <script>window.JYZF_VERSION = "20260710T1627";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260710T1640">
+  <script>window.JYZF_VERSION = "20260710T1640";</script>
 </head>
 <body class="loader-active">
 
@@ -277,12 +277,6 @@
                 :src="anime.Cover" 
                 :alt="anime.Title"
                 loading="lazy"
-                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
-              >
-              <span class="catalog-status-badge" :class="anime.Status === '完结' ? 'badge-done' : 'badge-airing'">
-                {{ anime.Status }}
-              </span>
-            </div>
             <div class="catalog-card-info">
               <div class="catalog-card-title">{{ anime.Title }}</div>
               <div class="catalog-card-ep">{{ anime.UpToDate }}</div>
@@ -308,52 +302,33 @@
 
       <!-- 🌏 首页视图包装器 -->
       <div class="app-main-content" :class="mainContentTransitionClass" v-else-if="!currentAnimeId && currentPage === 'home'" key="home">
-        <!-- 1. 顶部精美幻灯片 (Banner Slider) -->
-        <section class="banner-section" v-if="bannerList.length > 0">
+        <!-- 1. 顶部全景巨幕幻灯片 (Panoramic Hero Banner) -->
+        <section class="panoramic-hero" v-if="bannerList.length > 0">
+          <div class="hero-blur-bg" :style="{ backgroundImage: 'url(' + activeBanner.style + ')' }"></div>
           
-          <!-- 🖋 独立古风诗词横幅 (位于精选推荐幻灯片上方，完美对齐) -->
-          <div class="top-poem-banner">
-            <div class="top-poem-left-text">
+          <div class="hero-overlay-wrapper">
+            <!-- 🖋 东方意境小横幅 -->
+            <div class="hero-poem-overlay">
               <span class="gufeng-brand-stamp">景雁·番書</span>
-              <span class="gufeng-brand-sub">「愿你徒步天下，丈量世界。不忘初心」</span>
+              <span class="gufeng-brand-sub">「愿你徒步天下，丈量世界」</span>
             </div>
-            <!-- 诗词排版容器：使用独特的类名 top-banner-poem 以隔离样式冲突 -->
-            <div class="top-banner-poem" aria-hidden="true">
-              <div class="poem-seal">景雁</div>
-              <div class="poem-scroll-text">
-                <span>辞霜踏雪向景明，</span>
-                <span>万里南飞一客雁。</span>
-                <span>木棉红透珠江水，</span>
-                <span>化作春风伴远山。</span>
+            
+            <div class="hero-content">
+              <span class="hero-tag">本日主推番剧</span>
+              <h1 class="hero-title" v-html="activeBanner.html"></h1>
+              <div class="hero-actions">
+                <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                    <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+                  </svg> 立即播放
+                </button>
               </div>
             </div>
-          </div>
-
-          <div class="banner-container">
-            <transition name="fade" mode="out-in">
-              <div 
-                class="banner-slide" 
-                :key="currentBannerIndex"
-                :style="{ backgroundImage: 'linear-gradient(to right, rgba(250,244,238,0.97) 0%, rgba(250,244,238,0.82) 30%, rgba(250,244,238,0.32) 65%, rgba(250,244,238,0.05) 100%), url(' + activeBanner.style + ')' }"
-              >
-                <div class="banner-content">
-                  <span class="banner-tag">精选推荐</span>
-                  <h1 class="banner-title" v-html="activeBanner.html"></h1>
-                  <button class="btn btn-gold btn-play" @click="selectAnime(activeBanner.AID)">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
-                      <circle cx="12" cy="12" r="10"/>
-                      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-                    </svg> 立即观看
-                  </button>
-                </div>
-              </div>
-            </transition>
-
 
             <!-- 幻灯片指示器 -->
-            <div class="banner-dots">
+            <div class="hero-dots">
               <span 
-                class="dot" 
+                class="hero-dot" 
                 v-for="(dot, idx) in bannerList" 
                 :key="idx" 
                 :class="{ active: idx === currentBannerIndex }"
@@ -365,9 +340,11 @@
 
         <!-- 2. 动漫列表模式 (首页展示) -->
         <div class="home-content">
-      
-      <!-- 💡 继续观看历史 (仅在有历史数据时展示) -->
-      <section class="list-section history-section" v-if="watchHistory.length > 0">
+          <div class="home-main-layout-grid">
+            <div class="home-main-col">
+              
+              <!-- 💡 继续观看历史 (仅在有历史数据时展示) -->
+              <section class="list-section history-section" v-if="watchHistory.length > 0">
           <!-- 继续观看 section -->
           <div class="section-title-wrapper" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
             <!-- 时钟图标（古风·日晷风） -->
@@ -648,7 +625,54 @@
           </button>
         </div>
       </section>
-    </div></div> <!-- 关闭 v-if="!currentAnimeId" 首页包装器 -->
+            </div> <!-- 闭合 .home-main-col -->
+
+            <!-- 右侧副栏：追番公告与热播风云榜 -->
+            <aside class="home-side-col">
+              <div class="side-panel announce-panel">
+                <h3 class="side-panel-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="side-title-icon">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                  </svg> 追番公告
+                </h3>
+                <div class="announce-content">
+                  <p class="announce-text">📣 景雁动漫全新升级！重塑为商业级极简粉晶流媒体门户。任何播放与加载问题建议切换 VIP 接口 C 进行缓存直连。</p>
+                  <p class="announce-time">广州景雁动漫群 2026-07-10</p>
+                </div>
+              </div>
+              
+              <div class="side-panel rating-rank-panel">
+                <h3 class="side-panel-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="side-title-icon">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg> 热播风云榜 (Top 10)
+                </h3>
+                <div class="rank-list">
+                  <div 
+                    class="rank-item" 
+                    v-for="(anime, idx) in topRatingList" 
+                    :key="anime.aid"
+                    @click="selectAnime(anime.aid)"
+                  >
+                    <div class="rank-num" :class="'rank-num-' + (idx + 1)">{{ idx + 1 }}</div>
+                    <img :src="anime.cover" :alt="anime.title" class="rank-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
+                    <div class="rank-info">
+                      <div class="rank-title">{{ anime.title }}</div>
+                      <div class="rank-meta">{{ anime.status }}</div>
+                    </div>
+                    <div class="rank-score-badge">
+                      <span class="rank-score">{{ anime.score }}</span>
+                      <span class="rank-hot">🔥 {{ anime.hot }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div> <!-- 闭合 .home-main-layout-grid -->
+        </div>
+      </div> <!-- 关闭 v-if="!currentAnimeId" 首页包装器 -->
 
     <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
     <div class="detail-content" :class="detailTransitionClass" v-else key="detail">
@@ -1004,7 +1028,7 @@
 <!-- Axios CDN 引入 -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260710T1627"></script>
+<script src="js/app.js?v=20260710T1640"></script>
 
 </body>
 </html>
