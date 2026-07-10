@@ -135,35 +135,35 @@ body::after {
   transform-origin: right bottom;
 }
 
-/* 📜 宣纸纸张手工噪点叠层 */
+/* 📜 finesse 宣纸噪点纹理层 — 标准 grain 规格，消除平面向量感 */
 .paper-noise-overlay {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
-  z-index: 999999;
+  z-index: 9999;
   pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
 }
 
 
 /* ==========================================================================
    Header & 搜索栏 
    ========================================================================== */
+/* finesse §3 — header 毛玻璃：真实边缘折射 + 干净 blur，去除过重彩色边框堆叠 */
 .app-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 253, 251, 0.92);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border-bottom: none;
+  background: rgba(250, 244, 238, 0.88);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-bottom: 1px solid rgba(255, 59, 95, 0.1);
   box-shadow:
-    0 1px 0 rgba(217, 96, 122, 0.12),
-    0 2px 0 rgba(217, 96, 122, 0.06),
-    0 3px 0 rgba(184, 64, 96, 0.8),
-    0 4px 20px rgba(184, 64, 96, 0.06),
-    0 8px 32px rgba(44, 30, 32, 0.04);
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 4px 24px rgba(44, 30, 32, 0.06);
 }
+
 
 /* 主内容视图容器（首页/番剧库）—— 3D 转场动画挂载根节点 */
 .app-main-content {
@@ -283,18 +283,22 @@ body::after {
 .app-search-box {
   display: flex;
   align-items: center;
-  background: rgba(226, 109, 128, 0.03);
-  border: 1px solid rgba(226, 109, 128, 0.25);
-  border-radius: 4px;
+  background: rgba(255, 59, 95, 0.025);
+  border: 1px solid rgba(255, 59, 95, 0.18);
+  border-radius: 3px;
   padding: 0.5rem 1rem;
-  transition: var(--transition-smooth);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
+/* finesse — search focus: 精确 accent 色环，无 AI tell 蓝色 */
 .app-search-box:focus-within {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: var(--accent-gold-hover);
-  box-shadow: 0 4px 20px rgba(226, 109, 128, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(255, 59, 95, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(255, 59, 95, 0.08),
+    0 4px 16px rgba(44, 30, 32, 0.06);
 }
+
 
 .app-search-box input {
   border: none;
@@ -670,14 +674,15 @@ body::after {
   box-shadow: 0 0 12px rgba(255, 42, 122, 0.25);
 }
 
+/* finesse §3 — 标题字重张力：large display tight tracking */
 .banner-title {
   font-family: var(--font-family);
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 0.96;
   color: var(--text-main);
   margin-bottom: 2rem;
-  letter-spacing: 1.5px;
+  letter-spacing: -0.02em;
 }
 
 .btn {
@@ -854,16 +859,32 @@ body::after {
   display: none;
 }
 
+/* finesse §3 — section title: 去除 AI tell border-left，改用绝对定位 accent 点 */
 .section-title {
   font-family: var(--font-family);
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
   font-weight: 900;
   color: var(--text-main);
-  letter-spacing: -0.5px;
-  padding-left: 12px;
-  border-left: 4px solid var(--accent-gold);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
   position: relative;
+  padding-left: 0.7rem;
 }
+
+/* finesse — 左侧精致 accent 小方块，取代粗 border-left AI tell */
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 1.1em;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
 
 .list-section {
   margin-top: 3.5rem;
@@ -950,19 +971,20 @@ body::after {
 }
 
 /* 🏮 挂轴画框（画轴上下轴木设计）*/
+/* finesse §3 — 卡片：移除 AI tell 侧边条，改为顶部单像素 accent 线 + 精致层次感 */
 .anime-card {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   background: #FEFBF8;
-  border: 1px solid rgba(255, 59, 95, 0.12);
+  border: 1px solid rgba(255, 59, 95, 0.1);
+  border-top: 2px solid rgba(255, 59, 95, 0.5);
   padding: 10px 8px;
-  border-top: 3px solid #B89A74;
-  border-bottom: 3px solid #B89A74;
   position: relative;
+  overflow: hidden;
   box-shadow:
-    0 4px 16px -6px rgba(44, 30, 32, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    0 2px 12px -4px rgba(44, 30, 32, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1006,20 +1028,24 @@ body::after {
   }
 }
 
-/* 🏮 交互动效：卡片背后暗藏水墨晕染特效背景层 */
+/* finesse — 卡片光扫 shimmer 效果：hover 时白光从左至右扫过，精致而非廉价 */
 .anime-card::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle, rgba(226, 109, 128, 0.14) 0%, transparent 70%);
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 80%
+  );
   opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: -1;
+  transition: opacity 0.3s ease, left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
   pointer-events: none;
-  border-radius: 4px;
 }
 
 /* 🏮 播放器画心：封面容器维持 3:4 化 */
@@ -1041,25 +1067,31 @@ body::after {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* finesse — 集数标签：从竖排改为水平角标，更清晰可读 */
 .card-tag {
   position: absolute;
-  top: 0;
-  left: 8px;
+  top: 6px;
+  right: 6px;
   z-index: 10;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  padding: 6px 4.5px;
-  background: var(--accent-gold) !important; /* 统一使用朱砂印泥红 */
-  color: #ffffff !important;
-  font-family: var(--font-family);
-  font-size: 9px !important;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  border-radius: 0 0 2px 2px;
-  border: 1px solid var(--accent-gold-hover);
-  border-top: none;
-  box-shadow: 1px 1px 3px rgba(44, 26, 14, 0.15);
-  transition: all 0.3s var(--ease-silk);
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  padding: 3px 6px;
+  background: rgba(22, 12, 14, 0.72);
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-family: var(--font-sans);
+  font-size: 10px !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  border: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s var(--ease-silk);
+  max-width: calc(100% - 16px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-overlay {
@@ -1086,17 +1118,16 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 💥 霓虹侠客悬停：3D 反射 + 红金双色霓虹发光 (水墨赛博) */
+/* finesse — card hover：精确 scale 1.04（不超 1.05），tinted shadow，光扫触发 */
 .anime-card:hover {
-  transform: translateY(-10px) scale(1.03) rotateX(5deg) rotateY(-4deg);
+  transform: translateY(-6px) scale(1.04);
   box-shadow:
-    -6px 18px 40px -8px rgba(184, 64, 96, 0.2),
-    0 0 0 1px rgba(212, 175, 55, 0.45),
-    0 4px 20px rgba(255, 59, 95, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  border-color: rgba(255, 59, 95, 0.38);
-  border-top-color: var(--tech-gold);
-  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
+    0 20px 48px -12px rgba(184, 64, 96, 0.22),
+    0 0 0 1px rgba(255, 59, 95, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  border-top-color: var(--accent-gold);
+  border-color: rgba(255, 59, 95, 0.22);
+  transition: transform 0.38s cubic-bezier(.16,1,.3,1), box-shadow 0.38s var(--ease-silk), border-color 0.25s ease;
 }
 
 /* ⚡ 点击弹性按压下陷 */
@@ -1108,8 +1139,10 @@ body::after {
   transition: transform 0.15s var(--ease-silk);
 }
 
+/* finesse — 触发光扫：hover 时将 ::after 从左推到右 */
 .anime-card:hover::after {
   opacity: 1;
+  left: 140%;
 }
 
 .anime-card:hover .card-cover {
@@ -1128,21 +1161,23 @@ body::after {
 }
 
 .card-info {
-  margin-top: 0.8rem;
+  margin-top: 0.65rem;
   padding: 0 2px;
 }
 
+/* finesse — card title: 左对齐更专业，字重对比 800对比辅色 */
 .card-title {
   font-family: var(--font-family);
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 700;
   color: var(--text-main);
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  letter-spacing: 0.5px;
-  text-align: center; /* 挂轴字居中 */
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-align: left;
 }
 
 .card-update-time {
@@ -2975,6 +3010,10 @@ body.fit-fill iframe {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+  /* 关闭卡片光扫 shimmer */
+  .anime-card::after {
+    display: none !important;
   }
   /* 压缩所有过渡时间到即时 */
   *, *::before, *::after {
