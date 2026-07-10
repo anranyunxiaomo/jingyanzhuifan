@@ -963,23 +963,6 @@ body::after {
   gap: 2rem;
 }
 
-@media (min-width: 1025px) {
-  /* finesse — 突破常规 AI 格子布局，首张番剧卡片自动大画卷排版 */
-  .grid-list .anime-card:first-child {
-    grid-column: span 2;
-    flex-direction: row !important;
-    gap: 1.2rem;
-    align-items: center;
-  }
-  .grid-list .anime-card:first-child .card-cover-wrapper {
-    width: 180px !important;
-    flex-shrink: 0;
-  }
-  .grid-list .anime-card:first-child .card-title {
-    font-size: 1.15rem !important;
-    line-height: 1.5;
-  }
-}
 
 
 /* 🏮 挂轴画框（画轴上下轴木设计）*/
@@ -1130,32 +1113,24 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* finesse — card hover：精确 scale 1.04（不超 1.05），tinted shadow，光扫触发 */
+/* finesse — card hover：简单的 4px 上移反馈，配合清透粉晶阴影 */
 .anime-card:hover {
-  transform: translateY(-6px) scale(1.04);
+  transform: translateY(-4px);
   box-shadow:
-    0 20px 48px -12px rgba(184, 64, 96, 0.22),
-    0 0 0 1px rgba(255, 59, 95, 0.28),
+    0 12px 32px -8px rgba(255, 45, 120, 0.18),
+    0 0 0 1px rgba(255, 45, 120, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.98);
-  border-top-color: var(--accent-gold);
-  border-color: rgba(255, 59, 95, 0.22);
-  transition: transform 0.38s cubic-bezier(.16,1,.3,1), box-shadow 0.38s var(--ease-silk), border-color 0.25s ease;
+  border-color: rgba(255, 45, 120, 0.18);
+  transition: transform 0.3s var(--ease-silk), box-shadow 0.3s var(--ease-silk);
 }
 
 /* ⚡ 点击弹性按压下陷 */
 .anime-card:active {
-  transform: translateY(-4px) scale(0.97) rotateX(1deg) rotateY(-1deg);
-  box-shadow:
-    -4px 8px 18px -8px rgba(255,59,95,0.35),
-    0 0 0 1px rgba(212,175,55,0.4);
-  transition: transform 0.15s var(--ease-silk);
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(255, 45, 120, 0.1);
+  transition: transform 0.1s var(--ease-silk);
 }
 
-/* finesse — 触发光扫：hover 时将 ::after 从左推到右 */
-.anime-card:hover::after {
-  opacity: 1;
-  left: 140%;
-}
 
 .anime-card:hover .card-cover {
   transform: scale(1.06);
@@ -2429,9 +2404,9 @@ body {
   /* 手机端详情页 Tabs 控制栏 */
   .mobile-detail-tabs {
     display: flex;
-    background: rgba(217, 96, 122, 0.04);
-    border: 1px solid rgba(217, 96, 122, 0.15);
-    border-radius: 2px;
+    background: rgba(255, 45, 120, 0.035);
+    border: 1px solid rgba(255, 45, 120, 0.12);
+    border-radius: 4px;
     margin: 0.8rem 0 1rem 0;
     padding: 3px;
   }
@@ -2450,13 +2425,14 @@ body {
     gap: 6px;
     cursor: pointer;
     transition: all 0.3s var(--ease-silk);
-    border-radius: 2px;
+    border-radius: 3px;
   }
   .detail-tab-btn.active {
-    background: var(--accent-gold-hover);
+    background: var(--accent-gold);
     color: var(--bg-secondary) !important;
-    box-shadow: 0 4px 12px rgba(184, 64, 96, 0.22);
+    box-shadow: 0 4px 12px rgba(255, 45, 120, 0.18);
   }
+
 
   /* 播放器全宽贴边 */
   .player-panel {
@@ -3292,19 +3268,24 @@ body.fit-fill iframe {
 .filter-btn {
   padding: 5px 14px;
   border-radius: 16px;
-  border: 1.5px solid rgba(217, 96, 122, 0.25);
+  border: 1.2px solid rgba(255, 45, 120, 0.18);
   background: transparent;
   color: var(--text-muted);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
-.filter-btn.active,
 .filter-btn:hover {
-  background: rgba(217, 96, 122, 0.12);
+  background: rgba(255, 45, 120, 0.06);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+}
+.filter-btn.active {
+  background: var(--accent-gold);
+  border-color: transparent;
+  color: white !important;
+  box-shadow: 0 3px 10px rgba(255, 45, 120, 0.18);
 }
 .catalog-sort-group {
   display: flex;
@@ -3314,13 +3295,18 @@ body.fit-fill iframe {
 .catalog-sort-select {
   padding: 5px 10px;
   border-radius: 8px;
-  border: 1.5px solid rgba(217, 96, 122, 0.25);
+  border: 1.2px solid rgba(255, 45, 120, 0.18);
   background: var(--bg-secondary);
   color: var(--text-main);
   font-size: 12px;
   cursor: pointer;
   outline: none;
+  transition: border-color 0.2s ease;
 }
+.catalog-sort-select:focus {
+  border-color: var(--accent-gold);
+}
+
 
 /* 卡片网格 */
 .catalog-grid {
@@ -3995,87 +3981,6 @@ body.fit-fill iframe {
   100% {
     transform: scale(3.8);
     opacity: 0;
-  }
-}
-
-/* ──────────────────────────────────────────────────────────────────────────
-   finesse §3 — 墨夜霓虹 / 赛博画廊 双栏布局体系 (PC)
-   ────────────────────────────────────────────────────────────────────────── */
-.layout-container {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-}
-
-@media (min-width: 1025px) {
-  /* 左侧固定立轴导航 */
-  .app-header {
-    width: 280px !important;
-    height: 100vh !important;
-    position: sticky !important;
-    top: 0 !important;
-    flex-shrink: 0;
-    background: var(--bg-secondary) !important;
-    border-right: 1.5px solid rgba(255, 45, 120, 0.1) !important;
-    border-bottom: none !important;
-    padding: 3rem 1.8rem !important;
-    box-shadow: 4px 0 32px rgba(44, 30, 32, 0.02) !important;
-    z-index: 100;
-  }
-  
-  .app-header .header-container {
-    flex-direction: column !important;
-    height: 100% !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding: 0 !important;
-    gap: 2.5rem !important;
-    width: 100% !important;
-    max-width: none !important;
-  }
-
-  /* 搜索框在侧边栏占满宽度 */
-  .app-header .app-search-wrapper {
-    width: 100% !important;
-    max-width: none !important;
-    order: 3;
-    margin-top: auto; /* 置底 */
-  }
-
-  /* 导航按钮垂直排列 */
-  .app-header .catalog-nav-btn {
-    width: 100% !important;
-    justify-content: flex-start !important;
-    padding: 0.8rem 1.2rem !important;
-    background: rgba(255, 45, 120, 0.03) !important;
-    border: 1px solid rgba(255, 45, 120, 0.08) !important;
-    border-radius: 4px !important;
-    order: 2;
-  }
-
-  .app-header .app-brand {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1.2rem !important;
-    order: 1;
-  }
-
-  .app-header .logo-art {
-    font-size: 2.2rem !important;
-  }
-
-  /* 右侧主画面展示区 */
-  .app-main {
-    flex: 1 !important;
-    min-width: 0 !important;
-    margin: 2rem !important;
-    padding: 2.5rem !important;
-    max-width: none !important;
-    width: auto !important;
-    border-radius: 6px !important;
-    border: 1px solid rgba(255, 45, 120, 0.12) !important;
-    box-shadow: 0 16px 64px -16px rgba(44, 30, 32, 0.06) !important;
   }
 }
 
