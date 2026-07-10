@@ -3985,13 +3985,13 @@ body.fit-fill iframe {
    ────────────────────────────────────────────────────────────────────────── */
 .panoramic-hero {
   position: relative;
-  width: 100vw;
-  height: 420px;
-  margin-left: calc(-50vw + 50%); /* 破开主容器，强行实现通宽大巨幕 */
+  width: 100%;
+  height: 400px;
   overflow: hidden;
   margin-bottom: 2.5rem;
   background-color: var(--bg-primary);
-  border-bottom: 1px solid rgba(255, 45, 120, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 45, 120, 0.08);
 }
 
 /* 背景大模糊底图 */
@@ -4017,14 +4017,14 @@ body.fit-fill iframe {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 3rem 10% 3.5rem 10%;
+  padding: 2.5rem;
 }
 
 /* 东方写意小标签横幅 */
 .hero-poem-overlay {
   position: absolute;
-  top: 2rem;
-  right: 10%;
+  top: 1.8rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -4077,7 +4077,7 @@ body.fit-fill iframe {
 .hero-dots {
   position: absolute;
   bottom: 2rem;
-  right: 10%;
+  right: 2rem;
   display: flex;
   gap: 8px;
   z-index: 5;
@@ -4289,10 +4289,16 @@ body.fit-fill iframe {
 @media (max-width: 768px) {
   .panoramic-hero {
     height: 280px;
-    padding: 1.5rem 5%;
+  }
+  .hero-overlay-wrapper {
+    padding: 1.5rem !important;
   }
   .hero-poem-overlay {
     display: none;
+  }
+  .hero-dots {
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
   }
 }
 
