@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260713T2243">
+  <link rel="stylesheet" href="css/style.css?v=20260713T2252">
   <script>window.JYZF_VERSION = "20260710T1651";</script>
 </head>
 <body class="loader-active">
@@ -714,10 +714,13 @@
               <p>请在下方选择剧集开始播放</p>
             </div>
             <template v-else>
-              <!-- 1. 🎬 绝对静止的媒体播放层（无任何动态 v-if 控制按钮作为子节点，物理隔离，彻底杜绝 DOM 重建导致重新请求） -->
               <div class="player-container-inner" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
                 <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode"></div>
                 
+                <!-- 💡 好好看黄金主线专属物理黑色遮罩：在视觉上 100% 遮挡好好看原站的外围侧边栏与顶部搜索框，实现纯净视口呈现 -->
+                <div class="hkan-mask-top" v-if="activeLineKey === 'hkan_line1' && isIframeMode"></div>
+                <div class="hkan-mask-left" v-if="activeLineKey === 'hkan_line1' && isIframeMode"></div>
+
                 <!-- 降级 传统 Iframe 播放器 (强绑 key 以在换源/换集数时彻底重置渲染，物理隔绝进度污染) -->
                 <iframe 
                   id="playerIFrame"
@@ -726,6 +729,7 @@
                   :key="activePlayUrl"
                   class="video-iframe"
                   :class="{ 'hkan-mode': activeLineKey === 'hkan_line1' }"
+                  sandbox="allow-scripts allow-same-origin allow-forms"
                   scrolling="no" 
                   allowfullscreen
                   webkitallowfullscreen
@@ -1041,7 +1045,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260713T2243"></script>
+<script src="js/app_v2.js?v=20260713T2252"></script>
 
 </body>
 </html>
