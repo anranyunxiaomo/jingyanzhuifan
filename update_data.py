@@ -855,7 +855,7 @@ async def main_async():
                 now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
                 import re
                 content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
-                content = re.sub(r'js/app\.js\?v=[0-9a-zA-Z_]+', f'js/app.js?v={now_str}', content)
+                content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
                 with open(index_path, 'w', encoding='utf-8') as f:
                     f.write(content)
                 print(f"[SUCCESS] Updated index.html asset versions to: {now_str}")
@@ -1290,7 +1290,7 @@ async def main_async():
             
             import re
             content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
-            content = re.sub(r'js/app\.js\?v=[0-9a-zA-Z_]+', f'js/app.js?v={now_str}', content)
+            content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
             content = re.sub(r'window\.JYZF_VERSION\s*=\s*["\'][0-9a-zA-Z_]+["\']', f'window.JYZF_VERSION = "{now_str}"', content)
             
             with open(index_path, 'w', encoding='utf-8') as f:
