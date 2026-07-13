@@ -196,9 +196,25 @@ def extract_hkan_detail_play_list(client, detail_slug):
             tags_list = [t.strip() for t in spans[2].get_text().split(",") if t.strip()]
             
     matches = re.findall(r'href=\"/play/([^\"]+)\" class=\"episode-item\"[^>]*><span>([^<]+)</span>', html)
+    
+    # 💡 线路精准去重与单源锁定过滤：
+    # 好好看页面上平铺了多条线路的集数按钮（导致大量重复的第1集、第2集等被无差别抓取）。
+    # 格式为: /play/{slug}-{line_id}-{ep_id}.html
+    # 我们只保留第一个被匹配到的 line_id 线路名下的所有选集，彻底抹去所有重复和备用线路！
     episodes = []
+    target_line_id = None
     for link, name in matches:
-        episodes.append([name.strip(), f"/play/{link}"])
+        parts = link.split('-')
+        if len(parts) >= 3:
+            line_id = parts[1]
+            if target_line_id is None:
+                target_line_id = line_id
+            
+            if line_id == target_line_id:
+                episodes.append([name.strip(), f"/play/{link}"])
+        else:
+            episodes.append([name.strip(), f"/play/{link}"])
+
         
     meta = {
         "year": year,
