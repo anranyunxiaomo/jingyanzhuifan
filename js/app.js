@@ -1348,43 +1348,41 @@ new Vue({
         }
       }
       
-      if (!realUrl) {
-        if (isVip) {
-          // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
-          const playerJx = this.animeDetail.player_jx || {};
-          const jxBase = playerJx.vip || playerJx.zj;
-          if (jxBase) {
-            playUrl = jxBase + epToken;
-          } else {
-            playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + epToken;
-          }
-          console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
-        } else if (this.activeLineKey === 'anich_m3u8') {
-          // AniCh 直链线路：ep[1] 本身就是真实 m3u8/mp4 URL，直接播放，不套解析站
-          playUrl = epToken;
-          console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
+      // 💡 无论 realUrl 是否有值，我们都必须把 playUrl 拼装出来，作为 DPlayer 原生播放失败或被 CORS 拦截时的 iframe 降级退路！！！
+      const targetUrlToResolve = realUrl ? realUrl : epToken;
+      
+      if (isVip) {
+        // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
+        const playerJx = this.animeDetail.player_jx || {};
+        const jxBase = playerJx.vip || playerJx.zj;
+        if (jxBase) {
+          playUrl = jxBase + targetUrlToResolve;
         } else {
-          // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
-          const targetUrlToResolve = realUrl ? realUrl : epToken;
-          let finalTarget = targetUrlToResolve;
-          if (finalTarget && finalTarget.startsWith('/play/')) {
-            finalTarget = "https://www.hhkan0.com" + finalTarget;
-          }
-          
-          if (this.activeEngineKey === 'default') {
-            // 💡 统一分流：无论直链、加密 Token 还是相对网页，一律静默路由至全能的 jx.xmflv.com 合作解析器
-            // xmflv 具备最强力的云端代理防跨域机制，能 100% 消除所有 CORS 报错并实现高清秒开！
-            playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
-            console.log("[SMART ROUTER] Unified premium xmflv.com resolver chosen.");
-          } else {
-            playUrl = this.activeEngineKey + finalTarget;
-            console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
-          }
-
-
-
+          playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
+        }
+        console.log("[SMART ROUTER] VIP Line detected. routing to Default Decryptor.");
+      } else if (this.activeLineKey === 'anich_m3u8') {
+        // AniCh 直链线路：直接播放，不套解析站
+        playUrl = targetUrlToResolve;
+        console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
+      } else {
+        // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
+        let finalTarget = targetUrlToResolve;
+        if (finalTarget && finalTarget.startsWith('/play/')) {
+          finalTarget = "https://www.hhkan0.com" + finalTarget;
+        }
+        
+        if (this.activeEngineKey === 'default') {
+          // 💡 统一分流：无论直链、加密 Token 还是相对网页，一律静默路由至全能的 jx.xmflv.com 合作解析器
+          // xmflv 具备最强力的云端代理防跨域机制，能 100% 消除所有 CORS 报错并实现高清秒开！
+          playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
+          console.log("[SMART ROUTER] Unified premium xmflv.com resolver chosen.");
+        } else {
+          playUrl = this.activeEngineKey + finalTarget;
+          console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
       }
+
 
       const progressKey = `jyzf_progress_${this.currentAnimeId}_${this.activeEpisodeName}`;
       const savedTime = parseFloat(localStorage.getItem(progressKey) || '0');
