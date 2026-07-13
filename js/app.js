@@ -1416,6 +1416,13 @@ new Vue({
         finalRealUrl = epToken;
       }
 
+      // 💡 CORS 跨域防护大锁：只有自建且配好了 CORS 跨域头的 AniCh 直链线路、或者 Blob 生成的资源，才允许留在 finalRealUrl 里走 DPlayer 播放！
+      // 所有其他外部采集源（如非凡 ffm3u8、暴风 wjm3u8、lzm3u8 等）的 M3U8 链接，由于对方服务器存在同源跨域限制，
+      // 我们直接将 finalRealUrl 强制清空，逼迫其退回到 iframe 轨道（通过专业的五洲派 m3u8 代理器中转播放），彻底解决 100% 跨域报错 Bug！
+      if (finalRealUrl && this.activeLineKey !== 'anich_m3u8' && !finalRealUrl.startsWith('blob:')) {
+        finalRealUrl = "";
+      }
+
       // ✅ 变量捕获闭包锁定（必须放在异步云解密之后，确保能获取到更新后的 realUrl/playUrl ！！！）
       const capturedAnimeId = String(this.currentAnimeId);
       const capturedEpName = String(this.activeEpisodeName);
@@ -1424,6 +1431,7 @@ new Vue({
 
       // 1. 如果存在直链，优先尝试使用原生 DPlayer 播放
       if (finalRealUrl) {
+
         this.isIframeMode = false;
         this.activePlayUrl = finalRealUrl;
 
