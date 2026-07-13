@@ -1421,8 +1421,15 @@ new Vue({
       }
 
 
+      // 💡 CORS/Referer 安全防护大锁：只有自建且配好了跨域与 Referer 的 AniCh 线路、或者 Blob 生成的资源，才允许走 DPlayer 播放！
+      // 外部非凡、暴风、无尽等采集源直链由于其服务器存在同源跨域阻断与防盗链 WAF 限制，直接清空 finalRealUrl，强制降级走全能的 xmflv 解析站播放！
+      if (finalRealUrl && this.activeLineKey !== 'anich_m3u8' && !finalRealUrl.startsWith('blob:')) {
+        finalRealUrl = "";
+      }
+
       // ✅ 变量捕获闭包锁定（必须放在异步云解密之后，确保能获取到更新后的 realUrl/playUrl ！！！）
       const capturedAnimeId = String(this.currentAnimeId);
+
       const capturedEpName = String(this.activeEpisodeName);
       const capturedRealUrl = finalRealUrl;
       const capturedIframeUrl = playUrl;
