@@ -1367,6 +1367,11 @@ new Vue({
         // AniCh 直链线路：直接播放，不套解析站
         playUrl = targetUrlToResolve;
         console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
+      } else if (this.activeLineKey === 'hkan_line1') {
+        // 💡 好好看黄金主线：其 epToken 本身就是好好看官方成熟的播放页，我们直接使用 iframe 载入官网播放页播放！
+        // 100% 杜绝由于第三方解析站 (xmflv 等) 不兼容好好看导致的不支持视频平台报错，且实现最纯净的零广告官方秒播体验！
+        playUrl = "https://www.hhkan0.com" + (epToken.startsWith('/play/') ? epToken : targetUrlToResolve.replace("https://www.hhkan0.com", ""));
+        console.log("[SMART ROUTER] Routing hkan_line1 directly to official web player.");
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         let finalTarget = targetUrlToResolve;
