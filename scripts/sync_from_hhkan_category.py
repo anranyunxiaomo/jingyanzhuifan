@@ -107,12 +107,14 @@ def is_sensitive_anime(title, plot="", tags=""):
         if genre in plot or genre in tags:
             return True
             
-    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教", "鹰峰同学", "一脸嫌弃", "胖次", "panties", "pantse"]
+    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教", "鹰峰同学", "一脸嫌弃", "胖次", "panties", "pantse", "枫与铃", "らぶみー", "楓と鈴", "loveme", "love me", "染谷同学", "女优这事", "女优"]
     for s_name in sensitive_names:
         if s_name in title:
             if "催眠" in title and "催眠麦克风" in title:
                 continue
             return True
+
+
     return False
 
 def get_bangumi_cover(title):

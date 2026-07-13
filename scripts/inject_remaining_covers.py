@@ -22,15 +22,44 @@ COVER_INJECTIONS = {
     "a123_anxianlingzhudeyukuailingdifan.json": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
     
     # 5. 草莓哀歌
-    "a123_caomeiaige.json": "https://lain.bgm.tv/pic/cover/l/4b/ef/472147_lYpZ8.jpg"
+    "a123_caomeiaige.json": "https://lain.bgm.tv/pic/cover/l/4b/ef/472147_lYpZ8.jpg",
+
+    # 6. 银魂·第一季·全201集
+    "227200.json": "https://lain.bgm.tv/pic/cover/l/7f/22/1454_T346B.jpg",
+
+    # 7. 灌篮高手国语版
+    "26003.json": "https://lain.bgm.tv/pic/cover/l/46/f4/1441_q9z6Z.jpg",
+
+    # 8. 蜡笔小新第十季
+    "271265.json": "https://lain.bgm.tv/pic/cover/l/21/cd/1317_LqQxG.jpg"
 }
 
 def main():
     print("=" * 60)
-    print("🎯 [START] 开启余下 5 部特殊日漫封面高清精准注入补全...")
+    print("🎯 [START] 开启余下特殊日漫封面高清精准注入补全与敏感清除...")
     print("=" * 60)
     
+    # 💡 [SENSITIVE PURGE] 物理强制清除里番敏感内容
+    sensitive_file = os.path.join(DETAIL_DIR, "257677.json")
+    if os.path.exists(sensitive_file):
+        try:
+            os.remove(sensitive_file)
+            print("  🚨 [PURGED] 成功物理清理敏感里番文件: 257677.json (LoveMe枫与铃)")
+        except Exception as e:
+            print(f"  ❌ 物理清理 257677.json 失败: {e}")
+
+    # 💡 [SENSITIVE PURGE 2] 物理强制清除擦边敏感内容 20260231
+    sensitive_file2 = os.path.join(DETAIL_DIR, "20260231.json")
+    if os.path.exists(sensitive_file2):
+        try:
+            os.remove(sensitive_file2)
+            print("  🚨 [PURGED] 成功物理清理敏感擦边文件: 20260231.json (研讨同组的染谷同学原来是女优这事)")
+        except Exception as e:
+            print(f"  ❌ 物理清理 20260231.json 失败: {e}")
+            
     success_count = 0
+
+
     for filename, cover_url in COVER_INJECTIONS.items():
         file_path = os.path.join(DETAIL_DIR, filename)
         if os.path.exists(file_path):
