@@ -96,9 +96,27 @@ def is_unwanted_area_anime(title, area, plot="", tags=""):
     for kw in cn_anime_keywords:
         if kw in title:
             return True
+def is_sensitive_anime(title, plot="", tags=""):
+    """判定番剧是否属于黄色或敏感内容"""
+    title = (title or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    sensitive_genres = ["里番", "肉番", "凌辱", "18禁", "无修正", "成人"]
+    for genre in sensitive_genres:
+        if genre in plot or genre in tags:
+            return True
+            
+    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教", "鹰峰同学", "一脸嫌弃", "胖次", "panties", "pantse"]
+    for s_name in sensitive_names:
+        if s_name in title:
+            if "催眠" in title and "催眠麦克风" in title:
+                continue
+            return True
     return False
 
 def get_bangumi_cover(title):
+
     """从 Bangumi 检索免防盗链的高清海报大图"""
     import urllib.parse
     clean_kw = re.sub(r'(第[一二三四五六七八九十0-9]+季|第[一二三四五六七八九十0-9]+部分|第[一二三四五六七八九十0-9]+期|act2|Ⅱ|Ⅲ|Ⅳ|Ⅴ|\d+)$', '', title, flags=re.IGNORECASE).strip()
@@ -256,10 +274,11 @@ def main():
         title = anime["title"]
         slug = anime["slug"]
         
-        if is_unwanted_area_anime(title, "", "", "") or is_kids_anime(title):
+        if is_unwanted_area_anime(title, "", "", "") or is_kids_anime(title) or is_sensitive_anime(title):
             continue
             
         cleaned_title = clean_title(title)
+
         matched_entry = existing_map.get(cleaned_title)
         
         aid = None
@@ -292,8 +311,10 @@ def main():
             time.sleep(1.0)
             continue
             
-        if meta and (is_unwanted_area_anime(title, meta.get("area"), meta.get("plot"), meta.get("tags")) or is_kids_anime(title, meta.get("plot"), meta.get("tags"))):
-            print(f"  🚨 [PURGE] 检测到该独占番为国产或低幼动漫，执行物理删除过滤: {title}")
+        if meta and (is_unwanted_area_anime(title, meta.get("area"), meta.get("plot"), meta.get("tags")) or 
+                    is_kids_anime(title, meta.get("plot"), meta.get("tags")) or 
+                    is_sensitive_anime(title, meta.get("plot"), meta.get("tags"))):
+            print(f"  🚨 [PURGE] 检测到该番剧为国产、低幼或敏感动漫，执行物理删除过滤: {title}")
             if os.path.exists(detail_path):
                 try:
                     os.remove(detail_path)
@@ -301,6 +322,7 @@ def main():
                     pass
             time.sleep(1.0)
             continue
+
             
         cover = get_bangumi_cover(title)
         

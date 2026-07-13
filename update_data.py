@@ -95,7 +95,7 @@ def is_sensitive_anime(name, plot, tags):
             return True
             
     # 2. 标题模糊匹配黑名单
-    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教"]
+    sensitive_names = ["淫狱", "蹂躏", "少女波子汽水", "催眠", "堕落", "调教", "鹰峰同学", "一脸嫌弃", "胖次", "panties", "pantse"]
     for s_name in sensitive_names:
         if s_name in name:
             # 💡 规避误伤：比如“催眠麦克风”是正常的音乐企划番剧，不应拦截
@@ -104,6 +104,7 @@ def is_sensitive_anime(name, plot, tags):
             return True
             
     return False
+
 
 
 def is_unwanted_area_anime(title, area, plot="", tags=""):
