@@ -1312,7 +1312,7 @@ new Vue({
       
       // 💡 黄金云端按需解密：如果是需要嗅探的加密老番直链，尝试使用自建 Worker + ScraperAPI 云解密
       // 如此能实现 100% 屏蔽第三方解析站网页里的菠菜和牛皮癣广告，直接使用干净的原生 DPlayer 播放！
-      if (epToken && epToken.startsWith('age_') && !realUrl) {
+      if (this.activeLineKey === 'anich_m3u8' && epToken && epToken.startsWith('age_') && !realUrl) {
         const jxTargetUrl = "https://jx.wuzhoupai.com:8443/vip/?url=" + epToken;
         console.log("[DYNAMIC RESOLVER] Cache miss or on-demand trigger. Resolving via Worker: " + epToken);
         
