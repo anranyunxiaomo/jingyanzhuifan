@@ -1359,18 +1359,23 @@ new Vue({
         } else {
           // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
           const targetUrlToResolve = realUrl ? realUrl : epToken;
+          let finalTarget = targetUrlToResolve;
+          if (finalTarget && finalTarget.startsWith('/play/')) {
+            finalTarget = "https://www.hhkan0.com" + finalTarget;
+          }
           
           if (this.activeEngineKey === 'default') {
-            if (targetUrlToResolve.startsWith('age_')) {
-                playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + targetUrlToResolve;
+            if (finalTarget.startsWith('age_')) {
+                playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + finalTarget;
             } else {
-                playUrl = "https://jx.xmflv.com/?url=" + targetUrlToResolve;
+                playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
             }
             console.log("[SMART ROUTER] Standard Line detected. Upgrade routing to premium xmflv.com resolver.");
           } else {
-            playUrl = this.activeEngineKey + targetUrlToResolve;
+            playUrl = this.activeEngineKey + finalTarget;
             console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
           }
+
         }
       }
 
