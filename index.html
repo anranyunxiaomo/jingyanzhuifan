@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260713T2113">
+  <link rel="stylesheet" href="css/style.css?v=20260713T2119">
   <script>window.JYZF_VERSION = "20260710T1651";</script>
 </head>
 <body class="loader-active">
@@ -816,8 +816,9 @@
               </button>
             </div>
             <!-- 极简白金换源/换解析器面板 -->
-            <div class="engine-selector-wrapper" style="display: none !important; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
+            <div class="engine-selector-wrapper" style="display: flex; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap; margin-top: 15px;">
               <div style="display: flex; align-items: center; gap: 0.4rem; margin-right: auto;">
+
                 <span class="engine-label">解析引擎:</span>
                 <select class="engine-select" v-model="activeEngineKey" @change="rePlayCurrentEpisode">
                   <option v-for="engine in jxEngines" :key="engine.value" :value="engine.value">
@@ -1036,7 +1037,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260713T2113"></script>
+<script src="js/app.js?v=20260713T2119"></script>
 
 </body>
 </html>

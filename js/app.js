@@ -1397,17 +1397,14 @@ new Vue({
       this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       this.lastLogProgressTime = 0;
 
-      // 💡 智能直连判定：如果播放链接本身就是常规的 M3U8/MP4 直链（如非凡、暴风、无尽等采集源），
-      // 我们直接将其标记为 finalRealUrl！强行让其进入 DPlayer 原生轨道秒开，彻底解决外部 iframe 解析站卡顿 15 秒的严重痛点！
+      // 💡 智能直连判定：仅允许我们在服务器端已配置好 CORS 跨域头的 AniCh 直链线路、或者 Blob 生成直链进行前端直连播放！
+      // 外部非凡、暴风、无尽等采集源的 .m3u8/mp4 链接由于对方服务器 100% 存在 CORS 同源跨域策略阻断，一律禁止直连，强制走第三方解析站播放！
       let finalRealUrl = realUrl;
       const isDirectUrl = epToken && (
-        epToken.startsWith('http://') || 
-        epToken.startsWith('https://') || 
-        epToken.includes('.m3u8') || 
-        epToken.includes('.mp4') || 
-        epToken.includes('/m3u8') || 
-        epToken.includes('/mp4')
+        this.activeLineKey === 'anich_m3u8' || 
+        epToken.startsWith('blob:')
       );
+
       if (isDirectUrl && !epToken.startsWith('age_')) {
         finalRealUrl = epToken;
       }
