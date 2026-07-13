@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260713T2224">
+  <link rel="stylesheet" href="css/style.css?v=20260713T2226">
   <script>window.JYZF_VERSION = "20260710T1651";</script>
 </head>
 <body class="loader-active">
@@ -177,7 +177,7 @@
               :key="item.AID"
               @mousedown="selectAnime(item.AID)"
             >
-              <img :src="item.Cover" :alt="item.Title" class="result-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
+              <img :src="getProxiedImageUrl(item.Cover)" :alt="item.Title" class="result-cover" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
               <div class="result-info">
                 <div class="result-title">{{ item.Title }}</div>
                 <div class="result-meta">{{ item.Status }} · {{ item.UpToDate }}</div>
@@ -274,9 +274,10 @@
           >
             <div class="catalog-card-cover">
               <img 
-                :src="anime.Cover" 
+                :src="getProxiedImageUrl(anime.Cover)" 
                 :alt="anime.Title"
                 loading="lazy"
+                referrerpolicy="no-referrer"
               />
             </div>
             <div class="catalog-card-info">
@@ -410,9 +411,10 @@
             <!-- 封面 + 进度条覆盖层 -->
             <div class="history-cover-wrapper">
               <img 
-                :src="item.Cover" 
+                :src="getProxiedImageUrl(item.Cover)" 
                 :alt="item.Title" 
                 class="history-cover"
+                referrerpolicy="no-referrer"
                 onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
               >
               <!-- 进度条 -->
@@ -474,7 +476,7 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="item.Cover" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+              <img :src="getProxiedImageUrl(item.Cover)" :alt="item.Title" class="card-cover" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -666,7 +668,7 @@
                     @click="selectAnime(anime.aid)"
                   >
                     <div class="rank-num" :class="'rank-num-' + (idx + 1)">{{ idx + 1 }}</div>
-                    <img :src="anime.cover" :alt="anime.title" class="rank-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
+                    <img :src="getProxiedImageUrl(anime.cover)" :alt="anime.title" class="rank-cover" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100&auto=format&fit=crop'">
                     <div class="rank-info">
                       <div class="rank-title">{{ anime.title }}</div>
                       <div class="rank-meta">{{ anime.status }}</div>
@@ -879,7 +881,7 @@
         <!-- 3.2 动漫图文介绍 -->
         <div class="info-panel" v-show="!isMobile || detailTab === 'info'">
           <div class="info-header">
-            <img :src="animeDetail.video.cover" :alt="animeDetail.video.name" class="detail-poster" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+            <img :src="getProxiedImageUrl(animeDetail.video.cover)" :alt="animeDetail.video.name" class="detail-poster" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             <div class="detail-meta-info">
               <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
                 <h2 class="detail-title" style="margin: 0;">{{ animeDetail.video.name }}</h2>
@@ -1038,7 +1040,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260713T2224"></script>
+<script src="js/app_v2.js?v=20260713T2226"></script>
 
 </body>
 </html>

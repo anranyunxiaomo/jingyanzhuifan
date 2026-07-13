@@ -547,11 +547,12 @@ new Vue({
       const sUrl = String(url).trim();
       if (sUrl.startsWith('data:') || sUrl.startsWith('blob:')) return sUrl;
       
-      // 💡 核心拦截：如果是第三方资源网防盗链图片，或者是包含 966 非标准端口的安全拦截图片，自动使用 weserv.nl 代理以实现完美展示！
-      if (sUrl.includes('hongniuzy') || sUrl.includes('feifanzy') || sUrl.includes('liangzi') || sUrl.includes(':966') || sUrl.includes('aqdstatic') || sUrl.includes('agedm') || sUrl.includes('a123tv')) {
+      // 💡 核心拦截：如果是第三方资源网防盗链图片，或者是包含 966 非标准端口的安全拦截图片，或者来自于 Bangumi 的境外封面，自动使用 weserv.nl 代理以实现国内秒开！
+      if (sUrl.includes('hongniuzy') || sUrl.includes('feifanzy') || sUrl.includes('liangzi') || sUrl.includes(':966') || sUrl.includes('aqdstatic') || sUrl.includes('agedm') || sUrl.includes('a123tv') || sUrl.includes('bgm.tv')) {
         const cleanUrl = sUrl.replace(/^https?:\/\//i, '');
         return `https://images.weserv.nl/?url=${encodeURIComponent(cleanUrl)}`;
       }
+
       return sUrl;
     },
     handleImageError(event, id) {
