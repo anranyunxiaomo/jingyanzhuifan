@@ -2,7 +2,7 @@
   "video": {
     "id": "a123_woduzishengji2",
     "name": "我独自升级 2",
-    "cover": "https://cdn.aqdstatic.com:966/age/20250052.jpg",
+    "cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
     "pic": "",
     "plot": "热血 战斗 冒险 奇幻",
     "plot_arr": [
@@ -1152,9 +1152,9 @@
     "type": "TV",
     "related": [
       {
-        "id": "hkan_215279",
+        "id": "215279",
         "title": "我独自升级",
-        "cover": "https://www.hhkan0.com/vod1/vod/cover/20240107/01/10/20/5b302c0204f0b1a0965fe33508f0915a.jpg"
+        "cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg"
       }
     ]
   },

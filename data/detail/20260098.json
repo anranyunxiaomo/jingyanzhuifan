@@ -1482,21 +1482,21 @@
     "season": 4,
     "premiere": "2026-04-03",
     "rank_cnt": "103.5w",
-    "cover": "https://cdn.aqdstatic.com:966/age/20260098.jpg",
+    "cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "608",
     "collect_cnt": "4,153",
     "related": [
       {
+        "id": "228319",
+        "title": "关于我转生变成史莱姆这档事第三季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg"
+      },
+      {
         "id": "20180220",
         "title": "关于我转生变成史莱姆这档事",
         "cover": "https://cdn.aqdstatic.com:966/age/20180220.jpg"
-      },
-      {
-        "id": "hkan_228319",
-        "title": "关于我转生变成史莱姆这档事第三季",
-        "cover": "https://www.hhkan0.com/vod1/vod/cover/20250909/10/05/06/92572d0ab03cec756e558d03223c0037.jpg"
       }
     ]
   },

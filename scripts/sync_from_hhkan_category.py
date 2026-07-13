@@ -3,18 +3,22 @@ import json
 import re
 import time
 import subprocess
+import urllib.parse
+import requests
 from bs4 import BeautifulSoup
-from fill_from_hkan import RobustHttpClient, parse_search_html
+from fill_from_hkan import RobustHttpClient
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 DETAIL_DIR = os.path.join(DATA_DIR, 'detail')
 SEARCH_INDEX_PATH = os.path.join(DATA_DIR, 'search_index.json')
 
+# ScraperAPI 轮换国内住宅 IP 配置 (每个月免费 5000 次，专门用于秒杀穿透应用层限流)
+SCRAPER_API_KEY = "9b5919ce9fcc48b957baf6c205188173"
+
 def clean_title(title):
     if not title:
         return ""
-    # 去除各种修饰与特殊后缀，并转为简写以对齐本地
     trad_simple = {
         '戰': '战', '鬥': '斗', '無': '无', '敵': '敌', '傳': '传', '說': '说', '記': '记',
         '錄': '录', '動': '动', '漫': '漫', '畫': '画', '術': '术', '劍': '剑', '魔': '魔',
@@ -86,7 +90,7 @@ def is_unwanted_area_anime(title, area, plot="", tags=""):
     cn_anime_keywords = [
         "斩神", "镖人", "逆天邪神", "将夜", "盗妖行", "完美世界", "神墓", "太岁", "胶囊计划", 
         "山海契约", "都市古仙医", "师兄啊师兄", "清华附小", "乐乐课堂", "无尾熊绘日记", "考拉绘日记",
-        "仙逆", "遮天", "斗破常穹", "吞噬星空", "武动乾坤", "凡人修仙", "大主宰", "神印王座", "灵武大陆",
+        "仙逆", "遮天", "斗破苍穹", "吞噬星空", "武动乾坤", "凡人修仙", "大主宰", "神印王座", "灵武大陆",
         "为喵人生", "钢炽之芯", "深潜强制倒带", "乐乐便利店", "曾经有勇士", "熊熊帮帮团 5", "深空彼岸", "孤雄"
     ]
     for kw in cn_anime_keywords:
@@ -94,26 +98,70 @@ def is_unwanted_area_anime(title, area, plot="", tags=""):
             return True
     return False
 
+def get_bangumi_cover(title):
+    """从 Bangumi 检索免防盗链的高清海报大图"""
+    import urllib.parse
+    clean_kw = re.sub(r'(第[一二三四五六七八九十0-9]+季|第[一二三四五六七八九十0-9]+部分|第[一二三四五六七八九十0-9]+期|act2|Ⅱ|Ⅲ|Ⅳ|Ⅴ|\d+)$', '', title, flags=re.IGNORECASE).strip()
+    encoded = urllib.parse.quote(clean_kw)
+    url = f"https://api.bgm.tv/search/subject/{encoded}?type=2"
+    
+    cmd = [
+        "curl", "-s", "-k",
+        "-H", "User-Agent: test-agent (github.com/anranyunxiaomo)",
+        url
+    ]
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=8)
+        if res.returncode == 0 and res.stdout.strip():
+            data = json.loads(res.stdout)
+            if data and "list" in data and len(data["list"]) > 0:
+                cover = data["list"][0].get("images", {}).get("large", "")
+                if cover:
+                    return cover
+    except Exception as e:
+        print(f"    [BGM ERROR] Failed to fetch cover for {title}: {e}")
+    return None
+
+def fetch_html_via_scraper_api(url):
+    """通过 ScraperAPI 代理拉取，自动轮换国内住宅 IP，彻底降维打击屏蔽限流限制"""
+    payload = {
+        'api_key': SCRAPER_API_KEY,
+        'url': url,
+        'country_code': 'cn'
+    }
+    try:
+        print(f"    [SCRAPER_API] 正在使用动态住宅代理 IP 拉取详情页: {url} ...")
+        r = requests.get('https://api.scraperapi.com/', params=payload, timeout=25)
+        if r.status_code == 200:
+            return r.text
+    except Exception as e:
+        print(f"    [SCRAPER_API EXCEPTION] 代理请求失败: {e}")
+    return None
+
 def extract_hkan_detail_play_list(client, detail_slug):
     """请求好好看详情页并用正则提取播放列表结构"""
     url = f"https://www.hhkan0.com/detail/{detail_slug}.html"
+    
+    # 1. 尝试普通直连接口抓取
     html = client.get(url)
+    
+    # 2. 如果直连报限流（或者返回空、报错盾）
+    if not html or "您的访问过于频繁" in html or "Protected by cdndefend" in html:
+        print(f"    ⚠️ [DIRECT BLOCKED] 普通 IP 遭到限流或盾拦截，正在自动切换 ScraperAPI 动态代理...")
+        html = fetch_html_via_scraper_api(url)
+        
     if not html:
         return [], None
         
     soup = BeautifulSoup(html, 'html.parser')
     
-    # 提取年份/作者/标签/简介
-    # 简介在 <div class="desc"> 中
     desc_div = soup.find(class_='desc')
     plot = desc_div.get_text().strip() if desc_div else ""
     plot = re.sub(r'\s+', ' ', plot)
     
-    # 演职人员/作者在 <div class="actors"> 中
     actors_div = soup.find(class_='actors')
     writer = actors_div.get_text().strip() if actors_div else "暂无"
     
-    # 年份和地区在 <div class="tags"> 里
     year = "2026"
     area = "日本"
     tags_div = soup.find(class_='tags')
@@ -127,12 +175,9 @@ def extract_hkan_detail_play_list(client, detail_slug):
         if len(spans) >= 3:
             tags_list = [t.strip() for t in spans[2].get_text().split(",") if t.strip()]
             
-    # 正则高精提取选集链接
-    # 例如：<a href="/play/195930-41-5608.html" class="episode-item" data-index="1"><span>第1集</span></a>
     matches = re.findall(r'href=\"/play/([^\"]+)\" class=\"episode-item\"[^>]*><span>([^<]+)</span>', html)
     episodes = []
     for link, name in matches:
-        # 保存为 [name, relative_play_path] 的结构，与 A123 线路保持一致
         episodes.append([name.strip(), f"/play/{link}"])
         
     meta = {
@@ -158,7 +203,6 @@ def main():
     print("🚀 [START] 开启好好看（hhkan0.com）日本动漫分类页最新新番自动同步...")
     print("=" * 60)
     
-    # 1. 载入本地搜索索引以做映射
     search_index = load_search_index()
     existing_map = {}
     for entry in search_index:
@@ -169,22 +213,23 @@ def main():
             if cleaned:
                 existing_map[cleaned] = entry
 
-    # 2. 初始化高穿透客户端并穿透 WAF
     client = RobustHttpClient()
     client.initialize()
     
-    # 3. 分页拉取好好看日本动漫分类列表 (同步最新前 3 页，约 54 部)
     hkan_list = []
     for page in range(1, 4):
         url = f"https://www.hhkan0.com/show/3--%E6%97%A5%E6%9C%AC---3-{page}.html"
         print(f"🔍 [HKAN LIST] 正在拉取日漫第 {page} 页: {url}")
         html = client.get(url)
+        if not html or "您的访问过于频繁" in html or "Protected by cdndefend" in html:
+            print("    ⚠️ [LIST BLOCKED] 列表页遭到限流，使用 ScraperAPI 代理拉取...")
+            html = fetch_html_via_scraper_api(url)
+            
         if html:
             soup = BeautifulSoup(html, 'html.parser')
             cards = soup.find_all('a', class_='v-item')
             print(f"  [PAGE OK] 成功解析到卡片数: {len(cards)}")
             for card in cards:
-                # 过滤防盗链暗门提取真实标题
                 titles = [t.get_text().strip() for t in card.find_all(class_='v-item-title') 
                           if 'kekys.com' not in t.get_text() and '可可影视' not in t.get_text()]
                 title = titles[0] if titles else ''
@@ -193,24 +238,11 @@ def main():
                 bottom = card.find(class_='v-item-bottom')
                 status = bottom.get_text().strip() if bottom else ''
                 
-                # 获取真实封面图
-                cover_url = ""
-                img_tags = card.find_all('img')
-                for img in img_tags:
-                    cover_rel = img.get('data-original') or img.get('data-src') or img.get('src')
-                    if cover_rel and "placeholder" not in cover_rel:
-                        if not cover_rel.startswith("http"):
-                            cover_url = "https://www.hhkan0.com" + cover_rel
-                        else:
-                            cover_url = cover_rel
-                        break
-                        
                 if title and href:
                     slug = href.replace("/detail/", "").replace(".html", "")
                     hkan_list.append({
                         "title": title,
                         "slug": slug,
-                        "cover": cover_url,
                         "status": status
                     })
         time.sleep(1.0)
@@ -220,13 +252,10 @@ def main():
     synced_count = 0
     created_count = 0
     
-    # 4. 遍历并执行增量对齐合并
     for idx, anime in enumerate(hkan_list):
         title = anime["title"]
         slug = anime["slug"]
-        cover = anime["cover"]
         
-        # 强力阻断国产/少儿动漫
         if is_unwanted_area_anime(title, "", "", "") or is_kids_anime(title):
             continue
             
@@ -241,8 +270,7 @@ def main():
             detail_filename = f"{aid}.json"
             print(f"[{idx+1}/{len(hkan_list)}] [MATCHED] 对齐本地日漫: '{title}' ---> AID: {aid}")
         else:
-            # 属于好好看独家拥有的日漫，在本地新建详情并加入索引
-            aid = f"hkan_{slug}"
+            aid = str(slug)
             detail_filename = f"{aid}.json"
             print(f"[{idx+1}/{len(hkan_list)}] [EXCLUSIVE] 好好看独占日漫: '{title}' ---> 新增 AID '{aid}'")
             
@@ -256,16 +284,14 @@ def main():
             except Exception:
                 pass
                 
-        # 提取播放列表和元数据
         print(f"  [CHECKING] 正在抓取选集: {title} (slug: {slug})")
         episodes, meta = extract_hkan_detail_play_list(client, slug)
         
         if not episodes:
             print("  [WARNING] 选集列表为空，跳过处理")
-            time.sleep(1.5)
+            time.sleep(1.0)
             continue
             
-        # 安全双层判定去国产/低幼
         if meta and (is_unwanted_area_anime(title, meta.get("area"), meta.get("plot"), meta.get("tags")) or is_kids_anime(title, meta.get("plot"), meta.get("tags"))):
             print(f"  🚨 [PURGE] 检测到该独占番为国产或低幼动漫，执行物理删除过滤: {title}")
             if os.path.exists(detail_path):
@@ -273,17 +299,16 @@ def main():
                     os.remove(detail_path)
                 except:
                     pass
-            time.sleep(1.5)
+            time.sleep(1.0)
             continue
             
+        cover = get_bangumi_cover(title)
+        
         if local_detail:
             playlists = local_detail.setdefault("video", {}).setdefault("playlists", {})
-            # 写入好好看的高清线路
             playlists["hkan_line1"] = episodes
-            
-            # 更新集数状态和封面（如果是破图）
             local_detail["video"]["status"] = f"更新至{len(episodes)}集"
-            if cover and ("a123tv" in local_detail["video"].get("cover", "") or not local_detail["video"].get("cover")):
+            if cover:
                 local_detail["video"]["cover"] = cover
                 
             with open(detail_path, 'w', encoding='utf-8') as f:
@@ -296,7 +321,7 @@ def main():
                 "video": {
                     "id": aid,
                     "name": title,
-                    "cover": cover or f"https://www.hhkan0.com/vod1/vod/cover/{slug}.jpg",
+                    "cover": cover or "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
                     "pic": "",
                     "plot": meta.get("plot", "日本新番动漫。"),
                     "plot_arr": [p.strip() for p in meta.get("plot", "").split() if p.strip()],
@@ -317,7 +342,8 @@ def main():
             print(f"  [CREATED] 成功新建独占日漫: {title} ({len(episodes)} EPs)")
             created_count += 1
             
-        time.sleep(1.5)
+        # 适当降低休眠（由于有 ScraperAPI 住宅 IP 代理做降级兜底，我们可以把间隔从 1.5 秒缩短到 0.8 秒以极速提升同步效率！）
+        time.sleep(0.8)
         
     print("\n" + "=" * 60)
     print("🎉 [FINISHED] 好好看分类页增量同步与线路合并任务圆满完成！")

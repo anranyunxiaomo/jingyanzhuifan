@@ -51,7 +51,7 @@
     "AID": "a123_woduzishengji2",
     "Title": "我独自升级 2",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250052.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
     "Status": "更新至268集",
     "UpToDate": "更新至第13集"
   },
@@ -104,14 +104,6 @@
     "UpToDate": "更新至正片"
   },
   {
-    "AID": "hkan_227200",
-    "Title": "银魂·第一季·全201集",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250228/22/20/09/8f85772a23150e535adfb7c81804f81e.jpg",
-    "Status": "更新至5550集",
-    "UpToDate": "更新至第368集"
-  },
-  {
     "AID": 20070055,
     "Title": "神曲奏界",
     "Pinyin": "",
@@ -134,6 +126,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
+  },
+  {
+    "AID": 40884,
+    "Title": "鬼灭之刃锻刀村篇",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
+    "Status": "更新至225集",
+    "UpToDate": "更新至第11集"
   },
   {
     "AID": "a123_chimowudemaoxianzhe",
@@ -192,6 +192,14 @@
     "UpToDate": "更新至第13集"
   },
   {
+    "AID": 26003,
+    "Title": "灌篮高手国语版",
+    "Pinyin": "",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
+    "Status": "更新至3339集",
+    "UpToDate": "更新至第102集"
+  },
+  {
     "AID": 20050027,
     "Title": "扑杀天使朵库萝",
     "Pinyin": "",
@@ -238,14 +246,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_61420",
-    "Title": "宝可梦旅途国语",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20241114/14/57/09/b4db7dc4989de4d4b77329e687b58dc3.jpg",
-    "Status": "更新至2890集",
-    "UpToDate": "更新至第136集"
   },
   {
     "AID": 20130006,
@@ -296,14 +296,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_26406",
-    "Title": "火影忍者2002",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250108/21/35/04/1473dd484668df2c15127acf6e5f0502.jpg",
-    "Status": "更新至13355集",
-    "UpToDate": "更新至第720集"
-  },
-  {
     "AID": 20160161,
     "Title": "圣战刻耳柏洛斯 龙刻的灾祸",
     "Pinyin": "",
@@ -342,14 +334,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260114.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_257677",
-    "Title": "LoveMe枫与铃",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/upload/20241209/17/17/05/87fd92e43f763c1e968772c6993a0cef.jpg",
-    "Status": "更新至46集",
-    "UpToDate": "更新至第03集"
   },
   {
     "AID": "a123_anxianlingzhudeyukuailingdifan",
@@ -416,20 +400,28 @@
     "UpToDate": "更新至第13集"
   },
   {
+    "AID": 133336,
+    "Title": "蜡笔小新第五季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
+    "Status": "更新至2991集",
+    "UpToDate": "更新至第156集"
+  },
+  {
+    "AID": 271110,
+    "Title": "哆啦A梦第五季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
+    "Status": "更新至1144集",
+    "UpToDate": "更新至第104集"
+  },
+  {
     "AID": 20120030,
     "Title": "邻座的怪同学",
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20120030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集"
-  },
-  {
-    "AID": "hkan_215279",
-    "Title": "我独自升级",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20240107/01/10/20/5b302c0204f0b1a0965fe33508f0915a.jpg",
-    "Status": "更新至259集",
-    "UpToDate": "更新至第12集"
   },
   {
     "AID": "a123_dunzhiyongzhechengminglu4",
@@ -520,6 +512,14 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 234035,
+    "Title": "鬼灭之刃柱训练篇",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
+    "Status": "更新至161集",
+    "UpToDate": "更新至第08集"
+  },
+  {
     "AID": 20260207,
     "Title": "乡下大叔成为剑圣 第二季",
     "Pinyin": "",
@@ -550,14 +550,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
     "Status": "未播放",
     "UpToDate": "更新至pv"
-  },
-  {
-    "AID": "hkan_133332",
-    "Title": "蜡笔小新第四季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/35/42/8a5b220a4cde4bd52b57dd0dd4a65859.jpg",
-    "Status": "更新至2440集",
-    "UpToDate": "更新至第156集"
   },
   {
     "AID": 20250259,
@@ -635,7 +627,7 @@
     "AID": "a123_zhoushuhuizhan32",
     "Title": "咒术回战 3",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260024.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/ab/77/472741_MqsB8.jpg",
     "Status": "更新至228集",
     "UpToDate": "更新至第12集"
   },
@@ -750,14 +742,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
-  },
-  {
-    "AID": "hkan_35270",
-    "Title": "想要成为影之实力者",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250825/12/30/13/5b5d31dfef9e229ef2c21bddc2ad966c.jpg",
-    "Status": "更新至400集",
-    "UpToDate": "更新至第20集"
   },
   {
     "AID": 20190396,
@@ -984,14 +968,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_22852",
-    "Title": "鬼灭之刃",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250722/21/25/05/d728c783cb9ee1abd1195717a64a724a.jpg",
-    "Status": "更新至650集",
-    "UpToDate": "更新至第26集"
-  },
-  {
     "AID": 20260070,
     "Title": "日本三国",
     "Pinyin": "",
@@ -1160,6 +1136,14 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 173876,
+    "Title": "无职转生Ⅱ到了异世界就拿出真本事1-2合季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cf/55/373247_aBFR1.jpg",
+    "Status": "更新至449集",
+    "UpToDate": "更新至第24集"
+  },
+  {
     "AID": 20260226,
     "Title": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
     "Pinyin": "",
@@ -1182,6 +1166,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230091.jpg",
     "Status": "连载",
     "UpToDate": "更新至第70集"
+  },
+  {
+    "AID": 26080,
+    "Title": "Re从零开始的异世界生活第一季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
+    "Status": "更新至150集",
+    "UpToDate": "更新至第25集"
   },
   {
     "AID": 20260230,
@@ -1232,12 +1224,12 @@
     "UpToDate": "更新至全集"
   },
   {
-    "AID": "hkan_258472",
-    "Title": "一拳超人第三季",
+    "AID": 120413,
+    "Title": "蜡笔小新第一季",
     "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250211/12/34/37/1ee3da83586f49163c1e6e30e9211ad4.jpg",
-    "Status": "更新至242集",
-    "UpToDate": "更新至第12集"
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
+    "Status": "更新至4212集",
+    "UpToDate": "更新至第480集"
   },
   {
     "AID": 20260112,
@@ -1272,14 +1264,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_174851",
-    "Title": "进击的巨人第一季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250125/18/05/04/b9a715a4d96f826ff950c372b9cd1a48.jpg",
-    "Status": "更新至453集",
-    "UpToDate": "更新至第26集"
-  },
-  {
     "AID": 20220063,
     "Title": "与变成了异世界美少女的大叔一起冒险",
     "Pinyin": "",
@@ -1294,6 +1278,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集"
+  },
+  {
+    "AID": 116029,
+    "Title": "博人传火影忍者新时代",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/70/65/202661_Xx5X3.jpg",
+    "Status": "更新至5753集",
+    "UpToDate": "更新至第293集"
   },
   {
     "AID": 20040001,
@@ -1360,20 +1352,20 @@
     "UpToDate": "更新至第01集"
   },
   {
-    "AID": "hkan_133334",
-    "Title": "蜡笔小新第三季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/35/42/96f0887045ca24723587b1b547303b84.jpg",
-    "Status": "更新至2058集",
-    "UpToDate": "更新至第156集"
-  },
-  {
     "AID": 20160080,
     "Title": "竞女",
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20160080.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 37531,
+    "Title": "海贼王动漫合集日语",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/ed/4a/345824_VXxo5.jpg",
+    "Status": "更新至23453集",
+    "UpToDate": "更新至第1169集"
   },
   {
     "AID": 20180057,
@@ -1390,14 +1382,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100044.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_336352",
-    "Title": "死亡笔记动画版",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20260429/19/32/06/acfd109fd723787ded154beedb53c1d8.jpg",
-    "Status": "更新至259集",
-    "UpToDate": "更新至第37集"
   },
   {
     "AID": 20260186,
@@ -1438,6 +1422,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
     "Status": "完结",
     "UpToDate": "更新至正片"
+  },
+  {
+    "AID": 193347,
+    "Title": "蜡笔小新第二季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
+    "Status": "更新至11900集",
+    "UpToDate": "更新至第880集"
   },
   {
     "AID": 20180104,
@@ -1512,12 +1504,28 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 294623,
+    "Title": "碧蓝之海第二季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
+    "Status": "更新至223集",
+    "UpToDate": "更新至第12集"
+  },
+  {
     "AID": 20190165,
     "Title": "骚动时节的少女们啊",
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190165.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 20145,
+    "Title": "进击的巨人第三季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg",
+    "Status": "更新至493集",
+    "UpToDate": "更新至第22集"
   },
   {
     "AID": "a123_jisuchehun3",
@@ -1558,6 +1566,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 228319,
+    "Title": "关于我转生变成史莱姆这档事第三季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
+    "Status": "更新至533集",
+    "UpToDate": "更新至第72集"
   },
   {
     "AID": 20140011,
@@ -1640,22 +1656,6 @@
     "UpToDate": "更新至第37集"
   },
   {
-    "AID": "hkan_28275",
-    "Title": "无职转生到了异世界就拿出真本事",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250804/21/30/09/888a23bddc758dab8622e3b8329e86e1.jpg",
-    "Status": "更新至470集",
-    "UpToDate": "更新至第24集"
-  },
-  {
-    "AID": "hkan_115477",
-    "Title": "火影忍者国语",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/19/10/bdd0f49fd5d6369b9fb8f037398999a7.jpg",
-    "Status": "更新至2797集",
-    "UpToDate": "更新至第720集"
-  },
-  {
     "AID": 20100009,
     "Title": "玩伴猫耳娘",
     "Pinyin": "",
@@ -1675,7 +1675,7 @@
     "AID": 20260098,
     "Title": "关于我转生变成史莱姆这档事 第四季",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260098.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
     "Status": "更新至252集",
     "UpToDate": "更新至第14集"
   },
@@ -1726,14 +1726,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180220.jpg",
     "Status": "完结",
     "UpToDate": "更新至第28集"
-  },
-  {
-    "AID": "hkan_132928",
-    "Title": "哆啦A梦第一季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/35/16/c6a3b4ad5ff7d18d8bd31201f78d1e12.jpg",
-    "Status": "更新至2665集",
-    "UpToDate": "更新至第156集"
   },
   {
     "AID": 20120056,
@@ -1864,6 +1856,14 @@
     "UpToDate": "更新至第13集"
   },
   {
+    "AID": 271265,
+    "Title": "蜡笔小新第十季",
+    "Pinyin": "",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
+    "Status": "更新至3115集",
+    "UpToDate": "更新至第873集"
+  },
+  {
     "AID": 20060005,
     "Title": "黑礁",
     "Pinyin": "",
@@ -1878,6 +1878,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 26478,
+    "Title": "死神日语",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/30/e3/44679_NnZD6.jpg",
+    "Status": "更新至6943集",
+    "UpToDate": "更新至第366集"
   },
   {
     "AID": 20260109,
@@ -1923,7 +1931,7 @@
     "AID": "a123_reconglingkaishideyishijieshen13",
     "Title": "Re：从零开始的异世界生活 4",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160005.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
     "Status": "更新至204集",
     "UpToDate": "更新至第12集"
   },
@@ -1974,14 +1982,6 @@
     "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250404/17/31/23/11dd696cf13bf692e84ae28d389ac289.jpg",
     "Status": "更新至12集",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_352696",
-    "Title": "地狱模式～喜欢速通游戏的玩家在废设定异世界无双～第二季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20260704/01/01/02/1f6350091706a2b51b22d1c94b29f367.webp",
-    "Status": "更新至34集",
-    "UpToDate": "更新至第02集"
   },
   {
     "AID": 20260095,
@@ -2059,7 +2059,7 @@
     "AID": 20260200,
     "Title": "尼古喵喵",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/6a/b3/622206_dpWcC.jpg",
     "Status": "更新至34集",
     "UpToDate": "更新至第02集"
   },
@@ -2112,14 +2112,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_233337",
-    "Title": "海贼王国语",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250116/22/00/03/5ec5c269b85192bdc82de1d262683394.jpg",
-    "Status": "更新至3603集",
-    "UpToDate": "更新至第1169集"
-  },
-  {
     "AID": 20170107,
     "Title": "魔法使的新娘",
     "Pinyin": "",
@@ -2152,14 +2144,6 @@
     "UpToDate": "更新至第08集"
   },
   {
-    "AID": "hkan_21872",
-    "Title": "Re从零开始的异世界生活第二季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250728/21/55/04/814f349529138751b2cc5dba865c37bc.jpg",
-    "Status": "更新至361集",
-    "UpToDate": "更新至第25集"
-  },
-  {
     "AID": 20260105,
     "Title": "最强的职业不是勇者也不是贤者好像是鉴定士(伪)的样子?",
     "Pinyin": "",
@@ -2182,6 +2166,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 275904,
+    "Title": "名侦探柯南日语",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/ec/e7/410166_G6NCY.jpg",
+    "Status": "更新至23876集",
+    "UpToDate": "更新至第1266集"
   },
   {
     "AID": 20260113,
@@ -2288,20 +2280,20 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_37531",
-    "Title": "海贼王动漫合集日语",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250116/22/00/03/3739f72e5216b3b1c1970feb56e25f24.jpg",
-    "Status": "更新至23453集",
-    "UpToDate": "更新至第1169集"
-  },
-  {
     "AID": 20020012,
     "Title": "圆盘皇女",
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20020012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 257677,
+    "Title": "LoveMe枫与铃",
+    "Pinyin": "",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
+    "Status": "更新至46集",
+    "UpToDate": "更新至第03集"
   },
   {
     "AID": 20160094,
@@ -2336,22 +2328,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_271110",
-    "Title": "哆啦A梦第五季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250329/11/18/08/9c5d791dd460037b694ea8959f53ff72.jpg",
-    "Status": "更新至1144集",
-    "UpToDate": "更新至第104集"
-  },
-  {
-    "AID": "hkan_133336",
-    "Title": "蜡笔小新第五季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/35/42/9ee0a6aea2eba2a8169d3db9c02a5bb2.jpg",
-    "Status": "更新至2991集",
-    "UpToDate": "更新至第156集"
-  },
-  {
     "AID": 20170082,
     "Title": "黑色五叶草",
     "Pinyin": "",
@@ -2381,6 +2357,14 @@
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180147.jpg",
     "Status": "完结",
+    "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 215279,
+    "Title": "我独自升级",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
+    "Status": "更新至259集",
     "UpToDate": "更新至第12集"
   },
   {
@@ -2416,20 +2400,20 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_234035",
-    "Title": "鬼灭之刃柱训练篇",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250927/21/45/26/9af8d44f97ae006b25e902a81a1f5673.jpg",
-    "Status": "更新至161集",
-    "UpToDate": "更新至第08集"
-  },
-  {
     "AID": 20160104,
     "Title": "田中君总是如此慵懒",
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20160104.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 133332,
+    "Title": "蜡笔小新第四季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
+    "Status": "更新至2440集",
+    "UpToDate": "更新至第156集"
   },
   {
     "AID": 20180242,
@@ -2584,6 +2568,14 @@
     "UpToDate": "更新至第01集"
   },
   {
+    "AID": 227200,
+    "Title": "银魂·第一季·全201集",
+    "Pinyin": "",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
+    "Status": "更新至5550集",
+    "UpToDate": "更新至第368集"
+  },
+  {
     "AID": 20030008,
     "Title": "初音岛",
     "Pinyin": "",
@@ -2622,6 +2614,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg",
     "Status": "连载",
     "UpToDate": "更新至第1168集"
+  },
+  {
+    "AID": 28275,
+    "Title": "无职转生到了异世界就拿出真本事",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
+    "Status": "更新至470集",
+    "UpToDate": "更新至第24集"
   },
   {
     "AID": "a123_dujundexxjijiangbenghuai",
@@ -2755,7 +2755,7 @@
     "AID": 20260223,
     "Title": "猫与龙",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260223.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/16/538760_T0rxN.jpg",
     "Status": "更新至51集",
     "UpToDate": "更新至第03集"
   },
@@ -2774,14 +2774,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_20145",
-    "Title": "进击的巨人第三季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250912/21/35/02/6e69f1ef4319871beb96195dbde9d0f9.jpg",
-    "Status": "更新至493集",
-    "UpToDate": "更新至第22集"
   },
   {
     "AID": 20150005,
@@ -2864,14 +2856,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_26478",
-    "Title": "死神日语",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250119/16/05/03/429f18889277c13851a9b4236aa33445.jpg",
-    "Status": "更新至6943集",
-    "UpToDate": "更新至第366集"
-  },
-  {
     "AID": 20150053,
     "Title": "枪神斯托拉塔斯",
     "Pinyin": "",
@@ -2907,7 +2891,7 @@
     "AID": 20260222,
     "Title": "鬼之花嫁",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260222.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b9/ac/563745_YI26V.jpg",
     "Status": "更新至34集",
     "UpToDate": "更新至第02集"
   },
@@ -2982,14 +2966,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260170.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
-  },
-  {
-    "AID": "hkan_173876",
-    "Title": "无职转生Ⅱ到了异世界就拿出真本事1-2合季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250207/11/20/03/2bf5c7d374f80b6e3e9b53c40cadcb8d.jpg",
-    "Status": "更新至449集",
-    "UpToDate": "更新至第24集"
   },
   {
     "AID": 20260035,
@@ -3088,6 +3064,14 @@
     "UpToDate": "更新至第12集"
   },
   {
+    "AID": 258472,
+    "Title": "一拳超人第三季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8c/a2/127563_nl66u.jpg",
+    "Status": "更新至242集",
+    "UpToDate": "更新至第12集"
+  },
+  {
     "AID": "a123_feichaifengjiweiyuanyuqunzicha",
     "Title": "废柴风纪委员与裙子长度不合规的JK的故事",
     "Pinyin": "",
@@ -3110,14 +3094,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集"
-  },
-  {
-    "AID": "hkan_120413",
-    "Title": "蜡笔小新第一季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/14/21/12/584d37b8eeeb2731e01cd666a45ba97d.jpg",
-    "Status": "更新至4212集",
-    "UpToDate": "更新至第480集"
   },
   {
     "AID": 20190202,
@@ -3150,6 +3126,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
+  },
+  {
+    "AID": 21872,
+    "Title": "Re从零开始的异世界生活第二季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
+    "Status": "更新至361集",
+    "UpToDate": "更新至第25集"
   },
   {
     "AID": 20260111,
@@ -3411,7 +3395,7 @@
     "AID": 20260097,
     "Title": "入间同学入魔了 第四季",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260097.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/99/82/348699_0wWW8.jpg",
     "Status": "更新至271集",
     "UpToDate": "更新至第15集"
   },
@@ -3472,14 +3456,6 @@
     "UpToDate": "更新至第10集"
   },
   {
-    "AID": "hkan_26003",
-    "Title": "灌篮高手国语版",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20241116/12/50/21/e9d4120e846ade1dab33105ddb95a1d7.jpg",
-    "Status": "更新至3339集",
-    "UpToDate": "更新至第102集"
-  },
-  {
     "AID": 20080002,
     "Title": "夏目友人帐",
     "Pinyin": "",
@@ -3494,14 +3470,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
     "Status": "完结",
     "UpToDate": "更新至正片"
-  },
-  {
-    "AID": "hkan_294623",
-    "Title": "碧蓝之海第二季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250804/17/55/02/bfb15ee7098437609de771d7d4a94432.jpg",
-    "Status": "更新至223集",
-    "UpToDate": "更新至第12集"
   },
   {
     "AID": 20260177,
@@ -3528,12 +3496,12 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_228319",
-    "Title": "关于我转生变成史莱姆这档事第三季",
+    "AID": 61420,
+    "Title": "宝可梦旅途国语",
     "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250909/10/05/06/92572d0ab03cec756e558d03223c0037.jpg",
-    "Status": "更新至533集",
-    "UpToDate": "更新至第72集"
+    "Cover": "http://lain.bgm.tv/pic/cover/l/2d/95/3030_4VCh3.jpg",
+    "Status": "更新至2890集",
+    "UpToDate": "更新至第136集"
   },
   {
     "AID": 20260120,
@@ -3584,6 +3552,14 @@
     "UpToDate": "更新至第22集"
   },
   {
+    "AID": 26406,
+    "Title": "火影忍者2002",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/20/6b/28496_wpcoV.jpg",
+    "Status": "更新至13355集",
+    "UpToDate": "更新至第720集"
+  },
+  {
     "AID": 20260209,
     "Title": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～ 第2季",
     "Pinyin": "",
@@ -3632,12 +3608,12 @@
     "UpToDate": "更新至第01集"
   },
   {
-    "AID": "hkan_40884",
-    "Title": "鬼灭之刃锻刀村篇",
+    "AID": 115477,
+    "Title": "火影忍者国语",
     "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250506/17/25/02/08d92e8549d6b929de651201b903b0cb.jpg",
-    "Status": "更新至225集",
-    "UpToDate": "更新至第11集"
+    "Cover": "http://lain.bgm.tv/pic/cover/l/ca/3f/33514_or227.jpg",
+    "Status": "更新至2797集",
+    "UpToDate": "更新至第720集"
   },
   {
     "AID": 20070016,
@@ -3800,6 +3776,14 @@
     "UpToDate": "更新至第01集"
   },
   {
+    "AID": 174851,
+    "Title": "进击的巨人第一季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg",
+    "Status": "更新至453集",
+    "UpToDate": "更新至第26集"
+  },
+  {
     "AID": 20150062,
     "Title": "约会大作战剧场版 万由里裁决",
     "Pinyin": "",
@@ -3811,7 +3795,7 @@
     "AID": 20260194,
     "Title": "正后方的神威",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260194.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/01/8f/627136_hb0Jd.jpg",
     "Status": "更新至34集",
     "UpToDate": "更新至第02集"
   },
@@ -3835,7 +3819,7 @@
     "AID": 20260205,
     "Title": "无职转生Ⅲ 到了异世界就拿出真本事",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
     "Status": "更新至55集",
     "UpToDate": "更新至第03集"
   },
@@ -3862,14 +3846,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260086.jpg",
     "Status": "连载",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_116029",
-    "Title": "博人传火影忍者新时代",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250707/12/55/02/8870931920dd8781a84c5826ce4601f2.jpg",
-    "Status": "更新至5753集",
-    "UpToDate": "更新至第293集"
   },
   {
     "AID": 20170196,
@@ -3952,6 +3928,14 @@
     "UpToDate": "更新至PV"
   },
   {
+    "AID": 133334,
+    "Title": "蜡笔小新第三季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
+    "Status": "更新至2058集",
+    "UpToDate": "更新至第156集"
+  },
+  {
     "AID": 20170010,
     "Title": "清恋",
     "Pinyin": "",
@@ -3976,6 +3960,14 @@
     "UpToDate": "更新至全集"
   },
   {
+    "AID": 336352,
+    "Title": "死亡笔记动画版",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/fb/03/35989_w709J.jpg",
+    "Status": "更新至259集",
+    "UpToDate": "更新至第37集"
+  },
+  {
     "AID": 20210214,
     "Title": "世界顶尖的暗杀者转生为异世界贵族",
     "Pinyin": "",
@@ -3990,14 +3982,6 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集"
-  },
-  {
-    "AID": "hkan_193347",
-    "Title": "蜡笔小新第二季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/12/26/41/5ed8f8e9b0add8e9bd5d29554ab534ca.webp",
-    "Status": "更新至11900集",
-    "UpToDate": "更新至第880集"
   },
   {
     "AID": 20130073,
@@ -4062,6 +4046,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170115.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集"
+  },
+  {
+    "AID": 352696,
+    "Title": "地狱模式～喜欢速通游戏的玩家在废设定异世界无双～第二季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b9/52/526979_R83u1.jpg",
+    "Status": "更新至34集",
+    "UpToDate": "更新至第02集"
   },
   {
     "AID": "a123_qingsongxiong",
@@ -4144,6 +4136,14 @@
     "UpToDate": "更新至第11集"
   },
   {
+    "AID": 233337,
+    "Title": "海贼王国语",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/2a/8e/311310_1NXnu.jpg",
+    "Status": "更新至3603集",
+    "UpToDate": "更新至第1169集"
+  },
+  {
     "AID": 20260087,
     "Title": "魔法的姐妹露露和莉莉",
     "Pinyin": "",
@@ -4200,12 +4200,12 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_275904",
-    "Title": "名侦探柯南日语",
+    "AID": 35270,
+    "Title": "想要成为影之实力者",
     "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250514/10/17/20/77baafb3d1d93c723e21a323be47eb1b.webp",
-    "Status": "更新至23876集",
-    "UpToDate": "更新至第1266集"
+    "Cover": "http://lain.bgm.tv/pic/cover/l/39/96/329114_mB55b.jpg",
+    "Status": "更新至400集",
+    "UpToDate": "更新至第20集"
   },
   {
     "AID": 20140130,
@@ -4275,7 +4275,7 @@
     "AID": 20260212,
     "Title": "被追放的转生重骑士用游戏知识开无双",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260212.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
     "Status": "更新至36集",
     "UpToDate": "更新至第02集"
   },
@@ -4302,6 +4302,14 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260232.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集"
+  },
+  {
+    "AID": 132928,
+    "Title": "哆啦A梦第一季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
+    "Status": "更新至2665集",
+    "UpToDate": "更新至第156集"
   },
   {
     "AID": 20180176,
@@ -4352,14 +4360,6 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_26080",
-    "Title": "Re从零开始的异世界生活第一季",
-    "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20230509/11/36/23/82f9eb6231c217f491a8c854466169bd.jpg",
-    "Status": "更新至150集",
-    "UpToDate": "更新至第25集"
-  },
-  {
     "AID": 20150014,
     "Title": "学战都市Asterisk",
     "Pinyin": "",
@@ -4408,12 +4408,12 @@
     "UpToDate": "更新至第12集"
   },
   {
-    "AID": "hkan_271265",
-    "Title": "蜡笔小新第十季",
+    "AID": 22852,
+    "Title": "鬼灭之刃",
     "Pinyin": "",
-    "Cover": "https://www.hhkan0.com/vod1/vod/cover/20250330/02/00/44/eadde3345cb9b5e4472f0e7c2ec8c69c.webp",
-    "Status": "更新至3115集",
-    "UpToDate": "更新至第873集"
+    "Cover": "http://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg",
+    "Status": "更新至650集",
+    "UpToDate": "更新至第26集"
   },
   {
     "AID": 20260208,

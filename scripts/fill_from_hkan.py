@@ -71,7 +71,7 @@ class RobustHttpClient:
         for attempt in range(6):
             html = self.curl_raw(url, params)
             if not html:
-                time.sleep(2.0)
+                time.sleep(1.0)
                 continue
                 
             # 1. 判断是否返回了 WAF 拦截页
@@ -82,20 +82,18 @@ class RobustHttpClient:
                     continue
                 else:
                     print("    [WAF WARNING] 无法在拦截页面里找到哈希基准 c！")
-                    time.sleep(2.0)
+                    time.sleep(1.5)
             
             # 2. 判断是否遭到了应用层访问频繁限制
             elif "您的访问过于频繁" in html or "jump_box" in html:
-                print(f"    🚨 [RATE LIMIT] 遭到应用层访问过于频繁限制！正在执行第 {attempt+1} 次休眠重试（休眠 8 秒）...")
-                time.sleep(8.0)
-                # 重新拉取一次 Token，通常限流后需要刷新状态
-                self.update_t_token()
-                continue
+                print(f"    🚨 [RATE LIMIT DETECTED] 遭到限流阻断，立刻退出直连并触发 ScraperAPI 降级代理...")
+                return html
                 
             else:
                 # 成功拿到了真实的 HTML 页面！
                 return html
         return ""
+
 
     def update_t_token(self):
         """单独去 channel/3.html 更新 t token"""
