@@ -1810,7 +1810,14 @@
           "/play/173876-3-338129.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20220248",
+        "title": "无职转生Ⅱ ～到了异世界就拿出真本事～",
+        "cover": "https://cdn.aqdstatic.com:966/age/20220248.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

@@ -57,7 +57,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "10",
-    "collect_cnt": "160"
+    "collect_cnt": "160",
+    "related": [
+      {
+        "id": "352696",
+        "title": "地狱模式～喜欢速通游戏的玩家在废设定异世界无双～第二季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/b9/52/526979_R83u1.jpg"
+      }
+    ]
   },
   "series": [
     {

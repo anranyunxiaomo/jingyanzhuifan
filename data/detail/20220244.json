@@ -69,7 +69,19 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "121",
-    "collect_cnt": "6,318"
+    "collect_cnt": "6,318",
+    "related": [
+      {
+        "id": "20145",
+        "title": "进击的巨人第三季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg"
+      },
+      {
+        "id": "174851",
+        "title": "进击的巨人第一季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg"
+      }
+    ]
   },
   "series": [
     {

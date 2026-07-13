@@ -93826,7 +93826,19 @@
           "/play/37531-22-655523.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20000001",
+        "title": "海贼王",
+        "cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg"
+      },
+      {
+        "id": "233337",
+        "title": "海贼王国语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/2a/8e/311310_1NXnu.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

@@ -1506,7 +1506,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "4",
-    "collect_cnt": "245"
+    "collect_cnt": "245",
+    "related": [
+      {
+        "id": "26478",
+        "title": "死神日语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/30/e3/44679_NnZD6.jpg"
+      }
+    ]
   },
   "series": [],
   "similar": [

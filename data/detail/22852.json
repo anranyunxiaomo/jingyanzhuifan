@@ -2614,7 +2614,19 @@
           "/play/22852-22-79371.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "40884",
+        "title": "鬼灭之刃锻刀村篇",
+        "cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg"
+      },
+      {
+        "id": "234035",
+        "title": "鬼灭之刃柱训练篇",
+        "cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

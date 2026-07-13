@@ -171,7 +171,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "631",
-    "collect_cnt": "7,988"
+    "collect_cnt": "7,988",
+    "related": [
+      {
+        "id": "20220008",
+        "title": "异世界四重奏剧场版 Another World",
+        "cover": "https://cdn.aqdstatic.com:966/age/20220008.jpg"
+      }
+    ]
   },
   "series": [],
   "similar": [

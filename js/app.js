@@ -193,31 +193,16 @@ new Vue({
       if (this.catalogSort === 'title') {
         list = [...list].sort((a, b) => a.Title.localeCompare(b.Title, 'zh'));
       } else {
-        // 默认排序：最近更新的动漫（存在于首页 latestList 中）自动加权置顶排在最前！
-        const latestAids = {};
-        if (this.latestList && this.latestList.length > 0) {
-          this.latestList.forEach((item, index) => {
-            const aid = String(item.AID);
-            if (!(aid in latestAids)) {
-              latestAids[aid] = index; // 记录在 latest 中的位置，0 最新，越大越老
-            }
-          });
-        }
-        
+        // 默认排序：以 UpdateTime 最新更新物理时间戳降序为唯一最高标准！
         list = [...list].sort((a, b) => {
+          const utA = a.UpdateTime || 0;
+          const utB = b.UpdateTime || 0;
+          if (utA !== utB) {
+            return utB - utA; // 时间戳大的（最新更新的）排最前
+          }
+          // 兜底：若修改时间一致，则按常规 AID 倒序
           const aidA = String(a.AID);
           const aidB = String(b.AID);
-          
-          const inLatestA = aidA in latestAids;
-          const inLatestB = aidB in latestAids;
-          
-          if (inLatestA && inLatestB) {
-            return latestAids[aidA] - latestAids[aidB]; // 都在 latest 中，按更新时效正序（最新的排最前）
-          }
-          if (inLatestA) return -1;
-          if (inLatestB) return 1;
-          
-          // 否则，按常规 AID 倒序
           const isNumA = /^\d+$/.test(aidA);
           const isNumB = /^\d+$/.test(aidB);
           if (isNumA && isNumB) {
@@ -228,6 +213,7 @@ new Vue({
       }
       return list;
     },
+
 
     // 📚 番剧库：当前分页数据
     catalogPagedAnimes() {

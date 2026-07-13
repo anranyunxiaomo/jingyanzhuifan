@@ -95518,7 +95518,14 @@
           "/play/275904-3-417403.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20000005",
+        "title": "名侦探柯南",
+        "cover": "https://cdn.aqdstatic.com:966/age/20000005.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

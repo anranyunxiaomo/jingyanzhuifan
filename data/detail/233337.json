@@ -14426,7 +14426,19 @@
           "/play/233337-3-621164.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "37531",
+        "title": "海贼王动漫合集日语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/ed/4a/345824_VXxo5.jpg"
+      },
+      {
+        "id": "20000001",
+        "title": "海贼王",
+        "cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

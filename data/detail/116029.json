@@ -23026,7 +23026,14 @@
           "/play/116029-3-235270.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "115477",
+        "title": "火影忍者国语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/ca/3f/33514_or227.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

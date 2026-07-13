@@ -62,7 +62,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "7",
-    "collect_cnt": "62"
+    "collect_cnt": "62",
+    "related": [
+      {
+        "id": "20040002",
+        "title": "魔法少女奈叶",
+        "cover": "https://cdn.aqdstatic.com:966/age/20040002.jpg"
+      }
+    ]
   },
   "series": [
     {

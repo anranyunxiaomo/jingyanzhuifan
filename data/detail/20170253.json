@@ -55,7 +55,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "2",
-    "collect_cnt": "168"
+    "collect_cnt": "168",
+    "related": [
+      {
+        "id": "20000025",
+        "title": "最游记",
+        "cover": "https://cdn.aqdstatic.com:966/age/20000025.jpg"
+      }
+    ]
   },
   "series": [
     {

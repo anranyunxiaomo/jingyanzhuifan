@@ -586,17 +586,30 @@ def generate_healing_and_related_logic():
         if not title:
             return ""
         t = title.strip()
+        # 1. 清除所有的括号和括号内的字
+        t = re.sub(r'\(.*?\)|（.*?）|\[.*?\]|【.*?】', '', t)
+        # 2. 清除 4 位数字年号
+        t = re.sub(r'\b(19|20)\d{2}\b', '', t)
+        # 3. 剔除特殊的音轨和版本后缀
+        t = re.sub(r'国语版|日语版|粤语版|国语|日语|粤语|中字|合集|版|全集|第一部|第二部|第三部|第四部|第五部', '', t)
+        # 4. 剔除常见的季数和罗马数字
         suffixes = [
             "第一季", "第二季", "第三季", "第四季", "第五季", "第六季",
             "第1季", "第2季", "第3季", "第4季", "第5季", "第6季",
             " 1", " 2", " 3", " 4", " 5", " 6",
-            "特别篇", "剧场版", " ONA", " OVA", "第2期", "第3期", "前篇", "后篇"
+            "特别篇", "剧场版", " ONA", " OVA", "第2期", "第3期", "前篇", "后篇",
+            "ii", "iii", "iv", "v", "season", "part"
         ]
         for s in suffixes:
             t = t.replace(s, "")
+            t = t.replace(s.lower(), "")
+            t = t.replace(s.upper(), "")
+        # 5. 剔除所有的非字母数字和特殊符号，合并空格
+        t = "".join(ch for ch in t if ch.isalnum())
         return t.strip()
 
-    base_to_animes = {}
+    # 1. 扫描并缓存所有动漫的名字和 clean_title 基础特征
+    anime_list = []
     for filename in os.listdir(DETAIL_DIR):
         if filename.endswith(".json"):
             aid_str = filename[:-5]
@@ -606,41 +619,53 @@ def generate_healing_and_related_logic():
                     video = json.load(f).get("video", {})
                     name = video.get("name")
                     if name:
-                        base_name = get_base_title(name)
-                        if len(base_name) >= 2:
-                            if base_name not in base_to_animes:
-                                base_to_animes[base_name] = []
-                            base_to_animes[base_name].append({
-                                "id": aid_str,
-                                "title": name,
-                                "cover": video.get("cover", "")
-                            })
+                        base = get_base_title(name)
+                        anime_list.append({
+                            "id": aid_str,
+                            "title": name,
+                            "base": base,
+                            "cover": video.get("cover", ""),
+                            "file_path": detail_path
+                        })
             except:
                 pass
 
+    # 2. 对每个动漫两两计算关联度并写入
     related_injected = 0
-    for filename in os.listdir(DETAIL_DIR):
-        if filename.endswith(".json"):
-            aid_str = filename[:-5]
-            detail_path = os.path.join(DETAIL_DIR, filename)
+    for current in anime_list:
+        related = []
+        base_current = current["base"]
+        if not base_current or len(base_current) < 2:
+            continue
+            
+        for other in anime_list:
+            if other["id"] == current["id"]:
+                continue
+            base_other = other["base"]
+            if not base_other or len(base_other) < 2:
+                continue
+                
+            # 💡 [CRITICAL] 核心算法：互为子串（如 “名侦探柯南” 包含于 “名侦探柯南警察学校篇” ），或者清洗后拼音基准高度相似
+            if base_current in base_other or base_other in base_current:
+                related.append({
+                    "id": other["id"],
+                    "title": other["title"],
+                    "cover": other["cover"]
+                })
+                
+        if related:
             try:
-                with open(detail_path, 'r', encoding='utf-8') as f:
-                    detail = json.load(f)
-                    video = detail.get("video", {})
-                    name = video.get("name")
-                    if name:
-                        base_name = get_base_title(name)
-                        if base_name in base_to_animes:
-                            related = [x for x in base_to_animes[base_name] if x["id"] != aid_str]
-                            if related:
-                                video["related"] = related
-                                detail["video"] = video
-                                with open(detail_path, 'w', encoding='utf-8') as fw:
-                                    json.dump(detail, fw, ensure_ascii=False, indent=2)
-                                related_injected += 1
-            except:
-                pass
+                with open(current["file_path"], 'r', encoding='utf-8') as fr:
+                    detail = json.load(fr)
+                detail.setdefault("video", {})["related"] = related
+                with open(current["file_path"], 'w', encoding='utf-8') as fw:
+                    json.dump(detail, fw, ensure_ascii=False, indent=2)
+                related_injected += 1
+            except Exception as e:
+                print(f"      [RELATED ERROR] Failed to write related for {current['title']}: {e}")
+
     print(f"[RELATED] Successfully injected related recommendations into {related_injected} detail files.\n")
+
 
 # ==========================================================================
 # 🚀 异步并发主任务
@@ -700,19 +725,27 @@ async def main_async():
                             entry_aid = aid_str
                             if aid_str.isdigit():
                                 entry_aid = int(aid_str)
+                            
+                            # 💡 提取文件的最后修改时间，代表最新抓取时效
+                            mtime = int(os.path.getmtime(detail_file_path))
                             index_data.append({
                                 "AID": entry_aid,
                                 "Title": title,
                                 "Pinyin": pinyin_code,
                                 "Cover": video.get("cover", "") or video.get("pic", ""),
                                 "Status": video.get("status", "连载"),
-                                "UpToDate": calculate_uptodate(video)
+                                "UpToDate": calculate_uptodate(video),
+                                "UpdateTime": mtime
                             })
                             seen_aids.add(aid_str)
                 except Exception as e:
                     print(f"[WARNING] Failed to parse detail file {filename}: {e}")
+        
+        # 💡 按 UpdateTime 从大到小（最新修改的排最前）进行全局排序
+        index_data.sort(key=lambda x: x.get("UpdateTime", 0), reverse=True)
         save_search_index(index_data)
         print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+
         
         # 💡 本地首页列表 (home-list.json) 强制过滤重写，防止历史低幼或欧美海外动漫遗留展示
         local_home_path = os.path.join(DATA_DIR, 'home-list.json')
@@ -1165,22 +1198,27 @@ async def main_async():
                         entry_aid = aid_str
                         if aid_str.isdigit():
                             entry_aid = int(aid_str)
+                            
+                        # 💡 提取文件的最后修改时间，代表最新抓取时效
+                        mtime = int(os.path.getmtime(detail_file_path))
                         index_data.append({
                             "AID": entry_aid,
                             "Title": title,
                             "Pinyin": pinyin_code,
                             "Cover": video.get("cover", "") or video.get("pic", ""),
                             "Status": video.get("status", "连载"),
-                            "UpToDate": calculate_uptodate(video)
+                            "UpToDate": calculate_uptodate(video),
+                            "UpdateTime": mtime
                         })
                         seen_aids.add(aid_str)
             except Exception as e:
                 print(f"[WARNING] Failed to parse detail file {filename}: {e}")
                 
-
-        
+    # 💡 按 UpdateTime 从大到小（最新修改的排最前）进行全局排序
+    index_data.sort(key=lambda x: x.get("UpdateTime", 0), reverse=True)
     save_search_index(index_data)
     print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+
     
     # 💡 强力 Cache Busting：自动更新 index.html 中的 JS 和 CSS 版本号为当前最新时间戳，彻底干掉浏览器强缓存
     print("\n[CACHE BUSTING] Updating index.html static assets version queries...")

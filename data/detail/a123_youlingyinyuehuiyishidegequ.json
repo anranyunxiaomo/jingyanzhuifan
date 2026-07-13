@@ -48,7 +48,14 @@
     "name_other": "GHOST CONCERT : missing Songs / GHOST CONCERT : 失落之歌",
     "year": 2026,
     "area": "日本",
-    "type": "TV"
+    "type": "TV",
+    "related": [
+      {
+        "id": "20260116",
+        "title": "幽灵音乐会",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

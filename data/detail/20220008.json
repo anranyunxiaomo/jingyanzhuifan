@@ -56,7 +56,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "28",
-    "collect_cnt": "762"
+    "collect_cnt": "762",
+    "related": [
+      {
+        "id": "20120017",
+        "title": "Another",
+        "cover": "https://cdn.aqdstatic.com:966/age/20120017.jpg"
+      }
+    ]
   },
   "series": [
     {

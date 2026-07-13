@@ -157,7 +157,19 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "24",
-    "collect_cnt": "564"
+    "collect_cnt": "564",
+    "related": [
+      {
+        "id": "20180236",
+        "title": "魔法少女奈叶 Detonation",
+        "cover": "https://cdn.aqdstatic.com:966/age/20180236.jpg"
+      },
+      {
+        "id": "20260170",
+        "title": "魔法少女奈叶 EXCEEDS Gun Blaze Vengeance",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260170.jpg"
+      }
+    ]
   },
   "series": [
     {

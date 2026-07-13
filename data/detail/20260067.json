@@ -425,7 +425,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "21",
-    "collect_cnt": "148"
+    "collect_cnt": "148",
+    "related": [
+      {
+        "id": "a123_beidoushenquan4",
+        "title": "北斗神拳",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg"
+      }
+    ]
   },
   "series": [
     {

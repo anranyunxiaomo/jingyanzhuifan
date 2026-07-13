@@ -47626,7 +47626,14 @@
     "cpraid": 1,
     "comments_status": 1,
     "comment_cnt": "1,395",
-    "collect_cnt": "4,908"
+    "collect_cnt": "4,908",
+    "related": [
+      {
+        "id": "275904",
+        "title": "名侦探柯南日语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/ec/e7/410166_G6NCY.jpg"
+      }
+    ]
   },
   "series": [
     {

@@ -158,9 +158,19 @@
     "collect_cnt": "5,312",
     "related": [
       {
+        "id": "20180246",
+        "title": "刀剑神域 Alicization篇",
+        "cover": "https://cdn.aqdstatic.com:966/age/20180246.jpg"
+      },
+      {
         "id": "20140086",
         "title": "刀剑神域 第二季",
         "cover": "https://cdn.aqdstatic.com:966/age/20140086.jpg"
+      },
+      {
+        "id": "20170071",
+        "title": "刀剑神域剧场版 序列之争",
+        "cover": "https://cdn.aqdstatic.com:966/age/20170071.jpg"
       }
     ]
   },

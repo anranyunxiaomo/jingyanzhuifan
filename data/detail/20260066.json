@@ -366,7 +366,29 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "634",
-    "collect_cnt": "4,155"
+    "collect_cnt": "4,155",
+    "related": [
+      {
+        "id": "20160005",
+        "title": "Re：从零开始的异世界生活",
+        "cover": "https://cdn.aqdstatic.com:966/age/20160005.jpg"
+      },
+      {
+        "id": "26080",
+        "title": "Re从零开始的异世界生活第一季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg"
+      },
+      {
+        "id": "a123_reconglingkaishideyishijieshen13",
+        "title": "Re：从零开始的异世界生活 4",
+        "cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg"
+      },
+      {
+        "id": "21872",
+        "title": "Re从零开始的异世界生活第二季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg"
+      }
+    ]
   },
   "series": [
     {

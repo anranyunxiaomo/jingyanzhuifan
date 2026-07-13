@@ -139,7 +139,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "148",
-    "collect_cnt": "2,712"
+    "collect_cnt": "2,712",
+    "related": [
+      {
+        "id": "20130078",
+        "title": "空之境界(TV版)",
+        "cover": "https://cdn.aqdstatic.com:966/age/20130078.jpg"
+      }
+    ]
   },
   "series": [
     {

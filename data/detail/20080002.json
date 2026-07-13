@@ -103,7 +103,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "311",
-    "collect_cnt": "2,799"
+    "collect_cnt": "2,799",
+    "related": [
+      {
+        "id": "20180311",
+        "title": "夏目友人帐剧场版 ～缘结空蝉～",
+        "cover": "https://cdn.aqdstatic.com:966/age/20180311.jpg"
+      }
+    ]
   },
   "series": [
     {

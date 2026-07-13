@@ -12474,7 +12474,34 @@
           "/play/271265-37-557889.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "133336",
+        "title": "蜡笔小新第五季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg"
+      },
+      {
+        "id": "120413",
+        "title": "蜡笔小新第一季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg"
+      },
+      {
+        "id": "193347",
+        "title": "蜡笔小新第二季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg"
+      },
+      {
+        "id": "133332",
+        "title": "蜡笔小新第四季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg"
+      },
+      {
+        "id": "133334",
+        "title": "蜡笔小新第三季",
+        "cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

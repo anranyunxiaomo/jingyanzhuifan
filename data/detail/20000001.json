@@ -45242,7 +45242,19 @@
     "cpraid": 1,
     "comments_status": 1,
     "comment_cnt": "3,255",
-    "collect_cnt": "1.47w"
+    "collect_cnt": "1.47w",
+    "related": [
+      {
+        "id": "37531",
+        "title": "海贼王动漫合集日语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/ed/4a/345824_VXxo5.jpg"
+      },
+      {
+        "id": "233337",
+        "title": "海贼王国语",
+        "cover": "http://lain.bgm.tv/pic/cover/l/2a/8e/311310_1NXnu.jpg"
+      }
+    ]
   },
   "series": [
     {

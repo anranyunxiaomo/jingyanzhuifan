@@ -388,7 +388,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "31",
-    "collect_cnt": "99"
+    "collect_cnt": "99",
+    "related": [
+      {
+        "id": "a123_youlingyinyuehuiyishidegequ",
+        "title": "幽灵音乐会：遗失的歌曲",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg"
+      }
+    ]
   },
   "series": [],
   "similar": [

@@ -658,7 +658,14 @@
           "/play/234035-7-412900.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "22852",
+        "title": "鬼灭之刃",
+        "cover": "http://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

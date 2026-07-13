@@ -11202,7 +11202,19 @@
           "/play/115477-2-55802.html"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "116029",
+        "title": "博人传火影忍者新时代",
+        "cover": "http://lain.bgm.tv/pic/cover/l/70/65/202661_Xx5X3.jpg"
+      },
+      {
+        "id": "26406",
+        "title": "火影忍者2002",
+        "cover": "http://lain.bgm.tv/pic/cover/l/20/6b/28496_wpcoV.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}
