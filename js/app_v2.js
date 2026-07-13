@@ -1368,10 +1368,36 @@ new Vue({
         playUrl = targetUrlToResolve;
         console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
       } else if (this.activeLineKey === 'hkan_line1') {
-        // 💡 好好看黄金主线：其 epToken 本身就是好好看官方成熟的播放页，我们直接使用 iframe 载入官网播放页播放！
-        // 100% 杜绝由于第三方解析站 (xmflv 等) 不兼容好好看导致的不支持视频平台报错，且实现最纯净的零广告官方秒播体验！
-        playUrl = "https://www.hhkan0.com" + (epToken.startsWith('/play/') ? epToken : targetUrlToResolve.replace("https://www.hhkan0.com", ""));
-        console.log("[SMART ROUTER] Routing hkan_line1 directly to official web player.");
+        // 💡 好好看黄金主线：其 epToken 本身是网页，但为了防止 iframe 载入整站导致侧边栏与广告弹窗破坏 UI，
+        // 我们利用自建代理跨域拉取该播放网页，并用正则提取出其底层的苹果 CMS 播放器真实 M3U8 直链，最后送入全能的 xmflv 解析播放！
+        // 从而完美剥离全部网站干扰，展现 100% 纯净、无弹窗的黄金秒开画面！
+        const targetPageUrl = "https://www.hhkan0.com" + (epToken.startsWith('/play/') ? epToken : targetUrlToResolve.replace("https://www.hhkan0.com", ""));
+        this.startLoadingAnimation("正在为您剥离好好看广告弹窗，提取纯净视频源...");
+        
+        let realM3u8 = "";
+        try {
+          const proxyPageUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent(targetPageUrl);
+          const response = await fetch(proxyPageUrl);
+          if (response.ok) {
+            const html = await response.text();
+            const match = html.match(/"url"\s*:\s*"([^"]+)"/) || html.match(/url\s*:\s*["']([^"']+)["']/);
+            if (match) {
+              realM3u8 = match[1].replace(/\\\//g, '/');
+              console.log("[HKAN EXTRACTOR] Extracted M3U8 successfully:", realM3u8);
+            }
+          }
+        } catch (err) {
+          console.warn("[HKAN EXTRACTOR] Failed to extract official stream:", err);
+        } finally {
+          this.stopLoadingAnimation();
+        }
+
+        if (realM3u8) {
+          playUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(realM3u8);
+        } else {
+          // 兜底降级：如果提取失败，退回到直接加载官网播放页
+          playUrl = targetPageUrl;
+        }
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         let finalTarget = targetUrlToResolve;
