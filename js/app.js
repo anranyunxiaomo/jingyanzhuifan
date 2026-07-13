@@ -1404,24 +1404,22 @@ new Vue({
       this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       this.lastLogProgressTime = 0;
 
-      // 💡 智能直连判定：仅允许我们在服务器端已配置好 CORS 跨域头的 AniCh 直链线路、或者 Blob 生成直链进行前端直连播放！
-      // 外部非凡、暴风、无尽等采集源的 .m3u8/mp4 链接由于对方服务器 100% 存在 CORS 同源跨域策略阻断，一律禁止直连，强制走第三方解析站播放！
+      // 💡 智能直连判定：如果播放链接本身就是常规的 M3U8/MP4 直链，我们直接将其标记为 finalRealUrl！
+      // 强行让其进入 DPlayer 原生轨道秒开，彻底解决外部 iframe 解析站卡顿与广告的痛点！
       let finalRealUrl = realUrl;
       const isDirectUrl = epToken && (
-        this.activeLineKey === 'anich_m3u8' || 
-        epToken.startsWith('blob:')
+        epToken.startsWith('http://') || 
+        epToken.startsWith('https://') || 
+        epToken.includes('.m3u8') || 
+        epToken.includes('.mp4') || 
+        epToken.includes('/m3u8') || 
+        epToken.includes('/mp4')
       );
 
       if (isDirectUrl && !epToken.startsWith('age_')) {
         finalRealUrl = epToken;
       }
 
-      // 💡 CORS 跨域防护大锁：只有自建且配好了 CORS 跨域头的 AniCh 直链线路、或者 Blob 生成的资源，才允许留在 finalRealUrl 里走 DPlayer 播放！
-      // 所有其他外部采集源（如非凡 ffm3u8、暴风 wjm3u8、lzm3u8 等）的 M3U8 链接，由于对方服务器存在同源跨域限制，
-      // 我们直接将 finalRealUrl 强制清空，逼迫其退回到 iframe 轨道（通过专业的五洲派 m3u8 代理器中转播放），彻底解决 100% 跨域报错 Bug！
-      if (finalRealUrl && this.activeLineKey !== 'anich_m3u8' && !finalRealUrl.startsWith('blob:')) {
-        finalRealUrl = "";
-      }
 
       // ✅ 变量捕获闭包锁定（必须放在异步云解密之后，确保能获取到更新后的 realUrl/playUrl ！！！）
       const capturedAnimeId = String(this.currentAnimeId);
@@ -1471,7 +1469,10 @@ new Vue({
                              "&episode=" + encodeURIComponent(capturedEpName) +
                              "&session=" + encodeURIComponent(this.activeSessionId);
 
-            let finalVideoUrl = capturedRealUrl; // 💡 常规线路默认直连播放，不经过代理，实现零 Workers 额度损耗！
+            // 💡 黄金路由：常规线路全部经由自建的 jingyanff.xyz 专属代理中转拉取，在响应头中强行注入跨域允许头 (Access-Control-Allow-Origin: *)
+            // 彻底攻克各大采集站服务器的 CORS 跨域策略阻断，实现原生 DPlayer 纯净无广告 100% 秒开播放！
+            let finalVideoUrl = proxyUrl; 
+
             let videoType = 'hls';
 
             // 💡 检测当前浏览器是否原生支持直接播放 M3U8（如移动端微信、Safari、大部分手机浏览器等）
