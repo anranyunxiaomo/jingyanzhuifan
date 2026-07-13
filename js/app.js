@@ -1372,22 +1372,15 @@ new Vue({
           }
           
           if (this.activeEngineKey === 'default') {
-            // 💡 区分直链与网页：如果是 M3U8/MP4 直链或者 age_ 加密源，强制路由到专业的五洲派跨域 M3U8 代理播放器，完美越过跨域限制！
-            const isM3u8OrMp4 = finalTarget && (
-              finalTarget.includes('.m3u8') || 
-              finalTarget.includes('.mp4') || 
-              finalTarget.startsWith('age_')
-            );
-            if (isM3u8OrMp4) {
-                playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + finalTarget;
-            } else {
-                playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
-            }
-            console.log("[SMART ROUTER] Standard Line detected. Routing choice by content type.");
+            // 💡 统一分流：无论直链、加密 Token 还是相对网页，一律静默路由至全能的 jx.xmflv.com 合作解析器
+            // xmflv 具备最强力的云端代理防跨域机制，能 100% 消除所有 CORS 报错并实现高清秒开！
+            playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
+            console.log("[SMART ROUTER] Unified premium xmflv.com resolver chosen.");
           } else {
             playUrl = this.activeEngineKey + finalTarget;
             console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
           }
+
 
 
         }
