@@ -1373,14 +1373,20 @@ new Vue({
         }
         
         if (this.activeEngineKey === 'default') {
-          // 💡 统一分流：无论直链、加密 Token 还是相对网页，一律静默路由至全能的 jx.xmflv.com 合作解析器
-          // xmflv 具备最强力的云端代理防跨域机制，能 100% 消除所有 CORS 报错并实现高清秒开！
-          playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
-          console.log("[SMART ROUTER] Unified premium xmflv.com resolver chosen.");
+          if (finalTarget.startsWith('age_')) {
+            // 💡 age_ 加密源专线：强制路由到五洲派官方解密播放器，xmflv 无法解析此加密源
+            playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + finalTarget;
+            console.log("[SMART ROUTER] Routing age_ token to wuzhoupai.");
+          } else {
+            // 💡 常规跨域直链专线：一律静默路由至全能的 jx.xmflv.com，完美绕过对方服务器 CORS 同源与防盗链限制！
+            playUrl = "https://jx.xmflv.com/?url=" + finalTarget;
+            console.log("[SMART ROUTER] Routing direct stream to xmflv.");
+          }
         } else {
           playUrl = this.activeEngineKey + finalTarget;
           console.log("[SMART ROUTER] Custom engine chosen: " + this.activeEngineKey);
         }
+
       }
 
 
