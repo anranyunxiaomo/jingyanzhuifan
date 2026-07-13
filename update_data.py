@@ -517,7 +517,58 @@ def calculate_uptodate(video):
     return video.get("uptodate") or "更新中"
 
 
+def calculate_logical_update_time(video, detail_file_path):
+    """
+    基于 JSON 原生属性计算出 100% 可复现、免 Git 污染的逻辑更新时效分数 (Logical Update Score)。
+    """
+    # 1. 提取年份
+    year = 0
+    try:
+        year = int(video.get("year", 0))
+    except:
+        pass
+    if not year:
+        # 尝试从 tags 或者是 plot 或者是 name 里面提取 4 位数字年份
+        name_str = video.get("name", "")
+        m = re.search(r'\b(19|20)\d{2}\b', name_str)
+        if m:
+            year = int(m.group())
+        else:
+            year = 2020 # 默认兜底年份
+            
+    # 2. 提取最新集数数量作为微调
+    playlists = video.get("playlists", {})
+    total_eps = 0
+    if playlists and isinstance(playlists, dict):
+        for pkey, eps in playlists.items():
+            if isinstance(eps, list):
+                total_eps = max(total_eps, len(eps))
+                
+    # 3. 提取连载状态 (连载中加权)
+    status = video.get("status", "")
+    is_ongoing = 1 if ("连载" in status or "更新" in status or "第" in status) and "完结" not in status else 0
+    
+    # 4. AID 的纯数字微调
+    aid_str = os.path.basename(detail_file_path)[:-5]
+    aid_num = 0
+    if aid_str.isdigit():
+        aid_num = int(aid_str)
+    else:
+        m = re.findall(r'\d+', aid_str)
+        if m:
+            aid_num = int(m[-1])
+            
+    # 5. 好好看独占番 AID 归一化平权
+    if year >= 2025 and aid_num < 1000000:
+        aid_num += 20260000
+        
+    # 6. 综合逻辑更新时间戳公式 (Logical Update Score)
+    score = (year * 10000000) + (is_ongoing * 100000) + (total_eps * 10) + (aid_num % 10000000)
+    return score
+
+
 def load_search_index():
+
     if os.path.exists(SEARCH_INDEX_PATH):
         try:
             with open(SEARCH_INDEX_PATH, 'r', encoding='utf-8') as f:
@@ -729,8 +780,8 @@ async def main_async():
                             if aid_str.isdigit():
                                 entry_aid = int(aid_str)
                             
-                            # 💡 提取文件的最后修改时间，代表最新抓取时效
-                            mtime = int(os.path.getmtime(detail_file_path))
+                            # 💡 基于 JSON 原生属性计算逻辑时效分数，彻底防物理修改时间易受本地污染的弊端
+                            mtime = calculate_logical_update_time(video, detail_file_path)
                             index_data.append({
                                 "AID": entry_aid,
                                 "Title": title,
@@ -741,6 +792,7 @@ async def main_async():
                                 "UpdateTime": mtime
                             })
                             seen_aids.add(aid_str)
+
                 except Exception as e:
                     print(f"[WARNING] Failed to parse detail file {filename}: {e}")
         
@@ -1202,8 +1254,8 @@ async def main_async():
                         if aid_str.isdigit():
                             entry_aid = int(aid_str)
                             
-                        # 💡 提取文件的最后修改时间，代表最新抓取时效
-                        mtime = int(os.path.getmtime(detail_file_path))
+                        # 💡 基于 JSON 原生属性计算逻辑时效分数，彻底防物理修改时间易受本地污染的弊端
+                        mtime = calculate_logical_update_time(video, detail_file_path)
                         index_data.append({
                             "AID": entry_aid,
                             "Title": title,
@@ -1214,6 +1266,7 @@ async def main_async():
                             "UpdateTime": mtime
                         })
                         seen_aids.add(aid_str)
+
             except Exception as e:
                 print(f"[WARNING] Failed to parse detail file {filename}: {e}")
                 
