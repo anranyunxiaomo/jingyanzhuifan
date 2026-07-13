@@ -1213,6 +1213,13 @@ new Vue({
       let epToken = ep[1];          // 加密 token 或直链 url
       let realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
+      // 💡 强力重置：非 AniCh 线路的直链由于对方服务器存在同源跨域 CORS 拦截限制，
+      // 我们在开头直接将其 realUrl 置空，强制使其在后台拼装出正确的五洲派跨域中转解析站 URL，彻底解决 playUrl 拼装被跳过导致的黑屏 Bug！
+      if (this.activeLineKey !== 'anich_m3u8') {
+        realUrl = "";
+      }
+
+
       // 💡 A123 线路：如果内存没有直链，先尝试从浏览器的 localStorage 中读取 24 小时内的缓存，实现 0 网络请求瞬间秒开！
       if (!realUrl && epToken && epToken.startsWith('/v/') && epToken.endsWith('.html')) {
         const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${epIdx}`;
