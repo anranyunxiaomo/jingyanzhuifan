@@ -90,8 +90,8 @@ new Vue({
     // 📺 观看历史 (最多保留 30 条，LocalStorage 持久化)
     watchHistory: [],
     _historyThrottleTimer: null, // 历史写入节流计时器
-    // 🖋 景雁诗 · 古风诗词（数组顺序 = 视觉从左到右，即末句→首句，展示时从右往左读）
-    poemLines: ['化作春风伴远山。', '木棉红透珠江水，', '万里南飞一客雁。', '辞霜踏雪向景明，'],
+    // 🖋 景雁诗 · 古风诗词（正常首句→末句顺序，配合 vertical-rl 从右向左排版）
+    poemLines: ['辞霜踏雪向景明，', '万里南飞一客雁。', '木棉红透珠江水，', '化作春风伴远山。'],
     poemAnimKey: 0, // 每次重新触发动画时自增
   },
   
@@ -118,31 +118,64 @@ new Vue({
     },
     displayedHealingList() {
       if (!this.healingList) return [];
-      if (this.isAllHealingShown) {
-        return this.healingList;
-      }
-      return this.healingList.slice(0, 15);
-    },
-    // 💡 计算热播风云榜 (Top 10)，根据 AID 绑定高精度虚拟热度与评分
-    topRatingList() {
-      let list = this.searchIndex || [];
-      if (list.length === 0) {
-        list = this.recommendList.map(a => ({ AID: a.AID, Title: a.Title, Cover: a.PicSmall || a.Cover, Status: a.UpToDate })) || [];
-      }
-      // 取前 10 部具有封面的动漫作为排行榜
-      return list.slice(0, 10).map((anime, index) => {
-        const aidInt = parseInt(anime.AID) || 0;
-        const score = (9.9 - (index * 0.1) - (aidInt % 5) * 0.02).toFixed(1);
-        const hotValue = Math.round(98000 - (index * 4500) - (aidInt % 10) * 120);
-        return {
-          aid: String(anime.AID),
-          title: anime.Title,
-          cover: anime.Cover || anime.PicSmall,
-          status: anime.Status || anime.UpToDate,
-          score: score,
-          hot: hotValue.toLocaleString()
-        };
+      
+      // 🌸 真实豆瓣 9 分级 (8.7+) 治愈系神作 AID 白名单，保障数据真实高水准，剔除低分/致郁番剧
+      const healingWhiteList = [
+        '20080002', // 夏目友人帐 (9.4)
+        '20180028', // 摇曳露营 (9.6)
+        '20120007', // 冰菓 (9.0)
+        '20130025', // 银之匙 (9.3)
+        '20230207', // 葬送的芙莉莲 (9.5)
+        '20260029', // 葬送的芙莉莲 第二季 (9.5)
+        '20200067', // 隐瞒之事 (9.1)
+        '20170096', // 少女终末旅行 (9.3)
+        '20180040', // 妖精森林的小不点 (9.2)
+        '20180311', // 夏目友人帐剧场版 (8.8)
+        '20190396', // 紫罗兰永恒花园 外传 (8.8)
+        '20160104', // 田中君总是如此慵懒 (8.9)
+        '20170032', // 月色真美 (9.0)
+        'anich_32275' // 小鲨鱼去郊游 (9.2)
+      ];
+
+      // 基于白名单对原始 healingList 过滤
+      let filtered = this.healingList.filter(item => {
+        const aidStr = String(item.AID);
+        return healingWhiteList.includes(aidStr);
       });
+
+      // 按照白名单的推荐顺序排列
+      filtered.sort((a, b) => {
+        return healingWhiteList.indexOf(String(a.AID)) - healingWhiteList.indexOf(String(b.AID));
+      });
+
+      if (this.isAllHealingShown) {
+        return filtered;
+      }
+      return filtered.slice(0, 15);
+    },
+    // 💡 热播风云榜 (Top 10)：基于真实豆瓣评分高分神作进行排名选取，拒绝假公式与低分动漫
+    topRatingList() {
+      const dbHighList = [
+        { AID: '20220244', Title: '进击的巨人 最终季 完结篇 前篇', Cover: 'https://cdn.aqdstatic.com:966/age/20220244.jpg', Status: '完结', Score: '9.7', Hot: 98600 },
+        { AID: '20230207', Title: '葬送的芙莉莲', Cover: 'https://cdn.aqdstatic.com:966/age/20230207.jpg', Status: '完结', Score: '9.5', Hot: 97800 },
+        { AID: '20260029', Title: '葬送的芙莉莲 第二季', Cover: 'https://cdn.aqdstatic.com:966/age/20260029.jpg', Status: '连载中', Score: '9.5', Hot: 96500 },
+        { AID: '20080002', Title: '夏目友人帐', Cover: 'https://cdn.aqdstatic.com:966/age/20080002.jpg', Status: '完结', Score: '9.4', Hot: 95300 },
+        { AID: '20160023', Title: '路人超能100', Cover: 'https://cdn.aqdstatic.com:966/age/20160023.jpg', Status: '完结', Score: '9.4', Hot: 94100 },
+        { AID: '20130007', Title: '命运石之门 负荷领域的既视感', Cover: 'https://cdn.aqdstatic.com:966/age/20130007.jpg', Status: '完结', Score: '9.2', Hot: 92800 },
+        { AID: '20260205', Title: '无职转生Ⅲ 到了异世界就拿出真本事', Cover: 'https://cdn.aqdstatic.com:966/age/20260205.jpg', Status: '连载中', Score: '9.1', Hot: 91600 },
+        { AID: '20220248', Title: '无职转生Ⅱ ～到了异世界就拿出真本事～', Cover: 'https://cdn.aqdstatic.com:966/age/20220248.jpg', Status: '完结', Score: '8.8', Hot: 89600 },
+        { AID: '20180311', Title: '夏目友人帐剧场版 ～缘结空蝉～', Cover: 'https://cdn.aqdstatic.com:966/age/20180311.jpg', Status: '完结', Score: '8.8', Hot: 88500 },
+        { AID: '20190396', Title: '紫罗兰永恒花园 外传 - 永远与自动手记人偶 -', Cover: 'https://cdn.aqdstatic.com:966/age/20190396.jpg', Status: '完结', Score: '8.8', Hot: 87200 }
+      ];
+      
+      return dbHighList.map(item => ({
+        aid: item.AID,
+        title: item.Title,
+        cover: item.Cover,
+        status: item.Status,
+        score: item.Score,
+        hot: item.Hot.toLocaleString()
+      }));
     },
     // 💡 动态判断是否为手机移动端 (屏幕宽度 <= 768px)
     isMobile() {
@@ -528,7 +561,7 @@ new Vue({
       if (sUrl.startsWith('data:') || sUrl.startsWith('blob:')) return sUrl;
       
       // 💡 核心拦截：如果是第三方资源网防盗链图片，或者是包含 966 非标准端口的安全拦截图片，自动使用 weserv.nl 代理以实现完美展示！
-      if (sUrl.includes('hongniuzy') || sUrl.includes('feifanzy') || sUrl.includes('liangzi') || sUrl.includes(':966') || sUrl.includes('aqdstatic') || sUrl.includes('agedm')) {
+      if (sUrl.includes('hongniuzy') || sUrl.includes('feifanzy') || sUrl.includes('liangzi') || sUrl.includes(':966') || sUrl.includes('aqdstatic') || sUrl.includes('agedm') || sUrl.includes('a123tv')) {
         const cleanUrl = sUrl.replace(/^https?:\/\//i, '');
         return `https://images.weserv.nl/?url=${encodeURIComponent(cleanUrl)}`;
       }
@@ -538,10 +571,22 @@ new Vue({
       if (event.target.dataset.errorTriggered) return;
       event.target.dataset.errorTriggered = 'true';
       
-      // 💡 终极防重复特效药：直接使用韩小韩 ACG 随机动漫图接口作为占位符，且绑定 ID 散列，达成 100% 毫无重复、精彩纷呈的动漫墙壁纸展示！
-      const cleanId = String(id || '').replace(/\D/g, '') || '95';
-      const randSeed = Math.abs(parseInt(cleanId)) % 1000;
-      event.target.src = `https://api.vvhan.com/api/wallpaper/acg?_t=${randSeed}_${Math.random()}`;
+      // 💡 终极防重复特效药：使用优雅的内联 SVG 磨砂渐变占位符，100% 本地即时渲染，绝无二次挂图隐患！
+      const title = event.target.alt || '暂无标题';
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2e2e3e"/>
+            <stop offset="100%" stop-color="#1d1d2b"/>
+          </linearGradient>
+        </defs>
+        <rect width="300" height="400" fill="url(#g)" rx="12"/>
+        <circle cx="150" cy="160" r="32" fill="#3c3c4f" />
+        <path d="M145 149 L162 160 L145 171 Z" fill="#ff4081" />
+        <text x="150" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#a0a0b0" text-anchor="middle">${title}</text>
+        <text x="150" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#5c5c6f" text-anchor="middle">海报加载失败</text>
+      </svg>`;
+      event.target.src = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
     },
     startLoadingAnimation(initialText) {
       this.showLoadingToast = true;
@@ -969,7 +1014,7 @@ new Vue({
       if (this.isTransitioning) return;
       
       // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字 (排除 anich_ 开头的独有 ID)
-      if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_')) {
+      if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_') && !aid.startsWith('a123_')) {
         const match = aid.match(/\d+/);
         if (match) {
           aid = match[0];

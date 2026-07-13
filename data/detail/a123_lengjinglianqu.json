@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_lengjinglianqu",
     "name": "棱镜恋曲",
-    "cover": "https://i1.a123tv.com/v/0x/lengjinglianqu.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260060.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "恋爱",
+    "plot_arr": [
+      "恋爱"
+    ],
+    "tags": "恋爱",
     "status": "更新至20集",
     "playlists": {
       "a123_line1": [
@@ -91,7 +93,14 @@
           "/v/lengjinglianqu/4qz2qp1z19.html"
         ]
       ]
-    }
+    },
+    "writer": "神尾葉子",
+    "company": "WIT STUDIO",
+    "name_original": "プリズム輪舞曲",
+    "name_other": "Love Through A Prism",
+    "year": 2026,
+    "area": "日本",
+    "type": "WEB"
   },
   "player_vip": "",
   "player_jx": {}

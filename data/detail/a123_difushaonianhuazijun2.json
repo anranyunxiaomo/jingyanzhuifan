@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_difushaonianhuazijun2",
     "name": "地缚少年花子君 2",
-    "cover": "https://i1.a123tv.com/v/0x/difushaonianhuazijun2.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250171.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "校园 恋爱 日常",
+    "plot_arr": [
+      "校园",
+      "恋爱",
+      "日常"
+    ],
+    "tags": "校园 恋爱 日常",
     "status": "更新至24集",
     "playlists": {
       "a123_line1": [
@@ -107,7 +111,14 @@
           "/v/difushaonianhuazijun2/61z14qpz23.html"
         ]
       ]
-    }
+    },
+    "writer": "あいだいろ",
+    "company": "ラルケ（スタジオ雲雀）",
+    "name_original": "地縛少年花子くん２ 第2クール",
+    "name_other": "地缚少年花子君2 续篇",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_siwangzhanghao",
     "name": "死亡账号",
-    "cover": "https://i1.a123tv.com/v/0x/siwangzhanghao.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260040.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "战斗 校园",
+    "plot_arr": [
+      "战斗",
+      "校园"
+    ],
+    "tags": "战斗 校园",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +62,14 @@
           "/v/siwangzhanghao/4ez1tkpz11.html"
         ]
       ]
-    }
+    },
+    "writer": "渡辺静",
+    "company": "SynergySP",
+    "name_original": "デッドアカウント",
+    "name_other": "Dead Account",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_shengnvyintaiguowanmeibugoukea",
     "name": "圣女因太过完美不够可爱而被废除婚约并卖到邻国",
-    "cover": "https://i1.a123tv.com/v/0x/shengnvyintaiguowanmeibugoukea.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250073.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "奇幻 轻小说 女性向",
+    "plot_arr": [
+      "奇幻",
+      "轻小说",
+      "女性向"
+    ],
+    "tags": "奇幻 轻小说 女性向",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +63,14 @@
           "/v/shengnvyintaiguowanmeibugoukea/6az1scoz11.html"
         ]
       ]
-    }
+    },
+    "writer": "冬月光輝",
+    "company": "TROYCA",
+    "name_original": "完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる",
+    "name_other": "完美到难以接近的圣女遭到解除婚约后被卖到邻国",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_gaoxiaoqimianzu",
     "name": "高校奇面组",
-    "cover": "https://i1.a123tv.com/v/0x/gaoxiaoqimianzu.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260030.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "搞笑 校园",
+    "plot_arr": [
+      "搞笑",
+      "校园"
+    ],
+    "tags": "搞笑 校园",
     "status": "更新至11集",
     "playlists": {
       "a123_line1": [
@@ -55,7 +58,14 @@
           "/v/gaoxiaoqimianzu/8z2qvez10.html"
         ]
       ]
-    }
+    },
+    "writer": "新沢基栄",
+    "company": "セブン2",
+    "name_original": "ハイスクール！奇面組",
+    "name_other": "High School! Kimengumi",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

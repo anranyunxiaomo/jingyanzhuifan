@@ -53,15 +53,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. AniCh 自动化新番抓取与增量占位符生成 (带 Token 认证，Actions 全自动秒级同步，自动补齐独有详情)
-      - name: Sync AniCh anime data
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
-        timeout-minutes: 5
-        continue-on-error: true
-        env:
-          ANICH_TOKEN: ${{ secrets.ANICH_TOKEN }}
-        run: |
-          python scripts/anich_crawler.py
 
       # 4b. 执行爬虫数据抓取与全局索引库重构（整合刚刚补齐的独有番剧详情）
       - name: Fetch and staticize anime data

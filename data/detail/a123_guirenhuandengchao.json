@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_guirenhuandengchao",
     "name": "鬼人幻灯抄",
-    "cover": "https://i1.a123tv.com/v/0x/guirenhuandengchao.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250063.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "战斗 奇幻",
+    "plot_arr": [
+      "战斗",
+      "奇幻"
+    ],
+    "tags": "战斗 奇幻",
     "status": "更新至24集",
     "playlists": {
       "a123_line1": [
@@ -107,7 +110,14 @@
           "/v/guirenhuandengchao/4uz1pc1z23.html"
         ]
       ]
-    }
+    },
+    "writer": "中西モトオ",
+    "company": "横浜アニメーションラボ",
+    "name_original": "鬼人幻燈抄",
+    "name_other": "Kijin Gentoushou",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

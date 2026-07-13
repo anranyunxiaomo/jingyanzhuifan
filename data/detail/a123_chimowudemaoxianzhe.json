@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_chimowudemaoxianzhe",
     "name": "吃魔物的冒险者",
-    "cover": "https://i1.a123tv.com/v/0x/chimowudemaoxianzhe.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20260403/01/31/07/17687960135a122b5dda27d99c70df2a.webp",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "讲述了吃掉魔物就能获得其能力的冒险者的奇幻冒险旅程。",
+    "plot_arr": [
+      "讲述了吃掉魔物就能获得其能力的冒险者的奇幻冒险旅程。"
+    ],
+    "tags": "奇幻 冒险 动作",
     "status": "更新至9集",
     "playlists": {
       "a123_line1": [
@@ -47,7 +49,14 @@
           "/v/chimowudemaoxianzhe/4ez208rz8.html"
         ]
       ]
-    }
+    },
+    "writer": "草野ほう / 卵の黄身",
+    "company": "暂无",
+    "name_original": "魔物喰らいの冒険者",
+    "name_other": "The Adventurer Who Eats Monsters",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

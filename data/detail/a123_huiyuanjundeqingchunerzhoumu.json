@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_huiyuanjundeqingchunerzhoumu",
     "name": "灰原君的青春二周目",
-    "cover": "https://i1.a123tv.com/v/0x/huiyuanjundeqingchunerzhoumu.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20260403/09/00/24/433810709f8aaaa20ef5edd305e1112e.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "日韩动漫",
     "status": "更新至9集",
     "playlists": {
       "a123_line1": [
@@ -47,7 +49,10 @@
           "/v/huiyuanjundeqingchunerzhoumu/8z2vcgz8.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "上村祐翔,高尾奏音,中村栞奈,山根绮,铃代纱弓,铃木崚汰,大野智敬,爱美",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

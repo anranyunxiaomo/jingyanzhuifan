@@ -2,11 +2,16 @@
   "video": {
     "id": "a123_xiangfandenihewo",
     "name": "相反的你和我",
-    "cover": "https://i1.a123tv.com/v/0x/xiangfandenihewo.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "搞笑 校园 恋爱 日常",
+    "plot_arr": [
+      "搞笑",
+      "校园",
+      "恋爱",
+      "日常"
+    ],
+    "tags": "搞笑 校园 恋爱 日常",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -66,7 +71,14 @@
         "title": "相反的你和我 第二季",
         "cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg"
       }
-    ]
+    ],
+    "writer": "阿贺泽红茶",
+    "company": "LapinTrack",
+    "name_original": "正反対な君と僕 第2期",
+    "name_other": "相反的你和我 第2期",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

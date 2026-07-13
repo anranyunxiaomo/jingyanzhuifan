@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_jiaojieyingxiaozhiyue",
     "name": "皎洁迎宵之月",
-    "cover": "https://i1.a123tv.com/v/0x/jiaojieyingxiaozhiyue.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260045.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "校园 恋爱",
+    "plot_arr": [
+      "校园",
+      "恋爱"
+    ],
+    "tags": "校园 恋爱",
     "status": "更新至8集",
     "playlists": {
       "a123_line1": [
@@ -43,7 +46,14 @@
           "/v/jiaojieyingxiaozhiyue/5cz26muz7.html"
         ]
       ]
-    }
+    },
+    "writer": "やまもり三香",
+    "company": "イーストフィッシュスタジオ",
+    "name_original": "うるわしの宵の月",
+    "name_other": "皎潔深宵之月",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

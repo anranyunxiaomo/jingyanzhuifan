@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_gongzhudarenjiexialaishikaowen1",
     "name": "公主大人，接下来是“拷问”时间 2",
-    "cover": "https://i1.a123tv.com/v/0x/gongzhudarenjiexialaishikaowen1.jpg",
+    "cover": "https://lain.bgm.tv/pic/cover/l/13/79/486763_s49V9.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "日常 搞笑 2026年1月 漫画改",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,10 @@
           "/v/gongzhudarenjiexialaishikaowen1/5fz1p5yz11.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "春原ロビンソン・ひらけい（集英社ジャンプコミックス刊）",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

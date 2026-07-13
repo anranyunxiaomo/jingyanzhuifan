@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_shenweimozudewoxiangxiangyongz",
     "name": "身为魔族的我想向勇者小队的可爱女孩告白",
-    "cover": "https://i1.a123tv.com/v/0x/shenweimozudewoxiangxiangyongz.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260007.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "搞笑 奇幻 恋爱",
+    "plot_arr": [
+      "搞笑",
+      "奇幻",
+      "恋爱"
+    ],
+    "tags": "搞笑 奇幻 恋爱",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +67,14 @@
           "/v/shenweimozudewoxiangxiangyongz/mz3hgvz12.html"
         ]
       ]
-    }
+    },
+    "writer": "水星・海李",
+    "company": "月虹",
+    "name_original": "勇者パーティーにかわいい子がいたので、告白してみた。",
+    "name_other": "Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita.",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

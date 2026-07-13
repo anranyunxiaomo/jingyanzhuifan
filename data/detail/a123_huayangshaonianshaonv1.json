@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_huayangshaonianshaonv1",
     "name": "花样少年少女",
-    "cover": "https://i1.a123tv.com/v/0x/huayangshaonianshaonv1.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260048.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "校园 恋爱 日常",
+    "plot_arr": [
+      "校园",
+      "恋爱",
+      "日常"
+    ],
+    "tags": "校园 恋爱 日常",
     "status": "更新至11集",
     "playlists": {
       "a123_line1": [
@@ -55,7 +59,14 @@
           "/v/huayangshaonianshaonv1/5wz2qxhz10.html"
         ]
       ]
-    }
+    },
+    "writer": "中条比紗也",
+    "company": "SIGNAL.MD",
+    "name_original": "花ざかりの君たちへ",
+    "name_other": "偷偷爱着你",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

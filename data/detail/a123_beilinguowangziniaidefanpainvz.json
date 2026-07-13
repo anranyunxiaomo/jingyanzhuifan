@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_beilinguowangziniaidefanpainvz",
     "name": "被邻国王子溺爱的反派女主",
-    "cover": "https://i1.a123tv.com/v/0x/beilinguowangziniaidefanpainvz.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260052.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "恋爱",
+    "plot_arr": [
+      "恋爱"
+    ],
+    "tags": "恋爱",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,14 @@
           "/v/beilinguowangziniaidefanpainvz/4nz3j64z11.html"
         ]
       ]
-    }
+    },
+    "writer": "ぷにちゃん",
+    "company": "スタジオディーン",
+    "name_original": "悪役令嬢は隣国の王太子に溺愛される",
+    "name_other": "Akuyaku Reijou wa Ringoku no Outaishi ni Dekiai sareru",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

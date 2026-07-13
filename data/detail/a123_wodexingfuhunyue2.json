@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_wodexingfuhunyue2",
     "name": "我的幸福婚约 2",
-    "cover": "https://i1.a123tv.com/v/0x/wodexingfuhunyue2.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20230930/19/00/02/53a0435ca6ca0f152388e631be78668c.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "爱情 奇幻",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +65,10 @@
           "/v/wodexingfuhunyue2/4uz1l58z12.html"
         ]
       ]
-    }
+    },
+    "year": "2023",
+    "writer": "目黑莲,今田美樱,山口纱弥加,高石明里,高桥努,小林凉子,小越勇辉,平山祐介,山本未来,珠城りょう,石桥莲司,大西流星,尾上右近,火野正平,渡边圭祐,津田健次郎,土屋太凤",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

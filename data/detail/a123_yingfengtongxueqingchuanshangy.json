@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_yingfengtongxueqingchuanshangy",
     "name": "鹰峰同学请穿上衣服",
-    "cover": "https://i1.a123tv.com/v/0x/yingfengtongxueqingchuanshangy.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20250404/17/31/23/11dd696cf13bf692e84ae28d389ac289.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "动画",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,10 @@
           "/v/yingfengtongxueqingchuanshangy/4uz1pkaz11.html"
         ]
       ]
-    }
+    },
+    "year": "2025",
+    "writer": "久保由利香 Yurika Kubo,粕谷大介",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

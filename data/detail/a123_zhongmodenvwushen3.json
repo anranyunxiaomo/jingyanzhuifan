@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_zhongmodenvwushen3",
     "name": "终末的女武神 3",
-    "cover": "https://i1.a123tv.com/v/0x/zhongmodenvwushen3.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250258.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "热血 战斗",
+    "plot_arr": [
+      "热血",
+      "战斗"
+    ],
+    "tags": "热血 战斗",
     "status": "更新至15集",
     "playlists": {
       "a123_line1": [
@@ -71,7 +74,14 @@
           "/v/zhongmodenvwushen3/6ez1if0z14.html"
         ]
       ]
-    }
+    },
+    "writer": "藤本タツキ",
+    "company": "ゆめ太カンパニー×MARU animation",
+    "name_original": "終末のワルキューレⅢ",
+    "name_other": "暂缺",
+    "year": 2025,
+    "area": "日本",
+    "type": "WEB"
   },
   "player_vip": "",
   "player_jx": {}

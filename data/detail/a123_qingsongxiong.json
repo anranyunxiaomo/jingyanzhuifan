@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_qingsongxiong",
     "name": "轻松熊",
-    "cover": "https://i1.a123tv.com/v/0x/qingsongxiong.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260159.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "日常",
+    "plot_arr": [
+      "日常"
+    ],
+    "tags": "日常",
     "status": "更新至8集",
     "playlists": {
       "a123_line1": [
@@ -44,13 +46,13 @@
         ]
       ]
     },
-    "related": [
-      {
-        "id": "20260159",
-        "title": "轻松熊",
-        "cover": "https://cdn.aqdstatic.com:966/age/20260159.jpg"
-      }
-    ]
+    "writer": "サンエックス",
+    "company": "Production I.G",
+    "name_original": "リラックマ",
+    "name_other": "Rilakkuma / 拉拉熊",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

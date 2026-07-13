@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_anxianlingzhudeyukuailingdifan",
     "name": "安闲领主的愉快领地防卫",
-    "cover": "https://i1.a123tv.com/v/0x/anxianlingzhudeyukuailingdifan.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20260107/21/17/33/5ad4e9f58aa56c8fb58c8703235df91d.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "被放逐的少年凭借特有技能轻松防卫并建设领地的愉快日常故事。",
+    "plot_arr": [
+      "被放逐的少年凭借特有技能轻松防卫并建设领地的愉快日常故事。"
+    ],
+    "tags": "奇幻 冒险 领地建设 轻松",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,14 @@
           "/v/anxianlingzhudeyukuailingdifan/4oz2qwuz11.html"
         ]
       ]
-    }
+    },
+    "writer": "赤井まつり",
+    "company": "EMT Squared",
+    "name_original": "お気楽領主の楽しい領地防衛",
+    "name_other": "安闲领主的愉快领地防卫",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

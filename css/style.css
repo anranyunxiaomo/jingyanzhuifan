@@ -3983,14 +3983,118 @@ body.fit-fill iframe {
 /* ──────────────────────────────────────────────────────────────────────────
    finesse §3 — 电影全景巨幕 Panoramic Hero Banner 视觉体系
    ────────────────────────────────────────────────────────────────────────── */
+/* 🏮 独立的古风水墨诗词横幅 */
+.top-poem-banner {
+  position: relative;
+  width: 100%;
+  height: 170px; /* 🚀 提升高度，避免人像被压扁 */
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 45, 120, 0.12);
+  /* 🌸 常驻效果图 2 武侠水墨背景 */
+  background-image: 
+    linear-gradient(to right, rgba(254, 246, 248, 0.9) 0%, rgba(254, 246, 248, 0.45) 45%, rgba(254, 246, 248, 0.1) 70%, rgba(254, 246, 248, 0.9) 100%),
+    url('../assets/wuxia_bg.jpg');
+  background-size: cover;
+  background-position: center 25%; /* 向上微调，展现持剑人挺拔身姿 */
+  box-shadow: 0 4px 20px rgba(255, 110, 162, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  box-sizing: border-box;
+}
+
+.top-poem-left-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  z-index: 3;
+  user-select: none;
+}
+.top-poem-left-text .gufeng-brand-stamp {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+}
+.top-poem-left-text .gufeng-brand-sub {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* 右侧诗词区域：利用 vertical-rl 原生竖排 */
+.top-poem-right {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+.top-poem-text-flow {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  height: 100%;
+  display: block;
+}
+
+.top-poem-text-flow .poem-col {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1.15rem; /* 每列诗句之间的空隙 */
+  height: 100%;
+}
+
+.top-poem-text-flow .poem-char {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #1a120e; /* 黛墨字 */
+}
+
+/* 印章列：使印章在第四列独立居下落款 */
+.top-poem-text-flow .poem-seal-col {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  position: relative;
+  margin-left: 0.8rem;
+}
+
+.top-poem-text-flow .poem-seal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(224, 62, 82, 0.95);
+  color: #fff;
+  font-size: 9px;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  padding: 4px 2.5px;
+  border-radius: 2px;
+  line-height: 1.2;
+  box-shadow: 0 3px 6px rgba(224, 62, 82, 0.22);
+  border: 1px solid rgba(224, 62, 82, 0.5);
+  writing-mode: vertical-rl;
+}
+
+
+/* 1. 顶部全景巨幕幻灯片 (Panoramic Hero Banner) */
 .panoramic-hero {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 380px;
   overflow: hidden;
   margin-bottom: 2.5rem;
   background-color: var(--bg-primary);
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 45, 120, 0.08);
 }
 
@@ -4020,40 +4124,13 @@ body.fit-fill iframe {
   padding: 2.5rem;
 }
 
-/* 东方写意小标签横幅 */
-.hero-poem-overlay {
-  position: absolute;
-  top: 1.8rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.3rem;
-  opacity: 0.85;
-}
-.hero-poem-overlay .gufeng-brand-stamp {
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 45, 120, 0.25);
-  padding: 2px 6px;
-  border-radius: 2px;
-}
-.hero-poem-overlay .gufeng-brand-sub {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-}
-
 /* 主 Banner 内容 */
 .hero-content {
   max-width: 550px;
   position: relative;
   z-index: 5;
 }
+
 .hero-tag {
   display: inline-block;
   font-size: 11px;
@@ -4094,6 +4171,35 @@ body.fit-fill iframe {
   background: var(--accent-gold);
   width: 36px;
   box-shadow: 0 0 10px rgba(255, 45, 120, 0.3);
+}
+
+/* 🎬 右侧悬浮的高清推荐海报卡片 */
+.hero-right-poster-wrapper {
+  position: absolute;
+  right: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+.hero-right-poster {
+  width: 175px;
+  height: 245px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  box-shadow: 
+    0 12px 36px -8px rgba(255, 110, 162, 0.28),
+    0 0 0 1px rgba(255, 110, 162, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero-right-poster:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 
+    0 20px 48px -12px rgba(255, 110, 162, 0.42),
+    0 0 0 1px rgba(255, 110, 162, 0.15);
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -4287,14 +4393,20 @@ body.fit-fill iframe {
   }
 }
 @media (max-width: 768px) {
+  .top-poem-banner {
+    display: none !important; /* 手机端隐藏独立的古风横幅 */
+  }
   .panoramic-hero {
     height: 280px;
+  }
+  .hero-right-poster-wrapper {
+    display: none !important; /* 手机端隐藏右侧推荐海报卡片 */
   }
   .hero-overlay-wrapper {
     padding: 1.5rem !important;
   }
-  .hero-poem-overlay {
-    display: none;
+  .hero-content {
+    max-width: 100%;
   }
   .hero-dots {
     right: 1.5rem !important;

@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_aerniedeshijianbu",
     "name": "阿尔涅的事件簿",
-    "cover": "https://i1.a123tv.com/v/0x/aerniedeshijianbu.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260012.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "推理 奇幻",
+    "plot_arr": [
+      "推理",
+      "奇幻"
+    ],
+    "tags": "推理 奇幻",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +62,14 @@
           "/v/aerniedeshijianbu/4ez1tf2z11.html"
         ]
       ]
-    }
+    },
+    "writer": "春紫",
+    "company": "SILVER LINK.",
+    "name_original": "アルネの事件簿",
+    "name_other": "Arne no Jikenbo",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

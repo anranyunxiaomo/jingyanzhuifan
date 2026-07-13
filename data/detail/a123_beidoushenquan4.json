@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_beidoushenquan4",
     "name": "北斗神拳",
-    "cover": "https://i1.a123tv.com/v/0x/beidoushenquan4.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "热血 战斗",
+    "plot_arr": [
+      "热血",
+      "战斗"
+    ],
+    "tags": "热血 战斗",
     "status": "更新至10集",
     "playlists": {
       "a123_line1": [
@@ -51,7 +54,14 @@
           "/v/beidoushenquan4/4oz3a3hz9.html"
         ]
       ]
-    }
+    },
+    "writer": "武論尊・原哲夫",
+    "company": "トムス・エンタテインメント",
+    "name_original": "北斗の拳 -FIST OF THE NORTH STAR-",
+    "name_other": "暂缺",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

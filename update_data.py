@@ -70,7 +70,10 @@ def is_kids_anime(title, plot="", tags=""):
         '巨神战击队', '火力少年王', '赛尔号', '洛克王国', '奥拉星', '开心超人', '果宝特攻', 
         '神兽金刚', '飓风战魂', '爆裂飞车', '雷速登', '巴啦啦', '开心宝贝', '小鲤鱼历险记', 
         '神兵小将', '蓝猫淘气', '咖宝车神', '大卫，不可以', '皮诺和西诺比', 'ピノ＆西诺比',
-        '依娜和恰恰', '嘟拉', '学英语', '少儿英语'
+        '依娜和恰恰', '嘟拉', '学英语', '少儿英语', 'candy caries', '蛀在糖糖里',
+        'grow up show', '向日葵马戏团', 'les aventures fantastiques', 'plannosaurus', 
+        '真古生遗物', '世界喵童话', '面包超人', '格林童话故事', '偶像公主', '露露与莉莉', 
+        'lolo', '地球大好き', '신비아파트', '神秘公寓', '解谜公主'
     ]
     for kw in kids_keywords:
         if kw in title:
@@ -104,30 +107,37 @@ def is_sensitive_anime(name, plot, tags):
 
 
 def is_unwanted_area_anime(title, area, plot="", tags=""):
-    """只保留国产动漫和日漫，其他所有地区（包括韩国/台湾/香港/欧美/海外）一律强力清洗 (Whitelist Region Control)"""
+    """删除国内动漫（国产/国漫/中国/大陆），只保留日本动漫等白名单地区 (Region Control)"""
     title = (title or "").lower()
     area = (area or "").lower()
     plot = (plot or "").lower()
     tags = (tags or "").lower()
     
-    # 1. 强力地区白名单限制：如果地区不为空，必须属于中国大陆或日本地区，否则直接强清
+    # 1. 强力地区白名单限制：如果地区不为空，必须属于日本地区，否则直接强清（包含中国、大陆、国产、国漫、cn等国内动漫直接被拦截）
     if area.strip():
-        whitelist_regions = ["日本", "中国", "大陆", "国产", "日漫", "国漫", "jp", "cn"]
+        whitelist_regions = ["日本", "日漫", "jp"]
         has_whitelist = False
         for region in whitelist_regions:
             if region in area:
-                # 💡 排除台湾和香港
-                if "台湾" in area or "香港" in area:
-                    continue
                 has_whitelist = True
                 break
         if not has_whitelist:
-            return True # 不在白名单内的国家地区（如韩国、台湾、香港、欧美、印度等），直接拦截！
+            return True
             
-    # 2. 补充标签匹配：即使地区为空，若剧情简介或标签中出现“欧美”、“海外”字样，也进行拦截
-    unwanted_keywords = ["欧美", "海外", "美国", "法国", "德国", "英国", "印度", "欧美动漫", "海外动漫"]
+    # 2. 补充标签匹配：即使地区为空，若剧情简介、标签中出现“国产”、“国漫”、“欧美”、“海外”等字样，也进行拦截
+    unwanted_keywords = ["国产", "国漫", "欧美", "海外", "美国", "法国", "德国", "英国", "印度", "欧美动漫", "海外动漫"]
     for kw in unwanted_keywords:
         if kw in plot or kw in tags:
+            return True
+            
+    # 3. 💡 强力清道夫：针对 AniCh 漏网国漫（因默认地区被错填为“日本”且缺少剧情/标签）进行强力标题黑名单拦截
+    cn_anime_keywords = [
+        "斩神", "镖人", "逆天邪神", "将夜", "盗妖行", "完美世界", "神墓", "太岁", "胶囊计划", 
+        "山海契约", "都市古仙医", "师兄啊师兄", "清华附小", "乐乐课堂", "无尾熊绘日记", "考拉绘日记",
+        "仙逆", "遮天", "斗破苍穹", "吞噬星空", "武动乾坤", "凡人修仙", "大主宰", "神印王座", "灵武大陆", "汤直志异"
+    ]
+    for kw in cn_anime_keywords:
+        if kw in title:
             return True
             
     return False
@@ -779,6 +789,16 @@ async def main_async():
     except Exception as e:
         print(f"[A123TV INTEGRATION ERROR] Failed to run a123_crawler.py: {e}\n")
 
+    # 💡 触发 好好看日本分类 爬取与对齐合并脚本，增量注入好好看高清播放源
+    print("\n[HHKAN INTEGRATION] Triggering hhkan category crawler and data alignment...")
+    try:
+        import subprocess
+        crawler_path = os.path.join(BASE_DIR, "scripts", "sync_from_hhkan_category.py")
+        subprocess.run([sys.executable, crawler_path], check=True)
+        print("[HHKAN INTEGRATION] Successfully integrated HHKAN data!\n")
+    except Exception as e:
+        print(f"[HHKAN INTEGRATION ERROR] Failed to run sync_from_hhkan_category.py: {e}\n")
+
     aids_to_fetch = {}
     recently_updated_aids = set()
     
@@ -790,34 +810,6 @@ async def main_async():
             print("[CRITICAL] Failed to fetch home-list. Aborting.")
             return
         
-        # 💡 数据融合保护：如果本地已经存在 home-list.json，我们需要提取其中由 AniCh 注入的标注和独有新番，防止被官方数据完全擦除
-        local_home_path = os.path.join(DATA_DIR, 'home-list.json')
-        if os.path.exists(local_home_path):
-            try:
-                with open(local_home_path, 'r', encoding='utf-8') as f_old:
-                    old_home = json.load(f_old)
-                
-                # A. 恢复 week_list 里的 anich_id 标注
-                old_week = old_home.get("week_list", {})
-                new_week = home_data.setdefault("week_list", {})
-                for day_key, old_items in old_week.items():
-                    new_items = new_week.get(day_key, [])
-                    name_to_anich = {item["Title"]: item["anich_id"] for item in old_items if "anich_id" in item and "Title" in item}
-                    for item in new_items:
-                        if "Title" in item and item["Title"] in name_to_anich:
-                            item["anich_id"] = name_to_anich[item["Title"]]
-                            
-                # B. 提取并追加以 anich_ 开头的独有新番卡片到 latest 列表
-                old_latest = old_home.get("latest", [])
-                new_latest = home_data.setdefault("latest", [])
-                existing_aids = {str(item.get("AID")) for item in new_latest}
-                for item in old_latest:
-                    aid_str = str(item.get("AID", ""))
-                    if aid_str.startswith("anich_") and aid_str not in existing_aids:
-                        new_latest.append(item)
-                        existing_aids.add(aid_str)
-            except Exception as old_err:
-                print(f"[WARN] Failed to merge local home-list: {old_err}")
 
         # 💡 对 home-list 进行敏感/黄色动漫清洗，防止首页和每日更新显示它们
         if isinstance(home_data, dict):

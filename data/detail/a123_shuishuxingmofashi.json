@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_shuishuxingmofashi",
     "name": "水属性魔法使",
-    "cover": "https://i1.a123tv.com/v/0x/shuishuxingmofashi.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20250704/10/05/06/86e23acb6a66a28b785c9983eece0b1e.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "动画",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,10 @@
           "/v/shuishuxingmofashi/6fz2fcuz11.html"
         ]
       ]
-    }
+    },
+    "year": "2025",
+    "writer": "村濑步,浦和希,本渡枫,室元气,宫濑尚也,天崎滉平,石原夏织,松本沙罗,三上哲,伊藤美来,子安武人,大塚芳忠",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

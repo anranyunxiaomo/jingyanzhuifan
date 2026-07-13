@@ -2,11 +2,16 @@
   "video": {
     "id": "a123_dunzhiyongzhechengminglu4",
     "name": "盾之勇者成名录 4",
-    "cover": "https://i1.a123tv.com/v/0x/dunzhiyongzhechengminglu4.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "战斗 冒险 后宫 奇幻",
+    "plot_arr": [
+      "战斗",
+      "冒险",
+      "后宫",
+      "奇幻"
+    ],
+    "tags": "热血 战斗 冒险 后宫 萝莉 奇幻 轻小说",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -66,7 +71,14 @@
         "title": "盾之勇者成名录",
         "cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg"
       }
-    ]
+    ],
+    "writer": "アネコユサギ",
+    "company": "KINEMA CITRUS",
+    "name_original": "盾の勇者の成り上がり",
+    "name_other": "盾勇 / Tate no Yuusha no Nariagari",
+    "year": 2019,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

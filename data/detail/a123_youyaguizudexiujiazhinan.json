@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_youyaguizudexiujiazhinan",
     "name": "优雅贵族的休假指南",
-    "cover": "https://i1.a123tv.com/v/0x/youyaguizudexiujiazhinan.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260019.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "冒险 奇幻 轻小说",
+    "plot_arr": [
+      "冒险",
+      "奇幻",
+      "轻小说"
+    ],
+    "tags": "冒险 奇幻 轻小说",
     "status": "更新至11集",
     "playlists": {
       "a123_line1": [
@@ -55,7 +59,14 @@
           "/v/youyaguizudexiujiazhinan/5fz1oqmz10.html"
         ]
       ]
-    }
+    },
+    "writer": "岬（TOブックス刊）",
+    "company": "SynergySP",
+    "name_original": "穏やか貴族の休暇のすすめ。",
+    "name_other": "暂缺",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

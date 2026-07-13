@@ -2,11 +2,15 @@
   "video": {
     "id": "a123_xindiaodaiwatianshi",
     "name": "新吊带袜天使",
-    "cover": "https://i1.a123tv.com/v/0x/xindiaodaiwatianshi.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20250710/10/25/06/cf2d49d2b963423ea7a2bc2c3f91758a.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "吊带袜天使的全新篇章，由 Trigger 倾力打造的暴走搞笑大作。",
+    "plot_arr": [
+      "吊带袜天使的全新篇章，由",
+      "Trigger",
+      "倾力打造的暴走搞笑大作。"
+    ],
+    "tags": "搞笑 动作 奇幻 动作",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +67,14 @@
           "/v/xindiaodaiwatianshi/4uz1u2rz12.html"
         ]
       ]
-    }
+    },
+    "writer": "今石洋之 / Trigger",
+    "company": "Trigger",
+    "name_original": "New Panty & Stocking with Garterbelt",
+    "name_other": "新吊带袜天使",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

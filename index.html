@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260710T1651">
+  <link rel="stylesheet" href="css/style.css?v=20260713T2005">
   <script>window.JYZF_VERSION = "20260710T1651";</script>
 </head>
 <body class="loader-active">
@@ -277,6 +277,8 @@
                 :src="anime.Cover" 
                 :alt="anime.Title"
                 loading="lazy"
+              />
+            </div>
             <div class="catalog-card-info">
               <div class="catalog-card-title">{{ anime.Title }}</div>
               <div class="catalog-card-ep">{{ anime.UpToDate }}</div>
@@ -302,17 +304,41 @@
 
       <!-- 🌏 首页视图包装器 -->
       <div class="app-main-content" :class="mainContentTransitionClass" v-else-if="!currentAnimeId && currentPage === 'home'" key="home">
+        <!-- 🖋 独立古风诗词横幅 (位于精选推荐幻灯片上方，居右侧展示，左侧带优雅卷轴名) -->
+        <div class="top-poem-banner" v-if="bannerList.length > 0">
+          <div class="top-poem-left-text">
+            <span class="gufeng-brand-stamp">景雁·番書</span>
+            <span class="gufeng-brand-sub">「愿你徒步天下，丈量世界。不忘初心」</span>
+          </div>
+          
+          <div class="top-poem-right">
+            <!-- 诗词排版容器 (通过 vertical-rl 自右向左规整流动对齐) -->
+            <div class="top-poem-text-flow" aria-hidden="true">
+              <div
+                class="poem-col"
+                v-for="(line, li) in poemLines"
+                :key="li"
+              >
+                <span
+                  v-for="(char, ci) in line.split('')"
+                  :key="ci"
+                  :class="['poem-char', /[，。、？！]/u.test(char) ? 'is-punct' : '', (char === '景' || char === '雁') ? 'sparkle-pink' : '']"
+                  :style="{ animationDelay: (li * 6 + ci) * 0.11 + 's' }"
+                >{{ char }}</span>
+              </div>
+              <!-- 印章落款在最左边（即 text-flow 的最末尾） -->
+              <div class="poem-seal-col">
+                <div class="poem-seal">景雁</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- 1. 顶部全景巨幕幻灯片 (Panoramic Hero Banner) -->
         <section class="panoramic-hero" v-if="bannerList.length > 0">
           <div class="hero-blur-bg" :style="{ backgroundImage: 'url(' + activeBanner.style + ')' }"></div>
           
           <div class="hero-overlay-wrapper">
-            <!-- 🖋 东方意境小横幅 -->
-            <div class="hero-poem-overlay">
-              <span class="gufeng-brand-stamp">景雁·番書</span>
-              <span class="gufeng-brand-sub">「愿你徒步天下，丈量世界」</span>
-            </div>
-            
             <div class="hero-content">
               <span class="hero-tag">本日主推番剧</span>
               <h1 class="hero-title" v-html="activeBanner.html"></h1>
@@ -323,6 +349,11 @@
                   </svg> 立即播放
                 </button>
               </div>
+            </div>
+
+            <!-- 🎬 右侧高清番剧推荐海报卡片 (大屏悬浮展现，与左侧对齐) -->
+            <div class="hero-right-poster-wrapper">
+              <img :src="activeBanner.style" class="hero-right-poster" :alt="activeBanner.html" @click="selectAnime(activeBanner.AID)" />
             </div>
 
             <!-- 幻灯片指示器 -->
@@ -615,34 +646,12 @@
           </div>
         </div>
 
-        <div class="show-more-wrapper" v-if="healingList.length > 15">
-          <button class="btn btn-show-more" @click="isAllHealingShown = !isAllHealingShown">
-            <span v-if="!isAllHealingShown">展开查看更多 (共 {{ healingList.length }} 部)</span>
-            <span v-else>收起全部数据</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;transition: transform 0.3s;" :style="{ transform: isAllHealingShown ? 'rotate(180deg)' : 'none' }">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </button>
-        </div>
       </section>
             </div> <!-- 闭合 .home-main-col -->
 
             <!-- 右侧副栏：追番公告与热播风云榜 -->
             <aside class="home-side-col">
-              <div class="side-panel announce-panel">
-                <h3 class="side-panel-title">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="side-title-icon">
-                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                    <line x1="12" y1="9" x2="12" y2="13"/>
-                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                  </svg> 追番公告
-                </h3>
-                <div class="announce-content">
-                  <p class="announce-text">📣 景雁动漫全新升级！重塑为商业级极简粉晶流媒体门户。任何播放与加载问题建议切换 VIP 接口 C 进行缓存直连。</p>
-                  <p class="announce-time">广州景雁动漫群 2026-07-10</p>
-                </div>
-              </div>
-              
+
               <div class="side-panel rating-rank-panel">
                 <h3 class="side-panel-title">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="side-title-icon">
@@ -1023,12 +1032,11 @@
   </footer>
 </div>
 
-<!-- Vue.js CDN 引入 -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
-<!-- Axios CDN 引入 -->
-<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<!-- 本地依赖引入 -->
+<script src="js/vendor/vue.min.js"></script>
+<script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app.js?v=20260710T1651"></script>
+<script src="js/app.js?v=20260713T2005"></script>
 
 </body>
 </html>

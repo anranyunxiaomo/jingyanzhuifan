@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_fanerbujingdewobeizhuchuyongzh",
     "name": "泛而不精的我被逐出勇者队伍",
-    "cover": "https://i1.a123tv.com/v/0x/fanerbujingdewobeizhuchuyongzh.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20251124/14/33/08/c1338e2c9f0e870815f671c7ee71192b.webp",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "样样都会但样样不精的主角被逐出队伍后，却意外开启了幸福的慢生活。",
+    "plot_arr": [
+      "样样都会但样样不精的主角被逐出队伍后，却意外开启了幸福的慢生活。"
+    ],
+    "tags": "奇幻 冒险 治愈 轻松",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,14 @@
           "/v/fanerbujingdewobeizhuchuyongzh/4sz270iz11.html"
         ]
       ]
-    }
+    },
+    "writer": "解雇された暗黒兵士",
+    "company": "暂无",
+    "name_original": "泛而不精的我被逐出勇者队伍",
+    "name_other": "泛而不精的我被逐出勇者队伍",
+    "year": 2024,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

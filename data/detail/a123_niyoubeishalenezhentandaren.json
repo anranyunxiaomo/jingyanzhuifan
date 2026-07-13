@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_niyoubeishalenezhentandaren",
     "name": "你又被杀了呢，侦探大人",
-    "cover": "https://i1.a123tv.com/v/0x/niyoubeishalenezhentandaren.jpg",
+    "cover": "https://lain.bgm.tv/pic/cover/l/2e/f4/608227_44kWb.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "追月朔也的父亲是传说中的名侦探，但他自己只是个半吊子的高中生侦探。今天他也一如往常接下外遇调查、寻猫等委托，却总是莫名被卷入杀人事件，而且「被害者」竟然就是他自己！？每次凭着特殊体质复活后，总有一位优秀的助手以膝枕迎接他的醒来。身为侦探，同时也是被害者，朔也不断赌上性命，挑战一件又一件疑难案件！",
+    "plot_arr": [
+      "追月朔也的父亲是传说中的名侦探，但他自己只是个半吊子的高中生侦探。今天他也一如往常接下外遇调查、寻猫等委托，却总是莫名被卷入杀人事件，而且「被害者」竟然就是他自己！？每次凭着特殊体质复活后，总有一位优秀的助手以膝枕迎接他的醒来。身为侦探，同时也是被害者，朔也不断赌上性命，挑战一件又一件疑难案件！"
+    ],
+    "tags": "2026年4月 轻小说改 推理 悬疑",
     "status": "更新至8集",
     "playlists": {
       "a123_line1": [
@@ -43,7 +45,10 @@
           "/v/niyoubeishalenezhentandaren/8z2umdz7.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "てにをは（MF文庫J / KADOKAWA刊）",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

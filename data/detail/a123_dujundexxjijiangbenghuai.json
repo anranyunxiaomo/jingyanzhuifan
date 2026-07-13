@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_dujundexxjijiangbenghuai",
     "name": "渡君的XX即将崩坏",
-    "cover": "https://i1.a123tv.com/v/0x/dujundexxjijiangbenghuai.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20250705/11/35/02/52f6e4186882f8f33a56738cc87d3675.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "动画",
     "status": "更新至26集",
     "playlists": {
       "a123_line1": [
@@ -115,7 +117,10 @@
           "/v/dujundexxjijiangbenghuai/48z1w7cz25.html"
         ]
       ]
-    }
+    },
+    "year": "2025",
+    "writer": "梅田修一朗,矢野优美华,伊驹百合绘,梅泽惠,中岛良树,矢野妃菜喜",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

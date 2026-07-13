@@ -97,13 +97,73 @@ def is_kids_anime(title, plot="", tags=""):
         '巨神战击队', '火力少年王', '赛尔号', '洛克王国', '奥拉星', '开心超人', '果宝特攻', 
         '神兽金刚', '飓风战魂', '爆裂飞车', '雷速登', '巴啦啦', '开心宝贝', '小鲤鱼历险记', 
         '神兵小将', '蓝猫淘气', '咖宝车神', '大卫，不可以', '皮诺和西诺比', 'ピノ＆シノビー',
-        '依娜和恰恰', '嘟拉', '学英语', '少儿英语'
+        '依娜和恰恰', '嘟拉', '学英语', '少儿英语', 'candy caries', '蛀在糖糖里',
+        'grow up show', '向日葵马戏团', 'les aventures fantastiques', 'plannosaurus', 
+        '真古生遗物', '世界喵童话', '面包超人', '格林童话故事', '偶像公主', '露露与莉莉', 
+        'lolo', '地球大好き', '신비아파트', '神秘公寓', '解谜公主'
     ]
     for kw in kids_keywords:
         if kw in title:
             return True
             
     return False
+
+
+def is_unwanted_area_anime(title, area, plot="", tags=""):
+    """删除国内动漫（国产/国漫/中国/大陆），只保留日本动漫等白名单地区 (Region Control)"""
+    title = (title or "").lower()
+    area = (area or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    if area.strip():
+        whitelist_regions = ["日本", "日漫", "jp"]
+        has_whitelist = False
+        for region in whitelist_regions:
+            if region in area:
+                has_whitelist = True
+                break
+        if not has_whitelist:
+            return True
+            
+    unwanted_keywords = ["国产", "国漫", "欧美", "海外", "美国", "法国", "德国", "英国", "印度", "欧美动漫", "海外动漫"]
+    for kw in unwanted_keywords:
+        if kw in plot or kw in tags:
+            return True
+            
+    cn_anime_keywords = [
+        "斩神", "镖人", "逆天邪神", "将夜", "盗妖行", "完美世界", "神墓", "太岁", "胶囊计划", 
+        "山海契约", "都市古仙医", "师兄啊师兄", "清华附小", "乐乐课堂", "无尾熊绘日记", "考拉绘日记",
+        "仙逆", "遮天", "斗破苍穹", "吞噬星空", "武动乾坤", "凡人修仙", "大主宰", "神印王座", "灵武大陆",
+        "为喵人生", "钢炽之芯", "深潜强制倒带", "乐乐便利店", "曾经有勇士", "熊熊帮帮团 5", "深空彼岸", "孤雄", "凡人修仙"
+    ]
+    for kw in cn_anime_keywords:
+        if kw in title:
+            return True
+            
+    return False
+
+
+def is_sensitive_anime(name, plot, tags):
+    """判定番剧是否属于低俗或敏感内容"""
+    name = (name or "").lower()
+    plot = (plot or "").lower()
+    tags = (tags or "").lower()
+    
+    sensitive_genres = ["里番", "肉番", "凌辱", "18禁", "无修正", "成人"]
+    for genre in sensitive_genres:
+        if genre in plot or genre in tags:
+            return True
+            
+    sensitive_names = ["淫狱", "蹂躏", "催眠", "堕落", "调教"]
+    for s_name in sensitive_names:
+        if s_name in name:
+            if "催眠" in name and "催眠麦克风" in name:
+                continue
+            return True
+            
+    return False
+
 
 def parse_anime_list_html(html):
     """从 HTML 文本中解析卡片列表"""
@@ -116,8 +176,8 @@ def parse_anime_list_html(html):
         href = m.group("href")
         title = m.group("title").strip()
         info = m.group("info").strip()
-        # 💡 强力阻断低幼少儿和敏感词
-        if "里番" in info or "淫狱" in title or "催眠" in title or is_kids_anime(title):
+        # 💡 强力阻断低幼少儿、敏感词和国产/无关视频
+        if "里番" in info or "淫狱" in title or "催眠" in title or is_kids_anime(title) or is_unwanted_area_anime(title, "", "", ""):
             continue
         items.append({
             "title": title,
@@ -318,7 +378,7 @@ def main():
     print("-" * 50)
     
     a123_list = []
-    for cat_id in ["1301", "1302"]:
+    for cat_id in ["1302"]:
         for page in range(1, 4):
             items = fetch_a123_category_page(cat_id, page)
             a123_list.extend(items)
@@ -329,6 +389,22 @@ def main():
     for i, anime in enumerate(a123_list):
         title = anime["title"]
         slug = anime["slug"]
+        
+        # 💡 强力阻断国产/低幼动漫进入新建和同步流程，如果在本地存在，当场物理粉碎删除！
+        if is_unwanted_area_anime(title, "", "", "") or is_kids_anime(title):
+            # 探测本地文件名
+            cleaned_title_temp = clean_title(title)
+            matched_entry_temp = existing_map.get(cleaned_title_temp)
+            detail_filename_temp = f"{matched_entry_temp['AID']}.json" if matched_entry_temp else f"a123_{slug}.json"
+            detail_path_temp = os.path.join(DETAIL_DIR, detail_filename_temp)
+            if os.path.exists(detail_path_temp):
+                try:
+                    os.remove(detail_path_temp)
+                    print(f"  🚨 [PURGE] 定时同步中检测到国产/无关动漫，已物理删除: {title} ({detail_filename_temp})")
+                except:
+                    pass
+            continue
+            
         cleaned_title = clean_title(title)
         
         matched_entry = existing_map.get(cleaned_title)

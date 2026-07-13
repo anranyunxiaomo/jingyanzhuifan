@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_daerwenshibian",
     "name": "达尔文事变",
-    "cover": "https://i1.a123tv.com/v/0x/daerwenshibian.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260011.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "科幻 社会",
+    "plot_arr": [
+      "科幻",
+      "社会"
+    ],
+    "tags": "科幻 社会",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +66,14 @@
           "/v/daerwenshibian/4ez1tf3z12.html"
         ]
       ]
-    }
+    },
+    "writer": "うめざわしゅん",
+    "company": "BELLNOX FILMS",
+    "name_original": "ダーウィン事変",
+    "name_other": "Darwin Jihen",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

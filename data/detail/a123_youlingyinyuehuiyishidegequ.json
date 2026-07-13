@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_youlingyinyuehuiyishidegequ",
     "name": "幽灵音乐会：遗失的歌曲",
-    "cover": "https://i1.a123tv.com/v/0x/youlingyinyuehuiyishidegequ.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "战斗",
+    "plot_arr": [
+      "战斗"
+    ],
+    "tags": "战斗",
     "status": "更新至7集",
     "playlists": {
       "a123_line1": [
@@ -39,7 +41,14 @@
           "/v/youlingyinyuehuiyishidegequ/wz30rpz6.html"
         ]
       ]
-    }
+    },
+    "writer": "UNISON / Project MiueS",
+    "company": "ENGI",
+    "name_original": "ゴーストコンサート : missing Songs",
+    "name_other": "GHOST CONCERT : missing Songs / GHOST CONCERT : 失落之歌",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_feimadeliaoli1",
     "name": "费马的料理",
-    "cover": "https://i1.a123tv.com/v/0x/feimadeliaoli1.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20250162.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "竞技",
+    "plot_arr": [
+      "竞技"
+    ],
+    "tags": "竞技",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,14 @@
           "/v/feimadeliaoli1/63z34fvz11.html"
         ]
       ]
-    }
+    },
+    "writer": "小林有吾",
+    "company": "ドメリカ",
+    "name_original": "フェルマーの料理",
+    "name_other": "费尔马的料理",
+    "year": 2025,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

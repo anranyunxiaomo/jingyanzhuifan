@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_heimaohemonvdeketang",
     "name": "黑猫和魔女的课堂",
-    "cover": "https://i1.a123tv.com/v/0x/heimaohemonvdeketang.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20260412/23/16/14/a2dc8da25f0767be1ad03bf4800037df.webp",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "日韩动漫",
     "status": "更新至8集",
     "playlists": {
       "a123_line1": [
@@ -43,7 +45,10 @@
           "/v/heimaohemonvdeketang/63z3mmsz7.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "本渡枫,岛崎信长,和泉风花,铃木实里,橘杏咲,白石晴香,上村祐翔,长谷川玲奈,石毛翔弥,菲鲁兹·蓝,大野智敬,渡谷美帆,浦和希,樱井美雪,花泽香菜,速水奖,平川大辅",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

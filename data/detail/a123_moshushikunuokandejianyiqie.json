@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_moshushikunuokandejianyiqie",
     "name": "魔术师库诺看得见一切",
-    "cover": "https://i1.a123tv.com/v/0x/moshushikunuokandejianyiqie.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260050.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "战斗 奇幻",
+    "plot_arr": [
+      "战斗",
+      "奇幻"
+    ],
+    "tags": "战斗 奇幻",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +66,14 @@
           "/v/moshushikunuokandejianyiqie/4ez1tcpz12.html"
         ]
       ]
-    }
+    },
+    "writer": "南野海風",
+    "company": "プラチナビジョン",
+    "name_original": "魔術師クノンは見えている",
+    "name_other": "Majutsushi Kunon wa Mieteiru",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

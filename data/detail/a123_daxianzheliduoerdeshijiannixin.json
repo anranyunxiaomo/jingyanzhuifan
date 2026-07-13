@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_daxianzheliduoerdeshijiannixin",
     "name": "大贤者利多尔的时间逆行",
-    "cover": "https://i1.a123tv.com/v/0x/daxianzheliduoerdeshijiannixin.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260121.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "穿越",
+    "plot_arr": [
+      "穿越"
+    ],
+    "tags": "穿越",
     "status": "更新至7集",
     "playlists": {
       "a123_line1": [
@@ -39,7 +41,14 @@
           "/v/daxianzheliduoerdeshijiannixin/5uz2w26z6.html"
         ]
       ]
-    }
+    },
+    "writer": "猫子、二鷹壱",
+    "company": "暂缺",
+    "name_original": "大賢者リドルの時間逆行",
+    "name_other": "暂缺",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

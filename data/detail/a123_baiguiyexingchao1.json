@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_baiguiyexingchao1",
     "name": "百鬼夜行抄",
-    "cover": "https://i1.a123tv.com/v/0x/baiguiyexingchao1.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260148.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "奇幻 日常",
+    "plot_arr": [
+      "奇幻",
+      "日常"
+    ],
+    "tags": "奇幻 日常",
     "status": "更新至8集",
     "playlists": {
       "a123_line1": [
@@ -43,7 +46,14 @@
           "/v/baiguiyexingchao1/6az2idxz7.html"
         ]
       ]
-    }
+    },
+    "writer": "今市子",
+    "company": "暂缺",
+    "name_original": "ひゃっきやこうしょう",
+    "name_other": "百鬼夜行抄",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}

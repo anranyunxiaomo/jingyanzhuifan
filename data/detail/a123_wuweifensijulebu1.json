@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_wuweifensijulebu1",
     "name": "雾尾粉丝俱乐部",
-    "cover": "https://i1.a123tv.com/v/0x/wuweifensijulebu1.jpg",
+    "cover": "https://www.hhkan0.com/vod1/vod/cover/20260403/00/19/06/6783fd8df6f4d17fbe93a51741f78521.webp",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "日韩动漫",
     "status": "更新至7集",
     "playlists": {
       "a123_line1": [
@@ -39,7 +41,10 @@
           "/v/wuweifensijulebu1/8z2umaz6.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "稗田宁宁,若山诗音,梶原岳人,广濑裕也,小笠原仁,伊藤彩沙,和泉风花",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

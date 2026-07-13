@@ -2,11 +2,13 @@
   "video": {
     "id": "a123_wuyedeqingxinxuanlv",
     "name": "午夜的倾心旋律",
-    "cover": "https://i1.a123tv.com/v/0x/wuyedeqingxinxuanlv.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260008.jpg",
     "pic": "",
     "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot_arr": [
+      "日韩动漫"
+    ],
+    "tags": "日韩动漫",
     "status": "更新至12集",
     "playlists": {
       "a123_line1": [
@@ -59,7 +61,10 @@
           "/v/wuyedeqingxinxuanlv/4nz3hgwz11.html"
         ]
       ]
-    }
+    },
+    "year": "2026",
+    "writer": "安田陆矢,濑户桃子,大久保瑠美,铃代纱弓,伊藤美来,花泽香菜",
+    "area": "日本"
   },
   "player_vip": "",
   "player_jx": {}

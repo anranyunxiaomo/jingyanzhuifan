@@ -2,11 +2,14 @@
   "video": {
     "id": "a123_jisuchehun3",
     "name": "极速车魂 3",
-    "cover": "https://i1.a123tv.com/v/0x/jisuchehun3.jpg",
+    "cover": "https://cdn.aqdstatic.com:966/age/20260053.jpg",
     "pic": "",
-    "plot": "日韩动漫",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "运动 热血",
+    "plot_arr": [
+      "运动",
+      "热血"
+    ],
+    "tags": "运动 热血",
     "status": "更新至13集",
     "playlists": {
       "a123_line1": [
@@ -63,7 +66,14 @@
           "/v/jisuchehun3/lz13v6z12.html"
         ]
       ]
-    }
+    },
+    "writer": "しげの秀一",
+    "company": "FelixFilm",
+    "name_original": "MFゴースト 3rd Season",
+    "name_other": "燃油车斗魂 第三季 / MF Ghost第三季",
+    "year": 2026,
+    "area": "日本",
+    "type": "TV"
   },
   "player_vip": "",
   "player_jx": {}
