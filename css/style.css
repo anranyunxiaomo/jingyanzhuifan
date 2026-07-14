@@ -60,6 +60,49 @@
   --3d-glow-sakura:  0 0 25px rgba(255, 45, 120, 0.15);
 }
 
+/* 🏮 3D 弥散发光星云背景与宣纸磨砂颗粒纹理系统 */
+.ambient-glow {
+  position: fixed;
+  width: min(650px, 90vw);
+  height: min(650px, 90vw);
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.18;
+  z-index: -2;
+  pointer-events: none;
+  animation: driftGlow 22s infinite alternate ease-in-out;
+}
+.glow-1 {
+  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+  top: -180px;
+  left: -180px;
+}
+.glow-2 {
+  background: radial-gradient(circle, var(--tech-gold) 0%, transparent 70%);
+  bottom: -220px;
+  right: -220px;
+  animation-delay: -6s;
+}
+
+@keyframes driftGlow {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(80px, 60px) scale(1.1) rotate(180deg); }
+  100% { transform: translate(-40px, 90px) scale(0.95) rotate(360deg); }
+}
+
+/* 📜 给全局覆上一层极其温润、写意的物理宣纸纤维微颗粒感 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.016'/%3E%3C/svg%3E");
+  z-index: 99999;
+  pointer-events: none;
+}
+
+
 [v-cloak] {
   display: none !important;
 }
@@ -978,8 +1021,27 @@ body::after {
 .grid-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  gap: 2rem;
+  gap: 2.4rem 2rem; /* 🏮 纵向间隙加宽，为 3D 浮空与错落布局预留充足的呼吸空间 */
 }
+
+/* 🏮 景雁·手绘画轴非对称错落排版系统 (Asymmetric Scroll Offset) */
+/* 静态下使偶数卡片下浮 24px、微旋 0.6°，奇数卡片微旋 -0.6°，打破死板的机械网格，模拟屏风折扇展开的意境流动感！ */
+@media (min-width: 768px) {
+  .grid-list .anime-card:nth-child(even) {
+    margin-top: 28px;
+    margin-bottom: -28px;
+    transform: rotateZ(0.8deg);
+  }
+  .grid-list .anime-card:nth-child(odd) {
+    transform: rotateZ(-0.8deg);
+  }
+  /* 🏮 悬停时归正并凸起 */
+  .grid-list .anime-card:nth-child(even):hover,
+  .grid-list .anime-card:nth-child(odd):hover {
+    transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) rotateZ(0deg) translateZ(15px);
+  }
+}
+
 
 
 
