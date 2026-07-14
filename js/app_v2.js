@@ -74,6 +74,7 @@ new Vue({
     ],
     activeEngineKey: 'default',
     // H5 播放器状态管理
+    iframeTimeoutTimer: null, // iframe 播放超时静默自愈定时器
     dpInstance: null,      // DPlayer 实例
     isIframeMode: false,   // 是否为 Iframe 降级模式
     activeBlobUrl: '',     // 前端重写 M3U8 生成 spacing 的 Blob URL
@@ -1197,6 +1198,10 @@ new Vue({
         this.dpInstance = null;
       }
       this.activePlayUrl = '';
+      if (this.iframeTimeoutTimer) {
+        clearTimeout(this.iframeTimeoutTimer);
+        this.iframeTimeoutTimer = null;
+      }
       if (this.activeBlobUrl) {
         try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
         this.activeBlobUrl = '';
@@ -1397,8 +1402,8 @@ new Vue({
         
         if (this.activeEngineKey === 'default') {
           if (finalTarget.startsWith('age_')) {
-            // 💡 age_ 加密源专线：强制路由到五洲派官方解密播放器，xmflv 无法解析此加密源
-            playUrl = "https://jx.wuzhoupai.com:8443/m3u8/?url=" + finalTarget;
+            // 💡 age_ 加密源专线：强制路由到五洲派官方解密播放器 (使用 vip 接口以调用其播放系统，防直链跨域拦截)
+            playUrl = "https://jx.wuzhoupai.com:8443/vip/?url=" + finalTarget;
             console.log("[SMART ROUTER] Routing age_ token to wuzhoupai.");
           } else {
             // 💡 常规跨域直链专线：一律静默路由至全能的 jx.xmflv.com，完美绕过对方服务器 CORS 同源与防盗链限制！
@@ -1951,6 +1956,18 @@ new Vue({
         this.activePlayUrl = capturedIframeUrl;
         this.stopLoadingAnimation(); // 💡 终极修复：iframe 模式下立即关闭外层缓冲圈，让网页露出来正常播放！
         console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
+
+        // 💡 Iframe 播放哨兵：如果在指定时间内网页依然卡顿（例如发生了解析站内跨域或网络阻塞），
+        // 自动熔断切源重连，绝不给用户添堵，彻底无感化自动寻找可用播放源！
+        if (this.activeLineKey !== 'hkan_line1' && capturedIframeUrl) {
+          const currentSession = this.activeSessionId;
+          this.iframeTimeoutTimer = setTimeout(() => {
+            if (this.activeSessionId === currentSession && this.isIframeMode) {
+              console.warn("[Iframe Monitor] 6.5s timeout sentinel triggered! Activating auto-heal...");
+              this.autoHealIframe();
+            }
+          }, 6500);
+        }
       });
     },
     
@@ -1989,6 +2006,41 @@ new Vue({
     rePlayCurrentEpisode() {
       if (this.activeEpisodeIndex > -1) {
         this.playEpisode(this.activeEpisodeIndex);
+      }
+    },
+
+    // 🏮 全自动无感智能换源熔断系统 (Iframe Silent Meltdown Auto-Heal)
+    autoHealIframe() {
+      const engines = ['default', 'https://jx.xmflv.com/?url=', 'https://jx.jsonplayer.com/?url=', 'https://im1907.top/?jx='];
+      const currentIndex = engines.indexOf(this.activeEngineKey);
+      let nextIndex = currentIndex + 1;
+      
+      if (nextIndex < engines.length) {
+        // ① 还有备用解析引擎：在后台自动递增，执行重试重载 ！！！
+        const nextEngine = engines[nextIndex];
+        console.warn(`[Iframe Auto-Heal] Sentinel triggered. Quietly switching engine from ${this.activeEngineKey} to: ${nextEngine}`);
+        this.activeEngineKey = nextEngine;
+        this.rePlayCurrentEpisode();
+      } else {
+        // ② 所有解析引擎都尝试失败了：重置回 default，并跨常规线路换源 ！！！
+        console.warn("[Iframe Auto-Heal] All engines failed on this line. Swapping play line...");
+        this.activeEngineKey = 'default';
+        
+        const playlists = (this.animeDetail && this.animeDetail.playlists) || {};
+        const availableLineKeys = Object.keys(playlists).filter(key => {
+          return key !== 'anich_m3u8' && playlists[key].length > 0;
+        });
+        
+        const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
+        if (backupLineKey) {
+          console.warn(`[Iframe Auto-Heal] Auto switching play line to: ${backupLineKey}`);
+          this.switchLine(backupLineKey);
+          this.$nextTick(() => {
+            this.playEpisode(this.activeEpisodeIndex);
+          });
+        } else {
+          console.error("[Iframe Auto-Heal] Disaster recovery failure: no more lines or engines available.");
+        }
       }
     },
 
