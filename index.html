@@ -17,7 +17,7 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260714T1133">
+  <link rel="stylesheet" href="css/style.css?v=20260714T1139">
   <script>window.JYZF_VERSION = "20260710T1651";</script>
 </head>
 <body class="loader-active">
@@ -826,11 +826,9 @@
                 下一集
               </button>
             </div>
-            <!-- 极简白金换源/换解析器面板 -->
-            <div class="engine-selector-wrapper" style="display: none !important; align-items: center; gap: 0.8rem; width: 100%; flex-wrap: wrap;">
-              <div style="display: flex; align-items: center; gap: 0.4rem; margin-right: auto;">
-
-
+            <!-- 🏮 极简白金换源/换解析器面板 (高定设计，允许用户手动切源，提升高可用性) -->
+            <div class="engine-selector-wrapper">
+              <div class="engine-select-container">
                 <span class="engine-label">解析引擎:</span>
                 <select class="engine-select" v-model="activeEngineKey" @change="rePlayCurrentEpisode">
                   <option v-for="engine in jxEngines" :key="engine.value" :value="engine.value">
@@ -841,9 +839,6 @@
               <button 
                 class="btn-reset-progress" 
                 @click="forceResetProgressAndReplay" 
-                style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 6px 12px; font-size: 12px; font-weight: 500; border-radius: 6px; border: 1px dashed rgba(242, 140, 159, 0.4); background: rgba(242, 140, 159, 0.08); color: #F28C9F; cursor: pointer; transition: all 0.2s;"
-                onmouseover="this.style.background='rgba(242, 140, 159, 0.16)'; this.style.borderColor='#F28C9F'"
-                onmouseout="this.style.background='rgba(242, 140, 159, 0.08)'; this.style.borderColor='rgba(242, 140, 159, 0.4)'"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px; height: 13px;">
                   <polyline points="1 4 1 10 7 10"/>
@@ -1055,7 +1050,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260714T1133"></script>
+<script src="js/app_v2.js?v=20260714T1139"></script>
 
 </body>
 </html>
