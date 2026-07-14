@@ -701,13 +701,26 @@ body::after {
   background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
   color: white;
   border: 1px solid var(--accent-gold-hover);
-  box-shadow: 0 4px 15px rgba(255, 42, 122, 0.3);
+  box-shadow: 
+    0 4px 12px rgba(255, 45, 120, 0.22), 
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
   font-family: var(--font-family);
+  transform: translateY(0);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-silk);
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 42, 122, 0.45), 0 0 10px rgba(255, 42, 122, 0.2);
+  transform: translateY(-4px) scale(1.03) translateZ(8px);
+  box-shadow: 
+    0 8px 24px rgba(255, 45, 120, 0.35), 
+    0 0 12px rgba(255, 45, 120, 0.18), 
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-gold:active {
+  transform: translateY(2px) scale(0.96) translateZ(-5px);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s;
 }
 
 .banner-dots {
