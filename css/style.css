@@ -90,17 +90,7 @@
   100% { transform: translate(-40px, 90px) scale(0.95) rotate(360deg); }
 }
 
-/* 📜 给全局覆上一层极其温润、写意的物理宣纸纤维微颗粒感 */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.016'/%3E%3C/svg%3E");
-  z-index: 99999;
-  pointer-events: none;
-}
+
 
 /* 🏮 填补集数面板底部空白的国潮禅意装饰留白 */
 .episodes-deco-text {
@@ -154,16 +144,18 @@ body.loader-active {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
-  /* 🏮 景雁·手绘写意淡墨重山与多层流光背景系统 */
+  /* 🏮 景雁·手绘远山、宣纸噪点与弥散发光星云多重组合背景系统 */
   background-image:
     radial-gradient(ellipse at 10% 10%, rgba(255, 45, 120, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
-    /* 🏮 双层矢量写意淡墨远山，以极其微弱的透明度渲染，完美融合粉色底色，并在底部 fixed 固定 */
+    /* 🏮 第三层：平铺宣纸噪点，免去使用 z-index: 99999 的 fixed 伪元素，物理消灭阻碍点击 bug */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.016'/%3E%3C/svg%3E"),
+    /* 🏮 第四层：写意淡墨重山 */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' fill='none'%3E%3Cpath d='M0 300 L0 230 C120 150 220 280 380 180 C500 90 600 230 750 130 C880 40 920 100 1000 50 L1000 300 Z' fill='rgba(255,45,120,0.016)'/%3E%3Cpath d='M0 300 L0 260 C180 210 300 100 480 200 C620 300 760 170 1000 140 L1000 300 Z' fill='rgba(255,45,120,0.012)'/%3E%3C/svg%3E");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: top left, bottom right, bottom left;
-  background-size: 100% 100%, 100% 100%, 100% 220px;
-  background-attachment: scroll, scroll, fixed;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: top left, bottom right, top left, bottom left;
+  background-size: 100% 100%, 100% 100%, 250px 250px, 100% 220px;
+  background-attachment: scroll, scroll, fixed, fixed;
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
