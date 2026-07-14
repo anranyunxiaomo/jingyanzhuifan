@@ -1331,8 +1331,6 @@ body::after {
     grid-template-columns: 1.8fr 1.2fr !important;
     gap: 2.2rem !important;
     align-items: start;
-    perspective: 1600px;
-    transform-style: preserve-3d;
   }
   
   .player-panel {
@@ -1341,7 +1339,7 @@ body::after {
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk);
   }
   .player-panel:hover {
-    transform: translateY(-4px) translateZ(8px) !important;
+    transform: translateY(-4px) !important;
     box-shadow: var(--3d-shadow-hover) !important;
   }
 
@@ -1352,7 +1350,7 @@ body::after {
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk);
   }
   .info-panel:hover {
-    transform: translateY(-4px) translateZ(8px) !important;
+    transform: translateY(-4px) !important;
     box-shadow: var(--3d-shadow-hover) !important;
   }
 
@@ -1372,7 +1370,7 @@ body::after {
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk);
   }
   .episodes-panel:hover {
-    transform: translateY(-4px) translateZ(8px) !important;
+    transform: translateY(-4px) !important;
     box-shadow: var(--3d-shadow-hover) !important;
   }
 }
