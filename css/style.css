@@ -49,6 +49,15 @@
 
   --font-family: 'Noto Serif SC', 'Playfair Display', Georgia, "PingFang SC", serif;
   --font-sans:   'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+
+  /* 🏮 3D 全局物理与景深光影变量 */
+  --3d-perspective:  perspective(1000px);
+  --3d-shadow:       0 16px 36px -12px rgba(255, 45, 120, 0.12),
+                     0 4px 12px -8px rgba(255, 45, 120, 0.08);
+  --3d-shadow-hover: 0 28px 56px -16px rgba(255, 45, 120, 0.22),
+                     0 12px 24px -10px rgba(255, 45, 120, 0.12),
+                     0 0 1px 1px rgba(255, 45, 120, 0.05);
+  --3d-glow-sakura:  0 0 25px rgba(255, 45, 120, 0.15);
 }
 
 [v-cloak] {
@@ -1109,27 +1118,30 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* finesse — card hover：简单的 4px 上移反馈，配合清透粉晶阴影 */
+/* 🏮 3D 晶体悬浮与空间透视 */
 .anime-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 12px 32px -8px rgba(255, 45, 120, 0.18),
-    0 0 0 1px rgba(255, 45, 120, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.98);
-  border-color: rgba(255, 45, 120, 0.18);
-  transition: transform 0.3s var(--ease-silk), box-shadow 0.3s var(--ease-silk);
+  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) translateZ(15px);
+  border-color: rgba(255, 45, 120, 0.3);
+  box-shadow: var(--3d-shadow-hover);
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-silk), border-color 0.3s ease;
 }
 
-/* ⚡ 点击弹性按压下陷 */
+/* 🏮 3D 按压下陷物理回馈 */
 .anime-card:active {
-  transform: translateY(-2px) scale(0.98);
-  box-shadow: 0 4px 12px rgba(255, 45, 120, 0.1);
-  transition: transform 0.1s var(--ease-silk);
+  transform: translateY(-2px) scale(0.96) rotateX(-2deg) rotateY(2deg) translateZ(-8px);
+  box-shadow: 0 4px 12px rgba(255, 45, 120, 0.12);
+  transition: transform 0.15s var(--ease-silk);
 }
 
+
+.anime-card:hover .card-cover-wrapper {
+  transform: translateZ(8px) scale(1.02);
+  box-shadow: 0 8px 24px -8px rgba(255, 45, 120, 0.25);
+  border-color: rgba(255, 45, 120, 0.28);
+}
 
 .anime-card:hover .card-cover {
-  transform: scale(1.06);
+  transform: scale(1.08);
   filter: brightness(1.03) saturate(1.08);
   transition: transform 0.7s var(--ease-silk), filter 0.5s ease;
 }
@@ -1738,33 +1750,38 @@ body::after {
   border: 1px solid var(--glass-border);
   color: var(--text-main);
   padding: 0.55rem 0.2rem;
-  border-radius: 4px;
+  border-radius: 6px; /* 更精致圆角 */
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  box-shadow: 
+    inset 0 -2px 0 rgba(255, 45, 120, 0.08),
+    0 2px 4px rgba(255, 45, 120, 0.02);
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+  transform: translateY(0);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-silk), border-color 0.2s, background-color 0.2s;
   font-family: var(--font-sans);
 }
 
 .ep-btn:hover {
   border-color: var(--accent-gold);
   background: var(--accent-gold-light);
-  transform: translateY(-1px);
+  transform: translateY(-3px) scale(1.04) translateZ(5px);
+  box-shadow: 
+    0 6px 12px rgba(255, 45, 120, 0.12),
+    inset 0 -2px 0 rgba(255, 45, 120, 0.08);
 }
 
 .ep-btn.active {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
-  color: white;
-  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%) !important;
+  color: white !important;
+  border-color: transparent !important;
   font-weight: 700;
   letter-spacing: 0.5px;
+  transform: translateY(1.5px) scale(0.97);
   box-shadow:
-    0 4px 16px rgba(184, 64, 96, 0.35),
-    0 0 0 2px rgba(217, 96, 122, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transform: scale(1.02);
+    inset 0 2px 5px rgba(0, 0, 0, 0.25),
+    0 1px 2px rgba(255, 45, 120, 0.1);
 }
 
 /* ⚡ 闪电极速原生播放源特有古风金边发光 */
@@ -1773,11 +1790,18 @@ body::after {
   background: rgba(226, 109, 128, 0.04);
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    inset 0 -2px 0 rgba(226, 109, 128, 0.2),
+    0 2px 4px rgba(226, 109, 128, 0.02);
 }
 
 .ep-btn.has-real-url:hover {
   background: rgba(226, 109, 128, 0.1) !important;
   border-color: var(--accent-gold);
+  transform: translateY(-3px) scale(1.04) translateZ(5px);
+  box-shadow: 
+    0 6px 12px rgba(226, 109, 128, 0.18),
+    inset 0 -2px 0 rgba(226, 109, 128, 0.2);
 }
 
 /* ⚡ 绿色云端代理加速播放源特有古风绿边发光 */
@@ -1786,11 +1810,18 @@ body::after {
   background: rgba(52, 199, 89, 0.04);
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    inset 0 -2px 0 rgba(52, 199, 89, 0.2),
+    0 2px 4px rgba(52, 199, 89, 0.02);
 }
 
 .ep-btn.has-cache-token:hover {
   background: rgba(52, 199, 89, 0.1) !important;
   border-color: #34c759;
+  transform: translateY(-3px) scale(1.04) translateZ(5px);
+  box-shadow: 
+    0 6px 12px rgba(52, 199, 89, 0.18),
+    inset 0 -2px 0 rgba(52, 199, 89, 0.2);
 }
 
 .lightning-badge.gold {
@@ -3306,26 +3337,41 @@ body.fit-fill iframe {
   gap: 6px;
 }
 .filter-btn {
-  padding: 5px 14px;
-  border-radius: 16px;
-  border: 1.2px solid rgba(255, 45, 120, 0.18);
-  background: transparent;
+  padding: 6px 15px;
+  border-radius: 6px; /* 略带直角，更有印章方正感 */
+  border: 1.2px solid rgba(255, 45, 120, 0.15);
+  background: var(--bg-secondary);
   color: var(--text-muted);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: 
+    inset 0 -2px 0 0 rgba(255, 45, 120, 0.08),
+    0 2px 6px rgba(255, 45, 120, 0.04);
+  transform: translateY(0);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-silk), background-color 0.2s, color 0.2s;
 }
 .filter-btn:hover {
-  background: rgba(255, 45, 120, 0.06);
+  transform: translateY(-3px);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+  box-shadow: 
+    0 6px 12px rgba(255, 45, 120, 0.12),
+    inset 0 -2px 0 0 rgba(255, 45, 120, 0.08);
 }
 .filter-btn.active {
-  background: var(--accent-gold);
-  border-color: transparent;
+  background: var(--accent-gold) !important;
+  border-color: transparent !important;
   color: white !important;
-  box-shadow: 0 3px 10px rgba(255, 45, 120, 0.18);
+  transform: translateY(1.5px);
+  box-shadow: 
+    inset 0 2px 5px rgba(0, 0, 0, 0.25),
+    0 1px 2px rgba(255, 45, 120, 0.08);
+}
+.filter-btn:active {
+  transform: translateY(2.5px) scale(0.96);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s;
 }
 .catalog-sort-group {
   display: flex;
@@ -4217,34 +4263,37 @@ body.fit-fill iframe {
   box-shadow: 0 0 10px rgba(255, 45, 120, 0.3);
 }
 
-/* 🎬 右侧悬浮的高清推荐海报卡片 */
+/* 🎬 右侧悬浮的高清推荐海报卡片 (3D 极感浮空画卷) */
 .hero-right-poster-wrapper {
   position: absolute;
   right: 5rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
+  perspective: 1200px; /* 🏮 3D 物理景深舞台 */
 }
 
 .hero-right-poster {
   width: 175px;
   height: 245px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px; /* 更柔和的高级圆角 */
   border: 2px solid #fff;
-  box-shadow: 
-    0 12px 36px -8px rgba(255, 110, 162, 0.28),
-    0 0 0 1px rgba(255, 110, 162, 0.1);
+  background: var(--bg-card);
+  transform-style: preserve-3d;
+  /* 🏮 默认带 3D 侧向写意倾斜，制造立体插屏感 */
+  transform: rotateY(-16deg) rotateX(6deg) translateZ(0);
+  box-shadow: var(--3d-shadow);
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: transform 0.5s var(--ease-silk), box-shadow 0.5s var(--ease-silk);
 }
 
 .hero-right-poster:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 
-    0 20px 48px -12px rgba(255, 110, 162, 0.42),
-    0 0 0 1px rgba(255, 110, 162, 0.15);
+  /* 🏮 悬停时顺滑向正面回弹，并贴近视口凸显 */
+  transform: scale(1.08) rotateY(0deg) rotateX(0deg) translateZ(30px) translateY(-8px);
+  box-shadow: var(--3d-shadow-hover);
 }
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    finesse §4 — 7:3 商业双栏布局架构 (Grid Portal)
