@@ -81,6 +81,7 @@ new Vue({
     anichRequestCount: 0,  // AniCh 线路播放累积计数，用于额度预警
     
     // 追番收藏夹
+    anichMap: {}, // 外部 anich_xxxxx 映射到 age 官方数字 ID 字典
     favorites: [],
     // 本地扁平动漫库保底
     localAnimeCatalog: [],
@@ -480,6 +481,17 @@ new Vue({
   },
   
   mounted() {
+    // 🏮 异步加载 anich_map 外部 ID 映射表，加载成功后自动校准刷新路由，防 404 挂死
+    axios.get('data/anich_map.json?_t=' + new Date().getTime())
+      .then(res => {
+        this.anichMap = res.data || {};
+        console.log(`[MAPPING LOAD] Successfully loaded anich_map.json with ${Object.keys(this.anichMap).length} items.`);
+        this.handleHashRoute();
+      })
+      .catch(err => {
+        console.warn("[MAPPING LOAD] Failed to fetch data/anich_map.json:", err);
+      });
+
     // 首次渲染图标
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
@@ -1001,6 +1013,18 @@ new Vue({
     selectAnime(aid, skipHashUpdate = false) {
       if (!aid) return;
       if (this.isTransitioning) return;
+
+      // 💡 外部 ID 映射自愈：若为 anich_ 等第三方 ID，在此将其重写翻译为真正的官方数字 ID
+      if (this.anichMap && this.anichMap[aid]) {
+        const translatedId = this.anichMap[aid];
+        console.log(`[MAPPING RESOLVE] Translated external ID ${aid} to official ID ${translatedId}`);
+        aid = translatedId;
+        // 如果是从 hash 变化进入的 (skipHashUpdate === true)，强行把当前 hash 重写为正确 ID 形式，校准地址栏
+        if (skipHashUpdate === true) {
+          window.location.hash = '#/detail/' + aid;
+          return;
+        }
+      }
       
       // 💡 智能链接/非纯数字提炼器：如果用户粘贴的是包含 ID 的链接，自动提取出纯数字 (排除 anich_ 开头的独有 ID)
       if (typeof aid === 'string' && !/^\d+$/.test(aid) && !aid.startsWith('anich_') && !aid.startsWith('a123_')) {
