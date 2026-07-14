@@ -1256,26 +1256,33 @@ body::after {
   }
 }
 
-/* 播放器面板 */
+/* 播放器面板 (3D 浮空控制舱) */
 .player-panel {
   grid-column: 1 / 2;
   background: var(--glass-bg);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
-  border-radius: 4px;
+  border-top: 3px solid var(--accent-gold); /* 🏮 流金顶描线 */
+  border-radius: 12px; /* 润泽高级圆角 */
   padding: 1.5rem;
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--3d-shadow);
+  transform-style: preserve-3d;
+  perspective: 1200px;
 }
-
 
 .player-wrapper {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 2px;
+  background: #080506;
+  border-radius: 8px; /* 嵌入式精致圆角 */
+  border: 1px solid rgba(255, 45, 120, 0.22); /* 🏮 粉晶显像环绕边线 */
   overflow: hidden;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+  box-shadow: 
+    inset 0 0 40px rgba(0, 0, 0, 0.95),
+    0 12px 32px -12px rgba(0, 0, 0, 0.5),
+    0 0 1px 1px rgba(255, 45, 120, 0.05);
 }
+
 
 .player-placeholder {
   position: absolute;
@@ -1716,27 +1723,45 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(226, 109, 128, 0.04);
-  border: 1px solid transparent;
+  background: rgba(255, 45, 120, 0.03);
+  border: 1.2px solid rgba(255, 45, 120, 0.08);
   color: var(--text-muted);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 6px; /* 精致小圆角 */
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  box-shadow: 
+    inset 0 -2px 0 rgba(255, 45, 120, 0.05),
+    0 2px 4px rgba(255, 45, 120, 0.01);
+  transform: translateY(0);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-silk), border-color 0.2s, background-color 0.2s;
 }
 
 .line-tab-btn:hover {
-  background: rgba(226, 109, 128, 0.08);
+  background: rgba(255, 45, 120, 0.06);
+  border-color: rgba(255, 45, 120, 0.2);
   color: var(--text-main);
+  transform: translateY(-2.5px) translateZ(4px);
+  box-shadow: 
+    0 5px 10px rgba(255, 45, 120, 0.08),
+    inset 0 -2px 0 rgba(255, 45, 120, 0.05);
 }
 
 .line-tab-btn.active {
-  background: white;
-  border-color: var(--accent-gold);
-  color: var(--text-main);
-  box-shadow: 0 4px 15px rgba(226, 109, 128, 0.08);
+  background: #FFFFFF !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
+  transform: translateY(1.5px);
+  box-shadow: 
+    inset 0 1px 3px rgba(255, 45, 120, 0.08),
+    0 0 12px rgba(255, 45, 120, 0.15);
+}
+
+.line-tab-btn:active {
+  transform: translateY(2.5px) scale(0.96);
+  box-shadow: inset 0 2px 5px rgba(255, 45, 120, 0.2);
+  transition: transform 0.1s;
 }
 
 .vip-badge {
