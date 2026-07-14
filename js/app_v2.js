@@ -1253,11 +1253,28 @@ new Vue({
           realUrl = resolved; // 💡 强行设为直链触发原生 DPlayer 播放
         } else {
           console.error("[AniCh Resolver] Failed to resolve URL from placeholder");
-          // 💡 降级拦截防残留：AniCh 线路如果解析直链失败，在物理上就没有任何可用源。
-          // 我们直接将其拦截并友好提示用户切换其它正常播放线路，彻底防止其降级到 iframe 加载 anich_placeholder 的 404 挂死！
-          this.isIframeMode = false;
-          this.activePlayUrl = '';
-          alert("【播放提示】当前 AniCh 视频直链解析失败，请尝试在上方切换为其它常规播放线路（如：非凡、暴风等常规源）！");
+          // 💡 强力播放自愈：当专属直链线路解析失败时（如服务器500或新番未上线数据空缺），自动探测备用常规源并执行秒级无缝切换
+          let backupLineKey = '';
+          if (this.animeDetail && this.animeDetail.playlists) {
+            for (let lKey of Object.keys(this.animeDetail.playlists)) {
+              if (lKey !== 'anich_m3u8' && this.animeDetail.playlists[lKey].length > 0) {
+                backupLineKey = lKey;
+                break;
+              }
+            }
+          }
+          if (backupLineKey) {
+            console.log(`[AniCh Resolver] Auto-healing: switching to backup line ${backupLineKey}...`);
+            this.switchLine(backupLineKey);
+            this.$nextTick(() => {
+              this.playEpisode(0);
+            });
+            alert("【播放提示】当前专属线路视频源未就绪，已为您自动切换到备用播放源！");
+          } else {
+            this.isIframeMode = false;
+            this.activePlayUrl = '';
+            alert("【播放提示】当前专属线路视频源未就绪，且无其它备用线路！");
+          }
           return;
         }
       }
