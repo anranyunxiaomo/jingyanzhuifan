@@ -1900,36 +1900,8 @@ new Vue({
                   dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
                 }
                 
-                // 💡 终极跨线路自愈：将当前线路标记为失败，寻找其他尚未尝试过的备用直链
-                console.warn(`[DPLAYER FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}`);
-                this._triedLines.add(this.activeLineKey);
-                
-                const rawPlayUrl = (this.animeDetail && this.animeDetail.video && this.animeDetail.video.playlists) || (this.animeDetail && this.animeDetail.player_url) || {};
-                const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
-                  const list = rawPlayUrl[key];
-                  return list && list.length > 0;
-                });
-                
-                // 找到一个尚未尝试过的备用线路
-                const backupLineKey = availableLineKeys.find(k => !this._triedLines.has(k));
-                
-                if (backupLineKey) {
-                  console.log(`[DPlayer Self-Healing] Auto switching from ${this.activeLineKey} to backup line: ${backupLineKey}`);
-                  if (this.dpInstance) {
-                    this.dpInstance.notice(`当前播放源加载超时，正在为您自动切换至备用高速源...`, 4000);
-                  }
-                  
-                  const currentEpIdx = this.activeEpisodeIndex;
-                  this.activeLineKey = backupLineKey;
-                  
-                  setTimeout(() => {
-                    this.playEpisode(currentEpIdx, true);
-                  }, 600);
-                  return;
-                }
-                
-                // 💡 所有常规直链备用线路均失败，自动静默降级为“纯净 Iframe”解析引擎播放！
-                console.warn("[DPLAYER FAILBACK] All direct lines failed. Quietly falling back to Iframe mode...");
+                // 💡 终极自愈降级：原地降级为该线路的 Iframe 解析引擎播放，绝不擅自跨线路切换播放源以保护代理额度！
+                console.warn(`[DPLAYER FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}. Falling back to Iframe mode...`);
                 this._hasFallenBack = true;
                 if (this.dpInstance) {
                   try {
@@ -1960,15 +1932,8 @@ new Vue({
                 }
               } catch(e) {}
 
-              // 保险③：8 秒超时保险——HLS.js 有时静默重试从不触发 fatal，靠此兜底
-              const fallbackTimer = setTimeout(() => {
-                if (!playbackStarted) {
-                  fallbackToIframe('8s timeout, no playback detected');
-                }
-              }, 8000);
-              // timeupdate 里设置了 playbackStarted = true 时需要清除计时器
+              // 💡 废除 8 秒强制超时切源，允许 Hls.js 进行正常的网络重试缓冲，保障弱网播放体验
               dp.on('timeupdate', () => {
-                if (playbackStarted && fallbackTimer) clearTimeout(fallbackTimer);
                 
                 // 💡 双重保障：只要视频开始走字正常播放，就立刻隐藏任何因非致命警告被错误弹出的“视频加载失败”遮罩层
                 const dpEl = document.querySelector('.dplayer');
@@ -1997,22 +1962,12 @@ new Vue({
 
             console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
           } catch(e) {
-            console.error("[DPlayer Init Failed] Triggering Self-Healing:", e);
-             const rawPlayUrl = (this.animeDetail && this.animeDetail.video && this.animeDetail.video.playlists) || (this.animeDetail && this.animeDetail.player_url) || {};
-            const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
-              const list = rawPlayUrl[key];
-              return list && list.length > 0;
+            console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
+            this.isIframeMode = true;
+            this.$nextTick(() => {
+              this.activePlayUrl = playUrl;
             });
-            const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
-            if (backupLineKey) {
-              const currentEpIdx = this.activeEpisodeIndex;
-              this.activeLineKey = backupLineKey;
-              setTimeout(() => {
-                this.playEpisode(currentEpIdx);
-              }, 600);
-              return;
-            }
-            alert("DPlayer 播放器初始化失败，请尝试刷新页面。");
+          }
           }
           }); // 第二层 $nextTick 结束
         }); // 第一层 $nextTick 结束
