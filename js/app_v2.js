@@ -1510,9 +1510,16 @@ new Vue({
       this.activeSessionId = Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       this.lastLogProgressTime = 0;
 
-      // 💡 智能直连判定：如果播放链接本身就是常规的 M3U8/MP4 直链，我们直接将其标记为 finalRealUrl！
-      // 强行让其进入 DPlayer 原生轨道秒开，彻底解决外部 iframe 解析站卡顿与广告的痛点！
-      let finalRealUrl = realUrl;
+      // 💡 检测当前浏览器是否原生支持直接播放 M3U8（如移动端微信、Safari、大部分手机和 iPad 浏览器等）
+      const testVideo = document.createElement('video');
+      const isNativeHls = !!(testVideo.canPlayType('application/x-mpegURL') || testVideo.canPlayType('application/vnd.apple.mpegurl'));
+
+      // 💡 智能直连判定规则与额度节约策略：
+      // 1. 如果是支持原生 HLS 的设备（移动端/Safari/iPad），直接放行直链 m3u8（video.src 直连，0跨域阻碍且不消耗代理额度）。
+      // 2. 如果是 PC 端，由于浏览器同源策略（CORS），若使用 ArtPlayer 直连则必须每次拉取 jingyanff.xyz 代理重写。
+      //    为了极大地保护用户的 Worker 免费额度，对于常规采集站线路（非凡、暴风等），我们让 PC 端直接走 iframe 模式播放。
+      //    这样常规采集线路在 PC 端不需要发送任何 m3u8 代理请求，额度消耗直接降到 0！
+      // 3. 仅有特定的特色解密线路（anich_m3u8）允许在 PC 端尝试直连（代理）。
       const isDirectUrl = epToken && (
         epToken.startsWith('http://') || 
         epToken.startsWith('https://') || 
@@ -1522,10 +1529,19 @@ new Vue({
         epToken.includes('/mp4')
       );
 
+      let allowDirectPlay = false;
       if (isDirectUrl && !epToken.startsWith('age_')) {
-        finalRealUrl = epToken;
+        if (isNativeHls) {
+          allowDirectPlay = true;
+        } else if (this.activeLineKey === 'anich_m3u8') {
+          allowDirectPlay = true;
+        }
       }
 
+      let finalRealUrl = "";
+      if (allowDirectPlay) {
+        finalRealUrl = realUrl ? realUrl : epToken;
+      }
 
       // 💡 仅当 finalRealUrl 存在且不是合法的 http 播放网址时，才清空它以走默认解析
       if (finalRealUrl && !finalRealUrl.startsWith('http://') && !finalRealUrl.startsWith('https://') && !finalRealUrl.startsWith('blob:')) {
@@ -1554,8 +1570,8 @@ new Vue({
         // ② 如果是真正干净、活着的常规 M3U8/MP4 视频直链：
         else {
           const isM3u8OrMp4 = urlLower.includes('.m3u8') || urlLower.includes('/m3u8') || urlLower.includes('.mp4') || urlLower.includes('/mp4') || cleanUrl.startsWith('blob:');
-          if (isM3u8OrMp4) {
-            finalRealUrl = cleanUrl; // 强行放行直连，不走 iframe 降级！
+          if (isM3u8OrMp4 && allowDirectPlay) { // 💡 仅在允许直接播放时才放行直连
+            finalRealUrl = cleanUrl; 
             console.log(`[PROACTIVE ROUTER] Clean direct-stream active: ${cleanUrl}. Routing to DPlayer.`);
           }
         }
