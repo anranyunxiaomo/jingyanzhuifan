@@ -1763,7 +1763,18 @@ new Vue({
                       maxBufferSize: 80 * 1024 * 1024,
                       maxBufferHole: 0.5,
                       lowLatencyMode: false,
-                      appendErrorMaxRetry: 5
+                      appendErrorMaxRetry: 5,
+                      // 💡 终极劫持：对 Hls.js 所有的 XHR 请求进行拦截并增加代理，彻底解决多级嵌套子 m3u8 与 AES 加密 Key 的跨域加载问题
+                      xhrSetup: function (xhr, url) {
+                        const urlLower = url.toLowerCase();
+                        // 仅代理配置文件和密钥文件，视频流 TS 分片直接直连放行以极度节省额度
+                        if (urlLower.includes('.m3u8') || urlLower.includes('.key') || urlLower.includes('/m3u8') || urlLower.includes('/key')) {
+                          if (!url.includes('jingyanff.xyz')) {
+                            const proxiedUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent(url);
+                            xhr.open('GET', proxiedUrl, true);
+                          }
+                        }
+                      }
                     });
                     hls.loadSource(url);
                     hls.attachMedia(video);
