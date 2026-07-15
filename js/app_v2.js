@@ -1722,8 +1722,8 @@ new Vue({
               aspectRatio: true,
               setting: true,
               pip: true,
-              fullscreen: false,  // 💡 关闭原生 API 全屏（被祖先 perspective/transform 拦截无效）
-              fullscreenWeb: true,  // 💡 启用 ArtPlayer CSS 网页全屏，真正撑满整个浏览器视口
+              fullscreen: false,   // 关闭原生 API 全屏（被祖先 transform 拦截无效）
+              fullscreenWeb: false, // 💡 关闭 ArtPlayer 自带 fullscreenWeb，改由我们的 JS 内联样式全屏接管（更可靠）
               // 💡 关闭不需要的内置功能（☢️截图、翻转、锁屏等默认控件）
               screenshot: false,
               flip: false,
@@ -1769,8 +1769,28 @@ new Vue({
                   }
                 }
               },
-              controls: this.hasNextEpisode ? [
+              controls: [
+                // 全屏按钮（触发我们的 JS 内联样式全屏，不依赖 ArtPlayer 内置 fullscreenWeb）
                 {
+                  name: 'jyzf-fullscreen',
+                  position: 'right',
+                  index: 20,
+                  html: `
+                    <div style="display:inline-flex;align-items:center;gap:3px;cursor:pointer;opacity:0.85;color:#fff;" title="全屏">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                      </svg>
+                    </div>
+                  `,
+                  tooltip: '全屏',
+                  click: () => {
+                    this.toggleWebFullscreen();
+                  }
+                },
+                // 下一集按钮（仅在有下一集时有意义，始终注册但可设空）
+                ...(this.hasNextEpisode ? [{
                   name: 'next-episode',
                   position: 'right',
                   index: 10,
@@ -1789,8 +1809,8 @@ new Vue({
                   click: () => {
                     this.playNextEpisode();
                   }
-                }
-              ] : []
+                }] : [])
+              ]
             });
 
             this.dpInstance = dp;
@@ -2371,21 +2391,52 @@ new Vue({
 
     // 💡 景雁全局网页全屏控制方法（ArtPlayer CSS 网页全屏升级版：完美绕过 perspective/transform 对原生 API 的阻断）
     toggleWebFullscreen() {
-      // 💡 直链播放模式：优先使用 ArtPlayer 自带的 CSS 网页全屏（fullscreenWeb）
-      // 原因：播放器祖先链上存在 perspective/transform 属性，浏览器规范会静默拦截子元素的 requestFullscreen() 调用
-      // ArtPlayer 的 fullscreenWeb 使用纯 CSS 定位方案（fixed: 0/0/0/0, z-index 极高），完全不依赖原生 API，跨端完美可靠
+      this.isWebFullscreen = !this.isWebFullscreen;
+
+      // ─── ArtPlayer 直链模式 ─────────────────────────────────────
+      // 不使用 ArtPlayer 自带的 fullscreenWeb（其内部 CSS 会被 aspect-ratio 等限制影响）
+      // 直接在 #dplayer 上用 JS 内联样式强制 position:fixed 全屏（最高优先级，不可被任何 CSS 覆盖）
       if (!this.isIframeMode && this.dpInstance) {
-        this.dpInstance.fullscreenWeb = !this.dpInstance.fullscreenWeb;
-        // 同步 Vue 状态，使退出全屏按钮能正确响应
-        this.isWebFullscreen = this.dpInstance.fullscreenWeb;
+        const dplayerEl = document.getElementById('dplayer');
+        const header = document.querySelector('.app-header');
+
+        if (this.isWebFullscreen) {
+          // ① 把 #dplayer 提升为 fixed 全屏层
+          if (dplayerEl) {
+            dplayerEl.style.cssText = [
+              'position: fixed',
+              'top: 0',
+              'left: 0',
+              'width: 100vw',
+              'height: 100vh',
+              'height: 100dvh',
+              'z-index: 2147483647',
+              'background: #000',
+              'border-radius: 0',
+              'margin: 0',
+              'padding: 0',
+            ].join(' !important; ') + ' !important;';
+          }
+          // ② 隐藏页头，防止 z-index 遮挡
+          if (header) header.style.setProperty('z-index', '0', 'important');
+          document.body.style.setProperty('overflow', 'hidden', 'important');
+        } else {
+          // 退出全屏：还原所有内联样式
+          if (dplayerEl) dplayerEl.style.cssText = '';
+          if (header) header.style.removeProperty('z-index');
+          document.body.style.removeProperty('overflow');
+        }
+
+        // ③ 通知 ArtPlayer 重新计算尺寸（关键：否则画面还是旧尺寸）
+        this.$nextTick(() => {
+          try { this.dpInstance.resize(); } catch(e) {}
+        });
         return;
       }
 
-      // 💡 Iframe 模式下，采用 CSS position: static 穿透的纯净网页全屏方案（保持原逻辑不变）
+      // ─── Iframe 降级模式 ────────────────────────────────────────
       const innerContainer = document.querySelector('.player-container-inner');
       if (!innerContainer) return;
-
-      this.isWebFullscreen = !this.isWebFullscreen;
 
       try {
         if (this.isWebFullscreen) {
@@ -2395,26 +2446,16 @@ new Vue({
             innerContainer.webkitRequestFullscreen();
           }
         } else {
-          const isNativeFs = !!(document.fullscreenElement || 
-                               document.webkitFullscreenElement || 
-                               document.mozFullScreenElement || 
-                               document.msFullscreenElement);
+          const isNativeFs = !!(document.fullscreenElement ||
+                               document.webkitFullscreenElement ||
+                               document.mozFullScreenElement);
           if (isNativeFs) {
-            if (document.exitFullscreen) {
-              document.exitFullscreen().catch(() => {});
-            } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-            }
+            if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
           }
         }
       } catch (err) {
-        console.warn("[Fullscreen] Iframe mode hardware fullscreen failed, CSS fullscreen active:", err);
-      }
-
-      if (this.dpInstance) {
-        this.$nextTick(() => {
-          try { this.dpInstance.resize(); } catch(e) {}
-        });
+        console.warn('[Fullscreen] Iframe fullscreen failed:', err);
       }
     },
 
