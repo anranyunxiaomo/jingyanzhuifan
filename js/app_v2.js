@@ -1724,7 +1724,19 @@ new Vue({
               pip: true,
               fullscreen: false,  // 💡 关闭原生 API 全屏（被祖先 perspective/transform 拦截无效）
               fullscreenWeb: true,  // 💡 启用 ArtPlayer CSS 网页全屏，真正撑满整个浏览器视口
+              // 💡 关闭不需要的内置功能（☢️截图、翻转、锁屏等默认控件）
+              screenshot: false,
+              flip: false,
+              lock: false,
+              autoOrientation: false,
+              airplay: false,
               theme: '#f28c9f', // 绯桃粉主色调
+              cssVar: {
+                '--art-theme': '#f28c9f',
+                '--art-progress-height': '4px',
+                '--art-indicator-size': '14px',
+                '--art-control-height': '50px',
+              },
               moreVideoAttr: {
                 referrerpolicy: 'no-referrer',
                 preload: 'auto'

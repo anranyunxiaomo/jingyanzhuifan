@@ -4764,3 +4764,126 @@ body.art-fullscreen-web-active .banner-container {
 }
 
 
+
+/* ==========================================================================
+   🎬 ArtPlayer 播放器皮肤深度定制 — 景雁动漫专属视觉主题
+   ========================================================================== */
+
+/* ── 隐藏 ArtPlayer 默认不需要的控制按钮（☢️截图、翻转、AirPlay等丑控件）── */
+.art-control-screenshot,
+.art-control-flip,
+.art-control-airplay,
+.art-control-lock {
+  display: none !important;
+}
+
+/* ── 控制栏整体：渐变遮罩磨砂玻璃效果 ── */
+.art-bottom {
+  background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 70%, transparent 100%) !important;
+  padding: 0 14px 10px !important;
+}
+
+/* ── 进度条：更粗更显眼，主题粉色高亮 ── */
+.art-progress {
+  height: 4px !important;
+  margin-bottom: 8px !important;
+  transition: height 0.15s ease !important;
+}
+.art-progress:hover {
+  height: 6px !important;
+}
+.art-progress-played {
+  background: #f28c9f !important;
+}
+.art-progress-loaded {
+  background: rgba(242, 140, 159, 0.35) !important;
+}
+.art-progress .art-progress-indicator {
+  background: #f28c9f !important;
+  box-shadow: 0 0 8px rgba(242, 140, 159, 0.7) !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* ── 控制按钮：统一白色，hover 时粉色光晕 ── */
+.art-controls svg,
+.art-control svg {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.2s ease, filter 0.2s ease, transform 0.2s ease !important;
+}
+.art-control:hover svg {
+  color: #f28c9f !important;
+  filter: drop-shadow(0 0 6px rgba(242, 140, 159, 0.6)) !important;
+  transform: scale(1.1) !important;
+}
+
+/* ── 时间数字：等宽字体，高可读性 ── */
+.art-control-time {
+  font-family: 'SF Mono', 'Menlo', monospace !important;
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── 音量条：主题色 ── */
+.art-volume-panel .art-volume-current {
+  background: #f28c9f !important;
+}
+
+/* ── 设置面板：暗色玻璃面板 ── */
+.art-settings {
+  background: rgba(12, 8, 18, 0.93) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(242, 140, 159, 0.18) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.65) !important;
+}
+.art-setting-item:hover {
+  background: rgba(242, 140, 159, 0.1) !important;
+  color: #f28c9f !important;
+}
+
+/* ── Notice 提示条：粉色左描线 ── */
+.art-notice-inner {
+  background: rgba(12, 8, 18, 0.88) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-left: 3px solid #f28c9f !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* ── 加载转圈：粉色主题 ── */
+.art-loading::after {
+  border-color: rgba(242, 140, 159, 0.2) !important;
+  border-top-color: #f28c9f !important;
+}
+
+/* ── Poster 背景（TV 图标底色）：暗紫渐变替代纯黑 ── */
+.art-poster {
+  background: linear-gradient(135deg, #080412 0%, #11071c 60%, #180b24 100%) !important;
+}
+
+/* ── 中央播放状态图标：粉色光晕 ── */
+.art-state svg {
+  color: rgba(242, 140, 159, 0.9) !important;
+  filter: drop-shadow(0 0 14px rgba(242, 140, 159, 0.5)) !important;
+}
+
+/* ── Tooltip 气泡：精致暗玻璃 ── */
+.art-tip {
+  background: rgba(12, 8, 18, 0.88) !important;
+  border: 1px solid rgba(242, 140, 159, 0.2) !important;
+  border-radius: 5px !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 11px !important;
+}
+
+/* ── 自定义"下一集"按钮 hover 变粉 ── */
+.art-control[data-name="next-episode"] > div {
+  transition: color 0.2s ease !important;
+}
+.art-control[data-name="next-episode"]:hover > div {
+  color: #f28c9f !important;
+}
