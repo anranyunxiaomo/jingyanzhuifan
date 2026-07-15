@@ -1450,7 +1450,10 @@ new Vue({
       }
       
       // 💡 无论 realUrl 是否有值，我们都必须把 playUrl 拼装出来，作为 DPlayer 原生播放失败或被 CORS 拦截时的 iframe 降级退路！！！
-      const targetUrlToResolve = realUrl ? realUrl : epToken;
+      // 💡 关键路由修复：iframe 降级目标优先用原始 epToken（如果是 age_ 则交给 wuzhoupai 服务端解密）
+      // 只有 epToken 本身是直链（非 age_ 开头）时才用 realUrl 作为目标
+      // 原因：realUrl 是预解析直链，丢给 jx.xmflv.com 会导致 Hls.js 直连 CDN → CORS 403
+      const targetUrlToResolve = (epToken && epToken.startsWith('age_')) ? epToken : (realUrl || epToken);
       
       if (isVip) {
         // 如果是官方加密/VIP线路，必须强行使用 AGE 合作官方解析源
