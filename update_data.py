@@ -472,55 +472,105 @@ def merge_cms_into_local_playlists(local_playlists, cms_key, cms_eps):
 
 def calculate_uptodate(video):
     """
-    根据 video 数据结构中的 playlists，智能计算并生成最精准的 UpToDate 集数文字
+    根据 video 数据结构精准计算 UpToDate 集数文字。
+
+    优先级策略：
+    1. 标准 AGE 动漫（8位数字 20xxxxxx）：100% 优先信任官方 uptodate 字段（精准集数）
+       - AGE API 中 status="连载"，uptodate="第03集" 才是真正的集数
+       - 防止 hkan/a123 playlist 虚高集数污染
+    2. 非标准动漫（第三方采集源 hkan/a123 等）：以 playlist 最大集数为准
+       - 但用 uptodate 字段作为上限截断，防止采集源预置集数虚高
     """
-    # 💡 黄金对齐：如果是标准的八位数字 AGE 连载动漫，直接强制信任官方本身的更新状态文本！
-    # 彻底隔离第三方采集网（如好好看、非凡等）因为发布预告或错放其他季，导致刚开播新番被污染显示为“更新至12集”的恶性 Bug！
     aid_str = str(video.get("id", ""))
     is_standard_age = aid_str.isdigit() and len(aid_str) == 8 and aid_str.startswith("20")
+
+    # ─── 策略 1：标准 AGE 动漫，绝对信任官方 uptodate 字段 ───────────────────────
     if is_standard_age:
-        official_status = video.get("status") or video.get("uptodate")
-        if official_status and ("集" in official_status or "更新" in official_status or "第" in official_status) and "完结" not in official_status:
-            m = re.search(r'\d+', official_status)
+        # AGE API 中 uptodate 是最权威的集数来源（如"第03集"、"第12集"）
+        # status 字段只有"连载"/"完结"，不含精准集数，不能用于计算集数
+        uptodate = video.get("uptodate") or ""
+        if uptodate and uptodate not in ("更新中", "连载", "未播放", ""):
+            m = re.search(r"\d+", uptodate)
             if m:
                 return f"更新至第{int(m.group()):02d}集"
-            return official_status
+            return uptodate
+
+        # uptodate 为空或无效时，看 status 是否包含数字（如"更新至12集"的旧格式）
+        status = video.get("status") or ""
+        if status and "完结" not in status and status not in ("连载", "更新中", "未播放", ""):
+            m = re.search(r"\d+", status)
+            if m:
+                return f"更新至第{int(m.group()):02d}集"
+
+        # uptodate 和 status 都无数字时，从 AGE 自带线路里取集数（排除第三方污染线路）
+        playlists = video.get("playlists", {})
+        if playlists and isinstance(playlists, dict):
+            age_keys = [k for k in playlists if k not in ("hkan_line1", "hkan_line2", "a123_line1")]
+            target = {k: playlists[k] for k in age_keys} if age_keys else playlists
+            max_num = 0
+            max_label = ""
+            for pkey, eps in target.items():
+                if not isinstance(eps, list):
+                    continue
+                for ep in eps:
+                    if isinstance(ep, list) and ep:
+                        m = re.search(r"\d+", str(ep[0]).strip())
+                        if m:
+                            n = int(m.group())
+                            if n > max_num:
+                                max_num = n
+                                max_label = str(ep[0]).strip()
+            if max_label:
+                m2 = re.search(r"\d+", max_label)
+                if m2:
+                    return f"更新至第{int(m2.group()):02d}集"
+
+        return "连载中"
+
+    # ─── 策略 2：非标准动漫（hkan / a123 等），playlist 集数为准 ─────────────────
+    # 同时用 uptodate 字段作为上限截断，防止采集源预置集数虚高
+    uptodate_raw = video.get("uptodate") or ""
+    uptodate_cap = 0
+    if uptodate_raw:
+        m = re.search(r"\d+", uptodate_raw)
+        if m:
+            uptodate_cap = int(m.group())
 
     playlists = video.get("playlists", {})
     if not playlists or not isinstance(playlists, dict):
-        return video.get("uptodate") or "更新中"
-        
+        return uptodate_raw or video.get("status") or "更新中"
+
     max_ep_num = 0
     max_ep_label = ""
-    
-    # 统计所有线路中的最大集数
+
     for pkey, eps in playlists.items():
         if not isinstance(eps, list):
             continue
         for ep in eps:
             if isinstance(ep, list) and len(ep) >= 1:
                 label = str(ep[0]).strip()
-                # 尝试从 "第03集"、"第12集" 等字眼提取出数字
-                m = re.search(r'\d+', label)
+                m = re.search(r"\d+", label)
                 if m:
                     num = int(m.group())
+                    # 💡 关键截断：playlist 集数不得超过 uptodate 上限，防止预置虚高
+                    if uptodate_cap > 0 and num > uptodate_cap:
+                        continue
                     if num > max_ep_num:
                         max_ep_num = num
                         max_ep_label = label
                 else:
                     if not max_ep_label:
                         max_ep_label = label
-                        
+
     if max_ep_label:
         if not max_ep_label.startswith("更新至"):
-            m = re.search(r'\d+', max_ep_label)
+            m = re.search(r"\d+", max_ep_label)
             if m:
                 return f"更新至第{int(m.group()):02d}集"
             return f"更新至{max_ep_label}"
         return max_ep_label
-        
-    return video.get("uptodate") or "更新中"
 
+    return uptodate_raw or video.get("status") or "更新中"
 
 def fetch_api_base():
     """获取最新的 API 域名配置"""
