@@ -1213,15 +1213,8 @@ async def main_async():
     except Exception as e:
         print(f"[A123TV INTEGRATION ERROR] Failed to run a123_crawler.py: {e}\n")
 
-    # 💡 触发 好好看日本分类 爬取与对齐合并脚本，增量注入好好看高清播放源
-    print("\n[HHKAN INTEGRATION] Triggering hhkan category crawler and data alignment...")
-    try:
-        import subprocess
-        crawler_path = os.path.join(BASE_DIR, "scripts", "sync_from_hhkan_category.py")
-        subprocess.run([sys.executable, crawler_path], check=True)
-        print("[HHKAN INTEGRATION] Successfully integrated HHKAN data!\n")
-    except Exception as e:
-        print(f"[HHKAN INTEGRATION ERROR] Failed to run sync_from_hhkan_category.py: {e}\n")
+
+
 
     aids_to_fetch = {}
     recently_updated_aids = set()

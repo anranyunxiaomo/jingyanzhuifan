@@ -256,7 +256,7 @@ new Vue({
       const labelArr = this.animeDetail.player_label_arr || {};
       
       // 合法可播放的常规 M3U8 H5 线路白名单 (包含 A123 极速源与好好看黄金线)
-      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1', 'hkan_line1'];
+      const ALLOWED_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
       
       let lines = [];
       
@@ -282,7 +282,6 @@ new Vue({
               if (!isVip || hasRealUrl || forceAllowAll) {
                 let lineTitle = labelArr[key] || key;
                 if (key === 'a123_line1') lineTitle = 'A123 极速源';
-                if (key === 'hkan_line1') lineTitle = '好好看';
                 if (key === 'xigua') lineTitle = '官方直连源';
                 result.push({
                   key: key,
@@ -1467,15 +1466,12 @@ new Vue({
         // AniCh 直链线路：直接播放，不套解析站
         playUrl = targetUrlToResolve;
         console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
-      } else if (this.activeLineKey === 'hkan_line1') {
-        // 💡 好好看黄金主线：直连官方播放网页，结合 index.html 中的 Sandbox 安全沙箱与黑色遮罩屏蔽，完美抹除广告弹窗与周围侧边栏！
-        playUrl = "https://www.hhkan0.com" + (epToken.startsWith('/play/') ? epToken : targetUrlToResolve.replace("https://www.hhkan0.com", ""));
-        console.log("[SMART ROUTER] Routing hkan_line1 directly to official page under sandboxed shield.");
       } else {
         // 如果是常规 M3U8 采集线路 (非凡、暴风、无尽、计算云、红牛等)
         let finalTarget = targetUrlToResolve;
-        if (finalTarget && finalTarget.startsWith('/play/')) {
-          finalTarget = "https://www.hhkan0.com" + finalTarget;
+        if (finalTarget && finalTarget.startsWith('/play/') && !finalTarget.startsWith('http')) {
+          // 相对路径兜底（不再依赖 hkan 域名）
+          finalTarget = "https://jx.xmflv.com/?url=" + finalTarget;
         }
         
         if (this.activeEngineKey === 'default') {
@@ -1948,7 +1944,7 @@ new Vue({
 
         // 💡 Iframe 播放哨兵：如果在指定时间内网页依然卡顿（例如发生了解析站内跨域或网络阻塞），
         // 自动熔断切源重连，绝不给用户添堵，彻底无感化自动寻找可用播放源！
-        if (this.activeLineKey !== 'hkan_line1' && capturedIframeUrl) {
+        if (capturedIframeUrl) {
           const currentSession = this.activeSessionId;
           this.iframeTimeoutTimer = setTimeout(() => {
             if (this.activeSessionId === currentSession && this.isIframeMode) {

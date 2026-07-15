@@ -722,9 +722,6 @@
                 <!-- 💡 艺术级多端自适应 H5 播放器挂载点 (PC端搭载 Worker 异步解码；移动/iPad端自动渲染高雅触屏面板) -->
                 <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode"></div>
                 
-                <!-- 💡 好好看黄金主线专属物理黑色遮罩：在视觉上 100% 遮挡好好看原站的外围侧边栏与顶部搜索框，实现纯净视口呈现 -->
-                <div class="hkan-mask-top" v-if="activeLineKey === 'hkan_line1' && isIframeMode"></div>
-                <div class="hkan-mask-left" v-if="activeLineKey === 'hkan_line1' && isIframeMode"></div>
 
                 <!-- 降级 传统 Iframe 播放器 (强绑 key 以在换源/换集数时彻底重置渲染，物理隔绝进度污染) -->
                 <iframe 
@@ -733,7 +730,6 @@
                   :src="activePlayUrl" 
                   :key="activePlayUrl"
                   class="video-iframe"
-                  :class="{ 'hkan-mode': activeLineKey === 'hkan_line1' }"
                   scrolling="no" 
                   allowfullscreen
                   webkitallowfullscreen

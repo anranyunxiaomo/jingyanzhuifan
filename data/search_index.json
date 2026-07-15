@@ -1,867 +1,12 @@
 [
   {
-    "AID": 277861,
-    "Title": "无职转生Ⅱ到了异世界就拿出真本事Part2",
-    "Pinyin": "wzzsⅱdlysjjnczbspart2",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/60/4d/325585_tfU01.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102753438
-  },
-  {
-    "AID": 115477,
-    "Title": "火影忍者国语",
-    "Pinyin": "hyrzgy",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/ca/3f/33514_or227.jpg",
-    "Status": "更新至701集",
-    "UpToDate": "更新至第720集",
-    "UpdateTime": 1784102750195
-  },
-  {
-    "AID": 133334,
-    "Title": "蜡笔小新第三季",
-    "Pinyin": "lbxxdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至156集",
-    "UpToDate": "更新至第156集",
-    "UpdateTime": 1784102740579
-  },
-  {
-    "AID": 239226,
-    "Title": "杖与剑的魔剑谭",
-    "Pinyin": "zyjdmjt",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102736321
-  },
-  {
-    "AID": 40884,
-    "Title": "鬼灭之刃锻刀村篇",
-    "Pinyin": "gmzrddcp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 1784102725748
-  },
-  {
-    "AID": 233337,
-    "Title": "海贼王国语",
-    "Pinyin": "hzwgy",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/2a/8e/311310_1NXnu.jpg",
-    "Status": "更新至1060集",
-    "UpToDate": "更新至第1060集",
-    "UpdateTime": 1784102719760
-  },
-  {
-    "AID": 306488,
-    "Title": "间谍过家家第三季",
-    "Pinyin": "jdgjjdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/de/4a/329906_hmtVD.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1784102706590
-  },
-  {
-    "AID": 275904,
-    "Title": "名侦探柯南日语",
-    "Pinyin": "mztknry",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/ec/e7/410166_G6NCY.jpg",
-    "Status": "更新至1266集",
-    "UpToDate": "更新至第1266集",
-    "UpdateTime": 1784102702057
-  },
-  {
-    "AID": "a123_reconglingkaishideyishijieshen13",
-    "Title": "Re：从零开始的异世界生活 4",
-    "Pinyin": "re：clksdysjsh 4",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 1784102686708
-  },
-  {
-    "AID": 228319,
-    "Title": "关于我转生变成史莱姆这档事第三季",
-    "Pinyin": "gywzsbcslmzdsdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
-    "Status": "更新至26集",
-    "UpToDate": "更新至第72集",
-    "UpdateTime": 1784102679829
-  },
-  {
-    "AID": 311914,
-    "Title": "咒术回战第三季",
-    "Pinyin": "zshzdsj",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102675517
-  },
-  {
-    "AID": 26003,
-    "Title": "灌篮高手国语版",
-    "Pinyin": "glgsgyb",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
-    "Status": "更新至101集",
-    "UpToDate": "更新至第101集",
-    "UpdateTime": 1784102664976
-  },
-  {
-    "AID": 38019,
-    "Title": "全职猎人日语",
-    "Pinyin": "qzlrry",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/37/70/4193_acm67.jpg",
-    "Status": "更新至148集",
-    "UpToDate": "更新至第148集",
-    "UpdateTime": 1784102657971
-  },
-  {
-    "AID": 26478,
-    "Title": "死神日语",
-    "Pinyin": "ssry",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/30/e3/44679_NnZD6.jpg",
-    "Status": "更新至366集",
-    "UpToDate": "更新至第366集",
-    "UpdateTime": 1784102652497
-  },
-  {
-    "AID": 174851,
-    "Title": "进击的巨人第一季",
-    "Pinyin": "jjdjrdyj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg",
-    "Status": "更新至25集",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 1784102641506
-  },
-  {
-    "AID": 215279,
-    "Title": "我独自升级",
-    "Pinyin": "wdzsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102637644
-  },
-  {
-    "AID": 227200,
-    "Title": "银魂·第一季·全201集",
-    "Pinyin": "yh·dyj·q201j",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/7f/22/1454_T346B.jpg",
-    "Status": "更新至201集",
-    "UpToDate": "更新至第201集",
-    "UpdateTime": 1784102626891
-  },
-  {
-    "AID": 257162,
-    "Title": "我独自升级第二季",
-    "Pinyin": "wdzsjdej",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1784102622246
-  },
-  {
-    "AID": 271110,
-    "Title": "哆啦A梦第五季",
-    "Pinyin": "dlamdwj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
-    "Status": "更新至80集",
-    "UpToDate": "更新至第80集",
-    "UpdateTime": 1784102615578
-  },
-  {
-    "AID": 22852,
-    "Title": "鬼灭之刃",
-    "Pinyin": "gmzr",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg",
-    "Status": "更新至26集",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 1784102611784
-  },
-  {
-    "AID": 271265,
-    "Title": "蜡笔小新第十季",
-    "Pinyin": "lbxxdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至174集",
-    "UpToDate": "更新至第94集",
-    "UpdateTime": 1784102607214
-  },
-  {
-    "AID": 120413,
-    "Title": "蜡笔小新第一季",
-    "Pinyin": "lbxxdyj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至479集",
-    "UpToDate": "更新至第480集",
-    "UpdateTime": 1784102603047
-  },
-  {
-    "AID": 193347,
-    "Title": "蜡笔小新第二季",
-    "Pinyin": "lbxxdej",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至878集",
-    "UpToDate": "更新至第880集",
-    "UpdateTime": 1784102588049
-  },
-  {
-    "AID": 173876,
-    "Title": "无职转生Ⅱ到了异世界就拿出真本事1-2合季",
-    "Pinyin": "wzzsⅱdlysjjnczbs1-2hj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cf/55/373247_aBFR1.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 1784102580277
-  },
-  {
-    "AID": 28275,
-    "Title": "无职转生到了异世界就拿出真本事",
-    "Pinyin": "wzzsdlysjjnczbs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 1784102576421
-  },
-  {
-    "AID": 26406,
-    "Title": "火影忍者2002",
-    "Pinyin": "hyrz2002",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/20/6b/28496_wpcoV.jpg",
-    "Status": "更新至720集",
-    "UpToDate": "更新至第720集",
-    "UpdateTime": 1784102560082
-  },
-  {
-    "AID": 37531,
-    "Title": "海贼王动漫合集日语",
-    "Pinyin": "hzwdmhjry",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/ed/4a/345824_VXxo5.jpg",
-    "Status": "更新至1169集",
-    "UpToDate": "更新至第1169集",
-    "UpdateTime": 1784102552918
-  },
-  {
-    "AID": "a123_woduzishengji2",
-    "Title": "我独自升级 2",
-    "Pinyin": "wdzsj 2",
-    "Cover": "https://i1.a123tv.com/v/0x/woduzishengji2.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1784102533281
-  },
-  {
-    "AID": "a123_zhoushuhuizhan32",
-    "Title": "咒术回战 3",
-    "Pinyin": "zshz 3",
-    "Cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102467846
-  },
-  {
-    "AID": 234035,
-    "Title": "鬼灭之刃柱训练篇",
-    "Pinyin": "gmzrzxlp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1784102267413
-  },
-  {
-    "AID": "a123_anxianlingzhudeyukuailingdifan",
-    "Title": "安闲领主的愉快领地防卫",
-    "Pinyin": "axlzdykldfw",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102244009
-  },
-  {
-    "AID": "a123_xindiaodaiwatianshi",
-    "Title": "新吊带袜天使",
-    "Pinyin": "xddwts",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/52/88/390555_11QS3.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1784102228664
-  },
-  {
-    "AID": 20120084,
-    "Title": "轮回的拉格朗日",
-    "Pinyin": "lhdlglr",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120084.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 1784102224421
-  },
-  {
-    "AID": "a123_chimowudemaoxianzhe",
-    "Title": "吃魔物的冒险者",
-    "Pinyin": "cmwdmxz",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784102222339
-  },
-  {
-    "AID": "a123_mowangdenvertaiwenroule",
-    "Title": "魔王的女儿太温柔了！",
-    "Pinyin": "mwdnetwrl！",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b4/0f/565416_a994t.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784101741995
-  },
-  {
-    "AID": "a123_zhuanshengzhihoudewobianchengl",
-    "Title": "转生之后的我变成了龙蛋",
-    "Pinyin": "zszhdwbclld",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b7/ce/544106_L6Pj1.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784101741995
-  },
-  {
-    "AID": 133332,
-    "Title": "蜡笔小新第四季",
-    "Pinyin": "lbxxdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至156集",
-    "UpToDate": "更新至第156集",
-    "UpdateTime": 1784101741966
-  },
-  {
-    "AID": 132928,
-    "Title": "哆啦A梦第一季",
-    "Pinyin": "dlamdyj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
-    "Status": "更新至142集",
-    "UpToDate": "更新至第142集",
-    "UpdateTime": 1784101741966
-  },
-  {
-    "AID": 352696,
-    "Title": "地狱模式～喜欢速通游戏的玩家在废设定异世界无双～第二季",
-    "Pinyin": "dyms～xhstyxdwjzfsdysjws～dej",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b9/52/526979_R83u1.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第02集",
-    "UpdateTime": 1784101674311
-  },
-  {
-    "AID": "a123_youlingyinyuehuiyishidegequ",
-    "Title": "幽灵音乐会：遗失的歌曲",
-    "Pinyin": "ylyyh：ysdgq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第07集",
-    "UpdateTime": 1784101674309
-  },
-  {
-    "AID": "a123_beidoushenquan4",
-    "Title": "北斗神拳",
-    "Pinyin": "bdsq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
-    "Status": "更新至10集",
-    "UpToDate": "更新至第10集",
-    "UpdateTime": 1784101674302
-  },
-  {
-    "AID": 21872,
-    "Title": "Re从零开始的异世界生活第二季",
-    "Pinyin": "reclksdysjshdej",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
-    "Status": "更新至25集",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 1784101674299
-  },
-  {
-    "AID": "a123_zuanshiwangpai4",
-    "Title": "钻石王牌 4",
-    "Pinyin": "zswp 4",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1784101674297
-  },
-  {
-    "AID": "a123_xiangfandenihewo",
-    "Title": "相反的你和我",
-    "Pinyin": "xfdnhw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784101674262
-  },
-  {
-    "AID": 20145,
-    "Title": "进击的巨人第三季",
-    "Pinyin": "jjdjrdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/78/c9/55770_HsJfh.jpg",
-    "Status": "更新至22集",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 1784101674256
-  },
-  {
-    "AID": 294623,
-    "Title": "碧蓝之海第二季",
-    "Pinyin": "blzhdej",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1784101674255
-  },
-  {
-    "AID": 116029,
-    "Title": "博人传火影忍者新时代",
-    "Pinyin": "brchyrzxsd",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/70/65/202661_Xx5X3.jpg",
-    "Status": "更新至192集",
-    "UpToDate": "更新至第192集",
-    "UpdateTime": 1784101674250
-  },
-  {
-    "AID": 26080,
-    "Title": "Re从零开始的异世界生活第一季",
-    "Pinyin": "reclksdysjshdyj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
-    "Status": "更新至25集",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 1784101674247
-  },
-  {
-    "AID": "a123_huangquandeshizhe",
-    "Title": "黄泉的使者",
-    "Pinyin": "hqdsz",
-    "Cover": "https://i1.a123tv.com/v/0x/huangquandeshizhe.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783992444238
-  },
-  {
-    "AID": 35270,
-    "Title": "想要成为影之实力者",
-    "Pinyin": "xycwyzslz",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/39/96/329114_mB55b.jpg",
-    "Status": "更新至20集",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 1783952637564
-  },
-  {
-    "AID": 336352,
-    "Title": "死亡笔记动画版",
-    "Pinyin": "swbjdhb",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/68/ba/551123_IkXfk.jpg",
-    "Status": "更新至37集",
-    "UpToDate": "更新至第37集",
-    "UpdateTime": 1783952637555
-  },
-  {
-    "AID": 61420,
-    "Title": "宝可梦旅途国语",
-    "Pinyin": "bkmltgy",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/2d/95/3030_4VCh3.jpg",
-    "Status": "更新至132集",
-    "UpToDate": "更新至第132集",
-    "UpdateTime": 1783952637534
-  },
-  {
-    "AID": 258472,
-    "Title": "一拳超人第三季",
-    "Pinyin": "yqcrdsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8c/a2/127563_nl66u.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783952637522
-  },
-  {
-    "AID": "a123_caomeiaige",
-    "Title": "草莓哀歌",
-    "Pinyin": "cmag",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/4b/ef/472147_lYpZ8.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783947370802
-  },
-  {
-    "AID": "a123_fanerbujingdewobeizhuchuyongzh",
-    "Title": "泛而不精的我被逐出勇者队伍",
-    "Pinyin": "febjdwbzcyzdw",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/0b/9d/541336_oG7SO.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783947370801
-  },
-  {
-    "AID": "a123_shuangrenduziluying1",
-    "Title": "双人独自露营",
-    "Pinyin": "srdzly",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/51/531344_f65f8.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 1783947370801
-  },
-  {
-    "AID": "a123_feichaifengjiweiyuanyuqunzicha",
-    "Title": "废柴风纪委员与裙子长度不合规的JK的故事",
-    "Pinyin": "fcfjwyyqzcdbhgdjkdgs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/68/ba/551123_IkXfk.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783947370800
-  },
-  {
-    "AID": "a123_huiyuanjundeqingchunerzhoumu",
-    "Title": "灰原君的青春二周目",
-    "Pinyin": "hyjdqcezm",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/d5/a9/567418_LTStp.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783945607059
-  },
-  {
-    "AID": "a123_yishijiedeantaiquankanshechu",
-    "Title": "异世界的安泰全看社畜",
-    "Pinyin": "ysjdatqksc",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/11/3b/522370_FFyEr.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783945605188
-  },
-  {
-    "AID": "a123_xiaoshenbabukepa",
-    "Title": "小神八不可怕",
-    "Pinyin": "xsbbkp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/51/33/522414_4VRzA.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783945594278
-  },
-  {
-    "AID": "a123_gongzhuqishishimanzudexinniang",
-    "Title": "公主骑士是蛮族的新娘",
-    "Pinyin": "gzqssmzdxn",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/cf/516543_103zp.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783945592415
-  },
-  {
-    "AID": "a123_dujundexxjijiangbenghuai",
-    "Title": "渡君的XX即将崩坏",
-    "Pinyin": "djdxxjjbh",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/f8/a8/455454_cEllE.jpg",
-    "Status": "更新至26集",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 1783945589964
-  },
-  {
-    "AID": "a123_wodexingfuhunyue2",
-    "Title": "我的幸福婚约 2",
-    "Pinyin": "wdxfhy 2",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/5f/b1/377125_WRoZD.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783945587895
-  },
-  {
-    "AID": "a123_heimaohemonvdeketang",
-    "Title": "黑猫和魔女的课堂",
-    "Pinyin": "hmhmndkt",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/37/70/4193_acm67.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783945582076
-  },
-  {
-    "AID": "a123_shuishuxingmofashi",
-    "Title": "水属性魔法使",
-    "Pinyin": "ssxmfs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/16/e9/532403_5rfk5.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783945580217
-  },
-  {
-    "AID": "a123_wuweifensijulebu1",
-    "Title": "雾尾粉丝俱乐部",
-    "Pinyin": "wwfsjlb",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/05/9a/513208_UFZ41.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783945569254
-  },
-  {
-    "AID": "a123_zuihoukeyizaibaituoninyijiansh",
-    "Title": "最后可以再拜托您一件事吗",
-    "Pinyin": "zhkyzbtnyjsm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250217.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423722
-  },
-  {
-    "AID": "a123_zhongjiuyunixianglian21",
-    "Title": "终究，与你相恋 2",
-    "Pinyin": "zj，ynxl 2",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/43/98/548195_raxXD.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423721
-  },
-  {
-    "AID": "a123_youyaguizudexiujiazhinan",
-    "Title": "优雅贵族的休假指南",
-    "Pinyin": "yygzdxjzn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260019.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 1783944423721
-  },
-  {
-    "AID": "a123_wuyedeqingxinxuanlv",
-    "Title": "午夜的倾心旋律",
-    "Pinyin": "wydqxxl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260008.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423720
-  },
-  {
-    "AID": "a123_siwangzhanghao",
-    "Title": "死亡账号",
-    "Pinyin": "swzh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260040.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423719
-  },
-  {
-    "AID": "a123_renyadaowudiwushi",
-    "Title": "刃牙道：无敌武士",
-    "Pinyin": "ryd：wdws",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260176.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423718
-  },
-  {
-    "AID": "a123_shenweimozudewoxiangxiangyongz",
-    "Title": "身为魔族的我想向勇者小队的可爱女孩告白",
-    "Pinyin": "swmzdwxxyzxddkanhgb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260007.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423718
-  },
-  {
-    "AID": "a123_shengnvyintaiguowanmeibugoukea",
-    "Title": "圣女因太过完美不够可爱而被废除婚约并卖到邻国",
-    "Pinyin": "snytgwmbgkaebfchybmdlg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250073.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423718
-  },
-  {
-    "AID": "a123_moshushikunuokandejianyiqie",
-    "Title": "魔术师库诺看得见一切",
-    "Pinyin": "mssknkdjyq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260050.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423717
-  },
-  {
-    "AID": "a123_qingsongxiong",
-    "Title": "轻松熊",
-    "Pinyin": "qsx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260159.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783944423717
-  },
-  {
-    "AID": "a123_niyoubeishalenezhentandaren",
-    "Title": "你又被杀了呢，侦探大人",
-    "Pinyin": "nybsln，ztdr",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/2e/f4/608227_44kWb.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783944423717
-  },
-  {
-    "AID": "a123_jisuchehun3",
-    "Title": "极速车魂 3",
-    "Pinyin": "jsch 3",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260053.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423716
-  },
-  {
-    "AID": "a123_jiaojieyingxiaozhiyue",
-    "Title": "皎洁迎宵之月",
-    "Pinyin": "jjyxzy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260045.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783944423716
-  },
-  {
-    "AID": "a123_lengjinglianqu",
-    "Title": "棱镜恋曲",
-    "Pinyin": "ljlq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260060.jpg",
-    "Status": "更新至20集",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 1783944423716
-  },
-  {
-    "AID": "a123_hebanshangdierkeaidenvhaiziche",
-    "Title": "和班上第二可爱的女孩子成为了朋友",
-    "Pinyin": "hbsdekadnhzcwlpy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783944423715
-  },
-  {
-    "AID": "a123_huayangshaonianshaonv1",
-    "Title": "花样少年少女",
-    "Pinyin": "hysnsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260048.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423715
-  },
-  {
-    "AID": "a123_heqingmeizhumazhijianbuhuiyoul",
-    "Title": "和青梅竹马之间不会有恋爱喜剧",
-    "Pinyin": "hqmzmzjbhylaxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260006.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423715
-  },
-  {
-    "AID": "a123_feirenxueshengyuyanshijiaoshi",
-    "Title": "非人学生与厌世教师",
-    "Pinyin": "frxsyysjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260041.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423714
-  },
-  {
-    "AID": "a123_gongzhudarenjiexialaishikaowen1",
-    "Title": "公主大人，接下来是“拷问”时间 2",
-    "Pinyin": "gzdr，jxls“kw”sj 2",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/13/79/486763_s49V9.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423714
-  },
-  {
-    "AID": "a123_gaoxiaoqimianzu",
-    "Title": "高校奇面组",
-    "Pinyin": "gxqmz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260030.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423714
-  },
-  {
-    "AID": "a123_elisideshengbei",
-    "Title": "厄里斯的圣杯",
-    "Pinyin": "elsdsb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260023.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423713
-  },
-  {
-    "AID": "a123_difushaonianhuazijun2",
-    "Title": "地缚少年花子君 2",
-    "Pinyin": "dfsnhzj 2",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250171.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 1783944423712
-  },
-  {
-    "AID": "a123_beilinguowangziniaidefanpainvz",
-    "Title": "被邻国王子溺爱的反派女主",
-    "Pinyin": "blgwznadfpnz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260052.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423711
-  },
-  {
-    "AID": "a123_daxianzheliduoerdeshijiannixin",
-    "Title": "大贤者利多尔的时间逆行",
-    "Pinyin": "dxzldedsjnx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260121.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 1783944423711
-  },
-  {
-    "AID": "a123_daerwenshibian",
-    "Title": "达尔文事变",
-    "Pinyin": "dewsb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260011.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423711
-  },
-  {
-    "AID": "a123_baiguiyexingchao1",
-    "Title": "百鬼夜行抄",
-    "Pinyin": "bgyxc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260148.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 1783944423710
-  },
-  {
-    "AID": "a123_anzhiju16",
-    "Title": "暗芝居 16",
-    "Pinyin": "azj 16",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260245.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 1783944423709
-  },
-  {
-    "AID": "a123_aerniedeshijianbu",
-    "Title": "阿尔涅的事件簿",
-    "Pinyin": "aendsjb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260012.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423709
-  },
-  {
-    "AID": "a123_29suidanshenmaoxianjiaderichan",
-    "Title": "29岁单身冒险家的日常",
-    "Pinyin": "29sdsmxjdrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260013.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 1783944423708
-  },
-  {
     "AID": 20190015,
     "Title": "二十世纪电气目录",
     "Pinyin": "essjdqml",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190015.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783871578622
+    "UpdateTime": 1783871376
   },
   {
     "AID": 20260172,
@@ -870,7 +15,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260172.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783439295622
+    "UpdateTime": 1783439093
   },
   {
     "AID": 20260203,
@@ -879,7 +24,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260203.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783432468601
+    "UpdateTime": 1783432266
   },
   {
     "AID": 20260230,
@@ -888,7 +33,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260230.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783432395601
+    "UpdateTime": 1783432193
   },
   {
     "AID": 20260201,
@@ -897,7 +42,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260201.jpg",
     "Status": "连载",
     "UpToDate": "更新至第20集",
-    "UpdateTime": 1783432316620
+    "UpdateTime": 1783432114
   },
   {
     "AID": 20260175,
@@ -906,7 +51,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
     "Status": "更新至2集",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1783354717600
+    "UpdateTime": 1783354515
   },
   {
     "AID": 20260185,
@@ -915,7 +60,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260185.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783354074622
+    "UpdateTime": 1783353872
   },
   {
     "AID": 20260220,
@@ -924,7 +69,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260220.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783353925622
+    "UpdateTime": 1783353723
   },
   {
     "AID": 20260227,
@@ -933,7 +78,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
     "Status": "连载",
     "UpToDate": "更新至第20集",
-    "UpdateTime": 1783347926620
+    "UpdateTime": 1783347724
   },
   {
     "AID": 20260232,
@@ -942,7 +87,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260232.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783341623601
+    "UpdateTime": 1783341421
   },
   {
     "AID": 20260183,
@@ -951,7 +96,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260183.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1783270643600
+    "UpdateTime": 1783270441
   },
   {
     "AID": 20260166,
@@ -960,7 +105,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260166.jpg",
     "Status": "连载",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1783269825623
+    "UpdateTime": 1783269623
   },
   {
     "AID": 20260182,
@@ -969,7 +114,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1783262565621
+    "UpdateTime": 1783262363
   },
   {
     "AID": 20260211,
@@ -978,7 +123,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260211.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1783262462621
+    "UpdateTime": 1783262260
   },
   {
     "AID": 20260181,
@@ -987,7 +132,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
     "Status": "连载",
     "UpToDate": "更新至第16集",
-    "UpdateTime": 1783260956616
+    "UpdateTime": 1783260754
   },
   {
     "AID": 20260225,
@@ -996,7 +141,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260225.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783229992601
+    "UpdateTime": 1783229790
   },
   {
     "AID": 20260222,
@@ -1005,7 +150,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/b9/ac/563745_YI26V.jpg",
     "Status": "更新至2集",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1783186111623
+    "UpdateTime": 1783185909
   },
   {
     "AID": 20260170,
@@ -1014,7 +159,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260170.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1783186049600
+    "UpdateTime": 1783185847
   },
   {
     "AID": 20260187,
@@ -1023,7 +168,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260187.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783185980622
+    "UpdateTime": 1783185778
   },
   {
     "AID": 20260192,
@@ -1032,7 +177,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1783182709621
+    "UpdateTime": 1783182507
   },
   {
     "AID": 20260195,
@@ -1041,7 +186,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260195.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1783182603621
+    "UpdateTime": 1783182401
   },
   {
     "AID": 20260223,
@@ -1050,7 +195,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/c5/16/538760_T0rxN.jpg",
     "Status": "更新至3集",
     "UpToDate": "更新至第20集",
-    "UpdateTime": 1783176836620
+    "UpdateTime": 1783176634
   },
   {
     "AID": 20260208,
@@ -1059,7 +204,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260208.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783176763601
+    "UpdateTime": 1783176561
   },
   {
     "AID": 20260215,
@@ -1068,7 +213,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783172567601
+    "UpdateTime": 1783172365
   },
   {
     "AID": 20260247,
@@ -1077,7 +222,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783170939601
+    "UpdateTime": 1783170737
   },
   {
     "AID": 20260205,
@@ -1086,7 +231,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
     "Status": "更新至3集",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783170188601
+    "UpdateTime": 1783169986
   },
   {
     "AID": 20260194,
@@ -1095,7 +240,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/01/8f/627136_hb0Jd.jpg",
     "Status": "更新至2集",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783170001601
+    "UpdateTime": 1783169799
   },
   {
     "AID": 20260209,
@@ -1104,7 +249,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260209.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783097428601
+    "UpdateTime": 1783097226
   },
   {
     "AID": 20260199,
@@ -1113,7 +258,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260199.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783097333601
+    "UpdateTime": 1783097131
   },
   {
     "AID": 20260202,
@@ -1122,7 +267,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783096257601
+    "UpdateTime": 1783096055
   },
   {
     "AID": 20260213,
@@ -1131,7 +276,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260213.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783096037601
+    "UpdateTime": 1783095835
   },
   {
     "AID": 20260197,
@@ -1140,7 +285,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1783095978601
+    "UpdateTime": 1783095776
   },
   {
     "AID": 20260200,
@@ -1149,7 +294,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/6a/b3/622206_dpWcC.jpg",
     "Status": "更新至2集",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1783009954623
+    "UpdateTime": 1783009752
   },
   {
     "AID": 20260212,
@@ -1158,7 +303,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
     "Status": "更新至2集",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1783009882623
+    "UpdateTime": 1783009680
   },
   {
     "AID": 20260210,
@@ -1167,7 +312,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
     "Status": "更新至3集",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1783009794623
+    "UpdateTime": 1783009592
   },
   {
     "AID": 20260169,
@@ -1176,7 +321,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260169.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1783007269622
+    "UpdateTime": 1783007067
   },
   {
     "AID": 20260193,
@@ -1185,7 +330,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1783004839621
+    "UpdateTime": 1783004637
   },
   {
     "AID": 20260184,
@@ -1194,7 +339,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
     "Status": "连载",
     "UpToDate": "更新至第20集",
-    "UpdateTime": 1783004555620
+    "UpdateTime": 1783004353
   },
   {
     "AID": 20260180,
@@ -1203,7 +348,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1782995265602
+    "UpdateTime": 1782995063
   },
   {
     "AID": 20260214,
@@ -1212,7 +357,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260214.jpg",
     "Status": "更新至3集",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1782995207602
+    "UpdateTime": 1782995005
   },
   {
     "AID": 20260219,
@@ -1221,7 +366,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1782922670602
+    "UpdateTime": 1782922468
   },
   {
     "AID": 20260246,
@@ -1229,8 +374,8 @@
     "Pinyin": "jcb gywzsbcslmzds chzlp",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260246.jpg",
     "Status": "完结",
-    "UpToDate": "抢先版",
-    "UpdateTime": 1782839173600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782838971
   },
   {
     "AID": 20260189,
@@ -1239,7 +384,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260189.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1782748874601
+    "UpdateTime": 1782748672
   },
   {
     "AID": 20260112,
@@ -1248,7 +393,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260112.jpg",
     "Status": "连载",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782735488612
+    "UpdateTime": 1782735286
   },
   {
     "AID": 20260083,
@@ -1257,7 +402,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
     "Status": "连载",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1782666175623
+    "UpdateTime": 1782665973
   },
   {
     "AID": 20260064,
@@ -1266,7 +411,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
     "Status": "连载",
     "UpToDate": "更新至第07集",
-    "UpdateTime": 1782666113607
+    "UpdateTime": 1782665911
   },
   {
     "AID": 20260127,
@@ -1275,7 +420,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260127.jpg",
     "Status": "连载",
     "UpToDate": "更新至第17集",
-    "UpdateTime": 1782666064617
+    "UpdateTime": 1782665862
   },
   {
     "AID": 20260078,
@@ -1284,7 +429,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260078.jpg",
     "Status": "更新至13集",
     "UpToDate": "更新至第16集",
-    "UpdateTime": 1782666015616
+    "UpdateTime": 1782665813
   },
   {
     "AID": 20260065,
@@ -1293,7 +438,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
     "Status": "连载",
     "UpToDate": "更新至第16集",
-    "UpdateTime": 1782665967616
+    "UpdateTime": 1782665765
   },
   {
     "AID": 20260042,
@@ -1302,7 +447,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260042.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1782582191624
+    "UpdateTime": 1782581989
   },
   {
     "AID": 20260092,
@@ -1311,7 +456,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260092.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1782581982601
+    "UpdateTime": 1782581780
   },
   {
     "AID": 20260100,
@@ -1320,7 +465,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260100.jpg",
     "Status": "完结",
     "UpToDate": "更新至第14集",
-    "UpdateTime": 1782581774614
+    "UpdateTime": 1782581572
   },
   {
     "AID": 20260095,
@@ -1329,7 +474,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260095.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782577778612
+    "UpdateTime": 1782577576
   },
   {
     "AID": 20260094,
@@ -1338,7 +483,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260094.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782571921612
+    "UpdateTime": 1782571719
   },
   {
     "AID": 20260097,
@@ -1347,7 +492,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/99/82/348699_0wWW8.jpg",
     "Status": "更新至15集",
     "UpToDate": "更新至第18集",
-    "UpdateTime": 1782571853618
+    "UpdateTime": 1782571651
   },
   {
     "AID": 20260089,
@@ -1356,7 +501,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260089.jpg",
     "Status": "连载",
     "UpToDate": "更新至第16集",
-    "UpdateTime": 1782571624616
+    "UpdateTime": 1782571422
   },
   {
     "AID": 20000005,
@@ -1365,7 +510,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000005.jpg",
     "Status": "连载",
     "UpToDate": "更新至第19集",
-    "UpdateTime": 1782567475019
+    "UpdateTime": 1782567275
   },
   {
     "AID": 20260080,
@@ -1374,7 +519,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260080.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782493833612
+    "UpdateTime": 1782493631
   },
   {
     "AID": 20260074,
@@ -1383,7 +528,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260074.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1782493774613
+    "UpdateTime": 1782493572
   },
   {
     "AID": 20260101,
@@ -1392,7 +537,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
     "Status": "连载",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1782493723623
+    "UpdateTime": 1782493521
   },
   {
     "AID": 20260073,
@@ -1401,7 +546,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1782493674622
+    "UpdateTime": 1782493472
   },
   {
     "AID": 20260098,
@@ -1410,7 +555,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
     "Status": "更新至14集",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1782493620623
+    "UpdateTime": 1782493418
   },
   {
     "AID": 20260084,
@@ -1419,7 +564,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260084.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782408179612
+    "UpdateTime": 1782407977
   },
   {
     "AID": 20260081,
@@ -1428,7 +573,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260081.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1782406329600
+    "UpdateTime": 1782406127
   },
   {
     "AID": 20260088,
@@ -1437,7 +582,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260088.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1782400232622
+    "UpdateTime": 1782400030
   },
   {
     "AID": 20260126,
@@ -1446,7 +591,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260126.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782400175612
+    "UpdateTime": 1782399973
   },
   {
     "AID": 20250209,
@@ -1455,7 +600,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1782400121521
+    "UpdateTime": 1782399919
   },
   {
     "AID": 20260071,
@@ -1464,7 +609,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260071.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782400066612
+    "UpdateTime": 1782399864
   },
   {
     "AID": 20260109,
@@ -1473,7 +618,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260109.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782389954612
+    "UpdateTime": 1782389752
   },
   {
     "AID": 20260075,
@@ -1482,7 +627,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260075.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782320895612
+    "UpdateTime": 1782320693
   },
   {
     "AID": 20260091,
@@ -1491,7 +636,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260091.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782317344612
+    "UpdateTime": 1782317142
   },
   {
     "AID": 20260079,
@@ -1500,7 +645,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260079.jpg",
     "Status": "完结",
     "UpToDate": "更新至第16集",
-    "UpdateTime": 1782317179616
+    "UpdateTime": 1782316977
   },
   {
     "AID": 20260106,
@@ -1509,7 +654,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260106.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1782317119602
+    "UpdateTime": 1782316917
   },
   {
     "AID": 20260102,
@@ -1518,7 +663,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260102.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1782317039601
+    "UpdateTime": 1782316837
   },
   {
     "AID": 20260072,
@@ -1527,7 +672,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260072.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1782231907600
+    "UpdateTime": 1782231705
   },
   {
     "AID": 20260069,
@@ -1536,7 +681,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782231858612
+    "UpdateTime": 1782231656
   },
   {
     "AID": 20260096,
@@ -1545,7 +690,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
     "Status": "连载",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 1782231782623
+    "UpdateTime": 1782231580
   },
   {
     "AID": 20260113,
@@ -1554,7 +699,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260113.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1782226510622
+    "UpdateTime": 1782226308
   },
   {
     "AID": 20260117,
@@ -1563,7 +708,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260117.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1782226413622
+    "UpdateTime": 1782226211
   },
   {
     "AID": 20260111,
@@ -1572,7 +717,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260111.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1782226364622
+    "UpdateTime": 1782226162
   },
   {
     "AID": 20260103,
@@ -1581,7 +726,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260103.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782226298612
+    "UpdateTime": 1782226096
   },
   {
     "AID": 20260070,
@@ -1590,7 +735,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260070.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782144694612
+    "UpdateTime": 1782144492
   },
   {
     "AID": 20220116,
@@ -1599,7 +744,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220116.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1782143576613
+    "UpdateTime": 1782143374
   },
   {
     "AID": 20260114,
@@ -1608,7 +753,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260114.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782142412612
+    "UpdateTime": 1782142210
   },
   {
     "AID": 20260076,
@@ -1617,7 +762,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260076.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782142366612
+    "UpdateTime": 1782142164
   },
   {
     "AID": 20260244,
@@ -1625,8 +770,8 @@
     "Pinyin": "hhw nyxmdgs",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260244.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782131342600
+    "UpToDate": "更新至第1114集",
+    "UpdateTime": 1782131140
   },
   {
     "AID": 20260242,
@@ -1634,8 +779,8 @@
     "Pinyin": "dylbxx：qqgg！wdygjq",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260242.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782130694600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782130492
   },
   {
     "AID": 20260228,
@@ -1644,7 +789,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260228.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1782119542602
+    "UpdateTime": 1782119340
   },
   {
     "AID": 20260226,
@@ -1652,8 +797,8 @@
     "Pinyin": "zxhbsdqckamsn jsxshwzyqdgm",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260226.jpg",
     "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 1782118848600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782118646
   },
   {
     "AID": 20260221,
@@ -1661,8 +806,8 @@
     "Pinyin": "wzjsnjtywysdsfll",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260221.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782117976600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782117774
   },
   {
     "AID": 20260218,
@@ -1670,8 +815,8 @@
     "Pinyin": "srwbswmen～cgdsthc～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260218.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782117460600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782117258
   },
   {
     "AID": 20260217,
@@ -1679,8 +824,8 @@
     "Pinyin": "bzqjlsfc。～ymdszlnszg～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260217.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782117292600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782117090
   },
   {
     "AID": 20260216,
@@ -1688,8 +833,8 @@
     "Pinyin": "zqchhzdaydwzd",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260216.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782117107600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782116905
   },
   {
     "AID": 20260207,
@@ -1697,8 +842,8 @@
     "Pinyin": "xxdscwjs dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260207.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782115449600
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 1782115247
   },
   {
     "AID": 20260206,
@@ -1706,8 +851,8 @@
     "Pinyin": "ynyxsjdlrjshbyh dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260206.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782115154600
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 1782114952
   },
   {
     "AID": 20260204,
@@ -1715,8 +860,8 @@
     "Pinyin": "scbawdxrgjwhhnaw",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260204.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782114730600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782114528
   },
   {
     "AID": 20260196,
@@ -1724,8 +869,8 @@
     "Pinyin": "hztxzshhsxgj",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260196.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782113342600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782113140
   },
   {
     "AID": 20260191,
@@ -1733,8 +878,8 @@
     "Pinyin": "let's go gqz",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782112185600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782111983
   },
   {
     "AID": 20260190,
@@ -1742,8 +887,8 @@
     "Pinyin": "cft",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260190.jpg",
     "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 1782112009600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782111807
   },
   {
     "AID": 20260188,
@@ -1751,8 +896,8 @@
     "Pinyin": "tshha",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260188.jpg",
     "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 1782111635600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782111433
   },
   {
     "AID": 20260186,
@@ -1760,8 +905,8 @@
     "Pinyin": "ltsrx",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260186.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782111297600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782111095
   },
   {
     "AID": 20260179,
@@ -1769,8 +914,8 @@
     "Pinyin": "rgmngfyxgs dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782109657600
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 1782109455
   },
   {
     "AID": 20260178,
@@ -1778,8 +923,8 @@
     "Pinyin": "sctpddx dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260178.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782109438600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782109236
   },
   {
     "AID": 20260177,
@@ -1787,8 +932,8 @@
     "Pinyin": "klwts2：mszwyxwdyzcc",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260177.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782109009600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782108807
   },
   {
     "AID": 20260174,
@@ -1796,8 +941,8 @@
     "Pinyin": "ss qnxzp-hjt-",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260174.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782107909600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782107707
   },
   {
     "AID": 20260173,
@@ -1805,8 +950,8 @@
     "Pinyin": "rzr009 nmxs",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260173.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782107615600
+    "UpToDate": "连载中",
+    "UpdateTime": 1782107413
   },
   {
     "AID": 20260171,
@@ -1814,8 +959,8 @@
     "Pinyin": "kzc wsjt d2bf",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260171.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782107125600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782106923
   },
   {
     "AID": 20260167,
@@ -1823,8 +968,8 @@
     "Pinyin": "mbwszc",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260167.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1782105624600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1782105422
   },
   {
     "AID": 20260087,
@@ -1833,7 +978,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260087.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782061020612
+    "UpdateTime": 1782060818
   },
   {
     "AID": 20260116,
@@ -1842,7 +987,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1782058775612
+    "UpdateTime": 1782058573
   },
   {
     "AID": 20250235,
@@ -1851,7 +996,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250235.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 1782049121508
+    "UpdateTime": 1782048919
   },
   {
     "AID": 20260090,
@@ -1860,7 +1005,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260090.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1781976775601
+    "UpdateTime": 1781976573
   },
   {
     "AID": 20260108,
@@ -1869,7 +1014,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260108.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781975773612
+    "UpdateTime": 1781975571
   },
   {
     "AID": 20260086,
@@ -1878,7 +1023,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260086.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1781975622600
+    "UpdateTime": 1781975420
   },
   {
     "AID": 20260085,
@@ -1887,7 +1032,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260085.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1781975576600
+    "UpdateTime": 1781975374
   },
   {
     "AID": 20260110,
@@ -1896,7 +1041,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260110.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781975518612
+    "UpdateTime": 1781975316
   },
   {
     "AID": 20260093,
@@ -1905,7 +1050,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260093.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781965999612
+    "UpdateTime": 1781965797
   },
   {
     "AID": 20260077,
@@ -1914,7 +1059,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260077.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1781883698622
+    "UpdateTime": 1781883496
   },
   {
     "AID": 20260107,
@@ -1923,7 +1068,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260107.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781874475612
+    "UpdateTime": 1781874273
   },
   {
     "AID": 20260068,
@@ -1932,7 +1077,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260068.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781874411612
+    "UpdateTime": 1781874209
   },
   {
     "AID": 20260160,
@@ -1941,7 +1086,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260160.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781802521612
+    "UpdateTime": 1781802319
   },
   {
     "AID": 20260118,
@@ -1950,7 +1095,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260118.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1781716483613
+    "UpdateTime": 1781716281
   },
   {
     "AID": 20260120,
@@ -1959,7 +1104,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260120.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1781716421621
+    "UpdateTime": 1781716219
   },
   {
     "AID": 20260099,
@@ -1968,7 +1113,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781712079612
+    "UpdateTime": 1781711877
   },
   {
     "AID": 20260066,
@@ -1977,7 +1122,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260066.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1781712048622
+    "UpdateTime": 1781711846
   },
   {
     "AID": 20260082,
@@ -1986,7 +1131,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781452895612
+    "UpdateTime": 1781452693
   },
   {
     "AID": 20260105,
@@ -1995,7 +1140,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260105.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1781445110612
+    "UpdateTime": 1781444908
   },
   {
     "AID": 20260067,
@@ -2004,7 +1149,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1781366924600
+    "UpdateTime": 1781366722
   },
   {
     "AID": 20260104,
@@ -2013,7 +1158,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260104.jpg",
     "Status": "完结",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 1780921207608
+    "UpdateTime": 1780921005
   },
   {
     "AID": 20000001,
@@ -2022,7 +1167,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg",
     "Status": "连载",
     "UpToDate": "更新至第09集",
-    "UpdateTime": 1780231183009
+    "UpdateTime": 1780230983
   },
   {
     "AID": 20260128,
@@ -2031,7 +1176,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260128.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 1779896158611
+    "UpdateTime": 1779895956
   },
   {
     "AID": 20260125,
@@ -2040,7 +1185,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260125.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1779632889612
+    "UpdateTime": 1779632687
   },
   {
     "AID": 20230073,
@@ -2049,7 +1194,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230073.jpg",
     "Status": "连载",
     "UpToDate": "更新至第17集",
-    "UpdateTime": 1779464599317
+    "UpdateTime": 1779464397
   },
   {
     "AID": 20260124,
@@ -2058,7 +1203,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260124.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1778849986600
+    "UpdateTime": 1778849784
   },
   {
     "AID": 20260035,
@@ -2067,7 +1212,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1776436329612
+    "UpdateTime": 1776436127
   },
   {
     "AID": 20260054,
@@ -2076,7 +1221,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1775405756612
+    "UpdateTime": 1775405554
   },
   {
     "AID": 20250097,
@@ -2085,7 +1230,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250097.jpg",
     "Status": "完结",
     "UpToDate": "更新至第48集",
-    "UpdateTime": 1775047926548
+    "UpdateTime": 1775047724
   },
   {
     "AID": 20260055,
@@ -2094,7 +1239,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1774875000612
+    "UpdateTime": 1774874798
   },
   {
     "AID": 20250259,
@@ -2103,7 +1248,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250259.jpg",
     "Status": "完结",
     "UpToDate": "更新至第14集",
-    "UpdateTime": 1774714608514
+    "UpdateTime": 1774714406
   },
   {
     "AID": 20260029,
@@ -2112,7 +1257,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260029.jpg",
     "Status": "完结",
     "UpToDate": "更新至第10集",
-    "UpdateTime": 1774627825610
+    "UpdateTime": 1774627623
   },
   {
     "AID": 20260024,
@@ -2121,7 +1266,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1774614502612
+    "UpdateTime": 1774614300
   },
   {
     "AID": 20260021,
@@ -2130,7 +1275,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1774541602612
+    "UpdateTime": 1774541400
   },
   {
     "AID": 20260056,
@@ -2139,7 +1284,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260056.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1774196068612
+    "UpdateTime": 1774195866
   },
   {
     "AID": 20260044,
@@ -2148,7 +1293,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260044.jpg",
     "Status": "完结",
     "UpToDate": "更新至第09集",
-    "UpdateTime": 1774183137609
+    "UpdateTime": 1774182935
   },
   {
     "AID": 20260027,
@@ -2157,7 +1302,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1774010138612
+    "UpdateTime": 1774009936
   },
   {
     "AID": 20260016,
@@ -2166,7 +1311,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 1773850468611
+    "UpdateTime": 1773850266
   },
   {
     "AID": 20260155,
@@ -2174,8 +1319,8 @@
     "Pinyin": "hhw albfp",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260155.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1773846787600
+    "UpToDate": "连载中",
+    "UpdateTime": 1773846585
   },
   {
     "AID": 20260141,
@@ -2183,8 +1328,8 @@
     "Pinyin": "xsyqjy dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260141.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1773822590600
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1773822388
   },
   {
     "AID": 20250231,
@@ -2193,7 +1338,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250231.jpg",
     "Status": "完结",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1773507926521
+    "UpdateTime": 1773507724
   },
   {
     "AID": 20260028,
@@ -2202,7 +1347,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260028.jpg",
     "Status": "未播放",
     "UpToDate": "更新至第19集",
-    "UpdateTime": 1766500215619
+    "UpdateTime": 1766500013
   },
   {
     "AID": 20250258,
@@ -2211,7 +1356,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250258.jpg",
     "Status": "完结",
     "UpToDate": "更新至第15集",
-    "UpdateTime": 1765376843515
+    "UpdateTime": 1765376641
   },
   {
     "AID": 20250063,
@@ -2220,7 +1365,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250063.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1759162460524
+    "UpdateTime": 1759162258
   },
   {
     "AID": 20250162,
@@ -2229,7 +1374,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250162.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1758992664512
+    "UpdateTime": 1758992462
   },
   {
     "AID": 20250220,
@@ -2238,7 +1383,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250220.jpg",
     "Status": "未播放",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1758955234500
+    "UpdateTime": 1758955032
   },
   {
     "AID": 20250200,
@@ -2247,7 +1392,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250200.jpg",
     "Status": "未播放",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1758947905522
+    "UpdateTime": 1758947703
   },
   {
     "AID": 20250129,
@@ -2256,7 +1401,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250129.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1758726971512
+    "UpdateTime": 1758726769
   },
   {
     "AID": 20250139,
@@ -2264,8 +1409,8 @@
     "Pinyin": "yhtj yh☆dt",
     "Cover": "https://cdn.aqdstatic.com:966/age/20250139.jpg",
     "Status": "完结",
-    "UpToDate": "HD中字",
-    "UpdateTime": 1751005483500
+    "UpToDate": "连载中",
+    "UpdateTime": 1751005281
   },
   {
     "AID": 20080009,
@@ -2274,7 +1419,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1750431077813
+    "UpdateTime": 1750430877
   },
   {
     "AID": 20250041,
@@ -2283,7 +1428,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250041.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1743266751500
+    "UpdateTime": 1743266549
   },
   {
     "AID": 20250052,
@@ -2292,7 +1437,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250052.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1743266557513
+    "UpdateTime": 1743266355
   },
   {
     "AID": 20250076,
@@ -2301,7 +1446,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250076.jpg",
     "Status": "未播放",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1742904045501
+    "UpdateTime": 1742903843
   },
   {
     "AID": 20240172,
@@ -2310,7 +1455,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240172.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1734613904412
+    "UpdateTime": 1734613702
   },
   {
     "AID": 20240149,
@@ -2319,7 +1464,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240149.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1732121338412
+    "UpdateTime": 1732121136
   },
   {
     "AID": 20240090,
@@ -2328,7 +1473,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240090.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1727324261412
+    "UpdateTime": 1727324059
   },
   {
     "AID": 20240039,
@@ -2337,7 +1482,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240039.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 1725811549408
+    "UpdateTime": 1725811347
   },
   {
     "AID": 20230091,
@@ -2346,7 +1491,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230091.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 1724391655308
+    "UpdateTime": 1724391453
   },
   {
     "AID": 20240059,
@@ -2355,7 +1500,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1719156549412
+    "UpdateTime": 1719156347
   },
   {
     "AID": 20230299,
@@ -2364,7 +1509,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230299.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1713717025422
+    "UpdateTime": 1713716823
   },
   {
     "AID": 20230209,
@@ -2373,7 +1518,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230209.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1711130251324
+    "UpdateTime": 1711130049
   },
   {
     "AID": 20230207,
@@ -2382,7 +1527,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230207.jpg",
     "Status": "完结",
     "UpToDate": "更新至第28集",
-    "UpdateTime": 1711122096328
+    "UpdateTime": 1711121894
   },
   {
     "AID": 20230225,
@@ -2391,7 +1536,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230225.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1703433821312
+    "UpdateTime": 1703433619
   },
   {
     "AID": 20220248,
@@ -2400,7 +1545,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220248.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1695569324312
+    "UpdateTime": 1695569122
   },
   {
     "AID": 20230174,
@@ -2408,8 +1553,8 @@
     "Pinyin": "dlam：dxytkdlxx",
     "Cover": "https://cdn.aqdstatic.com:966/age/20230174.jpg",
     "Status": "完结",
-    "UpToDate": "抢先版",
-    "UpdateTime": 1692665356300
+    "UpToDate": "连载中",
+    "UpdateTime": 1692665154
   },
   {
     "AID": 20220537,
@@ -2417,8 +1562,8 @@
     "Pinyin": "glgs the first slam dunk",
     "Cover": "https://cdn.aqdstatic.com:966/age/20220537.jpg",
     "Status": "完结",
-    "UpToDate": "HD中字",
-    "UpdateTime": 1691857558200
+    "UpToDate": "连载中",
+    "UpdateTime": 1691857356
   },
   {
     "AID": 20220494,
@@ -2427,7 +1572,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220494.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1690014789221
+    "UpdateTime": 1690014587
   },
   {
     "AID": 20220244,
@@ -2435,8 +1580,8 @@
     "Pinyin": "jjdjr zzj wjp qp",
     "Cover": "https://cdn.aqdstatic.com:966/age/20220244.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1689410265300
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1689410063
   },
   {
     "AID": 20190020,
@@ -2445,7 +1590,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1688372373912
+    "UpdateTime": 1688372172
   },
   {
     "AID": 20060005,
@@ -2454,7 +1599,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060005.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1688283521612
+    "UpdateTime": 1688283321
   },
   {
     "AID": 20160070,
@@ -2462,8 +1607,8 @@
     "Pinyin": "gbsxwyhjcb chjyqjxhnl",
     "Cover": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1688283397600
+    "UpToDate": "连载中",
+    "UpdateTime": 1688283196
   },
   {
     "AID": 20140067,
@@ -2472,7 +1617,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140067.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 1688197208411
+    "UpdateTime": 1688197007
   },
   {
     "AID": 20170046,
@@ -2481,7 +1626,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170046.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1688196876712
+    "UpdateTime": 1688196675
   },
   {
     "AID": 20190036,
@@ -2490,7 +1635,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190036.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1688023765912
+    "UpdateTime": 1688023564
   },
   {
     "AID": 20230085,
@@ -2499,7 +1644,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230085.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1688010773312
+    "UpdateTime": 1688010571
   },
   {
     "AID": 20100064,
@@ -2508,7 +1653,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100064.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1687856259012
+    "UpdateTime": 1687856058
   },
   {
     "AID": 20120035,
@@ -2517,7 +1662,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1687678252212
+    "UpdateTime": 1687678051
   },
   {
     "AID": 20230072,
@@ -2526,7 +1671,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230072.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1687622893313
+    "UpdateTime": 1687622691
   },
   {
     "AID": 20160152,
@@ -2535,7 +1680,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160152.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1687590558613
+    "UpdateTime": 1687590357
   },
   {
     "AID": 20110066,
@@ -2544,7 +1689,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110066.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1687506774112
+    "UpdateTime": 1687506573
   },
   {
     "AID": 20120021,
@@ -2553,7 +1698,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1687425361213
+    "UpdateTime": 1687425160
   },
   {
     "AID": 20060065,
@@ -2562,7 +1707,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060065.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1687338277625
+    "UpdateTime": 1687338077
   },
   {
     "AID": 20100055,
@@ -2571,7 +1716,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1687073159025
+    "UpdateTime": 1687072958
   },
   {
     "AID": 20080043,
@@ -2580,7 +1725,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080043.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686902433812
+    "UpdateTime": 1686902233
   },
   {
     "AID": 20070055,
@@ -2589,7 +1734,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686823782712
+    "UpdateTime": 1686823582
   },
   {
     "AID": 20180188,
@@ -2597,8 +1742,8 @@
     "Pinyin": "qyzjcb tkdqt",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180188.jpg",
     "Status": "完结",
-    "UpToDate": "HD",
-    "UpdateTime": 1686811176800
+    "UpToDate": "连载中",
+    "UpdateTime": 1686810975
   },
   {
     "AID": 20150009,
@@ -2607,7 +1752,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1686643970525
+    "UpdateTime": 1686643769
   },
   {
     "AID": 20170021,
@@ -2616,7 +1761,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1686578346713
+    "UpdateTime": 1686578145
   },
   {
     "AID": 20190022,
@@ -2625,7 +1770,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190022.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686578288912
+    "UpdateTime": 1686578087
   },
   {
     "AID": 20060027,
@@ -2634,7 +1779,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686380702612
+    "UpdateTime": 1686380502
   },
   {
     "AID": 20130076,
@@ -2643,7 +1788,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686380482312
+    "UpdateTime": 1686380281
   },
   {
     "AID": 20160132,
@@ -2652,7 +1797,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160132.jpg",
     "Status": "完结",
     "UpToDate": "更新至第14集",
-    "UpdateTime": 1686293479614
+    "UpdateTime": 1686293278
   },
   {
     "AID": 20160180,
@@ -2661,7 +1806,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160180.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686207730612
+    "UpdateTime": 1686207529
   },
   {
     "AID": 20150011,
@@ -2670,7 +1815,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1686123652512
+    "UpdateTime": 1686123451
   },
   {
     "AID": 20120019,
@@ -2679,7 +1824,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120019.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1686038269213
+    "UpdateTime": 1686038068
   },
   {
     "AID": 20150030,
@@ -2688,7 +1833,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1686038222513
+    "UpdateTime": 1686038021
   },
   {
     "AID": 20070016,
@@ -2697,7 +1842,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1685951635724
+    "UpdateTime": 1685951435
   },
   {
     "AID": 20030021,
@@ -2706,7 +1851,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20030021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第27集",
-    "UpdateTime": 1685951448327
+    "UpdateTime": 1685951248
   },
   {
     "AID": 20050018,
@@ -2715,7 +1860,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050018.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685951408512
+    "UpdateTime": 1685951208
   },
   {
     "AID": 20100050,
@@ -2724,7 +1869,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100050.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685864591012
+    "UpdateTime": 1685864390
   },
   {
     "AID": 20130019,
@@ -2733,7 +1878,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130019.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1685864554324
+    "UpdateTime": 1685864353
   },
   {
     "AID": 20100003,
@@ -2742,7 +1887,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100003.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685855862012
+    "UpdateTime": 1685855661
   },
   {
     "AID": 20070012,
@@ -2751,7 +1896,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第10集",
-    "UpdateTime": 1685779010710
+    "UpdateTime": 1685778810
   },
   {
     "AID": 20170030,
@@ -2760,7 +1905,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1685778199722
+    "UpdateTime": 1685777998
   },
   {
     "AID": 20130078,
@@ -2769,7 +1914,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130078.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1685691879313
+    "UpdateTime": 1685691678
   },
   {
     "AID": 20180236,
@@ -2777,8 +1922,8 @@
     "Pinyin": "mfsnny detonation",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180236.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1685691798800
+    "UpToDate": "连载中",
+    "UpdateTime": 1685691597
   },
   {
     "AID": 20150041,
@@ -2787,7 +1932,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150041.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685691661512
+    "UpdateTime": 1685691460
   },
   {
     "AID": 20150056,
@@ -2796,7 +1941,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150056.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685603159512
+    "UpdateTime": 1685602958
   },
   {
     "AID": 20150042,
@@ -2804,8 +1949,8 @@
     "Pinyin": "cjdmly",
     "Cover": "https://cdn.aqdstatic.com:966/age/20150042.jpg",
     "Status": "完结",
-    "UpToDate": "完结",
-    "UpdateTime": 1685603057500
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 1685602856
   },
   {
     "AID": 20170012,
@@ -2814,7 +1959,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1685519317713
+    "UpdateTime": 1685519116
   },
   {
     "AID": 20110027,
@@ -2823,7 +1968,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1685519266113
+    "UpdateTime": 1685519065
   },
   {
     "AID": 20130073,
@@ -2832,7 +1977,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130073.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685434714312
+    "UpdateTime": 1685434513
   },
   {
     "AID": 20110036,
@@ -2841,7 +1986,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110036.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685434679112
+    "UpdateTime": 1685434478
   },
   {
     "AID": 20130074,
@@ -2850,7 +1995,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130074.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685434335312
+    "UpdateTime": 1685434134
   },
   {
     "AID": 20110034,
@@ -2859,7 +2004,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110034.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685434236112
+    "UpdateTime": 1685434035
   },
   {
     "AID": 20120054,
@@ -2868,7 +2013,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685349821212
+    "UpdateTime": 1685349620
   },
   {
     "AID": 20120056,
@@ -2877,7 +2022,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120056.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685349729212
+    "UpdateTime": 1685349528
   },
   {
     "AID": 20200240,
@@ -2886,7 +2031,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200240.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685349609112
+    "UpdateTime": 1685349407
   },
   {
     "AID": 20200125,
@@ -2895,7 +2040,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200125.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685349547012
+    "UpdateTime": 1685349345
   },
   {
     "AID": 20110055,
@@ -2904,7 +2049,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685348958112
+    "UpdateTime": 1685348757
   },
   {
     "AID": 20160038,
@@ -2913,7 +2058,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160038.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685088886612
+    "UpdateTime": 1685088685
   },
   {
     "AID": 20020012,
@@ -2922,7 +2067,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685088813212
+    "UpdateTime": 1685088613
   },
   {
     "AID": 20180132,
@@ -2931,7 +2076,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180132.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1685002270812
+    "UpdateTime": 1685002069
   },
   {
     "AID": 20180042,
@@ -2940,7 +2085,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180042.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1685002211824
+    "UpdateTime": 1685002010
   },
   {
     "AID": 20130025,
@@ -2949,7 +2094,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 1684911382311
+    "UpdateTime": 1684911181
   },
   {
     "AID": 20170071,
@@ -2957,8 +2102,8 @@
     "Pinyin": "djsyjcb xlzz",
     "Cover": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1684911162700
+    "UpToDate": "连载中",
+    "UpdateTime": 1684910961
   },
   {
     "AID": 20190038,
@@ -2967,7 +2112,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190038.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684829818912
+    "UpdateTime": 1684829617
   },
   {
     "AID": 20170018,
@@ -2976,7 +2121,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170018.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684829765712
+    "UpdateTime": 1684829564
   },
   {
     "AID": 20180247,
@@ -2984,8 +2129,8 @@
     "Pinyin": "zhoxscq",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180247.jpg",
     "Status": "完结",
-    "UpToDate": "完结",
-    "UpdateTime": 1684743471800
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 1684743270
   },
   {
     "AID": 20190174,
@@ -2993,8 +2138,8 @@
     "Pinyin": "ccyyx hwx～npdsj～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190174.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1684743376900
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1684743175
   },
   {
     "AID": 20010006,
@@ -3003,7 +2148,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20010006.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684743063112
+    "UpdateTime": 1684742863
   },
   {
     "AID": 20190165,
@@ -3012,7 +2157,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190165.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684221654912
+    "UpdateTime": 1684221453
   },
   {
     "AID": 20150032,
@@ -3021,7 +2166,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1684221574522
+    "UpdateTime": 1684221373
   },
   {
     "AID": 20190123,
@@ -3029,8 +2174,8 @@
     "Pinyin": "jtcdkbnl～hmjz～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190123.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1684221526900
+    "UpToDate": "连载中",
+    "UpdateTime": 1684221325
   },
   {
     "AID": 20180029,
@@ -3039,7 +2184,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180029.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684221429812
+    "UpdateTime": 1684221228
   },
   {
     "AID": 20110025,
@@ -3048,7 +2193,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1684221339124
+    "UpdateTime": 1684221138
   },
   {
     "AID": 20170010,
@@ -3057,7 +2202,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684221185712
+    "UpdateTime": 1684220984
   },
   {
     "AID": 20190156,
@@ -3066,7 +2211,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190156.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684135989912
+    "UpdateTime": 1684135788
   },
   {
     "AID": 20170115,
@@ -3075,7 +2220,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170115.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1684135786724
+    "UpdateTime": 1684135585
   },
   {
     "AID": 20180101,
@@ -3084,7 +2229,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180101.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684135742812
+    "UpdateTime": 1684135541
   },
   {
     "AID": 20180220,
@@ -3093,7 +2238,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180220.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1684133078824
+    "UpdateTime": 1684132877
   },
   {
     "AID": 20060026,
@@ -3102,7 +2247,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060026.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684048398612
+    "UpdateTime": 1684048198
   },
   {
     "AID": 20190110,
@@ -3111,7 +2256,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684048082912
+    "UpdateTime": 1684047881
   },
   {
     "AID": 20170253,
@@ -3120,7 +2265,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170253.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1684047987712
+    "UpdateTime": 1684047786
   },
   {
     "AID": 20180002,
@@ -3129,7 +2274,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180002.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1684047942824
+    "UpdateTime": 1684047741
   },
   {
     "AID": 20080053,
@@ -3138,7 +2283,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080053.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683961386812
+    "UpdateTime": 1683961186
   },
   {
     "AID": 20100044,
@@ -3147,7 +2292,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100044.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683961119012
+    "UpdateTime": 1683960918
   },
   {
     "AID": 20200252,
@@ -3156,7 +2301,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200252.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683792271112
+    "UpdateTime": 1683792069
   },
   {
     "AID": 20160005,
@@ -3165,7 +2310,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160005.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1683792175625
+    "UpdateTime": 1683791974
   },
   {
     "AID": 20140130,
@@ -3174,7 +2319,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140130.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683710443412
+    "UpdateTime": 1683710242
   },
   {
     "AID": 20020008,
@@ -3183,7 +2328,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1683617636224
+    "UpdateTime": 1683617436
   },
   {
     "AID": 20120069,
@@ -3191,8 +2336,8 @@
     "Pinyin": "zyszddsj tlp",
     "Cover": "https://cdn.aqdstatic.com:966/age/20120069.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1683532550200
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 1683532349
   },
   {
     "AID": 20200071,
@@ -3201,7 +2346,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200071.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683532481012
+    "UpdateTime": 1683532279
   },
   {
     "AID": 20190126,
@@ -3209,8 +2354,8 @@
     "Pinyin": "gblssjcb goblin's crown",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190126.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1683450621000
+    "UpToDate": "连载中",
+    "UpdateTime": 1683450419
   },
   {
     "AID": 20170060,
@@ -3219,7 +2364,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170060.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683450242712
+    "UpdateTime": 1683450041
   },
   {
     "AID": 20200128,
@@ -3228,7 +2373,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200128.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1683363831013
+    "UpdateTime": 1683363629
   },
   {
     "AID": 20200313,
@@ -3237,7 +2382,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200313.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683363795012
+    "UpdateTime": 1683363593
   },
   {
     "AID": 20120017,
@@ -3246,7 +2391,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120017.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1683190425212
+    "UpdateTime": 1683190224
   },
   {
     "AID": 20130134,
@@ -3255,7 +2400,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130134.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1682851020313
+    "UpdateTime": 1682850819
   },
   {
     "AID": 20140032,
@@ -3264,7 +2409,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1682430614412
+    "UpdateTime": 1682430413
   },
   {
     "AID": 20190030,
@@ -3273,7 +2418,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1682241445925
+    "UpdateTime": 1682241244
   },
   {
     "AID": 20180278,
@@ -3282,7 +2427,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180278.jpg",
     "Status": "完结",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 1682143257802
+    "UpdateTime": 1682143056
   },
   {
     "AID": 20230030,
@@ -3291,7 +2436,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1681493866312
+    "UpdateTime": 1681493664
   },
   {
     "AID": 20140011,
@@ -3300,7 +2445,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1680710015413
+    "UpdateTime": 1680709814
   },
   {
     "AID": 20160023,
@@ -3309,7 +2454,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1680709841612
+    "UpdateTime": 1680709640
   },
   {
     "AID": 20220245,
@@ -3318,7 +2463,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220245.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1680280309312
+    "UpdateTime": 1680280107
   },
   {
     "AID": 20140099,
@@ -3327,7 +2472,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1679987734413
+    "UpdateTime": 1679987533
   },
   {
     "AID": 20190090,
@@ -3336,7 +2481,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190090.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1679987532912
+    "UpdateTime": 1679987331
   },
   {
     "AID": 20170011,
@@ -3345,7 +2490,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1679214689712
+    "UpdateTime": 1679214488
   },
   {
     "AID": 20220008,
@@ -3353,8 +2498,8 @@
     "Pinyin": "ysjsczjcb another world",
     "Cover": "https://cdn.aqdstatic.com:966/age/20220008.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1679144533200
+    "UpToDate": "连载中",
+    "UpdateTime": 1679144331
   },
   {
     "AID": 20060014,
@@ -3363,7 +2508,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1679126919624
+    "UpdateTime": 1679126719
   },
   {
     "AID": 20180311,
@@ -3371,8 +2516,8 @@
     "Pinyin": "xmyrzjcb ～yjkc～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20180311.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1678862783800
+    "UpToDate": "连载中",
+    "UpdateTime": 1678862582
   },
   {
     "AID": 20170024,
@@ -3381,7 +2526,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1678862590712
+    "UpdateTime": 1678862389
   },
   {
     "AID": 20130067,
@@ -3390,7 +2535,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130067.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1678860924312
+    "UpdateTime": 1678860723
   },
   {
     "AID": 20100009,
@@ -3399,7 +2544,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1678602209012
+    "UpdateTime": 1678602008
   },
   {
     "AID": 20080047,
@@ -3408,7 +2553,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080047.jpg",
     "Status": "完结",
     "UpToDate": "更新至第06集",
-    "UpdateTime": 1678601207806
+    "UpdateTime": 1678601007
   },
   {
     "AID": 20180028,
@@ -3417,7 +2562,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180028.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1678519459812
+    "UpdateTime": 1678519258
   },
   {
     "AID": 20140086,
@@ -3426,7 +2571,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140086.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1678443348424
+    "UpdateTime": 1678443147
   },
   {
     "AID": 20060037,
@@ -3435,7 +2580,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060037.jpg",
     "Status": "完结",
     "UpToDate": "更新至第27集",
-    "UpdateTime": 1666937104627
+    "UpdateTime": 1666936904
   },
   {
     "AID": 20220063,
@@ -3444,7 +2589,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220063.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1647962159212
+    "UpdateTime": 1647961957
   },
   {
     "AID": 20210214,
@@ -3453,7 +2598,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210214.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1640186628112
+    "UpdateTime": 1640186426
   },
   {
     "AID": 20210134,
@@ -3461,8 +2606,8 @@
     "Pinyin": "qyzjcb bgzzdzr",
     "Cover": "https://cdn.aqdstatic.com:966/age/20210134.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1633102521100
+    "UpToDate": "连载中",
+    "UpdateTime": 1633102319
   },
   {
     "AID": 20210240,
@@ -3470,8 +2615,8 @@
     "Pinyin": "ynzj dej",
     "Cover": "https://cdn.aqdstatic.com:966/age/20210240.jpg",
     "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 1624248109100
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 1624247907
   },
   {
     "AID": 20200164,
@@ -3480,7 +2625,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200164.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1618153512001
+    "UpdateTime": 1618153310
   },
   {
     "AID": 20170082,
@@ -3489,7 +2634,7 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/e5/a5/202880_f45cZ.jpg",
     "Status": "更新至170集",
     "UpToDate": "更新至第170集",
-    "UpdateTime": 1617100412870
+    "UpdateTime": 1617100211
   },
   {
     "AID": 20210020,
@@ -3498,7 +2643,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1616876294101
+    "UpdateTime": 1616876092
   },
   {
     "AID": 20200217,
@@ -3507,7 +2652,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200217.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 1616780796026
+    "UpdateTime": 1616780594
   },
   {
     "AID": 20210006,
@@ -3516,7 +2661,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210006.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1616702206101
+    "UpdateTime": 1616702004
   },
   {
     "AID": 20210034,
@@ -3525,7 +2670,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210034.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1616604158101
+    "UpdateTime": 1616603956
   },
   {
     "AID": 20200227,
@@ -3534,7 +2679,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200227.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1609000683001
+    "UpdateTime": 1609000481
   },
   {
     "AID": 20200243,
@@ -3543,7 +2688,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200243.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1608642358001
+    "UpdateTime": 1608642156
   },
   {
     "AID": 20190205,
@@ -3552,7 +2697,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190205.jpg",
     "Status": "完结",
     "UpToDate": "更新至第50集",
-    "UpdateTime": 1601461068950
+    "UpdateTime": 1601460867
   },
   {
     "AID": 20200075,
@@ -3561,7 +2706,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200075.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1600785730001
+    "UpdateTime": 1600785528
   },
   {
     "AID": 20200023,
@@ -3570,7 +2715,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1600217146001
+    "UpdateTime": 1600216944
   },
   {
     "AID": 20030008,
@@ -3579,7 +2724,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20030008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 1595179889326
+    "UpdateTime": 1595179689
   },
   {
     "AID": 20100026,
@@ -3588,7 +2733,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100026.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1594378038001
+    "UpdateTime": 1594377837
   },
   {
     "AID": 20200249,
@@ -3597,7 +2742,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200249.jpg",
     "Status": "完结",
     "UpToDate": "更新至第10集",
-    "UpdateTime": 1594307493010
+    "UpdateTime": 1594307291
   },
   {
     "AID": 20100006,
@@ -3606,7 +2751,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100006.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1593993337013
+    "UpdateTime": 1593993136
   },
   {
     "AID": 20190119,
@@ -3615,7 +2760,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190119.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1593443234013
+    "UpdateTime": 1593443032
   },
   {
     "AID": 20200135,
@@ -3624,7 +2769,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200135.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1592619990001
+    "UpdateTime": 1592619788
   },
   {
     "AID": 20200067,
@@ -3633,7 +2778,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200067.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1592495701001
+    "UpdateTime": 1592495499
   },
   {
     "AID": 20190047,
@@ -3642,7 +2787,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190047.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1591421582901
+    "UpdateTime": 1591421381
   },
   {
     "AID": 20200029,
@@ -3651,7 +2796,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200029.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1591199043001
+    "UpdateTime": 1591198841
   },
   {
     "AID": 20010004,
@@ -3660,7 +2805,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20010004.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1589114509113
+    "UpdateTime": 1589114309
   },
   {
     "AID": 20070032,
@@ -3669,7 +2814,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1588921626701
+    "UpdateTime": 1588921426
   },
   {
     "AID": 20100052,
@@ -3677,8 +2822,8 @@
     "Pinyin": "jcb kyhddbyh",
     "Cover": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1588771694000
+    "UpToDate": "连载中",
+    "UpdateTime": 1588771493
   },
   {
     "AID": 20070007,
@@ -3687,7 +2832,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1588550009701
+    "UpdateTime": 1588549809
   },
   {
     "AID": 20140080,
@@ -3696,7 +2841,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140080.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1588508039412
+    "UpdateTime": 1588507838
   },
   {
     "AID": 20180358,
@@ -3705,7 +2850,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180358.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1586499689801
+    "UpdateTime": 1586499488
   },
   {
     "AID": 20190058,
@@ -3714,7 +2859,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190058.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1585581162001
+    "UpdateTime": 1585580960
   },
   {
     "AID": 20190031,
@@ -3723,7 +2868,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1585430639001
+    "UpdateTime": 1585430437
   },
   {
     "AID": 20190366,
@@ -3732,7 +2877,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1585321766001
+    "UpdateTime": 1585321564
   },
   {
     "AID": 20190210,
@@ -3741,7 +2886,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190210.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1585180794901
+    "UpdateTime": 1585180593
   },
   {
     "AID": 20200034,
@@ -3750,7 +2895,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200034.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1584897063001
+    "UpdateTime": 1584896861
   },
   {
     "AID": 20190008,
@@ -3759,7 +2904,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 1584807035921
+    "UpdateTime": 1584806834
   },
   {
     "AID": 20190202,
@@ -3768,7 +2913,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1583579605901
+    "UpdateTime": 1583579404
   },
   {
     "AID": 20070014,
@@ -3777,7 +2922,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1583548420725
+    "UpdateTime": 1583548220
   },
   {
     "AID": 20000025,
@@ -3786,7 +2931,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1583135541001
+    "UpdateTime": 1583135341
   },
   {
     "AID": 20020014,
@@ -3795,7 +2940,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1582463858213
+    "UpdateTime": 1582463658
   },
   {
     "AID": 20080060,
@@ -3804,7 +2949,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080060.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1582462482801
+    "UpdateTime": 1582462282
   },
   {
     "AID": 20070010,
@@ -3813,7 +2958,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1582306853701
+    "UpdateTime": 1582306653
   },
   {
     "AID": 20190185,
@@ -3821,8 +2966,8 @@
     "Pinyin": "ezg",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190185.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1581264909900
+    "UpToDate": "连载中",
+    "UpdateTime": 1581264708
   },
   {
     "AID": 20100075,
@@ -3831,7 +2976,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100075.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1580876117012
+    "UpdateTime": 1580875916
   },
   {
     "AID": 20050032,
@@ -3840,7 +2985,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1580570288525
+    "UpdateTime": 1580570088
   },
   {
     "AID": 20080059,
@@ -3849,7 +2994,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1580238122801
+    "UpdateTime": 1580237922
   },
   {
     "AID": 20000024,
@@ -3858,7 +3003,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1579868566001
+    "UpdateTime": 1579868366
   },
   {
     "AID": 20070048,
@@ -3867,7 +3012,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070048.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1579433649713
+    "UpdateTime": 1579433449
   },
   {
     "AID": 20090059,
@@ -3876,7 +3021,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20090059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1579384740901
+    "UpdateTime": 1579384540
   },
   {
     "AID": 20190092,
@@ -3885,7 +3030,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190092.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1577474097901
+    "UpdateTime": 1577473896
   },
   {
     "AID": 20190396,
@@ -3893,8 +3038,8 @@
     "Pinyin": "zllyhhy wz - yyyzdsjro -",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1576742064900
+    "UpToDate": "连载中",
+    "UpdateTime": 1576741863
   },
   {
     "AID": 20190359,
@@ -3903,7 +3048,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190359.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1575176641901
+    "UpdateTime": 1575176440
   },
   {
     "AID": 20050024,
@@ -3912,7 +3057,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 1573842755526
+    "UpdateTime": 1573842555
   },
   {
     "AID": 20050023,
@@ -3921,7 +3066,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1573734422512
+    "UpdateTime": 1573734222
   },
   {
     "AID": 20150172,
@@ -3930,7 +3075,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150172.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1572847096501
+    "UpdateTime": 1572846895
   },
   {
     "AID": 20110031,
@@ -3939,7 +3084,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1572697336112
+    "UpdateTime": 1572697135
   },
   {
     "AID": 20190012,
@@ -3947,8 +3092,8 @@
     "Pinyin": "cslrjcb xs private eyes",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190012.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1572454311900
+    "UpToDate": "连载中",
+    "UpdateTime": 1572454110
   },
   {
     "AID": 20100060,
@@ -3957,7 +3102,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100060.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1572083276001
+    "UpdateTime": 1572083075
   },
   {
     "AID": 20180175,
@@ -3966,7 +3111,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180175.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1571135453801
+    "UpdateTime": 1571135252
   },
   {
     "AID": 20140168,
@@ -3975,7 +3120,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140168.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1570506158401
+    "UpdateTime": 1570505957
   },
   {
     "AID": 20040001,
@@ -3984,7 +3129,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20040001.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1569929069413
+    "UpdateTime": 1569928869
   },
   {
     "AID": 20190111,
@@ -3993,7 +3138,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190111.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1569000526925
+    "UpdateTime": 1569000325
   },
   {
     "AID": 20190033,
@@ -4002,7 +3147,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190033.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1568822855901
+    "UpdateTime": 1568822654
   },
   {
     "AID": 20130142,
@@ -4011,7 +3156,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1568728237301
+    "UpdateTime": 1568728036
   },
   {
     "AID": 20140165,
@@ -4020,7 +3165,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140165.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1568263886401
+    "UpdateTime": 1568263685
   },
   {
     "AID": 20050016,
@@ -4029,7 +3174,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1565067736524
+    "UpdateTime": 1565067536
   },
   {
     "AID": 20190004,
@@ -4037,8 +3182,8 @@
     "Pinyin": "love live! sunshine!! jcb chzs",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190004.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1564072288900
+    "UpToDate": "连载中",
+    "UpdateTime": 1564072087
   },
   {
     "AID": 20190059,
@@ -4047,7 +3192,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1563191720901
+    "UpdateTime": 1563191519
   },
   {
     "AID": 20040002,
@@ -4056,7 +3201,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20040002.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1562517085413
+    "UpdateTime": 1562516885
   },
   {
     "AID": 20190093,
@@ -4065,7 +3210,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190093.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1561583050912
+    "UpdateTime": 1561582849
   },
   {
     "AID": 20190138,
@@ -4074,7 +3219,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1561302188901
+    "UpdateTime": 1561301987
   },
   {
     "AID": 20190120,
@@ -4083,7 +3228,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190120.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1561227112912
+    "UpdateTime": 1561226911
   },
   {
     "AID": 20190052,
@@ -4092,7 +3237,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190052.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1561148709901
+    "UpdateTime": 1561148508
   },
   {
     "AID": 20070029,
@@ -4101,7 +3246,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070029.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1554787580701
+    "UpdateTime": 1554787380
   },
   {
     "AID": 20190007,
@@ -4110,7 +3255,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1553988119901
+    "UpdateTime": 1553987918
   },
   {
     "AID": 20180246,
@@ -4119,7 +3264,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180246.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1553963808801
+    "UpdateTime": 1553963607
   },
   {
     "AID": 20180242,
@@ -4128,7 +3273,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180242.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1553872314801
+    "UpdateTime": 1553872113
   },
   {
     "AID": 20190045,
@@ -4137,7 +3282,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190045.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1553864833901
+    "UpdateTime": 1553864632
   },
   {
     "AID": 20190091,
@@ -4146,7 +3291,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190091.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1553537278901
+    "UpdateTime": 1553537077
   },
   {
     "AID": 20180078,
@@ -4155,7 +3300,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180078.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1546871178813
+    "UpdateTime": 1546870977
   },
   {
     "AID": 20050027,
@@ -4164,7 +3309,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第04集",
-    "UpdateTime": 1546429931504
+    "UpdateTime": 1546429731
   },
   {
     "AID": 20180230,
@@ -4173,7 +3318,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180230.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1546018339813
+    "UpdateTime": 1546018138
   },
   {
     "AID": 20180189,
@@ -4182,7 +3327,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180189.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1546006015801
+    "UpdateTime": 1546005814
   },
   {
     "AID": 20180228,
@@ -4191,7 +3336,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180228.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1545850627801
+    "UpdateTime": 1545850426
   },
   {
     "AID": 20180213,
@@ -4200,7 +3345,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180213.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1545850480801
+    "UpdateTime": 1545850279
   },
   {
     "AID": 20180229,
@@ -4209,7 +3354,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1545397699812
+    "UpdateTime": 1545397498
   },
   {
     "AID": 20180262,
@@ -4218,7 +3363,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180262.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1540960957801
+    "UpdateTime": 1540960756
   },
   {
     "AID": 20110058,
@@ -4227,7 +3372,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
     "Status": "完结",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 1538659452100
+    "UpdateTime": 1538659251
   },
   {
     "AID": 20170196,
@@ -4235,8 +3380,8 @@
     "Pinyin": "qwnjtyldtzm？？～dear my sister～",
     "Cover": "https://cdn.aqdstatic.com:966/age/20170196.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1538634934700
+    "UpToDate": "连载中",
+    "UpdateTime": 1538634733
   },
   {
     "AID": 20180168,
@@ -4245,7 +3390,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180168.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1538267935801
+    "UpdateTime": 1538267734
   },
   {
     "AID": 20180126,
@@ -4254,7 +3399,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180126.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1538191427812
+    "UpdateTime": 1538191226
   },
   {
     "AID": 20180176,
@@ -4263,7 +3408,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180176.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1537815892801
+    "UpdateTime": 1537815691
   },
   {
     "AID": 20180081,
@@ -4272,7 +3417,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180081.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1537803576801
+    "UpdateTime": 1537803375
   },
   {
     "AID": 20180146,
@@ -4281,7 +3426,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1537536730801
+    "UpdateTime": 1537536529
   },
   {
     "AID": 20180147,
@@ -4290,7 +3435,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180147.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1537535044801
+    "UpdateTime": 1537534843
   },
   {
     "AID": 20180157,
@@ -4299,7 +3444,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180157.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1536084032801
+    "UpdateTime": 1536083831
   },
   {
     "AID": 20180069,
@@ -4308,7 +3453,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180069.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1533499210801
+    "UpdateTime": 1533499009
   },
   {
     "AID": 20180104,
@@ -4317,7 +3462,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180104.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1530469247801
+    "UpdateTime": 1530469046
   },
   {
     "AID": 20180111,
@@ -4326,7 +3471,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180111.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1530117125801
+    "UpdateTime": 1530116924
   },
   {
     "AID": 20180040,
@@ -4335,7 +3480,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180040.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1530066927812
+    "UpdateTime": 1530066726
   },
   {
     "AID": 20180099,
@@ -4344,7 +3489,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1529855983801
+    "UpdateTime": 1529855782
   },
   {
     "AID": 20180083,
@@ -4353,7 +3498,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180083.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1529642288801
+    "UpdateTime": 1529642087
   },
   {
     "AID": 20180057,
@@ -4362,7 +3507,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180057.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1529593975801
+    "UpdateTime": 1529593774
   },
   {
     "AID": 20170107,
@@ -4371,7 +3516,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170107.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1523219897701
+    "UpdateTime": 1523219696
   },
   {
     "AID": 20180030,
@@ -4380,7 +3525,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1522341024801
+    "UpdateTime": 1522340823
   },
   {
     "AID": 20150062,
@@ -4388,8 +3533,8 @@
     "Pinyin": "yhdzzjcb wylcj",
     "Cover": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1522246466500
+    "UpToDate": "连载中",
+    "UpdateTime": 1522246265
   },
   {
     "AID": 20170033,
@@ -4398,7 +3543,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170033.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1521777859701
+    "UpdateTime": 1521777658
   },
   {
     "AID": 20110054,
@@ -4406,8 +3551,8 @@
     "Pinyin": "mflsjcb anime final",
     "Cover": "https://cdn.aqdstatic.com:966/age/20110054.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1516256278100
+    "UpToDate": "连载中",
+    "UpdateTime": 1516256077
   },
   {
     "AID": 20170126,
@@ -4416,7 +3561,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170126.jpg",
     "Status": "完结",
     "UpToDate": "更新至第06集",
-    "UpdateTime": 1515824838706
+    "UpdateTime": 1515824637
   },
   {
     "AID": 20170095,
@@ -4425,7 +3570,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170095.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1515654910701
+    "UpdateTime": 1515654709
   },
   {
     "AID": 20170096,
@@ -4434,7 +3579,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170096.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1515356581701
+    "UpdateTime": 1515356380
   },
   {
     "AID": 20060010,
@@ -4443,7 +3588,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1515153591613
+    "UpdateTime": 1515153391
   },
   {
     "AID": 20170057,
@@ -4452,7 +3597,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170057.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1515040459701
+    "UpdateTime": 1515040258
   },
   {
     "AID": 20170097,
@@ -4461,7 +3606,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170097.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1507350729701
+    "UpdateTime": 1507350528
   },
   {
     "AID": 20170067,
@@ -4470,7 +3615,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170067.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1506762364701
+    "UpdateTime": 1506762163
   },
   {
     "AID": 20120070,
@@ -4479,7 +3624,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120070.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1506600386201
+    "UpdateTime": 1506600185
   },
   {
     "AID": 20170064,
@@ -4488,7 +3633,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170064.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 1506597076711
+    "UpdateTime": 1506596875
   },
   {
     "AID": 20170062,
@@ -4497,7 +3642,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170062.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1506507881701
+    "UpdateTime": 1506507680
   },
   {
     "AID": 20140122,
@@ -4506,7 +3651,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140122.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1506233644401
+    "UpdateTime": 1506233443
   },
   {
     "AID": 20140120,
@@ -4515,7 +3660,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140120.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1506171960401
+    "UpdateTime": 1506171759
   },
   {
     "AID": 20080020,
@@ -4524,7 +3669,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第51集",
-    "UpdateTime": 1505966360851
+    "UpdateTime": 1505966160
   },
   {
     "AID": 20140109,
@@ -4533,7 +3678,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 1505905422424
+    "UpdateTime": 1505905221
   },
   {
     "AID": 20140108,
@@ -4542,7 +3687,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140108.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1505850074401
+    "UpdateTime": 1505849873
   },
   {
     "AID": 20140101,
@@ -4551,7 +3696,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140101.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1505743092412
+    "UpdateTime": 1505742891
   },
   {
     "AID": 20120057,
@@ -4560,7 +3705,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120057.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1501260047201
+    "UpdateTime": 1501259846
   },
   {
     "AID": 20120040,
@@ -4569,7 +3714,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120040.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1500736142225
+    "UpdateTime": 1500735941
   },
   {
     "AID": 20120038,
@@ -4578,7 +3723,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1500179729225
+    "UpdateTime": 1500179528
   },
   {
     "AID": 20140083,
@@ -4587,7 +3732,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140083.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1499652817401
+    "UpdateTime": 1499652616
   },
   {
     "AID": 20140081,
@@ -4596,7 +3741,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1499454013401
+    "UpdateTime": 1499453812
   },
   {
     "AID": 20140076,
@@ -4605,7 +3750,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140076.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1499425675412
+    "UpdateTime": 1499425474
   },
   {
     "AID": 20170044,
@@ -4614,7 +3759,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170044.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1499322797712
+    "UpdateTime": 1499322596
   },
   {
     "AID": 20140069,
@@ -4623,7 +3768,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140069.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1499256002412
+    "UpdateTime": 1499255801
   },
   {
     "AID": 20130042,
@@ -4631,8 +3776,8 @@
     "Pinyin": "ltsmnjcb xsmy",
     "Cover": "https://cdn.aqdstatic.com:966/age/20130042.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1499182664300
+    "UpToDate": "连载中",
+    "UpdateTime": 1499182463
   },
   {
     "AID": 20120030,
@@ -4641,7 +3786,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1499066717213
+    "UpdateTime": 1499066516
   },
   {
     "AID": 20130038,
@@ -4650,7 +3795,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130038.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498912173301
+    "UpdateTime": 1498911972
   },
   {
     "AID": 20140059,
@@ -4659,7 +3804,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498908257401
+    "UpdateTime": 1498908056
   },
   {
     "AID": 20110029,
@@ -4668,7 +3813,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110029.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498838414101
+    "UpdateTime": 1498838213
   },
   {
     "AID": 20170036,
@@ -4677,7 +3822,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170036.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1498825193712
+    "UpdateTime": 1498824992
   },
   {
     "AID": 20090009,
@@ -4686,7 +3831,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20090009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1498729543912
+    "UpdateTime": 1498729343
   },
   {
     "AID": 20130032,
@@ -4695,7 +3840,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498727876301
+    "UpdateTime": 1498727675
   },
   {
     "AID": 20170034,
@@ -4704,7 +3849,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170034.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498714974701
+    "UpdateTime": 1498714773
   },
   {
     "AID": 20170032,
@@ -4713,7 +3858,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498628054701
+    "UpdateTime": 1498627853
   },
   {
     "AID": 20080011,
@@ -4722,7 +3867,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498578215801
+    "UpdateTime": 1498578015
   },
   {
     "AID": 20130026,
@@ -4731,7 +3876,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130026.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498314916301
+    "UpdateTime": 1498314715
   },
   {
     "AID": 20150084,
@@ -4740,7 +3885,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150084.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1498109271501
+    "UpdateTime": 1498109070
   },
   {
     "AID": 20110017,
@@ -4748,8 +3893,8 @@
     "Pinyin": "dmfxydzy",
     "Cover": "https://cdn.aqdstatic.com:966/age/20110017.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1497944335100
+    "UpToDate": "连载中",
+    "UpdateTime": 1497944134
   },
   {
     "AID": 20170014,
@@ -4758,7 +3903,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1497706815701
+    "UpdateTime": 1497706614
   },
   {
     "AID": 20170008,
@@ -4766,8 +3911,8 @@
     "Pinyin": "qrmfsjcb -yjtsgyljssn-",
     "Cover": "https://cdn.aqdstatic.com:966/age/20170008.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1497623274700
+    "UpToDate": "连载中",
+    "UpdateTime": 1497623073
   },
   {
     "AID": 20140037,
@@ -4776,7 +3921,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1497605525413
+    "UpdateTime": 1497605324
   },
   {
     "AID": 20120014,
@@ -4785,7 +3930,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1497601196213
+    "UpdateTime": 1497600995
   },
   {
     "AID": 20100007,
@@ -4794,7 +3939,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1497540753013
+    "UpdateTime": 1497540552
   },
   {
     "AID": 20120007,
@@ -4803,7 +3948,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 1497361415222
+    "UpdateTime": 1497361214
   },
   {
     "AID": 20130017,
@@ -4812,7 +3957,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130017.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1497274706301
+    "UpdateTime": 1497274505
   },
   {
     "AID": 20130014,
@@ -4821,7 +3966,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1497272460301
+    "UpdateTime": 1497272259
   },
   {
     "AID": 20140031,
@@ -4830,7 +3975,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1497198983412
+    "UpdateTime": 1497198782
   },
   {
     "AID": 20140028,
@@ -4839,7 +3984,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140028.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1497198970412
+    "UpdateTime": 1497198769
   },
   {
     "AID": 20140027,
@@ -4848,7 +3993,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1497152727425
+    "UpdateTime": 1497152526
   },
   {
     "AID": 20140020,
@@ -4857,7 +4002,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1497111035401
+    "UpdateTime": 1497110834
   },
   {
     "AID": 20140021,
@@ -4866,7 +4011,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第14集",
-    "UpdateTime": 1497111029414
+    "UpdateTime": 1497110828
   },
   {
     "AID": 20150053,
@@ -4875,7 +4020,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150053.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1497011975501
+    "UpdateTime": 1497011774
   },
   {
     "AID": 20150035,
@@ -4884,7 +4029,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496764684501
+    "UpdateTime": 1496764483
   },
   {
     "AID": 20150031,
@@ -4893,7 +4038,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496749205501
+    "UpdateTime": 1496749004
   },
   {
     "AID": 20150024,
@@ -4902,7 +4047,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第20241207集",
-    "UpdateTime": 1496686300707
+    "UpdateTime": 1496665858
   },
   {
     "AID": 20130007,
@@ -4910,8 +4055,8 @@
     "Pinyin": "myszm fhlydjsg",
     "Cover": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1496651857300
+    "UpToDate": "连载中",
+    "UpdateTime": 1496651656
   },
   {
     "AID": 20150019,
@@ -4919,8 +4064,8 @@
     "Pinyin": "hsdmg",
     "Cover": "https://cdn.aqdstatic.com:966/age/20150019.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1496501383500
+    "UpToDate": "连载中",
+    "UpdateTime": 1496501182
   },
   {
     "AID": 20060001,
@@ -4929,7 +4074,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496493935601
+    "UpdateTime": 1496493735
   },
   {
     "AID": 20130006,
@@ -4938,7 +4083,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 1496480300313
+    "UpdateTime": 1496480099
   },
   {
     "AID": 20160164,
@@ -4947,7 +4092,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160164.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468871601
+    "UpdateTime": 1496468670
   },
   {
     "AID": 20160161,
@@ -4956,7 +4101,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160161.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468868601
+    "UpdateTime": 1496468667
   },
   {
     "AID": 20160158,
@@ -4965,7 +4110,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160158.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468865601
+    "UpdateTime": 1496468664
   },
   {
     "AID": 20160148,
@@ -4974,7 +4119,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160148.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468854601
+    "UpdateTime": 1496468653
   },
   {
     "AID": 20160138,
@@ -4983,7 +4128,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160138.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468843601
+    "UpdateTime": 1496468642
   },
   {
     "AID": 20160121,
@@ -4992,7 +4137,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160121.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468824601
+    "UpdateTime": 1496468623
   },
   {
     "AID": 20160104,
@@ -5001,7 +4146,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160104.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468805601
+    "UpdateTime": 1496468604
   },
   {
     "AID": 20160094,
@@ -5010,7 +4155,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160094.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468794601
+    "UpdateTime": 1496468593
   },
   {
     "AID": 20160086,
@@ -5019,7 +4164,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160086.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468785601
+    "UpdateTime": 1496468584
   },
   {
     "AID": 20160085,
@@ -5028,7 +4173,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160085.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1496468784612
+    "UpdateTime": 1496468583
   },
   {
     "AID": 20160080,
@@ -5037,7 +4182,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160080.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468779601
+    "UpdateTime": 1496468578
   },
   {
     "AID": 20160061,
@@ -5046,7 +4191,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160061.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468758601
+    "UpdateTime": 1496468557
   },
   {
     "AID": 20160047,
@@ -5055,7 +4200,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160047.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468742601
+    "UpdateTime": 1496468541
   },
   {
     "AID": 20160042,
@@ -5064,7 +4209,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160042.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468737601
+    "UpdateTime": 1496468536
   },
   {
     "AID": 20160041,
@@ -5073,7 +4218,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160041.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468736601
+    "UpdateTime": 1496468535
   },
   {
     "AID": 20160039,
@@ -5081,8 +4226,8 @@
     "Pinyin": "blzhybhdsj",
     "Cover": "https://cdn.aqdstatic.com:966/age/20160039.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 1496468733600
+    "UpToDate": "连载中",
+    "UpdateTime": 1496468532
   },
   {
     "AID": 20160035,
@@ -5091,7 +4236,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1496468729612
+    "UpdateTime": 1496468528
   },
   {
     "AID": 20160020,
@@ -5100,7 +4245,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468712601
+    "UpdateTime": 1496468511
   },
   {
     "AID": 20160012,
@@ -5109,7 +4254,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468704601
+    "UpdateTime": 1496468503
   },
   {
     "AID": 20150014,
@@ -5118,7 +4263,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468688501
+    "UpdateTime": 1496468487
   },
   {
     "AID": 20150010,
@@ -5127,7 +4272,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 1496468683525
+    "UpdateTime": 1496468482
   },
   {
     "AID": 20150005,
@@ -5136,7 +4281,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150005.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 1496468678512
+    "UpdateTime": 1496468477
   },
   {
     "AID": 20150002,
@@ -5145,7 +4290,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150002.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468674501
+    "UpdateTime": 1496468473
   },
   {
     "AID": 20150001,
@@ -5154,7 +4299,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150001.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468673501
+    "UpdateTime": 1496468472
   },
   {
     "AID": 20120003,
@@ -5163,7 +4308,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120003.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468653201
+    "UpdateTime": 1496468452
   },
   {
     "AID": 20080002,
@@ -5172,6 +4317,528 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080002.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 1496468639801
+    "UpdateTime": 1496468439
+  },
+  {
+    "AID": 20120084,
+    "Title": "轮回的拉格朗日",
+    "Pinyin": "lhdlglr",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20120084.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 946656000
+  },
+  {
+    "AID": "a123_woduzishengji2",
+    "Title": "我独自升级 2",
+    "Pinyin": "wdzsj 2",
+    "Cover": "https://i1.a123tv.com/v/0x/woduzishengji2.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": 40884,
+    "Title": "鬼灭之刃锻刀村篇",
+    "Pinyin": "gmzrddcp",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_chimowudemaoxianzhe",
+    "Title": "吃魔物的冒险者",
+    "Pinyin": "cmwdmxz",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_xindiaodaiwatianshi",
+    "Title": "新吊带袜天使",
+    "Pinyin": "xddwts",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/52/88/390555_11QS3.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_anxianlingzhudeyukuailingdifan",
+    "Title": "安闲领主的愉快领地防卫",
+    "Pinyin": "axlzdykldfw",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": 234035,
+    "Title": "鬼灭之刃柱训练篇",
+    "Pinyin": "gmzrzxlp",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_zhoushuhuizhan32",
+    "Title": "咒术回战 3",
+    "Pinyin": "zshz 3",
+    "Cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_wuweifensijulebu1",
+    "Title": "雾尾粉丝俱乐部",
+    "Pinyin": "wwfsjlb",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/05/9a/513208_UFZ41.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_renyadaowudiwushi",
+    "Title": "刃牙道：无敌武士",
+    "Pinyin": "ryd：wdws",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260176.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_fanerbujingdewobeizhuchuyongzh",
+    "Title": "泛而不精的我被逐出勇者队伍",
+    "Pinyin": "febjdwbzcyzdw",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/0b/9d/541336_oG7SO.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_caomeiaige",
+    "Title": "草莓哀歌",
+    "Pinyin": "cmag",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/4b/ef/472147_lYpZ8.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_shuishuxingmofashi",
+    "Title": "水属性魔法使",
+    "Pinyin": "ssxmfs",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/16/e9/532403_5rfk5.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_jisuchehun3",
+    "Title": "极速车魂 3",
+    "Pinyin": "jsch 3",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260053.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_siwangzhanghao",
+    "Title": "死亡账号",
+    "Pinyin": "swzh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260040.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_29suidanshenmaoxianjiaderichan",
+    "Title": "29岁单身冒险家的日常",
+    "Pinyin": "29sdsmxjdrc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260013.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_heimaohemonvdeketang",
+    "Title": "黑猫和魔女的课堂",
+    "Pinyin": "hmhmndkt",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/37/70/4193_acm67.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_baiguiyexingchao1",
+    "Title": "百鬼夜行抄",
+    "Pinyin": "bgyxc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260148.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_reconglingkaishideyishijieshen13",
+    "Title": "Re：从零开始的异世界生活 4",
+    "Pinyin": "re：clksdysjsh 4",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_huangquandeshizhe",
+    "Title": "黄泉的使者",
+    "Pinyin": "hqdsz",
+    "Cover": "https://i1.a123tv.com/v/0x/huangquandeshizhe.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_beilinguowangziniaidefanpainvz",
+    "Title": "被邻国王子溺爱的反派女主",
+    "Pinyin": "blgwznadfpnz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260052.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_xiangfandenihewo",
+    "Title": "相反的你和我",
+    "Pinyin": "xfdnhw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_feirenxueshengyuyanshijiaoshi",
+    "Title": "非人学生与厌世教师",
+    "Pinyin": "frxsyysjs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260041.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_gongzhudarenjiexialaishikaowen1",
+    "Title": "公主大人，接下来是“拷问”时间 2",
+    "Pinyin": "gzdr，jxls“kw”sj 2",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/13/79/486763_s49V9.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_jiaojieyingxiaozhiyue",
+    "Title": "皎洁迎宵之月",
+    "Pinyin": "jjyxzy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260045.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_difushaonianhuazijun2",
+    "Title": "地缚少年花子君 2",
+    "Pinyin": "dfsnhzj 2",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250171.jpg",
+    "Status": "更新至24集",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_zhongjiuyunixianglian21",
+    "Title": "终究，与你相恋 2",
+    "Pinyin": "zj，ynxl 2",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/43/98/548195_raxXD.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_wodexingfuhunyue2",
+    "Title": "我的幸福婚约 2",
+    "Pinyin": "wdxfhy 2",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/5f/b1/377125_WRoZD.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_elisideshengbei",
+    "Title": "厄里斯的圣杯",
+    "Pinyin": "elsdsb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260023.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_hebanshangdierkeaidenvhaiziche",
+    "Title": "和班上第二可爱的女孩子成为了朋友",
+    "Pinyin": "hbsdekadnhzcwlpy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_dujundexxjijiangbenghuai",
+    "Title": "渡君的XX即将崩坏",
+    "Pinyin": "djdxxjjbh",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/f8/a8/455454_cEllE.jpg",
+    "Status": "更新至26集",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_gongzhuqishishimanzudexinniang",
+    "Title": "公主骑士是蛮族的新娘",
+    "Pinyin": "gzqssmzdxn",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/cf/516543_103zp.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_xiaoshenbabukepa",
+    "Title": "小神八不可怕",
+    "Pinyin": "xsbbkp",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/51/33/522414_4VRzA.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_wuyedeqingxinxuanlv",
+    "Title": "午夜的倾心旋律",
+    "Pinyin": "wydqxxl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260008.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_shuangrenduziluying1",
+    "Title": "双人独自露营",
+    "Pinyin": "srdzly",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/51/531344_f65f8.jpg",
+    "Status": "更新至24集",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_yishijiedeantaiquankanshechu",
+    "Title": "异世界的安泰全看社畜",
+    "Pinyin": "ysjdatqksc",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/11/3b/522370_FFyEr.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_huayangshaonianshaonv1",
+    "Title": "花样少年少女",
+    "Pinyin": "hysnsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260048.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_daxianzheliduoerdeshijiannixin",
+    "Title": "大贤者利多尔的时间逆行",
+    "Pinyin": "dxzldedsjnx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260121.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_zuanshiwangpai4",
+    "Title": "钻石王牌 4",
+    "Pinyin": "zswp 4",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_huiyuanjundeqingchunerzhoumu",
+    "Title": "灰原君的青春二周目",
+    "Pinyin": "hyjdqcezm",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/d5/a9/567418_LTStp.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_feichaifengjiweiyuanyuqunzicha",
+    "Title": "废柴风纪委员与裙子长度不合规的JK的故事",
+    "Pinyin": "fcfjwyyqzcdbhgdjkdgs",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/68/ba/551123_IkXfk.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_mowangdenvertaiwenroule",
+    "Title": "魔王的女儿太温柔了！",
+    "Pinyin": "mwdnetwrl！",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b4/0f/565416_a994t.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_shenweimozudewoxiangxiangyongz",
+    "Title": "身为魔族的我想向勇者小队的可爱女孩告白",
+    "Pinyin": "swmzdwxxyzxddkanhgb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260007.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_heqingmeizhumazhijianbuhuiyoul",
+    "Title": "和青梅竹马之间不会有恋爱喜剧",
+    "Pinyin": "hqmzmzjbhylaxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260006.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_daerwenshibian",
+    "Title": "达尔文事变",
+    "Pinyin": "dewsb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260011.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_moshushikunuokandejianyiqie",
+    "Title": "魔术师库诺看得见一切",
+    "Pinyin": "mssknkdjyq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260050.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_anzhiju16",
+    "Title": "暗芝居 16",
+    "Pinyin": "azj 16",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260245.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_beidoushenquan4",
+    "Title": "北斗神拳",
+    "Pinyin": "bdsq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
+    "Status": "更新至10集",
+    "UpToDate": "更新至第10集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_youyaguizudexiujiazhinan",
+    "Title": "优雅贵族的休假指南",
+    "Pinyin": "yygzdxjzn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260019.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_aerniedeshijianbu",
+    "Title": "阿尔涅的事件簿",
+    "Pinyin": "aendsjb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260012.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_youlingyinyuehuiyishidegequ",
+    "Title": "幽灵音乐会：遗失的歌曲",
+    "Pinyin": "ylyyh：ysdgq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第07集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_zhuanshengzhihoudewobianchengl",
+    "Title": "转生之后的我变成了龙蛋",
+    "Pinyin": "zszhdwbclld",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b7/ce/544106_L6Pj1.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_qingsongxiong",
+    "Title": "轻松熊",
+    "Pinyin": "qsx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260159.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_niyoubeishalenezhentandaren",
+    "Title": "你又被杀了呢，侦探大人",
+    "Pinyin": "nybsln，ztdr",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/2e/f4/608227_44kWb.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_gaoxiaoqimianzu",
+    "Title": "高校奇面组",
+    "Pinyin": "gxqmz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260030.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_lengjinglianqu",
+    "Title": "棱镜恋曲",
+    "Pinyin": "ljlq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260060.jpg",
+    "Status": "更新至20集",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_shengnvyintaiguowanmeibugoukea",
+    "Title": "圣女因太过完美不够可爱而被废除婚约并卖到邻国",
+    "Pinyin": "snytgwmbgkaebfchybmdlg",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250073.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 0
+  },
+  {
+    "AID": "a123_zuihoukeyizaibaituoninyijiansh",
+    "Title": "最后可以再拜托您一件事吗",
+    "Pinyin": "zhkyzbtnyjsm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250217.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 0
   }
 ]
