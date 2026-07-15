@@ -1224,12 +1224,25 @@ new Vue({
       if (!isAutoRetry) {
         this._triedLines = new Set();
       }
-      // 💡 强力防逃逸：在任何异步解析（如 resolveAnichUrl）开始前，同步且干净地销毁上一次的播放器，彻底切断后台声音残留
+      
+      // 💡 强力中断上一次未完成的异步网络请求（如 A123 嗅探等），彻底切断后台带宽占用，防止切换卡顿
+      if (this.activeAbortController) {
+        try { this.activeAbortController.abort(); } catch(e) {}
+      }
+      this.activeAbortController = new AbortController();
+      const signal = this.activeAbortController.signal;
+
+      // 💡 强力防逃逸与极速解码器释放：在销毁前先暂停并清空 video.src，腾出系统解码器通道和网络连接，彻底消灭切换线路卡断！
       if (this.dpInstance) {
         try {
+          this.dpInstance.pause();
           this.dpInstance.off('timeupdate');
           this.dpInstance.off('loadedmetadata');
           this.dpInstance.off('error');
+          if (this.dpInstance.video) {
+            this.dpInstance.video.src = '';
+            this.dpInstance.video.load();
+          }
           this.dpInstance.destroy();
         } catch(e) {}
         this.dpInstance = null;
@@ -1325,7 +1338,7 @@ new Vue({
         this.startLoadingAnimation("正在从 A123TV 跨域提取极速播放直链...");
         try {
           const targetUrl = "https://jingyanff.xyz/?url=" + encodeURIComponent("https://a123tv.com" + epToken);
-          const response = await fetch(targetUrl);
+          const response = await fetch(targetUrl, { signal });
           if (response.ok) {
             const htmlText = await response.text();
             // 匹配 data-src 里的 M3U8
