@@ -4082,6 +4082,24 @@ body.fit-fill iframe {
   position: static !important;
 }
 
+/* 💡 ArtPlayer CSS 网页全屏（fullscreenWeb）核心层级保障
+   ArtPlayer 的 fullscreenWeb 启用时（FULLSCREEN_WEB_IN_BODY=true），会将 .artplayer-app 直接
+   移动到 document.body 顶层，彻底脱离原有被 perspective/transform 污染的父容器 DOM 树，
+   因此不需要清除父容器属性，只需确保移到 body 后的全屏元素能覆盖页面一切 UI 元素。 */
+
+/* 当 ArtPlayer 以网页全屏模式附加到 body 时，确保其 z-index 绝对在最顶层 */
+body > .artplayer-app[style*="position"] {
+  z-index: 99999 !important;
+  border-radius: 0 !important;
+}
+
+/* 防止 Vue 全局弹层（如收藏遮罩、加载遮罩）遮住全屏播放器 */
+body.art-web-fullscreen-active .fixed-overlay,
+body.art-web-fullscreen-active .app-header,
+body.art-web-fullscreen-active .sidebar {
+  z-index: 0 !important;
+}
+
 /* ==========================================================================
    🎬 同系列关联推荐海报墙与治愈系板块专有样式 
    ========================================================================== */

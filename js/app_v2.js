@@ -1726,8 +1726,8 @@ new Vue({
               aspectRatio: true,
               setting: true,
               pip: true,
-              fullscreen: true,
-              fullscreenWeb: false, // 我们优先使用系统原生全屏，防层级错位
+              fullscreen: false,  // 💡 关闭原生 API 全屏（被祖先 perspective/transform 拦截无效）
+              fullscreenWeb: true,  // 💡 启用 ArtPlayer CSS 网页全屏，真正撑满整个浏览器视口
               theme: '#f28c9f', // 绯桃粉主色调
               moreVideoAttr: {
                 referrerpolicy: 'no-referrer',
@@ -2350,15 +2350,19 @@ new Vue({
       document.body.classList.add('fit-' + this.videoFitMode);
     },
 
-    // 💡 景雁全局网页全屏控制方法 (原生 HTML5 Fullscreen 升级版：兼容 PC/移动/iPad，彻底解决卡死错位问题)
+    // 💡 景雁全局网页全屏控制方法（ArtPlayer CSS 网页全屏升级版：完美绕过 perspective/transform 对原生 API 的阻断）
     toggleWebFullscreen() {
-      // 💡 直链播放模式下，直接由 ArtPlayer 极其完美的多端全屏适配层进行原生与网页全屏调度！
+      // 💡 直链播放模式：优先使用 ArtPlayer 自带的 CSS 网页全屏（fullscreenWeb）
+      // 原因：播放器祖先链上存在 perspective/transform 属性，浏览器规范会静默拦截子元素的 requestFullscreen() 调用
+      // ArtPlayer 的 fullscreenWeb 使用纯 CSS 定位方案（fixed: 0/0/0/0, z-index 极高），完全不依赖原生 API，跨端完美可靠
       if (!this.isIframeMode && this.dpInstance) {
-        this.dpInstance.fullscreen = !this.dpInstance.fullscreen;
+        this.dpInstance.fullscreenWeb = !this.dpInstance.fullscreenWeb;
+        // 同步 Vue 状态，使退出全屏按钮能正确响应
+        this.isWebFullscreen = this.dpInstance.fullscreenWeb;
         return;
       }
 
-      // 💡 Iframe 模式下，采用 CSS position: static 穿透的纯净网页全屏方案
+      // 💡 Iframe 模式下，采用 CSS position: static 穿透的纯净网页全屏方案（保持原逻辑不变）
       const innerContainer = document.querySelector('.player-container-inner');
       if (!innerContainer) return;
 
@@ -2366,14 +2370,12 @@ new Vue({
 
       try {
         if (this.isWebFullscreen) {
-          // 进入全屏 (尝试调用硬件全屏接口，若在 iOS/iPad 上不支持则静默降级为 CSS 全屏)
           if (innerContainer.requestFullscreen) {
             innerContainer.requestFullscreen().catch(() => {});
           } else if (innerContainer.webkitRequestFullscreen) {
             innerContainer.webkitRequestFullscreen();
           }
         } else {
-          // 退出全屏 (尝试退出硬件全屏)
           const isNativeFs = !!(document.fullscreenElement || 
                                document.webkitFullscreenElement || 
                                document.mozFullScreenElement || 
@@ -2387,7 +2389,7 @@ new Vue({
           }
         }
       } catch (err) {
-        console.warn("[Fullscreen API] Hardware fullscreen request failed, fallback to pure CSS fullscreen:", err);
+        console.warn("[Fullscreen] Iframe mode hardware fullscreen failed, CSS fullscreen active:", err);
       }
 
       if (this.dpInstance) {
