@@ -320,8 +320,8 @@ def fetch_from_backup_cms(title):
     """
     cms_apis = [
         {"name": "暴风资源网", "url": "https://bfzyapi.com/api.php/provide/vod/"},
-        {"name": "非凡资源网", "url": "https://ffzyapi.com/api.php/provide/vod/"},
-        {"name": "量子资源网", "url": "https://lzzyapi.com/api.php/provide/vod/"},
+        {"name": "非凡资源网", "url": "https://cj.ffzyapi.com/api.php/provide/vod/"},
+        {"name": "量子资源网", "url": "https://cj.lziapi.com/api.php/provide/vod/"},
         {"name": "红牛资源网", "url": "https://www.hongniuzy2.com/api.php/provide/vod/"},
         {"name": "金鹰资源网", "url": "https://jyzyapi.com/provide/vod/"},
         {"name": "快车资源网", "url": "https://kczyapi.com/api.php/provide/vod/"}
@@ -333,7 +333,11 @@ def fetch_from_backup_cms(title):
     for cms in cms_apis:
         search_url = f"{cms['url']}?ac=detail&wd={title}"
         try:
-            r = session.get(search_url, timeout=8)
+            cms_headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': cms['url']
+            }
+            r = session.get(search_url, headers=cms_headers, timeout=8)
             if r.status_code == 200:
                 data = r.json()
                 if data.get("code") == 1 and data.get("list"):
