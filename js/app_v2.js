@@ -1843,7 +1843,19 @@ new Vue({
               this.stopLoadingAnimation();
             });
 
+            dp.on('play', () => {
+              this.stopLoadingAnimation();
+            });
+
+            dp.on('video:play', () => {
+              this.stopLoadingAnimation();
+            });
+
             dp.on('video:playing', () => {
+              this.stopLoadingAnimation();
+            });
+
+            dp.on('video:canplay', () => {
               this.stopLoadingAnimation();
             });
 
@@ -1878,6 +1890,11 @@ new Vue({
             dp.on('video:timeupdate', () => {
               const currentTime = dp.currentTime;
               const duration = dp.duration;
+              
+              // 💡 黄金防线：只要视频当前播放进度大于 0.05 秒，强行关闭并隐藏一切加载遮罩层！
+              if (currentTime > 0.05) {
+                this.stopLoadingAnimation();
+              }
               
               if (!hasRestoredProgress && savedTime > 3) {
                 restoreProgress();
