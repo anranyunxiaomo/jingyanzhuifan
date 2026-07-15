@@ -1351,11 +1351,11 @@ new Vue({
             this.$nextTick(() => {
               this.playEpisode(0);
             });
-            alert("【播放提示】当前专属线路视频源未就绪，已为您自动切换到备用播放源！");
+            console.warn("[PLAYER] 当前专属线路视频源未就绪，已自动切换到备用播放源");
           } else {
             this.isIframeMode = false;
             this.activePlayUrl = '';
-            alert("【播放提示】当前专属线路视频源未就绪，且无其它备用线路！");
+            console.warn("[PLAYER] 当前专属线路视频源未就绪，且无其它备用线路");
           }
           return;
         }
@@ -1438,7 +1438,7 @@ new Vue({
             }
           } else if (data && data.failedMark) {
             // 💡 提示用户视频已失效，并自动进入熔断保护，防止重复请求
-            alert("该集视频源暂时失效，已开启每日防刷锁保护。请切换其他播放线路或明日再试。");
+            console.warn("[PLAYER] 该集视频源暂时失效，请切换其他播放线路");
             this.stopLoadingAnimation();
           } else {
             this.stopLoadingAnimation();
@@ -2380,7 +2380,7 @@ new Vue({
       if (this.watchHistory && this.watchHistory.length > 0) {
         this.resumeFromHistory(this.watchHistory[0]);
       } else {
-        alert('「墨痕未染」暂无播放历史记录');
+        console.info('[HISTORY] 暂无播放历史记录');
       }
     },
     
