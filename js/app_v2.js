@@ -1531,11 +1531,7 @@ new Vue({
 
       let allowDirectPlay = false;
       if (isDirectUrl && !epToken.startsWith('age_')) {
-        if (isNativeHls) {
-          allowDirectPlay = true;
-        } else if (this.activeLineKey === 'anich_m3u8') {
-          allowDirectPlay = true;
-        }
+        allowDirectPlay = true; // 💡 无论是移动端还是 PC 端，只要是直链，都允许优先进入 ArtPlayer 播放轨道，保障播放成功率
       }
 
       let finalRealUrl = "";
