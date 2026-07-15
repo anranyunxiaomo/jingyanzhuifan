@@ -378,6 +378,15 @@
     "UpdateTime": 20260360253
   },
   {
+    "AID": 20260227,
+    "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260360247
+  },
+  {
     "AID": 20260097,
     "Title": "入间同学入魔了 第四季",
     "Pinyin": "",
@@ -403,6 +412,15 @@
     "Status": "更新至3集",
     "UpToDate": "更新至第03集",
     "UpdateTime": 20260360244
+  },
+  {
+    "AID": "a123_chimowudemaoxianzhe",
+    "Title": "吃魔物的冒险者",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260360243
   },
   {
     "AID": "a123_siwangzhanghao",
@@ -547,15 +565,6 @@
     "Status": "更新至14集",
     "UpToDate": "更新至第14集",
     "UpdateTime": 20260360238
-  },
-  {
-    "AID": 20260227,
-    "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20260360237
   },
   {
     "AID": 20260117,
@@ -763,15 +772,6 @@
     "Status": "更新至2集",
     "UpToDate": "更新至第02集",
     "UpdateTime": 20260360214
-  },
-  {
-    "AID": "a123_chimowudemaoxianzhe",
-    "Title": "吃魔物的冒险者",
-    "Pinyin": "",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360213
   },
   {
     "AID": "a123_caomeiaige",
@@ -1044,6 +1044,15 @@
     "UpdateTime": 20260360197
   },
   {
+    "AID": 20260175,
+    "Title": "碧蓝之海 第三季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260175.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260360195
+  },
+  {
     "AID": 20260185,
     "Title": "斗球儿弹子",
     "Pinyin": "",
@@ -1114,15 +1123,6 @@
     "Status": "连载",
     "UpToDate": "更新至第01集",
     "UpdateTime": 20260360191
-  },
-  {
-    "AID": 20260175,
-    "Title": "碧蓝之海 第三季",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260175.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20260360185
   },
   {
     "AID": 20260065,
@@ -1598,7 +1598,7 @@
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20260196.jpg",
     "Status": "未播放",
-    "UpToDate": "更新至pv",
+    "UpToDate": "更新至第01集",
     "UpdateTime": 20260260206
   },
   {
@@ -1656,6 +1656,15 @@
     "UpdateTime": 20260260200
   },
   {
+    "AID": 20260179,
+    "Title": "柔光魔女股份有限公司 第二季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260260199
+  },
+  {
     "AID": 20260188,
     "Title": "天是红河岸",
     "Pinyin": "",
@@ -1708,15 +1717,6 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20260260190
-  },
-  {
-    "AID": 20260179,
-    "Title": "柔光魔女股份有限公司 第二季",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至pv",
-    "UpdateTime": 20260260189
   },
   {
     "AID": 20260069,
@@ -3357,6 +3357,15 @@
     "UpdateTime": 20170170174
   },
   {
+    "AID": 20170032,
+    "Title": "月色真美",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第14集",
+    "UpdateTime": 20170170172
+  },
+  {
     "AID": 20170046,
     "Title": "Urara迷路帖",
     "Pinyin": "",
@@ -3400,15 +3409,6 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20170170154
-  },
-  {
-    "AID": 20170032,
-    "Title": "月色真美",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170152
   },
   {
     "AID": 20170021,
@@ -4478,7 +4478,7 @@
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第12集",
+    "UpToDate": "更新至第13集",
     "UpdateTime": 20110110188
   },
   {

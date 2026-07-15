@@ -1362,6 +1362,34 @@ async def main_async():
             if not isinstance(playlists, dict):
                 playlists = {}
             
+            # 💡 [SMART DIRECT-STREAM BOOSTER] 智能播放源直链强化：
+            # 如果该动漫详情中的播放线路不包含任何常规 H5 直连源（如 ffm3u8、bfzym3u8、lzm3u8、wjm3u8、hnm3u8 均不在 playlists 里），
+            # 或者已有的常规直链集数极其残缺（例如只有 1 集，而其实有多集），我们就去这六大采集网模糊检索并自动合并补充！
+            has_regular_direct = any(k in playlists for k in ["ffm3u8", "bfzym3u8", "lzm3u8", "wjm3u8", "hnm3u8"])
+            needs_cms_booster = not has_regular_direct
+            if not needs_cms_booster and playlists:
+                max_eps = max(len(playlists[k]) for k in playlists if isinstance(playlists[k], list))
+                if max_eps <= 2:
+                    needs_cms_booster = True
+                    
+            if needs_cms_booster:
+                print(f"  [BOOSTER] Anime '{title}' lacks active direct-streams or has incomplete episodes. Querying CMS sites...")
+                cms_res = fetch_from_backup_cms(title)
+                if cms_res and "video" in cms_res and "playlists" in cms_res["video"]:
+                    cms_playlists = cms_res["video"]["playlists"]
+                    for cms_key, cms_eps in cms_playlists.items():
+                        if cms_key not in playlists or len(cms_eps) > len(playlists.get(cms_key, [])):
+                            # 💡 优化：对于直接获取的 M3U8 url，在回填时自动将 Token 复制到 ep[2] 做为直链，跳过后续嗅探
+                            for ep in cms_eps:
+                                if len(ep) == 2:
+                                    ep.append(ep[1])
+                                elif len(ep) >= 3:
+                                    ep[2] = ep[1]
+                            playlists[cms_key] = cms_eps
+                            print(f"    ✨ [BOOSTER MERGED] Merged direct-stream line: {cms_key} ({len(cms_eps)} eps)")
+                    # 回写进 detail_data
+                    detail_data["video"]["playlists"] = playlists
+
             tasks_to_sniff = []
             for pkey, eps in playlists.items():
                 is_vip = (pkey in vip_list)
