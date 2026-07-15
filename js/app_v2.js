@@ -1748,6 +1748,18 @@ new Vue({
               video: {
                 url: finalVideoUrl,
                 type: videoType
+              },
+              pluginOptions: {
+                hls: {
+                  // 💡 针对丝滑播放的 Hls.js 顶级调优配置
+                  enableWorker: true, // 启用 Web Worker 线程解码，彻底释放主线程，不卡顿
+                  maxBufferLength: 60, // 最大缓冲区 60 秒
+                  maxMaxBufferLength: 120, // 最大极限缓冲区 120 秒
+                  maxBufferSize: 80 * 1024 * 1024, // 缓冲大小限制在 80MB，防爆内存
+                  maxBufferHole: 0.5, // 容忍 0.5 秒的缓冲空洞，自动跳过防止卡死
+                  lowLatencyMode: false, // 关闭低延迟以增大缓冲鲁棒性
+                  appendErrorMaxRetry: 5 // 错误最大重试 5 次
+                }
               }
             });
             this.dpInstance = dp;
