@@ -12,59 +12,64 @@
       "竞技"
     ],
     "playlists": {
-      "bfzym3u8": [
-        [
-          "第01集",
-          "age_be5fBQJ3UIBYi%2BCyE%2F6cSY3ojz%2FBJuaN8UDGbQeRh%2BcxNdxi2gmQEiuiw3UDfcMuBBj8u02280%2F3UVBoUdKDI72%2BKe3TIekCnGGtKZ9%2F5Oh26Nbt%2Bwk706jwOyS8wCGsg3TxtLwLnO31vjIy0Ic%2BksdRbTWFzJOF7coS",
-          "https://v.baofeng11.com/video/ganxieduizhandaxiaojiecaibuwangedouyouxi/07333e4b373e/index.m3u8"
-        ],
-        [
-          "第02集",
-          "age_ac8dcKvLOVPPNx%2BBZ%2F8k7ud93Km01d6KGBufzqXgR31n0LfuR4arF12zFUPEGEA%2BbHmO9kEQG5VAmNGEAVPPLgPXoD7EzjQPOVAV6fWqA%2BXmFyctCbtCw09MWuW51ADCKJ9yIRP7NocJdU3IICX3crhiLRmWaRnnVLCF",
-          "https://v.baofeng11.com/video/ganxieduizhandaxiaojiecaibuwangedouyouxi/36f17c994e85/index.m3u8"
-        ]
-      ],
-      "lzm3u8": [
-        [
-          "第01集",
-          "age_baf6qcAQIpKMGT57VsVyiL9gheNFMcPZaOEi92UPOzIik2vfvdMsW2w1hjdrnhb9H%2FCR6krVNtZC2ybUDJezacujvJOhmvTVIoJ0IWI%2FQe8WxPlA",
-          "https://v.lzcdn31.com/20260707/8083_f9dafe38/index.m3u8"
-        ],
-        [
-          "第02集",
-          "age_3e4cpDfMyix7hekPM3OOp1PJMTqSnV%2Bv4E8EWEHoZtPEUKs2F4wcPOWkgBjFWPzd3MEBYFkYaEv%2BfDlqCb4reGUZRA6RadJVbH7%2FIm8ocN8L8hBw",
-          "https://v.lzcdn31.com/20260707/8084_1deac8d6/index.m3u8"
-        ]
-      ],
-      "anich_m3u8": [
-        [
-          "第01集",
-          "anich_placeholder_38372_1"
-        ],
-        [
-          "第02集",
-          "anich_placeholder_38372_2"
-        ]
-      ],
       "xigua": [
         [
           "第01集",
-          "age_d0a66xz8J%2BsyEIBYx0x4GfW747DHPj%2BlMsQ9yb0XO6C28%2BT0TieV3Xbh%2FptuADfwFMmwcf0B%2BkVTNmwFQQSVhfRy",
+          "age_c347ZjIN2GUfDQI5XbPeTCThUsUzC%2FTiEiYeScBdCNgwcvUqtewv4n9N5zBC9sk0YgyiBk2%2F5qZqg8T7lDxzaH3B",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_e4b8JR7lG0%2Byp%2BCASx6RJG966JAYhl%2BYNjqdUc70eQwuLPWWEjfd9IxiilPA4sDpYx6TgDaNGFCXFnRzZwJSviVR",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
       "ffm3u8": [
         [
           "第01集",
-          "age_2cb3EZlBb3dh%2BC1FC0dNys5iw7A4G4Bg4UD2NYIZynHe7aHyzuBBdZsr1bg%2FVTdbiapJmX4TSsJoT6uF2wzYOx4Amys8dx%2Fi4twmH786A1nG8PYlF8j7g1Lc",
+          "age_723032uM6L6y3IpBOvgUGfZVcoweUV4ktfuQLTjptC3Lh1L1uVuK6riBFwlJuED5uqnDBW8vfkoP24OdMbrhg1P%2Bm3f%2FjJ8OJvOjIArMKnImxnQjRtRBnE9p",
           "https://vip.ffzy-plays.com/20260707/55502_de661ab8/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_23cbVcAxMrQ2Rff68XQumqg3eNUppBNnQSAEPuUMhN59uvLGgo9S5SaHqdl0cRP3PazpK69ZA2i683arBe1sre4tRHp0PZIHC7GJxZW1UJPrIbg3xuel1Ck2",
+          "https://vip.ffzy-plays.com/20260714/55776_06679f5e/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_cc3dGY4qtu62My3%2FRT4Rz0iCF9p%2FCuevRs64xWRBMFcBl2khRG2Oc07843UwaUzN5FEi5kyb008K%2BEbHS8VxTApb4X%2BjvRuIbpa7wJXaUcKOQNA0%2Ba%2BFHrxwU6XgY82ctPuXIQHCa6dWEifXet8SIIB8QZzdAInU8wQR",
+          "https://v.baofeng11.com/video/ganxieduizhandaxiaojiecaibuwangedouyouxi/07333e4b373e/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_5faf4hxFqRotKQ%2F1LW9knDmR%2Fg0Vow7g2sf98%2BLU3yqFlNceKom4lyVbuO34zvQmj440mEzvGEUHlBRf7ooS2x1vGNVpiIkEzEb7FSj5pNElmDbVkPIWz%2BPSe1o6ObWju%2FY2bF3XBOTHFpTgGzPVm8%2FDJDswkhA3Nei4",
+          "https://v.baofeng11.com/video/ganxieduizhandaxiaojiecaibuwangedouyouxi/36f17c994e85/index.m3u8"
         ]
       ],
       "wjm3u8": [
         [
           "第01集",
-          "age_2e62vmydvBpGbcw4TDxOfCtHpeD295L0I2rTT0XzZidztkuNm5d%2FVBRLZ7Iv4t2sA4Na%2FvgAIDELlP5RDRJpm%2B%2B8omzkzpo2GWCkTB%2FOfBI%2FMJ0TS2JxEsOn0xcNeAs",
+          "age_6846Wg9sZW9IoWigqn1FM3qR620ngYYU1GAQheubuQ0cAHjYRtx3%2BaXH7uJC78dUHHvOgJmkciYxO57EZ3LUtHyfAbsRfZcDQzscciKWDpGIPq7LtyehWFPxW7Tgeag",
           "https://v7.ppqrrs.com/wjv7/202607/07/gPvM77qX3a87/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_851eb9y625Yw5xPH%2BUZyLJF9RO1C59r36qz8nur8wOo%2BZm2wd%2Bo%2FIpUJLwPwrfK1XjK40eY3R7lJWCA%2ByimDUjtj3CT81grmd%2FcknvlpaQSuNx2gMbb8PV5N",
+          "https://v1.ppqrrs.com/202607/14/ByfQh4VUSj89/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_8cb1rGHSkov5LiDK1OeRTV9lh5gxvdtfdROv9ie6Vo0JawN5CFSXqlQ9HhId0Sam4BSjzi7gOWpU8QKFCrQybAdAfYSskWKP%2BH6gb9hv%2FFglUfEe",
+          "https://v.lzcdn31.com/20260707/8083_f9dafe38/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_cea9v%2B6%2FaynplHmy3ZwFqS4Xip4s3sRuXRKSB7KzPj8sZmN56ztZA5XHAn2rItqDicNNK4XngJaiNMsR5%2BqPoo%2BqqsXZ4ZNewgq1kmiqx9FdKPmq",
+          "https://v.lzcdn31.com/20260707/8084_1deac8d6/index.m3u8"
         ]
       ]
     },
@@ -73,11 +78,11 @@
     "website": "暂缺",
     "star": 0,
     "status": "连载",
-    "uptodate": "20:30 第01集",
-    "time_format_1": "20260707214834",
-    "time_format_2": "2026-07-07",
-    "time_format_3": "2026-07-07 21:48:34",
-    "time": 1783432114,
+    "uptodate": "20:30 第02集",
+    "time_format_1": "20260714200052",
+    "time_format_2": "2026-07-14",
+    "time_format_3": "2026-07-14 20:00:52",
+    "time": 1784030452,
     "tags": "竞技",
     "tags_arr": [
       "竞技"
@@ -91,56 +96,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-07",
-    "rank_cnt": "3,547",
+    "rank_cnt": "1.30w",
     "cover": "https://cdn.aqdstatic.com:966/age/20260201.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "11",
-    "collect_cnt": "103"
+    "comment_cnt": "53",
+    "collect_cnt": "225"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20040019,
-      "Href": "/detail/20040019",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040019.jpg",
-      "Title": "圣母在上 春"
+      "AID": 20170128,
+      "Href": "/detail/20170128",
+      "NewTitle": "第07集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170128.jpg",
+      "Title": "终物语 第二季"
     },
     {
-      "AID": 20200018,
-      "Href": "/detail/20200018",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200018.jpg",
-      "Title": "噬血狂袭 第四季"
-    },
-    {
-      "AID": 20180137,
-      "Href": "/detail/20180137",
+      "AID": 20180030,
+      "Href": "/detail/20180030",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180137.jpg",
-      "Title": "天空与海洋之间"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180030.jpg",
+      "Title": "爆肝工程师的异世界狂想曲"
     },
     {
-      "AID": 20090080,
-      "Href": "/detail/20090080",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090080.jpg",
-      "Title": "犬夜叉 完结篇"
+      "AID": 20250251,
+      "Href": "/detail/20250251",
+      "NewTitle": "第39集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250251.jpg",
+      "Title": "会动的！从前从前有只猫 世界喵童话"
     },
     {
-      "AID": 20200081,
-      "Href": "/detail/20200081",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200081.jpg",
-      "Title": "格莱普尼尔"
+      "AID": 20260059,
+      "Href": "/detail/20260059",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260059.jpg",
+      "Title": "暗芝居 第十六季"
     },
     {
-      "AID": 20210416,
-      "Href": "/detail/20210416",
-      "NewTitle": "第10集(上篇完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210416.jpg",
-      "Title": "蜀山奇仙录"
+      "AID": 20110055,
+      "Href": "/detail/20110055",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110055.jpg",
+      "Title": "摇曳百合"
+    },
+    {
+      "AID": 20230137,
+      "Href": "/detail/20230137",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230137.jpg",
+      "Title": "浪客剑心 －明治剑客浪漫谭－"
     }
   ],
   "player_label_arr": {
@@ -174,8 +179,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

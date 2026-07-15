@@ -14,16 +14,159 @@
       "奇幻"
     ],
     "playlists": {
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_06abPfOHiRElnavmeQqu74k02FyCsf%2F4WRavBH5%2F%2BySCqNvrkwYvyI%2FUzeeD2yjmimSPBJsqwDCtdQlccCVggTtjJwIA4kygIX5zyLGLnu6YgM5F",
+          "https://v.lzcdn31.com/20260704/7961_4fb520cf/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_5a95SSwhXUNktNAVYAM7gEY2mfKbMZhaxkJ3z%2BlOM%2FFAlmmYLRgt16wH7nYrozvca4i6%2F5Mby2Cgj%2Fn8T1lTQx%2BkwQ0QW9toLDFzl7lrDheEbOs7",
+          "https://v.lzcdn31.com/20260711/8298_cd88217f/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://v.lzcdn27.com/20260124/3680_10a25a84/index.m3u8",
+          "https://v.lzcdn27.com/20260124/3680_10a25a84/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://v.lzcdn27.com/20260131/4084_4f6136cd/index.m3u8",
+          "https://v.lzcdn27.com/20260131/4084_4f6136cd/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://v.lzcdn27.com/20260207/4640_2c2d0edc/index.m3u8",
+          "https://v.lzcdn27.com/20260207/4640_2c2d0edc/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://v.lzcdn27.com/20260214/5210_56601f70/index.m3u8",
+          "https://v.lzcdn27.com/20260214/5210_56601f70/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://v.lzcdn27.com/20260221/5549_4d719751/index.m3u8",
+          "https://v.lzcdn27.com/20260221/5549_4d719751/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://v.lzcdn27.com/20260228/5938_449a220c/index.m3u8",
+          "https://v.lzcdn27.com/20260228/5938_449a220c/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://v.lzcdn27.com/20260307/6330_cd7a1868/index.m3u8",
+          "https://v.lzcdn27.com/20260307/6330_cd7a1868/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://v.lzcdn27.com/20260314/6751_4ac962f4/index.m3u8",
+          "https://v.lzcdn27.com/20260314/6751_4ac962f4/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://v.lzcdn27.com/20260321/7270_c7a44997/index.m3u8",
+          "https://v.lzcdn27.com/20260321/7270_c7a44997/index.m3u8"
+        ],
+        [
+          "第12集",
+          "https://v.lzcdn27.com/20260328/7625_fa9219c8/index.m3u8",
+          "https://v.lzcdn27.com/20260328/7625_fa9219c8/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_f884x%2BLED6IGs0JgqtHqXFg27Hu3A6KF%2FnKNP1OxPrqCL6h9Y5pKbcz2FI7eM%2F%2BmeBwugC3o3aMhjEay1ozHFlt1rlK7Yp2eOdPAbNy6YnFoRI%2FpZ3vO1Wp5D6okCt0%2BzzKqhaYX%2Ba55uae%2BAQoVjWIptOnLpxJ22C8%2F5jPNknREXg%2BIg4XBzdjhJ5ocEX1yKMimWnc5Hg",
+          "https://v.fengbao11.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuangdi2ji/2e4133eaef91/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_cd199yIOR3V9Y1fah5EBpjwglKvH97RIjSWZ%2FlxUKZ8PWSI0PT1WTcAXQOgE1x7N%2Fx%2BTArT0iE0VAzm90eVGnaBtlbeMdh%2BTw5MFq064E0T9bjTZREHLw0NVUE%2FJ8udVKTSQTEWxDGvzrwrrQvNfYYs54aJie1AXxeSAuJfoAe9gK15zYSjwSaJW0rNDxXKfmXVdLlkm7Q",
+          "https://v.fengbao11.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuangdi2ji/740b8f3be26a/index.m3u8"
+        ],
+        [
+          "第3集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/86af7ca68e85/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/86af7ca68e85/index.m3u8"
+        ],
+        [
+          "第4集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/d9a87f6ff54c/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/d9a87f6ff54c/index.m3u8"
+        ],
+        [
+          "第5集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/b49cb3f4aee3/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/b49cb3f4aee3/index.m3u8"
+        ],
+        [
+          "第6集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/67f435a417bf/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/67f435a417bf/index.m3u8"
+        ],
+        [
+          "第7集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/4086b0bceffc/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/4086b0bceffc/index.m3u8"
+        ],
+        [
+          "第8集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/83d27db9eef6/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/83d27db9eef6/index.m3u8"
+        ],
+        [
+          "第9集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/0670e4bc4caf/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/0670e4bc4caf/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/d511dc966e22/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/d511dc966e22/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/ce387d3aac57/index.m3u8",
+          "https://v.baofeng9.com/video/diyumoshixihuansutongyouxidewanjiazaifeishedingyishijiewushuang/ce387d3aac57/index.m3u8"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
-          "age_9311H1MUHuVgvq8gzaohTSjf54aEOszjiC%2F9Nw%2FTnRzI%2F2tTb%2F4ShoObvP9U4U1kTyP6ZHWS%2BxzRpFItxdMgg2j1"
+          "age_4b17qGojIrfz0WoV6KquERjU5o7H6%2B76GunVkyj1Pv3jR%2BEINTIvS1xEcI1uD2MtpUL0pd0Zm4OYZR3F%2BbvWVyZC",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_c5adoUPX28qrlWN16coLjGiNitlXSXsR32yBc5KhnJreG%2Fh96c0%2B%2F9ugMp3TscJQ3ssPtLK9ZtKGg7I86ZBjWphe",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
-      "anich_m3u8": [
+      "ffm3u8": [
         [
           "第01集",
-          "anich_placeholder_38420_1"
+          "age_37bbzRmIP6uFv3ljH6rWP69%2B4gxmogVg%2BX6ljMOdMmb9BtmTpRJmDsvi0EdsAykZOAtFOFtFvv4yyL2lqkt6gGkvUyFrpgfzYwcydvUyoifGDni%2FWU3jqs4A",
+          "https://vip.ffzy-plays.com/20260704/55381_bfc15822/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_2c2cOvrNHx%2FTV76gng761LBv5GWsVNKD4V2UmHtQJnOupuAsyJ8FRyEkCGHsQjkRPQRsopUptTPa9qKaKXSL4dqtUDFUcusya57EudfF%2FAFiHcMWLsvaiTuL",
+          "https://vip.ffzy-plays.com/20260711/55608_6b625839/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_8b09b%2BNdL4Q3RgLTpYL3CgIoFqSsNyk6WeMNkBodZWcA4sV55v8ZppT6wPUStL65XtXZKU7ZBzvX3Q7pb7K3%2FtwHPXcdA1VeGgWVUU5QugQut%2FlpTFkah6K4Ajj41Hyaqg",
+          "https://v12.ppqrrs.com/wjv12/202607/04/B4jXpyguX089/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_bda0bC8lXgA0djv0fkNkgKTCFqnve72OD2727qlEwVSUDnYImpcy%2BNbxB2HKNYN2Uc2LvjP7pGhvDia6d65Mt%2Bsb0STEkUs5lYQSak5s%2FYPaJ%2BsDI%2Bb2noK5goHwlDcBWg",
+          "https://v10.ppqrrs.com/wjv10/202607/11/wKuHsdDQK396/video/index.m3u8"
         ]
       ]
     },
@@ -32,11 +175,11 @@
     "website": "暂缺",
     "star": 0,
     "status": "连载",
-    "uptodate": "第01集",
-    "time_format_1": "20260704004706",
-    "time_format_2": "2026-07-04",
-    "time_format_3": "2026-07-04 00:47:06",
-    "time": 1783097226,
+    "uptodate": "00:30 第02集",
+    "time_format_1": "20260711005052",
+    "time_format_2": "2026-07-11",
+    "time_format_3": "2026-07-11 00:50:52",
+    "time": 1783702252,
     "tags": "战斗 冒险 奇幻",
     "tags_arr": [
       "战斗",
@@ -52,19 +195,12 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-03",
-    "rank_cnt": "1,505",
+    "rank_cnt": "5.33w",
     "cover": "https://cdn.aqdstatic.com:966/age/20260209.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "10",
-    "collect_cnt": "160",
-    "related": [
-      {
-        "id": "352696",
-        "title": "地狱模式～喜欢速通游戏的玩家在废设定异世界无双～第二季",
-        "cover": "http://lain.bgm.tv/pic/cover/l/b9/52/526979_R83u1.jpg"
-      }
-    ]
+    "comment_cnt": "69",
+    "collect_cnt": "726"
   },
   "series": [
     {
@@ -77,46 +213,46 @@
   ],
   "similar": [
     {
-      "AID": 20180356,
-      "Href": "/detail/20180356",
+      "AID": 20130193,
+      "Href": "/detail/20130193",
+      "NewTitle": "HD",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130193.jpg",
+      "Title": "辉夜姬物语"
+    },
+    {
+      "AID": 20180311,
+      "Href": "/detail/20180311",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180311.jpg",
+      "Title": "夏目友人帐剧场版 ～缘结空蝉～"
+    },
+    {
+      "AID": 20200371,
+      "Href": "/detail/20200371",
+      "NewTitle": "第26集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200371.jpg",
+      "Title": "氪金玩家"
+    },
+    {
+      "AID": 20170251,
+      "Href": "/detail/20170251",
+      "NewTitle": "第50集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170251.jpg",
+      "Title": "偶像活动Stars 第二季"
+    },
+    {
+      "AID": 20220318,
+      "Href": "/detail/20220318",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180356.jpg",
-      "Title": "B：起点"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220318.jpg",
+      "Title": "团团奇米莫"
     },
     {
-      "AID": 20000045,
-      "Href": "/detail/20000045",
-      "NewTitle": "第51集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000045.jpg",
-      "Title": "小魔女DoReMi"
-    },
-    {
-      "AID": 20160100,
-      "Href": "/detail/20160100",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160100.jpg",
-      "Title": "排球少年 第三季"
-    },
-    {
-      "AID": 20180340,
-      "Href": "/detail/20180340",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180340.jpg",
-      "Title": "伍六七"
-    },
-    {
-      "AID": 20210157,
-      "Href": "/detail/20210157",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210157.jpg",
-      "Title": "斗破苍穹 第四季"
-    },
-    {
-      "AID": 20220521,
-      "Href": "/detail/20220521",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220521.jpg",
-      "Title": "鲤氏侦探事务所"
+      "AID": 20220314,
+      "Href": "/detail/20220314",
+      "NewTitle": "第36集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220314.jpg",
+      "Title": "重回末世当大佬 第三季"
     }
   ],
   "player_label_arr": {
@@ -150,8 +286,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

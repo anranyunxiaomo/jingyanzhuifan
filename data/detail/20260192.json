@@ -14,14 +14,74 @@
     "playlists": {
       "xigua": [
         [
-          "第1集",
-          "age_1a7f65kKYqY0xRM%2FbRflJIbVpsm8N5vj8cQ2P%2Bo%2FenYCgBddhZumoUpraysqBqySvsl6s9Zfd9qegSrJUMbKsZLV"
+          "第01集",
+          "age_f1674j0cqxSUi24secCcfaKJf5U23OkRTV8MNTNAXv6FIJwe8ifgWPJC0wMzgR4R2uyy3GNGYWxhjWp95sY76eOK",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_f184HJL4Tj8jeKjMUxBJYlDu2ZgE69nVRYGDy6%2BxRVxRmGZCRxzvnrbdP1L7DOHGPsy%2FD9e0pQauTSXUdhPmJADl",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
-      "anich_m3u8": [
+      "ffm3u8": [
         [
           "第01集",
-          "anich_placeholder_38397_1"
+          "age_7a285ZCG5vfW%2BnhxJm25EiCVkhxwEIe22HpCXKIcfnNV8pFnf85GfLMevM1CcAZf6x4Co%2F%2F265p52amvkhwuyV3PLVc%2B%2FyXiezhQhUpGOqeM%2Bnv1lU%2FsRafu",
+          "https://vip.ffzy-plays.com/20260704/55403_f5ab4352/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_34e6w%2FNMLNWkLtswsjar6RS353fjG0WMKccLf3mpH%2FglZm9U2BHt2GKcaYf6UH2dIQ7vuyADDxargBu7%2FCdBLMZvfkv6O6Wi%2BUsJg44j7l9aBra0YfJgvAoO",
+          "https://vip.ffzy-plays.com/20260711/55639_14a6038d/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_e6baK1pDEh3iIFNRdM3jcCDVMq5Y8MeR8zt2okRgMGKFrwXNwlSyS3%2Bo8OGnujVa8KOflQHYAY1CcXVZE2%2FeTe2JwE6RCc8PbyjulVCjmvr8AweA3RgAt4A%2F5qKiqtVnFTrfbFc7jhs1aA",
+          "https://v.baofeng11.com/video/yanyuanqianbeidetuijian/4ddd3f6dd269/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_7c44hPoJu8Zkx2bGXmhmmvjSIhlNBqLzMBmsMOg2JI1FYgJ%2BTCYgg6%2FXP%2BQYPoIVSTIp%2FNKFcwMa4caTSp8F43qTCwR7jXCOWTxqV80AOLXt1r0QJ1J78axTX%2FPNZ3m5EzAeYAZlKfzwwg",
+          "https://v.fengbao11.com/video/yanyuanqianbeidetuijian/09a7d8068135/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_2ca6F2mtW90n5Ey9ClegdqdudNw%2BR5vNce2hzMO%2F0Mn8Li2eEt8jkZeG2k3y2dqkFauTGpl1RYnD5aMu1xs%2BVR1QhNcKERlkwQqvI4yVkbcJ3ZM9MqO%2BREtQNexLjSI",
+          "https://v9.ppqrrs.com/wjv9/202607/04/KEzr21jKp695/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_92e8WojbjqL9nJneGtEmVxF2IHUl8k8CgDQEOMrQjjSuilf7%2FWiUyMjs6ov39mHf4MtXbbUu2AP3USJO%2FAQp39NqnFqQ99NEoviuEGhNO5ac8QbTeOWfHRAj43bf8Y8",
+          "https://v4.ppqrrs.com/wjv4/202607/11/zUEvWr1Bs794/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_16aa%2Buv45r2nvqaK6JEfDerhosuHDP8L6s2cUGz6W8eap5EyquxFYeAUlKCXP%2B4fdTuUceaycJdBT2eQMqUeGM1aOk7mrmNrO23LAhyuhD6ff5Fl",
+          "https://v.lzcdn31.com/20260704/7996_4c657ffb/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_1160BvTUdmsIwA1Y4GpB8kz75uTexoY3KGK%2BDum8%2FlXD3WtjojZ1sgqYMXgZGDMYFWf45I2jVQ4Qe8zKzBWP2gJd4lTMQLfjolm%2Be%2FdAJk11dzGX",
+          "https://v.lzcdn31.com/20260711/8331_761f7d7e/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "https://hn.bfvvs.com/play/b68WkEne/index.m3u8",
+          "https://hn.bfvvs.com/play/b68WkEne/index.m3u8"
+        ],
+        [
+          "第2集",
+          "https://hn.bfvvs.com/play/eVO7Q6za/index.m3u8",
+          "https://hn.bfvvs.com/play/eVO7Q6za/index.m3u8"
         ]
       ]
     },
@@ -30,11 +90,11 @@
     "website": "暂缺",
     "star": 0,
     "status": "连载",
-    "uptodate": "21:30 第01集",
-    "time_format_1": "20260705002827",
-    "time_format_2": "2026-07-05",
-    "time_format_3": "2026-07-05 00:28:27",
-    "time": 1783182507,
+    "uptodate": "21:30 第02集",
+    "time_format_1": "20260711234726",
+    "time_format_2": "2026-07-11",
+    "time_format_3": "2026-07-11 23:47:26",
+    "time": 1783784846,
     "tags": "奇幻",
     "tags_arr": [
       "奇幻"
@@ -48,56 +108,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-04",
-    "rank_cnt": "298",
+    "rank_cnt": "7,648",
     "cover": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": 0,
-    "collect_cnt": "43"
+    "comment_cnt": "21",
+    "collect_cnt": "104"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20220531,
-      "Href": "/detail/20220531",
+      "AID": 20170054,
+      "Href": "/detail/20170054",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170054.jpg",
+      "Title": "骑士&魔法"
+    },
+    {
+      "AID": 20230326,
+      "Href": "/detail/20230326",
       "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220531.jpg",
-      "Title": "致我深爱的每个你"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230326.jpg",
+      "Title": "剧场版 间谍过家家 代号：白"
     },
     {
-      "AID": 20000123,
-      "Href": "/detail/20000123",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000123.jpg",
-      "Title": "妖兽都市"
-    },
-    {
-      "AID": 20050064,
-      "Href": "/detail/20050064",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050064.jpg",
-      "Title": "天堂之吻"
-    },
-    {
-      "AID": 20200364,
-      "Href": "/detail/20200364",
-      "NewTitle": "第23集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200364.jpg",
-      "Title": "暗界神使 日语版"
-    },
-    {
-      "AID": 20000048,
-      "Href": "/detail/20000048",
-      "NewTitle": "第43集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000048.jpg",
-      "Title": "麻辣教师GTO"
-    },
-    {
-      "AID": 20090021,
-      "Href": "/detail/20090021",
+      "AID": 20070010,
+      "Href": "/detail/20070010",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090021.jpg",
-      "Title": "空罐少女"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070010.jpg",
+      "Title": "悠久之翼"
+    },
+    {
+      "AID": 20200152,
+      "Href": "/detail/20200152",
+      "NewTitle": "第52集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200152.jpg",
+      "Title": "动态漫画·斗破苍穹 第二季"
+    },
+    {
+      "AID": 20060051,
+      "Href": "/detail/20060051",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060051.jpg",
+      "Title": "穿越时空的少女"
+    },
+    {
+      "AID": 20000088,
+      "Href": "/detail/20000088",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000088.jpg",
+      "Title": "攻壳机动队"
     }
   ],
   "player_label_arr": {
@@ -131,8 +191,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

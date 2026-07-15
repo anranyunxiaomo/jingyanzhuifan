@@ -1,76 +1,160 @@
 {
   "latest": [
     {
-      "AID": 20260200,
-      "Href": "/detail/20260200",
+      "AID": 20250188,
+      "Href": "/detail/20250188",
+      "NewTitle": "第44集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250188.jpg",
+      "Title": "假面骑士ZZZ"
+    },
+    {
+      "AID": 20260179,
+      "Href": "/detail/20260179",
       "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260200.jpg",
-      "Title": "尼古喵喵"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
+      "Title": "柔光魔女股份有限公司 第二季"
     },
     {
-      "AID": 20250209,
-      "Href": "/detail/20250209",
-      "NewTitle": "第40集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
-      "Title": "元祖！BanG Dream Chan"
-    },
-    {
-      "AID": 20260169,
-      "Href": "/detail/20260169",
-      "NewTitle": "第04集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260169.jpg",
-      "Title": "BanG Dream! YUME∞MITA"
-    },
-    {
-      "AID": 20260184,
-      "Href": "/detail/20260184",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
-      "Title": "文豪野犬 汪！第二季"
-    },
-    {
-      "AID": 20260193,
-      "Href": "/detail/20260193",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
-      "Title": "令和的斑小姐"
-    },
-    {
-      "AID": 20260180,
-      "Href": "/detail/20260180",
-      "NewTitle": "第03集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
-      "Title": "花样少男少女 第2季"
-    },
-    {
-      "AID": 20260228,
-      "Href": "/detail/20260228",
+      "AID": 20260186,
+      "Href": "/detail/20260186",
       "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260228.jpg",
-      "Title": "我独自盗墓"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260186.jpg",
+      "Title": "雷霆三人行"
     },
     {
-      "AID": 20260214,
-      "Href": "/detail/20260214",
-      "NewTitle": "第03集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260214.jpg",
-      "Title": "LV999的村民"
-    },
-    {
-      "AID": 20260205,
-      "Href": "/detail/20260205",
+      "AID": 20260226,
+      "Href": "/detail/20260226",
       "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260205.jpg",
-      "Title": "无职转生Ⅲ 到了异世界就拿出真本事"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260226.jpg",
+      "Title": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们"
+    },
+    {
+      "AID": 20260204,
+      "Href": "/detail/20260204",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260204.jpg",
+      "Title": "声称不爱我的下任公爵为何会溺爱我"
+    },
+    {
+      "AID": 20260096,
+      "Href": "/detail/20260096",
+      "NewTitle": "第15集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
+      "Title": "欺诈游戏"
+    },
+    {
+      "AID": 20260167,
+      "Href": "/detail/20260167",
+      "NewTitle": "第01集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260167.jpg",
+      "Title": "梅比乌斯之尘"
+    },
+    {
+      "AID": 20260217,
+      "Href": "/detail/20260217",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260217.jpg",
+      "Title": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～"
+    },
+    {
+      "AID": 20260221,
+      "Href": "/detail/20260221",
+      "NewTitle": "第03集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260221.jpg",
+      "Title": "无自觉圣女今天也无意识地释放力量"
+    },
+    {
+      "AID": 20260177,
+      "Href": "/detail/20260177",
+      "NewTitle": "第03集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260177.jpg",
+      "Title": "克雷瓦提斯2：魔兽之王与虚伪的勇者传承"
+    },
+    {
+      "AID": 20260215,
+      "Href": "/detail/20260215",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
+      "Title": "说出你们先走我断后的十年后 我成为了传说"
+    },
+    {
+      "AID": 20260203,
+      "Href": "/detail/20260203",
+      "NewTitle": "第02集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260203.jpg",
+      "Title": "与你相恋到生命尽头"
     }
   ],
   "recommend": [
     {
-      "AID": 20140081,
-      "Href": "/detail/20140081",
+      "AID": 20190042,
+      "Href": "/detail/20190042",
+      "NewTitle": "第12话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190042.jpg",
+      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～"
+    },
+    {
+      "AID": 20030016,
+      "Href": "/detail/20030016",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030016.jpg",
+      "Title": "一骑当千"
+    },
+    {
+      "AID": 20080023,
+      "Href": "/detail/20080023",
+      "NewTitle": "[BD 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080023.jpg",
+      "Title": "死后文"
+    },
+    {
+      "AID": 20130054,
+      "Href": "/detail/20130054",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
-      "Title": "RAIL WARS!"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130054.jpg",
+      "Title": "苍翼默示录 ALTER MEMORY"
+    },
+    {
+      "AID": 20140109,
+      "Href": "/detail/20140109",
+      "NewTitle": "第24集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
+      "Title": "白银的意志 ARGEVOLLEN"
+    },
+    {
+      "AID": 20180093,
+      "Href": "/detail/20180093",
+      "NewTitle": "[TV 01-12+OAD]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180093.jpg",
+      "Title": "恶魔战线"
+    },
+    {
+      "AID": 20140117,
+      "Href": "/detail/20140117",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140117.jpg",
+      "Title": "乐园追放 -Expelled from Paradise-"
+    },
+    {
+      "AID": 20130023,
+      "Href": "/detail/20130023",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130023.jpg",
+      "Title": "进击的巨人"
+    },
+    {
+      "AID": 20200031,
+      "Href": "/detail/20200031",
+      "NewTitle": "[TV 01-12]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200031.jpg",
+      "Title": "NEKOPARA"
+    },
+    {
+      "AID": 20170183,
+      "Href": "/detail/20170183",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170183.jpg",
+      "Title": "魔法科高校的劣等生剧场版 呼唤星辰的少女"
     },
     {
       "AID": 20130038,
@@ -80,93 +164,30 @@
       "Title": "伽利略少女"
     },
     {
-      "AID": 20180247,
-      "Href": "/detail/20180247",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180247.jpg",
-      "Title": "佐贺偶像是传奇"
-    },
-    {
-      "AID": 20140021,
-      "Href": "/detail/20140021",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140021.jpg",
-      "Title": "甘城光辉游乐园"
-    },
-    {
-      "AID": 20180101,
-      "Href": "/detail/20180101",
+      "AID": 20190158,
+      "Href": "/detail/20190158",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180101.jpg",
-      "Title": "失忆融合WIXOSS"
-    },
-    {
-      "AID": 20150053,
-      "Href": "/detail/20150053",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150053.jpg",
-      "Title": "枪神斯托拉塔斯"
-    },
-    {
-      "AID": 20190052,
-      "Href": "/detail/20190052",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190052.jpg",
-      "Title": "一个人的〇〇小日子"
-    },
-    {
-      "AID": 20160041,
-      "Href": "/detail/20160041",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160041.jpg",
-      "Title": "苍之彼方的四重奏"
-    },
-    {
-      "AID": 20180242,
-      "Href": "/detail/20180242",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180242.jpg",
-      "Title": "火之丸相扑"
-    },
-    {
-      "AID": 20180175,
-      "Href": "/detail/20180175",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180175.jpg",
-      "Title": "春原庄的管理人小姐"
-    },
-    {
-      "AID": 20190156,
-      "Href": "/detail/20190156",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190156.jpg",
-      "Title": "只要长得可爱，即使是变态你也喜欢吗？"
-    },
-    {
-      "AID": 20190126,
-      "Href": "/detail/20190126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190126.jpg",
-      "Title": "哥布林杀手剧场版 GOBLIN'S CROWN"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190158.jpg",
+      "Title": "女高中生的无所事事"
     }
   ],
   "week_list": {
     "1": [
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260215,
         "wd": 1,
         "name": "说出你们先走我断后的十年后 我成为了传说",
-        "mtime": "2026-07-04 21:39:25",
-        "namefornew": "第01集"
+        "mtime": "2026-07-15 00:40:20",
+        "namefornew": "第02集"
       },
       {
         "isnew": 0,
         "id": 20260183,
         "wd": 1,
         "name": "碧蓝航线 微速前行 第二季",
-        "mtime": "2026-07-06 00:54:01",
-        "namefornew": "00:00 第01集"
+        "mtime": "2026-07-13 01:09:01",
+        "namefornew": "00:00 第02集"
       },
       {
         "isnew": 0,
@@ -181,72 +202,72 @@
         "id": 20260216,
         "wd": 1,
         "name": "最强出涸皇子的暗跃帝位争夺",
-        "mtime": "2026-07-08 20:58:48",
-        "namefornew": "20:30 第01集"
+        "mtime": "2026-07-14 00:08:15",
+        "namefornew": "20:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260208,
         "wd": 1,
         "name": "骸骨骑士大人异世界冒险中 第二季",
-        "mtime": "2026-07-04 22:49:21",
-        "namefornew": "21:00 第01集"
+        "mtime": "2026-07-13 22:45:17",
+        "namefornew": "21:00 第02集"
       },
       {
         "isnew": 0,
         "id": 20260189,
         "wd": 1,
         "name": "世界在起舞",
-        "mtime": "2026-07-06 22:24:14",
-        "namefornew": "22:00 第02集"
+        "mtime": "2026-07-13 22:46:04",
+        "namefornew": "22:00 第03集"
       },
       {
         "isnew": 0,
         "id": 20260227,
         "wd": 1,
         "name": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
-        "mtime": "2026-07-06 22:22:04",
-        "namefornew": "20:30 第01集"
+        "mtime": "2026-07-13 22:44:27",
+        "namefornew": "20:30 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260217,
         "wd": 1,
         "name": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～",
-        "mtime": "2026-07-08 20:59:32",
-        "namefornew": "21:30 第01集"
+        "mtime": "2026-07-15 00:44:33",
+        "namefornew": "21:30 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260226,
         "wd": 1,
         "name": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
-        "mtime": "2026-07-08 21:00:23",
-        "namefornew": "23:00 第01集"
+        "mtime": "2026-07-15 00:47:41",
+        "namefornew": "23:00 第02集"
       },
       {
         "isnew": 0,
         "id": 20260220,
         "wd": 1,
         "name": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车",
-        "mtime": "2026-07-07 00:02:03",
-        "namefornew": "22:00 第01集"
+        "mtime": "2026-07-14 00:07:08",
+        "namefornew": "22:00 第02集"
       },
       {
         "isnew": 0,
         "id": 20260185,
         "wd": 1,
         "name": "斗球儿弹子",
-        "mtime": "2026-07-07 00:04:32",
-        "namefornew": "22:00 第01集"
+        "mtime": "2026-07-14 00:09:48",
+        "namefornew": "22:00 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260096,
         "wd": 1,
         "name": "欺诈游戏",
-        "mtime": "2026-07-08 21:03:18",
-        "namefornew": "23:00 第14集"
+        "mtime": "2026-07-15 00:46:26",
+        "namefornew": "23:00 第15集"
       }
     ],
     "2": [
@@ -255,40 +276,40 @@
         "id": 20260175,
         "wd": 2,
         "name": "碧蓝之海 第三季",
-        "mtime": "2026-07-07 00:15:15",
-        "namefornew": "00:00 第01集"
+        "mtime": "2026-07-14 01:59:19",
+        "namefornew": "00:00 第03集"
       },
       {
         "isnew": 0,
         "id": 20260201,
         "wd": 2,
         "name": "感谢对战 大小姐才不玩格斗游戏",
-        "mtime": "2026-07-07 21:48:34",
-        "namefornew": "20:30 第01集"
+        "mtime": "2026-07-14 20:00:52",
+        "namefornew": "20:30 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-07 21:51:06",
-        "namefornew": "20:30 第01集"
+        "mtime": "2026-07-15 00:38:51",
+        "namefornew": "20:30 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260230,
         "wd": 2,
         "name": "拯救替身千金的是冷酷无情冰之王子的爱",
-        "mtime": "2026-07-07 21:49:53",
-        "namefornew": "20:55 第01集"
+        "mtime": "2026-07-14 23:56:10",
+        "namefornew": "20:55 第02集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260221,
         "wd": 2,
         "name": "无自觉圣女今天也无意识地释放力量",
-        "mtime": "2026-07-08 23:57:37",
-        "namefornew": "21:00 第02集"
+        "mtime": "2026-07-15 00:43:03",
+        "namefornew": "21:00 第03集"
       },
       {
         "isnew": 0,
@@ -299,12 +320,12 @@
         "namefornew": "22:00 PV"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260172,
         "wd": 2,
         "name": "攻壳机动队 THE GHOST IN THE SHELL",
-        "mtime": "2026-07-07 23:44:53",
-        "namefornew": "22:00 第01集"
+        "mtime": "2026-07-15 00:42:22",
+        "namefornew": "22:00 第02集"
       },
       {
         "isnew": 0,
@@ -312,7 +333,15 @@
         "wd": 2,
         "name": "铠真传 武士军团 第2部分",
         "mtime": "2026-07-08 23:58:43",
-        "namefornew": "22:30 第01集"
+        "namefornew": "22:30 第02集"
+      },
+      {
+        "isnew": 1,
+        "id": 20260224,
+        "wd": 2,
+        "name": "底牌很多的维多利亚",
+        "mtime": "2026-07-14 23:57:01",
+        "namefornew": "23:00 第02集"
       }
     ],
     "3": [
@@ -330,7 +359,7 @@
         "wd": 3,
         "name": "天是红河岸",
         "mtime": "2026-07-08 23:59:44",
-        "namefornew": "00:35 第01集"
+        "namefornew": "00:35 第02集"
       },
       {
         "isnew": 0,
@@ -338,22 +367,30 @@
         "wd": 3,
         "name": "幼女战记 第二季",
         "mtime": "2026-07-09 00:00:51",
-        "namefornew": "21:30 第01集"
+        "namefornew": "21:30 第02集"
       },
       {
         "isnew": 0,
+        "id": 20260229,
+        "wd": 3,
+        "name": "澈底对你成瘾",
+        "mtime": "2026-07-08 23:56:51",
+        "namefornew": "22:25 第02集"
+      },
+      {
+        "isnew": 1,
         "id": 20260177,
         "wd": 3,
         "name": "克雷瓦提斯2：魔兽之王与虚伪的勇者传承",
-        "mtime": "2026-07-08 21:01:52",
-        "namefornew": "21:00 第01集"
+        "mtime": "2026-07-15 00:40:59",
+        "namefornew": "21:00 第03集"
       },
       {
         "isnew": 0,
         "id": 20260219,
         "wd": 3,
         "name": "女主角？圣女？不，我是杂役女仆（自豪）！",
-        "mtime": "2026-07-02 00:14:28",
+        "mtime": "2026-07-10 21:38:26",
         "namefornew": "21:00 第03集"
       },
       {
@@ -363,6 +400,14 @@
         "name": "Re：从零开始的异世界生活 第四季 丧失篇",
         "mtime": "2026-06-17 23:57:26",
         "namefornew": "第11集(完结)"
+      },
+      {
+        "isnew": 0,
+        "id": 20260198,
+        "wd": 3,
+        "name": "不虐待我的继母与继姐",
+        "mtime": "2026-07-09 00:01:49",
+        "namefornew": "22:30 第01集"
       },
       {
         "isnew": 0,
@@ -389,17 +434,17 @@
         "namefornew": "23:00 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260186,
         "wd": 3,
         "name": "雷霆三人行",
-        "mtime": "2026-06-22 14:51:35",
+        "mtime": "2026-07-15 00:48:19",
         "namefornew": "23:45 第01集"
       }
     ],
     "4": [
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260228,
         "wd": 4,
         "name": "我独自盗墓",
@@ -407,7 +452,7 @@
         "namefornew": "00:15 第01集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260180,
         "wd": 4,
         "name": "花样少男少女 第2季",
@@ -431,7 +476,7 @@
         "namefornew": "HD中字"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260193,
         "wd": 4,
         "name": "令和的斑小姐",
@@ -439,7 +484,7 @@
         "namefornew": "21:30 第02集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260184,
         "wd": 4,
         "name": "文豪野犬 汪！第二季",
@@ -447,7 +492,7 @@
         "namefornew": "20:40 第02集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20250209,
         "wd": 4,
         "name": "元祖！BanG Dream Chan",
@@ -455,7 +500,7 @@
         "namefornew": "21:00 第40集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260169,
         "wd": 4,
         "name": "BanG Dream! YUME∞MITA",
@@ -471,20 +516,20 @@
         "namefornew": "第13集(完结)"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260167,
         "wd": 4,
         "name": "梅比乌斯之尘",
-        "mtime": "2026-06-22 13:17:02",
-        "namefornew": "22:30 第PV"
+        "mtime": "2026-07-15 00:45:17",
+        "namefornew": "22:30 第01集"
       },
       {
         "isnew": 0,
         "id": 20260210,
         "wd": 4,
         "name": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记",
-        "mtime": "2026-07-03 00:26:32",
-        "namefornew": "23:00 第3集"
+        "mtime": "2026-07-10 21:37:35",
+        "namefornew": "23:00 第03集"
       },
       {
         "isnew": 0,
@@ -492,20 +537,20 @@
         "wd": 4,
         "name": "轮回的花瓣",
         "mtime": "2026-06-26 00:48:47",
-        "namefornew": "00:30 第13集"
+        "namefornew": "第13集(完结)"
       },
       {
         "isnew": 0,
         "id": 20260212,
         "wd": 4,
         "name": "被追放的转生重骑士用游戏知识开无双",
-        "mtime": "2026-07-03 00:28:00",
-        "namefornew": "23:26 第01集"
+        "mtime": "2026-07-10 21:40:32",
+        "namefornew": "23:26 第02集"
       }
     ],
     "5": [
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260200,
         "wd": 5,
         "name": "尼古喵喵",
@@ -517,7 +562,7 @@
         "id": 20260197,
         "wd": 5,
         "name": "少女怪兽焦糖味",
-        "mtime": "2026-07-04 00:22:56",
+        "mtime": "2026-07-10 21:38:58",
         "namefornew": "00:28 第02集"
       },
       {
@@ -549,8 +594,8 @@
         "id": 20260213,
         "wd": 5,
         "name": "从0位居民开始的边境领主大人",
-        "mtime": "2026-07-04 00:23:55",
-        "namefornew": "21:30 第01集"
+        "mtime": "2026-07-10 23:34:41",
+        "namefornew": "21:30 第02集"
       },
       {
         "isnew": 0,
@@ -565,24 +610,24 @@
         "id": 20260098,
         "wd": 5,
         "name": "关于我转生变成史莱姆这档事 第四季",
-        "mtime": "2026-07-04 00:25:11",
-        "namefornew": "23:00 第13集"
+        "mtime": "2026-07-10 23:35:30",
+        "namefornew": "23:00 第14集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-07 21:51:06",
-        "namefornew": "20:30 第01集"
+        "mtime": "2026-07-15 00:38:51",
+        "namefornew": "20:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260101,
         "wd": 5,
         "name": "神之水滴",
-        "mtime": "2026-07-04 00:26:16",
-        "namefornew": "23:30 第13集"
+        "mtime": "2026-07-11 00:04:19",
+        "namefornew": "23:30 第14集"
       }
     ],
     "6": [
@@ -599,24 +644,24 @@
         "id": 20260199,
         "wd": 6,
         "name": "我家的弟弟们真是让您费心了",
-        "mtime": "2026-07-04 00:45:31",
-        "namefornew": "第01集"
+        "mtime": "2026-07-11 00:49:29",
+        "namefornew": "00:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260194,
         "wd": 6,
         "name": "正后方的神威",
-        "mtime": "2026-07-04 20:56:39",
-        "namefornew": "第01集"
+        "mtime": "2026-07-11 00:50:01",
+        "namefornew": "00:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260209,
         "wd": 6,
         "name": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～ 第2季",
-        "mtime": "2026-07-04 00:47:06",
-        "namefornew": "第01集"
+        "mtime": "2026-07-11 00:50:52",
+        "namefornew": "00:30 第02集"
       },
       {
         "isnew": 0,
@@ -639,15 +684,15 @@
         "id": 20260089,
         "wd": 6,
         "name": "小书痴的下克上 〜为了成为图书管理员而不择手段〜 第四季",
-        "mtime": "2026-06-27 22:43:42",
-        "namefornew": "16:30 第12集"
+        "mtime": "2026-07-11 23:42:55",
+        "namefornew": "16:30 第13集"
       },
       {
         "isnew": 0,
         "id": 20260097,
         "wd": 6,
         "name": "入间同学入魔了 第四季",
-        "mtime": "2026-07-04 20:58:42",
+        "mtime": "2026-07-11 23:43:33",
         "namefornew": "18:55 第15集"
       },
       {
@@ -655,8 +700,8 @@
         "id": 20260205,
         "wd": 6,
         "name": "无职转生Ⅲ 到了异世界就拿出真本事",
-        "mtime": "2026-07-09 00:34:31",
-        "namefornew": "第02集"
+        "mtime": "2026-07-12 23:47:59",
+        "namefornew": "19:00 第03集"
       },
       {
         "isnew": 0,
@@ -664,31 +709,31 @@
         "wd": 6,
         "name": "名侦探柯南",
         "mtime": "2026-06-27 21:34:35",
-        "namefornew": "19:30 第1265集"
+        "namefornew": "19:30 第1266集"
       },
       {
         "isnew": 0,
         "id": 20260195,
         "wd": 6,
         "name": "暗黑灯火",
-        "mtime": "2026-07-05 00:26:41",
-        "namefornew": "21:00 第01集"
+        "mtime": "2026-07-11 23:46:09",
+        "namefornew": "21:00 第02集"
       },
       {
         "isnew": 0,
         "id": 20260223,
         "wd": 6,
         "name": "猫与龙",
-        "mtime": "2026-07-04 22:50:34",
-        "namefornew": "20:30 第02集"
+        "mtime": "2026-07-11 23:44:26",
+        "namefornew": "20:30 第03集"
       },
       {
         "isnew": 0,
         "id": 20260192,
         "wd": 6,
         "name": "岩元前辈的推荐",
-        "mtime": "2026-07-05 00:28:27",
-        "namefornew": "21:30 第01集"
+        "mtime": "2026-07-11 23:47:26",
+        "namefornew": "21:30 第02集"
       },
       {
         "isnew": 0,
@@ -696,15 +741,15 @@
         "wd": 6,
         "name": "死神 千年血战篇-祸进谭-",
         "mtime": "2026-06-22 13:55:07",
-        "namefornew": "PV"
+        "namefornew": "22:00 PV"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260179,
         "wd": 6,
         "name": "柔光魔女股份有限公司 第二季",
-        "mtime": "2026-06-22 14:24:15",
-        "namefornew": "PV"
+        "mtime": "2026-07-15 00:49:03",
+        "namefornew": "23:55 第02集"
       }
     ],
     "0": [
@@ -713,16 +758,16 @@
         "id": 20260086,
         "wd": 0,
         "name": "黄泉使者",
-        "mtime": "2026-07-05 01:10:45",
-        "namefornew": "00:00 第13集"
+        "mtime": "2026-07-12 11:14:34",
+        "namefornew": "00:00 第14集"
       },
       {
         "isnew": 0,
         "id": 20260187,
         "wd": 0,
         "name": "穹庐下的魔女",
-        "mtime": "2026-07-05 01:22:58",
-        "namefornew": "22:30 第02集"
+        "mtime": "2026-07-12 11:13:30",
+        "namefornew": "22:30 第03集"
       },
       {
         "isnew": 0,
@@ -730,23 +775,23 @@
         "wd": 0,
         "name": "人造人009 涅墨西斯",
         "mtime": "2026-06-22 13:50:13",
-        "namefornew": "PV"
+        "namefornew": "00:00 PV"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260204,
         "wd": 0,
         "name": "声称不爱我的下任公爵为何会溺爱我",
-        "mtime": "2026-06-22 15:48:48",
-        "namefornew": "PV"
+        "mtime": "2026-07-15 00:46:55",
+        "namefornew": "00:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260170,
         "wd": 0,
         "name": "魔法少女奈叶 EXCEEDS Gun Blaze Vengeance",
-        "mtime": "2026-07-05 01:24:07",
-        "namefornew": "00:00 第01集"
+        "mtime": "2026-07-12 01:43:52",
+        "namefornew": "00:00 第2集"
       },
       {
         "isnew": 0,
@@ -754,39 +799,39 @@
         "wd": 0,
         "name": "一叠间漫画咖啡屋生活！",
         "mtime": "2026-06-21 01:29:33",
-        "namefornew": "第11集"
+        "namefornew": "第11集(完结)"
       },
       {
         "isnew": 0,
         "id": 20260196,
         "wd": 0,
         "name": "花织同学转生后还是想干架",
-        "mtime": "2026-06-22 15:25:40",
-        "namefornew": "PV"
+        "mtime": "2026-07-12 23:50:19",
+        "namefornew": "01:30 第01集"
       },
       {
         "isnew": 0,
         "id": 20260222,
         "wd": 0,
         "name": "鬼之花嫁",
-        "mtime": "2026-07-05 01:25:09",
-        "namefornew": "23:30 第01集"
+        "mtime": "2026-07-12 01:43:28",
+        "namefornew": "23:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260225,
         "wd": 0,
         "name": "才女的侍从 在满是高岭之花的贵族学校暗中照顾（毫无生活自理能力的）学院第一大小姐",
-        "mtime": "2026-07-05 13:36:30",
-        "namefornew": "01:38 第01集"
+        "mtime": "2026-07-12 21:54:10",
+        "namefornew": "01:38 第02集"
       },
       {
         "isnew": 0,
         "id": 20260190,
         "wd": 0,
         "name": "炒翻天",
-        "mtime": "2026-06-22 15:03:27",
-        "namefornew": "pv"
+        "mtime": "2026-07-10 21:41:49",
+        "namefornew": "16:30 第02集"
       },
       {
         "isnew": 0,
@@ -794,23 +839,23 @@
         "wd": 0,
         "name": "小鲨鱼去郊游 第二季",
         "mtime": "2026-03-18 16:26:28",
-        "namefornew": "PV"
+        "namefornew": "06:00 PV"
       },
       {
         "isnew": 0,
         "id": 20260064,
         "wd": 0,
         "name": "名侦探光之美少女！",
-        "mtime": "2026-07-05 13:37:17",
-        "namefornew": "07:30 第23集"
+        "mtime": "2026-07-12 21:53:00",
+        "namefornew": "07:30 第24集"
       },
       {
         "isnew": 0,
         "id": 20250235,
         "wd": 0,
         "name": "数码宝贝 BEATBREAK",
-        "mtime": "2026-07-05 22:13:30",
-        "namefornew": "08:00 第37集"
+        "mtime": "2026-07-12 21:50:49",
+        "namefornew": "08:00 第38集"
       },
       {
         "isnew": 0,
@@ -829,20 +874,20 @@
         "namefornew": "09:30 第1163集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260191,
         "wd": 0,
         "name": "Let's Go 怪奇组",
-        "mtime": "2026-06-22 15:06:23",
-        "namefornew": "PV"
+        "mtime": "2026-07-15 00:38:12",
+        "namefornew": "15:30 第02集"
       },
       {
         "isnew": 0,
         "id": 20260181,
         "wd": 0,
         "name": "相反的你和我 第二季",
-        "mtime": "2026-07-05 22:12:34",
-        "namefornew": "16:00 第01集"
+        "mtime": "2026-07-12 21:55:44",
+        "namefornew": "16:00 第02集"
       },
       {
         "isnew": 0,
@@ -850,7 +895,7 @@
         "wd": 0,
         "name": "夜樱家的大作战 第二季",
         "mtime": "2026-06-29 00:56:05",
-        "namefornew": "第12集"
+        "namefornew": "第12集(完结)"
       },
       {
         "isnew": 0,
@@ -866,31 +911,31 @@
         "wd": 0,
         "name": "钻石王牌 act2 第二季",
         "mtime": "2026-06-29 00:57:42",
-        "namefornew": "第13集"
+        "namefornew": "第13集(完结)"
       },
       {
         "isnew": 0,
         "id": 20260211,
         "wd": 0,
         "name": "世界最强的后卫 ～迷宫国的新人探索者～",
-        "mtime": "2026-07-05 22:37:40",
-        "namefornew": "21:00 第01集"
+        "mtime": "2026-07-12 22:44:01",
+        "namefornew": "21:00 第02集"
       },
       {
         "isnew": 0,
         "id": 20260182,
         "wd": 0,
         "name": "超超超超超喜欢你的100个女朋友 第三季",
-        "mtime": "2026-07-05 22:39:23",
-        "namefornew": "21:30 第01集"
+        "mtime": "2026-07-12 22:44:34",
+        "namefornew": "21:30 第2集"
       },
       {
         "isnew": 0,
         "id": 20190015,
         "wd": 0,
         "name": "二十世纪电气目录",
-        "mtime": "2026-07-06 00:39:14",
-        "namefornew": "22:00 第01集"
+        "mtime": "2026-07-12 23:49:36",
+        "namefornew": "22:00 第02集"
       },
       {
         "isnew": 0,
@@ -912,17 +957,17 @@
         "isnew": 0,
         "id": 20260218,
         "wd": 0,
-        "name": "虽然我不是完美恶女～雏宫蝶鼠替换传～",
-        "mtime": "2026-06-22 16:34:18",
-        "namefornew": "PV"
+        "name": "恶女不才，请多关照 ～雏宫蝶鼠换身传～",
+        "mtime": "2026-07-13 00:22:24",
+        "namefornew": "22:45 第01集"
       },
       {
         "isnew": 0,
         "id": 20260083,
         "wd": 0,
         "name": "黑猫与魔女的教室",
-        "mtime": "2026-07-05 23:59:56",
-        "namefornew": "23:00 已完结"
+        "mtime": "2026-07-12 23:46:56",
+        "namefornew": "23:00 第14集"
       },
       {
         "isnew": 0,
@@ -937,8 +982,8 @@
         "id": 20260166,
         "wd": 0,
         "name": "再见，拉拉",
-        "mtime": "2026-07-06 00:40:23",
-        "namefornew": "23:30 第2集"
+        "mtime": "2026-07-13 00:21:22",
+        "namefornew": "23:30 第02集"
       }
     ]
   },
@@ -1458,7 +1503,7 @@
       "AID": 20260090,
       "Title": "一叠间漫画咖啡屋生活！",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260090.jpg",
-      "NewTitle": "连载",
+      "NewTitle": "完结",
       "Href": "/detail/20260090"
     },
     {
@@ -1523,6 +1568,13 @@
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
       "NewTitle": "完结",
       "Href": "/detail/20140059"
+    },
+    {
+      "AID": 20080023,
+      "Title": "死后文",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080023.jpg",
+      "NewTitle": "完结",
+      "Href": "/detail/20080023"
     },
     {
       "AID": "a123_qingsongxiong",
@@ -1605,7 +1657,7 @@
       "AID": 20250041,
       "Title": "不知为何我和尼特且宅的女忍者开始了同居生活",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20250041.jpg",
-      "NewTitle": "连载",
+      "NewTitle": "完结",
       "Href": "/detail/20250041"
     },
     {

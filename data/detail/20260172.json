@@ -15,43 +15,62 @@
     "playlists": {
       "xigua": [
         [
-          "第01集(机翻)",
-          "age_54f7zQOzn5oolTjTy63zmAL4E7fIfmHU%2FiCbQJNnEu1NxasYXFBDy7psn85bRiZoBz%2BzjBlbx%2Fwds8xxWssiD%2FoH",
+          "第01集",
+          "age_c4a7fvLe7Hgp036Mf%2BU50x35WBBVoaZCiFdxqO0%2FM3RkPHsXo41544Vicfqow81tQfCQeEnxSsZOH27Zk0p6bHqy",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_0382Dc2YxNG2Y6UHBPuXRKCIQWGJqAwiaiiraE1TdYUqwaFmyuvFrdirieRigSsPbmnWwOdDEU6SOq9RVX0qf%2FBY",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
       "ffm3u8": [
         [
           "第01集",
-          "age_7399uk%2B3nYNkIDhqZK9Tivf91cV3Iogv329UvqFUEegll5vBfBk5MieEuuhi0Q8ab1KRhGTaqi8GvYHydDWVCokV05wULu7UzkEYJuASlwTM3UysQuYRZ3yk",
+          "age_e2e6lltaM93r%2FTdHD9iq2%2BoLzpo02b3pF1tQPSbuVkK6gtGF4K9Pem%2FBD6E6UdFlTGTrqF%2Bnd1TZL9NIjzbx0aKtXS17PDAeMBAIYyAraPBkhpC2fR08Fg%2BA",
           "https://vip.ffzy-plays.com/20260707/55505_29e28ef3/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_d59e8kptBBXe3oxCch%2FXovNItH16wSNCLUw5f0hc2ZRxltCgpcnRwqCM0Uu0OlKhztrBvFr3cjzxuIRDj2qlRPLUGA5ppZj7GE4FAQ5NhZyui2bA%2B516nRuB",
+          "https://vip.ffzy-plays.com/20260714/55778_03e25556/index.m3u8"
         ]
       ],
       "bfzym3u8": [
         [
           "第01集",
-          "age_cb70zehdyx6p%2FWQoEsLcZXV9ObxhElW%2FiK%2FzojzoJEWRr5MgtiVIpv%2B%2B8%2FuVh9E6X879i%2BtDuxRUTQ5XElPkKwr7j61kKjTZbU0e1JtNDy8ZxBT36hY1XhIz1sZ0Tci%2BbtU",
+          "age_66b64AVoPyhdBWJ08Y0RuVjzcq0z41qPGsqRYiwaPy0T2pOpyACWKccj90aYGUpi7vQSgGo%2Bum4iWuq8S3eOTJLfINDl52NubYQNU3gJM5qTpr7QmGLX2%2BK4ETTSnU%2BlRQY",
           "https://v.baofeng11.com/video/gongkejidongdui/43548bac67ed/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_6c33FReTlOVfwrf7OgWubtk9LmPeSVcmaFP0v2ozkGopSlDM5%2FEWeInnFjQG6XE%2BOJkBlKwILWyJkR9GIYiU4lRou2c0tUn46brMWNzf%2FY3FB1SQtS2F5aUVzgXAUU%2F8mjI",
+          "https://v.fengbao11.com/video/gongkejidongdui/b8abdb492db7/index.m3u8"
         ]
       ],
       "wjm3u8": [
         [
           "第01集",
-          "age_13a8o%2F3XKba9Z2NxcSfh5wCTkmi3MwF%2B8rmKnUE4753RvoGmEyqyBmzJVdOOju42XJgSBwF9eEzw6hDEwDC%2B1n3505gPJDNuvIPlF5SM7NOUhdYQfbPvCujvIxDhZZA",
+          "age_ff71oVr4DBVQ22L1w5anKXOCe3ly89vqAk87NwS6dmBMNrv8PiokYO%2BkoQbv4b52moB5DV8fsTISQulEsMpeZ%2FU7vC2gRDT6iyjaK8pI%2BdP8BIpby%2FSNBsqzjoq%2FENY",
           "https://v5.ppqrrs.com/wjv5/202607/07/WLbgswWKAg92/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_277b373P6wHEr4reItGpaFRsUcV7bQiEdIfwwe1eCM8tEaMBoHmkgMtOxFuNJCrR8v23i6sbLoUP1vas1P%2BxWs52dAAUzyhF4pZhmvwd8EuZ1n4yma2u2QWs51ME1kjgEA",
+          "https://v10.ppqrrs.com/wjv10/202607/14/wRSnNEi8mH96/video/index.m3u8"
         ]
       ],
       "lzm3u8": [
         [
           "第01集",
-          "age_37c5H3hZeWrLBtGtzoUpZbIfwpDrkYroF5KjPWLLnZu%2BCtiqji0yhpUsrklZ4vEkEZZNSnbjJ3cGZ9oX4WBvHjHd3082eRKPrGwHW4PfhQAPnTxo",
+          "age_ca0cb%2FtL%2BI%2Fee2m1zNNKAwzUrsXXXPC%2Bjnmu3XDYLxEBqvYbrD6O5P0MOWN8iWHifYoMEqvLLHVeToRHVfCI2v6ZnWNhkrFxaCxOpgw8Lz7LmOWW",
           "https://v.lzcdn31.com/20260707/8101_996b473d/index.m3u8"
-        ]
-      ],
-      "anich_m3u8": [
+        ],
         [
-          "第01集",
-          "anich_placeholder_38369_1"
+          "第02集",
+          "age_c89cLMFZRE%2FUOvrqSWU4lLMZIwdImUhWojXjsv8xVlG%2BF3ZXI9alsmygZ55Sz7a%2BrPNVlPQtwKyFOtW2V%2By81fQBCXHmKtXjEekEffdSdgafkI4I",
+          "https://v.lzcdn31.com/20260714/8447_614ac521/index.m3u8"
         ]
       ]
     },
@@ -60,11 +79,11 @@
     "website": "https://www.theghostintheshell-anime.jp/",
     "star": 0,
     "status": "连载",
-    "uptodate": "22:00 第01集",
-    "time_format_1": "20260707234453",
-    "time_format_2": "2026-07-07",
-    "time_format_3": "2026-07-07 23:44:53",
-    "time": 1783439093,
+    "uptodate": "22:00 第02集",
+    "time_format_1": "20260715004222",
+    "time_format_2": "2026-07-15",
+    "time_format_3": "2026-07-15 00:42:22",
+    "time": 1784047342,
     "tags": "战斗 科幻",
     "tags_arr": [
       "战斗",
@@ -79,24 +98,12 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-07",
-    "rank_cnt": "1,585",
+    "rank_cnt": "5,676",
     "cover": "https://cdn.aqdstatic.com:966/age/20260172.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "1",
-    "collect_cnt": "89",
-    "related": [
-      {
-        "id": "anich_38424",
-        "title": "攻壳机动队 THE GHOST IN THE SHELL 特别篇",
-        "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300"
-      },
-      {
-        "id": "anich_38369",
-        "title": "攻壳机动队 THE GHOST IN THE SHELL",
-        "cover": "https://wework.qpic.cn/wwpic3az/880817_4fCTtlRjR9C4-8n_1782617467/300"
-      }
-    ]
+    "comment_cnt": "10",
+    "collect_cnt": "189"
   },
   "series": [
     {
@@ -158,46 +165,46 @@
   ],
   "similar": [
     {
-      "AID": 20240112,
-      "Href": "/detail/20240112",
+      "AID": 20160240,
+      "Href": "/detail/20160240",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160240.jpg",
+      "Title": "偶像活动 ～被盯上的魔法偶活卡～"
+    },
+    {
+      "AID": 20150086,
+      "Href": "/detail/20150086",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240112.jpg",
-      "Title": "为何我的世界被遗忘了？"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150086.jpg",
+      "Title": "我老婆是学生会长"
     },
     {
-      "AID": 20050012,
-      "Href": "/detail/20050012",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050012.jpg",
-      "Title": "AIR 剧场版"
+      "AID": 20210210,
+      "Href": "/detail/20210210",
+      "NewTitle": "第10话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210210.jpg",
+      "Title": "李林克的小馆儿"
     },
     {
-      "AID": 20220530,
-      "Href": "/detail/20220530",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220530.jpg",
-      "Title": "致深爱你的那个我"
+      "AID": 20060079,
+      "Href": "/detail/20060079",
+      "NewTitle": "已完结, 第13话",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060079.jpg",
+      "Title": "向日葵！"
     },
     {
-      "AID": 20170241,
-      "Href": "/detail/20170241",
-      "NewTitle": "[WEB 01-07]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170241.jpg",
-      "Title": "头条都是他"
+      "AID": 20210405,
+      "Href": "/detail/20210405",
+      "NewTitle": "第196集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210405.jpg",
+      "Title": "剑域风云"
     },
     {
-      "AID": 20140073,
-      "Href": "/detail/20140073",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140073.jpg",
-      "Title": "魔法科高校的劣等生"
-    },
-    {
-      "AID": 20100062,
-      "Href": "/detail/20100062",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100062.jpg",
-      "Title": "女仆咖啡厅"
+      "AID": 20160248,
+      "Href": "/detail/20160248",
+      "NewTitle": "[OAD 01-10]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160248.jpg",
+      "Title": "妖精的尾巴OAD"
     }
   ],
   "player_label_arr": {
@@ -231,8 +238,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

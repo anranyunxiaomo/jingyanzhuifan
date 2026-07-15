@@ -14,9 +14,74 @@
     "playlists": {
       "xigua": [
         [
-          "第1集",
-          "age_4648RldhDuYaj4BkxQq5k8Spr61u0xeGughhTy2V0pbpU1nsEGqs25GBC1%2Fpdleo66H4VEWIh8ZZwGsRcBdgaKsA",
+          "第01集",
+          "age_8513mwlOkVLfpNf%2F%2BBrVkSTqoS2bhNETQyh1%2FNVEoOpxC%2FWJ%2FSbZa%2FTT%2B7spqi6QXLlZvI0dYStLdNQU8oIKkTBB",
           "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_554aR7rpmXy9H9wqsTLAIYBMbxqLjuo%2BpbejA9gJhfU2fYqVDZaE%2BXCZFYOyuLiihTMpEgtgaM1HUn%2BuyPZpkJbf",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_cb0enASnyGckPmauL37%2FvbDR%2BcK8Ja2ldEPOp7oXfiPZhX57YLT%2BeOVg%2FRc%2BCY4Phe%2BYR7z8lJ00FCpkxi1yPgDXSlEHwEn0kphF8l3CdCuPtZQY1O8V2w%2Fh",
+          "https://vip.ffzy-plays.com/20260706/55478_2d9de9b1/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_a2c3d0MUO6NyIc%2BIneBaoJaasF2%2FR19CAAQd3IExIG3HAsVXIHLhP9PbZ83hIs%2F%2FAei3Gm5krZVVcOdr995ApbVrj6elQKftMbqeAW10cGMYp4c2rupaOyF7",
+          "https://vip.ffzy-plays.com/20260713/55746_4c125d29/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_6435pIIEozv8ZEOz7dufLdBRiYB%2BpV%2FhYUo2bPf5CyzN8PbfCTjJ4Sp1x5K8C1191sZTOA%2FpHXaBf4rlBGU7IdmG24C0biOE%2BgJ7TW%2Bugy98miOquTOWudMVi2SJC4Mp",
+          "https://v.baofeng11.com/video/douqiuerdanzi/ddb4ae279b85/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_5586POLSXM%2BYqJ60w8tlbaDGispEBaHMU0RvCie%2FqEys2w5QF8W1buvP7OwD7HSwg9O1Xjc957sx2O8JCziOSEC0h2UoaDvzVLqcNxsXFkOZ988ffiefxUYDBhi4M9z4",
+          "https://v.fengbao11.com/video/douqiuerdanzi/063b930ca4db/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_c253cC77vcbOw2vWNEsAVQdnwXqPXLJfk1O7LW67nSeXD1jyvAQgWblUGaGPuKz%2BG3lfZ41MbfOblGierC9T3JuQim%2FBzSd25PYLrVAVmanQ7nKf15UfRyEoOgw59ho",
+          "https://v9.ppqrrs.com/wjv9/202607/06/5ELaHchKbf96/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_c96bYWFY1Nhhi%2B%2FZTG5MSyqbf%2FuGqiRdvIIxQ6fGBsqM1VLiH0wsOFDJzqFkkkhK%2FvdKmeaUaNpk6k1ATceG4013zfg7pdTK0UAoFlD88K2L0Mmx%2F8xMuz403o7raTY",
+          "https://v8.ppqrrs.com/wjv8/202607/13/jxpKKvt05394/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_267d5Iy4QTR4GYs6ma2uZU05RdbICsvWxRU34GTIxB6f0srmt%2F%2FGQb2vGe2qblYThuQzkDI1VCZOoQPv0XrU3jB%2FhQYgA9mdwqqe%2F9EMl5xrDqmP",
+          "https://v.lzcdn31.com/20260706/8079_512fc961/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_10958NkZSOqEeg3jebZBEpcw5%2FMgBIbw0kliSQgmzqDq4A03BJVWfNMLE2a5RTzlQlO1%2FgNnl%2Be0su4qNp5unaYT%2FrbWrn4usRbkXRci07iK144Y",
+          "https://v.lzcdn31.com/20260713/8416_dbe65a89/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "https://hn.bfvvs.com/play/aQW6Jwqd/index.m3u8",
+          "https://hn.bfvvs.com/play/aQW6Jwqd/index.m3u8"
+        ],
+        [
+          "第2集",
+          "https://hn.bfvvs.com/play/b68Bm7Ne/index.m3u8",
+          "https://hn.bfvvs.com/play/b68Bm7Ne/index.m3u8"
         ]
       ]
     },
@@ -25,11 +90,11 @@
     "website": "https://dodge-danko.com/",
     "star": 0,
     "status": "连载",
-    "uptodate": "22:00 第01集",
-    "time_format_1": "20260707000432",
-    "time_format_2": "2026-07-07",
-    "time_format_3": "2026-07-07 00:04:32",
-    "time": 1783353872,
+    "uptodate": "22:00 第02集",
+    "time_format_1": "20260714000948",
+    "time_format_2": "2026-07-14",
+    "time_format_3": "2026-07-14 00:09:48",
+    "time": 1783958988,
     "tags": "运动",
     "tags_arr": [
       "运动"
@@ -43,56 +108,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-06",
-    "rank_cnt": "244",
+    "rank_cnt": "2,451",
     "cover": "https://cdn.aqdstatic.com:966/age/20260185.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "1",
-    "collect_cnt": "4"
+    "comment_cnt": "10",
+    "collect_cnt": "11"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20160003,
-      "Href": "/detail/20160003",
+      "AID": 20160016,
+      "Href": "/detail/20160016",
+      "NewTitle": "全集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160016.jpg",
+      "Title": "亚人OAD"
+    },
+    {
+      "AID": 20080023,
+      "Href": "/detail/20080023",
+      "NewTitle": "[BD 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080023.jpg",
+      "Title": "死后文"
+    },
+    {
+      "AID": 20190193,
+      "Href": "/detail/20190193",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190193.jpg",
+      "Title": "TRY KNIGHTS"
+    },
+    {
+      "AID": 20250220,
+      "Href": "/detail/20250220",
+      "NewTitle": "PV",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250220.jpg",
+      "Title": "GANGLION"
+    },
+    {
+      "AID": 20230133,
+      "Href": "/detail/20230133",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230133.jpg",
+      "Title": "身为悲剧始作俑者的最强邪恶BOSS女王为民竭心尽力。"
+    },
+    {
+      "AID": 20200135,
+      "Href": "/detail/20200135",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160003.jpg",
-      "Title": "百武装战记"
-    },
-    {
-      "AID": 20140026,
-      "Href": "/detail/20140026",
-      "NewTitle": "[TV 01-22+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140026.jpg",
-      "Title": "四月是你的谎言"
-    },
-    {
-      "AID": 20210377,
-      "Href": "/detail/20210377",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210377.jpg",
-      "Title": "动态漫画·我被困在同一天十万年"
-    },
-    {
-      "AID": 20220279,
-      "Href": "/detail/20220279",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220279.jpg",
-      "Title": "武动乾坤 第三季"
-    },
-    {
-      "AID": 20160097,
-      "Href": "/detail/20160097",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160097.jpg",
-      "Title": "高校舰队"
-    },
-    {
-      "AID": 20220201,
-      "Href": "/detail/20220201",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220201.jpg",
-      "Title": "Extreme Hearts"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200135.jpg",
+      "Title": "听我的电波吧"
     }
   ],
   "player_label_arr": {

@@ -13,69 +13,102 @@
       "奇幻"
     ],
     "playlists": {
+      "xigua": [
+        [
+          "第01集",
+          "age_fafatBorsCtNDPMf918lnkL1mzoeSEB00TrQcw%2BfAvZfxItRXMujYnkF95%2FpkArlaKYmlsbqLHUH%2FBtNYmT3TTnr",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_af68AtQ21AyoE6PyZZyJfNLt5OzX6EVj7Vz8mN7tmgEu%2B8OznjA0tz4Rzvj0DZV7sz0QrLsJwcq0l3tpFhfN%2Brgu",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第03集",
+          "age_be17xKJ196sCc9O4HhLZ2vFEkpQZlJ%2FanEEOrmYNbBQOMjE2fyNAbC8tCr9%2BK1Ab6nGW9DdQlEXDo%2FASj0DgJo03",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_0538YjrBY5t%2FHgWFwDd54D9MRmmvPFlt9CnKVsuCRNG1WVu4M0QDmqbw9wstb4nTHJtyYnmw2kxL7WKRPb4X7pPQ2nsmM3zDy143d3n%2BbqqzscFxb7ZxBX2H",
+          "https://vip.ffzy-plays.com/20260703/55356_9c652755/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_6de6tZWFEVoXM9hdxmRGnCBs0%2F2wIpwedvAePqHdyIGZS4X09iVVMQ4D2YYKVnpLeZjvoTZkVI8gUZykPvQo2z65nGSZw1%2Bi4XZSJ5TtLtKz2shfrp%2Fu2odO",
+          "https://vip.ffzy-plays.com/20260703/55357_b9af48c2/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_13c1%2F1HUCpXRYakxM4JfZ1nXoVHsyOvyX%2BDN0ESPJIDIOjLbn4NDUST%2B2MLN5vegyyTtx8poNGMGJ5FtmiD3Nq9E3j9UlpCWxYDINR8naPB34mefw8MDRdSO",
+          "https://vip.ffzy-plays.com/20260708/55534_f979394c/index.m3u8"
+        ]
+      ],
       "bfzym3u8": [
         [
           "第1集",
-          "age_e833v0FiSISnZIaFY01TJ7%2FgLT2EilZ43kN7iJyD4oq4t91Dm3gq9FXbMIhYcgkFTWTEZDXhtOBNeq2svnAY9r1b22ICi0tut%2F7z6GUSGANWDlo7btMT4BJgY2XbUwGlwup0NrmO7zDMFgJ0TsT2BnKqJ%2FxYFt8",
+          "age_3d72wOeP0HOJ%2FluvaHIzFu2BfJ7ekSKs3uX%2FV%2FAdEOqzkSkwxBvtUXEsAmlOYdpjbwaU2ZFIyk3mjrrRyAGaqjSq6loYfgXgwmFMIGVNNPqciIdJWGrTBz363eUiqh6VL9jXkkOKvdAbOB06jH9EuaubxYOdESI",
           "https://v.baofeng11.com/video/nvzhujiaoshengnvbuwoshizayinvpuzihao/20b7cf09de09/index.m3u8"
         ],
         [
           "第2集",
-          "age_8732isjiHDyq%2BOTAh0dZ5Yh%2FAaY67sz%2B2DA4SRg2qc7qlB5UNtf7%2FCm6DSTQYB9D5Qly0wlpnvE4ln%2FQ6Bj%2FvCRejqiQDuyRYKoWvWsWAgDL4VQtdz%2BmbmD73uKcMieJl1jQQPJ6u9VVTYE%2BdX6krsRqSLLgpAU",
+          "age_5495B0sTw4E3ob3dxtjIo1H7IUduBQdF4DXrKYRms6V4f6yK2F4vnP0hBUuSoy%2F2%2BczAjM21D%2Bf%2FaVU4CjrwOEOEc7%2B7uh5ODfIDKJg4lcKxZV7UWDDYvT1KwIBbtUsL2YNghMTJDtRmgk4frHA6rcfKZV7nPuY",
           "https://v.baofeng11.com/video/nvzhujiaoshengnvbuwoshizayinvpuzihao/7b41997bc710/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_6ccfim2RcrQY%2BGFrLBWE5d3%2B4Oq2Vq%2B8LUEIJFmbh6X6Zd68P88oFEo53gw3IiPpgJIJrO99%2BaO3nDzhoRGLWLog9guOM47ptrCy9Wdyyi9LxcgAwh2gP518n02uVlXOdx6kbp72%2FAL55Ey6S0biIKtpZURDl6Y",
+          "https://v.baofeng11.com/video/nvzhujiaoshengnvbuwoshizayinvpuzihao/2bec1ae6489a/index.m3u8"
         ]
       ],
       "wjm3u8": [
         [
           "第01集",
-          "age_2784TXgySHn80Mo6bKWA6vnjz4LVymtNngnMOnuNlMiUVah%2Fu245E0K8bfR7PZp%2F89RQkQYshSI9DkSOYTnYwc8Hl4M31q8UHyH0eeleHsf0%2FSVhsfVc49%2B6tHWvGfU",
+          "age_3a69iHG4XHTFLYzTd7bekgcPncNkcCVLLQSoPu2efcXxjpmvdUgL0A%2BbD5Yt8Olew0NASpK%2Bw2O0QVN7JLSIZN6d3sWkItOzlyiw4%2FHsis%2BSLAiK%2FG5SkUOZ%2BTBeXvg",
           "https://v2.ppqrrs.com/wjv2/202606/24/xhpETyMMwq86/video/index.m3u8"
         ],
         [
           "第02集",
-          "age_a62bSL%2FQSzUJkGslMn1FjM6%2BgddmNiaKku12KrutKZrUM9hjrbfxWwv2dcDg4JYujUwo3EcrWoc9gc%2BSbCcUngACb%2BenKW1DSOx5W5Y5nAKCzH3Cet9OHFn56icgp3k",
+          "age_5517p15JSeOwjzbxJ7uWgx%2BKE2LczP5YAp22yCzBCp3hBvClpT2FbcChu60WLJL6iI%2FyUpHdk3b4yR%2FIC8MlwHIabj22VVu5aXOxg%2FjtxRa3ZCqse%2B1Oin%2F1lb3fVC8",
           "https://v5.ppqrrs.com/wjv5/202607/01/3rdukBjAdr92/video/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_0b8fdxDZDjGR5S0jq94BY2GkoIDdnYChG9J31KfNs5TQtXU9sDpNm4MUxx1mDZ3iMgJCs3BvtCMNwQkVHXi28ZryV8BZozaoWtdw5XdSG582k7up0h%2FOp1ELjj%2F4mz4",
+          "https://v5.ppqrrs.com/wjv5/202607/08/516p0qc74w86/video/index.m3u8"
         ]
       ],
       "lzm3u8": [
         [
           "第01集",
-          "age_d15a5GSrklv0q6P%2BFKuva1WBSVzldvnnJOSPEpsMUy7oihBYYQseuHpvwe066TLPz3rNmJmqkdyXGksmyateNrepDKHpp1Daedu0dBRqiTnVZgmf4g",
+          "age_9fbceUznDX08dQzb8sJt78vevyzoamX0nyWCEEHauNKtLe%2BQoGqVtyG8uWPdXiHNiwm8FKFk26Nh%2Bkbnza4VDzGxpzgb0Ww35PBMBiFKhzqhH3wlrA",
           "https://v.lzcdn27.com/20260625/12052_fc2c8246/index.m3u8"
         ],
         [
           "第02集",
-          "age_d505fTpw2tyZqCjkQ5WbgVpQ8HF9%2FElHTueEXgZ9KqvbVeSuMjHicO7rxmwDWzXQj05oEqWqEf7j5N1aEyJp1wvm5gcidCNesHp2X2elQh%2FAIWCY",
+          "age_5048VbO385v1ckIrqLhqJVOmVtszhoRBAfe3FU5w0D74RhLmMZhqK6iX%2BK3hAi%2FUgtcfMeHEogaxXrgGciw2e9dS%2FUb7PLSU9oyJ92oj2O%2B18hG8",
           "https://v.lzcdn31.com/20260702/7837_a49cf2eb/index.m3u8"
-        ]
-      ],
-      "anich_m3u8": [
-        [
-          "第01集",
-          "anich_placeholder_38355_1"
         ],
         [
-          "第02集",
-          "anich_placeholder_38355_2"
-        ]
-      ],
-      "xigua": [
-        [
-          "第01集",
-          "age_0db0K7T%2FpYhdiJc%2BtXHKqJfx1IEovuJLkNW%2BstWYZRvBN8QaOpp3W5fFjfhI1%2FjOW1BT1RxQ913lzRoc1xROk2Rw"
+          "第03集",
+          "age_0027PQI%2FUrTnRfdvWjNwTeJGPrmP0ad59dtrFNZ5PEGgOAF9xhO0ROpTJ1Q9e23REitwltHAISY%2BpS%2F3G%2Bai3Ub0z8zwOJ8yjcTVnFK1C1Y78fIi",
+          "https://v.lzcdn31.com/20260708/8129_b4020752/index.m3u8"
         ]
       ]
     },
     "area": "日本",
     "letter": "N",
-    "website": "暂缺",
+    "website": "https://all-works-maid-anime.com/",
     "star": 0,
     "status": "连载",
-    "uptodate": "第02集",
-    "time_format_1": "20260702001428",
-    "time_format_2": "2026-07-02",
-    "time_format_3": "2026-07-02 00:14:28",
-    "time": 1782922468,
+    "uptodate": "21:00 第03集",
+    "time_format_1": "20260710213826",
+    "time_format_2": "2026-07-10",
+    "time_format_3": "2026-07-10 21:38:26",
+    "time": 1783690706,
     "tags": "搞笑 奇幻",
     "tags_arr": [
       "搞笑",
@@ -90,56 +123,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-06-24",
-    "rank_cnt": "1,917",
+    "rank_cnt": "3.75w",
     "cover": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "3",
-    "collect_cnt": "129"
+    "comment_cnt": "62",
+    "collect_cnt": "497"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20180129,
-      "Href": "/detail/20180129",
+      "AID": 20130035,
+      "Href": "/detail/20130035",
+      "NewTitle": "[TV 01-13]",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130035.jpg",
+      "Title": "恶魔幸存者2"
+    },
+    {
+      "AID": 20260058,
+      "Href": "/detail/20260058",
+      "NewTitle": "第05集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260058.jpg",
+      "Title": "我们不可能成为恋人！绝对不行。 (※似乎可行？) 〜再次闪耀！〜"
+    },
+    {
+      "AID": 20150115,
+      "Href": "/detail/20150115",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180129.jpg",
-      "Title": "东京喰种:RE 第二季"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150115.jpg",
+      "Title": "请问您今天要来点兔子吗？ 第二季"
     },
     {
-      "AID": 20220532,
-      "Href": "/detail/20220532",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220532.jpg",
-      "Title": "新·奥特曼"
+      "AID": 20180347,
+      "Href": "/detail/20180347",
+      "NewTitle": "第96集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180347.jpg",
+      "Title": "非人哉"
     },
     {
-      "AID": 20140054,
-      "Href": "/detail/20140054",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140054.jpg",
-      "Title": "极黑的布伦希尔特"
+      "AID": 20190324,
+      "Href": "/detail/20190324",
+      "NewTitle": "第20集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190324.jpg",
+      "Title": "漫动画·十万个谐音梗"
     },
     {
-      "AID": 20060031,
-      "Href": "/detail/20060031",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060031.jpg",
-      "Title": "贫穷姐妹物语"
-    },
-    {
-      "AID": 20180165,
-      "Href": "/detail/20180165",
+      "AID": 20210034,
+      "Href": "/detail/20210034",
       "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180165.jpg",
-      "Title": "暮光幻影"
-    },
-    {
-      "AID": 20200190,
-      "Href": "/detail/20200190",
-      "NewTitle": "[TV 01-12+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200190.jpg",
-      "Title": "石膏男孩"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210034.jpg",
+      "Title": "装甲娘战机"
     }
   ],
   "player_label_arr": {
@@ -173,8 +206,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -15,38 +15,64 @@
       "奇幻"
     ],
     "playlists": {
-      "bilibili": [
+      "xigua": [
         [
-          "pv",
-          "age_e6ab9FdTSzwasRzrrGNoh3BwOHnzjy7VOQkrgBfxqdgU85feHz67qWj8qB4vhtrRCmiQ9XTc24%2FftDaNFTfy3IxwrysznCRZug"
+          "第01集",
+          "age_1b75jc7W8hSjiE%2FcLoOT3OTEppxpbZx1A8AhimZterXCh3w5l3uAqem6qZFcXS9fsWRS2sKLgCAq7Ps630%2BBBgl7",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_cc1fRhR%2B8VHKwky0j4HftqrOtbx8QqhI3mTUSr%2BN8q7wp0MCm5UX5c2Xc1MP0qT80SZ9B%2BzJUUyQdfelfI4%2BCYWv",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
       "ffm3u8": [
         [
           "第01集",
-          "age_eeecoerApWoIVYaULKfBl7fydu2oTgwu25U1%2BzjHJ3l0BsShfGJDIWDQ2Jjdi2mL3OgVflVCWWc4AoQA2HhBHdGA%2FqYyYJIimG5bxixfzUdevcvF8uxxiuIZ",
+          "age_3240QxTaxmRupqNW0T%2F2Mhy9QofrBHGtB%2FSYL5glnbGLN%2BlGpy6UoMSoyALAg48IPoKCdPiH%2BrGsJeRCeqDTPjHBYGrTx7PbbZDkLjnL7OmDoWzKVvMzBdfT",
           "https://vip.ffzy-plays.com/20260704/55402_362906da/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_21aek%2Bss%2FFTKbOXmZOgKWyFcPEMtdvzDW2L0LwcRE54dcFUPnAWNNqdDI7HGyMo41pcuu%2F9%2BEzJ6DSTJcIQqnWnG638UqWP82d3zPBq5lAnrN8eOV%2BuStK6r",
+          "https://vip.ffzy-plays.com/20260711/55607_5c4ebfff/index.m3u8"
         ]
       ],
       "bfzym3u8": [
         [
           "第1集",
-          "age_1de7SN3IXDb6oqZ7UfXwZL%2FFMCzGUERtAxvxzGFCtl1yLrscdPHrBnoklM9jZaCWyO%2FZw%2FsKkg4Xc4Ww4BNeUsk88CGR%2FPeg4NQVFMApUt4F0JPS1S99RBNebdmuAp%2FyDdeByjopv5x2sL%2Fm6D6mVJgCvlPQvvSwLMqyhH7156%2FmkPy8x4EP3lCbrg",
+          "age_ba12B49rPII1%2FZPH6G%2FHF4OJuQt4wpUaUuJg0W34lfe%2FbVsURrBkHTRrKUAMlydtRwCe0AiSc4LhKu%2FuXn5w33FBs9E7dy98CwTf%2FZSnykz9gIc%2BFxyGxzZ0rNJgFVZOD%2BNOU6nCwDLl0PW2p%2B5GGev5%2FTIdcNT49Lrsbln59FhmVOo9EM2ZD3P%2FYQ",
           "https://v.baofeng11.com/video/nimenxianzouwoduanhouyushi10nianhouwochengweilechuanshuo/ed7de7659f18/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_5d64R%2FTXe67nt0jeBMUK4znDmCTOnakmzDZlmcJkB9pGKwp%2BXyaEX%2FpgoLRlHlrPG3euTyw590arqiC%2F3xkPkucGC3VCWIkUdLarat9cU3muvbMEjbOFixvPy2xTwmi2Ugk8pr8184%2BkyBnlBTw9TXIlfZ6lcgEb7fJBQhNpivi1wLm6DpEnGbz%2BTQ",
+          "https://v.fengbao11.com/video/nimenxianzouwoduanhouyushi10nianhouwochengweilechuanshuo/4152567daaa6/index.m3u8"
         ]
       ],
       "wjm3u8": [
         [
           "第01集",
-          "age_d813REmyLOIO8kRUGxpTYrAhc9gLbZexXbn9Lq85WQ%2Fkggox5gO4CECgK8i5YzFAU%2F5sgMvqr8Fy3EjmEum8ygec03FuZY823sOMqY9TMiQGxvGHX%2FBmHzv2",
+          "age_e4d1wvlcKyrEUMYqvTVYC48E%2FBYDMBE%2FV2QpkGOkZc4cjBY1QlnvXK679%2FVAGjB9%2FQQ4%2FKnv6F4sp%2BUvYoyTiYOUMtlu7HShFGNfdNq%2FQL4FSb8HWFfYGZ0I",
           "https://v1.ppqrrs.com/202607/03/yXqgSWJ8Dc92/video/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_e569x3fYjLM0AVFWVP6ulyull2mqy0FXbUHED7CUFwaD2r%2Bzxt4hfbFQZRK%2Bc9e5C7qAQQog5CYwTlIZCKHD6mHmg6m3HTyDSuUHj%2FoKkV38S76VeaYxhtEAtdOo5zE",
+          "https://v3.ppqrrs.com/wjv3/202607/11/eq5v2xaMhX94/video/index.m3u8"
         ]
       ],
       "lzm3u8": [
         [
           "第01集",
-          "age_f1fcHOHEzTO5I6FzT9aoCU%2B1G%2BWEg%2F4kM0wLOsHT%2BsAvmO5QQ8V1Fwdh6VFB66sgzGr4cGBGjXs2rjvPgyEaJGfGyQn%2Fck1ahtnFfYUEpnTyzMQ7",
+          "age_6ee8DngzRXGVtEhMkAwrcAWD526hGdeR62sHtIVpieqvoHP%2BjSgUZ%2FE6Fwa3QcdENpuz%2BDLGh2SMJlwT37eInwSdzw%2FRr9G%2B0rH6zOx8Ees7lZvz",
           "https://v.lzcdn31.com/20260703/7954_875a2c2d/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_b790yTLjAV%2BDmaAVJEuBHceemzMIBzz1qHmY7hhwKbaI4kkxKIExq4Kgq%2FuvfepCvw0nxtYxiR2uFCG6jqA1h%2F0vNTOshEiQhnZGrUadTlXA2ntQ",
+          "https://v.lzcdn31.com/20260710/8295_9d50dd57/index.m3u8"
         ]
       ]
     },
@@ -55,11 +81,11 @@
     "website": "暂缺",
     "star": 0,
     "status": "连载",
-    "uptodate": "第01集",
-    "time_format_1": "20260704213925",
-    "time_format_2": "2026-07-04",
-    "time_format_3": "2026-07-04 21:39:25",
-    "time": 1783172365,
+    "uptodate": "第02集",
+    "time_format_1": "20260715004020",
+    "time_format_2": "2026-07-15",
+    "time_format_3": "2026-07-15 00:40:20",
+    "time": 1784047220,
     "tags": "战斗 冒险 后宫 奇幻",
     "tags_arr": [
       "战斗",
@@ -76,56 +102,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-06",
-    "rank_cnt": "4,321",
+    "rank_cnt": "5.59w",
     "cover": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "5",
-    "collect_cnt": "191"
+    "comment_cnt": "73",
+    "collect_cnt": "907"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20220520,
-      "Href": "/detail/20220520",
-      "NewTitle": "72集第",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220520.jpg",
-      "Title": "世界末日柴犬为伴"
-    },
-    {
-      "AID": 20200102,
-      "Href": "/detail/20200102",
-      "NewTitle": "[TV 01-15]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200102.jpg",
-      "Title": "IDOLiSH7-偶像星愿- Second BEAT!"
-    },
-    {
-      "AID": 20220528,
-      "Href": "/detail/20220528",
+      "AID": 20130064,
+      "Href": "/detail/20130064",
       "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220528.jpg",
-      "Title": "海贼王 红发歌姬"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130064.jpg",
+      "Title": "魔法禁书目录剧场版 恩底弥翁的奇迹"
     },
     {
-      "AID": 20100062,
-      "Href": "/detail/20100062",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100062.jpg",
-      "Title": "女仆咖啡厅"
-    },
-    {
-      "AID": 20220478,
-      "Href": "/detail/20220478",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220478.jpg",
-      "Title": "重生之都市修仙 第二季 动态漫"
-    },
-    {
-      "AID": 20230268,
-      "Href": "/detail/20230268",
+      "AID": 20190120,
+      "Href": "/detail/20190120",
       "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230268.jpg",
-      "Title": "奇异贤伴 黑色天使 第二季"
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190120.jpg",
+      "Title": "超可动女孩1/6"
+    },
+    {
+      "AID": 20190069,
+      "Href": "/detail/20190069",
+      "NewTitle": "第25集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190069.jpg",
+      "Title": "科学的超电磁炮T"
+    },
+    {
+      "AID": 20250036,
+      "Href": "/detail/20250036",
+      "NewTitle": "第11集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250036.jpg",
+      "Title": "坂本日常"
+    },
+    {
+      "AID": 20090010,
+      "Href": "/detail/20090010",
+      "NewTitle": "第14集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090010.jpg",
+      "Title": "轻音少女"
+    },
+    {
+      "AID": 20180014,
+      "Href": "/detail/20180014",
+      "NewTitle": "第66集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180014.jpg",
+      "Title": "新干线变形机器人"
     }
   ],
   "player_label_arr": {

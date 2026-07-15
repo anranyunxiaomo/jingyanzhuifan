@@ -437,7 +437,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "424",
-    "collect_cnt": "4,894"
+    "collect_cnt": "4,894",
+    "related": [
+      {
+        "id": "a123_zhoushuhuizhan32",
+        "title": "咒术回战 3",
+        "cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg"
+      }
+    ]
   },
   "series": [
     {
