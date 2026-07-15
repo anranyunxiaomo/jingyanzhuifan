@@ -2456,6 +2456,19 @@ new Vue({
 
     // 💡 景雁全局网页全屏控制方法 (原生 HTML5 Fullscreen 升级版：兼容 PC/移动/iPad，彻底解决卡死错位问题)
     toggleWebFullscreen() {
+      // 💡 针对移动端/iPad 设备的直连 `<video>`，直接调起系统级硬件全屏面板，彻底杜绝任何 Web 兼容问题！
+      if (this.isMobile && !this.isIframeMode) {
+        const video = document.getElementById('nativeVideoPlayer');
+        if (video) {
+          if (video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen(); // iOS / iPadOS 原生视频全屏命门方法！
+          } else if (video.requestFullscreen) {
+            video.requestFullscreen();
+          }
+          return;
+        }
+      }
+
       const innerContainer = document.querySelector('.player-container-inner');
       if (!innerContainer) return;
       
@@ -2493,6 +2506,17 @@ new Vue({
           try { this.dpInstance.resize(); } catch(e) {}
         });
       }
+    },
+
+    // 💡 移动端原生 `<video>` 播放出错时的静默容灾降级自愈逻辑
+    handleNativeVideoError(e) {
+      console.warn("[NATIVE VIDEO ERROR] 原生视频播放出错，正在自动静默降级为去广告 iframe 线路自愈...", e);
+      this.isIframeMode = true;
+      const currentEp = this.activeEpisodes[this.activeEpisodeIndex];
+      const epToken = currentEp ? currentEp[1] : '';
+      const realUrl = currentEp ? currentEp[2] : '';
+      const cleanUrl = (realUrl || epToken || '').trim();
+      this.activePlayUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(cleanUrl);
     },
     
     // 💡 路由解析服务 (全面防错、支持 Trailing Slash、Query String，正则静默提取)
