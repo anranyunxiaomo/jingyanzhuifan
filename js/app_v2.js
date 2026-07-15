@@ -1869,7 +1869,7 @@ new Vue({
                 console.warn(`[DPLAYER FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}`);
                 this._triedLines.add(this.activeLineKey);
                 
-                const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
+                const rawPlayUrl = (this.animeDetail && this.animeDetail.video && this.animeDetail.video.playlists) || (this.animeDetail && this.animeDetail.player_url) || {};
                 const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
                   const list = rawPlayUrl[key];
                   return list && list.length > 0;
@@ -1963,7 +1963,7 @@ new Vue({
             console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
           } catch(e) {
             console.error("[DPlayer Init Failed] Triggering Self-Healing:", e);
-            const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
+             const rawPlayUrl = (this.animeDetail && this.animeDetail.video && this.animeDetail.video.playlists) || (this.animeDetail && this.animeDetail.player_url) || {};
             const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
               const list = rawPlayUrl[key];
               return list && list.length > 0;
