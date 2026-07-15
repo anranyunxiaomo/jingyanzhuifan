@@ -1217,7 +1217,6 @@ new Vue({
     // ==========================================================================
     switchLine(lineKey) {
       this.activeLineKey = lineKey;
-      this.activeEpisodeIndex = -1; // 切换线路时重置选中的集数
     },
     
     async playEpisode(epIdx, isAutoRetry = false) {
