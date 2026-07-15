@@ -1268,9 +1268,6 @@ new Vue({
       if (this.dpInstance) {
         try {
           this.dpInstance.pause();
-          this.dpInstance.off('timeupdate');
-          this.dpInstance.off('loadedmetadata');
-          this.dpInstance.off('error');
           if (this.dpInstance.video) {
             this.dpInstance.video.src = '';
             this.dpInstance.video.load();
@@ -1587,29 +1584,9 @@ new Vue({
         this.isIframeMode = false;
         this.activePlayUrl = finalRealUrl;
 
-        // 💡 移动端/iPad 专属物理原生 `<video controls>` 直连播放通道！
-        // 彻底抛弃 DPlayer 网页控制栏在移动端极其恶劣的全屏与倍速适配Bug，100% 交给系统/夸克原生播放控制面板处理！
-        if (this.isMobile) {
-          // 销毁可能残留的 PC 端 DPlayer 实例
-          if (this.dpInstance) {
-            try { this.dpInstance.destroy(); } catch(e) {}
-            this.dpInstance = null;
-          }
-          this.$nextTick(() => {
-            const video = document.getElementById('nativeVideoPlayer');
-            if (video) {
-              video.play().catch(e => console.log("自动播放被浏览器拦截", e));
-            }
-          });
-          return; // 💡 物理熔断阻断，绝不向下执行任何 PC 端的 DPlayer 初始化！
-        }
-
         // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
           try { 
-            this.dpInstance.off('timeupdate');
-            this.dpInstance.off('loadedmetadata');
-            this.dpInstance.off('error');
             this.dpInstance.destroy(); 
           } catch(e) {}
           this.dpInstance = null;
@@ -1738,303 +1715,196 @@ new Vue({
               throw new Error("DPlayer container element '#dplayer' is detached or not found in DOM");
             }
 
-            const dp = new DPlayer({
+            const dp = new ArtPlayer({
               container: dplayerContainer,
+              url: finalVideoUrl,
+              type: videoType === 'hls' ? 'm3u8' : videoType,
               autoplay: true,
-              screenshot: false,
+              autoSize: true,
               playsinline: true,
-              loop: false,
-              id: capturedAnimeId + "_" + capturedEpName,
-              video: {
-                url: finalVideoUrl,
-                type: videoType
+              playbackRate: true,
+              aspectRatio: true,
+              setting: true,
+              pip: true,
+              fullscreen: true,
+              fullscreenWeb: false, // 我们优先使用系统原生全屏，防层级错位
+              theme: '#f28c9f', // 绯桃粉主色调
+              moreVideoAttr: {
+                referrerpolicy: 'no-referrer',
+                preload: 'auto'
               },
-              pluginOptions: {
-                hls: {
-                  // 💡 针对丝滑播放的 Hls.js 顶级调优配置
-                  enableWorker: true, // 启用 Web Worker 线程解码，彻底释放主线程，不卡顿
-                  maxBufferLength: 60, // 最大缓冲区 60 秒
-                  maxMaxBufferLength: 120, // 最大极限缓冲区 120 秒
-                  maxBufferSize: 80 * 1024 * 1024, // 缓冲大小限制在 80MB，防爆内存
-                  maxBufferHole: 0.5, // 容忍 0.5 秒的缓冲空洞，自动跳过防止卡死
-                  lowLatencyMode: false, // 关闭低延迟以增大缓冲鲁棒性
-                  appendErrorMaxRetry: 5 // 错误最大重试 5 次
+              customType: {
+                m3u8: function (video, url) {
+                  if (Hls.isSupported()) {
+                    const hls = new Hls({
+                      enableWorker: true,
+                      maxBufferLength: 60,
+                      maxMaxBufferLength: 120,
+                      maxBufferSize: 80 * 1024 * 1024,
+                      maxBufferHole: 0.5,
+                      lowLatencyMode: false,
+                      appendErrorMaxRetry: 5
+                    });
+                    hls.loadSource(url);
+                    hls.attachMedia(video);
+                    video.hlsInstance = hls;
+
+                    // 💡 HLS.js 原生 FATAL 错误（CDN分片CORS失败等）容灾降级
+                    hls.on(Hls.Events.ERROR, (evt, data) => {
+                      if (data.fatal) {
+                        console.warn('[HLS FATAL]', data.type, data.details);
+                        fallbackToIframe('HLS fatal: ' + data.details);
+                      }
+                    });
+                  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = url;
+                  }
                 }
-              }
+              },
+              controls: this.hasNextEpisode ? [
+                {
+                  name: 'next-episode',
+                  position: 'right',
+                  index: 10,
+                  html: `
+                    <div style="display:inline-flex;align-items:center;gap:3px;cursor:pointer;opacity:0.85;color:#fff;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 4 15 12 5 20 5 4"/>
+                        <line x1="19" y1="5" x2="19" y2="19"/>
+                      </svg>
+                      <span style="font-size:12px;font-weight:600;">下一集</span>
+                    </div>
+                  `,
+                  tooltip: '播放下一集',
+                  click: () => {
+                    this.playNextEpisode();
+                  }
+                }
+              ] : []
             });
+
             this.dpInstance = dp;
 
-            // 💡 移动端 H5 物理同层属性强行注入 (支持微信同层播放器与完美全屏)
-            const videoEl = dplayerContainer.querySelector('.dplayer-video');
-            if (videoEl) {
-              videoEl.setAttribute('playsinline', 'true');
-              videoEl.setAttribute('webkit-playsinline', 'true');
-              videoEl.setAttribute('x5-playsinline', 'true');
-              videoEl.setAttribute('x5-video-player-type', 'h5-page');
-              videoEl.setAttribute('x5-video-player-fullscreen', 'true');
-            }
-
-            // 💡 双击视频画面拉起原生全屏 (智能触屏手势适配)
-            let lastTap = 0;
-            dplayerContainer.addEventListener('touchend', (e) => {
-              if (e.target.closest('.dplayer-controller') || e.target.closest('.dplayer-menu')) {
-                return; // 避开控制栏和菜单操作，防止误触
-              }
-              const currentTime = new Date().getTime();
-              const tapLength = currentTime - lastTap;
-              if (tapLength < 300 && tapLength > 0) {
-                e.preventDefault();
-                try {
-                  if (dp.video) {
-                    if (typeof dp.video.webkitEnterFullscreen === 'function') {
-                      dp.video.webkitEnterFullscreen();
-                    } else if (typeof dp.video.requestFullscreen === 'function') {
-                      dp.video.requestFullscreen();
-                    }
-                  }
-                } catch(err) {}
-              }
-              lastTap = currentTime;
-            });
-
-            // 💡 DPlayer 内置全屏切换事件强行劫持并转换为原生全屏播放
-            dp.on('fullscreen', () => {
-              const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-              if (isMobileDevice && dp.video) {
-                try {
-                  if (typeof dp.video.webkitEnterFullscreen === 'function') {
-                    dp.video.webkitEnterFullscreen();
-                  } else if (typeof dp.video.requestFullscreen === 'function') {
-                    dp.video.requestFullscreen();
-                  }
-                } catch (err) {
-                  console.warn("[Mobile Fullscreen] Native override failed:", err);
-                }
-              }
-            });
+            // ─── 降级函数（复用，避免重复代码）───────────────────────
+            const fallbackToIframe = (reason) => {
+              if (this._hasFallenBack) return; // 防止多次触发
               
-              // 💡 强力播放状态清洗：一旦视频从缓冲中恢复并真正起播画面，强制隐藏任何虚假的报错 DOM 和加载圈，确保良好的视觉观感
-              dp.on('playing', () => {
-                this.stopLoadingAnimation(); // 💡 终极视频起播！淡出并销毁云端动态解析遮罩层
-                const dpEl = document.querySelector('.dplayer');
-                if (dpEl) {
-                  dpEl.classList.remove('dplayer-error', 'dplayer-loading');
-                  const errorVideo = dpEl.querySelector('.dplayer-error-video');
-                  if (errorVideo) errorVideo.style.display = 'none';
-                  const errorText = dpEl.querySelector('.dplayer-error');
-                  if (errorText) errorText.style.display = 'none';
+              const ep = this.activeEpisodes[this.activeEpisodeIndex];
+              if (this.activeLineKey === 'a123_line1') {
+                const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${this.activeEpisodeIndex}`;
+                const hasCache = localStorage.getItem(cacheKey) || (ep && ep.length >= 3 && ep[2]);
+                if (hasCache) {
+                  console.warn("[A123 FAILBACK] Cache expired, retrying...");
+                  localStorage.removeItem(cacheKey);
+                  if (ep && ep.length >= 3) ep[2] = ""; // 清空内存缓存
+                  dp.notice.show = "播放源已失效，正在自动为您重新获取新鲜源并起播...";
+                  setTimeout(() => {
+                    this.playEpisode(this.activeEpisodeIndex, true);
+                  }, 600);
+                  return;
                 }
-              });
-
-              dp.on('error', () => {
-                this.stopLoadingAnimation();
-              });
-
-              dp.on('destroy', () => {
-                this.stopLoadingAnimation();
-              });
+              }
               
-              // 🏮 核心注入：在 DPlayer 控制栏右侧插入自定义“下一集”
-              this.$nextTick(() => {
-                const ri = document.querySelector('.dplayer-icons-right');
-                if (!ri) return;
-
-                // 2. ▶‖ 下一集按钮注入：仅在有下一集时显示，插在全屏按钮左边
-                if (this.hasNextEpisode) {
-                  const existNext = ri.querySelector('.dplayer-next-icon');
-                  if (existNext) existNext.remove();
-
-                  const nextBtn = document.createElement('button');
-                  nextBtn.className = 'dplayer-icon dplayer-next-icon';
-                  nextBtn.title = '下一集';
-                  Object.assign(nextBtn.style, {
-                    width: 'auto', padding: '0 8px', color: '#fff',
-                    background: 'transparent', border: 'none',
-                    cursor: 'pointer', opacity: '0.8',
-                    transition: 'opacity 0.2s', display: 'inline-flex',
-                    alignItems: 'center', gap: '3px', verticalAlign: 'middle'
-                  });
-                  nextBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2.2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="5 4 15 12 5 20 5 4"/>
-                      <line x1="19" y1="5" x2="19" y2="19"/>
-                    </svg>
-                    <span style="font-size:11px;letter-spacing:0.02em;">下一集</span>`;
-
-                  nextBtn.onmouseenter = () => nextBtn.style.opacity = '1';
-                  nextBtn.onmouseleave = () => nextBtn.style.opacity = '0.8';
-
-                  const currentFsBtn = ri.querySelector('.dplayer-full-icon');
-                  if (currentFsBtn) currentFsBtn.before(nextBtn);
-                  else ri.appendChild(nextBtn);
-
-                  nextBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.playNextEpisode();
-                  });
-                }
-              });
-
-              let playbackStarted = false;
-              let hasRestoredProgress = false;
-              const restoreProgress = () => {
-                if (hasRestoredProgress) return;
-                if (dp && dp.video) {
-                  const duration = dp.video.duration;
-                  if (duration && !isNaN(duration)) {
-                    hasRestoredProgress = true;
-                    if (savedTime > 3) {
-                      console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s (duration=${duration}s)`);
-                      dp.seek(savedTime);
-                    } else {
-                      console.log(`[PROGRESS RESTORE] Enforcing play from start (0.01s)`);
-                      dp.seek(0.01);
-                    }
-                  }
-                }
-              };
-              dp.on('loadedmetadata', restoreProgress);
-              dp.on('canplay', restoreProgress);
-
-              dp.on('timeupdate', () => {
-                if (!dp || !dp.video) return;
-                const currentTime = dp.video.currentTime;
-                const duration = dp.video.duration;
-                
-                // 💡 兜底保险：若 loadedmetadata/canplay 时时长尚未解析出，在播放的首次 timeupdate 里再次尝试恢复
-                if (!hasRestoredProgress && savedTime > 3) {
-                  restoreProgress();
-                }
-                // ✅ 一旦真正开始播放，标记已播放，防止超时误降级
-                if (currentTime > 0.1) playbackStarted = true;
-                if (currentTime > 3 && duration && (duration - currentTime > 10)) {
-                  const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
-                  localStorage.setItem(pKey, currentTime.toString());
-                  // 💡 节流写入观看历史 (每 10 秒写一次，避免高频 I/O)
-                  if (!this._historyThrottleTimer) {
-                    this._historyThrottleTimer = setTimeout(() => {
-                      this._historyThrottleTimer = null;
-                      this.saveWatchHistory(capturedAnimeId, capturedEpName, currentTime, duration);
-                    }, 10000);
-                  }
-                }
-              });
-
-              // ─── 降级函数（复用，避免重复代码）───────────────────────
-              const fallbackToIframe = (reason) => {
-                if (this._hasFallenBack) return; // 防止多次触发
-                
-                // 💡 A123 极速源报错自愈：如果是缓存的直链失效，只允许清空缓存重载一次
-                const ep = this.activeEpisodes[this.activeEpisodeIndex];
-                if (this.activeLineKey === 'a123_line1') {
-                  const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${this.activeEpisodeIndex}`;
-                  const hasCache = localStorage.getItem(cacheKey) || (ep && ep.length >= 3 && ep[2]);
-                  if (hasCache) {
-                    console.warn(`[A123 FAILBACK] Cache might be expired (${reason}). Clearing cache and retrying once...`);
-                    localStorage.removeItem(cacheKey);
-                    if (ep && ep.length >= 3) ep[2] = ""; // 清空内存缓存
-                    dp.notice("播放源已失效，正在自动为您重新获取新鲜源并起播...", 4000);
-                    setTimeout(() => {
-                      this.playEpisode(this.activeEpisodeIndex, true);
-                    }, 600);
+              if (this.activeLineKey === 'anich_m3u8') {
+                if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
+                  this.currentAnichUrlIndex++;
+                  if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
+                    const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
+                    console.warn(`[VOD FAILBACK] Stream failed (${reason}). Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
+                    
+                    dp.notice.show = "当前播放源加载超时，正在自动为您加载备用播放源...";
+                    dp.url = nextBackupUrl;
+                    dp.play();
                     return;
                   }
                 }
-                
-                // 💡 强力自愈拦截：如果是 AniCh 独有线路，绝对不降级到 iframe，而是尝试切换到下一个备用 M3U8 CDN 链接！
-                if (this.activeLineKey === 'anich_m3u8') {
-                  if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
-                    this.currentAnichUrlIndex++;
-                    if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
-                      const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
-                      console.warn(`[VOD FAILBACK] Stream failed (${reason}). Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
-                      
-                      dp.notice("当前播放源加载超时，正在自动为您加载备用播放源...", 4000);
-                      dp.switchVideo({
-                        url: nextBackupUrl,
-                        type: videoType
-                      });
-                      
-                      const container = document.getElementById('dplayer');
-                      if (container) {
-                        container.classList.remove('dplayer-error');
-                        const errorVideo = container.querySelector('.dplayer-error-video');
-                        if (errorVideo) errorVideo.style.display = 'none';
-                        const errorText = container.querySelector('.dplayer-error');
-                        if (errorText) errorText.style.display = 'none';
-                      }
-                      dp.play();
-                      return;
-                    }
-                  }
-                  console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
-                  dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
-                }
-                
-                // 💡 终极自愈降级：原地降级为该线路的 Iframe 解析引擎播放，绝不擅自跨线路切换播放源以保护代理额度！
-                console.warn(`[DPLAYER FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}. Falling back to Iframe mode...`);
-                this._hasFallenBack = true;
-                if (this.dpInstance) {
-                  try {
-                    this.dpInstance.off('timeupdate');
-                    this.dpInstance.destroy();
-                  } catch(e) {}
-                  this.dpInstance = null;
-                }
-                this.isIframeMode = true;
-                this.$nextTick(() => {
-                  this.activePlayUrl = playUrl;
-                });
-              };
-
-              // 保险①：DPlayer 自身 error 事件
-              dp.on('error', () => fallbackToIframe('DPlayer error event'));
-
-              // 保险②：HLS.js 原生 FATAL 错误（CDN分片CORS失败不触发DPlayer error，但会触发这里）
-              try {
-                const hlsInst = dp.plugins && dp.plugins.hls;
-                if (hlsInst && typeof Hls !== 'undefined') {
-                  hlsInst.on(Hls.Events.ERROR, (evt, data) => {
-                    if (data.fatal) {
-                      console.warn('[HLS FATAL]', data.type, data.details);
-                      fallbackToIframe('HLS fatal: ' + data.details);
-                    }
-                  });
-                }
-              } catch(e) {}
-
-              // 💡 废除 8 秒强制超时切源，允许 Hls.js 进行正常的网络重试缓冲，保障弱网播放体验
-              dp.on('timeupdate', () => {
-                
-                // 💡 双重保障：只要视频开始走字正常播放，就立刻隐藏任何因非致命警告被错误弹出的“视频加载失败”遮罩层
-                const dpEl = document.querySelector('.dplayer');
-                if (dpEl && (dpEl.classList.contains('dplayer-error') || dpEl.classList.contains('dplayer-loading'))) {
-                  dpEl.classList.remove('dplayer-error', 'dplayer-loading');
-                  const errorVideo = dpEl.querySelector('.dplayer-error-video');
-                  if (errorVideo) errorVideo.style.display = 'none';
-                  const errorText = dpEl.querySelector('.dplayer-error');
-                }
-              });
-
-              dp.on('ended', () => {
-                console.log("[DPLAYER ENDED] Playback completed.");
-                const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
-                localStorage.removeItem(pKey);
+                console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
+                dp.notice.show = "抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。";
+              }
+              
+              console.warn(`[ArtPlayer FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}. Falling back to Iframe mode...`);
+              this._hasFallenBack = true;
+              if (this.dpInstance) {
                 try {
-                  const dpStorageKey = String(capturedAnimeId) + "_" + String(capturedEpName);
-                  localStorage.removeItem(`dplayer-video-api-key-${dpStorageKey}`);
+                  this.dpInstance.destroy();
                 } catch(e) {}
-                
-                if (this.hasNextEpisode) {
-                  console.log("[DPLAYER ENDED] Auto playing next episode...");
-                  this.playNextEpisode();
-                }
+                this.dpInstance = null;
+              }
+              this.isIframeMode = true;
+              this.$nextTick(() => {
+                this.activePlayUrl = playUrl;
               });
+            };
 
-            console.log(`[DPLAYER PLAYING] ${capturedAnimeId}_${capturedEpName}`);
+            // 监听 ArtPlayer 的起播与就绪状态
+            dp.on('ready', () => {
+              this.stopLoadingAnimation();
+            });
+
+            dp.on('video:playing', () => {
+              this.stopLoadingAnimation();
+            });
+
+            dp.on('video:error', () => {
+              this.stopLoadingAnimation();
+              fallbackToIframe('ArtPlayer video error event');
+            });
+
+            dp.on('destroy', () => {
+              this.stopLoadingAnimation();
+              if (dp.video && dp.video.hlsInstance) {
+                try { dp.video.hlsInstance.destroy(); } catch(e) {}
+                dp.video.hlsInstance = null;
+              }
+            });
+
+            let hasRestoredProgress = false;
+            const restoreProgress = () => {
+              if (hasRestoredProgress) return;
+              const duration = dp.duration;
+              if (duration && !isNaN(duration)) {
+                hasRestoredProgress = true;
+                if (savedTime > 3) {
+                  console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s (duration=${duration}s)`);
+                  dp.currentTime = savedTime;
+                }
+              }
+            };
+            dp.on('video:loadedmetadata', restoreProgress);
+            dp.on('video:canplay', restoreProgress);
+
+            dp.on('video:timeupdate', () => {
+              const currentTime = dp.currentTime;
+              const duration = dp.duration;
+              
+              if (!hasRestoredProgress && savedTime > 3) {
+                restoreProgress();
+              }
+              if (currentTime > 3 && duration && (duration - currentTime > 10)) {
+                const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+                localStorage.setItem(pKey, currentTime.toString());
+                if (!this._historyThrottleTimer) {
+                  this._historyThrottleTimer = setTimeout(() => {
+                    this._historyThrottleTimer = null;
+                    this.saveWatchHistory(capturedAnimeId, capturedEpName, currentTime, duration);
+                  }, 10000);
+                }
+              }
+            });
+
+            dp.on('video:ended', () => {
+              console.log("[ArtPlayer ENDED] Playback completed.");
+              const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+              localStorage.removeItem(pKey);
+              if (this.hasNextEpisode) {
+                console.log("[ArtPlayer ENDED] Auto playing next episode...");
+                this.playNextEpisode();
+              }
+            });
+
+            console.log(`[ArtPlayer PLAYING] ${capturedAnimeId}_${capturedEpName}`);
           } catch(e) {
             console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
             this.isIframeMode = true;
@@ -2303,9 +2173,6 @@ new Vue({
           console.warn('[PLAYER] Failed to pause/clear video src:', e);
         }
         try {
-          this.dpInstance.off('timeupdate');
-          this.dpInstance.off('loadedmetadata');
-          this.dpInstance.off('error');
           this.dpInstance.destroy();
         } catch (e) {
           console.warn('[PLAYER] Failed to destroy dpInstance:', e);
@@ -2468,49 +2335,42 @@ new Vue({
 
     // 💡 景雁全局网页全屏控制方法 (原生 HTML5 Fullscreen 升级版：兼容 PC/移动/iPad，彻底解决卡死错位问题)
     toggleWebFullscreen() {
-      // 💡 针对移动端/iPad 设备的直连 `<video>`，直接调起系统级硬件全屏面板，彻底杜绝任何 Web 兼容问题！
-      if (this.isMobile && !this.isIframeMode) {
-        const video = document.getElementById('nativeVideoPlayer');
-        if (video) {
-          if (video.webkitEnterFullscreen) {
-            video.webkitEnterFullscreen(); // iOS / iPadOS 原生视频全屏命门方法！
-          } else if (video.requestFullscreen) {
-            video.requestFullscreen();
-          }
-          return;
-        }
+      // 💡 直链播放模式下，直接由 ArtPlayer 极其完美的多端全屏适配层进行原生与网页全屏调度！
+      if (!this.isIframeMode && this.dpInstance) {
+        this.dpInstance.fullscreen = !this.dpInstance.fullscreen;
+        return;
       }
 
+      // 💡 Iframe 模式下，采用 CSS position: static 穿透的纯净网页全屏方案
       const innerContainer = document.querySelector('.player-container-inner');
       if (!innerContainer) return;
-      
-      const isFullscreen = !!(document.fullscreenElement || 
-                            document.webkitFullscreenElement || 
-                            document.mozFullScreenElement || 
-                            document.msFullscreenElement);
-                            
-      if (!isFullscreen) {
-        if (innerContainer.requestFullscreen) {
-          innerContainer.requestFullscreen();
-        } else if (innerContainer.webkitRequestFullscreen) {
-          innerContainer.webkitRequestFullscreen(); // iOS / Safari 支持
-        } else if (innerContainer.mozRequestFullScreen) {
-          innerContainer.mozRequestFullScreen();
-        } else if (innerContainer.msRequestFullscreen) {
-          innerContainer.msRequestFullscreen();
+
+      this.isWebFullscreen = !this.isWebFullscreen;
+
+      try {
+        if (this.isWebFullscreen) {
+          // 进入全屏 (尝试调用硬件全屏接口，若在 iOS/iPad 上不支持则静默降级为 CSS 全屏)
+          if (innerContainer.requestFullscreen) {
+            innerContainer.requestFullscreen().catch(() => {});
+          } else if (innerContainer.webkitRequestFullscreen) {
+            innerContainer.webkitRequestFullscreen();
+          }
+        } else {
+          // 退出全屏 (尝试退出硬件全屏)
+          const isNativeFs = !!(document.fullscreenElement || 
+                               document.webkitFullscreenElement || 
+                               document.mozFullScreenElement || 
+                               document.msFullscreenElement);
+          if (isNativeFs) {
+            if (document.exitFullscreen) {
+              document.exitFullscreen().catch(() => {});
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          }
         }
-        this.isWebFullscreen = true;
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-        this.isWebFullscreen = false;
+      } catch (err) {
+        console.warn("[Fullscreen API] Hardware fullscreen request failed, fallback to pure CSS fullscreen:", err);
       }
 
       if (this.dpInstance) {

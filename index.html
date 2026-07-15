@@ -14,11 +14,11 @@
   <!-- Lucide 图标 本地化引入 (免疫 unpkg 挂掉/被墙隐患) -->
   <script src="js/vendor/lucide.min.js"></script>
 
-  <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
+  <!-- H5 播放器 M3U8 支持 (本地化 hls.js & ArtPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
-  <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260715T1925">
-  <script>window.JYZF_VERSION = "20260715T1925";</script>
+  <script src="js/vendor/artplayer.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=20260715T1937">
+  <script>window.JYZF_VERSION = "20260715T1937";</script>
 </head>
 <body class="loader-active">
 
@@ -719,24 +719,8 @@
             </div>
             <template v-else>
               <div class="player-container-inner" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
-                <!-- 💡 原生 HTML5 Video 播放器（专为移动端/iPad 直链秒开定制，支持系统原生手势、投屏与全屏） -->
-                <video
-                  id="nativeVideoPlayer"
-                  v-if="!isIframeMode && isMobile"
-                  :src="activePlayUrl"
-                  autoplay
-                  controls
-                  preload="auto"
-                  referrerpolicy="no-referrer"
-                  playsinline
-                  webkit-playsinline
-                  x5-playsinline
-                  @error="handleNativeVideoError"
-                  style="width: 100%; height: 100%; object-fit: contain; background: #000;"
-                ></video>
-
-                <!-- DPlayer 播放器 (仅在非 Iframe 模式且是 PC 端时使用) -->
-                <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode && !isMobile"></div>
+                <!-- 💡 艺术级多端自适应 H5 播放器挂载点 (PC端搭载 Worker 异步解码；移动/iPad端自动渲染高雅触屏面板) -->
+                <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode"></div>
                 
                 <!-- 💡 好好看黄金主线专属物理黑色遮罩：在视觉上 100% 遮挡好好看原站的外围侧边栏与顶部搜索框，实现纯净视口呈现 -->
                 <div class="hkan-mask-top" v-if="activeLineKey === 'hkan_line1' && isIframeMode"></div>
@@ -1058,7 +1042,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260715T1925"></script>
+<script src="js/app_v2.js?v=20260715T1937"></script>
 
 </body>
 </html>
