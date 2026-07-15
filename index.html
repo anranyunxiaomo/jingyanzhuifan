@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260715T1723">
-  <script>window.JYZF_VERSION = "20260715T1723";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260715T1903">
+  <script>window.JYZF_VERSION = "20260715T1903";</script>
 </head>
 <body class="loader-active">
 
@@ -691,7 +691,7 @@
 
     <!-- 3. 动漫播放与详情模式 (点击动漫卡片后展开) -->
     <div class="detail-content" :class="detailTransitionClass" v-else key="detail">
-      <div class="back-nav" @click="goHome">
+      <div class="back-nav" @click="goHome" v-show="!isWebFullscreen">
         <!-- 返回图标 -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
           <polyline points="15 18 9 12 15 6"/>
@@ -733,7 +733,6 @@
                   :key="activePlayUrl"
                   class="video-iframe"
                   :class="{ 'hkan-mode': activeLineKey === 'hkan_line1' }"
-                  sandbox="allow-scripts allow-same-origin allow-forms"
                   scrolling="no" 
                   allowfullscreen
                   webkitallowfullscreen
@@ -807,7 +806,7 @@
               <p class="resolver-loading-text">{{ loadingText }}</p>
             </div>
           </div>
-          <div class="playing-info" v-if="activePlayUrl">
+          <div class="playing-info" v-if="activePlayUrl" v-show="!isWebFullscreen">
             <!-- 标题行 -->
             <div class="playing-title-wrapper" style="display: flex; align-items: center; gap: 0.8rem;">
               <span class="playing-indicator">正在播放</span>
@@ -850,7 +849,7 @@
         </div>
 
         <!-- 💡 手机端专属切换 Tab 导航 (用于切换 剧情简介 与 线路选集) -->
-        <div class="mobile-detail-tabs" v-if="isMobile">
+        <div class="mobile-detail-tabs" v-if="isMobile" v-show="!isWebFullscreen">
           <button 
             class="detail-tab-btn" 
             :class="{ active: detailTab === 'episodes' }" 
@@ -875,7 +874,7 @@
         </div>
 
         <!-- 3.2 动漫图文介绍 -->
-        <div class="info-panel" v-show="!isMobile || detailTab === 'info'">
+        <div class="info-panel" v-show="(!isMobile || detailTab === 'info') && !isWebFullscreen">
           <div class="info-header">
             <img :src="getProxiedImageUrl(animeDetail.video.cover)" :alt="animeDetail.video.name" class="detail-poster" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             <div class="detail-meta-info">
@@ -911,7 +910,7 @@
         </div>
 
         <!-- 3.3 线路与剧集选择面板 -->
-        <div class="episodes-panel" v-show="!isMobile || detailTab === 'episodes'">
+        <div class="episodes-panel" v-show="(!isMobile || detailTab === 'episodes') && !isWebFullscreen">
           <div class="panel-header">
             <!-- 线路层图标 -->
             <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1042,7 +1041,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260715T1723"></script>
+<script src="js/app_v2.js?v=20260715T1903"></script>
 
 </body>
 </html>
