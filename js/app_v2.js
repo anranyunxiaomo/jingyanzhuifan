@@ -1659,7 +1659,7 @@ new Vue({
                       line = line.trim();
                       if (!line) return '';
                       if (line.startsWith('#')) {
-                        // 💡 替换可能的解密密钥 (AES) URI 地址
+                        // 💡 替换可能的解密密钥 (AES) URI 地址，经过代理中转防跨域拦截
                         if (line.includes('URI=')) {
                           return line.replace(/URI="([^"]+)"/g, (match, keyUrl) => {
                             let absKeyUrl = keyUrl;
@@ -1677,7 +1677,8 @@ new Vue({
                         return line;
                       }
                       
-                      // 💡 替换 TS 视频分片 URL 地址为绝对路径（直连真实 CDN 播放，绝不走反代）
+                      // 💡 核心修复：将 TS 视频分片 URL 也统一经代理中转，彻底解决 Hls.js 直连 CDN 时触发 CORS 跨域 403 问题
+                      // 原理：Worker 代理透明转发字节流，CDN 不会向 Worker 发送跨域拒绝，CPU 耗时极低不超额
                       let absoluteUrl = line;
                       if (!line.startsWith('http://') && !line.startsWith('https://')) {
                         if (line.startsWith('/')) {
@@ -1686,7 +1687,8 @@ new Vue({
                           absoluteUrl = basePath + line;
                         }
                       }
-                      return absoluteUrl;
+                      // 只代理视频分片，子 m3u8 也代理（多级嵌套情况下也能正确处理）
+                      return "https://jingyanff.xyz/?url=" + encodeURIComponent(absoluteUrl);
                     });
                     
                     const modifiedText = modifiedLines.join('\n');
