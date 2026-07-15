@@ -1534,11 +1534,14 @@ new Vue({
 
       let allowDirectPlay = false;
       if (isDirectUrl && !epToken.startsWith('age_')) {
-        allowDirectPlay = true; // 💡 无论是移动端还是 PC 端，只要是直链，都允许优先进入 ArtPlayer 播放轨道，保障播放成功率
+        allowDirectPlay = true; // 直链 epToken：直接走 ArtPlayer
+      } else if (epToken && epToken.startsWith('age_') && realUrl && realUrl.startsWith('http')) {
+        allowDirectPlay = true; // 💡 age_ token 但已有预解析直链：优先让 ArtPlayer 播（失败自动降级到 wuzhoupai iframe）
       }
 
       let finalRealUrl = "";
       if (allowDirectPlay) {
+        // age_ token 线路用 realUrl（预解析直链）；直链 epToken 线路优先 realUrl 否则用 epToken 本身
         finalRealUrl = realUrl ? realUrl : epToken;
       }
 
