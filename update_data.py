@@ -418,6 +418,58 @@ def fetch_from_backup_cms(title):
     return None
 
 
+def merge_cms_into_local_playlists(local_playlists, cms_key, cms_eps):
+    """
+    精细化合并线路：保留本地原汁原味的 age_ 加密 Token（以供 iframe 降级），
+    仅将采集站的常规 M3U8 直链升级回填写入 ep[2] (realUrl) 位置，同时支持增量选集追加！
+    """
+    def get_ep_num(name):
+        nums = re.findall(r'\d+', name)
+        return int(nums[0]) if nums else None
+
+    if cms_key not in local_playlists:
+        # 如果本地没有这个线路，直接注入并复制到 ep[2]
+        for ep in cms_eps:
+            if len(ep) == 2:
+                ep.append(ep[1])
+            elif len(ep) >= 3:
+                ep[2] = ep[1]
+        local_playlists[cms_key] = cms_eps
+        return True
+
+    local_eps = local_playlists[cms_key]
+    if not isinstance(local_eps, list):
+        return False
+        
+    local_map = {}
+    for ep in local_eps:
+        num = get_ep_num(ep[0])
+        if num is not None:
+            local_map[num] = ep
+
+    merged_any = False
+    for cms_ep in cms_eps:
+        cms_num = get_ep_num(cms_ep[0])
+        if cms_num is not None:
+            if cms_num in local_map:
+                # 💡 本地存在该集：升级！回填直链为 ep[2]，绝对不覆盖 ep[1] 原加密 Token
+                local_ep = local_map[cms_num]
+                cms_url = cms_ep[1]
+                if len(local_ep) == 2:
+                    local_ep.append(cms_url)
+                    merged_any = True
+                elif len(local_ep) >= 3 and local_ep[2] != cms_url:
+                    local_ep[2] = cms_url
+                    merged_any = True
+            else:
+                # 💡 本地没有该集（新番更新了）：增量追加
+                new_ep = [cms_ep[0], cms_ep[1], cms_ep[1]]
+                local_eps.append(new_ep)
+                merged_any = True
+                
+    return merged_any
+
+
 def fetch_api_base():
     """获取最新的 API 域名配置"""
     urls = [
@@ -1405,15 +1457,9 @@ async def main_async():
                 if cms_res and "video" in cms_res and "playlists" in cms_res["video"]:
                     cms_playlists = cms_res["video"]["playlists"]
                     for cms_key, cms_eps in cms_playlists.items():
-                        if cms_key not in playlists or len(cms_eps) > len(playlists.get(cms_key, [])):
-                            # 💡 优化：对于直接获取的 M3U8 url，在回填时自动将 Token 复制到 ep[2] 做为直链，跳过后续嗅探
-                            for ep in cms_eps:
-                                if len(ep) == 2:
-                                    ep.append(ep[1])
-                                elif len(ep) >= 3:
-                                    ep[2] = ep[1]
-                            playlists[cms_key] = cms_eps
-                            print(f"    ✨ [BOOSTER MERGED] Merged direct-stream line: {cms_key} ({len(cms_eps)} eps)")
+                        merged_success = merge_cms_into_local_playlists(playlists, cms_key, cms_eps)
+                        if merged_success:
+                            print(f"    ✨ [BOOSTER MERGED] Merged/Upgraded direct-stream line: {cms_key} ({len(playlists[cms_key])} eps)")
                     # 回写进 detail_data
                     detail_data["video"]["playlists"] = playlists
 
