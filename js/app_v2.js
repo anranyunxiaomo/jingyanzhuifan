@@ -1839,6 +1839,17 @@ new Vue({
               this.stopLoadingAnimation();
             });
 
+            // 💡 监听 ArtPlayer 内置全屏按钮触发的 fullscreenWeb 事件，同步 Vue 状态
+            // 确保无论是点我们的自定义按钮还是 ArtPlayer 自带按钮，状态始终一致
+            dp.on('fullscreenWeb', (isFullscreen) => {
+              this.isWebFullscreen = isFullscreen;
+              if (isFullscreen) {
+                document.body.classList.add('art-fullscreen-web-active');
+              } else {
+                document.body.classList.remove('art-fullscreen-web-active');
+              }
+            });
+
             dp.on('play', () => {
               this.stopLoadingAnimation();
             });

@@ -4040,23 +4040,48 @@ body.fit-fill iframe {
   position: static !important;
 }
 
-/* 💡 ArtPlayer CSS 网页全屏（fullscreenWeb）核心层级保障
-   ArtPlayer 的 fullscreenWeb 启用时（FULLSCREEN_WEB_IN_BODY=true），会将 .artplayer-app 直接
-   移动到 document.body 顶层，彻底脱离原有被 perspective/transform 污染的父容器 DOM 树，
-   因此不需要清除父容器属性，只需确保移到 body 后的全屏元素能覆盖页面一切 UI 元素。 */
+/* 💡 ArtPlayer CSS 网页全屏（fullscreenWeb）iPad/平板完整修复
+   ArtPlayer 的 fullscreenWeb 触发时（FULLSCREEN_WEB_IN_BODY=true）：
+   1. 将 .artplayer-app 移动到 document.body 顶层
+   2. 给 .art-video-player 加 art-fullscreen-web class（position: fixed; inset: 0; width/height: 100%）
+   
+   iPad Safari 的问题：body 无显式 height，导致 height: 100% 相对于 auto 高度坍缩
+   修复方案：覆盖为 100vw/100dvh，dvh 是 Dynamic Viewport Height，iPad Safari 15.4+ 支持 */
 
-/* 当 ArtPlayer 以网页全屏模式附加到 body 时，确保其 z-index 绝对在最顶层 */
-body > .artplayer-app[style*="position"] {
+/* ① 全屏播放器本体：强制铺满整个动态视口（覆盖 ArtPlayer 内置的 height: 100%） */
+.art-video-player.art-fullscreen-web {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;      /* 基础兜底（所有浏览器） */
+  height: 100svh !important;     /* Small Viewport Height：减去固定工具栏 */
+  height: 100dvh !important;     /* Dynamic Viewport Height：iPad Safari 最佳方案 */
+  z-index: 99999 !important;
+  border-radius: 0 !important;
+  background: #000 !important;
+}
+
+/* ② 全屏激活时 body 顶层的 .artplayer-app 容器：同步撑满（不在全屏时不影响正常 DOM） */
+body.art-fullscreen-web-active > .artplayer-app {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
   z-index: 99999 !important;
   border-radius: 0 !important;
 }
 
-/* 防止 Vue 全局弹层（如收藏遮罩、加载遮罩）遮住全屏播放器 */
-body.art-web-fullscreen-active .fixed-overlay,
-body.art-web-fullscreen-active .app-header,
-body.art-web-fullscreen-active .sidebar {
+/* ③ 防止 app-header、导航栏等在全屏时从上方遮挡播放器
+   用 body.art-fullscreen-web-active class 驱动（JS 监听 fullscreenWeb 事件同步添加此 class）
+   ⚠️ 不用 body:has() 是因为 iOS 14 / iPad OS 14 的 Safari 不支持 :has() */
+body.art-fullscreen-web-active .app-header,
+body.art-fullscreen-web-active .sidebar,
+body.art-fullscreen-web-active .banner-container {
   z-index: 0 !important;
 }
+
 
 /* ==========================================================================
    🎬 同系列关联推荐海报墙与治愈系板块专有样式 
