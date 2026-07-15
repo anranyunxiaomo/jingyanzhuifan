@@ -381,8 +381,21 @@ new Vue({
   watch: {
     // 监听搜索词输入防抖，智能拉取全网实时检索 API 结果
     searchQuery(newVal) {
-      const query = newVal.trim();
+      const query = newVal.trim().toLowerCase();
       if (!query) {
+        this.remoteSearchResults = [];
+        return;
+      }
+      
+      // 💡 在本地搜索索引中做一次极速预过滤
+      const localMatches = this.searchIndex.filter(item => {
+        const title = (item.Title || '').toLowerCase();
+        const pinyin = (item.Pinyin || '').toLowerCase();
+        return title.includes(query) || pinyin.includes(query);
+      });
+      
+      // 💡 如果本地已经能搜到至少一个结果，则绝对不请求云端代理，100% 节省接口额度！
+      if (localMatches.length > 0) {
         this.remoteSearchResults = [];
         return;
       }
@@ -1605,9 +1618,9 @@ new Vue({
             const isM3u8 = capturedRealUrl.includes('.m3u8') || capturedRealUrl.includes('/m3u8');
             if (isM3u8) {
               if (isNativeHls) {
-                // 💡 移动端/Safari 原生支持 M3U8，直接播放经过主代理的 M3U8，所有 TS 切片会自动由系统原生拉取，不需要走任何代理，请求数骤降至 1 次！
-                console.log("[SMART ROUTER] Native HLS supported. Using direct stream to save request quota.");
-                finalVideoUrl = proxyUrl;
+                // 💡 移动端/Safari 原生支持 M3U8，直接绕过代理服务器 100% 免费直连，所有请求数归零！
+                console.log("[SMART ROUTER] Native HLS supported. Bypass proxy and use direct link to save quota.");
+                finalVideoUrl = capturedRealUrl;
                 videoType = 'normal'; // 原生 video 模式
               } else {
                 // 💡 PC 端不支持原生 HLS，必须使用 hls.js 模拟解码，在前端实时重写所有相对路径为绝对路径
