@@ -1494,6 +1494,41 @@ new Vue({
         finalRealUrl = "";
       }
 
+      // 💡 [PROACTIVE ROUTING OVERRIDE] 主动式媒体路由选择覆写算法
+      // 看到 M3U8 地址即决定最优播放路径。从根源上解决盲目直连导致的多余代理 fetch，并彻底拦截流氓劫持域名！
+      if (epToken && !epToken.startsWith('age_')) {
+        const cleanUrl = (realUrl || epToken || '').trim();
+        const urlLower = cleanUrl.toLowerCase();
+        
+        // ① 如果是已知的流氓/网页播放器域名（虽然以 .m3u8 结尾，但不支持直连或有防调试）：
+        if (
+          urlLower.includes('baofeng11.com') || 
+          urlLower.includes('fengbao11.com') || 
+          urlLower.includes('xluuss.com') || 
+          urlLower.includes('kuaichezym3u8.com') ||
+          urlLower.includes('hongniuzy') ||
+          urlLower.includes('hongniu22.com')
+        ) {
+          finalRealUrl = ""; // 强行不走 DPlayer，节省代理中转流量
+          playUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(cleanUrl);
+          console.log(`[PROACTIVE ROUTER] Protected/Fake stream bypassed: ${cleanUrl}. Routed to clean iframe.`);
+        } 
+        // ② 如果是真正干净、活着的常规 M3U8/MP4 视频直链：
+        else {
+          const isM3u8OrMp4 = urlLower.includes('.m3u8') || urlLower.includes('/m3u8') || urlLower.includes('.mp4') || urlLower.includes('/mp4') || cleanUrl.startsWith('blob:');
+          if (isM3u8OrMp4) {
+            finalRealUrl = cleanUrl; // 强行放行直连，不走 iframe 降级！
+            console.log(`[PROACTIVE ROUTER] Clean direct-stream active: ${cleanUrl}. Routing to DPlayer.`);
+          }
+        }
+      }
+      
+      // 补充：自定义解析引擎兼容支持
+      if (finalRealUrl === "" && playUrl && this.activeEngineKey !== 'default') {
+        const cleanUrl = (realUrl || epToken || '').trim();
+        playUrl = this.activeEngineKey + cleanUrl;
+      }
+
       // ✅ 变量捕获闭包锁定（必须放在异步云解密之后，确保能获取到更新后的 realUrl/playUrl ！！！）
       const capturedAnimeId = String(this.currentAnimeId);
 
