@@ -1257,9 +1257,8 @@ new Vue({
       let epToken = ep[1];          // 加密 token 或直链 url
       let realUrl = ep[2];          // 💡 预解析出的视频直链 (如果有)
 
-      // 💡 强力重置：非 AniCh 线路的直链由于对方服务器存在同源跨域 CORS 拦截限制，
-      // 我们在开头直接将其 realUrl 置空，强制使其在后台拼装出正确的五洲派跨域中转解析站 URL，彻底解决 playUrl 拼装被跳过导致的黑屏 Bug！
-      if (this.activeLineKey !== 'anich_m3u8') {
+      // 💡 仅当 realUrl 存在但不以 http 开头（即不是合法直链网址）时，我们才将非 AniCh 线路的 realUrl 置空
+      if (this.activeLineKey !== 'anich_m3u8' && realUrl && !realUrl.startsWith('http://') && !realUrl.startsWith('https://')) {
         realUrl = "";
       }
 
@@ -1490,9 +1489,8 @@ new Vue({
       }
 
 
-      // 💡 CORS/Referer 安全防护大锁：只有自建且配好了跨域与 Referer 的 AniCh 线路、或者 Blob 生成的资源，才允许走 DPlayer 播放！
-      // 外部非凡、暴风、无尽等采集源直链由于其服务器存在同源跨域阻断与防盗链 WAF 限制，直接清空 finalRealUrl，强制降级走全能的 xmflv 解析站播放！
-      if (finalRealUrl && this.activeLineKey !== 'anich_m3u8' && !finalRealUrl.startsWith('blob:')) {
+      // 💡 仅当 finalRealUrl 存在且不是合法的 http 播放网址时，才清空它以走默认解析
+      if (finalRealUrl && !finalRealUrl.startsWith('http://') && !finalRealUrl.startsWith('https://') && !finalRealUrl.startsWith('blob:')) {
         finalRealUrl = "";
       }
 
