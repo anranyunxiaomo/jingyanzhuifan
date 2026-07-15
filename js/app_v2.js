@@ -1680,8 +1680,7 @@ new Vue({
                         return line;
                       }
                       
-                      // 💡 核心修复：将 TS 视频分片 URL 也统一经代理中转，彻底解决 Hls.js 直连 CDN 时触发 CORS 跨域 403 问题
-                      // 原理：Worker 代理透明转发字节流，CDN 不会向 Worker 发送跨域拒绝，CPU 耗时极低不超额
+                      // TS 视频分片直连 CDN（age_ 线路走 wuzhoupai iframe 不经此处，直链线路的 CDN 通常允许直连）
                       let absoluteUrl = line;
                       if (!line.startsWith('http://') && !line.startsWith('https://')) {
                         if (line.startsWith('/')) {
@@ -1690,8 +1689,7 @@ new Vue({
                           absoluteUrl = basePath + line;
                         }
                       }
-                      // 只代理视频分片，子 m3u8 也代理（多级嵌套情况下也能正确处理）
-                      return "https://jingyanff.xyz/?url=" + encodeURIComponent(absoluteUrl);
+                      return absoluteUrl;
                     });
                     
                     const modifiedText = modifiedLines.join('\n');
