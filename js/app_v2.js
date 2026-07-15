@@ -179,9 +179,10 @@ new Vue({
         hot: item.Hot.toLocaleString()
       }));
     },
-    // 💡 动态判断是否为手机移动端 (屏幕宽度 <= 768px)
+    // 💡 动态判断是否为手机移动端/iPad设备 (屏幕宽度 <= 1024px 或 User-Agent 匹配移动设备)
     isMobile() {
-      return this.screenWidth <= 768;
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      return isMobileUA || this.screenWidth <= 1024;
     },
 
     // 📚 番剧库：过滤 + 排序后的完整列表
@@ -1585,6 +1586,23 @@ new Vue({
 
         this.isIframeMode = false;
         this.activePlayUrl = finalRealUrl;
+
+        // 💡 移动端/iPad 专属物理原生 `<video controls>` 直连播放通道！
+        // 彻底抛弃 DPlayer 网页控制栏在移动端极其恶劣的全屏与倍速适配Bug，100% 交给系统/夸克原生播放控制面板处理！
+        if (this.isMobile) {
+          // 销毁可能残留的 PC 端 DPlayer 实例
+          if (this.dpInstance) {
+            try { this.dpInstance.destroy(); } catch(e) {}
+            this.dpInstance = null;
+          }
+          this.$nextTick(() => {
+            const video = document.getElementById('nativeVideoPlayer');
+            if (video) {
+              video.play().catch(e => console.log("自动播放被浏览器拦截", e));
+            }
+          });
+          return; // 💡 物理熔断阻断，绝不向下执行任何 PC 端的 DPlayer 初始化！
+        }
 
         // 销毁上一次 of 播放器实例
         if (this.dpInstance) {
