@@ -470,6 +470,58 @@ def merge_cms_into_local_playlists(local_playlists, cms_key, cms_eps):
     return merged_any
 
 
+def calculate_uptodate(video):
+    """
+    根据 video 数据结构中的 playlists，智能计算并生成最精准的 UpToDate 集数文字
+    """
+    # 💡 黄金对齐：如果是标准的八位数字 AGE 连载动漫，直接强制信任官方本身的更新状态文本！
+    # 彻底隔离第三方采集网（如好好看、非凡等）因为发布预告或错放其他季，导致刚开播新番被污染显示为“更新至12集”的恶性 Bug！
+    aid_str = str(video.get("id", ""))
+    is_standard_age = aid_str.isdigit() and len(aid_str) == 8 and aid_str.startswith("20")
+    if is_standard_age:
+        official_status = video.get("status") or video.get("uptodate")
+        if official_status and ("集" in official_status or "更新" in official_status or "第" in official_status) and "完结" not in official_status:
+            m = re.search(r'\d+', official_status)
+            if m:
+                return f"更新至第{int(m.group()):02d}集"
+            return official_status
+
+    playlists = video.get("playlists", {})
+    if not playlists or not isinstance(playlists, dict):
+        return video.get("uptodate") or "更新中"
+        
+    max_ep_num = 0
+    max_ep_label = ""
+    
+    # 统计所有线路中的最大集数
+    for pkey, eps in playlists.items():
+        if not isinstance(eps, list):
+            continue
+        for ep in eps:
+            if isinstance(ep, list) and len(ep) >= 1:
+                label = str(ep[0]).strip()
+                # 尝试从 "第03集"、"第12集" 等字眼提取出数字
+                m = re.search(r'\d+', label)
+                if m:
+                    num = int(m.group())
+                    if num > max_ep_num:
+                        max_ep_num = num
+                        max_ep_label = label
+                else:
+                    if not max_ep_label:
+                        max_ep_label = label
+                        
+    if max_ep_label:
+        if not max_ep_label.startswith("更新至"):
+            m = re.search(r'\d+', max_ep_label)
+            if m:
+                return f"更新至第{int(m.group()):02d}集"
+            return f"更新至{max_ep_label}"
+        return max_ep_label
+        
+    return video.get("uptodate") or "更新中"
+
+
 def fetch_api_base():
     """获取最新的 API 域名配置"""
     urls = [
@@ -533,44 +585,7 @@ except ImportError:
         return ""
 
 
-def calculate_uptodate(video):
-    """
-    根据 video 数据结构中的 playlists，智能计算并生成最精准的 UpToDate 集数文字
-    """
-    playlists = video.get("playlists", {})
-    if not playlists or not isinstance(playlists, dict):
-        return video.get("uptodate") or "更新中"
-        
-    max_ep_num = 0
-    max_ep_label = ""
-    
-    # 统计所有线路中的最大集数
-    for pkey, eps in playlists.items():
-        if not isinstance(eps, list):
-            continue
-        for ep in eps:
-            if isinstance(ep, list) and len(ep) >= 1:
-                label = str(ep[0]).strip()
-                # 尝试从 "第03集"、"第12集" 等字眼提取出数字
-                m = re.search(r'\d+', label)
-                if m:
-                    num = int(m.group())
-                    if num > max_ep_num:
-                        max_ep_num = num
-                        max_ep_label = label
-                else:
-                    if not max_ep_label:
-                        max_ep_label = label
-                        
-    if max_ep_label:
-        if not max_ep_label.startswith("更新至"):
-            m = re.search(r'\d+', max_ep_label)
-            if m:
-                return f"更新至第{int(m.group()):02d}集"
-            return f"更新至{max_ep_label}"
-        return max_ep_label
-        
-    return video.get("uptodate") or "更新中"
+
 
 
 def calculate_logical_update_time(video, detail_file_path):
@@ -1295,7 +1310,10 @@ async def main_async():
                 with open(detail_file_path, 'r', encoding='utf-8') as f_read:
                     detail = json.load(f_read)
                     video = detail.get("video", {})
-                    if "连载" in video.get("status", ""):
+                    status_str = video.get("status", "")
+                    # 💡 连载中动漫判定规则：包含连载、更新、第或集，且绝不能包含“完结”
+                    is_ongoing = ("连载" in status_str or "更新" in status_str or ("第" in status_str and "集" in status_str)) and "完结" not in status_str
+                    if is_ongoing:
                         if aid_str not in aids_to_fetch:
                             aids_to_fetch[aid_str] = {
                                 'title': video.get("name", "未命名"),
