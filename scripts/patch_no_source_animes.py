@@ -148,9 +148,48 @@ def main():
     print(f"✅ 补全完成: {patched} 个动漫已写入可播资源")
     print(f"❌ 仍无资源: {len(still_no_source)} 个")
     if still_no_source:
-        print("  以下动漫在 AGE 上也没有可播线路（可从首页移除）:")
+        print("  以下动漫在 AGE 上也没有可播线路，将从首页自动清除:")
         for aid, name in still_no_source:
             print(f"    {name} [{aid}]")
+        
+        # 💡 自动清理：从 home-list.json 所有区块里删掉这些无资源动漫
+        remove_aids = {str(aid) for aid, _ in still_no_source}
+        home_path = os.path.join(DATA_DIR, 'home-list.json')
+        with open(home_path, 'r', encoding='utf-8') as f:
+            home_data = json.load(f)
+        
+        total_cleaned = 0
+        if isinstance(home_data, dict):
+            for sk in ['latest', 'recommend', 'healing_list']:
+                if sk in home_data and isinstance(home_data[sk], list):
+                    before = len(home_data[sk])
+                    home_data[sk] = [
+                        x for x in home_data[sk]
+                        if str(x.get('AID') or x.get('id')) not in remove_aids
+                    ]
+                    removed = before - len(home_data[sk])
+                    total_cleaned += removed
+                    if removed:
+                        print(f"  [CLEAN] {sk}: 删除 {removed} 条")
+            
+            if 'week_list' in home_data and isinstance(home_data['week_list'], dict):
+                for day, animes in home_data['week_list'].items():
+                    if isinstance(animes, list):
+                        before = len(animes)
+                        home_data['week_list'][day] = [
+                            x for x in animes
+                            if str(x.get('id') or x.get('AID')) not in remove_aids
+                        ]
+                        removed = before - len(home_data['week_list'][day])
+                        total_cleaned += removed
+                        if removed:
+                            print(f"  [CLEAN] week_list[{day}]: 删除 {removed} 条")
+        
+        with open(home_path, 'w', encoding='utf-8') as f:
+            json.dump(home_data, f, ensure_ascii=False, indent=2)
+        print(f"\n[DONE] home-list.json 已清理 {total_cleaned} 条无源记录")
+    else:
+        print("  首页数据干净，无需清理 ✅")
 
 if __name__ == '__main__':
     main()
