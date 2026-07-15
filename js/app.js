@@ -521,6 +521,19 @@ new Vue({
     }
     window.addEventListener('resize', this.handleResize);
     
+    // 💡 监听浏览器原生全屏状态变化，自动同步 WebFullscreen 状态（防 Esc 或物理退出状态失步）
+    this.fullscreenChangeHandler = () => {
+      const isFullscreen = !!(document.fullscreenElement || 
+                            document.webkitFullscreenElement || 
+                            document.mozFullScreenElement || 
+                            document.msFullscreenElement);
+      this.isWebFullscreen = isFullscreen;
+    };
+    document.addEventListener('fullscreenchange', this.fullscreenChangeHandler);
+    document.addEventListener('webkitfullscreenchange', this.fullscreenChangeHandler);
+    document.addEventListener('mozfullscreenchange', this.fullscreenChangeHandler);
+    document.addEventListener('MSFullscreenChange', this.fullscreenChangeHandler);
+    
     // 🏮 绑定 Hash 路由监听，防 GC 泄露与 context 逃逸
     this.hashRouteHandler = () => this.handleHashRoute();
     window.addEventListener('hashchange', this.hashRouteHandler);
@@ -571,6 +584,12 @@ new Vue({
     }
     if (this.inkRippleHandler) {
       document.removeEventListener('click', this.inkRippleHandler);
+    }
+    if (this.fullscreenChangeHandler) {
+      document.removeEventListener('fullscreenchange', this.fullscreenChangeHandler);
+      document.removeEventListener('webkitfullscreenchange', this.fullscreenChangeHandler);
+      document.removeEventListener('mozfullscreenchange', this.fullscreenChangeHandler);
+      document.removeEventListener('MSFullscreenChange', this.fullscreenChangeHandler);
     }
     if (this.activeBlobUrl) {
       try { URL.revokeObjectURL(this.activeBlobUrl); } catch(e) {}
@@ -2417,49 +2436,40 @@ new Vue({
       document.body.classList.add('fit-' + this.videoFitMode);
     },
 
-    // 💡 景雁全局网页全屏控制方法 (无 DOM 移动版：专门服务于 iframe 模式，防止 DOM 转移触发 iframe 重新加载)
+    // 💡 景雁全局网页全屏控制方法 (原生 HTML5 Fullscreen 升级版：兼容 PC/移动/iPad，彻底解决卡死错位问题)
     toggleWebFullscreen() {
-      this.isWebFullscreen = !this.isWebFullscreen;
-      
-      const htmlEl = document.documentElement;
       const innerContainer = document.querySelector('.player-container-inner');
+      if (!innerContainer) return;
       
-      if (innerContainer) {
-        if (this.isWebFullscreen) {
-          // 💡 给根节点 HTML 打上标记，用 CSS 强制阻断所有父级 transform 样式！
-          // 彻底破解 position: fixed 网页全屏定位崩塌的 Bug，且 100% 视频无需重新请求！
-          if (htmlEl) {
-            htmlEl.classList.add('webfullscreen-active');
-          }
-          
-          innerContainer.classList.add('player-panel-web-fullscreen');
-          document.body.style.overflow = 'hidden'; // 禁用 body 滚动
-          
-          // 💡 监听物理 Esc 按键以直接退出全屏
-          this._escHandler = (e) => {
-            if (e.key === 'Escape' || e.keyCode === 27) {
-              if (this.isWebFullscreen) {
-                this.toggleWebFullscreen();
-              }
-            }
-          };
-          window.addEventListener('keydown', this._escHandler);
-        } else {
-          // 💡 退出全屏，清除标记类，恢复 DOM
-          if (htmlEl) {
-            htmlEl.classList.remove('webfullscreen-active');
-          }
-          innerContainer.classList.remove('player-panel-web-fullscreen', 'player-panel-landscape-force');
-          document.body.style.overflow = '';
-          
-          // 💡 退出时解绑 Esc 事件，防内存泄漏
-          if (this._escHandler) {
-            window.removeEventListener('keydown', this._escHandler);
-            this._escHandler = null;
-          }
+      const isFullscreen = !!(document.fullscreenElement || 
+                            document.webkitFullscreenElement || 
+                            document.mozFullScreenElement || 
+                            document.msFullscreenElement);
+                            
+      if (!isFullscreen) {
+        if (innerContainer.requestFullscreen) {
+          innerContainer.requestFullscreen();
+        } else if (innerContainer.webkitRequestFullscreen) {
+          innerContainer.webkitRequestFullscreen(); // iOS / Safari 支持
+        } else if (innerContainer.mozRequestFullScreen) {
+          innerContainer.mozRequestFullScreen();
+        } else if (innerContainer.msRequestFullscreen) {
+          innerContainer.msRequestFullscreen();
         }
+        this.isWebFullscreen = true;
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+        this.isWebFullscreen = false;
       }
-      
+
       if (this.dpInstance) {
         this.$nextTick(() => {
           try { this.dpInstance.resize(); } catch(e) {}
