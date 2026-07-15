@@ -1228,6 +1228,29 @@ async def main_async():
                 'is_active': False
             }
 
+    # 💡 强制把本地所有“连载中”的动漫加入待更新名单，防止由于更新滑出前 15 页导致的漏同步 Bug！
+    print("Scanning local details to inject ongoing (连载中) animes...")
+    ongoing_count = 0
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_file_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_file_path, 'r', encoding='utf-8') as f_read:
+                    detail = json.load(f_read)
+                    video = detail.get("video", {})
+                    if "连载" in video.get("status", ""):
+                        if aid_str not in aids_to_fetch:
+                            aids_to_fetch[aid_str] = {
+                                'title': video.get("name", "未命名"),
+                                'new_title': '',
+                                'is_active': True
+                            }
+                            ongoing_count += 1
+            except:
+                pass
+    print(f"[INFO] Injected {ongoing_count} ongoing local animes into fetch queue.")
+
     print(f"[INFO] Collected {len(aids_to_fetch)} unique anime AIDs to fetch.")
     
     # 4. 载入现有的搜索库
@@ -1292,8 +1315,8 @@ async def main_async():
             status_cached = video_cached.get("status", "") if isinstance(video_cached, dict) else ""
             if "完结" in status_cached or "全集" in status_cached:
                 should_skip_api = True
-            # 💡 增量核心：如果该动漫在最近 2 页更新列表里找不到，说明今天全站根本没有它新集数的任何更新，100% 可信跳过 API！
-            elif aid not in recently_updated_aids:
+            # 💡 增量核心：如果该动漫在最近更新列表里找不到，且它不是连载中状态，则 100% 跳过以节省 API 额度
+            elif aid not in recently_updated_aids and "连载" not in status_cached:
                 should_skip_api = True
             else:
                 if not new_title:

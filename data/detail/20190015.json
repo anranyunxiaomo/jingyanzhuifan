@@ -15,14 +15,68 @@
     "playlists": {
       "xigua": [
         [
-          "第1集",
-          "age_f965xf9o%2BvSMLskheZp7x9OVsb3b3LiU0gtPBiVQnn6uvVJRU0HS8gzf%2BSTept47APwERBDYqXqpLTEDAFpVrV0E"
+          "第01集",
+          "age_73d48hM0iY5mBh414StuKwJs1TYvouBrksOdGPKX7hBmxq80okez6qw9jl%2Bx7fnjat2AhLDL9oTU1P%2BhEcQQjxtn"
+        ],
+        [
+          "第02集",
+          "age_086d1DCtqqAUuXwQ3LbG6mB3FoARHLuRMMWB2GF8maH3dl9xGq58YLnk%2F7TGoYTnEGG%2FlHY%2B2%2FAvbYAOoQZ7ppJP"
         ]
       ],
-      "anich_m3u8": [
+      "ffm3u8": [
         [
           "第01集",
-          "anich_placeholder_38360_1"
+          "age_849erHmdzEsW6Q2qeHNYn0X2%2BI8CjJX%2BAKrqc%2FVrx9v7Hz8QO8Spu3ZOB9GsOgK5tSNaak7VA3Eg7U%2FU7psTvf1kDlzwksJ3GyQ7XokY6CDVyDmMrU5KZqAc"
+        ],
+        [
+          "第02集",
+          "age_0c2dTom9OBYLHdn8X1B70JF0NHXeFe3o3Ny0W6iOBF7EQ1w6Okdh1BwnufFCdZuEb1ebHIVYBR5OXAKLzyP8QqAndWS7x96woy56a3nfIEDbeg9KQJ%2FxzuP1"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "https://v.baofeng11.com/video/ershishijidianqimulu/1146d2d5c026/index.m3u8",
+          "https://v.baofeng11.com/video/ershishijidianqimulu/1146d2d5c026/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://v.fengbao11.com/video/ershishijidianqimulu/daef5cd33d3e/index.m3u8",
+          "https://v.fengbao11.com/video/ershishijidianqimulu/daef5cd33d3e/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第1集",
+          "https://hd.ijycnd.com/play/dNkOZV6e/index.m3u8",
+          "https://hd.ijycnd.com/play/dNkOZV6e/index.m3u8"
+        ],
+        [
+          "第2集",
+          "https://hd.ijycnd.com/play/e31y9Drb/index.m3u8",
+          "https://hd.ijycnd.com/play/e31y9Drb/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_9dedRF9hMj5viaaWXj9BjtHSEcA0%2BgquXhOfxm%2BV%2FQVf0beybk5V5oFbkC%2BXu%2F%2FjzwDPqBfTniHvdQQa5xzQKbxdRoBuNvaD1nykpzKO7Ybgfwd6"
+        ],
+        [
+          "第02集",
+          "age_efb5MRvkWu%2FpltuAm4404FLHDO2CvVl90T0iw7dcZvFlZaUWeu6RCyflDDtGD8SsESvv5aWBRYIt7X%2BlUjpTZQ81sxoLl1lPe3dJVqhQJ%2BoXsYBd"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "https://hn.bfvvs.com/play/aKr8WPRe/index.m3u8",
+          "https://hn.bfvvs.com/play/aKr8WPRe/index.m3u8"
+        ],
+        [
+          "第2集",
+          "https://hn.bfvvs.com/play/eZ6zWQve/index.m3u8",
+          "https://hn.bfvvs.com/play/eZ6zWQve/index.m3u8"
         ]
       ]
     },
@@ -31,11 +85,11 @@
     "website": "http://www.kyotoanimation.co.jp/books/20thdenmoku/",
     "star": 2,
     "status": "连载",
-    "uptodate": "22:00 第01集",
-    "time_format_1": "20260706003914",
-    "time_format_2": "2026-07-06",
-    "time_format_3": "2026-07-06 00:39:14",
-    "time": 1783269554,
+    "uptodate": "22:00 第02集",
+    "time_format_1": "20260712234936",
+    "time_format_2": "2026-07-12",
+    "time_format_3": "2026-07-12 23:49:36",
+    "time": 1783871376,
     "tags": "爱情 奇幻",
     "tags_arr": [
       "爱情",
@@ -50,56 +104,56 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-05",
-    "rank_cnt": "1.19w",
+    "rank_cnt": "3.67w",
     "cover": "https://cdn.aqdstatic.com:966/age/20190015.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "22",
-    "collect_cnt": "267"
+    "comment_cnt": "82",
+    "collect_cnt": "902"
   },
   "series": [],
   "similar": [
     {
-      "AID": 20080064,
-      "Href": "/detail/20080064",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080064.jpg",
-      "Title": "xxxHOLiC 继"
+      "AID": 20170272,
+      "Href": "/detail/20170272",
+      "NewTitle": "第12集",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170272.jpg",
+      "Title": "MARGINAL#4 从KISS开始创造Big Bang"
     },
     {
-      "AID": 20020025,
-      "Href": "/detail/20020025",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020025.jpg",
-      "Title": "犬夜叉 镜中的梦幻城"
+      "AID": 20190398,
+      "Href": "/detail/20190398",
+      "NewTitle": "第10集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190398.jpg",
+      "Title": "镇魂街 第二季"
     },
     {
-      "AID": 20180086,
-      "Href": "/detail/20180086",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180086.jpg",
-      "Title": "超能力女儿"
+      "AID": 20190244,
+      "Href": "/detail/20190244",
+      "NewTitle": "第16集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190244.jpg",
+      "Title": "怪医乱神"
     },
     {
-      "AID": 20250088,
-      "Href": "/detail/20250088",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250088.jpg",
-      "Title": "安妮·雪莉"
+      "AID": 20220293,
+      "Href": "/detail/20220293",
+      "NewTitle": "第45集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220293.jpg",
+      "Title": "仙帝归来"
     },
     {
-      "AID": 20210027,
-      "Href": "/detail/20210027",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210027.jpg",
-      "Title": "如果烧陶的话也做个马克杯吧"
+      "AID": 20120102,
+      "Href": "/detail/20120102",
+      "NewTitle": "第2集(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120102.jpg",
+      "Title": "Fate/Zero Remix"
     },
     {
-      "AID": 20220466,
-      "Href": "/detail/20220466",
-      "NewTitle": "第58集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220466.jpg",
-      "Title": "一品高手 动态漫"
+      "AID": 20190233,
+      "Href": "/detail/20190233",
+      "NewTitle": "第24话(完结)",
+      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190233.jpg",
+      "Title": "漫动画·拯救世界吧大叔"
     }
   ],
   "player_label_arr": {
@@ -133,8 +187,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

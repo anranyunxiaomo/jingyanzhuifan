@@ -39,10 +39,19 @@
     "AID": 271265,
     "Title": "蜡笔小新第十季",
     "Pinyin": "",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/21/cd/1317_LqQxG.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
     "Status": "更新至174集",
     "UpToDate": "更新至第94集",
     "UpdateTime": 20260633005
+  },
+  {
+    "AID": 271110,
+    "Title": "哆啦A梦第五季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
+    "Status": "更新至80集",
+    "UpToDate": "更新至第80集",
+    "UpdateTime": 20260631910
   },
   {
     "AID": 258472,
@@ -52,6 +61,15 @@
     "Status": "更新至13集",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20260618602
+  },
+  {
+    "AID": 257162,
+    "Title": "我独自升级第二季",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260617292
   },
   {
     "AID": 233337,
@@ -207,6 +225,15 @@
     "UpdateTime": 20260400994
   },
   {
+    "AID": 38019,
+    "Title": "全职猎人日语",
+    "Pinyin": "",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/37/70/4193_acm67.jpg",
+    "Status": "更新至148集",
+    "UpToDate": "更新至第148集",
+    "UpdateTime": 20260399499
+  },
+  {
     "AID": 35270,
     "Title": "想要成为影之实力者",
     "Pinyin": "",
@@ -241,6 +268,15 @@
     "Status": "更新至24集",
     "UpToDate": "更新至第24集",
     "UpdateTime": 20260388515
+  },
+  {
+    "AID": 26003,
+    "Title": "灌篮高手国语版",
+    "Pinyin": "",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/d0/2c/459733_U3bZb.jpg",
+    "Status": "更新至101集",
+    "UpToDate": "更新至第101集",
+    "UpdateTime": 20260387013
   },
   {
     "AID": 26080,
@@ -1047,8 +1083,8 @@
     "AID": 20260175,
     "Title": "碧蓝之海 第三季",
     "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260175.jpg",
-    "Status": "连载",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
+    "Status": "更新至2集",
     "UpToDate": "更新至第02集",
     "UpdateTime": 20260360195
   },
@@ -1256,8 +1292,8 @@
     "Pinyin": "",
     "Cover": "https://cdn.aqdstatic.com:966/age/20190015.jpg",
     "Status": "连载",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20260290025
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260290035
   },
   {
     "AID": 20260244,
@@ -2599,6 +2635,24 @@
     "Status": "更新至9集",
     "UpToDate": "更新至第09集",
     "UpdateTime": 20200100213
+  },
+  {
+    "AID": "a123_zhoushuhuizhan32",
+    "Title": "咒术回战 3",
+    "Pinyin": "",
+    "Cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100152
+  },
+  {
+    "AID": "a123_woduzishengji2",
+    "Title": "我独自升级 2",
+    "Pinyin": "",
+    "Cover": "https://i1.a123tv.com/v/0x/woduzishengji2.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100132
   },
   {
     "AID": 20190205,
