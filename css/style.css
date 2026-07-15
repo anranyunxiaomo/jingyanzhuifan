@@ -3068,35 +3068,59 @@ body.fit-fill iframe {
 /* 🏮 Iframe 降级模式下的悬浮画面比例控制按钮 */
 .iframe-fit-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
   z-index: 99;
-  background: rgba(44, 30, 32, 0.85); /* 深黛墨色半透明 */
-  border: 1px solid rgba(226, 109, 128, 0.35); /* 桃花红细边 */
-  color: #FAF4EE; /* 宣纸杏白字 */
+  background: rgba(10, 8, 16, 0.75);
+  border: 1px solid rgba(242, 140, 159, 0.3);
+  color: rgba(255, 255, 255, 0.88);
   padding: 5px 10px;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  transition: all 0.22s ease;
+  letter-spacing: 0.02em;
+}
+
+/* 全屏按钮：右上角 */
+.iframe-fit-btn.webfullscreen-btn {
+  top: 10px;
+  right: 10px;
+  left: auto;
+}
+
+/* 比例切换按钮：全屏按钮左侧（right: 72px 错开） */
+.iframe-fit-btn.ratio-btn {
+  top: 10px;
+  right: 76px;
+  left: auto;
+}
+
+/* 下一集按钮：左上角，不占右侧空间 */
+.iframe-fit-btn.iframe-next-btn {
+  top: 10px;
+  left: 10px !important;
+  right: auto !important;
 }
 
 .iframe-fit-btn:hover {
-  background: var(--accent-gold-hover);
-  border-color: var(--accent-gold);
-  transform: scale(1.05);
+  background: rgba(242, 140, 159, 0.2);
+  border-color: rgba(242, 140, 159, 0.65);
+  color: #fff;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(242, 140, 159, 0.25);
 }
 
 .iframe-fit-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 /* 🏮 播放画质提示面板 - 古风宣纸桃露配色，确保在浅色背景下完美可读 */
