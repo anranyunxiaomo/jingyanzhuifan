@@ -1968,7 +1968,6 @@ new Vue({
               this.activePlayUrl = playUrl;
             });
           }
-          }
           }); // 第二层 $nextTick 结束
         }); // 第一层 $nextTick 结束
         return;
