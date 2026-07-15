@@ -601,7 +601,20 @@ def request_api(path, params=None):
     if params:
         target_url += "?" + urllib.parse.urlencode(params)
     
-    # 🚀 绝杀策略：强制通过自建 CF Worker 代理绕过 GitHub Actions 的机房 IP 封锁 (403)
+    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+    
+    # 💡 节流保护：如果是本地开发环境，尝试直连目标 API 域名，绝对不经过自建代理，最大化节省 Worker 额度
+    if not is_github_actions:
+        try:
+            r_direct = session.get(target_url, timeout=10)
+            if r_direct.status_code == 200:
+                return r_direct.json()
+            else:
+                print(f"[WARNING] Direct API {path} returned status {r_direct.status_code}. Trying proxy fallback...")
+        except Exception as direct_err:
+            print(f"[WARNING] Local direct connection failed for {path}: {direct_err}. Trying proxy fallback...")
+            
+    # 🚀 降级策略（仅在 GitHub Actions，或本地直连报错时）：通过自建 CF Worker 代理绕过机房 IP 封锁 (403)
     encoded_target_url = urllib.parse.quote(target_url, safe='')
     url = f"https://jingyanff.xyz/?url={encoded_target_url}"
     
@@ -611,17 +624,9 @@ def request_api(path, params=None):
             if r.status_code == 200:
                 return r.json()
             else:
-                print(f"[ERROR] API {path} returned status {r.status_code}")
+                print(f"[ERROR] Proxy API {path} returned status {r.status_code}")
         except Exception as e:
-            print(f"[WARNING] Retry {retry+1} for {path} failed: {e}. Trying direct connection...")
-            # 💡 容灾退回：如果代理访问失败，尝试不经过代理直连原始目标 API 接口 (特别适合本地网络开发)
-            try:
-                r_direct = session.get(target_url, timeout=10)
-                if r_direct.status_code == 200:
-                    print(f"[SUCCESS] Direct connection resolved API {path} successfully!")
-                    return r_direct.json()
-            except Exception as direct_err:
-                print(f"[ERROR] Direct connection also failed: {direct_err}")
+            print(f"[WARNING] Proxy Retry {retry+1} for {path} failed: {e}")
             time.sleep(1.5)
     return None
 
@@ -1062,6 +1067,7 @@ def auto_align_non_age_animes_from_age():
 # ==========================================================================
 async def main_async():
     print("[START] Start updating anime data...")
+    local_home_path = os.path.join(DATA_DIR, 'home-list.json')
     
     is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     event_name = os.environ.get("GITHUB_EVENT_NAME")
@@ -1139,7 +1145,6 @@ async def main_async():
 
         
         # 💡 本地首页列表 (home-list.json) 强制过滤重写，防止历史低幼或欧美海外动漫遗留展示
-        local_home_path = os.path.join(DATA_DIR, 'home-list.json')
         if os.path.exists(local_home_path):
             try:
                 with open(local_home_path, 'r', encoding='utf-8') as f_home:
@@ -1169,9 +1174,41 @@ async def main_async():
                         home_data["week_list"] = cleaned_week
                 
 
+                # 💡 新增：过滤掉没有可播线路的动漫（只有bilibili/qq/tt等版权源，播放器无法播放）
+                PLAYABLE_KEYS = {'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong','subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1','hkan_line2'}
                 
+                def has_playable_source(aid):
+                    if not aid:
+                        return True
+                    detail_p = os.path.join(DATA_DIR, 'detail', f'{aid}.json')
+                    if not os.path.exists(detail_p):
+                        return True  # 还没同步detail的暂时保留
+                    try:
+                        with open(detail_p, 'r', encoding='utf-8') as f_d:
+                            d = json.load(f_d)
+                        pls = d.get('video', {}).get('playlists', {})
+                        return any(k in PLAYABLE_KEYS and isinstance(eps, list) and len(eps) > 0 for k, eps in pls.items())
+                    except:
+                        return True
+                
+                if isinstance(home_data, dict):
+                    for sk in ['latest', 'recommend', 'healing_list']:
+                        if sk in home_data and isinstance(home_data[sk], list):
+                            before_len = len(home_data[sk])
+                            home_data[sk] = [x for x in home_data[sk] if has_playable_source(x.get('AID') or x.get('id'))]
+                            removed = before_len - len(home_data[sk])
+                            if removed: print(f"[FILTER] {sk}: 移除 {removed} 个无可播线路动漫")
+                    if 'week_list' in home_data and isinstance(home_data['week_list'], dict):
+                        for day, animes in home_data['week_list'].items():
+                            if isinstance(animes, list):
+                                before_len = len(animes)
+                                home_data['week_list'][day] = [x for x in animes if has_playable_source(x.get('id') or x.get('AID'))]
+                                removed = before_len - len(home_data['week_list'][day])
+                                if removed: print(f"[FILTER] week_list[{day}]: 移除 {removed} 个无可播线路动漫")
+
                 with open(local_home_path, 'w', encoding='utf-8') as f_home_w:
                     json.dump(home_data, f_home_w, ensure_ascii=False, indent=2)
+
                 print("[SUCCESS] Local home-list.json cleaned and re-written.")
                 
                 # 💡 调用统一大增益：重建本地治愈番和关联系列数据 ！！！
