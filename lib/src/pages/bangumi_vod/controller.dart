@@ -139,6 +139,19 @@ class BangumiVodPageController extends PlayerController
     player.stream.completed.listen((event) {
       if (event) {
         showControls();
+        try {
+          final item = bangumiInfo['episodes'].firstWhere(
+            (e) => e['episode'].toString() == episode.toString(),
+            orElse: () => {},
+          );
+          if (item.isNotEmpty) {
+            item['position'] = 0;
+            PlayHistoryStorage.box.write(id.toString(), bangumiInfo);
+            debugPrint('播放完成，已重置本集进度为 0');
+          }
+        } catch (e) {
+          debugPrint('清理播放完成进度出错: $e');
+        }
       }
     });
 

@@ -14,73 +14,6 @@
       "治愈"
     ],
     "playlists": {
-      "qiyi": [
-        [
-          "第01集",
-          "age_7e5csF%2Fg063ypZg%2BzIoBDvzChWx8IwEo1kIJ0HRkEIdvvvdK3lDjOuVeTpsQGmPM%2FyOV4mRnbciceUbJd1lvWv9K3Us",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第02集",
-          "age_0affFV8kGgwMpLvMUIAaiCBroUMdgfbiri6CTk0r9Har6x0FndDCl9rvi5tgP7SyAaAMjAtZAV9rlETyqG6bTvkV5I0",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第03集",
-          "age_8be6OLWXQ%2FRcFy%2BILnxcQcIAD0xs9H5yBNHciHC3SeLDC7jDT9eZnVgWJIRC0MwMo1FKTFI2EtJwMtOdLCNexx2lVNY",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第04集",
-          "age_e5d68AYob5HLv%2FetREPsEArZ8crPqEYNNlzl3%2FHoCvaT4KpF2J9fAATOqXAzaBs6Sd5wZnjHNQEV3%2BmC8Wyawbpmhjo",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第05集",
-          "age_87a277VTJfztC0x%2FlfbtAC34gKBDesWY%2BYsYRPk7wS9GICAuzdb1qMItYJCyZsGPxVRwb%2F%2BXVaXDu8fd5FbKDTgdIHI",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第06集",
-          "age_3265DXrswnz3OO3F%2BnH3oCBEVLxauIUaKU6ydE8KKRqm8jzBhJQMi83%2B69RQQ4INezezR17v7s4Q18vUNk6ztSVhe1Q",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第07集",
-          "age_1c22dr8pC7fXG6dL96%2FGdB1XzEtsEDKMNqjHgrHAtGYgYrIc69ACLQ9oePa1WeesdHXY6iyuYNXc%2FrXzyLYdffBfkLI",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第08集",
-          "age_607bpG6qP09Np4zA8dn2qwQfjyDjUUTsaUC2gXqMJ4Ih1m45z17TZWm%2FodoLJX6K06nZRWpYbAcdiEu%2BpjbekLfT9QU",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第09集",
-          "age_a796Z%2Blzsz4Zu%2BWyd1Vz6CZfnd5D8KDvPf7NeHFiQnQ4poQbX4TlTGsmvcZIgRUunpZ%2FXzH%2BFoDUKtXTcEt1KQn8UHY",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第10集",
-          "age_aeb3ipzzydO%2Bm4HI4eVk4TYad865x9VC34mgZFWHiuFJuH6VyR33YUDs1ckaPnw5RfV%2BDbrdADEZ1nTZPTzpeiXtUWw",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第11集",
-          "age_e98cLnL6Wg5sNnHXBDMRIXREkbVHk39VemOXuDdDu5foBmSI5jKNh3zQRhiYMeECPwUp4cEaFxGb91WyunhbKQx1Y0U",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第12集",
-          "age_91fbR16GV1k4sXmDHmtYGbqPwPeSAxxUwVCrFpY2bhPEn5hv0u0xhSr3XXK8KoBKBTdUS4Hx6xPrK8a%2FTgmJflPgFGg",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ],
-        [
-          "第13集",
-          "age_3bcar6JY1XA1fJ6V9dlF%2BT57LHPV1ei8v1w37D5FCDF0G%2BW%2BR7BTIsF1L%2BELm4PM%2Frdz6MbNmnYiAA3nSSFTfohKHA8",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "bilibili": [
         [
           "第01话",
@@ -223,6 +156,73 @@
           "第13集",
           "age_708e5TnMcBpO3P8GrMIcuDNbMfTmITfW6ulcYjFF7J2OVm%2FV9O%2Bag7GbbWqo%2BVXBuelqz1BsDoMNEVWwlPQNLWjlS0jgWYZCsSA",
           "https://64.32.20.246/play/yb8qkMWd/index.m3u8"
+        ]
+      ],
+      "qiyi": [
+        [
+          "第01集",
+          "age_7e5csF%2Fg063ypZg%2BzIoBDvzChWx8IwEo1kIJ0HRkEIdvvvdK3lDjOuVeTpsQGmPM%2FyOV4mRnbciceUbJd1lvWv9K3Us",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第02集",
+          "age_0affFV8kGgwMpLvMUIAaiCBroUMdgfbiri6CTk0r9Har6x0FndDCl9rvi5tgP7SyAaAMjAtZAV9rlETyqG6bTvkV5I0",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第03集",
+          "age_8be6OLWXQ%2FRcFy%2BILnxcQcIAD0xs9H5yBNHciHC3SeLDC7jDT9eZnVgWJIRC0MwMo1FKTFI2EtJwMtOdLCNexx2lVNY",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第04集",
+          "age_e5d68AYob5HLv%2FetREPsEArZ8crPqEYNNlzl3%2FHoCvaT4KpF2J9fAATOqXAzaBs6Sd5wZnjHNQEV3%2BmC8Wyawbpmhjo",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第05集",
+          "age_87a277VTJfztC0x%2FlfbtAC34gKBDesWY%2BYsYRPk7wS9GICAuzdb1qMItYJCyZsGPxVRwb%2F%2BXVaXDu8fd5FbKDTgdIHI",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第06集",
+          "age_3265DXrswnz3OO3F%2BnH3oCBEVLxauIUaKU6ydE8KKRqm8jzBhJQMi83%2B69RQQ4INezezR17v7s4Q18vUNk6ztSVhe1Q",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第07集",
+          "age_1c22dr8pC7fXG6dL96%2FGdB1XzEtsEDKMNqjHgrHAtGYgYrIc69ACLQ9oePa1WeesdHXY6iyuYNXc%2FrXzyLYdffBfkLI",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第08集",
+          "age_607bpG6qP09Np4zA8dn2qwQfjyDjUUTsaUC2gXqMJ4Ih1m45z17TZWm%2FodoLJX6K06nZRWpYbAcdiEu%2BpjbekLfT9QU",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第09集",
+          "age_a796Z%2Blzsz4Zu%2BWyd1Vz6CZfnd5D8KDvPf7NeHFiQnQ4poQbX4TlTGsmvcZIgRUunpZ%2FXzH%2BFoDUKtXTcEt1KQn8UHY",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第10集",
+          "age_aeb3ipzzydO%2Bm4HI4eVk4TYad865x9VC34mgZFWHiuFJuH6VyR33YUDs1ckaPnw5RfV%2BDbrdADEZ1nTZPTzpeiXtUWw",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第11集",
+          "age_e98cLnL6Wg5sNnHXBDMRIXREkbVHk39VemOXuDdDu5foBmSI5jKNh3zQRhiYMeECPwUp4cEaFxGb91WyunhbKQx1Y0U",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第12集",
+          "age_91fbR16GV1k4sXmDHmtYGbqPwPeSAxxUwVCrFpY2bhPEn5hv0u0xhSr3XXK8KoBKBTdUS4Hx6xPrK8a%2FTgmJflPgFGg",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ],
+        [
+          "第13集",
+          "age_3bcar6JY1XA1fJ6V9dlF%2BT57LHPV1ei8v1w37D5FCDF0G%2BW%2BR7BTIsF1L%2BELm4PM%2Frdz6MbNmnYiAA3nSSFTfohKHA8",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },

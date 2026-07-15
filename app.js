@@ -401,7 +401,10 @@ new Vue({
       this.activeEpisodeIndex = -1; // 切换线路时重置选中的集数
     },
     
-    async playEpisode(epIdx) {
+    async playEpisode(epIdx, isAutoRetry = false) {
+      if (!isAutoRetry) {
+        this._triedLines = new Set();
+      }
       if (this.guardTimer) {
         clearInterval(this.guardTimer);
         this.guardTimer = null;
@@ -560,6 +563,7 @@ new Vue({
                 container: document.getElementById('dplayer'),
                 autoplay: true,
                 screenshot: false,
+                loop: false,
                 id: capturedAnimeId + "_" + capturedEpName,
                 video: {
                   // 💡 黄金路由：将打点参数与 SessionID 附带在视频流请求中，保证 100% 成功上报且会话内唯一
@@ -573,28 +577,13 @@ new Vue({
               });
               this.dpInstance = dp;
 
-              if (savedTime <= 3) {
-                console.log("[GUARD] Starting sync 1.5s high-frequency zero-seek guard...");
-                this.guardTimer = setInterval(() => {
-                  try {
-                    if (dp && dp.video) {
-                      dp.video.currentTime = 0.01;
-                    }
-                  } catch(e) {}
-                }, 30);
-                
-                setTimeout(() => {
-                  if (this.guardTimer) {
-                    clearInterval(this.guardTimer);
-                    this.guardTimer = null;
-                  }
-                }, 1500);
-              }
-
               dp.on('loadedmetadata', () => {
                 if (savedTime > 3) {
                   console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s`);
                   dp.seek(savedTime);
+                } else {
+                  console.log(`[PROGRESS RESTORE] Enforcing play from start (0.01s)`);
+                  dp.seek(0.01);
                 }
               });
 
@@ -608,9 +597,49 @@ new Vue({
                 }
               });
 
-              // 💡 极限容灾：如果自建代理出意外报错，依然能自动无缝降级到公共 VIP 接口
+              dp.on('ended', () => {
+                console.log("[DPLAYER ENDED] Playback completed.");
+                const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+                localStorage.removeItem(pKey);
+                try {
+                  const dpStorageKey = String(capturedAnimeId) + "_" + String(capturedEpName);
+                  localStorage.removeItem(`dplayer-video-api-key-${dpStorageKey}`);
+                } catch(e) {}
+              });
+
+              // 💡 极限容灾：自适应跨直链容灾，最终静默降级到公共 VIP 接口
               dp.on('error', () => {
-                console.warn("[DPLAYER ERROR] Fallback to iframe resolve...");
+                console.warn("[DPLAYER ERROR] Triggering self-healing failover...");
+                this._triedLines.add(this.activeLineKey);
+                
+                const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
+                const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
+                  const list = rawPlayUrl[key];
+                  return list && list.length > 0;
+                });
+                
+                const backupLineKey = availableLineKeys.find(k => !this._triedLines.has(k));
+                if (backupLineKey) {
+                  console.log(`[DPlayer Self-Healing] Auto switching from ${this.activeLineKey} to backup line: ${backupLineKey}`);
+                  if (this.dpInstance) {
+                    try {
+                      this.dpInstance.off('timeupdate');
+                      this.dpInstance.off('loadedmetadata');
+                      this.dpInstance.off('error');
+                      this.dpInstance.destroy();
+                    } catch(e) {}
+                    this.dpInstance = null;
+                  }
+                  
+                  const currentEpIdx = this.activeEpisodeIndex;
+                  this.activeLineKey = backupLineKey;
+                  setTimeout(() => {
+                    this.playEpisode(currentEpIdx, true);
+                  }, 600);
+                  return;
+                }
+                
+                console.warn("[DPLAYER ERROR] All direct lines failed. Fallback to iframe resolve...");
                 if (this.dpInstance) {
                   try {
                     this.dpInstance.off('timeupdate');

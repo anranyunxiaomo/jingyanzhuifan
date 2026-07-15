@@ -14,6 +14,16 @@
       "奇幻"
     ],
     "playlists": {
+      "hkan_line1": [
+        [
+          "第1集",
+          "/play/352321-41-4289776.html"
+        ],
+        [
+          "第2集",
+          "/play/352321-41-4392960.html"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
@@ -39,16 +49,6 @@
           "第01集",
           "age_01bakMNf%2B16mgiOmcYqeZy0f8SrS42ElOyfFtbPDE1rvyf7GmeuFPjFZR9u5aH028mYRbMiPp1Np%2BHTSY7dcpaeppZdpXCevVwOqOZ%2F58wqU2eY8",
           "https://v.lzcdn31.com/20260703/7866_2ca38958/index.m3u8"
-        ]
-      ],
-      "hkan_line1": [
-        [
-          "第1集",
-          "/play/352321-41-4289776.html"
-        ],
-        [
-          "第2集",
-          "/play/352321-41-4392960.html"
         ]
       ]
     },

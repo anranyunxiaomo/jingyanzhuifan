@@ -13,16 +13,6 @@
       "奇幻"
     ],
     "playlists": {
-      "zjm3u8": [
-        [
-          "上卷",
-          "age_fbcdGC8D25bHGqU4%2FdHQpGdpgfoJ8Qx%2FeHc3az0FLGulQHlVPxFFhquZ8zyflZyhJZtEJTNvrYUAuJLsrCn8EmZfmothjuanBtcbNit8UlJqX3jB9Vy5"
-        ],
-        [
-          "下卷",
-          "age_57f9RvwUYyzhraHOjoIdacWDAhKdW8bfuIP3moVSMg%2FmiV0dtOKwiCwURl1c%2BwzBz1u9C5a5MxhERhY9CFnNM%2FPvEnOH6ZCTg%2BHHnJPbGbpXJyfeK%2F8R"
-        ]
-      ],
       "bfzym3u8": [
         [
           "第1集",
@@ -53,6 +43,16 @@
           "第6集",
           "age_8288ATr84Z0MHZlNiYx5QFZQN%2BqiDWgw3eW%2BqL2Xkk%2BVbPUVMVcQzsQp5CP%2Flbwd9fMiL4TaMlEuON5IMNvklCay43UfKp22Ztpq0Rcw8guARmNvMHG048xsIBxW9pMdEWE",
           "https://s2.bfllvip.com/video/xuzhongwuyuTVban/3485bfa59e3c/index.m3u8"
+        ]
+      ],
+      "zjm3u8": [
+        [
+          "上卷",
+          "age_fbcdGC8D25bHGqU4%2FdHQpGdpgfoJ8Qx%2FeHc3az0FLGulQHlVPxFFhquZ8zyflZyhJZtEJTNvrYUAuJLsrCn8EmZfmothjuanBtcbNit8UlJqX3jB9Vy5"
+        ],
+        [
+          "下卷",
+          "age_57f9RvwUYyzhraHOjoIdacWDAhKdW8bfuIP3moVSMg%2FmiV0dtOKwiCwURl1c%2BwzBz1u9C5a5MxhERhY9CFnNM%2FPvEnOH6ZCTg%2BHHnJPbGbpXJyfeK%2F8R"
         ]
       ]
     },

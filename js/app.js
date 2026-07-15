@@ -303,6 +303,7 @@ new Vue({
       }
       
       // 💡 黄金体验排序法则：根据播放兼容性与速度给线路进行权重打分，将最优质、最稳定的 DPlayer 原生直连源顶格展示！
+      // 💡 同时，如果线路的兼容评分相同，则优先将集数多的线路排在前面，防止默认选中残缺的播放源。
       lines.sort((a, b) => {
         const getScore = (line) => {
           const eps = playlists[line.key];
@@ -324,7 +325,16 @@ new Vue({
           return 0;
         };
         
-        return getScore(b) - getScore(a); // 分数高的排在前面
+        const scoreA = getScore(a);
+        const scoreB = getScore(b);
+        if (scoreA !== scoreB) {
+          return scoreB - scoreA; // 分数高的排在前面
+        }
+        
+        // 💡 体验对齐：分数相同时，集数（即播放列表长度）多的排在前面
+        const lenA = (playlists[a.key] || []).length;
+        const lenB = (playlists[b.key] || []).length;
+        return lenB - lenA;
       });
       
       return lines;
@@ -1210,7 +1220,10 @@ new Vue({
       this.activeEpisodeIndex = -1; // 切换线路时重置选中的集数
     },
     
-    async playEpisode(epIdx) {
+    async playEpisode(epIdx, isAutoRetry = false) {
+      if (!isAutoRetry) {
+        this._triedLines = new Set();
+      }
       // 💡 强力防逃逸：在任何异步解析（如 resolveAnichUrl）开始前，同步且干净地销毁上一次的播放器，彻底切断后台声音残留
       if (this.dpInstance) {
         try {
@@ -1542,16 +1555,17 @@ new Vue({
             const testVideo = document.createElement('video');
             const isNativeHls = !!(testVideo.canPlayType('application/x-mpegURL') || testVideo.canPlayType('application/vnd.apple.mpegurl'));
 
-            // 💡 如果是 AniCh 线路 of M3U8 直链播放，为了规避字节跳动 CDN 切片跨域 CORS 拦截问题，
-            // 我们在前端实时下载 M3U8 并重写其中所有分片与解密 Key 的 URL，最后生成 Blob URL 播放！
-            if (this.activeLineKey === 'anich_m3u8' && (capturedRealUrl.includes('.m3u8') || capturedRealUrl.includes('/m3u8'))) {
+            // 💡 对所有直链 M3U8 格式播放，为了规避字节跳动及各大采集站 CDN 的 CORS 跨域限制，
+            // 我们在前端实时下载 M3U8，在 PC 端模拟播放时，实时将相对路径重写为绝对路径，最后生成 Blob URL 播放以确保起播。
+            const isM3u8 = capturedRealUrl.includes('.m3u8') || capturedRealUrl.includes('/m3u8');
+            if (isM3u8) {
               if (isNativeHls) {
                 // 💡 移动端/Safari 原生支持 M3U8，直接播放经过主代理的 M3U8，所有 TS 切片会自动由系统原生拉取，不需要走任何代理，请求数骤降至 1 次！
                 console.log("[SMART ROUTER] Native HLS supported. Using direct stream to save request quota.");
                 finalVideoUrl = proxyUrl;
                 videoType = 'normal'; // 原生 video 模式
               } else {
-                // 💡 PC 端不支持原生 HLS，必须使用 hls.js 模拟解码，由于 CORS 限制，必须在前端实时重写所有分片
+                // 💡 PC 端不支持原生 HLS，必须使用 hls.js 模拟解码，在前端实时重写所有相对路径为绝对路径
                 console.log("[SMART ROUTER] PC client detected. Downloading & rewriting playlist in frontend...");
                 try {
                   const res = await fetch(proxyUrl);
@@ -1583,7 +1597,7 @@ new Vue({
                         return line;
                       }
                       
-                      // 💡 替换 TS 视频分片 URL 地址，全部走代理反代中转
+                      // 💡 替换 TS 视频分片 URL 地址为绝对路径（直连真实 CDN 播放，绝不走反代）
                       let absoluteUrl = line;
                       if (!line.startsWith('http://') && !line.startsWith('https://')) {
                         if (line.startsWith('/')) {
@@ -1602,15 +1616,17 @@ new Vue({
                     console.log("[SMART ROUTER] Rewrite successful. Generated Blob URL:", finalVideoUrl);
                   } else {
                     console.warn("[SMART ROUTER] Failed to fetch M3U8 text, fallback to direct proxyUrl");
+                    finalVideoUrl = proxyUrl;
                   }
                 } catch (fetchErr) {
                   console.error("[SMART ROUTER] Error rewriting M3U8:", fetchErr);
+                  finalVideoUrl = proxyUrl;
                 }
               }
             }
 
             // 💡 A123 极速源移动端原生播放适配：在移动端，使用浏览器的原生 video 进行 HLS 解码，
-            // 彻底防止 hls.js 在手机端浏览器由于 MSE/硬件加速兼容性报错而导致的频繁闪退和 iframe 流氓降级！
+            // 彻底防止 hls.js 在手机端浏览器由于 MSE/硬件加速兼容性报错而导致的频繁闪退 and iframe 流氓降级！
             if (this.activeLineKey === 'a123_line1') {
               if (isNativeHls) {
                 console.log("[SMART ROUTER] A123 Native HLS stream enabled on mobile client.");
@@ -1632,6 +1648,7 @@ new Vue({
               autoplay: true,
               screenshot: false,
               playsinline: true,
+              loop: false,
               id: capturedAnimeId + "_" + capturedEpName,
               video: {
                 url: finalVideoUrl,
@@ -1754,34 +1771,21 @@ new Vue({
                 }
               });
 
-              if (savedTime <= 3) {
-                console.log("[GUARD] 1.5s zero-seek guard (from-zero only)...");
-                this.guardTimer = setInterval(() => {
-                  try {
-                    if (dp && dp.video) {
-                      dp.video.currentTime = 0.01;
-                    }
-                  } catch(e) {}
-                }, 30);
-                
-                setTimeout(() => {
-                  if (this.guardTimer) {
-                    clearInterval(this.guardTimer);
-                    this.guardTimer = null;
-                  }
-                }, 1500);
-              }
-
               let playbackStarted = false;
               let hasRestoredProgress = false;
               const restoreProgress = () => {
                 if (hasRestoredProgress) return;
-                if (savedTime > 3 && dp && dp.video) {
+                if (dp && dp.video) {
                   const duration = dp.video.duration;
                   if (duration && !isNaN(duration)) {
                     hasRestoredProgress = true;
-                    console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s (duration=${duration}s)`);
-                    dp.seek(savedTime);
+                    if (savedTime > 3) {
+                      console.log(`[PROGRESS RESTORE] Restoring progress to ${savedTime}s (duration=${duration}s)`);
+                      dp.seek(savedTime);
+                    } else {
+                      console.log(`[PROGRESS RESTORE] Enforcing play from start (0.01s)`);
+                      dp.seek(0.01);
+                    }
                   }
                 }
               };
@@ -1816,25 +1820,21 @@ new Vue({
               const fallbackToIframe = (reason) => {
                 if (this._hasFallenBack) return; // 防止多次触发
                 
-                // 💡 A123 极速源报错自愈：当发生加载错误时，说明缓存的直链可能已过期失效，清空本地与内存缓存并自动重新嗅探！
+                // 💡 A123 极速源报错自愈：如果是缓存的直链失效，只允许清空缓存重载一次
+                const ep = this.activeEpisodes[this.activeEpisodeIndex];
                 if (this.activeLineKey === 'a123_line1') {
-                  console.warn(`[A123 FAILBACK] reason: ${reason}. Clearing cache and retrying resolver...`);
-                  
                   const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${this.activeEpisodeIndex}`;
-                  localStorage.removeItem(cacheKey);
-                  
-                  const ep = this.activeEpisodes[this.activeEpisodeIndex];
-                  if (ep && ep.length >= 3) {
-                    ep[2] = ""; // 强行清空内存缓存
+                  const hasCache = localStorage.getItem(cacheKey) || (ep && ep.length >= 3 && ep[2]);
+                  if (hasCache) {
+                    console.warn(`[A123 FAILBACK] Cache might be expired (${reason}). Clearing cache and retrying once...`);
+                    localStorage.removeItem(cacheKey);
+                    if (ep && ep.length >= 3) ep[2] = ""; // 清空内存缓存
+                    dp.notice("播放源已失效，正在自动为您重新获取新鲜源并起播...", 4000);
+                    setTimeout(() => {
+                      this.playEpisode(this.activeEpisodeIndex, true);
+                    }, 600);
+                    return;
                   }
-                  
-                  dp.notice("播放源已失效，正在为您自动重新获取新鲜源并起播...", 4000);
-                  
-                  // 延时重新执行播放（这会重新触发 fetch url 解析）
-                  setTimeout(() => {
-                    this.playEpisode(this.activeEpisodeIndex);
-                  }, 600);
-                  return; // 💡 强行拦截退出，不降级销毁！
                 }
                 
                 // 💡 强力自愈拦截：如果是 AniCh 独有线路，绝对不降级到 iframe，而是尝试切换到下一个备用 M3U8 CDN 链接！
@@ -1845,16 +1845,12 @@ new Vue({
                       const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
                       console.warn(`[VOD FAILBACK] Stream failed (${reason}). Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
                       
-                      // 使用 DPlayer 内置气泡贴心提示用户
                       dp.notice("当前播放源加载超时，正在自动为您加载备用播放源...", 4000);
-                      
-                      // 重新载入视频并播放
                       dp.switchVideo({
                         url: nextBackupUrl,
-                        type: videoType // 保持原有的 HLS/MP4 播放类型不变
+                        type: videoType
                       });
                       
-                      // 💡 强力清空报错 DOM 状态，防止“视频加载失败”的遮罩层在成功切换播放后依然顽固显示
                       const container = document.getElementById('dplayer');
                       if (container) {
                         container.classList.remove('dplayer-error');
@@ -1863,18 +1859,17 @@ new Vue({
                         const errorText = container.querySelector('.dplayer-error');
                         if (errorText) errorText.style.display = 'none';
                       }
-                      
                       dp.play();
-                      return; // 💡 成功进入切换自愈重试，直接拦截退出，绝不执行下面的降级销毁！
+                      return;
                     }
                   }
                   console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
                   dp.notice("抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。", 5000);
-                  return; // 💡 哪怕所有备用源都试过了，我们也保持 DPlayer，绝不退回到 iframe！
                 }
                 
-                // 💡 终极跨线路自愈：坚决不发生 iframe 降级，而是自动寻找其他备用播放线路并重新拉起 DPlayer！
-                console.warn(`[DPLAYER FAILBACK] reason: ${reason}`);
+                // 💡 终极跨线路自愈：将当前线路标记为失败，寻找其他尚未尝试过的备用直链
+                console.warn(`[DPLAYER FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}`);
+                this._triedLines.add(this.activeLineKey);
                 
                 const rawPlayUrl = (this.animeDetail && this.animeDetail.player_url) || {};
                 const availableLineKeys = Object.keys(rawPlayUrl).filter(key => {
@@ -1882,8 +1877,8 @@ new Vue({
                   return list && list.length > 0;
                 });
                 
-                // 找到一个与当前报错线路不同的备用线路
-                const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
+                // 找到一个尚未尝试过的备用线路
+                const backupLineKey = availableLineKeys.find(k => !this._triedLines.has(k));
                 
                 if (backupLineKey) {
                   console.log(`[DPlayer Self-Healing] Auto switching from ${this.activeLineKey} to backup line: ${backupLineKey}`);
@@ -1894,18 +1889,26 @@ new Vue({
                   const currentEpIdx = this.activeEpisodeIndex;
                   this.activeLineKey = backupLineKey;
                   
-                  // 稍微延时，重新触发 DPlayer 实例化
                   setTimeout(() => {
-                    this.playEpisode(currentEpIdx);
+                    this.playEpisode(currentEpIdx, true);
                   }, 600);
                   return;
                 }
                 
-                // 所有备用线路都试过了依然失败，在 DPlayer 里优雅呈现公告
-                console.error("[DPlayer Self-Healing] All lines failed.");
+                // 💡 所有常规直链备用线路均失败，自动静默降级为“纯净 Iframe”解析引擎播放！
+                console.warn("[DPLAYER FAILBACK] All direct lines failed. Quietly falling back to Iframe mode...");
+                this._hasFallenBack = true;
                 if (this.dpInstance) {
-                  this.dpInstance.notice("抱歉，当前所有播放线路均加载失败，视频可能已失效，请点击上方反馈问题。", 6000);
+                  try {
+                    this.dpInstance.off('timeupdate');
+                    this.dpInstance.destroy();
+                  } catch(e) {}
+                  this.dpInstance = null;
                 }
+                this.isIframeMode = true;
+                this.$nextTick(() => {
+                  this.activePlayUrl = playUrl;
+                });
               };
 
               // 保险①：DPlayer 自身 error 事件
@@ -1941,7 +1944,21 @@ new Vue({
                   const errorVideo = dpEl.querySelector('.dplayer-error-video');
                   if (errorVideo) errorVideo.style.display = 'none';
                   const errorText = dpEl.querySelector('.dplayer-error');
-                  if (errorText) errorText.style.display = 'none';
+                }
+              });
+
+              dp.on('ended', () => {
+                console.log("[DPLAYER ENDED] Playback completed.");
+                const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
+                localStorage.removeItem(pKey);
+                try {
+                  const dpStorageKey = String(capturedAnimeId) + "_" + String(capturedEpName);
+                  localStorage.removeItem(`dplayer-video-api-key-${dpStorageKey}`);
+                } catch(e) {}
+                
+                if (this.hasNextEpisode) {
+                  console.log("[DPLAYER ENDED] Auto playing next episode...");
+                  this.playNextEpisode();
                 }
               });
 

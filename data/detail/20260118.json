@@ -268,43 +268,6 @@
           "https://v1.ppqrrs.com/202606/18/3NAWCvjaML86/video/index.m3u8"
         ]
       ],
-      "hnm3u8": [
-        [
-          "第1集",
-          "age_1445q1QQBQ%2Fq0zJjgy3v2d6wWM9p65Eq6H7ZQLBn19TrcKVXUaVB7tC8aEoQUCFO%2Bqf1K%2BYJhsNp4YR%2BsKvX3QOFJRsW%2BAmSdIE",
-          "https://hn.bfvvs.com/play/epYQpvra/index.m3u8"
-        ],
-        [
-          "第2集",
-          "age_0de48LiUqX7wzaQ8ZshUGvpPrcQSLrI9xZ3DEvvHjgMePY16X7%2FAiW7So%2Bh3TYwZ7%2BXzA7uxJ4ORJ0dI8C2N25Y171JceQgG2tw",
-          "https://hn.bfvvs.com/play/ejRqj4Ye/index.m3u8"
-        ],
-        [
-          "第3集",
-          "age_aba5bP8DdK5rT5Juh3XLGiCK04GSNyyRt9ZR3KT8Pc4pZa2ICgmjWZKBR5JTyDe1KSD2veERNHX46Lf0Oyyb2seLagSc2XNd33w",
-          "https://hn.bfvvs.com/play/elY5G2Ma/index.m3u8"
-        ],
-        [
-          "第4集",
-          "age_df652thxziy6cy745Zx%2BIBcETCQCZG8uuU9ZsYixYEph78Ed7WN3r01LiDP4pue%2Bquw73kPhoBaU8qToHlB4e5y6rKsvOq4sjrk",
-          "https://hn.bfvvs.com/play/azpKRZOd/index.m3u8"
-        ],
-        [
-          "第5集",
-          "age_81c3U6ij2YMql%2BnC5Bid2gctaAybumSQVPxmb%2FIbMx8J4YXX4gEr0JOrGdf%2F438nXQ6Ksj0a8bodzRkA6eYhechZ%2FjzGtsQiEq8",
-          "https://hn.bfvvs.com/play/egJZnjkd/index.m3u8"
-        ],
-        [
-          "第6集",
-          "age_a3aeypcuQptMujA%2FqWdWORAMK9gGggWu33nQcDe16IByBjiCaU3CMWAhgD8Viy%2BM475IBPv3fe4gErdojkl3Xza1fUR%2FwUM%2BsVg",
-          "https://hn.bfvvs.com/play/egJZXv6d/index.m3u8"
-        ],
-        [
-          "第7集",
-          "age_24b1LOp3zvMoCnQX4D%2BCP%2BtGRQps60syaJOqUOZsq0GcInKMIXu96Mr2YocKRsTiRmo7izP0TuIrDuiweU2WLRPy8jlfSTt3hOY",
-          "https://hn.bfvvs.com/play/dNkL64ve/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -370,6 +333,43 @@
           "第13集",
           "age_aec3mTB09QTGj%2BIYYCaXKv5AP96OtAiG9xJvkC94HxUV255cb0JDDYScRq5GiPWpdaklLTpDSxPzTkiXZOhY7Wl%2FI609m31MCkNo8IOgPbc2hDFx",
           "https://v.lzcdn31.com/20260618/7378_259e5969/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "age_1445q1QQBQ%2Fq0zJjgy3v2d6wWM9p65Eq6H7ZQLBn19TrcKVXUaVB7tC8aEoQUCFO%2Bqf1K%2BYJhsNp4YR%2BsKvX3QOFJRsW%2BAmSdIE",
+          "https://hn.bfvvs.com/play/epYQpvra/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_0de48LiUqX7wzaQ8ZshUGvpPrcQSLrI9xZ3DEvvHjgMePY16X7%2FAiW7So%2Bh3TYwZ7%2BXzA7uxJ4ORJ0dI8C2N25Y171JceQgG2tw",
+          "https://hn.bfvvs.com/play/ejRqj4Ye/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_aba5bP8DdK5rT5Juh3XLGiCK04GSNyyRt9ZR3KT8Pc4pZa2ICgmjWZKBR5JTyDe1KSD2veERNHX46Lf0Oyyb2seLagSc2XNd33w",
+          "https://hn.bfvvs.com/play/elY5G2Ma/index.m3u8"
+        ],
+        [
+          "第4集",
+          "age_df652thxziy6cy745Zx%2BIBcETCQCZG8uuU9ZsYixYEph78Ed7WN3r01LiDP4pue%2Bquw73kPhoBaU8qToHlB4e5y6rKsvOq4sjrk",
+          "https://hn.bfvvs.com/play/azpKRZOd/index.m3u8"
+        ],
+        [
+          "第5集",
+          "age_81c3U6ij2YMql%2BnC5Bid2gctaAybumSQVPxmb%2FIbMx8J4YXX4gEr0JOrGdf%2F438nXQ6Ksj0a8bodzRkA6eYhechZ%2FjzGtsQiEq8",
+          "https://hn.bfvvs.com/play/egJZnjkd/index.m3u8"
+        ],
+        [
+          "第6集",
+          "age_a3aeypcuQptMujA%2FqWdWORAMK9gGggWu33nQcDe16IByBjiCaU3CMWAhgD8Viy%2BM475IBPv3fe4gErdojkl3Xza1fUR%2FwUM%2BsVg",
+          "https://hn.bfvvs.com/play/egJZXv6d/index.m3u8"
+        ],
+        [
+          "第7集",
+          "age_24b1LOp3zvMoCnQX4D%2BCP%2BtGRQps60syaJOqUOZsq0GcInKMIXu96Mr2YocKRsTiRmo7izP0TuIrDuiweU2WLRPy8jlfSTt3hOY",
+          "https://hn.bfvvs.com/play/dNkL64ve/index.m3u8"
         ]
       ],
       "wolong": [

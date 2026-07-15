@@ -14,13 +14,6 @@
       "冒险"
     ],
     "playlists": {
-      "bilibili": [
-        [
-          "pv",
-          "age_5f22YiYnB95MS9Qh5iBk9%2FNZEdEpVDAvqthLWgSJKfc2PsAN3K3RA9AVZXQU%2B%2B08XOrEIL7EyAXmR49LMTDpdddMjpc0f56RtQ",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "a123_line1": [
         [
           "第0001集",
@@ -8935,6 +8928,13 @@
         [
           "第1114集",
           "anich_placeholder_38447_1114"
+        ]
+      ],
+      "bilibili": [
+        [
+          "pv",
+          "age_5f22YiYnB95MS9Qh5iBk9%2FNZEdEpVDAvqthLWgSJKfc2PsAN3K3RA9AVZXQU%2B%2B08XOrEIL7EyAXmR49LMTDpdddMjpc0f56RtQ",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },

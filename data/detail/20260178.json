@@ -12,13 +12,6 @@
       "历史"
     ],
     "playlists": {
-      "bilibili": [
-        [
-          "pv",
-          "age_d1e828Viplt0kIbezabbsWJOGk5tZYrO9%2FsmzVpUkwz26NZ07JLAIqYB9h6KCTOUHCWWM82xGLtm%2BFhov7pnUVHnPI5skGF%2F6Q",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "a123_line1": [
         [
           "第01集",
@@ -67,6 +60,13 @@
         [
           "第12集",
           "/v/shanchangtaopaodedianxia/60z1runz11.html"
+        ]
+      ],
+      "bilibili": [
+        [
+          "pv",
+          "age_d1e828Viplt0kIbezabbsWJOGk5tZYrO9%2FsmzVpUkwz26NZ07JLAIqYB9h6KCTOUHCWWM82xGLtm%2BFhov7pnUVHnPI5skGF%2F6Q",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },

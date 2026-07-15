@@ -248,33 +248,6 @@
           "https://v2.ppqrrs.com/wjv2/202606/21/3mZSFZUg9U92/video/index.m3u8"
         ]
       ],
-      "hnm3u8": [
-        [
-          "第1集",
-          "age_db26YVED2h%2B3z%2Fk03%2FetmwPwBjLN0SkBirvip6wal%2FwRLnFhFp6VXEk8hAN140wRrs7HATcoXUxsu5R1bYudBZtCnLIMtT6lYaY",
-          "https://hn.bfvvs.com/play/en5r3NPd/index.m3u8"
-        ],
-        [
-          "第2集",
-          "age_b2154ZpJ7fmIHiKJneuOKhyUYEP%2Bp7b7AwAbVeb5RipzTiLZBRB40fVNfrOi7%2BCEHDI6a8Y3LYVgClA7sk251T3J7vTJdKaizhE",
-          "https://hn.bfvvs.com/play/elY5Z0Ja/index.m3u8"
-        ],
-        [
-          "第3集",
-          "age_9c26Mq5lzOgZYqZHF7Vq4s9U3DU7BAiewRK1ecBFZsgze9p9uGvDyBZAF4Qpf%2B7kz4W7vHcVsZMuLJpWV8K%2BepkejKP83MirmH4",
-          "https://hn.bfvvs.com/play/bYEW6JAb/index.m3u8"
-        ],
-        [
-          "第4集",
-          "age_9118%2F7dj4QaFaXXuzJlZLKAz4ZwGKNgqQ3awO0ICTnuLIq2WzockiWrqWTK5AFXxB1dh9pRnk0sBylCmFQbYVHJsKyGgp1CwreA",
-          "https://hn.bfvvs.com/play/bmZOG9pd/index.m3u8"
-        ],
-        [
-          "第5集",
-          "age_f8b0RTs9ET%2BJ3dunXxnJPFjlMpCoNP3u0kKKpMiXMP%2BWGD1IOqW3WqhodBGVoewNeCnSQaaSor9mEEsV%2B9JLRaen6pUt%2F7ErMxI",
-          "https://hn.bfvvs.com/play/bYEWNGpb/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -337,28 +310,6 @@
           "https://v.lzcdn31.com/20260621/7582_21e38f5c/index.m3u8"
         ]
       ],
-      "wolong": [
-        [
-          "第01集",
-          "age_e5e0fhBKQlEu47DMvHcUQW4nlLermQF60aN9yD9j2xeyHlQjYjqb7Ec04s6%2BtfPtiI8VBsYeInfWTyBjB6iuDsypl3EAxDWDwoiang",
-          "https://cdn.wlcdn88.com:777/c5249ea3/index.m3u8"
-        ],
-        [
-          "第02集",
-          "age_56b0IFQAt1jBgoZ1pcG8Kt94GHsXF%2B1sKafD2iKYPcygMLlcTGkGJkavfwjQtO6T%2BislNCIQA8SgqELAqcAHL3seByX2tCLN39s73g",
-          "https://cdn.wlcdn88.com:777/49702150/index.m3u8"
-        ],
-        [
-          "第03集",
-          "age_4547FY%2FMX2D91J%2FhfqvC1Q92BHax6X5KH9QDYkQQaGmMeIyZDxk3W7fCV5uirVx76PETP8A4o4VOrYLRDjYrukGj2wgwN%2Fp3ZoHjVA",
-          "https://cdn.wlcdn88.com:777/8373e4d8/index.m3u8"
-        ],
-        [
-          "第04集",
-          "age_0e3d%2FCq47GpDpF2c7aee6WluDwoTljQsdl9YeCl%2FG%2FlRxwd2Iu2ZBbRxfvFS66VhFmeAHdr0ekPjj3EfTAIY7hcXThQ44zeBdtqS%2BA",
-          "https://cdn.wlcdn88.com:777/1c5a1ccb/index.m3u8"
-        ]
-      ],
       "a123_line1": [
         [
           "第01集",
@@ -395,6 +346,55 @@
         [
           "第09集",
           "/v/ribensanguo/6az2iarz8.html"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "age_db26YVED2h%2B3z%2Fk03%2FetmwPwBjLN0SkBirvip6wal%2FwRLnFhFp6VXEk8hAN140wRrs7HATcoXUxsu5R1bYudBZtCnLIMtT6lYaY",
+          "https://hn.bfvvs.com/play/en5r3NPd/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_b2154ZpJ7fmIHiKJneuOKhyUYEP%2Bp7b7AwAbVeb5RipzTiLZBRB40fVNfrOi7%2BCEHDI6a8Y3LYVgClA7sk251T3J7vTJdKaizhE",
+          "https://hn.bfvvs.com/play/elY5Z0Ja/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_9c26Mq5lzOgZYqZHF7Vq4s9U3DU7BAiewRK1ecBFZsgze9p9uGvDyBZAF4Qpf%2B7kz4W7vHcVsZMuLJpWV8K%2BepkejKP83MirmH4",
+          "https://hn.bfvvs.com/play/bYEW6JAb/index.m3u8"
+        ],
+        [
+          "第4集",
+          "age_9118%2F7dj4QaFaXXuzJlZLKAz4ZwGKNgqQ3awO0ICTnuLIq2WzockiWrqWTK5AFXxB1dh9pRnk0sBylCmFQbYVHJsKyGgp1CwreA",
+          "https://hn.bfvvs.com/play/bmZOG9pd/index.m3u8"
+        ],
+        [
+          "第5集",
+          "age_f8b0RTs9ET%2BJ3dunXxnJPFjlMpCoNP3u0kKKpMiXMP%2BWGD1IOqW3WqhodBGVoewNeCnSQaaSor9mEEsV%2B9JLRaen6pUt%2F7ErMxI",
+          "https://hn.bfvvs.com/play/bYEWNGpb/index.m3u8"
+        ]
+      ],
+      "wolong": [
+        [
+          "第01集",
+          "age_e5e0fhBKQlEu47DMvHcUQW4nlLermQF60aN9yD9j2xeyHlQjYjqb7Ec04s6%2BtfPtiI8VBsYeInfWTyBjB6iuDsypl3EAxDWDwoiang",
+          "https://cdn.wlcdn88.com:777/c5249ea3/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_56b0IFQAt1jBgoZ1pcG8Kt94GHsXF%2B1sKafD2iKYPcygMLlcTGkGJkavfwjQtO6T%2BislNCIQA8SgqELAqcAHL3seByX2tCLN39s73g",
+          "https://cdn.wlcdn88.com:777/49702150/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_4547FY%2FMX2D91J%2FhfqvC1Q92BHax6X5KH9QDYkQQaGmMeIyZDxk3W7fCV5uirVx76PETP8A4o4VOrYLRDjYrukGj2wgwN%2Fp3ZoHjVA",
+          "https://cdn.wlcdn88.com:777/8373e4d8/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_0e3d%2FCq47GpDpF2c7aee6WluDwoTljQsdl9YeCl%2FG%2FlRxwd2Iu2ZBbRxfvFS66VhFmeAHdr0ekPjj3EfTAIY7hcXThQ44zeBdtqS%2BA",
+          "https://cdn.wlcdn88.com:777/1c5a1ccb/index.m3u8"
         ]
       ]
     },

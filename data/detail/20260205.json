@@ -15,17 +15,18 @@
       "奇幻"
     ],
     "playlists": {
-      "xigua": [
-        [
-          "第01集",
-          "age_6ec7IXgSgUBhnoSflWuy3A%2FQtR%2BYtMieEqzdDMmQeSg0VPC76qUgxWYxQ6SrXaDu6T8Nx99NSmhd3xyehVDMXMRW"
-        ]
-      ],
-      "bfzym3u8": [
+      "hkan_line1": [
         [
           "第1集",
-          "age_8d8cAWQ%2BOSUYu6jhekskAOYNEXyLKECgRZFINeY1zDt8VUMcSnBqJz0Pv1bdXncOLnvCCQoVgRBuxk2fNlWxaRenFm5iDxMI98DPMf98swU2U52QnMFB7Qmux2NiRTADRMfyGmdOhwBeqFp2OoTZSQoc0U%2BarIr2igiiKLWw8JQBHTc",
-          "https://v.baofeng11.com/video/wuzhizhuanshengdaoliaoyishijiejiunachuzhenbenshi/5bdf1082c3ed/index.m3u8"
+          "/play/333707-41-3537893.html"
+        ],
+        [
+          "第2集",
+          "/play/333707-41-4318976.html"
+        ],
+        [
+          "第3集",
+          "/play/333707-41-4423691.html"
         ]
       ],
       "wjm3u8": [
@@ -40,18 +41,17 @@
           "https://v2.ppqrrs.com/wjv2/202607/04/gieFbD4DRN90/video/index.m3u8"
         ]
       ],
-      "hkan_line1": [
+      "xigua": [
+        [
+          "第01集",
+          "age_6ec7IXgSgUBhnoSflWuy3A%2FQtR%2BYtMieEqzdDMmQeSg0VPC76qUgxWYxQ6SrXaDu6T8Nx99NSmhd3xyehVDMXMRW"
+        ]
+      ],
+      "bfzym3u8": [
         [
           "第1集",
-          "/play/333707-41-3537893.html"
-        ],
-        [
-          "第2集",
-          "/play/333707-41-4318976.html"
-        ],
-        [
-          "第3集",
-          "/play/333707-41-4423691.html"
+          "age_8d8cAWQ%2BOSUYu6jhekskAOYNEXyLKECgRZFINeY1zDt8VUMcSnBqJz0Pv1bdXncOLnvCCQoVgRBuxk2fNlWxaRenFm5iDxMI98DPMf98swU2U52QnMFB7Qmux2NiRTADRMfyGmdOhwBeqFp2OoTZSQoc0U%2BarIr2igiiKLWw8JQBHTc",
+          "https://v.baofeng11.com/video/wuzhizhuanshengdaoliaoyishijiejiunachuzhenbenshi/5bdf1082c3ed/index.m3u8"
         ]
       ]
     },

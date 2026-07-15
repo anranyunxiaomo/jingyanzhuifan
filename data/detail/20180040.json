@@ -14,6 +14,73 @@
       "奇幻"
     ],
     "playlists": {
+      "hnm3u8": [
+        [
+          "第01集",
+          "age_bbb19yRmsc3WBP4MV3GTZTYt%2B4B6uk5yyzjKCEBeXj6QWXo3qqpk2Bht%2BEZ4bxlq%2B%2BD%2BAwqIYAJ4CIcTijZolJ1QvveTurmac%2Fk",
+          "https://64.32.20.246/play/DbDRQAYe/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_6b8dAOIwLCL12VIW2JqWvF0PGL%2BPKIqAQNcx0nqvtfXAud16z3HgVtsvX3fLCQVjzUVGs%2B8%2FkZVUI0ze6pqrH3g2PPn5vfpCv9I",
+          "https://64.32.20.246/play/1aKOLRza/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_be8eHAtefKZW6efR88M8fZEiQyMOwROPlclAjP5OItfp6o29kBWbv%2B6L8LvUxKFw5ssHtu634JQq60Bix7F46U01ivvHkz93isw",
+          "https://64.32.20.246/play/YaO7PRGa/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_3bf6kyqwq%2BtTkgNEgXxSBZKBI51hdVX20ymT5UbaNhD7prrTkT%2F9UeljH0Y3a%2Bh30Ictr22jdcTAu7je6jC1cDzwU0vUcwrEI%2BQ",
+          "https://64.32.20.246/play/5eVm799d/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_4077NePj8NcnWekvd1DscPlHklcv2CjBXpiIkZuwpXJdeHX6b5oT6cJ%2BgzmWS9lrnSn6xn3I%2BbBforbQ%2F2Wrrf94y8YWTvzrxrw",
+          "https://64.32.20.246/play/QeZ4zREb/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_ccbarhm5E6kFYyHiUpkxKpSXhVlWEiFyWLaq0UcPcT%2FmXCTujFY0%2BgYVm9Mf99xxMSqYZP99dH%2F6xlz2OvnCL1mCzY77sKgsnqs",
+          "https://64.32.20.246/play/Rb48zJ0b/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_b532lSftm15%2BoIW6rw39YoZJA9K7tM9o%2BZ6peuMiP66uOdf7qcXKtkUgmDvzt1%2F6RB1yhJkXFpsesBmcjevbZ1Ldx94mngMYwCU",
+          "https://64.32.20.246/play/yb8qMl5d/index.m3u8"
+        ],
+        [
+          "第08集",
+          "age_6c21uqdTUWwIlnF9jB%2ByjQeQindZ%2FN%2B5npHqrYBCltA2Ph2Z%2F6ERsP1gUvelEaJGo5AFgwuSZ0fdN2waV0cjFL6vOrS5VakvH7o",
+          "https://64.32.20.246/play/lej20Pze/index.m3u8"
+        ],
+        [
+          "第09集",
+          "age_419fK2widSzwnB4GlhMVfP22jJeK6M7r4pzDiuSR9JfKdCwp5oNZG2zDkOGeL4tJCgyijc0prKQczqyzLogPQwKUgJg42y0qmdM",
+          "https://64.32.20.246/play/penZgPDe/index.m3u8"
+        ],
+        [
+          "第10集",
+          "age_15ffFkP5k1Sngo8wQWbfMxN%2FqLYVVEVo%2F0sz2xMfAWsIahghu4KK%2BRmqpMmOEgzhcnrDcLn0Ps5SeHrm%2Fm4Kfo%2BRkLilqhYD38o",
+          "https://64.32.20.246/play/Yer0mnkb/index.m3u8"
+        ],
+        [
+          "第11集",
+          "age_f57aNQh6t6%2B5qrN5lqE3uhu%2FM%2Be1%2FWWQXG7v5niX8zfjVHY4AGj0MsSA0lTFSBadK1gjKBhxEtpFQ%2Br5lDSc7yH939RS7oKiiwc",
+          "https://64.32.20.246/play/Pdy89xwb/index.m3u8"
+        ],
+        [
+          "第12集",
+          "age_9f0czYSA5i%2FrFsexoV8WVoDew2oF%2FcrctpN89M1C7I6ItVdLPSqyhy8De644ObMJEzpdrnsWlSeAVuh506aqVUvi1gxF70jT5B8",
+          "https://64.32.20.246/play/DbDRQlYe/index.m3u8"
+        ],
+        [
+          "第13集",
+          "age_fbccpObTpv6Rvcts%2Bl1zsWDg4pY6psb5co5nKO9%2F6Q1NsiD8UJOLEO%2FCGayzqRrCUBM9ipqOX9mJ7A%2Fml2rT8dMSEvsoWLs4FYE",
+          "https://64.32.20.246/play/1aKOLvza/index.m3u8"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
@@ -136,73 +203,6 @@
           "第12集",
           "age_3a79cfa3ayO2aCkl5ivmFRz0rRyhBM7uBeghnmfxMJt2x0lRAkxEzOy0HGPRYYMagYIMfatfRpZ36rqJY8KwflRXWtld6bzUpdgsrbTWfIfh1JWTtQ87tIqlkA%2BhixvJkecLyepiArA",
           "https://c1.rrcdnbf2.com/video/yaojingsenlindexiaobudian/第12集/index.m3u8"
-        ]
-      ],
-      "hnm3u8": [
-        [
-          "第01集",
-          "age_bbb19yRmsc3WBP4MV3GTZTYt%2B4B6uk5yyzjKCEBeXj6QWXo3qqpk2Bht%2BEZ4bxlq%2B%2BD%2BAwqIYAJ4CIcTijZolJ1QvveTurmac%2Fk",
-          "https://64.32.20.246/play/DbDRQAYe/index.m3u8"
-        ],
-        [
-          "第02集",
-          "age_6b8dAOIwLCL12VIW2JqWvF0PGL%2BPKIqAQNcx0nqvtfXAud16z3HgVtsvX3fLCQVjzUVGs%2B8%2FkZVUI0ze6pqrH3g2PPn5vfpCv9I",
-          "https://64.32.20.246/play/1aKOLRza/index.m3u8"
-        ],
-        [
-          "第03集",
-          "age_be8eHAtefKZW6efR88M8fZEiQyMOwROPlclAjP5OItfp6o29kBWbv%2B6L8LvUxKFw5ssHtu634JQq60Bix7F46U01ivvHkz93isw",
-          "https://64.32.20.246/play/YaO7PRGa/index.m3u8"
-        ],
-        [
-          "第04集",
-          "age_3bf6kyqwq%2BtTkgNEgXxSBZKBI51hdVX20ymT5UbaNhD7prrTkT%2F9UeljH0Y3a%2Bh30Ictr22jdcTAu7je6jC1cDzwU0vUcwrEI%2BQ",
-          "https://64.32.20.246/play/5eVm799d/index.m3u8"
-        ],
-        [
-          "第05集",
-          "age_4077NePj8NcnWekvd1DscPlHklcv2CjBXpiIkZuwpXJdeHX6b5oT6cJ%2BgzmWS9lrnSn6xn3I%2BbBforbQ%2F2Wrrf94y8YWTvzrxrw",
-          "https://64.32.20.246/play/QeZ4zREb/index.m3u8"
-        ],
-        [
-          "第06集",
-          "age_ccbarhm5E6kFYyHiUpkxKpSXhVlWEiFyWLaq0UcPcT%2FmXCTujFY0%2BgYVm9Mf99xxMSqYZP99dH%2F6xlz2OvnCL1mCzY77sKgsnqs",
-          "https://64.32.20.246/play/Rb48zJ0b/index.m3u8"
-        ],
-        [
-          "第07集",
-          "age_b532lSftm15%2BoIW6rw39YoZJA9K7tM9o%2BZ6peuMiP66uOdf7qcXKtkUgmDvzt1%2F6RB1yhJkXFpsesBmcjevbZ1Ldx94mngMYwCU",
-          "https://64.32.20.246/play/yb8qMl5d/index.m3u8"
-        ],
-        [
-          "第08集",
-          "age_6c21uqdTUWwIlnF9jB%2ByjQeQindZ%2FN%2B5npHqrYBCltA2Ph2Z%2F6ERsP1gUvelEaJGo5AFgwuSZ0fdN2waV0cjFL6vOrS5VakvH7o",
-          "https://64.32.20.246/play/lej20Pze/index.m3u8"
-        ],
-        [
-          "第09集",
-          "age_419fK2widSzwnB4GlhMVfP22jJeK6M7r4pzDiuSR9JfKdCwp5oNZG2zDkOGeL4tJCgyijc0prKQczqyzLogPQwKUgJg42y0qmdM",
-          "https://64.32.20.246/play/penZgPDe/index.m3u8"
-        ],
-        [
-          "第10集",
-          "age_15ffFkP5k1Sngo8wQWbfMxN%2FqLYVVEVo%2F0sz2xMfAWsIahghu4KK%2BRmqpMmOEgzhcnrDcLn0Ps5SeHrm%2Fm4Kfo%2BRkLilqhYD38o",
-          "https://64.32.20.246/play/Yer0mnkb/index.m3u8"
-        ],
-        [
-          "第11集",
-          "age_f57aNQh6t6%2B5qrN5lqE3uhu%2FM%2Be1%2FWWQXG7v5niX8zfjVHY4AGj0MsSA0lTFSBadK1gjKBhxEtpFQ%2Br5lDSc7yH939RS7oKiiwc",
-          "https://64.32.20.246/play/Pdy89xwb/index.m3u8"
-        ],
-        [
-          "第12集",
-          "age_9f0czYSA5i%2FrFsexoV8WVoDew2oF%2FcrctpN89M1C7I6ItVdLPSqyhy8De644ObMJEzpdrnsWlSeAVuh506aqVUvi1gxF70jT5B8",
-          "https://64.32.20.246/play/DbDRQlYe/index.m3u8"
-        ],
-        [
-          "第13集",
-          "age_fbccpObTpv6Rvcts%2Bl1zsWDg4pY6psb5co5nKO9%2F6Q1NsiD8UJOLEO%2FCGayzqRrCUBM9ipqOX9mJ7A%2Fml2rT8dMSEvsoWLs4FYE",
-          "https://64.32.20.246/play/1aKOLvza/index.m3u8"
         ]
       ]
     },

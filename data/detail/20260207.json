@@ -14,13 +14,6 @@
       "奇幻"
     ],
     "playlists": {
-      "bilibili": [
-        [
-          "pv",
-          "age_b4bc5mQBBTZT%2BYnwM%2BinLD5nng0drPkAmS5lduOHrXm4EzAAo0urn2BHrZcqeoHwLT%2BXmhUNfHw2bqFxjQ0wLw9%2F9Z4j209n8w",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "a123_line1": [
         [
           "第01集",
@@ -119,6 +112,13 @@
         [
           "第12集",
           "anich_placeholder_38450_12"
+        ]
+      ],
+      "bilibili": [
+        [
+          "pv",
+          "age_b4bc5mQBBTZT%2BYnwM%2BinLD5nng0drPkAmS5lduOHrXm4EzAAo0urn2BHrZcqeoHwLT%2BXmhUNfHw2bqFxjQ0wLw9%2F9Z4j209n8w",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },

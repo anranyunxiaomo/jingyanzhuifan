@@ -14,56 +14,6 @@
       "奇幻"
     ],
     "playlists": {
-      "xigua": [
-        [
-          "第01集",
-          "age_bfa904wbYbhGNanHQqq5mXu514gf%2FP7MIh49vWfGc9iAYgfDcjJdzX9OYCZ5VW33hK53QUh6yoQr%2Fcu71UqFjCG7d8OJHZdnkdxe1u0gbsBfP9sGsVXg39IEb0bz9WlgIzBG"
-        ],
-        [
-          "第02集",
-          "age_9cd4r67t9PV%2F%2BbOEQjegBh0p2OCDPWxLZ1fq0ExlAK8nr0%2B5q%2BCqb3vNqi2K8dgWMzv4n75BKyzPjRoWx4j7i0eFS1NNvo7WqB%2Bn6utMQDVUrRUL%2Fs3c7SOLt%2F%2BDeLwQH8gH"
-        ],
-        [
-          "第03集",
-          "age_7a133%2F%2BMKHEb8VZQtUdcjKfokWTQHmKeat3MNTR4NZkx5oy%2FyS7q3INjYkXLD9jBOuGegfYyXCXvM5Ujiwzg7v%2BfkujVCAbBjeQe08w%2ByXW9HZhoxqXnWboqSKXwM2ZFS%2Ft%2F"
-        ],
-        [
-          "第04集",
-          "age_d7b4x8AITce0sBR25m6St8AAgN6XAn6lCzmtMj09%2FViR%2Br6jm%2BNsciKdg6rCRQGG0Vo3hQv%2BWvhLNe6fK8l6yKD4quOqjW175lNX0CHQDblSUTp%2Bv0SMRkMzhZqHVtvuIg0D"
-        ],
-        [
-          "第05集",
-          "age_b293rJhUzTwKG94ffJYKiCO8jpR%2FgnBUUGWmkRdgYgoJaokyRDLJDlSnL9on8YC7jA4pY6M6W3YMHVcKC9QNWo5hkDqPGyjyjnmFvbe6GS585DrIKgU%2F7046Ad07lO32GLJM"
-        ],
-        [
-          "第06集",
-          "age_d98fJQJQXzwb8yJ8A7Fm3AI4YEbdnL7Tb5zHFOFKf%2Fo4GVwvPItMZma78q6tJLO%2BLWY1B4je8laoHvZwkUuUbaRpTf6aE1kLRa%2F1G3x8a%2F6LI9TdsF60E7YUebzFi3D0VPha"
-        ],
-        [
-          "第07集",
-          "age_d137wOvXJ%2FZDpN576JqyUc0M3vBsI285Pphn87qHmRYMTdZChUM3Xb8dm9oIkd3jq8Kypcb5jXxDoWEwBzfCHdeyv7H6WITk%2BIqpvent%2FYuXebvvi2CT9A2CqH95yizpIU8%2F"
-        ],
-        [
-          "第08集",
-          "age_7531%2BfI9fhWuNm2Ed%2BT1kNqMUKLId5w%2F4IE7MHTKbS067qgihVs7CvO%2FSb1HlttsVEmiiGaxaVaymmlrnmMIGXWFsyYH6xSbrOZCegpDSnXascRt2zRA16%2BpTL7Tctvek%2ByE"
-        ],
-        [
-          "第09集",
-          "age_74042qG57jvxPgO7qylDlD9oRTj73RpsTDwMNlfgJKfpwAKz3Ed2QYxOcxQqKc701zzSV%2BvTM4wSuR8V4FpUF5feIGLQpekC8517AqXdPjWQLqaorw1NCnLUgZ1I2To0Psrp"
-        ],
-        [
-          "第10集",
-          "age_70c9n8HzDtAmtmWvY8SAXMuU9gB%2F2THPKxpi1PqFBZ40KiFZ14NoyHYrdmiHJetqIPdh7dSTJJ1POqpwvCmLS4tIz56sVc%2FnTooy8IngHtQqo9mq2uMun0JWVVQZ4E9%2Febkw"
-        ],
-        [
-          "第11集",
-          "age_9e7268jqnIvC0JLUYK011a94pjO38SbPk5ngQTAiGaNacx8GV5190LSYcGdFUa9QfcvzN9nIKc8CZOA%2BK2tSq7UbSSlM9u9h0f1ol6FGbZAy%2B14m5c2KXD4tlnt3guk1U8NF"
-        ],
-        [
-          "第12集",
-          "age_3cfebpvm%2FtbQBfPB4a2YRpznC1S8%2FzEg%2BT44tM4x6Up3Ka%2F0chF19RctI%2BHQcb89MBdl6RQnohSSAdWyF3WRYuCD0MUJDI%2BioAs3yzG9GGyIgaCFVWFQ1sTvgBoj%2F5RrJOyA"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -129,6 +79,56 @@
           "第13集",
           "age_65e2F7PDmmRnAijEhX7gJao2kNGjRRPOVCxhjlIjC2lua%2BwD9RC02WsPuH3ngnHP27mjwXQNUZ8IRbV0oUbSjFv67EO52JUNnqu0Tvbu%2FDFRMOme5w",
           "https://v.cdnlz19.com/20240318/22034_1f573feb/index.m3u8"
+        ]
+      ],
+      "xigua": [
+        [
+          "第01集",
+          "age_bfa904wbYbhGNanHQqq5mXu514gf%2FP7MIh49vWfGc9iAYgfDcjJdzX9OYCZ5VW33hK53QUh6yoQr%2Fcu71UqFjCG7d8OJHZdnkdxe1u0gbsBfP9sGsVXg39IEb0bz9WlgIzBG"
+        ],
+        [
+          "第02集",
+          "age_9cd4r67t9PV%2F%2BbOEQjegBh0p2OCDPWxLZ1fq0ExlAK8nr0%2B5q%2BCqb3vNqi2K8dgWMzv4n75BKyzPjRoWx4j7i0eFS1NNvo7WqB%2Bn6utMQDVUrRUL%2Fs3c7SOLt%2F%2BDeLwQH8gH"
+        ],
+        [
+          "第03集",
+          "age_7a133%2F%2BMKHEb8VZQtUdcjKfokWTQHmKeat3MNTR4NZkx5oy%2FyS7q3INjYkXLD9jBOuGegfYyXCXvM5Ujiwzg7v%2BfkujVCAbBjeQe08w%2ByXW9HZhoxqXnWboqSKXwM2ZFS%2Ft%2F"
+        ],
+        [
+          "第04集",
+          "age_d7b4x8AITce0sBR25m6St8AAgN6XAn6lCzmtMj09%2FViR%2Br6jm%2BNsciKdg6rCRQGG0Vo3hQv%2BWvhLNe6fK8l6yKD4quOqjW175lNX0CHQDblSUTp%2Bv0SMRkMzhZqHVtvuIg0D"
+        ],
+        [
+          "第05集",
+          "age_b293rJhUzTwKG94ffJYKiCO8jpR%2FgnBUUGWmkRdgYgoJaokyRDLJDlSnL9on8YC7jA4pY6M6W3YMHVcKC9QNWo5hkDqPGyjyjnmFvbe6GS585DrIKgU%2F7046Ad07lO32GLJM"
+        ],
+        [
+          "第06集",
+          "age_d98fJQJQXzwb8yJ8A7Fm3AI4YEbdnL7Tb5zHFOFKf%2Fo4GVwvPItMZma78q6tJLO%2BLWY1B4je8laoHvZwkUuUbaRpTf6aE1kLRa%2F1G3x8a%2F6LI9TdsF60E7YUebzFi3D0VPha"
+        ],
+        [
+          "第07集",
+          "age_d137wOvXJ%2FZDpN576JqyUc0M3vBsI285Pphn87qHmRYMTdZChUM3Xb8dm9oIkd3jq8Kypcb5jXxDoWEwBzfCHdeyv7H6WITk%2BIqpvent%2FYuXebvvi2CT9A2CqH95yizpIU8%2F"
+        ],
+        [
+          "第08集",
+          "age_7531%2BfI9fhWuNm2Ed%2BT1kNqMUKLId5w%2F4IE7MHTKbS067qgihVs7CvO%2FSb1HlttsVEmiiGaxaVaymmlrnmMIGXWFsyYH6xSbrOZCegpDSnXascRt2zRA16%2BpTL7Tctvek%2ByE"
+        ],
+        [
+          "第09集",
+          "age_74042qG57jvxPgO7qylDlD9oRTj73RpsTDwMNlfgJKfpwAKz3Ed2QYxOcxQqKc701zzSV%2BvTM4wSuR8V4FpUF5feIGLQpekC8517AqXdPjWQLqaorw1NCnLUgZ1I2To0Psrp"
+        ],
+        [
+          "第10集",
+          "age_70c9n8HzDtAmtmWvY8SAXMuU9gB%2F2THPKxpi1PqFBZ40KiFZ14NoyHYrdmiHJetqIPdh7dSTJJ1POqpwvCmLS4tIz56sVc%2FnTooy8IngHtQqo9mq2uMun0JWVVQZ4E9%2Febkw"
+        ],
+        [
+          "第11集",
+          "age_9e7268jqnIvC0JLUYK011a94pjO38SbPk5ngQTAiGaNacx8GV5190LSYcGdFUa9QfcvzN9nIKc8CZOA%2BK2tSq7UbSSlM9u9h0f1ol6FGbZAy%2B14m5c2KXD4tlnt3guk1U8NF"
+        ],
+        [
+          "第12集",
+          "age_3cfebpvm%2FtbQBfPB4a2YRpznC1S8%2FzEg%2BT44tM4x6Up3Ka%2F0chF19RctI%2BHQcb89MBdl6RQnohSSAdWyF3WRYuCD0MUJDI%2BioAs3yzG9GGyIgaCFVWFQ1sTvgBoj%2F5RrJOyA"
         ]
       ]
     },

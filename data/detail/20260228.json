@@ -13,18 +13,6 @@
       "奇幻"
     ],
     "playlists": {
-      "bfzym3u8": [
-        [
-          "第1集",
-          "age_4ec1E%2Fq4qPlwwhdjMPMuI6u9q4tK9JuDlWtlN6wGSvlpTgOrzVqsFV%2BZZJE0y9WbT%2Bld2PQB7JGJZ8zta%2B3Bj4JFdprKfBqsm63uhCmKQeiSBhQjbzp8Vs2MkKZoeHcr",
-          "https://v10.baofeng10.com/video/woduzidaomu/2c4462b4fc87/index.m3u8"
-        ],
-        [
-          "第2集",
-          "age_17d548UBWZ4znJzbHVgRQ9UbbjuCduhlFX%2BEY871DCvg9SqVm%2Bck82btPLu8RQO0lxHAuCIUv%2FOz4x8drTEmVCduWALGn%2FTl8foUHEEtYvwEH2pDMcOA4Ux6oYHLqvNz",
-          "https://v10.baofeng10.com/video/woduzidaomu/1f3e35e285a6/index.m3u8"
-        ]
-      ],
       "wjm3u8": [
         [
           "第01集",
@@ -85,6 +73,18 @@
           "第12集",
           "age_9fd0MWrzsckdOsYnsYEP1qd02Xvnak0jzoJ%2BTTOD5llzNIuo3Dpp%2FCGwrlUcxOARin6H77ij%2FfVw5V368GINO6GiG6RU3gBC6Jsdmm%2BMaH1k%2F5W4gXaW70IXPSO9VbU",
           "https://v8.ppqrrs.com/wjv8/202606/19/adLE6ny3uW89/video/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第1集",
+          "age_4ec1E%2Fq4qPlwwhdjMPMuI6u9q4tK9JuDlWtlN6wGSvlpTgOrzVqsFV%2BZZJE0y9WbT%2Bld2PQB7JGJZ8zta%2B3Bj4JFdprKfBqsm63uhCmKQeiSBhQjbzp8Vs2MkKZoeHcr",
+          "https://v10.baofeng10.com/video/woduzidaomu/2c4462b4fc87/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_17d548UBWZ4znJzbHVgRQ9UbbjuCduhlFX%2BEY871DCvg9SqVm%2Bck82btPLu8RQO0lxHAuCIUv%2FOz4x8drTEmVCduWALGn%2FTl8foUHEEtYvwEH2pDMcOA4Ux6oYHLqvNz",
+          "https://v10.baofeng10.com/video/woduzidaomu/1f3e35e285a6/index.m3u8"
         ]
       ],
       "lzm3u8": [

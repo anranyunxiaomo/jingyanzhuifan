@@ -12,20 +12,6 @@
       "竞技"
     ],
     "playlists": {
-      "xigua": [
-        [
-          "第01集",
-          "age_d0a66xz8J%2BsyEIBYx0x4GfW747DHPj%2BlMsQ9yb0XO6C28%2BT0TieV3Xbh%2FptuADfwFMmwcf0B%2BkVTNmwFQQSVhfRy",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
-      "ffm3u8": [
-        [
-          "第01集",
-          "age_2cb3EZlBb3dh%2BC1FC0dNys5iw7A4G4Bg4UD2NYIZynHe7aHyzuBBdZsr1bg%2FVTdbiapJmX4TSsJoT6uF2wzYOx4Amys8dx%2Fi4twmH786A1nG8PYlF8j7g1Lc",
-          "https://vip.ffzy-plays.com/20260707/55502_de661ab8/index.m3u8"
-        ]
-      ],
       "bfzym3u8": [
         [
           "第01集",
@@ -36,13 +22,6 @@
           "第02集",
           "age_ac8dcKvLOVPPNx%2BBZ%2F8k7ud93Km01d6KGBufzqXgR31n0LfuR4arF12zFUPEGEA%2BbHmO9kEQG5VAmNGEAVPPLgPXoD7EzjQPOVAV6fWqA%2BXmFyctCbtCw09MWuW51ADCKJ9yIRP7NocJdU3IICX3crhiLRmWaRnnVLCF",
           "https://v.baofeng11.com/video/ganxieduizhandaxiaojiecaibuwangedouyouxi/36f17c994e85/index.m3u8"
-        ]
-      ],
-      "wjm3u8": [
-        [
-          "第01集",
-          "age_2e62vmydvBpGbcw4TDxOfCtHpeD295L0I2rTT0XzZidztkuNm5d%2FVBRLZ7Iv4t2sA4Na%2FvgAIDELlP5RDRJpm%2B%2B8omzkzpo2GWCkTB%2FOfBI%2FMJ0TS2JxEsOn0xcNeAs",
-          "https://v7.ppqrrs.com/wjv7/202607/07/gPvM77qX3a87/video/index.m3u8"
         ]
       ],
       "lzm3u8": [
@@ -65,6 +44,27 @@
         [
           "第02集",
           "anich_placeholder_38372_2"
+        ]
+      ],
+      "xigua": [
+        [
+          "第01集",
+          "age_d0a66xz8J%2BsyEIBYx0x4GfW747DHPj%2BlMsQ9yb0XO6C28%2BT0TieV3Xbh%2FptuADfwFMmwcf0B%2BkVTNmwFQQSVhfRy",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "age_2cb3EZlBb3dh%2BC1FC0dNys5iw7A4G4Bg4UD2NYIZynHe7aHyzuBBdZsr1bg%2FVTdbiapJmX4TSsJoT6uF2wzYOx4Amys8dx%2Fi4twmH786A1nG8PYlF8j7g1Lc",
+          "https://vip.ffzy-plays.com/20260707/55502_de661ab8/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_2e62vmydvBpGbcw4TDxOfCtHpeD295L0I2rTT0XzZidztkuNm5d%2FVBRLZ7Iv4t2sA4Na%2FvgAIDELlP5RDRJpm%2B%2B8omzkzpo2GWCkTB%2FOfBI%2FMJ0TS2JxEsOn0xcNeAs",
+          "https://v7.ppqrrs.com/wjv7/202607/07/gPvM77qX3a87/video/index.m3u8"
         ]
       ]
     },

@@ -14,13 +14,6 @@
       "科幻"
     ],
     "playlists": {
-      "tkm3u8": [
-        [
-          "HD",
-          "age_0e72XcdqfK%2BwqCTt530PLgd3H7IK2%2B2kUK3Z33a74a7fD8lFXUGDKl1MnBLAol8PHmFGhXUoLg%2F71PXPziFyIW%2BwKbJTaHP%2B1D%2Bi92g",
-          "https://v3.dious.cc/20220329/kJu3g3tI/index.m3u8"
-        ]
-      ],
       "bfzym3u8": [
         [
           "第01集",
@@ -86,6 +79,13 @@
           "第13集",
           "age_b017N40UjlIBRv9VeSzpFZIsWCTIfUauuOo%2B0b7H2y1DR57cvQ3I1%2BUZAwdDrcu7hJsNw%2Fo6AcvIw41t1uJcsxWAR%2FEbqBbD5EiMrznrBi77XHshnEmN4cw4f%2B844Dloww",
           "https://c1.rrcdnbf4.com/video/zuizhongbingqibinv/第13集/index.m3u8"
+        ]
+      ],
+      "tkm3u8": [
+        [
+          "HD",
+          "age_0e72XcdqfK%2BwqCTt530PLgd3H7IK2%2B2kUK3Z33a74a7fD8lFXUGDKl1MnBLAol8PHmFGhXUoLg%2F71PXPziFyIW%2BwKbJTaHP%2B1D%2Bi92g",
+          "https://v3.dious.cc/20220329/kJu3g3tI/index.m3u8"
         ]
       ]
     },

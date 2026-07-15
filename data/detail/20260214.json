@@ -15,10 +15,18 @@
       "奇幻"
     ],
     "playlists": {
-      "xigua": [
+      "hkan_line1": [
         [
-          "第01集",
-          "age_4cb2Doo7m4tBDMLijAFiWh4kYJ7U1HuWAnXoL4fuIkOGmkj7qg3g7cwhqUuoJdSNe%2FmvA4GS8wdSDiepCzHqr3jR"
+          "第1集",
+          "/play/352024-41-4280203.html"
+        ],
+        [
+          "第2集",
+          "/play/352024-41-4280204.html"
+        ],
+        [
+          "第3集",
+          "/play/352024-41-4377692.html"
         ]
       ],
       "ffm3u8": [
@@ -79,18 +87,10 @@
           "anich_placeholder_38366_2"
         ]
       ],
-      "hkan_line1": [
+      "xigua": [
         [
-          "第1集",
-          "/play/352024-41-4280203.html"
-        ],
-        [
-          "第2集",
-          "/play/352024-41-4280204.html"
-        ],
-        [
-          "第3集",
-          "/play/352024-41-4377692.html"
+          "第01集",
+          "age_4cb2Doo7m4tBDMLijAFiWh4kYJ7U1HuWAnXoL4fuIkOGmkj7qg3g7cwhqUuoJdSNe%2FmvA4GS8wdSDiepCzHqr3jR"
         ]
       ]
     },

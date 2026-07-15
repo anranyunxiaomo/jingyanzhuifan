@@ -13,6 +13,20 @@
       "后宫"
     ],
     "playlists": {
+      "hkan_line1": [
+        [
+          "第1集",
+          "/play/350218-41-4176285.html"
+        ],
+        [
+          "第2集",
+          "/play/350218-41-4289822.html"
+        ],
+        [
+          "第3集",
+          "/play/350218-41-4393000.html"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
@@ -21,13 +35,6 @@
         [
           "第02集",
           "age_2032tDllMDI4xEkDaeK0oM%2BcjSyFdG1CY7sUhbdYC84h7ja2Gy5dVfFxy92hZvpPBGCQlzB4wCGhV3jrckP0bvY"
-        ]
-      ],
-      "ffm3u8": [
-        [
-          "第01集",
-          "age_1d7fheCgwxZhinV8T5SRdQVQDF0BbD8rb6wcufBuLobY1PqkOxpC082m0fPc1P5onGa5buwX1HFL0IJUAVTc%2F21caYmERUTeUJxcYemaWXuXMlsRgpZPmp%2Fi",
-          "https://vip.ffzy-plays.com/20260626/55163_363ac91a/index.m3u8"
         ]
       ],
       "bfzym3u8": [
@@ -42,13 +49,6 @@
           "https://v.baofeng11.com/video/luodixianzhedexueyuanwushuangdierhuizhuanshengSdengjizuobimoshushimaoxianji/c1e818f37d10/index.m3u8"
         ]
       ],
-      "wjm3u8": [
-        [
-          "第01集",
-          "age_302bGYMBdaQVgvtDtEAL0Jl5LW78AULDH5pJmdWvwpLaSyJfz5ghFX4o%2FcvvVjYLICDU7Br%2BWyl8WEmGL%2FvF1ggUBIMDplLXYov88yBlQADB6947lttE9SJLYT8VjHE",
-          "https://v2.ppqrrs.com/wjv2/202606/25/gf1keqwEbt89/video/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -61,18 +61,18 @@
           "https://v.lzcdn31.com/20260702/7862_b1d52554/index.m3u8"
         ]
       ],
-      "hkan_line1": [
+      "ffm3u8": [
         [
-          "第1集",
-          "/play/350218-41-4176285.html"
-        ],
+          "第01集",
+          "age_1d7fheCgwxZhinV8T5SRdQVQDF0BbD8rb6wcufBuLobY1PqkOxpC082m0fPc1P5onGa5buwX1HFL0IJUAVTc%2F21caYmERUTeUJxcYemaWXuXMlsRgpZPmp%2Fi",
+          "https://vip.ffzy-plays.com/20260626/55163_363ac91a/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
         [
-          "第2集",
-          "/play/350218-41-4289822.html"
-        ],
-        [
-          "第3集",
-          "/play/350218-41-4393000.html"
+          "第01集",
+          "age_302bGYMBdaQVgvtDtEAL0Jl5LW78AULDH5pJmdWvwpLaSyJfz5ghFX4o%2FcvvVjYLICDU7Br%2BWyl8WEmGL%2FvF1ggUBIMDplLXYov88yBlQADB6947lttE9SJLYT8VjHE",
+          "https://v2.ppqrrs.com/wjv2/202606/25/gf1keqwEbt89/video/index.m3u8"
         ]
       ]
     },

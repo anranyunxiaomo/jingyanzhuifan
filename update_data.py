@@ -721,6 +721,221 @@ def generate_healing_and_related_logic():
     print(f"[RELATED] Successfully injected related recommendations into {related_injected} detail files.\n")
 
 
+def rebuild_static_index_and_assets():
+    """
+    一键重建 search_index.json 并更新 index.html 缓存版本号的统一函数。
+    支持在不走网络的情况下，由本地自检愈合脚本或普通 push 构建时直接调用。
+    在重建过程中，会强制执行 playlists 集数降序排序并回写详情。
+    """
+    print("\n[INDEX] Rebuilding search_index.json from all local details...")
+    index_data = []
+    seen_aids = set()
+    
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid_str = filename[:-5]
+            detail_file_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_file_path, 'r', encoding='utf-8') as f:
+                    detail = json.load(f)
+                    video = detail.get("video", {})
+                    
+                    # 💡 核心对齐：集数多的播放源优先排到前面
+                    playlists = video.get("playlists", {})
+                    if playlists:
+                        sorted_playlists = dict(sorted(playlists.items(), key=lambda item: len(item[1]) if isinstance(item[1], list) else 0, reverse=True))
+                        if list(playlists.keys()) != list(sorted_playlists.keys()):
+                            video["playlists"] = sorted_playlists
+                            detail["video"] = video
+                            with open(detail_file_path, 'w', encoding='utf-8') as fw:
+                                json.dump(detail, fw, ensure_ascii=False, indent=2)
+                                
+                    title = video.get("name")
+                    if title and aid_str not in seen_aids:
+                        # 💡 过滤敏感、少儿与非动漫垃圾片源
+                        is_sensitive = is_sensitive_anime(title, video.get("plot", ""), video.get("tags", ""))
+                        is_kids = is_kids_anime(title, video.get("plot", ""), video.get("tags", ""))
+                        is_unwanted = is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", ""))
+                        tags_val = video.get("tags", "")
+                        plot_val = video.get("plot", "")
+                        is_garbage = is_non_anime_garbage(title, tags_val, plot_val)
+                        
+                        if is_sensitive or is_kids or is_unwanted or is_garbage:
+                            try:
+                                os.remove(detail_file_path)
+                                print(f"  [CLEANUP] Deleted kids/sensitive/garbage local JSON: {filename} ({title})")
+                            except:
+                                pass
+                            continue
+                            
+                        pinyin_code = get_pinyin_initials(title)
+                        entry_aid = aid_str
+                        if aid_str.isdigit():
+                            entry_aid = int(aid_str)
+                            
+                        mtime = calculate_logical_update_time(video, detail_file_path)
+                        index_data.append({
+                            "AID": entry_aid,
+                            "Title": title,
+                            "Pinyin": pinyin_code,
+                            "Cover": video.get("cover", "") or video.get("pic", ""),
+                            "Status": video.get("status", "连载"),
+                            "UpToDate": calculate_uptodate(video),
+                            "UpdateTime": mtime
+                        })
+                        seen_aids.add(aid_str)
+            except Exception as e:
+                print(f"[WARNING] Failed to parse detail file {filename}: {e}")
+                
+    index_data.sort(key=lambda x: x.get("UpdateTime", 0), reverse=True)
+    save_search_index(index_data)
+    print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
+    
+    # Cache Busting
+    print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
+    try:
+        index_path = "index.html"
+        if os.path.exists(index_path):
+            with open(index_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            import datetime
+            tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
+            now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
+            
+            import re
+            content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
+            content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
+            content = re.sub(r'window\.JYZF_VERSION\s*=\s*["\'][0-9a-zA-Z_]+["\']', f'window.JYZF_VERSION = "{now_str}"', content)
+            
+            with open(index_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f"[SUCCESS] Updated index.html asset versions to: {now_str}")
+        else:
+            print("[WARNING] index.html not found, skipping Cache Busting.")
+    except Exception as cache_err:
+        print(f"[ERROR] Failed to update asset versions: {cache_err}")
+
+
+def auto_align_non_age_animes_from_age():
+    """
+    自动自检：遍历本地 detail 中的非标准 AGE ID 文件（如暴风网的非八位数字 ID、或 a123_ 开头的文件，
+    或者虽然是数字但封面为空/失效的动漫），去 AGE 平台查询最新数据。
+    若存在，则自动拉取 AGE 数据，更新动漫封面，并将本地数据进行合并升级与清理，
+    从而将“非 AGE 动漫”自动过渡、自检回 AGE 主数据体系中。
+    """
+    print("\n🌐 [AUTO-SELF-CHECK] 开启本地非标准 AGE 动漫自检与自动对齐...")
+    if not os.path.exists(DETAIL_DIR):
+        return
+        
+    files = [f for f in os.listdir(DETAIL_DIR) if f.endswith(".json")]
+    non_age_files = []
+    
+    for f in files:
+        aid_str = f[:-5]
+        # 非 8 位数字开头的，或者不是以 20 开头的标准 AGE ID，或者是 a123_ 开头的
+        is_standard_age = aid_str.isdigit() and len(aid_str) == 8 and aid_str.startswith("20")
+        if not is_standard_age:
+            non_age_files.append(f)
+            
+    print(f"📊 扫描到本地非标准 AGE 动漫文件共计: {len(non_age_files)} 个")
+    
+    # 💡 每次自检限制前 15 个，防止 ScraperAPI 和 API 额度超限，实现温和增量自检
+    checked_count = 0
+    aligned_count = 0
+    
+    for filename in non_age_files:
+        if checked_count >= 15:
+            print(f"[INFO] 已达到本次增量自检限制 (15 部)，暂停自检。")
+            break
+            
+        file_path = os.path.join(DETAIL_DIR, filename)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f_read:
+                detail = json.load(f_read)
+                
+            video = detail.get("video", {})
+            title = video.get("name", "").strip()
+            if not title:
+                continue
+                
+            checked_count += 1
+            print(f"🔍 [{checked_count}] 正在去 AGE 检索自检动漫: '{title}' (本地 ID: {filename[:-5]})...")
+            
+            # 💡 联网搜索依然使用归一化标题
+            search_title = title.replace(" ", "").replace("-", "").replace("：", "").replace(":", "")
+            search_title = re.sub(r'(第[一二三四五六七八九十0-9]+季|第[一二三四五六七八九十0-9]+部分|第[一二三四五六七八九十0-9]+期|act2|Ⅱ|Ⅲ|Ⅳ|Ⅴ|\d+|(?:日|国)语版|中字)$', '', search_title, flags=re.IGNORECASE).strip()
+            if not search_title:
+                search_title = title
+                
+            search_res = request_api("search", {"query": search_title})
+            matched_aid = None
+            matched_cover = None
+            
+            if search_res and search_res.get("code") == 200:
+                videos = search_res.get("data", {}).get("videos", [])
+                for v in videos:
+                    v_name = v.get("name", "").replace(" ", "").replace("-", "").replace("：", "").replace(":", "")
+                    clean_v_name = re.sub(r'(第[一二三四五六七八九十0-9]+季|第[一二三四五六七八九十0-9]+部分|第[一二三校五六七八九十0-9]+期|act2|Ⅱ|Ⅲ|Ⅳ|Ⅴ|\d+|(?:日|国)语版|中字)$', '', v_name, flags=re.IGNORECASE).strip()
+                    
+                    # 精准或高度模糊匹配标题
+                    if search_title and clean_v_name and (search_title in clean_v_name or clean_v_name in search_title):
+                        matched_aid = str(v.get("AID") or v.get("id") or "")
+                        matched_cover = v.get("cover")
+                        break
+                        
+            if matched_aid:
+                print(f"  ✨ [FOUND ON AGE] 在 AGE 平台找到了匹配项! AID: {matched_aid}")
+                
+                # 进一步拉取 AGE 的完整详情
+                age_detail = request_api(f"detail/{matched_aid}")
+                if age_detail:
+                    # 💡 合并逻辑：以 AGE 数据为主，同时合并保留原本地的一些独占播放线路（如 A123 或 暴风 线路）
+                    age_video = age_detail.get("video", {})
+                    age_playlists = age_video.get("playlists", {})
+                    
+                    # 把本地已有的播放线路合并进去
+                    local_playlists = video.get("playlists", {})
+                    for key, val in local_playlists.items():
+                        if key not in age_playlists:
+                            age_playlists[key] = val
+                            
+                    # 更新封面
+                    if matched_cover:
+                        age_video["cover"] = matched_cover
+                        print(f"  🖼️  [COVER UPDATE] 已成功将封面对齐至 AGE 官方地址: {matched_cover}")
+                        
+                    age_detail["video"] = age_video
+                    
+                    # 写入新 AGE ID 对应的详情文件
+                    new_detail_path = os.path.join(DETAIL_DIR, f"{matched_aid}.json")
+                    with open(new_detail_path, 'w', encoding='utf-8') as fw:
+                        json.dump(age_detail, fw, ensure_ascii=False, indent=2)
+                        
+                    # 物理删除老的非标准 ID 文件，完成自动过渡
+                    if os.path.exists(file_path) and str(matched_aid) != str(filename[:-5]):
+                        try:
+                            os.remove(file_path)
+                            print(f"  🗑️  [CLEANUP] 成功物理清理老旧非标准详情文件: {filename}")
+                        except Exception as rm_err:
+                            print(f"  [WARN] 清理老旧文件 {filename} 失败: {rm_err}")
+                            
+                    aligned_count += 1
+                    print(f"  ✅ [SUCCESS] 成功完成动漫 '{title}' 的 AGE 自检对齐与自动更新！")
+                else:
+                    print(f"  [WARNING] 无法拉取 AGE AID {matched_aid} 的详情数据，本次跳过。")
+            else:
+                print(f"  [NOT FOUND] AGE 平台暂无 '{title}' 的匹配数据。")
+                
+            # 适当延时，防止 API 限频
+            time.sleep(1.0)
+            
+        except Exception as file_err:
+            print(f"[WARN] 自检文件 {filename} 失败: {file_err}")
+            
+    print(f"🏁 [AUTO-SELF-CHECK FINISHED] 本次 AGE 自动自检对齐完成。扫描: {checked_count} 部，对齐更新成功: {aligned_count} 部。\n")
+
+
 # ==========================================================================
 # 🚀 异步并发主任务
 # ==========================================================================
@@ -1227,81 +1442,7 @@ async def main_async():
 
 
     # 💡 稳健大杀器：一键重建最新的 search_index.json，使本地模糊搜索能 100% 覆盖所有已缓存/同步的动漫
-    print("\n[INDEX] Rebuilding search_index.json from all local details...")
-    index_data = []
-    seen_aids = set()
-    
-    for filename in os.listdir(DETAIL_DIR):
-        if filename.endswith(".json"):
-            aid_str = filename[:-5]
-            detail_file_path = os.path.join(DETAIL_DIR, filename)
-            try:
-                with open(detail_file_path, 'r', encoding='utf-8') as f:
-                    detail = json.load(f)
-                    video = detail.get("video", {})
-                    title = video.get("name")
-                    if title and aid_str not in seen_aids:
-                        # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
-                        if is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")):
-                            try:
-                                os.remove(detail_file_path)
-                                print(f"  [CLEANUP] Deleted kids/sensitive/western/foreign local JSON: {filename} ({title})")
-                            except:
-                                pass
-                            continue
-                        pinyin_code = get_pinyin_initials(title)
-                        entry_aid = aid_str
-                        if aid_str.isdigit():
-                            entry_aid = int(aid_str)
-                            
-                        # 💡 基于 JSON 原生属性计算逻辑时效分数，彻底防物理修改时间易受本地污染的弊端
-                        mtime = calculate_logical_update_time(video, detail_file_path)
-                        index_data.append({
-                            "AID": entry_aid,
-                            "Title": title,
-                            "Pinyin": pinyin_code,
-                            "Cover": video.get("cover", "") or video.get("pic", ""),
-                            "Status": video.get("status", "连载"),
-                            "UpToDate": calculate_uptodate(video),
-                            "UpdateTime": mtime
-                        })
-                        seen_aids.add(aid_str)
-
-            except Exception as e:
-                print(f"[WARNING] Failed to parse detail file {filename}: {e}")
-                
-    # 💡 按 UpdateTime 从大到小（最新修改的排最前）进行全局排序
-    index_data.sort(key=lambda x: x.get("UpdateTime", 0), reverse=True)
-    save_search_index(index_data)
-    print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
-
-    
-    # 💡 强力 Cache Busting：自动更新 index.html 中的 JS 和 CSS 版本号为当前最新时间戳，彻底干掉浏览器强缓存
-    print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
-    try:
-        index_path = "index.html"
-        if os.path.exists(index_path):
-            with open(index_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            import datetime
-            tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
-            now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
-            
-            import re
-            content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
-            content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
-            content = re.sub(r'window\.JYZF_VERSION\s*=\s*["\'][0-9a-zA-Z_]+["\']', f'window.JYZF_VERSION = "{now_str}"', content)
-            
-            with open(index_path, 'w', encoding='utf-8') as f:
-                f.write(content)
-            print(f"[SUCCESS] Updated index.html asset versions to: {now_str}")
-        else:
-            print("[WARNING] index.html not found, skipping Cache Busting.")
-    except Exception as cache_err:
-        print(f"[ERROR] Failed to update asset versions: {cache_err}")
-
-    print("[FINISHED] Anime data static generation complete!")
+    rebuild_static_index_and_assets()
 
 def main():
     asyncio.run(main_async())

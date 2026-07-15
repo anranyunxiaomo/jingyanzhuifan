@@ -45,15 +45,6 @@
     "UpdateTime": 20260633005
   },
   {
-    "AID": 271110,
-    "Title": "哆啦A梦第五季",
-    "Pinyin": "",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/eb/68961_9KkHT.jpg",
-    "Status": "更新至80集",
-    "UpToDate": "更新至第80集",
-    "UpdateTime": 20260631910
-  },
-  {
     "AID": 258472,
     "Title": "一拳超人第三季",
     "Pinyin": "",
@@ -133,15 +124,6 @@
     "Status": "更新至24集",
     "UpToDate": "更新至第24集",
     "UpdateTime": 20260534116
-  },
-  {
-    "AID": 133336,
-    "Title": "蜡笔小新第五季",
-    "Pinyin": "",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8a/dc/268491_bt9Zm.jpg",
-    "Status": "更新至299集",
-    "UpToDate": "更新至第156集",
-    "UpdateTime": 20260496326
   },
   {
     "AID": 133334,
@@ -259,15 +241,6 @@
     "Status": "更新至24集",
     "UpToDate": "更新至第24集",
     "UpdateTime": 20260388515
-  },
-  {
-    "AID": 26003,
-    "Title": "灌篮高手国语版",
-    "Pinyin": "",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/46/f4/1441_q9z6Z.jpg",
-    "Status": "更新至101集",
-    "UpToDate": "更新至第101集",
-    "UpdateTime": 20260387013
   },
   {
     "AID": 26080,
@@ -430,15 +403,6 @@
     "Status": "更新至3集",
     "UpToDate": "更新至第03集",
     "UpdateTime": 20260360244
-  },
-  {
-    "AID": "a123_mogumonv",
-    "Title": "蘑菇魔女",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260027.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
   },
   {
     "AID": "a123_siwangzhanghao",
@@ -1206,15 +1170,6 @@
     "UpdateTime": 20260360176
   },
   {
-    "AID": "a123_zhoushuhuizhan32",
-    "Title": "咒术回战 3",
-    "Pinyin": "",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/ab/77/472741_MqsB8.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360152
-  },
-  {
     "AID": "a123_29suidanshenmaoxianjiaderichan",
     "Title": "29岁单身冒险家的日常",
     "Pinyin": "",
@@ -1249,15 +1204,6 @@
     "Status": "更新至13集",
     "UpToDate": "更新至第13集",
     "UpdateTime": 20260360133
-  },
-  {
-    "AID": "a123_diyule2",
-    "Title": "地狱乐 2",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260055.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360122
   },
   {
     "AID": "a123_gongzhudarenjiexialaishikaowen1",
@@ -1339,6 +1285,15 @@
     "Status": "未播放",
     "UpToDate": "更新至第366集",
     "UpdateTime": 20260263804
+  },
+  {
+    "AID": 20260242,
+    "Title": "电影蜡笔小新：奇奇怪怪！我的妖怪假期",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260242.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第156集",
+    "UpdateTime": 20260263232
   },
   {
     "AID": 20260173,
@@ -1818,6 +1773,24 @@
     "UpdateTime": 20260260177
   },
   {
+    "AID": 20260056,
+    "Title": "打工仔的拷问日常",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260056.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260176
+  },
+  {
+    "AID": 20260055,
+    "Title": "地狱乐 第二季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260055.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260175
+  },
+  {
     "AID": 20260054,
     "Title": "火喰鸟 羽州破烂鸢组",
     "Pinyin": "",
@@ -1843,6 +1816,33 @@
     "Status": "未播放",
     "UpToDate": "更新至第01集",
     "UpdateTime": 20260260151
+  },
+  {
+    "AID": 20260027,
+    "Title": "蘑菇魔女",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260027.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260147
+  },
+  {
+    "AID": 20260024,
+    "Title": "咒术回战 死灭回游 前篇",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260024.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260144
+  },
+  {
+    "AID": 20260021,
+    "Title": "魔都精兵的奴隶 第二季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260021.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260141
   },
   {
     "AID": 20260044,
@@ -1897,15 +1897,6 @@
     "Status": "更新至26集",
     "UpToDate": "更新至第26集",
     "UpdateTime": 20250360383
-  },
-  {
-    "AID": "a123_guirenhuandengchao",
-    "Title": "鬼人幻灯抄",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250063.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20250360363
   },
   {
     "AID": "a123_xindiaodaiwatianshi",
@@ -1980,33 +1971,6 @@
     "UpdateTime": 20250360241
   },
   {
-    "AID": "a123_zhongmodenvwushen3",
-    "Title": "终末的女武神 3",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250258.jpg",
-    "Status": "更新至15集",
-    "UpToDate": "更新至第15集",
-    "UpdateTime": 20250360153
-  },
-  {
-    "AID": "a123_woduzishengji2",
-    "Title": "我独自升级 2",
-    "Pinyin": "",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20250360132
-  },
-  {
-    "AID": "a123_feimadeliaoli1",
-    "Title": "费马的料理",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250162.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250360121
-  },
-  {
     "AID": 20250235,
     "Title": "数码宝贝 BEATBREAK",
     "Pinyin": "",
@@ -2052,6 +2016,15 @@
     "UpdateTime": 20250250441
   },
   {
+    "AID": 20250258,
+    "Title": "终末的女武神 第三季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250258.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第15集",
+    "UpdateTime": 20250250408
+  },
+  {
     "AID": 20250259,
     "Title": "青之壬生浪 -芹泽暗杀篇-",
     "Pinyin": "",
@@ -2059,6 +2032,33 @@
     "Status": "完结",
     "UpToDate": "更新至第14集",
     "UpdateTime": 20250250399
+  },
+  {
+    "AID": 20250063,
+    "Title": "鬼人幻灯抄",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250063.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20250250303
+  },
+  {
+    "AID": 20250162,
+    "Title": "费马的料理",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250162.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20250250282
+  },
+  {
+    "AID": 20250129,
+    "Title": "盾之勇者成名录 第四季",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250129.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20250250249
   },
   {
     "AID": 20250220,
@@ -2079,6 +2079,15 @@
     "UpdateTime": 20250250210
   },
   {
+    "AID": 20250052,
+    "Title": "我独自升级 第二季 -起于暗影-",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250052.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20250250182
+  },
+  {
     "AID": 20250139,
     "Title": "银河特急 银河☆地铁",
     "Pinyin": "",
@@ -2095,15 +2104,6 @@
     "Status": "未播放",
     "UpToDate": "更新至PV",
     "UpdateTime": 20250250086
-  },
-  {
-    "AID": 20250045,
-    "Title": "0岁儿童开始冲刺的故事 第二季",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250045.jpg",
-    "Status": "未播放",
-    "UpToDate": "16:55 PV",
-    "UpdateTime": 20250250045
   },
   {
     "AID": 20240039,
@@ -2185,6 +2185,15 @@
     "Status": "连载",
     "UpToDate": "更新至第70集",
     "UpdateTime": 20230330791
+  },
+  {
+    "AID": 20230174,
+    "Title": "哆啦A梦：大雄与天空的理想乡",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20230174.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第80集",
+    "UpdateTime": 20230230974
   },
   {
     "AID": 20230207,
@@ -2284,6 +2293,15 @@
     "Status": "连载",
     "UpToDate": "更新至第02集",
     "UpdateTime": 20220320514
+  },
+  {
+    "AID": 20220537,
+    "Title": "灌篮高手 The First Slam Dunk",
+    "Pinyin": "",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20220537.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第101集",
+    "UpdateTime": 20220221547
   },
   {
     "AID": 20220063,
@@ -2559,16 +2577,7 @@
     "AID": "a123_mowangdenvertaiwenroule",
     "Title": "魔王的女儿太温柔了！",
     "Pinyin": "",
-    "Cover": "https://i1.a123tv.com/v/0x/mowangdenvertaiwenroule.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200100243
-  },
-  {
-    "AID": "a123_dagongzaidekaowenrichang",
-    "Title": "打工仔的拷问日常",
-    "Pinyin": "",
-    "Cover": "https://i1.a123tv.com/v/0x/dagongzaidekaowenrichang.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b4/0f/565416_a994t.jpg",
     "Status": "更新至12集",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20200100243
@@ -2577,7 +2586,7 @@
     "AID": "a123_zhuanshengzhihoudewobianchengl",
     "Title": "转生之后的我变成了龙蛋",
     "Pinyin": "",
-    "Cover": "https://i1.a123tv.com/v/0x/zhuanshengzhihoudewobianchengl.jpg",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b7/ce/544106_L6Pj1.jpg",
     "Status": "更新至12集",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20200100243
@@ -2590,15 +2599,6 @@
     "Status": "更新至9集",
     "UpToDate": "更新至第09集",
     "UpdateTime": 20200100213
-  },
-  {
-    "AID": "a123_modoujingbingdenuli2",
-    "Title": "魔都精兵的奴隶 2",
-    "Pinyin": "",
-    "Cover": "https://i1.a123tv.com/v/0x/modoujingbingdenuli2.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200100122
   },
   {
     "AID": 20190205,
@@ -2887,15 +2887,6 @@
     "Status": "完结",
     "UpToDate": "更新至正片",
     "UpdateTime": 20190190014
-  },
-  {
-    "AID": "a123_dunzhiyongzhechengminglu4",
-    "Title": "盾之勇者成名录 4",
-    "Pinyin": "",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20190100124
   },
   {
     "AID": 20180220,

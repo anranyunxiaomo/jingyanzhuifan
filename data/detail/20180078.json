@@ -15,56 +15,6 @@
       "百合"
     ],
     "playlists": {
-      "xigua": [
-        [
-          "第01集",
-          "age_89dfrH3n%2FaUQgTS4e5e5r3USiosZM%2FJ85WY9M2CRwLgKT2IQjtWa0mW2GDny5URjzT7FS8YQawbymlfBOlUaVvVc"
-        ],
-        [
-          "第02集",
-          "age_8495KMlHV3r4aaH244sBZ75IJakv3iS%2BCcg8rHD%2B3GqovlDFTPVqBOPEqPSYXOKx3sJjgTfD1BVfyf%2BsB0xgbfd2"
-        ],
-        [
-          "第03集",
-          "age_8c5bu3iRWjm8FdUvGZcCQIdN2pWDh8Wl8RNPFFyOrEBDalac3UfsIlmCXTIj6BpltLqB5ijpwX0UvcEbbYqu5o9E"
-        ],
-        [
-          "第04集",
-          "age_53cawSPSk8FpuhbffT0PJ7Pw488hHJvxFveBRKnbRzWagpPlMf5qE6h0IQUChwKKADpRhzp2Mc4uxsGS6diwprJP"
-        ],
-        [
-          "第05集",
-          "age_b4a6qHYJW3e4L5RwZ%2BS8UYKdCvdBAVtKRBOqoaNAIV0khWBU5FLoZPpZv%2FRsMepo0kVR%2BUO9mA1cNChv207aDCcY"
-        ],
-        [
-          "第07集",
-          "age_8ac7%2FwKI1gEQLHE4%2FFReSXH%2Bhq97UI1yM91E2ngMkJ2%2F3DJDFvNBHX08s1FZQOhh%2FoJAQUwMZOvwOS30aqk22lFT"
-        ],
-        [
-          "第08集",
-          "age_7ffeF5Gpj7KRRGZ9pn4I9WX96oYlF9ocPyTbmyrrhPhQw8JFpxS%2FTs%2BygMKQEZm5xcvyPqTzuMrEZsTsNS%2BakWU2"
-        ],
-        [
-          "第09集",
-          "age_c70bbcuJpK0gQZDP7oiyPe%2FzMkapcfmGnKKCbzfPfbQAg%2BjZ0FEyuR7yAMcqBfyBtHG9VKuaynbm86DJHhAGR6TQ"
-        ],
-        [
-          "第10集",
-          "age_2c02ujBpI4AU%2BnZ4eYrDDcyKJt0d6eHPd3m%2FlXjmif2VNg9dSJavDAsZFPHr6UQf1f15702QhgDgiashBUxMIYsn"
-        ],
-        [
-          "第11集",
-          "age_1c7aU1kkq9K1oKpDiuHJYNwdy2hlDhILfgUwCsSgw%2BT1cy0lwoOzapbpQUSpe%2BIVY508rW7N1%2BbYFaTr72sIwfku"
-        ],
-        [
-          "第12集",
-          "age_1338SpT%2Fz3F6mBL7MH681lPMcU4QMAFkEYWm71u1EBsKRxNoO0fHx4HXM8o1TrZ0np39r%2BEFgvEPI%2BMYVIsINU17"
-        ],
-        [
-          "第13集",
-          "age_ce3dXHsCgYM5ExUZuYTWkgwXXt7b%2B0RVCrtft2tYA1UzQ4%2BIkSEzyaZdkxIkcy8N045fXuo9Bq7UCyOLrjaExUiq"
-        ]
-      ],
       "hnm3u8": [
         [
           "第1集",
@@ -130,6 +80,56 @@
           "第13集完结",
           "age_05ebBOviniVzhFPizQO2tzgOCqbnmwgPBFV%2FLsKfINVOFIbWiWkxZJ2MJxP9%2BeGzJp8uZPtNMDZv8bzt4P6Gp2NHFIvgn4u2Xfs",
           "https://hn.bfvvs.com/play/e1w1Qjqb/index.m3u8"
+        ]
+      ],
+      "xigua": [
+        [
+          "第01集",
+          "age_89dfrH3n%2FaUQgTS4e5e5r3USiosZM%2FJ85WY9M2CRwLgKT2IQjtWa0mW2GDny5URjzT7FS8YQawbymlfBOlUaVvVc"
+        ],
+        [
+          "第02集",
+          "age_8495KMlHV3r4aaH244sBZ75IJakv3iS%2BCcg8rHD%2B3GqovlDFTPVqBOPEqPSYXOKx3sJjgTfD1BVfyf%2BsB0xgbfd2"
+        ],
+        [
+          "第03集",
+          "age_8c5bu3iRWjm8FdUvGZcCQIdN2pWDh8Wl8RNPFFyOrEBDalac3UfsIlmCXTIj6BpltLqB5ijpwX0UvcEbbYqu5o9E"
+        ],
+        [
+          "第04集",
+          "age_53cawSPSk8FpuhbffT0PJ7Pw488hHJvxFveBRKnbRzWagpPlMf5qE6h0IQUChwKKADpRhzp2Mc4uxsGS6diwprJP"
+        ],
+        [
+          "第05集",
+          "age_b4a6qHYJW3e4L5RwZ%2BS8UYKdCvdBAVtKRBOqoaNAIV0khWBU5FLoZPpZv%2FRsMepo0kVR%2BUO9mA1cNChv207aDCcY"
+        ],
+        [
+          "第07集",
+          "age_8ac7%2FwKI1gEQLHE4%2FFReSXH%2Bhq97UI1yM91E2ngMkJ2%2F3DJDFvNBHX08s1FZQOhh%2FoJAQUwMZOvwOS30aqk22lFT"
+        ],
+        [
+          "第08集",
+          "age_7ffeF5Gpj7KRRGZ9pn4I9WX96oYlF9ocPyTbmyrrhPhQw8JFpxS%2FTs%2BygMKQEZm5xcvyPqTzuMrEZsTsNS%2BakWU2"
+        ],
+        [
+          "第09集",
+          "age_c70bbcuJpK0gQZDP7oiyPe%2FzMkapcfmGnKKCbzfPfbQAg%2BjZ0FEyuR7yAMcqBfyBtHG9VKuaynbm86DJHhAGR6TQ"
+        ],
+        [
+          "第10集",
+          "age_2c02ujBpI4AU%2BnZ4eYrDDcyKJt0d6eHPd3m%2FlXjmif2VNg9dSJavDAsZFPHr6UQf1f15702QhgDgiashBUxMIYsn"
+        ],
+        [
+          "第11集",
+          "age_1c7aU1kkq9K1oKpDiuHJYNwdy2hlDhILfgUwCsSgw%2BT1cy0lwoOzapbpQUSpe%2BIVY508rW7N1%2BbYFaTr72sIwfku"
+        ],
+        [
+          "第12集",
+          "age_1338SpT%2Fz3F6mBL7MH681lPMcU4QMAFkEYWm71u1EBsKRxNoO0fHx4HXM8o1TrZ0np39r%2BEFgvEPI%2BMYVIsINU17"
+        ],
+        [
+          "第13集",
+          "age_ce3dXHsCgYM5ExUZuYTWkgwXXt7b%2B0RVCrtft2tYA1UzQ4%2BIkSEzyaZdkxIkcy8N045fXuo9Bq7UCyOLrjaExUiq"
         ]
       ]
     },

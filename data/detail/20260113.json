@@ -230,28 +230,6 @@
           "https://v10.ppqrrs.com/wjv10/202606/23/7EgMNNMxs497/video/index.m3u8"
         ]
       ],
-      "hnm3u8": [
-        [
-          "第1集",
-          "age_a943tnZPK3mheqt%2B10dZqDshMsxpcsqRxJCI9AqrPfKboPJYgZRTTjyjFTB1UeqCRPYFcF2WWbZqjhAooQE8o7UEfMjcvDgTTW0",
-          "https://hn.bfvvs.com/play/erkRPApa/index.m3u8"
-        ],
-        [
-          "第2集",
-          "age_33ffBGK9MA0bwYLQKV1ATyRzPdNeC%2FFM9vOW2SUOiwX8ecvwj%2BQdtGX68BV3f%2FApxheA%2F%2F8JJ2s%2FgTPfaaVJ1RAIjA3xpqDEy4E",
-          "https://hn.bfvvs.com/play/e9r19vZa/index.m3u8"
-        ],
-        [
-          "第3集",
-          "age_847aB1FnBbG5nVi0na2DZ%2BK%2FT0vXHXhP81BETtaxW%2Bh%2F5eVTujlCkji9cJkiVnhMjTYJJyJAmu%2B2InFPLU2yrpbdrVHrU7reIaI",
-          "https://hn.bfvvs.com/play/dL97Wxge/index.m3u8"
-        ],
-        [
-          "第4集",
-          "age_5e26HUgJPH%2BK5tB7Ao%2BuFWuZdRUjXhzGQE3ubQyk1CPu4aPemRd7mO2w%2FY3qFLIsiisG9Kgm9uqdYlGKUM%2Fi4UgiG0o7Ibfzf2w",
-          "https://hn.bfvvs.com/play/e9r1NnPa/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -337,6 +315,28 @@
         [
           "第07集",
           "/v/xiangjieshuzhechangwoainideyou/8z2v4oz6.html"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "age_a943tnZPK3mheqt%2B10dZqDshMsxpcsqRxJCI9AqrPfKboPJYgZRTTjyjFTB1UeqCRPYFcF2WWbZqjhAooQE8o7UEfMjcvDgTTW0",
+          "https://hn.bfvvs.com/play/erkRPApa/index.m3u8"
+        ],
+        [
+          "第2集",
+          "age_33ffBGK9MA0bwYLQKV1ATyRzPdNeC%2FFM9vOW2SUOiwX8ecvwj%2BQdtGX68BV3f%2FApxheA%2F%2F8JJ2s%2FgTPfaaVJ1RAIjA3xpqDEy4E",
+          "https://hn.bfvvs.com/play/e9r19vZa/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_847aB1FnBbG5nVi0na2DZ%2BK%2FT0vXHXhP81BETtaxW%2Bh%2F5eVTujlCkji9cJkiVnhMjTYJJyJAmu%2B2InFPLU2yrpbdrVHrU7reIaI",
+          "https://hn.bfvvs.com/play/dL97Wxge/index.m3u8"
+        ],
+        [
+          "第4集",
+          "age_5e26HUgJPH%2BK5tB7Ao%2BuFWuZdRUjXhzGQE3ubQyk1CPu4aPemRd7mO2w%2FY3qFLIsiisG9Kgm9uqdYlGKUM%2Fi4UgiG0o7Ibfzf2w",
+          "https://hn.bfvvs.com/play/e9r1NnPa/index.m3u8"
         ]
       ]
     },

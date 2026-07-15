@@ -12,13 +12,6 @@
       "战斗"
     ],
     "playlists": {
-      "bilibili": [
-        [
-          "pv",
-          "age_5b2dsbQ%2FuesNwLSU47kH%2BMGTosIv8bwQgemKSdmth58Nvn3328AXoG5tuJLukfc5vf11gLVqxjKgtRWkr6TYWqjjZYb%2FOI5V9A",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "a123_line1": [
         [
           "第01集",
@@ -211,6 +204,13 @@
         [
           "第48集",
           "/v/renzaoren0091/5fz2vgz47.html"
+        ]
+      ],
+      "bilibili": [
+        [
+          "pv",
+          "age_5b2dsbQ%2FuesNwLSU47kH%2BMGTosIv8bwQgemKSdmth58Nvn3328AXoG5tuJLukfc5vf11gLVqxjKgtRWkr6TYWqjjZYb%2FOI5V9A",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },

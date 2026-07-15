@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & DPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/DPlayer.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260714T1155">
-  <script>window.JYZF_VERSION = "20260710T1651";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260715T1547">
+  <script>window.JYZF_VERSION = "20260715T1539";</script>
 </head>
 <body class="loader-active">
 
@@ -826,16 +826,8 @@
                 下一集
               </button>
             </div>
-            <!-- 🏮 极简白金换源/换解析器面板 (高定设计，允许用户手动切源，提升高可用性) -->
-            <div class="engine-selector-wrapper">
-              <div class="engine-select-container">
-                <span class="engine-label">解析引擎:</span>
-                <select class="engine-select" v-model="activeEngineKey" @change="rePlayCurrentEpisode">
-                  <option v-for="engine in jxEngines" :key="engine.value" :value="engine.value">
-                    {{ engine.label }}
-                  </option>
-                </select>
-              </div>
+            <!-- 🏮 极简面板：仅展示强制从头播放，彻底精简解析引擎选择，开启静默后台全自动容灾 -->
+            <div class="engine-selector-wrapper" style="justify-content: flex-end;">
               <button 
                 class="btn-reset-progress" 
                 @click="forceResetProgressAndReplay" 
@@ -1050,7 +1042,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260714T1155"></script>
+<script src="js/app_v2.js?v=20260715T1547"></script>
 
 </body>
 </html>

@@ -14,13 +14,6 @@
       "奇幻"
     ],
     "playlists": {
-      "bilibili": [
-        [
-          "pv",
-          "age_1aa6oF3N9q5sdK6LMcpNZysNrGTXBePq8MEzZ%2BCFD6%2FSPU8cz6Ox3JGC%2B9x5uKsrRJ8HR3ccqS4b7l%2BaV4weyED%2BTUMNkURq1g",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
       "a123_line1": [
         [
           "第01集",
@@ -1473,6 +1466,13 @@
         [
           "第366集",
           "/v/sishen9/60z6jbz362.html"
+        ]
+      ],
+      "bilibili": [
+        [
+          "pv",
+          "age_1aa6oF3N9q5sdK6LMcpNZysNrGTXBePq8MEzZ%2BCFD6%2FSPU8cz6Ox3JGC%2B9x5uKsrRJ8HR3ccqS4b7l%2BaV4weyED%2BTUMNkURq1g",
+          "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ]
     },
