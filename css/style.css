@@ -4047,8 +4047,7 @@ body.fit-fill iframe {
   right: 12px !important;
 }
 
-/* 💡 当全局网页全屏激活时，必须强制清除播放器所有层级父容器的 transform 属性！
-   这是为了保证 fixed 网页全屏能完美以 100% 覆盖整个浏览器，且彻底避免因为移动 DOM 节点导致视频重新请求、重新加载的严重 Bug！ */
+/* 💡 当全局网页全屏激活时，清除 transform/perspective 以免阻断 fixed 定位 */
 .webfullscreen-active #app,
 .webfullscreen-active .main-container,
 .webfullscreen-active .detail-content,
@@ -4061,18 +4060,39 @@ body.fit-fill iframe {
   perspective: none !important;
   filter: none !important;
   backdrop-filter: none !important;
-  position: static !important;
+  /* ⚠️ 不能 position:static，否则祖先容器会限制内部 fixed 元素的坐标系 */
 }
 
-/* 💡 ArtPlayer CSS 网页全屏（fullscreenWeb）iPad/平板完整修复
-   ArtPlayer 的 fullscreenWeb 触发时（FULLSCREEN_WEB_IN_BODY=true）：
-   1. 将 .artplayer-app 移动到 document.body 顶层
-   2. 给 .art-video-player 加 art-fullscreen-web class（position: fixed; inset: 0; width/height: 100%）
-   
-   iPad Safari 的问题：body 无显式 height，导致 height: 100% 相对于 auto 高度坍缩
-   修复方案：覆盖为 100vw/100dvh，dvh 是 Dynamic Viewport Height，iPad Safari 15.4+ 支持 */
+/* ============================================================
+   ArtPlayer fullscreenWeb 全屏铺满完整修复方案
+   ArtPlayer 触发时：FULLSCREEN_WEB_IN_BODY=true 把 .artplayer-app 移到 body 顶层
+   问题根因：
+   1. body 无显式 height，height:100% 坍缩
+   2. 内层 <video> 受 aspect-ratio:16/9 限制，在宽屏上高度不足 100vh
+   3. header/sidebar 的 z-index 高于播放器
+   修复：三层同时强制 fixed+100dvh，video 取消 aspect-ratio
+   ============================================================ */
 
-/* ① 全屏播放器本体：强制铺满整个动态视口（覆盖 ArtPlayer 内置的 height: 100%） */
+/* ① body 全屏状态隔离：锁定 overflow，防止页面滚动穿透 */
+body.art-fullscreen-web-active {
+  overflow: hidden !important;
+}
+
+/* ② .artplayer-app 容器（被 ArtPlayer 移到 body 直接子级）：撑满视口 */
+body.art-fullscreen-web-active > .artplayer-app {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 99999 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ③ .art-video-player 本体：覆盖 ArtPlayer 内置 height:100%，强制视口高度 */
 .art-video-player.art-fullscreen-web {
   position: fixed !important;
   top: 0 !important;
@@ -4080,26 +4100,28 @@ body.fit-fill iframe {
   right: 0 !important;
   bottom: 0 !important;
   width: 100vw !important;
-  height: 100vh !important;      /* 基础兜底（所有浏览器） */
-  height: 100svh !important;     /* Small Viewport Height：减去固定工具栏 */
-  height: 100dvh !important;     /* Dynamic Viewport Height：iPad Safari 最佳方案 */
+  height: 100vh !important;    /* 所有浏览器基础兜底 */
+  height: 100svh !important;   /* Small Viewport Height */
+  height: 100dvh !important;   /* Dynamic Viewport Height（iPad Safari 最佳） */
   z-index: 99999 !important;
   border-radius: 0 !important;
   background: #000 !important;
+  aspect-ratio: unset !important;  /* 取消 16/9 宽高比限制，允许铺满任意屏幕 */
 }
 
-/* ② 全屏激活时 body 顶层的 .artplayer-app 容器：同步撑满（不在全屏时不影响正常 DOM） */
-body.art-fullscreen-web-active > .artplayer-app {
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  z-index: 99999 !important;
-  border-radius: 0 !important;
+/* ④ 内层 <video> 元素：同步取消 aspect-ratio 和 object-fit 约束 */
+.art-video-player.art-fullscreen-web video.art-video {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  object-fit: contain !important; /* contain 保持画面比例但不被裁切 */
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
 }
 
-/* ③ 防止 app-header、导航栏等在全屏时从上方遮挡播放器
-   用 body.art-fullscreen-web-active class 驱动（JS 监听 fullscreenWeb 事件同步添加此 class）
-   ⚠️ 不用 body:has() 是因为 iOS 14 / iPad OS 14 的 Safari 不支持 :has() */
+/* ⑤ header/sidebar 压到播放器下方（JS 监听 fullscreenWeb 事件同步给 body 加此 class）
+   ⚠️ 不用 :has() 因为 iOS 14 Safari 不支持 */
 body.art-fullscreen-web-active .app-header,
 body.art-fullscreen-web-active .sidebar,
 body.art-fullscreen-web-active .banner-container {
