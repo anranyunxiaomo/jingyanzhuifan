@@ -1820,90 +1820,10 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_lbxx hfhy！drdgdfj",
-    "Title": "蜡笔小新 呼风唤雨！大人帝国的反击",
-    "Pinyin": "lbxx hfhy！drdgdfj",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_hyzdmn",
-    "Title": "回忆中的玛妮",
-    "Pinyin": "hyzdmn",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_sydth",
-    "Title": "岁月的童话",
-    "Pinyin": "sydth",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_yzbd，ydddf",
-    "Title": "云之彼端，约定的地方",
-    "Pinyin": "yzbd，ydddf",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_lbxx hfhy！zgdhz",
-    "Title": "蜡笔小新 呼风唤雨！战国大合战",
-    "Pinyin": "lbxx hfhy！zgdhz",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_htzx",
-    "Title": "河童之夏",
-    "Pinyin": "htzx",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_lzymrzp",
-    "Title": "来自虞美人之坡",
-    "Pinyin": "lzymrzp",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_yxrs l",
-    "Title": "游戏人生 零",
-    "Pinyin": "yxrs l",
-    "Cover": "",
-    "Status": "完结",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20200000383,
-    "Type": "剧场版"
-  },
-  {
     "AID": "a123_fzg",
     "Title": "风之谷",
     "Pinyin": "fzg",
-    "Cover": "",
+    "Cover": "https://hongniuzyimage.com/upload/vod/20220608-1/43b6771b9d94969a8ce1183cb6c29f89.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD国语",
     "UpdateTime": 20200000153,
@@ -1913,7 +1833,7 @@
     "AID": "a123_mztkn：mgdszl",
     "Title": "名侦探柯南：迷宫的十字路",
     "Pinyin": "mztkn：mgdszl",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/69386f6bb1dfed68692a24c8686939b9.jpg",
     "Status": "完结",
     "UpToDate": "更新至日语",
     "UpdateTime": 20200000143,
@@ -1923,7 +1843,7 @@
     "AID": "a123_mztkn：bkjdwl",
     "Title": "名侦探柯南：贝克街的亡灵",
     "Pinyin": "mztkn：bkjdwl",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/a495eebbfa243b79c5b9b224c482d0c2.jpg",
     "Status": "完结",
     "UpToDate": "更新至日语",
     "UpdateTime": 20200000143,
@@ -1933,17 +1853,37 @@
     "AID": "a123_tdts",
     "Title": "听到涛声",
     "Pinyin": "tdts",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/9d2596a5514f8021eaf84fc7e42f792b.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
     "UpdateTime": 20200000143,
     "Type": "剧场版"
   },
   {
+    "AID": "a123_lbxx hfhy！zgdhz",
+    "Title": "蜡笔小新 呼风唤雨！战国大合战",
+    "Pinyin": "lbxx hfhy！zgdhz",
+    "Cover": "https://img.lzipic.com/upload/vod/20221018-1/bc6fe726a41c0b2611d4ebc697c29b3f.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至国语",
+    "UpdateTime": 20200000143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_lbxx hfhy！drdgdfj",
+    "Title": "蜡笔小新 呼风唤雨！大人帝国的反击",
+    "Pinyin": "lbxx hfhy！drdgdfj",
+    "Cover": "https://img.lzipic.com/upload/vod/20240518-1/d2b20566fdea85a5268d9c2036cc8c26.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": "a123_gwdhz",
     "Title": "怪物的孩子",
     "Pinyin": "gwdhz",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/6d65b5ac1f4ec80b9a7309311f4f9b13.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
     "UpdateTime": 20200000133,
@@ -1953,7 +1893,7 @@
     "AID": "a123_jdxdxralad",
     "Title": "借东西的小人阿莉埃蒂",
     "Pinyin": "jdxdxralad",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/8aec51422b30d61bce078b27f0babeb1.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -1963,7 +1903,7 @@
     "AID": "a123_bblm",
     "Title": "百变狸猫",
     "Pinyin": "bblm",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/743006f5b956eb5d80f0662463426b2b.jpg",
     "Status": "完结",
     "UpToDate": "更新至电影解说",
     "UpdateTime": 20200000133,
@@ -1973,7 +1913,37 @@
     "AID": "a123_qfl",
     "Title": "起风了",
     "Pinyin": "qfl",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/293131be3fe9d60523ebbc6dd0c2e5c3.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_hyzdmn",
+    "Title": "回忆中的玛妮",
+    "Pinyin": "hyzdmn",
+    "Cover": "https://img.lzipic.com/upload/vod/20230430-1/7a7da808ee9220ad4e6112e3054beab4.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_sydth",
+    "Title": "岁月的童话",
+    "Pinyin": "sydth",
+    "Cover": "https://hongniuzyimage.com/cover/445e1050156c6ae8c082a8422bb7dfc0.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_yzbd，ydddf",
+    "Title": "云之彼端，约定的地方",
+    "Pinyin": "yzbd，ydddf",
+    "Cover": "https://img.lzipic.com/upload/vod/20231220-1/2e7e355fc283d858ee04fe8424454d7b.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -1983,7 +1953,7 @@
     "AID": "a123_ceqt",
     "Title": "侧耳倾听",
     "Pinyin": "ceqt",
-    "Cover": "",
+    "Cover": "https://hongniuzyimage.com/cover/6a26c75d6a576c94654bfc4dda548c72.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -1993,9 +1963,19 @@
     "AID": "a123_dlam：bwth",
     "Title": "哆啦A梦：伴我同行",
     "Pinyin": "dlam：bwth",
-    "Cover": "",
+    "Cover": "https://hongniuzyimage.com/upload/vod/20220630-1/880ba3b1240262440afd54c9ba155ab1.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_htzx",
+    "Title": "河童之夏",
+    "Pinyin": "htzx",
+    "Cover": "https://img.lzipic.com/upload/vod/20220401-1/6fa06dcfba58ec25208e97aafb6e536d.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
     "Type": "剧场版"
   },
@@ -2003,9 +1983,19 @@
     "AID": "a123_mnzjb",
     "Title": "魔女宅急便",
     "Pinyin": "mnzjb",
-    "Cover": "",
+    "Cover": "https://hongniuzyimage.com/upload/vod/2021-06-09/162322276515.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_lzymrzp",
+    "Title": "来自虞美人之坡",
+    "Pinyin": "lzymrzp",
+    "Cover": "https://img.lzipic.com/upload/vod/20230423-1/660fdf397b8401a6da2b4d26f3395522.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
     "UpdateTime": 20200000133,
     "Type": "剧场版"
   },
@@ -2013,7 +2003,7 @@
     "AID": "a123_xsjfyzsjcb：p",
     "Title": "新世纪福音战士剧场版：破",
     "Pinyin": "xsjfyzsjcb：p",
-    "Cover": "",
+    "Cover": "https://img.picbf.com/upload/vod/20260302-1/724e23b784b63f699afd51a5c8bab22b.jpg",
     "Status": "完结",
     "UpToDate": "更新至高清",
     "UpdateTime": 20200000133,
@@ -2023,7 +2013,7 @@
     "AID": "a123_mdbe",
     "Title": "猫的报恩",
     "Pinyin": "mdbe",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/9a0684d9dad4967ddd09594511de2c52.jpg",
     "Status": "完结",
     "UpToDate": "更新至全集",
     "UpdateTime": 20200000133,
@@ -2033,7 +2023,7 @@
     "AID": "a123_djjf",
     "Title": "东京教父",
     "Pinyin": "djjf",
-    "Cover": "",
+    "Cover": "https://image.jinyingimage.com/cover/fce1eab4411d5df240d93ff334f15385.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -2043,7 +2033,17 @@
     "AID": "a123_xsjfyzsjcb：z",
     "Title": "新世纪福音战士剧场版：终",
     "Pinyin": "xsjfyzsjcb：z",
-    "Cover": "",
+    "Cover": "https://img.lzipic.com/upload/vod/20230113-1/4d23d9a7d3243b522bdaf484772f020d.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_yxrs l",
+    "Title": "游戏人生 零",
+    "Pinyin": "yxrs l",
+    "Cover": "https://image.jinyingimage.com/cover/80f7325fa857de62fafe85f7a30273cb.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -2056,7 +2056,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20190190656,
+    "UpdateTime": 20190190406,
     "Type": "剧场版"
   },
   {
@@ -2230,16 +2230,6 @@
     "Type": "剧场版"
   },
   {
-    "AID": 20180293,
-    "Title": "莉兹与青鸟",
-    "Pinyin": "lzyqn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180293.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20180180553,
-    "Type": "剧场版"
-  },
-  {
     "AID": 20180220,
     "Title": "关于我转生变成史莱姆这档事",
     "Pinyin": "gywzsbcslmzds",
@@ -2327,6 +2317,16 @@
     "Status": "完结",
     "UpToDate": "更新至第02集",
     "UpdateTime": 20180180338,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20180293,
+    "Title": "莉兹与青鸟",
+    "Pinyin": "lzyqn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180293.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20180180303,
     "Type": "剧场版"
   },
   {
@@ -2510,16 +2510,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20170008,
-    "Title": "七人魔法使剧场版 -悠久图书馆与炼金术少女-",
-    "Pinyin": "qrmfsjcb -yjtsgyljssn-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170008.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170268,
-    "Type": "剧场版"
-  },
-  {
     "AID": 20170030,
     "Title": "Re:CREATORS",
     "Pinyin": "re:creators",
@@ -2670,23 +2660,13 @@
     "Type": "剧场版"
   },
   {
-    "AID": 20160208,
-    "Title": "你的名字。",
-    "Pinyin": "ndmz。",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160208.jpg",
+    "AID": 20170008,
+    "Title": "七人魔法使剧场版 -悠久图书馆与炼金术少女-",
+    "Pinyin": "qrmfsjcb -yjtsgyljssn-",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170008.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20160160468,
-    "Type": "剧场版"
-  },
-  {
-    "AID": 20160070,
-    "Title": "告白实行委员会剧场版 从很久以前就喜欢你了",
-    "Pinyin": "gbsxwyhjcb chjyqjxhnl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20160160330,
+    "UpdateTime": 20170170018,
     "Type": "剧场版"
   },
   {
@@ -2718,6 +2698,16 @@
     "UpToDate": "更新至第25集",
     "UpdateTime": 20160160255,
     "Type": "TV"
+  },
+  {
+    "AID": 20160208,
+    "Title": "你的名字。",
+    "Pinyin": "ndmz。",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160208.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20160160228,
+    "Type": "剧场版"
   },
   {
     "AID": 20160086,
@@ -2790,6 +2780,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20160070,
+    "Title": "告白实行委员会剧场版 从很久以前就喜欢你了",
+    "Pinyin": "gbsxwyhjcb chjyqjxhnl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20160160080,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20150024,
     "Title": "落第骑士英雄谭",
     "Pinyin": "ldqsyxt",
@@ -2798,16 +2798,6 @@
     "UpToDate": "更新至第20241207集",
     "UpdateTime": 20150150354,
     "Type": "TV"
-  },
-  {
-    "AID": 20150062,
-    "Title": "约会大作战剧场版 万由里裁决",
-    "Pinyin": "yhdzzjcb wylcj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20150150322,
-    "Type": "剧场版"
   },
   {
     "AID": 20150172,
@@ -2920,6 +2910,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20150062,
+    "Title": "约会大作战剧场版 万由里裁决",
+    "Pinyin": "yhdzzjcb wylcj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20150150072,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20140168,
     "Title": "拂晓的尤娜",
     "Pinyin": "fxdyn",
@@ -2928,16 +2928,6 @@
     "UpToDate": "更新至第01集",
     "UpdateTime": 20140140408,
     "Type": "TV"
-  },
-  {
-    "AID": 20140117,
-    "Title": "乐园追放 -Expelled from Paradise-",
-    "Pinyin": "lyzf -expelled from paradise-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140117.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20140140377,
-    "Type": "剧场版"
   },
   {
     "AID": 20140109,
@@ -3110,13 +3100,13 @@
     "Type": "TV"
   },
   {
-    "AID": 20130193,
-    "Title": "辉夜姬物语",
-    "Pinyin": "hyjwy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130193.jpg",
+    "AID": 20140117,
+    "Title": "乐园追放 -Expelled from Paradise-",
+    "Pinyin": "lyzf -expelled from paradise-",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140117.jpg",
     "Status": "完结",
-    "UpToDate": "HD",
-    "UpdateTime": 20130130453,
+    "UpToDate": "全集",
+    "UpdateTime": 20140140127,
     "Type": "剧场版"
   },
   {
@@ -3160,16 +3150,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20130007,
-    "Title": "命运石之门 负荷领域的既视感",
-    "Pinyin": "myszm fhlydjsg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20130130257,
-    "Type": "剧场版"
-  },
-  {
     "AID": 20130076,
     "Title": "有顶天家族",
     "Pinyin": "ydtjz",
@@ -3178,6 +3158,16 @@
     "UpToDate": "更新至第12集",
     "UpdateTime": 20130130206,
     "Type": "TV"
+  },
+  {
+    "AID": 20130193,
+    "Title": "辉夜姬物语",
+    "Pinyin": "hyjwy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130193.jpg",
+    "Status": "完结",
+    "UpToDate": "HD",
+    "UpdateTime": 20130130203,
+    "Type": "剧场版"
   },
   {
     "AID": 20130074,
@@ -3277,6 +3267,16 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20130130127,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20130007,
+    "Title": "命运石之门 负荷领域的既视感",
+    "Pinyin": "myszm fhlydjsg",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20130130017,
     "Type": "剧场版"
   },
   {
@@ -3660,16 +3660,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20070004,
-    "Title": "秒速5厘米",
-    "Pinyin": "ms5lm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20070004.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20070070264,
-    "Type": "剧场版"
-  },
-  {
     "AID": 20070048,
     "Title": "Myself Yourself",
     "Pinyin": "myself yourself",
@@ -3696,7 +3686,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第10集",
-    "UpdateTime": 20070070112,
+    "UpdateTime": 20070070142,
     "Type": "剧场版"
   },
   {
@@ -3707,6 +3697,16 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20070070078,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20070004,
+    "Title": "秒速5厘米",
+    "Pinyin": "ms5lm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20070004.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20070070014,
     "Type": "剧场版"
   },
   {

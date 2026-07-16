@@ -3,19 +3,13 @@
     "id": "a123_xsjfyzsjcb：p",
     "name": "新世纪福音战士剧场版：破",
     "type": "剧场版",
-    "cover": "",
+    "cover": "https://img.picbf.com/upload/vod/20260302-1/724e23b784b63f699afd51a5c8bab22b.jpg",
     "status": "完结",
     "playlists": {
       "bfzym3u8": [
         [
           "高清",
           "https://s2.bfllvip.com/video/xinshijifuyinzhanshixinjuchangbanpo/49d227214a6f/index.m3u8"
-        ]
-      ],
-      "yhdm_line1": [
-        [
-          "HD中字",
-          "/p/12030-1-1.html"
         ]
       ]
     }

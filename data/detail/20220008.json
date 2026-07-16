@@ -25,6 +25,12 @@
           "age_de43gRc3OacVsYIx2whQfdetB%2Bg3VL9FR60MdX6OkGkMkN9%2BHukfpS7XisZ2JRWPu%2FUPz191PXA4Zdl8EvKEwFRlPOYw0lq2mG8",
           "https://64.32.20.246/play/ZdP5KW6e/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/16207-3-1.html"
+        ]
       ]
     },
     "area": "日本",
@@ -163,7 +169,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

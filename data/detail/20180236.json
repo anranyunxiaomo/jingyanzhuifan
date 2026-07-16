@@ -20,6 +20,12 @@
           "age_a22dFaEICiw89kKLAuivjm8KGOaxahCxBObjsGn9bXcA59cl4%2Fb%2FgNhpxxdsi1ZY70hoghC4LFdMPfzCUWRzLr1PfW9%2FoGXfA2yzfg8QiGWWgy8Mip7PEuVV8%2BPZK35cITn1lNqDJXUfJ4%2BqKeDL%2FcCKlxodpm6UttSE",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/27763-1-1.html"
+        ]
       ]
     },
     "area": "日本",
@@ -208,7 +214,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

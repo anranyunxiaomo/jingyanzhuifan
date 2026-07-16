@@ -407,6 +407,7 @@ def fetch_from_backup_cms(title):
                         target_vod = data["list"][0]
                     
                     matched_vod_name = target_vod.get("vod_name", title)
+                    matched_vod_cover = target_vod.get("vod_pic", "")
                     
                     # 开始解析播放列表
                     from_str = target_vod.get("vod_play_from", "")
@@ -457,6 +458,7 @@ def fetch_from_backup_cms(title):
         return {
             "video": {
                 "name": matched_vod_name or title,
+                "cover": matched_vod_cover or "",
                 "playlists": merged_playlists
             },
             "player_label_arr": {

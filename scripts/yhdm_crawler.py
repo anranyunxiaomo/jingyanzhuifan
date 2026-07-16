@@ -209,10 +209,6 @@ def sync_anime_task(aid, title):
                     matched_eps = eps
                     break
                     
-        # 💡 兜底：如果依然没能成功对齐拉取到集数，尝试用第一个搜索结果做强制对齐
-        if not matched_eps and search_results:
-            matched_eps = fetch_yhdm_episodes(search_results[0]["slug"])
-            
         if matched_eps:
             playlists["yhdm_line1"] = matched_eps
             video["playlists"] = playlists

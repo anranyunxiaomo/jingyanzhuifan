@@ -3,19 +3,13 @@
     "id": "a123_xsjfyzsjcb：z",
     "name": "新世纪福音战士剧场版：终",
     "type": "剧场版",
-    "cover": "",
+    "cover": "https://img.lzipic.com/upload/vod/20230113-1/4d23d9a7d3243b522bdaf484772f020d.jpg",
     "status": "完结",
     "playlists": {
       "lzm3u8": [
         [
           "HD中字",
           "https://vip.lz-cdn17.com/20230110/1956_a607d1fd/index.m3u8"
-        ]
-      ],
-      "yhdm_line1": [
-        [
-          "HD中字",
-          "/p/12030-1-1.html"
         ]
       ]
     }
