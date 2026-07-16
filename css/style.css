@@ -2679,7 +2679,7 @@ body {
   /* 卡片网格及卡片精细紧凑化，提高手机端浏览效率，防止封面过大 */
   .grid-list {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 0.45rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -2766,6 +2766,7 @@ body {
     overflow-x: auto !important;
     white-space: nowrap !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     -webkit-overflow-scrolling: touch !important;
   }
@@ -2938,7 +2939,7 @@ body {
 /* 📱 超窄屏兜底 (≤375px，适配 iPhone SE / 老款小屏安卓) */
 @media (max-width: 375px) {
   .grid-list {
-    grid-template-columns: repeat(auto-fit, minmax(86px, 1fr)) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 0.4rem !important;
     box-sizing: border-box !important;
   }
