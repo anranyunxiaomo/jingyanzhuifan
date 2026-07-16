@@ -1578,6 +1578,8 @@ new Vue({
         allowDirectPlay = true; // 直链 epToken：直接走 ArtPlayer
       } else if (epToken && epToken.startsWith('age_') && realUrl && realUrl.startsWith('http')) {
         allowDirectPlay = true; // 💡 age_ token 但已有预解析直链：优先让 ArtPlayer 播（失败自动降级到 wuzhoupai iframe）
+      } else if (MULTI_SNIFF_LINES.includes(this.activeLineKey) && realUrl && realUrl.startsWith('http')) {
+        allowDirectPlay = true; // 💡 MULTI-SNIFF 嗅探成功：嗅探结果已验证可用，允许 ArtPlayer 直连
       }
 
       let finalRealUrl = "";
@@ -1593,25 +1595,36 @@ new Vue({
 
       // 💡 [PROACTIVE ROUTING OVERRIDE] 主动式媒体路由选择覆写算法
       // 看到 M3U8 地址即决定最优播放路径。从根源上解决盲目直连导致的多余代理 fetch，并彻底拦截流氓劫持域名！
-      if (epToken && !epToken.startsWith('age_')) {
+      // ⚠️ 黑名单检测只看 epToken 原始 URL（本站数据库里的链接），不检测 sniff 嗅探结果 realUrl——
+      //    因为 sniff 已经验证该链接可用，不能被误杀！
+      const proactiveCheckUrl = (epToken && !epToken.startsWith('age_')) ? epToken : '';
+      if (proactiveCheckUrl && !epToken.startsWith('age_')) {
         const cleanUrl = (realUrl || epToken || '').trim();
-        const urlLower = cleanUrl.toLowerCase();
+        // 💡 黑名单只针对 epToken 原始 URL，而非 sniff 嗅探后的 realUrl
+        const epTokenLower = epToken.toLowerCase();
         
         // ① 如果是已知的流氓/网页播放器域名（虽然以 .m3u8 结尾，但不支持直连或有防调试）：
         if (
-          urlLower.includes('baofeng11.com') || 
-          urlLower.includes('fengbao11.com') || 
-          urlLower.includes('xluuss.com') || 
-          urlLower.includes('kuaichezym3u8.com') ||
-          urlLower.includes('hongniuzy') ||
-          urlLower.includes('hongniu22.com')
+          epTokenLower.includes('baofeng11.com') || 
+          epTokenLower.includes('fengbao11.com') || 
+          epTokenLower.includes('xluuss.com') || 
+          epTokenLower.includes('kuaichezym3u8.com') ||
+          epTokenLower.includes('hongniuzy') ||
+          epTokenLower.includes('hongniu22.com')
         ) {
-          finalRealUrl = ""; // 强行不走 DPlayer，节省代理中转流量
-          playUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(cleanUrl);
-          console.log(`[PROACTIVE ROUTER] Protected/Fake stream bypassed: ${cleanUrl}. Routed to clean iframe.`);
+          // 💡 epToken 本身是黑名单域名，但如果 sniff 嗅探到了 realUrl，优先用嗅探结果走 DPlayer
+          if (realUrl && realUrl.startsWith('http') && realUrl !== epToken) {
+            finalRealUrl = realUrl;
+            console.log(`[PROACTIVE ROUTER] epToken blacklisted but sniff gave realUrl. Using sniff result: ${realUrl}`);
+          } else {
+            finalRealUrl = ""; // 强行不走 DPlayer，节省代理中转流量
+            playUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(cleanUrl);
+            console.log(`[PROACTIVE ROUTER] Protected/Fake stream bypassed: ${cleanUrl}. Routed to clean iframe.`);
+          }
         } 
         // ② 如果是真正干净、活着的常规 M3U8/MP4 视频直链：
         else {
+          const urlLower = cleanUrl.toLowerCase();
           const isM3u8OrMp4 = urlLower.includes('.m3u8') || urlLower.includes('/m3u8') || urlLower.includes('.mp4') || urlLower.includes('/mp4') || cleanUrl.startsWith('blob:');
           if (isM3u8OrMp4 && allowDirectPlay) { // 💡 仅在允许直接播放时才放行直连
             finalRealUrl = cleanUrl; 
