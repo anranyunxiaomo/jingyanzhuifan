@@ -2479,6 +2479,8 @@ body {
     top: 0 !important;
     z-index: 1000 !important;
     height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     overflow: visible !important;
     padding: calc(6px + env(safe-area-inset-top, 0px)) 10px 8px !important;
     margin: 0 !important;
@@ -2513,6 +2515,7 @@ body {
     box-shadow: none !important;
     z-index: auto !important;
     pointer-events: auto !important;
+    box-sizing: border-box !important;
   }
 
   .app-brand {
@@ -2559,6 +2562,7 @@ body {
     z-index: auto !important;
     box-shadow: none !important;
     order: 3 !important;
+    box-sizing: border-box !important;
   }
 
   .app-search-box {
@@ -2566,6 +2570,7 @@ body {
     border: 1.2px solid rgba(255, 45, 120, 0.12) !important;
     border-radius: 8px !important;
     padding: 0.35rem 0.8rem !important;
+    box-sizing: border-box !important;
   }
 
   .search-results {
@@ -2580,11 +2585,16 @@ body {
     background: var(--bg-primary) !important;
     border: 1px solid rgba(255, 45, 120, 0.15) !important;
     z-index: 1001 !important;
+    box-sizing: border-box !important;
   }
 
   .app-main {
+    width: auto !important;
+    margin-left: 0.4rem !important;
+    margin-right: 0.4rem !important;
     margin-top: 0.8rem !important;
     padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+    box-sizing: border-box !important;
   }
   .detail-content {
     margin-top: 0 !important;
@@ -2668,14 +2678,18 @@ body {
 
   /* 卡片网格及卡片精细紧凑化，提高手机端浏览效率，防止封面过大 */
   .grid-list {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 0.5rem;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .anime-card {
     padding: 4px 4px 6px;
     border-top-width: 1.5px;
     border-bottom-width: 1.5px;
     border-radius: 6px !important;
+    box-sizing: border-box !important;
   }
   .card-title {
     font-size: 0.72rem;
@@ -2702,8 +2716,12 @@ body {
 
   /* app-main 贴边 */
   .app-main {
-    padding: 0.8rem 0.5rem;
-    margin: 0.5rem 0.2rem;
+    padding: 0.8rem 0.5rem !important;
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+    margin-top: 0.5rem !important;
+    width: auto !important;
+    box-sizing: border-box !important;
     border-radius: 2px;
   }
   .app-main::before {
@@ -2741,14 +2759,24 @@ body {
     width: 100%;
   }
 
-  /* 日程 Tab 按鈕触控优化 */
-  .tab-btn {
-    padding: 0.48rem 0.8rem;
-    font-size: 0.8rem;
-    min-width: 56px;
-  }
+  /* 日程 Tab 按鈕自适应与触控优化 */
   .week-tabs {
-    gap: 5px;
+    display: flex !important;
+    gap: 4px !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .tab-btn {
+    flex: 1 1 auto !important;
+    min-width: 42px !important;
+    padding: 0.42rem 0.35rem !important;
+    font-size: 0.72rem !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
 
   /* 集数按鈕：修复 #11 移除硬写 max-height 覆盖 clamp，防止竖屏短视口团块过大 */
@@ -2910,11 +2938,13 @@ body {
 /* 📱 超窄屏兜底 (≤375px，适配 iPhone SE / 老款小屏安卓) */
 @media (max-width: 375px) {
   .grid-list {
-    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
-    gap: 0.45rem;
+    grid-template-columns: repeat(auto-fit, minmax(86px, 1fr)) !important;
+    gap: 0.4rem !important;
+    box-sizing: border-box !important;
   }
   .anime-card {
     padding: 4px 4px 5px;
+    box-sizing: border-box !important;
   }
   .card-title {
     font-size: 0.7rem;
