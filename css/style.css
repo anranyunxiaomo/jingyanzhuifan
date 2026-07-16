@@ -2461,13 +2461,13 @@ body {
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 周表区域：overflow-x:hidden 防止横向溢出撑页，不影响 week-tabs 内部横划行为 */
+  /* 周表区域：Tab已改为grid布局不溢出，不需overflow裁剪 */
   .schedule-section {
-    overflow-x: hidden;
+    overflow: visible;
     width: 100% !important;
     box-sizing: border-box !important;
   }
-  /* Tab 容器：clip 内容到 schedule-section 宽度内，内部仍可横滑 */
+  /* Tab 容器宽度限制 */
   .week-tabs {
     width: 100% !important;
     max-width: 100% !important;
@@ -2628,24 +2628,22 @@ body {
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
-  /* 📅 周表 Tab：横滑查看全部7天，禁止按钮缩小 */
+  /* 📅 周表 Tab：CSS Grid 强制7等分，全部显示无需滚动 */
   .week-tabs {
-    gap: 6px;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 4px !important;
+    overflow: visible !important;
     padding-bottom: 0.6rem;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    flex-wrap: nowrap !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
   }
-  .week-tabs::-webkit-scrollbar { display: none !important; }
   .tab-btn {
-    flex: 0 0 auto !important;  /* 禁止缩小，保持自然宽度，容器横滑 */
-    padding: 0.5rem 0.85rem;
-    font-size: 0.82rem;
-    min-width: unset;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0.5rem 0 !important;
+    font-size: 0.78rem !important;
     white-space: nowrap;
-    text-align: center;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
   /* 集数按鈕加大触控面积 */
   .ep-btn {
@@ -2789,30 +2787,28 @@ body {
     width: 100%;
   }
 
-  /* 📅 480px 以下：Tab 7天全部可横划查看，按钮不压缩 */
+  /* 📅 480px 以下：CSS Grid 强制7等分，全部显示无需滚动 */
   .week-tabs {
-    display: flex !important;
-    gap: 4px !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    flex-wrap: nowrap !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 3px !important;
+    overflow: visible !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
     padding-bottom: 4px !important;
   }
-  .week-tabs::-webkit-scrollbar { display: none !important; }
   .tab-btn {
-    flex: 0 0 auto !important;     /* 关键：禁止缩小，让容器横滑 */
-    min-width: unset !important;
-    padding: 0.44rem 0.7rem !important;
-    font-size: 0.78rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0.44rem 0 !important;
+    font-size: 0.68rem !important;
     border-radius: 4px !important;
     white-space: nowrap !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
+    letter-spacing: -0.02em;
   }
 
   /* 集数按鈕：修复 #11 移除硬写 max-height 覆盖 clamp，防止竖屏短视口团块过大 */
