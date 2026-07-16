@@ -4363,6 +4363,38 @@ body.art-fullscreen-web-active .banner-container {
   z-index: 0 !important;
 }
 
+/* ============================================================
+   原生 Fullscreen API 全屏状态 CSS
+   :fullscreen 伪类：浏览器进入原生全屏时自动应用
+   ============================================================ */
+
+/* ① 全屏容器：撑满视口，黑色背景 */
+.art-video-player:fullscreen,
+.art-video-player:-webkit-full-screen,
+#dplayer:fullscreen,
+#dplayer:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background: #000 !important;
+  border-radius: 0 !important;
+}
+
+/* ② 全屏内的 video 元素：铺满容器，保持比例 */
+.art-video-player:fullscreen video,
+.art-video-player:-webkit-full-screen video {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  object-fit: contain !important;
+}
+
+/* ③ body 原生全屏时压低页头/侧边栏 z-index */
+body.art-native-fullscreen-active .app-header,
+body.art-native-fullscreen-active .sidebar {
+  z-index: 0 !important;
+}
+
 
 /* ==========================================================================
    🎬 同系列关联推荐海报墙与治愈系板块专有样式 
