@@ -2461,6 +2461,17 @@ body {
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
+  /* 周表区域：overflow-x:hidden 防止横向溢出撑页，不影响 week-tabs 内部横划行为 */
+  .schedule-section {
+    overflow-x: hidden;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* Tab 容器：clip 内容到 schedule-section 宽度内，内部仍可横滑 */
+  .week-tabs {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
   /* 推荐/最近更新：固定3列 — 防止 minmax 临界值导致列数突变或溢出 */
   .grid-list {
     display: grid !important;
@@ -2617,14 +2628,23 @@ body {
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
+  /* 📅 周表 Tab：横滑查看全部7天，禁止按钮缩小 */
   .week-tabs {
     gap: 6px;
     padding-bottom: 0.6rem;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
   }
+  .week-tabs::-webkit-scrollbar { display: none !important; }
   .tab-btn {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.85rem;
-    min-width: 60px;
+    flex: 0 0 auto !important;  /* 禁止缩小，保持自然宽度，容器横滑 */
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+    min-width: unset;
+    white-space: nowrap;
     text-align: center;
   }
   /* 集数按鈕加大触控面积 */
@@ -2769,23 +2789,28 @@ body {
     width: 100%;
   }
 
-  /* 日程 Tab 按鈕自适应与触控优化 */
+  /* 📅 480px 以下：Tab 7天全部可横划查看，按钮不压缩 */
   .week-tabs {
     display: flex !important;
     gap: 4px !important;
     overflow-x: auto !important;
-    white-space: nowrap !important;
+    overflow-y: visible !important;
+    flex-wrap: nowrap !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding-bottom: 4px !important;
   }
+  .week-tabs::-webkit-scrollbar { display: none !important; }
   .tab-btn {
-    flex: 1 1 auto !important;
-    min-width: 42px !important;
-    padding: 0.42rem 0.35rem !important;
-    font-size: 0.72rem !important;
+    flex: 0 0 auto !important;     /* 关键：禁止缩小，让容器横滑 */
+    min-width: unset !important;
+    padding: 0.44rem 0.7rem !important;
+    font-size: 0.78rem !important;
     border-radius: 4px !important;
+    white-space: nowrap !important;
     text-align: center !important;
     box-sizing: border-box !important;
   }
