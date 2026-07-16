@@ -1888,8 +1888,11 @@ new Vue({
             // ─── 备用源自愈与报错处理 ────────────────────────────────
             const fallbackToIframe = (reason) => {
               if (this._hasFallenBack) return; // 防止多次触发
+              this._hasFallenBack = true; // 💡 立即锁定，杜绝 HLS 多次 FATAL 回调引发重复执行
               
               const ep = this.activeEpisodes[this.activeEpisodeIndex];
+
+              // ── A123 线路：清除缓存后重新嗅探新鲜直链 ──
               if (this.activeLineKey === 'a123_line1') {
                 const cacheKey = `jyzf_resolved_a123_${this.currentAnimeId}_${this.activeEpisodeIndex}`;
                 const hasCache = localStorage.getItem(cacheKey) || (ep && ep.length >= 3 && ep[2]);
@@ -1897,6 +1900,7 @@ new Vue({
                   console.warn("[A123 FAILBACK] Cache expired, retrying...");
                   localStorage.removeItem(cacheKey);
                   if (ep && ep.length >= 3) ep[2] = ""; // 清空内存缓存
+                  this._hasFallenBack = false; // 允许重试一次
                   dp.notice.show = "播放源已失效，正在自动为您重新获取新鲜源并起播...";
                   setTimeout(() => {
                     this.playEpisode(this.activeEpisodeIndex, true);
@@ -1905,13 +1909,14 @@ new Vue({
                 }
               }
               
+              // ── AniCh 多备用源轮换 ──
               if (this.activeLineKey === 'anich_m3u8') {
                 if (this.currentAnichBackupUrls && this.currentAnichBackupUrls.length > 0) {
                   this.currentAnichUrlIndex++;
                   if (this.currentAnichUrlIndex < this.currentAnichBackupUrls.length) {
                     const nextBackupUrl = this.currentAnichBackupUrls[this.currentAnichUrlIndex];
                     console.warn(`[VOD FAILBACK] Stream failed (${reason}). Auto switching to backup index ${this.currentAnichUrlIndex}:`, nextBackupUrl);
-                    
+                    this._hasFallenBack = false; // 允许下次备用源继续切换
                     dp.notice.show = "当前播放源加载超时，正在自动为您加载备用播放源...";
                     dp.url = nextBackupUrl;
                     dp.play();
@@ -1919,10 +1924,20 @@ new Vue({
                   }
                 }
               }
+
+              // ── 含预解析直链 ep[2] 的常规采集线路（非凡、暴风等）：自动清除失效缓存 ──
+              // 💡 防止失效的 ep[2] URL 反复被调用，下次播放时会重新走 age_ cloud decrypt 路径
+              if (ep && ep.length >= 3 && ep[2] && ep[2].startsWith('http')) {
+                console.warn('[VOD FAILBACK] Clearing stale cached ep[2] URL:', ep[2]);
+                ep[2] = ''; // 清除内存中的失效缓存直链
+              }
               
-              console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
-              dp.notice.show = "抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。";
+              // 💡 终止加载动画，在播放器内显示友好的中文错误提示，不跳转到任何第三方站
+              console.error("[VOD FAILBACK] Stream failed:", reason);
               this.stopLoadingAnimation();
+              if (dp && dp.notice) {
+                dp.notice.show = "当前视频直链播放受限，请切换其他播放线路重试。";
+              }
             };
 
             // 监听 ArtPlayer 的起播与就绪状态
