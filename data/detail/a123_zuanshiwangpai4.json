@@ -1,0 +1,54 @@
+{
+  "video": {
+    "id": "a123_zuanshiwangpai4",
+    "name": "钻石王牌 4",
+    "cover": "https://i1.a123tv.com/v/0x/zuanshiwangpai4.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至9集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/zuanshiwangpai4/6ez1poyz0.html"
+        ],
+        [
+          "第02集",
+          "/v/zuanshiwangpai4/6ez1poyz1.html"
+        ],
+        [
+          "第03集",
+          "/v/zuanshiwangpai4/6ez1poyz2.html"
+        ],
+        [
+          "第04集",
+          "/v/zuanshiwangpai4/6ez1poyz3.html"
+        ],
+        [
+          "第05集",
+          "/v/zuanshiwangpai4/6ez1poyz4.html"
+        ],
+        [
+          "第06集",
+          "/v/zuanshiwangpai4/6ez1poyz5.html"
+        ],
+        [
+          "第07集",
+          "/v/zuanshiwangpai4/6ez1poyz6.html"
+        ],
+        [
+          "第08集",
+          "/v/zuanshiwangpai4/6ez1poyz7.html"
+        ],
+        [
+          "第09集",
+          "/v/zuanshiwangpai4/6ez1poyz8.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

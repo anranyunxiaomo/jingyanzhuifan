@@ -1,0 +1,62 @@
+{
+  "video": {
+    "id": "a123_gaoxiaoqimianzu",
+    "name": "高校奇面组",
+    "cover": "https://i1.a123tv.com/v/0x/gaoxiaoqimianzu.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至11集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/gaoxiaoqimianzu/8z2qvez0.html"
+        ],
+        [
+          "第03集",
+          "/v/gaoxiaoqimianzu/8z2qvez1.html"
+        ],
+        [
+          "第04集",
+          "/v/gaoxiaoqimianzu/8z2qvez2.html"
+        ],
+        [
+          "第05集",
+          "/v/gaoxiaoqimianzu/8z2qvez3.html"
+        ],
+        [
+          "第06集",
+          "/v/gaoxiaoqimianzu/8z2qvez4.html"
+        ],
+        [
+          "第07集",
+          "/v/gaoxiaoqimianzu/8z2qvez5.html"
+        ],
+        [
+          "第08集",
+          "/v/gaoxiaoqimianzu/8z2qvez6.html"
+        ],
+        [
+          "第09集",
+          "/v/gaoxiaoqimianzu/8z2qvez7.html"
+        ],
+        [
+          "第10集",
+          "/v/gaoxiaoqimianzu/8z2qvez8.html"
+        ],
+        [
+          "第11集",
+          "/v/gaoxiaoqimianzu/8z2qvez9.html"
+        ],
+        [
+          "第12集",
+          "/v/gaoxiaoqimianzu/8z2qvez10.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

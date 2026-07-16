@@ -1,0 +1,46 @@
+{
+  "video": {
+    "id": "a123_wuweifensijulebu1",
+    "name": "雾尾粉丝俱乐部",
+    "cover": "https://i1.a123tv.com/v/0x/wuweifensijulebu1.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至7集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/wuweifensijulebu1/8z2umaz0.html"
+        ],
+        [
+          "第03集",
+          "/v/wuweifensijulebu1/8z2umaz1.html"
+        ],
+        [
+          "第04集",
+          "/v/wuweifensijulebu1/8z2umaz2.html"
+        ],
+        [
+          "第05集",
+          "/v/wuweifensijulebu1/8z2umaz3.html"
+        ],
+        [
+          "第06集",
+          "/v/wuweifensijulebu1/8z2umaz4.html"
+        ],
+        [
+          "第07集",
+          "/v/wuweifensijulebu1/8z2umaz5.html"
+        ],
+        [
+          "第08集",
+          "/v/wuweifensijulebu1/8z2umaz6.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}
