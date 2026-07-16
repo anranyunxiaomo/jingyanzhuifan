@@ -1711,6 +1711,19 @@ new Vue({
                   const res = await fetch(proxyUrl);
                   if (res.ok) {
                     const m3u8Text = await res.text();
+
+                    // 💡 关键校验：Worker 有时把 CDN 的 403 HTML body 以 HTTP 200 透传，
+                    // 此时 m3u8Text 是 HTML 而不是真正的 M3U8，必须提前拦截切 iframe
+                    if (!m3u8Text.trimStart().startsWith('#EXTM3U') && !m3u8Text.includes('#EXT-X-')) {
+                      console.warn('[SMART ROUTER] Proxy returned non-M3U8 content (likely CDN blocked Worker IP). Switching to iframe.');
+                      if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
+                        this.stopLoadingAnimation();
+                        this.isIframeMode = true;
+                        this.activePlayUrl = capturedIframeUrl;
+                        return;
+                      }
+                    }
+
                     const lines = m3u8Text.split('\n');
                     const urlObj = new URL(capturedRealUrl);
                     const basePath = urlObj.href.substring(0, urlObj.href.lastIndexOf('/') + 1);
