@@ -1755,11 +1755,25 @@ new Vue({
                     finalVideoUrl = this.activeBlobUrl;
                     console.log("[SMART ROUTER] Rewrite successful. Generated Blob URL:", finalVideoUrl);
                   } else {
-                    console.warn("[SMART ROUTER] Failed to fetch M3U8 text, fallback to direct proxyUrl");
-                    finalVideoUrl = proxyUrl;
+                    // 💡 代理返回非200（如403 CDN防盗链拒绝）→ 直接切 iframe，不再用同一个 proxyUrl 给 HLS.js（它也会403）
+                    console.warn(`[SMART ROUTER] Proxy fetch failed (HTTP ${res.status}). Switching to iframe fallback.`);
+                    if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
+                      this.stopLoadingAnimation();
+                      this.isIframeMode = true;
+                      this.activePlayUrl = capturedIframeUrl;
+                      return; // 直接退出，不初始化 ArtPlayer
+                    }
+                    finalVideoUrl = proxyUrl; // 无 iframe 地址时仍走 proxyUrl（保底）
                   }
                 } catch (fetchErr) {
                   console.error("[SMART ROUTER] Error rewriting M3U8:", fetchErr);
+                  // fetch 异常（网络超时/CORS）→ 也切 iframe
+                  if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
+                    this.stopLoadingAnimation();
+                    this.isIframeMode = true;
+                    this.activePlayUrl = capturedIframeUrl;
+                    return;
+                  }
                   finalVideoUrl = proxyUrl;
                 }
               }
@@ -1939,16 +1953,23 @@ new Vue({
               }
 
               // ── 含预解析直链 ep[2] 的常规采集线路（非凡、暴风等）：自动清除失效缓存 ──
-              // 💡 防止失效的 ep[2] URL 反复被调用，下次播放时会重新走 age_ cloud decrypt 路径
               if (ep && ep.length >= 3 && ep[2] && ep[2].startsWith('http')) {
                 console.warn('[VOD FAILBACK] Clearing stale cached ep[2] URL:', ep[2]);
-                ep[2] = ''; // 清除内存中的失效缓存直链
+                ep[2] = '';
               }
-              
-              // 💡 终止加载动画，在播放器内显示友好的中文错误提示，不跳转到任何第三方站
+
+              // 💡 HLS fatal（CDN 403/超时）→ 自动切 iframe 解析站，用户无感知继续播
               console.error("[VOD FAILBACK] Stream failed:", reason);
               this.stopLoadingAnimation();
-              if (dp && dp.notice) {
+              if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
+                console.warn('[VOD FAILBACK] Auto switching to iframe:', capturedIframeUrl);
+                if (this.dpInstance) {
+                  try { this.dpInstance.destroy(); } catch(e) {}
+                  this.dpInstance = null;
+                }
+                this.isIframeMode = true;
+                this.activePlayUrl = capturedIframeUrl;
+              } else if (dp && dp.notice) {
                 dp.notice.show = "当前视频直链播放受限，请切换其他播放线路重试。";
               }
             };
