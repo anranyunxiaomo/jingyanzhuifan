@@ -1415,21 +1415,6 @@ async def main_async():
                             'is_active': True
                         }
 
-        # 获取最近更新的前 15 页 (汇总包含近一个月内更新的所有最热当季新番，大约 450+ 部)
-        print("Fetching update pages 1 to 15...")
-        for page in range(1, 16):
-            update_data = request_api("update", params={"page": page})
-            if update_data and isinstance(update_data, list):
-                for item in update_data:
-                    aid_str = str(item.get('AID', ''))
-                    if aid_str:
-                        recently_updated_aids.add(aid_str)
-                        aids_to_fetch[aid_str] = {
-                            'title': item.get('Title', '未知动漫'),
-                            'new_title': item.get('NewTitle', ''),
-                            'is_active': True
-                        }
-
     # 💡 强制把中文追番界爆火的殿堂级名作 AID 注入待抓取名单，彻底将其静态化离线化，确保 100% 搜索即见、0% 依赖国外 CORS 代理
     PERMANENT_HOT_ANIME = [
         "20230207", "20260029", # 葬送的芙莉莲 系列
