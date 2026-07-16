@@ -2448,7 +2448,7 @@ body {
   .player-panel {
     grid-column: 1 / 2;
   }
-  /* app-main: 移动端核弹级修复：物理截断所有子级溢出，彻底消灭横向滚动条 */
+  /* app-main: 严格宽度限制，但不加 overflow:hidden（会破坏 ArtPlayer 的 DOM 容器检测） */
   .app-main {
     width: calc(100% - 0.8rem) !important;
     max-width: calc(100% - 0.8rem) !important;
@@ -2456,8 +2456,6 @@ body {
     margin-right: 0.4rem !important;
     margin-top: 0.5rem !important;
     border-radius: 2px;
-    overflow: hidden !important;
-    overflow-x: hidden !important;
     box-sizing: border-box !important;
   }
   .app-main::before {
@@ -4998,12 +4996,14 @@ body.art-fullscreen-web-active .banner-container {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .home-main-col {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .home-side-col {
     position: static !important;
