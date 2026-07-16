@@ -187,10 +187,37 @@ export default {
             throw new Error(`HTTP status ${res.status}`);
           }
           const html = await res.text();
-          // 正则抓取 MacCMS 系统的 player_aaaa 全局变量
-          const match = html.match(/var\s+player_aaaa\s*=\s*(\{.*?\})\s*(?:<\/script>|;)/);
-          if (match && match[1]) {
-            const playerConfig = JSON.parse(match[1]);
+          
+          // 💡 采用括号计数解析器代替非贪婪正则，彻底解决 player_aaaa 对象中含有 vod_data 嵌套括号导致的截断问题
+          let playerConfig = null;
+          const startIndex = html.indexOf('player_aaaa');
+          if (startIndex !== -1) {
+            const jsonStartIndex = html.indexOf('{', startIndex);
+            if (jsonStartIndex !== -1) {
+              let braceCount = 0;
+              let jsonEndIndex = -1;
+              for (let i = jsonStartIndex; i < html.length; i++) {
+                if (html[i] === '{') braceCount++;
+                else if (html[i] === '}') {
+                  braceCount--;
+                  if (braceCount === 0) {
+                    jsonEndIndex = i;
+                    break;
+                  }
+                }
+              }
+              if (jsonEndIndex !== -1) {
+                const jsonStr = html.substring(jsonStartIndex, jsonEndIndex + 1);
+                try {
+                  playerConfig = JSON.parse(jsonStr);
+                } catch (e) {
+                  throw new Error('JSON 解析失败: ' + e.message);
+                }
+              }
+            }
+          }
+
+          if (playerConfig && playerConfig.url) {
             let decodedUrl = playerConfig.url;
             if (playerConfig.encrypt == 1) {
               decodedUrl = decodeURIComponent(decodedUrl);
@@ -211,7 +238,7 @@ export default {
               });
             }
           }
-          throw new Error('Unable to extract player config or stream url');
+          throw new Error('未能在配置中提取到播放地址或解析出错');
         } catch (err) {
           // 标记失败，缓存 10 分钟防刷
           if (env.JYZF_LOGS) {
