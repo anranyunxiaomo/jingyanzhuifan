@@ -1410,16 +1410,6 @@
     "Type": "TV"
   },
   {
-    "AID": "a123_mdbe",
-    "Title": "猫的报恩",
-    "Pinyin": "mdbe",
-    "Cover": "https://image.jinyingimage.com/cover/9a0684d9dad4967ddd09594511de2c52.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至全集",
-    "UpdateTime": 20250260133,
-    "Type": "剧场版"
-  },
-  {
     "AID": 20250097,
     "Title": "公主的管弦乐团",
     "Pinyin": "gzdgxyt",
@@ -2780,6 +2770,16 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_gwdhz",
+    "Title": "怪物的孩子",
+    "Pinyin": "gwdhz",
+    "Cover": "https://image.jinyingimage.com/cover/6d65b5ac1f4ec80b9a7309311f4f9b13.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20150000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20140168,
     "Title": "拂晓的尤娜",
     "Pinyin": "fxdyn",
@@ -3147,16 +3147,6 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20130130017,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_gwdhz",
-    "Title": "怪物的孩子",
-    "Pinyin": "gwdhz",
-    "Cover": "https://image.jinyingimage.com/cover/6d65b5ac1f4ec80b9a7309311f4f9b13.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130000133,
     "Type": "剧场版"
   },
   {
@@ -3837,6 +3827,16 @@
     "Status": "完结",
     "UpToDate": "更新至日语",
     "UpdateTime": 20020000143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mdbe",
+    "Title": "猫的报恩",
+    "Pinyin": "mdbe",
+    "Cover": "https://image.jinyingimage.com/cover/9a0684d9dad4967ddd09594511de2c52.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至全集",
+    "UpdateTime": 20020000133,
     "Type": "剧场版"
   },
   {
