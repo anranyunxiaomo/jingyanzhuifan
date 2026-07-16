@@ -2448,21 +2448,32 @@ body {
   .player-panel {
     grid-column: 1 / 2;
   }
-  /* app-main: clamp 已处理 padding/margin，这里只覆盖宽度计算并留出顶部搜索栏位置 */
+  /* app-main: 移动端核弹级修复：物理截断所有子级溢出，彻底消灭横向滚动条 */
   .app-main {
-    width: calc(100% - 0.8rem);
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
-    margin-top: 64px !important; /* 💡 预留出顶部吸顶搜索栏的防遮挡安全高度 */
+    width: calc(100% - 0.8rem) !important;
+    max-width: calc(100% - 0.8rem) !important;
+    margin-left: 0.4rem !important;
+    margin-right: 0.4rem !important;
+    margin-top: 0.5rem !important;
     border-radius: 2px;
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 推荐/最近更新：智能自适应列宽分配，手机端自动 3 列，小屏自适应 2 列，平板自适应更多列 */
+  /* 推荐/最近更新：固定3列 — 防止 minmax 临界值导致列数突变或溢出 */
   .grid-list {
-    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-    gap: 0.65rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .anime-card {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   /* Banner 内容调整（高度由 clamp 控制） */
   .banner-slide {
