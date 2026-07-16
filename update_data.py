@@ -175,6 +175,38 @@ def is_non_anime_garbage(title, tags_str, plot):
     return False
 
 
+def check_video_should_filter(video):
+    """统一校验一个动漫/视频对象是否应该被过滤删除"""
+    if not video:
+        return False
+    aid = video.get("id", "")
+    if str(aid).startswith("a123_"):
+        return False
+    title = video.get("name", "")
+    plot = video.get("plot", "")
+    tags = video.get("tags", "")
+    area = video.get("area", "")
+    v_type = video.get("type", "")
+    
+    # 1. 敏感/黄色内容拦截
+    if is_sensitive_anime(title, plot, tags):
+        return True
+        
+    # 2. 地区限制拦截
+    if is_unwanted_area_anime(title, area, plot, tags):
+        return True
+        
+    # 3. 三次元垃圾影视拦截
+    if is_non_anime_garbage(title, tags, plot):
+        return True
+        
+    # 4. 低幼少儿过滤 (仅对非剧场版电影生效)
+    if v_type != "剧场版":
+        if is_kids_anime(title, plot, tags):
+            return True
+            
+    return False
+
 def check_anime_sensitive_by_aid(aid, title):
     """通过本地详情缓存辅助校验动漫是否敏感、属于低幼、或属于无关欧美海外片源"""
     if not aid:
@@ -184,14 +216,7 @@ def check_anime_sensitive_by_aid(aid, title):
         try:
             with open(detail_path, 'r', encoding='utf-8') as f:
                 video = json.load(f).get("video", {})
-                t = video.get("name", title)
-                p = video.get("plot", "")
-                tags_val = video.get("tags", "")
-                a = video.get("area", "")
-                return (is_sensitive_anime(t, p, tags_val) or 
-                        is_kids_anime(t, p, tags_val) or 
-                        is_unwanted_area_anime(t, a, p, tags_val) or
-                        is_non_anime_garbage(t, tags_val, p))
+                return check_video_should_filter(video)
         except Exception:
             pass
     return is_sensitive_anime(title, "", "") or is_kids_anime(title, "", "") or is_unwanted_area_anime(title, "", "", "") or is_non_anime_garbage(title, "", "")
@@ -932,14 +957,7 @@ def rebuild_static_index_and_assets():
                     title = video.get("name")
                     if title and aid_str not in seen_aids:
                         # 💡 过滤敏感、少儿与非动漫垃圾片源
-                        is_sensitive = is_sensitive_anime(title, video.get("plot", ""), video.get("tags", ""))
-                        is_kids = is_kids_anime(title, video.get("plot", ""), video.get("tags", ""))
-                        is_unwanted = is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", ""))
-                        tags_val = video.get("tags", "")
-                        plot_val = video.get("plot", "")
-                        is_garbage = is_non_anime_garbage(title, tags_val, plot_val)
-                        
-                        if is_sensitive or is_kids or is_unwanted or is_garbage:
+                        if check_video_should_filter(video):
                             try:
                                 os.remove(detail_file_path)
                                 print(f"  [CLEANUP] Deleted kids/sensitive/garbage local JSON: {filename} ({title})")
@@ -1039,6 +1057,10 @@ def auto_align_non_age_animes_from_age():
             if not title:
                 continue
                 
+            # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
+            if check_video_should_filter(video):
+                continue
+            
             checked_count += 1
             print(f"🔍 [{checked_count}] 正在去 AGE 检索自检动漫: '{title}' (本地 ID: {filename[:-5]})...")
             
@@ -1161,10 +1183,7 @@ async def main_async():
                         title = video.get("name")
                         if title and aid_str not in seen_aids:
                             # 💡 过滤黄色/敏感番剧、低幼少儿与无关欧美海外片源
-                            if (is_sensitive_anime(title, video.get("plot", ""), video.get("tags", "")) or 
-                                is_kids_anime(title, video.get("plot", ""), video.get("tags", "")) or 
-                                is_unwanted_area_anime(title, video.get("area", ""), video.get("plot", ""), video.get("tags", "")) or
-                                is_non_anime_garbage(title, video.get("tags", ""), video.get("plot", ""))):
+                            if check_video_should_filter(video):
                                 try:
                                     os.remove(detail_file_path)
                                     print(f"  [CLEANUP] Physically deleted non-anime garbage: {title} ({filename})")
@@ -1499,11 +1518,7 @@ async def main_async():
                     
                 # 💡 如果本地已有缓存，且该动漫已被判定为非国日漫/黄色/敏感/低幼内容，直接强清删除并跳过处理
                 video_cached = local_detail.get("video", {})
-                t_cached = video_cached.get("name", title)
-                p_cached = video_cached.get("plot", "")
-                tags_cached = video_cached.get("tags", "")
-                a_cached = video_cached.get("area", "")
-                if is_sensitive_anime(t_cached, p_cached, tags_cached) or is_kids_anime(t_cached, p_cached, tags_cached) or is_unwanted_area_anime(t_cached, a_cached, p_cached, tags_cached):
+                if check_video_should_filter(video_cached):
                     print(f"  [FILTERED] skipping & deleting unwanted anime: {title} (AID: {aid})")
                     if os.path.exists(detail_path):
                         try:
@@ -1556,12 +1571,8 @@ async def main_async():
         
         if detail_data:
             video_api = detail_data.get("video", {})
-            t_api = video_api.get("name", title)
-            p_api = video_api.get("plot", "")
-            tags_api = video_api.get("tags", "")
-            a_api = video_api.get("area", "")
-            if is_sensitive_anime(t_api, p_api, tags_api) or is_kids_anime(t_api, p_api, tags_api) or is_unwanted_area_anime(t_api, a_api, p_api, tags_api):
-                print(f"  [API FILTERED] Discarded non-whitelist/sensitive/kids anime from API response: {t_api} (AID: {aid})")
+            if check_video_should_filter(video_api):
+                print(f"  [API FILTERED] Discarded non-whitelist/sensitive/kids anime from API response: {video_api.get('name', title)} (AID: {aid})")
                 if os.path.exists(detail_path):
                     try:
                         os.remove(detail_path)

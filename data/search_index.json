@@ -1,25 +1,5 @@
 [
   {
-    "AID": 234035,
-    "Title": "鬼灭之刃柱训练篇",
-    "Pinyin": "gmzrzxlp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260594115,
-    "Type": ""
-  },
-  {
-    "AID": 40884,
-    "Title": "鬼灭之刃锻刀村篇",
-    "Pinyin": "gmzrddcp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260401014,
-    "Type": ""
-  },
-  {
     "AID": 20260232,
     "Title": "北斗神拳 拳王军杂兵们的挽歌 第2季",
     "Pinyin": "bdsq qwjzbmdwg d2j",
@@ -235,6 +215,16 @@
     "Pinyin": "cmwdmxz",
     "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
     "Status": "更新至9集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260360243,
+    "Type": "TV"
+  },
+  {
+    "AID": "a123_anxianlingzhudeyukuailingdifan",
+    "Title": "安闲领主的愉快领地防卫",
+    "Pinyin": "axlzdykldfw",
+    "Cover": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
+    "Status": "更新至12集",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20260360243,
     "Type": "TV"
@@ -1390,16 +1380,6 @@
     "Type": "TV"
   },
   {
-    "AID": "a123_anxianlingzhudeyukuailingdifan",
-    "Title": "安闲领主的愉快领地防卫",
-    "Pinyin": "axlzdykldfw",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250360243,
-    "Type": "TV"
-  },
-  {
     "AID": 20250235,
     "Title": "数码宝贝 BEATBREAK",
     "Pinyin": "smbb beatbreak",
@@ -1428,6 +1408,16 @@
     "UpToDate": "更新至第21集",
     "UpdateTime": 20250350609,
     "Type": "TV"
+  },
+  {
+    "AID": "a123_mdbe",
+    "Title": "猫的报恩",
+    "Pinyin": "mdbe",
+    "Cover": "https://image.jinyingimage.com/cover/9a0684d9dad4967ddd09594511de2c52.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至全集",
+    "UpdateTime": 20250260133,
+    "Type": "剧场版"
   },
   {
     "AID": 20250097,
@@ -1488,6 +1478,16 @@
     "UpToDate": "更新至第08集",
     "UpdateTime": 20240340519,
     "Type": "TV"
+  },
+  {
+    "AID": 234035,
+    "Title": "鬼灭之刃柱训练篇",
+    "Pinyin": "gmzrzxlp",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20240334115,
+    "Type": ""
   },
   {
     "AID": 20230299,
@@ -1648,6 +1648,16 @@
     "UpToDate": "全集",
     "UpdateTime": 20230220254,
     "Type": "TV"
+  },
+  {
+    "AID": 40884,
+    "Title": "鬼灭之刃锻刀村篇",
+    "Pinyin": "gmzrddcp",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20230141014,
+    "Type": ""
   },
   {
     "AID": 20220494,
@@ -1820,46 +1830,6 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_fzg",
-    "Title": "风之谷",
-    "Pinyin": "fzg",
-    "Cover": "https://hongniuzyimage.com/upload/vod/20220608-1/43b6771b9d94969a8ce1183cb6c29f89.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD国语",
-    "UpdateTime": 20200000153,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_mztkn：mgdszl",
-    "Title": "名侦探柯南：迷宫的十字路",
-    "Pinyin": "mztkn：mgdszl",
-    "Cover": "https://image.jinyingimage.com/cover/69386f6bb1dfed68692a24c8686939b9.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至日语",
-    "UpdateTime": 20200000143,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_mztkn：bkjdwl",
-    "Title": "名侦探柯南：贝克街的亡灵",
-    "Pinyin": "mztkn：bkjdwl",
-    "Cover": "https://image.jinyingimage.com/cover/a495eebbfa243b79c5b9b224c482d0c2.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至日语",
-    "UpdateTime": 20200000143,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_tdts",
-    "Title": "听到涛声",
-    "Pinyin": "tdts",
-    "Cover": "https://image.jinyingimage.com/cover/9d2596a5514f8021eaf84fc7e42f792b.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200000143,
-    "Type": "剧场版"
-  },
-  {
     "AID": "a123_lbxx hfhy！zgdhz",
     "Title": "蜡笔小新 呼风唤雨！战国大合战",
     "Pinyin": "lbxx hfhy！zgdhz",
@@ -1880,46 +1850,6 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_gwdhz",
-    "Title": "怪物的孩子",
-    "Pinyin": "gwdhz",
-    "Cover": "https://image.jinyingimage.com/cover/6d65b5ac1f4ec80b9a7309311f4f9b13.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_jdxdxralad",
-    "Title": "借东西的小人阿莉埃蒂",
-    "Pinyin": "jdxdxralad",
-    "Cover": "https://image.jinyingimage.com/cover/8aec51422b30d61bce078b27f0babeb1.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_bblm",
-    "Title": "百变狸猫",
-    "Pinyin": "bblm",
-    "Cover": "https://image.jinyingimage.com/cover/743006f5b956eb5d80f0662463426b2b.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至电影解说",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_qfl",
-    "Title": "起风了",
-    "Pinyin": "qfl",
-    "Cover": "https://image.jinyingimage.com/cover/293131be3fe9d60523ebbc6dd0c2e5c3.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
     "AID": "a123_hyzdmn",
     "Title": "回忆中的玛妮",
     "Pinyin": "hyzdmn",
@@ -1930,60 +1860,10 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_sydth",
-    "Title": "岁月的童话",
-    "Pinyin": "sydth",
-    "Cover": "https://hongniuzyimage.com/cover/445e1050156c6ae8c082a8422bb7dfc0.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
     "AID": "a123_yzbd，ydddf",
     "Title": "云之彼端，约定的地方",
     "Pinyin": "yzbd，ydddf",
     "Cover": "https://img.lzipic.com/upload/vod/20231220-1/2e7e355fc283d858ee04fe8424454d7b.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_ceqt",
-    "Title": "侧耳倾听",
-    "Pinyin": "ceqt",
-    "Cover": "https://hongniuzyimage.com/cover/6a26c75d6a576c94654bfc4dda548c72.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_dlam：bwth",
-    "Title": "哆啦A梦：伴我同行",
-    "Pinyin": "dlam：bwth",
-    "Cover": "https://hongniuzyimage.com/upload/vod/20220630-1/880ba3b1240262440afd54c9ba155ab1.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_htzx",
-    "Title": "河童之夏",
-    "Pinyin": "htzx",
-    "Cover": "https://img.lzipic.com/upload/vod/20220401-1/6fa06dcfba58ec25208e97aafb6e536d.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_mnzjb",
-    "Title": "魔女宅急便",
-    "Pinyin": "mnzjb",
-    "Cover": "https://hongniuzyimage.com/upload/vod/2021-06-09/162322276515.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -2010,40 +1890,10 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_mdbe",
-    "Title": "猫的报恩",
-    "Pinyin": "mdbe",
-    "Cover": "https://image.jinyingimage.com/cover/9a0684d9dad4967ddd09594511de2c52.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至全集",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_djjf",
-    "Title": "东京教父",
-    "Pinyin": "djjf",
-    "Cover": "https://image.jinyingimage.com/cover/fce1eab4411d5df240d93ff334f15385.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
     "AID": "a123_xsjfyzsjcb：z",
     "Title": "新世纪福音战士剧场版：终",
     "Pinyin": "xsjfyzsjcb：z",
     "Cover": "https://img.lzipic.com/upload/vod/20230113-1/4d23d9a7d3243b522bdaf484772f020d.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_yxrs l",
-    "Title": "游戏人生 零",
-    "Pinyin": "yxrs l",
-    "Cover": "https://image.jinyingimage.com/cover/80f7325fa857de62fafe85f7a30273cb.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -2670,6 +2520,16 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_yxrs l",
+    "Title": "游戏人生 零",
+    "Pinyin": "yxrs l",
+    "Cover": "https://image.jinyingimage.com/cover/80f7325fa857de62fafe85f7a30273cb.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20170000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20160180,
     "Title": "爆音少女",
     "Pinyin": "bysn",
@@ -3110,6 +2970,16 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_dlam：bwth",
+    "Title": "哆啦A梦：伴我同行",
+    "Pinyin": "dlam：bwth",
+    "Cover": "https://hongniuzyimage.com/upload/vod/20220630-1/880ba3b1240262440afd54c9ba155ab1.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20140000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20130078,
     "Title": "空之境界(TV版)",
     "Pinyin": "kzjj(tvb)",
@@ -3277,6 +3147,26 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20130130017,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_gwdhz",
+    "Title": "怪物的孩子",
+    "Pinyin": "gwdhz",
+    "Cover": "https://image.jinyingimage.com/cover/6d65b5ac1f4ec80b9a7309311f4f9b13.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20130000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_qfl",
+    "Title": "起风了",
+    "Pinyin": "qfl",
+    "Cover": "https://image.jinyingimage.com/cover/293131be3fe9d60523ebbc6dd0c2e5c3.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20130000133,
     "Type": "剧场版"
   },
   {
@@ -3560,6 +3450,16 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_jdxdxralad",
+    "Title": "借东西的小人阿莉埃蒂",
+    "Pinyin": "jdxdxralad",
+    "Cover": "https://image.jinyingimage.com/cover/8aec51422b30d61bce078b27f0babeb1.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20100000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20090009,
     "Title": "圣剑锻造师",
     "Pinyin": "sjdzs",
@@ -3707,6 +3607,16 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20070070014,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_htzx",
+    "Title": "河童之夏",
+    "Pinyin": "htzx",
+    "Cover": "https://img.lzipic.com/upload/vod/20220401-1/6fa06dcfba58ec25208e97aafb6e536d.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20070000133,
     "Type": "剧场版"
   },
   {
@@ -3860,6 +3770,26 @@
     "Type": "TV"
   },
   {
+    "AID": "a123_mztkn：mgdszl",
+    "Title": "名侦探柯南：迷宫的十字路",
+    "Pinyin": "mztkn：mgdszl",
+    "Cover": "https://image.jinyingimage.com/cover/69386f6bb1dfed68692a24c8686939b9.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至日语",
+    "UpdateTime": 20030000143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_djjf",
+    "Title": "东京教父",
+    "Pinyin": "djjf",
+    "Cover": "https://image.jinyingimage.com/cover/fce1eab4411d5df240d93ff334f15385.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20030000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20020008,
     "Title": "青出于蓝",
     "Pinyin": "qcyl",
@@ -3897,6 +3827,16 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20020020039,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mztkn：bkjdwl",
+    "Title": "名侦探柯南：贝克街的亡灵",
+    "Pinyin": "mztkn：bkjdwl",
+    "Cover": "https://image.jinyingimage.com/cover/a495eebbfa243b79c5b9b224c482d0c2.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至日语",
+    "UpdateTime": 20020000143,
     "Type": "剧场版"
   },
   {
@@ -3950,6 +3890,36 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_ceqt",
+    "Title": "侧耳倾听",
+    "Pinyin": "ceqt",
+    "Cover": "https://hongniuzyimage.com/cover/6a26c75d6a576c94654bfc4dda548c72.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 19950000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_bblm",
+    "Title": "百变狸猫",
+    "Pinyin": "bblm",
+    "Cover": "https://image.jinyingimage.com/cover/743006f5b956eb5d80f0662463426b2b.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至电影解说",
+    "UpdateTime": 19940000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_tdts",
+    "Title": "听到涛声",
+    "Pinyin": "tdts",
+    "Cover": "https://image.jinyingimage.com/cover/9d2596a5514f8021eaf84fc7e42f792b.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 19930000143,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20000107,
     "Title": "红猪",
     "Pinyin": "hz",
@@ -3960,6 +3930,26 @@
     "Type": "剧场版"
   },
   {
+    "AID": "a123_sydth",
+    "Title": "岁月的童话",
+    "Pinyin": "sydth",
+    "Cover": "https://hongniuzyimage.com/cover/445e1050156c6ae8c082a8422bb7dfc0.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 19910000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mnzjb",
+    "Title": "魔女宅急便",
+    "Pinyin": "mnzjb",
+    "Cover": "https://hongniuzyimage.com/upload/vod/2021-06-09/162322276515.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 19890000133,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20000056,
     "Title": "龙猫",
     "Pinyin": "lm",
@@ -3967,6 +3957,16 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 19880000076,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_fzg",
+    "Title": "风之谷",
+    "Pinyin": "fzg",
+    "Cover": "https://hongniuzyimage.com/upload/vod/20220608-1/43b6771b9d94969a8ce1183cb6c29f89.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD国语",
+    "UpdateTime": 19840000153,
     "Type": "剧场版"
   }
 ]

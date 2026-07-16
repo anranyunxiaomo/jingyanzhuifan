@@ -4,12 +4,17 @@
     "name": "鬼灭之刃锻刀村篇",
     "cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
     "pic": "",
-    "plot": "",
-    "plot_arr": [],
-    "tags": "",
+    "plot": "剧情,动画,情,日韩动漫",
+    "plot_arr": [
+      "剧情",
+      "动画",
+      "情",
+      "日韩动漫"
+    ],
+    "tags": "剧情,动画,情,日韩动漫",
     "area": "日本",
-    "year": "2026",
-    "writer": "暂无",
+    "year": 2023,
+    "writer": "外崎春雄",
     "status": "更新至11集",
     "playlists": {
       "yhdm_line1": [
@@ -130,7 +135,23 @@
         "title": "鬼灭之刃",
         "cover": "http://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg"
       }
-    ]
+    ],
+    "name_original": "暂无",
+    "name_other": "暂无",
+    "company": "暂无",
+    "tags_arr": [
+      "剧情",
+      "动画",
+      "情",
+      "日韩动漫"
+    ],
+    "intro": "「刀鍛冶の里編」のテレビアニメ化が決定。同時に、ティザービジュアルと、「鬼滅の刃」刀鍛冶の里編テレビアニメ化決定 PVを公開しました。",
+    "intro_html": "「刀鍛冶の里編」のテレビアニメ化が決定。同時に、ティザービジュアルと、「鬼滅の刃」刀鍛冶の里編テレビアニメ化決定 PVを公開しました。",
+    "intro_clean": "「刀鍛冶の里編」のテレビアニメ化が決定。同時に、ティザービジュアルと、「鬼滅の刃」刀鍛冶の里編テレビアニメ化決定 PVを公開しました。",
+    "letter": "",
+    "star": 4,
+    "season": 0,
+    "premiere": "2023-04-09"
   },
   "player_vip": "",
   "player_jx": {},

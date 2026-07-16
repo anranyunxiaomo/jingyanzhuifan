@@ -40,7 +40,28 @@
           "/p/1344-1-1.html"
         ]
       ]
-    }
+    },
+    "name_original": "暂无",
+    "name_other": "暂无",
+    "company": "暂无",
+    "writer": "儿玉兼嗣",
+    "plot": "电影解说",
+    "plot_arr": [
+      "电影解说"
+    ],
+    "tags": "电影解说",
+    "tags_arr": [
+      "电影解说"
+    ],
+    "intro": "剧情简介暂缺，敬请期待",
+    "intro_html": "剧情简介暂缺，敬请期待",
+    "intro_clean": "剧情简介暂缺，敬请期待",
+    "area": "日本",
+    "letter": "",
+    "star": 4,
+    "year": 2003,
+    "season": 0,
+    "premiere": ""
   },
   "player_label_arr": {
     "yhdm_line1": "樱花直链"
