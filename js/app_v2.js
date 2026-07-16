@@ -118,6 +118,10 @@ new Vue({
       }
       return [];
     },
+    displayedTheatricalList() {
+      if (!this.searchIndex) return [];
+      return this.searchIndex.filter(a => a.Type === '剧场版').slice(0, 18);
+    },
     displayedHealingList() {
       if (!this.healingList) return [];
       
@@ -2400,6 +2404,7 @@ new Vue({
       this.animeDetail = null;
       this.activePlayUrl = '';
       this.currentPage = 'catalog';
+      this.catalogFilter = '全部';
       this.catalogPageNum = 1; // 重置到第一页
       
       try {
@@ -2409,6 +2414,31 @@ new Vue({
       }
       
       window.location.hash = '#/catalog';
+      window.scrollTo(0, 0);
+    },
+    
+    // 🎬 进入剧场版页
+    goTheatricalCatalog() {
+      console.log('[DEBUG ROUTER] goTheatricalCatalog() called.');
+      if (this.dpInstance) {
+        try { this.dpInstance.destroy(); } catch(e) {}
+        this.dpInstance = null;
+      }
+      this.isIframeMode = false;
+      this.currentAnimeId = null;
+      this.animeDetail = null;
+      this.activePlayUrl = '';
+      this.currentPage = 'catalog';
+      this.catalogFilter = '剧场版';
+      this.catalogPageNum = 1;
+      
+      try {
+        localStorage.setItem('jyzf_last_page', 'catalog');
+      } catch (e) {
+        console.warn('[ROUTER] localStorage.setItem failed in goTheatricalCatalog:', e);
+      }
+      
+      window.location.hash = '#/catalog?filter=剧场版';
       window.scrollTo(0, 0);
     },
     
