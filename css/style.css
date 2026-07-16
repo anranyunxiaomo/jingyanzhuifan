@@ -2294,7 +2294,7 @@ body {
     top: 6px; left: 6px; right: 6px; bottom: 6px;
   }
   .detail-container {
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr; /* 💡 平板端（769px - 1024px）还原为单栏排版，防止播放器比例过小被挤压 */
     gap: 1.5rem;
   }
   .banner-container {
@@ -2352,20 +2352,21 @@ body {
   .player-panel {
     grid-column: 1 / 2;
   }
-  /* app-main: clamp 已处理 padding/margin，这里只覆盖宽度计算 */
+  /* app-main: clamp 已处理 padding/margin，这里只覆盖宽度计算并留出顶部搜索栏位置 */
   .app-main {
     width: calc(100% - 0.8rem);
     margin-left: 0.4rem;
     margin-right: 0.4rem;
+    margin-top: 64px !important; /* 💡 预留出顶部吸顶搜索栏的防遮挡安全高度 */
     border-radius: 2px;
   }
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 推荐/最近更新：手机下 3 列 */
+  /* 推荐/最近更新：手机下改为更加大气、便于阅读的自适应 2 列并排 */
   .grid-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.9rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
   }
   /* Banner 内容调整（高度由 clamp 控制） */
   .banner-slide {
@@ -2386,11 +2387,15 @@ body {
     -webkit-backdrop-filter: none !important;
   }
   
+  /* 💡 核心优化：改用 margin: 0 auto; 居中，彻底清空 transform 属性！
+     从而断开 Stacking Context 对子级吸顶搜索栏的局部坐标系拦截，让搜索框完美吸顶！ */
   .header-container {
     position: fixed !important;
     bottom: 20px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    transform: none !important;
     width: 90% !important;
     max-width: 380px !important;
     height: 58px !important;
@@ -4932,4 +4937,64 @@ body.art-fullscreen-web-active .banner-container {
 }
 .art-control[data-name="next-episode"]:hover > div {
   color: #f28c9f !important;
+}
+
+/* ==========================================================================
+   🎨 Apple UI 2026 与吉卜力美学高阶重构规范 (Redesign Audit Upgrades)
+   ========================================================================== */
+
+/* 1. 物理触敏点击微动反馈 (Haptic Micro-animations) */
+.anime-card:active,
+.related-item-card:active,
+.ep-btn:active,
+.fav-toggle-btn:active,
+.tab-btn:active,
+.btn-reset-progress:active,
+.back-nav:active,
+.catalog-nav-btn:active,
+.history-card:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s var(--ease-silk) !important;
+}
+
+/* 2. 横向滚动列表边缘羽化渐隐 (History Scroll Fade Mask) */
+.history-scroll-container {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 15px,
+    #000 calc(100% - 15px),
+    transparent 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 15px,
+    #000 calc(100% - 15px),
+    transparent 100%
+  ) !important;
+}
+
+/* 3. 字体印刷层级优化与等宽数字对齐 */
+.detail-row,
+.ep-btn,
+.status-tag,
+.meta-tag,
+.card-tag {
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+}
+
+.detail-row {
+  line-height: 1.7rem !important;
+  font-family: var(--font-family) !important; /* 统一使用高级宣纸宋体衬线 */
+  color: var(--text-main) !important;
+}
+
+.info-body {
+  line-height: 1.75rem !important;
+  font-size: 0.95rem !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-family) !important; /* 🏮 高级画卷卷轴小说级排版质感 */
 }
