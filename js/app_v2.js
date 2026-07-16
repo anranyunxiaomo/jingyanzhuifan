@@ -183,10 +183,10 @@ new Vue({
         hot: item.Hot.toLocaleString()
       }));
     },
-    // 💡 动态判断是否为手机移动端/iPad设备 (屏幕宽度 <= 1024px 或 User-Agent 匹配移动设备)
+    // 💡 动态判断是否为手机移动端/iPad设备 (屏幕宽度 <= 768px 或 User-Agent 匹配移动设备)
     isMobile() {
       const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      return isMobileUA || this.screenWidth <= 1024;
+      return isMobileUA || this.screenWidth <= 768;
     },
 
     // 📚 番剧库：过滤 + 排序后的完整列表
