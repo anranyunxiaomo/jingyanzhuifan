@@ -1,0 +1,44 @@
+{
+  "video": {
+    "id": "a123_gwdhz",
+    "name": "怪物的孩子",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "电影解说",
+          "https://p.bvvvvvvv7f.com/video/huayitunshiguaiwudehaizidianyingjieshuo/电影解说/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "https://vip1.lz-cdn5.com/20221125/46675_ba305a2a/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/1aKvR8eQ/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/0dNyR8bL/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字版",
+          "/p/15619-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

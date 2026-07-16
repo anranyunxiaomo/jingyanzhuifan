@@ -188,8 +188,10 @@ new Vue({
     // 📚 番剧库：过滤 + 排序后的完整列表
     catalogAnimes() {
       let list = this.searchIndex || [];
-      // 按状态筛选
-      if (this.catalogFilter !== '全部') {
+      // 按状态或类型筛选
+      if (this.catalogFilter === '剧场版') {
+        list = list.filter(a => a.Type === '剧场版');
+      } else if (this.catalogFilter !== '全部') {
         list = list.filter(a => a.Status === this.catalogFilter);
       }
       // 排序
@@ -1449,6 +1451,33 @@ new Vue({
           this.stopLoadingAnimation();
         }
       }
+
+      // 💡 [NEW] xigua 等无直链线路实时多站嗅探：
+      // 如果是 xigua 线路（只有 age_token，没有 ep[2] 直链），调用 CF Worker /api/sniff 并发嗅探4个解析站
+      // 任一站成功返回直链后，升级为 ArtPlayer 原生播放，彻底脱 iframe！
+      const MULTI_SNIFF_LINES = ['xigua', 'xigua_line1', 'xigua_line2', 'yhdm_line1'];
+      if (MULTI_SNIFF_LINES.includes(this.activeLineKey) && epToken && (epToken.startsWith('age_') || epToken.startsWith('/p/')) && !realUrl) {
+        console.log('[MULTI-SNIFF] Sniffing line detected, calling /api/sniff for real stream...');
+        this.startLoadingAnimation('正在解析直链，请稍候...');
+        try {
+          const sniffUrl = `https://jingyanff.xyz/api/sniff?token=${encodeURIComponent(epToken)}`;
+          const sniffResp = await fetch(sniffUrl);
+          let sniffData = null;
+          try { sniffData = await sniffResp.json(); } catch(e) {}
+
+          if (sniffResp.ok && sniffData && sniffData.success && sniffData.url) {
+            console.log('[MULTI-SNIFF] Got direct stream!', sniffData.url, sniffData.cached ? '(cached)' : '(fresh)');
+            realUrl = sniffData.url;
+            ep[2] = sniffData.url; // 写入内存缓存，本次会话内重播无需再请求
+          } else {
+            console.warn('[MULTI-SNIFF] Parse failed, will fall back to iframe.');
+            this.stopLoadingAnimation();
+          }
+        } catch (err) {
+          console.warn('[MULTI-SNIFF] Network error, falling back to iframe:', err);
+          this.stopLoadingAnimation();
+        }
+      }
       
       // 💡 无论 realUrl 是否有值，我们都必须把 playUrl 拼装出来，作为 DPlayer 原生播放失败或被 CORS 拦截时的 iframe 降级退路！！！
       const targetUrlToResolve = realUrl ? realUrl : epToken;
@@ -1467,6 +1496,14 @@ new Vue({
         // AniCh 直链线路：直接播放，不套解析站
         playUrl = targetUrlToResolve;
         console.log("[SMART ROUTER] AniCh direct stream. Playing directly.");
+      } else if (this.activeLineKey === 'yhdm_line1') {
+        // 🌸 樱花直链线路：解析失败降级官方页面播放，解析成功套跨域中转
+        if (!realUrl) {
+          playUrl = "https://www.yhdm666.top" + epToken;
+        } else {
+          playUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(realUrl);
+        }
+        console.log("[SMART ROUTER] Routing yhdm_line1 to:", playUrl);
       } else if (this.activeLineKey === 'hkan_line1') {
         // 💡 好好看黄金主线：直连官方播放网页，结合 index.html 中的 Sandbox 安全沙箱与黑色遮罩屏蔽，完美抹除广告弹窗与周围侧边栏！
         playUrl = "https://www.hhkan0.com" + (epToken.startsWith('/play/') ? epToken : targetUrlToResolve.replace("https://www.hhkan0.com", ""));

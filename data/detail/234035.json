@@ -53,6 +53,40 @@
           "https://c1.ddbbffcdn.com/video/guimiezhirenzhuxunlianpian/第08集/index.m3u8",
           "https://c1.ddbbffcdn.com/video/guimiezhirenzhuxunlianpian/第08集/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/22737-6-1.html"
+        ],
+        [
+          "第02集",
+          "/p/22737-6-2.html"
+        ],
+        [
+          "第03集",
+          "/p/22737-6-3.html"
+        ],
+        [
+          "第04集",
+          "/p/22737-6-4.html"
+        ],
+        [
+          "第05集",
+          "/p/22737-6-5.html"
+        ],
+        [
+          "第06集",
+          "/p/22737-6-6.html"
+        ],
+        [
+          "第07集",
+          "/p/22737-6-7.html"
+        ],
+        [
+          "第08集",
+          "/p/22737-6-8.html"
+        ]
       ]
     },
     "related": [
@@ -64,5 +98,8 @@
     ]
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
 }

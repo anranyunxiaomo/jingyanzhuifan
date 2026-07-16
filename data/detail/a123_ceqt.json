@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_ceqt",
+    "name": "侧耳倾听",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://c1.rrcdnbf4.com/video/ceerqingting/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-play2.com/20230102/19121_08dd8ccc/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "HD中字",
+          "https://vip.lzcdn2.com/20220319/98_f0fe0f42/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/1aKOWraQ/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/0dNxZLaL/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/12954-3-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

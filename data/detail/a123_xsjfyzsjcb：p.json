@@ -1,0 +1,26 @@
+{
+  "video": {
+    "id": "a123_xsjfyzsjcb：p",
+    "name": "新世纪福音战士剧场版：破",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "高清",
+          "https://s2.bfllvip.com/video/xinshijifuyinzhanshixinjuchangbanpo/49d227214a6f/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/12030-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

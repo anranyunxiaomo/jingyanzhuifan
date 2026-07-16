@@ -138,6 +138,184 @@ export default {
     }
 
     // ==========================================
+    // 🚀 功能 D2：多解析站并发实时嗅探直链 (/api/sniff)
+    // 专为 xigua 等只有 age_token 无直链的线路设计，在用户播放时实时解析
+    // ==========================================
+    if (url.pathname === '/api/sniff') {
+      if (request.method === 'OPTIONS') {
+        return new Response('', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Methods': 'GET, OPTIONS'
+          }
+        });
+      }
+
+      const sniffToken = url.searchParams.get('token');
+      if (!sniffToken) {
+        return new Response(JSON.stringify({ error: 'token parameter required' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+
+      // 💡 先查 KV 缓存（2小时有效）
+      const sniffCacheKey = 'sniff:' + sniffToken;
+      if (env.JYZF_LOGS) {
+        const cached = await env.JYZF_LOGS.get(sniffCacheKey);
+        if (cached && cached !== '__FAILED__') {
+          return new Response(JSON.stringify({ success: true, url: cached, cached: true }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+          });
+        }
+      }
+
+      // 🌸 优先判断是否是樱花动漫播放相对路径 (Token 以 /p/ 开头)
+      if (sniffToken.startsWith('/p/')) {
+        try {
+          const playPageUrl = `https://www.yhdm666.top${sniffToken}`;
+          const res = await fetch(playPageUrl, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1',
+              'Referer': 'https://www.yhdm666.top/'
+            },
+            signal: AbortSignal.timeout(8000)
+          });
+          if (!res.ok) {
+            throw new Error(`HTTP status ${res.status}`);
+          }
+          const html = await res.text();
+          // 正则抓取 MacCMS 系统的 player_aaaa 全局变量
+          const match = html.match(/var\s+player_aaaa\s*=\s*(\{.*?\})\s*(?:<\/script>|;)/);
+          if (match && match[1]) {
+            const playerConfig = JSON.parse(match[1]);
+            let decodedUrl = playerConfig.url;
+            if (playerConfig.encrypt == 1) {
+              decodedUrl = decodeURIComponent(decodedUrl);
+            } else if (playerConfig.encrypt == 2) {
+              // 兼容 Base64 + URL 编码
+              decodedUrl = decodeURIComponent(atob(decodedUrl));
+            } else {
+              decodedUrl = decodeURIComponent(decodedUrl);
+            }
+            if (decodedUrl.startsWith('http') || decodedUrl.includes('.m3u8')) {
+              // 缓存 2 小时
+              if (env.JYZF_LOGS) {
+                ctx.waitUntil(env.JYZF_LOGS.put(sniffCacheKey, decodedUrl, { expirationTtl: 7200 }));
+              }
+              return new Response(JSON.stringify({ success: true, url: decodedUrl, cached: false }), {
+                status: 200,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+              });
+            }
+          }
+          throw new Error('Unable to extract player config or stream url');
+        } catch (err) {
+          // 标记失败，缓存 10 分钟防刷
+          if (env.JYZF_LOGS) {
+            ctx.waitUntil(env.JYZF_LOGS.put(sniffCacheKey, '__FAILED__', { expirationTtl: 600 }));
+          }
+          return new Response(JSON.stringify({ success: false, error: '樱花直链解析失败: ' + err.message }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+          });
+        }
+      }
+
+
+      // 💡 多解析站并发配置（按成功率降序排列）
+      const PARSE_STATIONS = [
+        { base: 'https://jx.xmflv.com/?url=', referer: '' },
+        { base: 'https://jx.jsonplayer.com/?url=', referer: '' },
+        { base: 'https://im1907.top/?jx=', referer: '' },
+        { base: 'https://jx.wuzhoupai.com:8443/m3u8/?url=', referer: 'https://web.agespa-01.com:8443/' },
+      ];
+
+      /**
+       * 从 HTML 中提取 <video src> 或 .m3u8/.mp4 直链
+       */
+      function extractStreamFromHtml(html) {
+        const clean = html.replace(/\\\//g, '/');
+        // A. <video src="...">
+        const videoMatch = clean.match(/<video[^>]+src=["']([^"']+)["']/i);
+        if (videoMatch) {
+          let u = videoMatch[1].replace(/&amp;/g, '&');
+          if (u.startsWith('//')) u = 'https:' + u;
+          if (u.startsWith('http') && (u.includes('m3u8') || u.includes('mp4') || u.includes('/video/'))) return u;
+        }
+        // B. 正则兜底
+        const m3u8Match = clean.match(/["']((?:https?:)?\/\/[^"']+\.(?:m3u8|mp4)[^"']*)['"]/i);
+        if (m3u8Match) {
+          let u = m3u8Match[1].replace(/&amp;/g, '&');
+          if (u.startsWith('//')) u = 'https:' + u;
+          return u;
+        }
+        return null;
+      }
+
+      /**
+       * 向单个解析站发起请求，成功返回直链字符串，否则返回 null
+       */
+      async function tryOneStation(station) {
+        const parseUrl = station.base + sniffToken;
+        try {
+          const headers = {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          };
+          if (station.referer) {
+            headers['Referer'] = station.referer;
+            headers['Origin'] = new URL(station.referer).origin;
+          }
+          const res = await fetch(parseUrl, { headers, redirect: 'follow', signal: AbortSignal.timeout(8000) });
+          if (!res.ok) return null;
+          const html = await res.text();
+          return extractStreamFromHtml(html);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      // 💡 核心：所有解析站同时并发，Promise.any 采纳最快成功的那个
+      let realUrl = null;
+      try {
+        realUrl = await Promise.any(
+          PARSE_STATIONS.map(station =>
+            tryOneStation(station).then(url => {
+              if (!url) throw new Error('no stream');
+              return url;
+            })
+          )
+        );
+      } catch (e) {
+        // 所有站都失败
+        realUrl = null;
+      }
+
+      if (realUrl) {
+        // 写入 KV 缓存 2 小时（直链有时效性，不宜太长）
+        if (env.JYZF_LOGS) {
+          ctx.waitUntil(env.JYZF_LOGS.put(sniffCacheKey, realUrl, { expirationTtl: 7200 }));
+        }
+        return new Response(JSON.stringify({ success: true, url: realUrl, cached: false }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      } else {
+        // 标记失败，缓存 30 分钟防刷（比 resolve 的 24h 短，直链失效恢复更快）
+        if (env.JYZF_LOGS) {
+          ctx.waitUntil(env.JYZF_LOGS.put(sniffCacheKey, '__FAILED__', { expirationTtl: 1800 }));
+        }
+        return new Response(JSON.stringify({ success: false, error: '所有解析站均未能提取到直链' }), {
+          status: 404,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+    }
+
+    // ==========================================
     // 🔑 功能 D：老番 / 未解析加密集数按需实时解密 (/api/resolve)
     // ==========================================
     if (url.pathname === '/api/resolve') {

@@ -1,0 +1,58 @@
+{
+  "video": {
+    "id": "a123_fzg",
+    "name": "风之谷",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "yhdm_line1": [
+        [
+          "HD国语",
+          "/p/2941-1-1.html"
+        ],
+        [
+          "HD粤语",
+          "/p/2941-1-2.html"
+        ],
+        [
+          "HD中字",
+          "/p/2941-1-3.html"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://c1.rrcdnbf2.com/video/fengzhigu/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-play2.com/20230102/19161_bd3920ec/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "HD中字",
+          "https://vip.lzcdn2.com/20220320/129_efc0294f/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/Rb4xRRVb/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/xe73LLye/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

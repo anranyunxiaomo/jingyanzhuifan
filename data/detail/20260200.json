@@ -12,6 +12,16 @@
       "日常"
     ],
     "playlists": {
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/30285-2-1.html"
+        ],
+        [
+          "第02集",
+          "/p/30285-2-2.html"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
@@ -153,7 +163,8 @@
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
     "tpm3u8": "淘片",
-    "anich_m3u8": "AniCh"
+    "anich_m3u8": "AniCh",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

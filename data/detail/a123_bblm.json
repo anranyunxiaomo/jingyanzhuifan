@@ -1,0 +1,44 @@
+{
+  "video": {
+    "id": "a123_bblm",
+    "name": "百变狸猫",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "电影解说",
+          "https://c1.ddbbffcdn.com/video/baibianlimaodianyingjieshuo/电影解说/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "HD中字",
+          "https://vip.lzcdn2.com/20220530/7942_45572444/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/DbDk1Lka/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/QdJ6ygyd/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/23504-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

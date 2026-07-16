@@ -1,0 +1,48 @@
+{
+  "video": {
+    "id": "a123_mztkn：mgdszl",
+    "name": "名侦探柯南：迷宫的十字路",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "lzm3u8": [
+        [
+          "日语",
+          "https://vip.lzcdn2.com/20220410/2871_4a566bef/index.m3u8"
+        ],
+        [
+          "国语",
+          "https://v.cdnlz19.com/20240410/27202_17873050/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "电影解说",
+          "https://p.bvvvvvvv7f.com/video/mingzhentankenanmigongdeshizilukoudianyingjieshuo/电影解说/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/penrQG7e/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/zbqYRApb/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字版",
+          "/p/1344-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

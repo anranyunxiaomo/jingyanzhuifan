@@ -6,7 +6,8 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/0a/ee/441939_6l6VR.jpg",
     "Status": "更新至8集",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 20260594115
+    "UpdateTime": 20260594115,
+    "Type": ""
   },
   {
     "AID": 40884,
@@ -14,116 +15,9 @@
     "Pinyin": "gmzrddcp",
     "Cover": "http://lain.bgm.tv/pic/cover/l/c9/bb/369768_F05zh.jpg",
     "Status": "更新至11集",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20260400994
-  },
-  {
-    "AID": 20260228,
-    "Title": "我独自盗墓",
-    "Pinyin": "wdzdm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260228.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360348
-  },
-  {
-    "AID": 20260209,
-    "Title": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～ 第2季",
-    "Pinyin": "dyms ～xhstyxdwjzfsdysjws～ d2j",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260209.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360329
-  },
-  {
-    "AID": "a123_lengjinglianqu",
-    "Title": "棱镜恋曲",
-    "Pinyin": "ljlq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260060.jpg",
-    "Status": "更新至20集",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360323
-  },
-  {
-    "AID": 20260064,
-    "Title": "名侦探光之美少女！",
-    "Pinyin": "mztgzmsn！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第07集",
-    "UpdateTime": 20260360314
-  },
-  {
-    "AID": 20260182,
-    "Title": "超超超超超喜欢你的100个女朋友 第三季",
-    "Pinyin": "cccccxhnd100gnpy dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360302
-  },
-  {
-    "AID": 20260247,
-    "Title": "提欧奥特曼",
-    "Pinyin": "toatm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第02集",
-    "UpdateTime": 20260360267
-  },
-  {
-    "AID": "a123_renyadaowudiwushi",
-    "Title": "刃牙道：无敌武士",
-    "Pinyin": "ryd：wdws",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260176.jpg",
-    "Status": "更新至13集",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360253
-  },
-  {
-    "AID": "a123_feirenxueshengyuyanshijiaoshi",
-    "Title": "非人学生与厌世教师",
-    "Pinyin": "frxsyysjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260041.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360253
-  },
-  {
-    "AID": "a123_shenweimozudewoxiangxiangyongz",
-    "Title": "身为魔族的我想向勇者小队的可爱女孩告白",
-    "Pinyin": "swmzdwxxyzxddkanhgb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260007.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360253
-  },
-  {
-    "AID": "a123_daerwenshibian",
-    "Title": "达尔文事变",
-    "Pinyin": "dewsb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260011.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360253
-  },
-  {
-    "AID": "a123_moshushikunuokandejianyiqie",
-    "Title": "魔术师库诺看得见一切",
-    "Pinyin": "mssknkdjyq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260050.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360253
-  },
-  {
-    "AID": 20260112,
-    "Title": "摩绪",
-    "Pinyin": "mx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260112.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360252
+    "UpdateTime": 20260401014,
+    "Type": ""
   },
   {
     "AID": 20260232,
@@ -132,52 +26,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260232.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 20260360252
-  },
-  {
-    "AID": 20260230,
-    "Title": "拯救替身千金的是冷酷无情冰之王子的爱",
-    "Pinyin": "zjtsqjdslkwqbzwzda",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260230.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360250
-  },
-  {
-    "AID": 20260219,
-    "Title": "女主角？圣女？不，我是杂役女仆（自豪）！",
-    "Pinyin": "nzj？sn？b，wszynp（zh）！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360249
-  },
-  {
-    "AID": 20260229,
-    "Title": "澈底对你成瘾",
-    "Pinyin": "cddncy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260229.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360249
-  },
-  {
-    "AID": 20260227,
-    "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
-    "Pinyin": "ybpztmzydn，tyckbjdla",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360247
-  },
-  {
-    "AID": 20260096,
-    "Title": "欺诈游戏",
-    "Pinyin": "qzyx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360246
+    "UpdateTime": 20260360492,
+    "Type": "TV"
   },
   {
     "AID": 20260225,
@@ -186,124 +36,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260225.jpg",
     "Status": "连载",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20260360245
-  },
-  {
-    "AID": 20260124,
-    "Title": "七米神物语",
-    "Pinyin": "qmswy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260124.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360244
-  },
-  {
-    "AID": "a123_chimowudemaoxianzhe",
-    "Title": "吃魔物的冒险者",
-    "Pinyin": "cmwdmxz",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_siwangzhanghao",
-    "Title": "死亡账号",
-    "Pinyin": "swzh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260040.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_beilinguowangziniaidefanpainvz",
-    "Title": "被邻国王子溺爱的反派女主",
-    "Pinyin": "blgwznadfpnz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260052.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_xiangfandenihewo",
-    "Title": "相反的你和我",
-    "Pinyin": "xfdnhw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_elisideshengbei",
-    "Title": "厄里斯的圣杯",
-    "Pinyin": "elsdsb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260023.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_xiaoshenbabukepa",
-    "Title": "小神八不可怕",
-    "Pinyin": "xsbbkp",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/51/33/522414_4VRzA.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_wuyedeqingxinxuanlv",
-    "Title": "午夜的倾心旋律",
-    "Pinyin": "wydqxxl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260008.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": 20260223,
-    "Title": "猫与龙",
-    "Pinyin": "myl",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/16/538760_T0rxN.jpg",
-    "Status": "更新至3集",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_heqingmeizhumazhijianbuhuiyoul",
-    "Title": "和青梅竹马之间不会有恋爱喜剧",
-    "Pinyin": "hqmzmzjbhylaxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260006.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": "a123_aerniedeshijianbu",
-    "Title": "阿尔涅的事件簿",
-    "Pinyin": "aendsjb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260012.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360243
-  },
-  {
-    "AID": 20260101,
-    "Title": "神之水滴",
-    "Pinyin": "szsd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360241
-  },
-  {
-    "AID": 20260220,
-    "Title": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车",
-    "Pinyin": "byqsndysjmszl yycjnzhllyc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260220.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360240
+    "UpdateTime": 20260360485,
+    "Type": "TV"
   },
   {
     "AID": 20260215,
@@ -312,16 +46,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260215.jpg",
     "Status": "连载",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 20260360235
-  },
-  {
-    "AID": 20260214,
-    "Title": "LV999的村民",
-    "Pinyin": "lv999dcm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260214.jpg",
-    "Status": "更新至3集",
-    "UpToDate": "更新至第02集",
-    "UpdateTime": 20260360234
+    "UpdateTime": 20260360475,
+    "Type": "TV"
   },
   {
     "AID": 20260213,
@@ -330,124 +56,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260213.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360233
-  },
-  {
-    "AID": "a123_youyaguizudexiujiazhinan",
-    "Title": "优雅贵族的休假指南",
-    "Pinyin": "yygzdxjzn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260019.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20260360233
-  },
-  {
-    "AID": "a123_gaoxiaoqimianzu",
-    "Title": "高校奇面组",
-    "Pinyin": "gxqmz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260030.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360233
-  },
-  {
-    "AID": 20260222,
-    "Title": "鬼之花嫁",
-    "Pinyin": "gzhj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b9/ac/563745_YI26V.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360232
-  },
-  {
-    "AID": 20260211,
-    "Title": "世界最强的后卫 ～迷宫国的新人探索者～",
-    "Pinyin": "sjzqdhw ～mggdxrtsz～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260211.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360231
-  },
-  {
-    "AID": 20260210,
-    "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记",
-    "Pinyin": "ldxzdxyws dehzs，sdjzbmssmxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
-    "Status": "更新至3集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360230
-  },
-  {
-    "AID": 20260208,
-    "Title": "骸骨骑士大人异世界冒险中 第二季",
-    "Pinyin": "hgqsdrysjmxz dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260208.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360228
-  },
-  {
-    "AID": 20260097,
-    "Title": "入间同学入魔了 第四季",
-    "Pinyin": "rjtxrml dsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/99/82/348699_0wWW8.jpg",
-    "Status": "更新至15集",
-    "UpToDate": "更新至第18集",
-    "UpdateTime": 20260360227
-  },
-  {
-    "AID": 20260086,
-    "Title": "黄泉使者",
-    "Pinyin": "hqsz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260086.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360226
-  },
-  {
-    "AID": 20260205,
-    "Title": "无职转生Ⅲ 到了异世界就拿出真本事",
-    "Pinyin": "wzzsⅲ dlysjjnczbs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
-    "Status": "更新至3集",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20260360225
-  },
-  {
-    "AID": 20260083,
-    "Title": "黑猫与魔女的教室",
-    "Pinyin": "hmymndjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360223
-  },
-  {
-    "AID": 20260203,
-    "Title": "与你相恋到生命尽头",
-    "Pinyin": "ynxldsmjt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260203.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360223
-  },
-  {
-    "AID": 20260202,
-    "Title": "画完这个再去死",
-    "Pinyin": "hwzgzqs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第02集",
-    "UpdateTime": 20260360222
-  },
-  {
-    "AID": 20260212,
-    "Title": "被追放的转生重骑士用游戏知识开无双",
-    "Pinyin": "bzfdzszqsyyxzskws",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360222
+    "UpdateTime": 20260360473,
+    "Type": "TV"
   },
   {
     "AID": 20260201,
@@ -456,313 +66,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260201.jpg",
     "Status": "连载",
     "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360221
-  },
-  {
-    "AID": 20260089,
-    "Title": "小书痴的下克上 〜为了成为图书管理员而不择手段〜 第四季",
-    "Pinyin": "xscdxks 〜wlcwtsglyebzsd〜 dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260089.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第16集",
-    "UpdateTime": 20260360219
-  },
-  {
-    "AID": 20260189,
-    "Title": "世界在起舞",
-    "Pinyin": "sjzqw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260189.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360219
-  },
-  {
-    "AID": 20260199,
-    "Title": "我家的弟弟们真是让您费心了",
-    "Pinyin": "wjdddmzsrnfxl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260199.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360219
-  },
-  {
-    "AID": 20260098,
-    "Title": "关于我转生变成史莱姆这档事 第四季",
-    "Pinyin": "gywzsbcslmzds dsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
-    "Status": "更新至14集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360218
-  },
-  {
-    "AID": 20260197,
-    "Title": "少女怪兽焦糖味",
-    "Pinyin": "sngsjtw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360217
-  },
-  {
-    "AID": 20260187,
-    "Title": "穹庐下的魔女",
-    "Pinyin": "qlxdmn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260187.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360217
-  },
-  {
-    "AID": 20260195,
-    "Title": "暗黑灯火",
-    "Pinyin": "ahdh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260195.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360215
-  },
-  {
-    "AID": "a123_caomeiaige",
-    "Title": "草莓哀歌",
-    "Pinyin": "cmag",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/4b/ef/472147_lYpZ8.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360213
-  },
-  {
-    "AID": "a123_huiyuanjundeqingchunerzhoumu",
-    "Title": "灰原君的青春二周目",
-    "Pinyin": "hyjdqcezm",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/d5/a9/567418_LTStp.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360213
-  },
-  {
-    "AID": "a123_feichaifengjiweiyuanyuqunzicha",
-    "Title": "废柴风纪委员与裙子长度不合规的JK的故事",
-    "Pinyin": "fcfjwyyqzcdbhgdjkdgs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/68/ba/551123_IkXfk.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360213
-  },
-  {
-    "AID": 20260193,
-    "Title": "令和的斑小姐",
-    "Pinyin": "lhdbxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360213
-  },
-  {
-    "AID": 20260073,
-    "Title": "冰之城墙",
-    "Pinyin": "bzcq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360213
-  },
-  {
-    "AID": 20260192,
-    "Title": "岩元前辈的推荐",
-    "Pinyin": "yyqbdtj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第21集",
-    "UpdateTime": 20260360212
-  },
-  {
-    "AID": 20260180,
-    "Title": "花样少男少女 第2季",
-    "Pinyin": "hysnsn d2j",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360210
-  },
-  {
-    "AID": 20260200,
-    "Title": "尼古喵喵",
-    "Pinyin": "ngmm",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/6a/b3/622206_dpWcC.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360210
-  },
-  {
-    "AID": 20260169,
-    "Title": "BanG Dream! YUME∞MITA",
-    "Pinyin": "bang dream! yume∞mita",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260169.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360209
-  },
-  {
-    "AID": 20260078,
-    "Title": "杖与剑的魔剑谭 第二季",
-    "Pinyin": "zyjdmjt dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260078.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第16集",
-    "UpdateTime": 20260360208
-  },
-  {
-    "AID": 20260185,
-    "Title": "斗球儿弹子",
-    "Pinyin": "dqedz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260185.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360205
-  },
-  {
-    "AID": 20260184,
-    "Title": "文豪野犬 汪！第二季",
-    "Pinyin": "whyq w！dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第20集",
-    "UpdateTime": 20260360204
-  },
-  {
-    "AID": 20260194,
-    "Title": "正后方的神威",
-    "Pinyin": "zhfdsw",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/01/8f/627136_hb0Jd.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20260360204
-  },
-  {
-    "AID": "a123_heimaohemonvdeketang",
-    "Title": "黑猫和魔女的课堂",
-    "Pinyin": "hmhmndkt",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/37/70/4193_acm67.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": "a123_jiaojieyingxiaozhiyue",
-    "Title": "皎洁迎宵之月",
-    "Pinyin": "jjyxzy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260045.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": "a123_hebanshangdierkeaidenvhaiziche",
-    "Title": "和班上第二可爱的女孩子成为了朋友",
-    "Pinyin": "hbsdekadnhzcwlpy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": "a123_gongzhuqishishimanzudexinniang",
-    "Title": "公主骑士是蛮族的新娘",
-    "Pinyin": "gzqssmzdxn",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/cf/516543_103zp.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": "a123_qingsongxiong",
-    "Title": "轻松熊",
-    "Pinyin": "qsx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260159.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": "a123_niyoubeishalenezhentandaren",
-    "Title": "你又被杀了呢，侦探大人",
-    "Pinyin": "nybsln，ztdr",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/2e/f4/608227_44kWb.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": 20260183,
-    "Title": "碧蓝航线 微速前行 第二季",
-    "Pinyin": "blhx wsqx dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260183.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360203
-  },
-  {
-    "AID": 20260181,
-    "Title": "相反的你和我 第二季",
-    "Pinyin": "xfdnhw dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第16集",
-    "UpdateTime": 20260360201
-  },
-  {
-    "AID": 20260067,
-    "Title": "北斗神拳 -FIST OF THE NORTH STAR-",
-    "Pinyin": "bdsq -fist of the north star-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360197
-  },
-  {
-    "AID": 20260077,
-    "Title": "关于邻家的天使大人不知不觉把我惯成了废人这档子事 第二季",
-    "Pinyin": "gyljdtsdrbzbjbwgclfrzdzs dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260077.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360197
-  },
-  {
-    "AID": 20260175,
-    "Title": "碧蓝之海 第三季",
-    "Pinyin": "blzh dsj",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360195
-  },
-  {
-    "AID": "a123_daxianzheliduoerdeshijiannixin",
-    "Title": "大贤者利多尔的时间逆行",
-    "Pinyin": "dxzldedsjnx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260121.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260360193
-  },
-  {
-    "AID": "a123_youlingyinyuehuiyishidegequ",
-    "Title": "幽灵音乐会：遗失的歌曲",
-    "Pinyin": "ylyyh：ysdgq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第07集",
-    "UpdateTime": 20260360193
-  },
-  {
-    "AID": 20260172,
-    "Title": "攻壳机动队 THE GHOST IN THE SHELL",
-    "Pinyin": "gkjdd the ghost in the shell",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260172.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20260360192
+    "UpdateTime": 20260360461,
+    "Type": "TV"
   },
   {
     "AID": 20260170,
@@ -771,7 +76,518 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260170.jpg",
     "Status": "连载",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360190
+    "UpdateTime": 20260360430,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260097,
+    "Title": "入间同学入魔了 第四季",
+    "Pinyin": "rjtxrml dsj",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/99/82/348699_0wWW8.jpg",
+    "Status": "更新至15集",
+    "UpToDate": "更新至第18集",
+    "UpdateTime": 20260360357,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260228,
+    "Title": "我独自盗墓",
+    "Pinyin": "wdzdm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260228.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360348,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260209,
+    "Title": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～ 第2季",
+    "Pinyin": "dyms ～xhstyxdwjzfsdysjws～ d2j",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260209.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360329,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260064,
+    "Title": "名侦探光之美少女！",
+    "Pinyin": "mztgzmsn！",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260064.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第07集",
+    "UpdateTime": 20260360314,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260182,
+    "Title": "超超超超超喜欢你的100个女朋友 第三季",
+    "Pinyin": "cccccxhnd100gnpy dsj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360302,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260247,
+    "Title": "提欧奥特曼",
+    "Pinyin": "toatm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260247.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260360267,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260214,
+    "Title": "LV999的村民",
+    "Pinyin": "lv999dcm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260214.jpg",
+    "Status": "更新至3集",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260360254,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260223,
+    "Title": "猫与龙",
+    "Pinyin": "myl",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/16/538760_T0rxN.jpg",
+    "Status": "更新至3集",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20260360253,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260112,
+    "Title": "摩绪",
+    "Pinyin": "mx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260112.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260360252,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260230,
+    "Title": "拯救替身千金的是冷酷无情冰之王子的爱",
+    "Pinyin": "zjtsqjdslkwqbzwzda",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260230.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20260360250,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260219,
+    "Title": "女主角？圣女？不，我是杂役女仆（自豪）！",
+    "Pinyin": "nzj？sn？b，wszynp（zh）！",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360249,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260229,
+    "Title": "澈底对你成瘾",
+    "Pinyin": "cddncy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260229.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360249,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260227,
+    "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
+    "Pinyin": "ybpztmzydn，tyckbjdla",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260227.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20260360247,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260096,
+    "Title": "欺诈游戏",
+    "Pinyin": "qzyx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260096.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360246,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260124,
+    "Title": "七米神物语",
+    "Pinyin": "qmswy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260124.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360244,
+    "Type": "TV"
+  },
+  {
+    "AID": "a123_chimowudemaoxianzhe",
+    "Title": "吃魔物的冒险者",
+    "Pinyin": "cmwdmxz",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/621358_hVvMr.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260360243,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260222,
+    "Title": "鬼之花嫁",
+    "Pinyin": "gzhj",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/b9/ac/563745_YI26V.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360242,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260101,
+    "Title": "神之水滴",
+    "Pinyin": "szsd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260101.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360241,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260210,
+    "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记",
+    "Pinyin": "ldxzdxyws dehzs，sdjzbmssmxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
+    "Status": "更新至3集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360240,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260220,
+    "Title": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车",
+    "Pinyin": "byqsndysjmszl yycjnzhllyc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260220.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360240,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260098,
+    "Title": "关于我转生变成史莱姆这档事 第四季",
+    "Pinyin": "gywzsbcslmzds dsj",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
+    "Status": "更新至14集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360238,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260205,
+    "Title": "无职转生Ⅲ 到了异世界就拿出真本事",
+    "Pinyin": "wzzsⅲ dlysjjnczbs",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
+    "Status": "更新至3集",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20260360235,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260212,
+    "Title": "被追放的转生重骑士用游戏知识开无双",
+    "Pinyin": "bzfdzszqsyyxzskws",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360232,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260211,
+    "Title": "世界最强的后卫 ～迷宫国的新人探索者～",
+    "Pinyin": "sjzqdhw ～mggdxrtsz～",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260211.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360231,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260208,
+    "Title": "骸骨骑士大人异世界冒险中 第二季",
+    "Pinyin": "hgqsdrysjmxz dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260208.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360228,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260086,
+    "Title": "黄泉使者",
+    "Pinyin": "hqsz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260086.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360226,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260083,
+    "Title": "黑猫与魔女的教室",
+    "Pinyin": "hmymndjs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260083.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360223,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260203,
+    "Title": "与你相恋到生命尽头",
+    "Pinyin": "ynxldsmjt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260203.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20260360223,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260202,
+    "Title": "画完这个再去死",
+    "Pinyin": "hwzgzqs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260202.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第02集",
+    "UpdateTime": 20260360222,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260200,
+    "Title": "尼古喵喵",
+    "Pinyin": "ngmm",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/6a/b3/622206_dpWcC.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360220,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260089,
+    "Title": "小书痴的下克上 〜为了成为图书管理员而不择手段〜 第四季",
+    "Pinyin": "xscdxks 〜wlcwtsglyebzsd〜 dsj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260089.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第16集",
+    "UpdateTime": 20260360219,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260189,
+    "Title": "世界在起舞",
+    "Pinyin": "sjzqw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260189.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360219,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260199,
+    "Title": "我家的弟弟们真是让您费心了",
+    "Pinyin": "wjdddmzsrnfxl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260199.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360219,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260197,
+    "Title": "少女怪兽焦糖味",
+    "Pinyin": "sngsjtw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360217,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260187,
+    "Title": "穹庐下的魔女",
+    "Pinyin": "qlxdmn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260187.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360217,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260195,
+    "Title": "暗黑灯火",
+    "Pinyin": "ahdh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260195.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360215,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260194,
+    "Title": "正后方的神威",
+    "Pinyin": "zhfdsw",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/01/8f/627136_hb0Jd.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20260360214,
+    "Type": ""
+  },
+  {
+    "AID": 20260193,
+    "Title": "令和的斑小姐",
+    "Pinyin": "lhdbxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260193.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360213,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260073,
+    "Title": "冰之城墙",
+    "Pinyin": "bzcq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260073.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360213,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260192,
+    "Title": "岩元前辈的推荐",
+    "Pinyin": "yyqbdtj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第21集",
+    "UpdateTime": 20260360212,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260180,
+    "Title": "花样少男少女 第2季",
+    "Pinyin": "hysnsn d2j",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260180.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360210,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260169,
+    "Title": "BanG Dream! YUME∞MITA",
+    "Pinyin": "bang dream! yume∞mita",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260169.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360209,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260078,
+    "Title": "杖与剑的魔剑谭 第二季",
+    "Pinyin": "zyjdmjt dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260078.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第16集",
+    "UpdateTime": 20260360208,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260067,
+    "Title": "北斗神拳 -FIST OF THE NORTH STAR-",
+    "Pinyin": "bdsq -fist of the north star-",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360207,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260185,
+    "Title": "斗球儿弹子",
+    "Pinyin": "dqedz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260185.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360205,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260184,
+    "Title": "文豪野犬 汪！第二季",
+    "Pinyin": "whyq w！dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260184.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20260360204,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260183,
+    "Title": "碧蓝航线 微速前行 第二季",
+    "Pinyin": "blhx wsqx dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260183.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360203,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260181,
+    "Title": "相反的你和我 第二季",
+    "Pinyin": "xfdnhw dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第16集",
+    "UpdateTime": 20260360201,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260077,
+    "Title": "关于邻家的天使大人不知不觉把我惯成了废人这档子事 第二季",
+    "Pinyin": "gyljdtsdrbzbjbwgclfrzdzs dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260077.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360197,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260175,
+    "Title": "碧蓝之海 第三季",
+    "Pinyin": "blzh dsj",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360195,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260172,
+    "Title": "攻壳机动队 THE GHOST IN THE SHELL",
+    "Pinyin": "gkjdd the ghost in the shell",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260172.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20260360192,
+    "Type": ""
   },
   {
     "AID": 20260166,
@@ -780,88 +596,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260166.jpg",
     "Status": "连载",
     "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360186
-  },
-  {
-    "AID": "a123_29suidanshenmaoxianjiaderichan",
-    "Title": "29岁单身冒险家的日常",
-    "Pinyin": "29sdsmxjdrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260013.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360149
-  },
-  {
-    "AID": "a123_anzhiju16",
-    "Title": "暗芝居 16",
-    "Pinyin": "azj 16",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260245.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360146
-  },
-  {
-    "AID": "a123_zhongjiuyunixianglian21",
-    "Title": "终究，与你相恋 2",
-    "Pinyin": "zj，ynxl 2",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/43/98/548195_raxXD.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360141
-  },
-  {
-    "AID": "a123_jisuchehun3",
-    "Title": "极速车魂 3",
-    "Pinyin": "jsch 3",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260053.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260360133
-  },
-  {
-    "AID": "a123_gongzhudarenjiexialaishikaowen1",
-    "Title": "公主大人，接下来是“拷问”时间 2",
-    "Pinyin": "gzdr，jxls“kw”sj 2",
-    "Cover": "https://lain.bgm.tv/pic/cover/l/13/79/486763_s49V9.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360121
-  },
-  {
-    "AID": "a123_huayangshaonianshaonv1",
-    "Title": "花样少年少女",
-    "Pinyin": "hysnsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260048.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260360111
-  },
-  {
-    "AID": "a123_beidoushenquan4",
-    "Title": "北斗神拳",
-    "Pinyin": "bdsq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
-    "Status": "更新至10集",
-    "UpToDate": "更新至第10集",
-    "UpdateTime": 20260360104
-  },
-  {
-    "AID": "a123_baiguiyexingchao1",
-    "Title": "百鬼夜行抄",
-    "Pinyin": "bgyxc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260148.jpg",
-    "Status": "更新至8集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360081
-  },
-  {
-    "AID": "a123_wuweifensijulebu1",
-    "Title": "雾尾粉丝俱乐部",
-    "Pinyin": "wwfsjlb",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/05/9a/513208_UFZ41.jpg",
-    "Status": "更新至7集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260360071
+    "UpdateTime": 20260360186,
+    "Type": "TV"
   },
   {
     "AID": 20190015,
@@ -870,7 +606,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190015.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 20260290035
+    "UpdateTime": 20260290035,
+    "Type": "TV"
   },
   {
     "AID": 20260244,
@@ -879,16 +616,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260244.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260271384
-  },
-  {
-    "AID": 20260155,
-    "Title": "航海王 埃鲁巴夫篇",
-    "Pinyin": "hhw albfp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260155.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260271295
+    "UpdateTime": 20260271384,
+    "Type": "剧场版"
   },
   {
     "AID": 20260174,
@@ -897,7 +626,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260174.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260263804
+    "UpdateTime": 20260263804,
+    "Type": "TV"
   },
   {
     "AID": 20260173,
@@ -906,349 +636,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260173.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260260653
-  },
-  {
-    "AID": 20260207,
-    "Title": "乡下大叔成为剑圣 第二季",
-    "Pinyin": "xxdscwjs dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260207.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260327
-  },
-  {
-    "AID": 20260206,
-    "Title": "乙女游戏世界对路人角色很不友好 第二季",
-    "Pinyin": "ynyxsjdlrjshbyh dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260206.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260326
-  },
-  {
-    "AID": 20260178,
-    "Title": "擅长逃跑的殿下 第二季",
-    "Pinyin": "sctpddx dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260178.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260298
-  },
-  {
-    "AID": 20260042,
-    "Title": "勇者之屑",
-    "Pinyin": "yzzx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260042.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20260260282
-  },
-  {
-    "AID": 20260160,
-    "Title": "雾尾粉丝后援会",
-    "Pinyin": "wwfshyh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260160.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260280
-  },
-  {
-    "AID": 20260127,
-    "Title": "钻石王牌 act2 第二季",
-    "Pinyin": "zswp act2 dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260127.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260257
-  },
-  {
-    "AID": 20260246,
-    "Title": "剧场版 关于我转生变成史莱姆这档事 苍海之泪篇",
-    "Pinyin": "jcb gywzsbcslmzds chzlp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260246.jpg",
-    "Status": "完结",
-    "UpToDate": "抢先版",
-    "UpdateTime": 20260260256
-  },
-  {
-    "AID": 20260242,
-    "Title": "电影蜡笔小新：奇奇怪怪！我的妖怪假期",
-    "Pinyin": "dylbxx：qqgg！wdygjq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260242.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260252
-  },
-  {
-    "AID": 20260118,
-    "Title": "加油吧！中村君!!",
-    "Pinyin": "jyb！zcj!!",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260118.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260248
-  },
-  {
-    "AID": 20260117,
-    "Title": "复制品的我也会谈恋爱。",
-    "Pinyin": "fzpdwyhtla。",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260117.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260247
-  },
-  {
-    "AID": 20260126,
-    "Title": "库兹马唱歌的话家里哆啰啰",
-    "Pinyin": "kzmcgdhjldll",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260126.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260246
-  },
-  {
-    "AID": 20260125,
-    "Title": "公鸡斗士",
-    "Pinyin": "gjds",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260125.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260245
-  },
-  {
-    "AID": 20260111,
-    "Title": "婚姻剧毒",
-    "Pinyin": "hyjd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260111.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260241
-  },
-  {
-    "AID": 20260120,
-    "Title": "转生成自动贩卖机的我今天也在迷宫徘徊 第三季",
-    "Pinyin": "zsczdfmjdwjtyzmgph dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260120.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260240
-  },
-  {
-    "AID": 20260100,
-    "Title": "春夏秋冬代行者 春之舞",
-    "Pinyin": "cxqddxz czw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260100.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第14集",
-    "UpdateTime": 20260260240
-  },
-  {
-    "AID": 20260079,
-    "Title": "欢迎来到实力至上主义教室 第四季",
-    "Pinyin": "hyldslzszyjs dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260079.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第16集",
-    "UpdateTime": 20260260239
-  },
-  {
-    "AID": 20260128,
-    "Title": "异兽魔都 第二季",
-    "Pinyin": "ysmd dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260128.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20260260238
-  },
-  {
-    "AID": 20260226,
-    "Title": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
-    "Pinyin": "zxhbsdqckamsn jsxshwzyqdgm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260226.jpg",
-    "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 20260260236
-  },
-  {
-    "AID": 20260116,
-    "Title": "幽灵音乐会",
-    "Pinyin": "ylyyh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260236
-  },
-  {
-    "AID": 20260114,
-    "Title": "木头风纪委员和迷你裙JK的故事",
-    "Pinyin": "mtfjwyhmnqjkdgs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260114.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260234
-  },
-  {
-    "AID": 20260113,
-    "Title": "想结束这场“我爱你”的游戏",
-    "Pinyin": "xjszc“wan”dyx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260113.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260233
-  },
-  {
-    "AID": 20260221,
-    "Title": "无自觉圣女今天也无意识地释放力量",
-    "Pinyin": "wzjsnjtywysdsfll",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260221.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260231
-  },
-  {
-    "AID": 20260110,
-    "Title": "迦楠大人的白给是恶魔级",
-    "Pinyin": "jndrdbgsemj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260110.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260230
-  },
-  {
-    "AID": 20260109,
-    "Title": "没有辣妹会对阿宅温柔!?",
-    "Pinyin": "mylmhdazwr!?",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260109.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260229
-  },
-  {
-    "AID": 20260108,
-    "Title": "楠木邸的神明庭院",
-    "Pinyin": "nmddsmty",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260108.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260228
-  },
-  {
-    "AID": 20260218,
-    "Title": "虽然我不是完美恶女～雏宫蝶鼠替换传～",
-    "Pinyin": "srwbswmen～cgdsthc～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260218.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260228
-  },
-  {
-    "AID": 20260217,
-    "Title": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～",
-    "Pinyin": "bzqjlsfc。～ymdszlnszg～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260217.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260227
-  },
-  {
-    "AID": 20260107,
-    "Title": "又被杀掉了呢，侦探大人",
-    "Pinyin": "ybsdln，ztdr",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260107.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260227
-  },
-  {
-    "AID": 20260216,
-    "Title": "最强出涸皇子的暗跃帝位争夺",
-    "Pinyin": "zqchhzdaydwzd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260216.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260226
-  },
-  {
-    "AID": 20260106,
-    "Title": "女神“异世界转生想成为什么”我“勇者的肋骨”",
-    "Pinyin": "ns“ysjzsxcwsm”w“yzdlg”",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260106.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260226
-  },
-  {
-    "AID": 20260105,
-    "Title": "最强的职业不是勇者也不是贤者好像是鉴定士(伪)的样子?",
-    "Pinyin": "zqdzybsyzybsxzhxsjds(w)dyz?",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260105.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260225
-  },
-  {
-    "AID": 20260103,
-    "Title": "身为悲剧始作俑者的最强邪恶BOSS女王为民竭心尽力。 第二季",
-    "Pinyin": "swbjszyzdzqxebossnwwmjxjl。 dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260103.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260223
-  },
-  {
-    "AID": 20260102,
-    "Title": "当前、正被打扰中！",
-    "Pinyin": "dq、zbdrz！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260102.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260222
-  },
-  {
-    "AID": 20260092,
-    "Title": "主播女孩重度依赖",
-    "Pinyin": "zbnhzdyl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260092.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260222
-  },
-  {
-    "AID": 20260099,
-    "Title": "关于虽然逃走的鱼很大、但钓上来的鱼却太大了这件事",
-    "Pinyin": "gysrtzdyhd、ddsldyqtdlzjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260099.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260219
-  },
-  {
-    "AID": 20260088,
-    "Title": "石纪元 科学与未来 第3部分",
-    "Pinyin": "sjy kxywl d3bf",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260088.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260218
-  },
-  {
-    "AID": 20260095,
-    "Title": "杀手青春",
-    "Pinyin": "ssqc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260095.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260215
-  },
-  {
-    "AID": 20260094,
-    "Title": "弱弱老师",
-    "Pinyin": "rrls",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260094.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260214
+    "UpdateTime": 20260260653,
+    "Type": "WEB"
   },
   {
     "AID": 20260204,
@@ -1257,241 +646,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260204.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260260214
-  },
-  {
-    "AID": 20260093,
-    "Title": "自称恶役大小姐的婚约者观察记录。",
-    "Pinyin": "zceydxjdhyzgcjl。",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260093.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260213
-  },
-  {
-    "AID": 20260081,
-    "Title": "轮回的花瓣",
-    "Pinyin": "lhdhb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260081.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260211
-  },
-  {
-    "AID": 20260091,
-    "Title": "租借女友 第五季",
-    "Pinyin": "zjny dwj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260091.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260211
-  },
-  {
-    "AID": 20260087,
-    "Title": "魔法的姐妹露露和莉莉",
-    "Pinyin": "mfdjmllhll",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260087.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260207
-  },
-  {
-    "AID": 20260196,
-    "Title": "花织同学转生后还是想干架",
-    "Pinyin": "hztxzshhsxgj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260196.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260206
-  },
-  {
-    "AID": 20260085,
-    "Title": "朱音落语",
-    "Pinyin": "zyly",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260085.jpg",
-    "Status": "完结",
-    "UpToDate": "已完结",
-    "UpdateTime": 20260260205
-  },
-  {
-    "AID": 20260084,
-    "Title": "淡岛百景",
-    "Pinyin": "ddbj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260084.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260204
-  },
-  {
-    "AID": 20260074,
-    "Title": "冻结地球",
-    "Pinyin": "djdq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260074.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260204
-  },
-  {
-    "AID": 20260082,
-    "Title": "女仆小姐的贪吃日常",
-    "Pinyin": "npxjdtcrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260202
-  },
-  {
-    "AID": 20260072,
-    "Title": "左撇子艾伦",
-    "Pinyin": "zpzal",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260072.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20260260202
-  },
-  {
-    "AID": 20260191,
-    "Title": "Let's Go 怪奇组",
-    "Pinyin": "let's go gqz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260201
-  },
-  {
-    "AID": 20260190,
-    "Title": "炒翻天",
-    "Pinyin": "cft",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260190.jpg",
-    "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 20260260200
-  },
-  {
-    "AID": 20260080,
-    "Title": "上伊那牡丹，酒醉身姿似百合花般",
-    "Pinyin": "synmd，jzszsbhhb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260080.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260200
-  },
-  {
-    "AID": 20260090,
-    "Title": "一叠间漫画咖啡屋生活！",
-    "Pinyin": "ydjmhkfwsh！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260090.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20260260200
-  },
-  {
-    "AID": 20260179,
-    "Title": "柔光魔女股份有限公司 第二季",
-    "Pinyin": "rgmngfyxgs dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260199
-  },
-  {
-    "AID": 20260188,
-    "Title": "天是红河岸",
-    "Pinyin": "tshha",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260188.jpg",
-    "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 20260260198
-  },
-  {
-    "AID": 20260186,
-    "Title": "雷霆三人行",
-    "Pinyin": "ltsrx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260186.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260196
-  },
-  {
-    "AID": 20260076,
-    "Title": "异世界悠闲农家 第二季",
-    "Pinyin": "ysjyxnj dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260076.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260196
-  },
-  {
-    "AID": 20260075,
-    "Title": "最强王者的第二人生 第二季",
-    "Pinyin": "zqwzdders dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260075.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260195
-  },
-  {
-    "AID": 20260071,
-    "Title": "女骑士成为蛮族新娘",
-    "Pinyin": "nqscwmzxn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260071.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260191
-  },
-  {
-    "AID": 20260070,
-    "Title": "日本三国",
-    "Pinyin": "rbsg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260070.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260190
-  },
-  {
-    "AID": 20260069,
-    "Title": "和班上第二可爱的女孩成为朋友",
-    "Pinyin": "hbsdekadnhcwpy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260189
-  },
-  {
-    "AID": 20260068,
-    "Title": "灰原同学重返过去，开启所向无敌的第二轮青春游戏",
-    "Pinyin": "hytxcfgq，kqsxwdddelqcyx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260068.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260188
-  },
-  {
-    "AID": 20260177,
-    "Title": "克雷瓦提斯2：魔兽之王与虚伪的勇者传承",
-    "Pinyin": "klwts2：mszwyxwdyzcc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260177.jpg",
-    "Status": "未播放",
-    "UpToDate": "PV",
-    "UpdateTime": 20260260187
-  },
-  {
-    "AID": 20260065,
-    "Title": "夜樱家的大作战 第二季",
-    "Pinyin": "yyjddzz dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260185
-  },
-  {
-    "AID": 20260104,
-    "Title": "茉莉花酱的好感度正在崩坏",
-    "Pinyin": "mlhjdhgdzzbh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260104.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20260260184
+    "UpdateTime": 20260260464,
+    "Type": "TV"
   },
   {
     "AID": 20260171,
@@ -1500,43 +656,88 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260171.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260260181
+    "UpdateTime": 20260260431,
+    "Type": "TV"
   },
   {
-    "AID": 20260167,
-    "Title": "梅比乌斯之尘",
-    "Pinyin": "mbwszc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260167.jpg",
+    "AID": 20260127,
+    "Title": "钻石王牌 act2 第二季",
+    "Pinyin": "zswp act2 dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260127.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260387,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260118,
+    "Title": "加油吧！中村君!!",
+    "Pinyin": "jyb！zcj!!",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260118.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260378,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260114,
+    "Title": "木头风纪委员和迷你裙JK的故事",
+    "Pinyin": "mtfjwyhmnqjkdgs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260114.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260374,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260087,
+    "Title": "魔法的姐妹露露和莉莉",
+    "Pinyin": "mfdjmllhll",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260087.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260347,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260076,
+    "Title": "异世界悠闲农家 第二季",
+    "Pinyin": "ysjyxnj dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260076.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260336,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260207,
+    "Title": "乡下大叔成为剑圣 第二季",
+    "Pinyin": "xxdscwjs dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260207.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260260177
+    "UpdateTime": 20260260327,
+    "Type": "TV"
   },
   {
-    "AID": 20260066,
-    "Title": "Re：从零开始的异世界生活 第四季 丧失篇",
-    "Pinyin": "re：clksdysjsh dsj ssp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260066.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20260260176
+    "AID": 20260206,
+    "Title": "乙女游戏世界对路人角色很不友好 第二季",
+    "Pinyin": "ynyxsjdlrjshbyh dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260206.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260326,
+    "Type": "TV"
   },
   {
-    "AID": 20260056,
-    "Title": "打工仔的拷问日常",
-    "Pinyin": "dgzdkwrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260056.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260176
-  },
-  {
-    "AID": 20260055,
-    "Title": "地狱乐 第二季",
-    "Pinyin": "dyl dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260055.jpg",
+    "AID": 20260065,
+    "Title": "夜樱家的大作战 第二季",
+    "Pinyin": "yyjddzz dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260065.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260175
+    "UpdateTime": 20260260325,
+    "Type": "TV"
   },
   {
     "AID": 20260054,
@@ -1545,7 +746,578 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260174
+    "UpdateTime": 20260260314,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260179,
+    "Title": "柔光魔女股份有限公司 第二季",
+    "Pinyin": "rgmngfyxgs dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260179.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260299,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260178,
+    "Title": "擅长逃跑的殿下 第二季",
+    "Pinyin": "sctpddx dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260178.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260298,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260042,
+    "Title": "勇者之屑",
+    "Pinyin": "yzzx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260042.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20260260282,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260160,
+    "Title": "雾尾粉丝后援会",
+    "Pinyin": "wwfshyh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260160.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260280,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260246,
+    "Title": "剧场版 关于我转生变成史莱姆这档事 苍海之泪篇",
+    "Pinyin": "jcb gywzsbcslmzds chzlp",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260246.jpg",
+    "Status": "完结",
+    "UpToDate": "抢先版",
+    "UpdateTime": 20260260256,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20260117,
+    "Title": "复制品的我也会谈恋爱。",
+    "Pinyin": "fzpdwyhtla。",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260117.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260247,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260226,
+    "Title": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
+    "Pinyin": "zxhbsdqckamsn jsxshwzyqdgm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260226.jpg",
+    "Status": "未播放",
+    "UpToDate": "pv",
+    "UpdateTime": 20260260246,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260126,
+    "Title": "库兹马唱歌的话家里哆啰啰",
+    "Pinyin": "kzmcgdhjldll",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260126.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260246,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260125,
+    "Title": "公鸡斗士",
+    "Pinyin": "gjds",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260125.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260245,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260111,
+    "Title": "婚姻剧毒",
+    "Pinyin": "hyjd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260111.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260241,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260120,
+    "Title": "转生成自动贩卖机的我今天也在迷宫徘徊 第三季",
+    "Pinyin": "zsczdfmjdwjtyzmgph dsj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260120.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260240,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260100,
+    "Title": "春夏秋冬代行者 春之舞",
+    "Pinyin": "cxqddxz czw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260100.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第14集",
+    "UpdateTime": 20260260240,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260079,
+    "Title": "欢迎来到实力至上主义教室 第四季",
+    "Pinyin": "hyldslzszyjs dsj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260079.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第16集",
+    "UpdateTime": 20260260239,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260128,
+    "Title": "异兽魔都 第二季",
+    "Pinyin": "ysmd dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260128.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20260260238,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260116,
+    "Title": "幽灵音乐会",
+    "Pinyin": "ylyyh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260116.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260236,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260113,
+    "Title": "想结束这场“我爱你”的游戏",
+    "Pinyin": "xjszc“wan”dyx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260113.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260233,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260221,
+    "Title": "无自觉圣女今天也无意识地释放力量",
+    "Pinyin": "wzjsnjtywysdsfll",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260221.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260231,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260110,
+    "Title": "迦楠大人的白给是恶魔级",
+    "Pinyin": "jndrdbgsemj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260110.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260230,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260109,
+    "Title": "没有辣妹会对阿宅温柔!?",
+    "Pinyin": "mylmhdazwr!?",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260109.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260229,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260108,
+    "Title": "楠木邸的神明庭院",
+    "Pinyin": "nmddsmty",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260108.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260228,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260218,
+    "Title": "虽然我不是完美恶女～雏宫蝶鼠替换传～",
+    "Pinyin": "srwbswmen～cgdsthc～",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260218.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260228,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260217,
+    "Title": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～",
+    "Pinyin": "bzqjlsfc。～ymdszlnszg～",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260217.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260227,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260107,
+    "Title": "又被杀掉了呢，侦探大人",
+    "Pinyin": "ybsdln，ztdr",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260107.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260227,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260216,
+    "Title": "最强出涸皇子的暗跃帝位争夺",
+    "Pinyin": "zqchhzdaydwzd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260216.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260226,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260106,
+    "Title": "女神“异世界转生想成为什么”我“勇者的肋骨”",
+    "Pinyin": "ns“ysjzsxcwsm”w“yzdlg”",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260106.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260226,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260105,
+    "Title": "最强的职业不是勇者也不是贤者好像是鉴定士(伪)的样子?",
+    "Pinyin": "zqdzybsyzybsxzhxsjds(w)dyz?",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260105.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260225,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260103,
+    "Title": "身为悲剧始作俑者的最强邪恶BOSS女王为民竭心尽力。 第二季",
+    "Pinyin": "swbjszyzdzqxebossnwwmjxjl。 dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260103.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260223,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260102,
+    "Title": "当前、正被打扰中！",
+    "Pinyin": "dq、zbdrz！",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260102.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260222,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260092,
+    "Title": "主播女孩重度依赖",
+    "Pinyin": "zbnhzdyl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260092.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260222,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260099,
+    "Title": "关于虽然逃走的鱼很大、但钓上来的鱼却太大了这件事",
+    "Pinyin": "gysrtzdyhd、ddsldyqtdlzjs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260099.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260219,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260088,
+    "Title": "石纪元 科学与未来 第3部分",
+    "Pinyin": "sjy kxywl d3bf",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260088.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260218,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260095,
+    "Title": "杀手青春",
+    "Pinyin": "ssqc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260095.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260215,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260094,
+    "Title": "弱弱老师",
+    "Pinyin": "rrls",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260094.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260214,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260093,
+    "Title": "自称恶役大小姐的婚约者观察记录。",
+    "Pinyin": "zceydxjdhyzgcjl。",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260093.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260213,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260081,
+    "Title": "轮回的花瓣",
+    "Pinyin": "lhdhb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260081.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260211,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260091,
+    "Title": "租借女友 第五季",
+    "Pinyin": "zjny dwj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260091.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260211,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260196,
+    "Title": "花织同学转生后还是想干架",
+    "Pinyin": "hztxzshhsxgj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260196.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260206,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260085,
+    "Title": "朱音落语",
+    "Pinyin": "zyly",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260085.jpg",
+    "Status": "完结",
+    "UpToDate": "已完结",
+    "UpdateTime": 20260260205,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260084,
+    "Title": "淡岛百景",
+    "Pinyin": "ddbj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260084.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260204,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260074,
+    "Title": "冻结地球",
+    "Pinyin": "djdq",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260074.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260204,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260082,
+    "Title": "女仆小姐的贪吃日常",
+    "Pinyin": "npxjdtcrc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260202,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260072,
+    "Title": "左撇子艾伦",
+    "Pinyin": "zpzal",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260072.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20260260202,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260191,
+    "Title": "Let's Go 怪奇组",
+    "Pinyin": "let's go gqz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260201,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260190,
+    "Title": "炒翻天",
+    "Pinyin": "cft",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260190.jpg",
+    "Status": "未播放",
+    "UpToDate": "pv",
+    "UpdateTime": 20260260200,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260080,
+    "Title": "上伊那牡丹，酒醉身姿似百合花般",
+    "Pinyin": "synmd，jzszsbhhb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260080.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260200,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260090,
+    "Title": "一叠间漫画咖啡屋生活！",
+    "Pinyin": "ydjmhkfwsh！",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260090.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20260260200,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260188,
+    "Title": "天是红河岸",
+    "Pinyin": "tshha",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260188.jpg",
+    "Status": "未播放",
+    "UpToDate": "pv",
+    "UpdateTime": 20260260198,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260186,
+    "Title": "雷霆三人行",
+    "Pinyin": "ltsrx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260186.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260196,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260075,
+    "Title": "最强王者的第二人生 第二季",
+    "Pinyin": "zqwzdders dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260075.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260195,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260071,
+    "Title": "女骑士成为蛮族新娘",
+    "Pinyin": "nqscwmzxn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260071.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260191,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260070,
+    "Title": "日本三国",
+    "Pinyin": "rbsg",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260070.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260190,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260069,
+    "Title": "和班上第二可爱的女孩成为朋友",
+    "Pinyin": "hbsdekadnhcwpy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260069.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260189,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260068,
+    "Title": "灰原同学重返过去，开启所向无敌的第二轮青春游戏",
+    "Pinyin": "hytxcfgq，kqsxwdddelqcyx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260068.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260188,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260177,
+    "Title": "克雷瓦提斯2：魔兽之王与虚伪的勇者传承",
+    "Pinyin": "klwts2：mszwyxwdyzcc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260177.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260187,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260104,
+    "Title": "茉莉花酱的好感度正在崩坏",
+    "Pinyin": "mlhjdhgdzzbh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260104.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20260260184,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260167,
+    "Title": "梅比乌斯之尘",
+    "Pinyin": "mbwszc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260167.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260177,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260066,
+    "Title": "Re：从零开始的异世界生活 第四季 丧失篇",
+    "Pinyin": "re：clksdysjsh dsj ssp",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260066.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20260260176,
+    "Type": "TV"
   },
   {
     "AID": 20260035,
@@ -1554,7 +1326,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260155
+    "UpdateTime": 20260260155,
+    "Type": "TV"
   },
   {
     "AID": 20260141,
@@ -1563,52 +1336,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260141.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20260260151
-  },
-  {
-    "AID": 20260027,
-    "Title": "蘑菇魔女",
-    "Pinyin": "mgmn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260027.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260147
-  },
-  {
-    "AID": 20260024,
-    "Title": "咒术回战 死灭回游 前篇",
-    "Pinyin": "zshz smhy qp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260024.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260144
-  },
-  {
-    "AID": 20260021,
-    "Title": "魔都精兵的奴隶 第二季",
-    "Pinyin": "mdjbdnl dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260021.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260141
-  },
-  {
-    "AID": 20260044,
-    "Title": "金牌得主 第二季",
-    "Pinyin": "jpdz dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260044.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20260260134
-  },
-  {
-    "AID": 20260029,
-    "Title": "葬送的芙莉莲 第二季",
-    "Pinyin": "zsdfll dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260029.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第10集",
-    "UpdateTime": 20260260129
+    "UpdateTime": 20260260151,
+    "Type": "WEB"
   },
   {
     "AID": 20260016,
@@ -1617,16 +1346,28 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20260016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第11集",
-    "UpdateTime": 20260260126
+    "UpdateTime": 20260260136,
+    "Type": "TV"
   },
   {
-    "AID": 20260028,
-    "Title": "决斗大师 LOST ～忘却的太阳～",
-    "Pinyin": "jdds lost ～wqdty～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260028.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至第19集",
-    "UpdateTime": 20260260038
+    "AID": 20260044,
+    "Title": "金牌得主 第二季",
+    "Pinyin": "jpdz dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260044.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20260260134,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260029,
+    "Title": "葬送的芙莉莲 第二季",
+    "Pinyin": "zsdfll dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260029.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第10集",
+    "UpdateTime": 20260260129,
+    "Type": "TV"
   },
   {
     "AID": 20220116,
@@ -1635,16 +1376,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220116.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20260220246
-  },
-  {
-    "AID": "a123_dujundexxjijiangbenghuai",
-    "Title": "渡君的XX即将崩坏",
-    "Pinyin": "djdxxjjbh",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/f8/a8/455454_cEllE.jpg",
-    "Status": "更新至26集",
-    "UpToDate": "更新至第26集",
-    "UpdateTime": 20250360383
+    "UpdateTime": 20260220246,
+    "Type": "WEB"
   },
   {
     "AID": "a123_xindiaodaiwatianshi",
@@ -1653,16 +1386,8 @@
     "Cover": "http://lain.bgm.tv/pic/cover/l/52/88/390555_11QS3.jpg",
     "Status": "更新至13集",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20250360253
-  },
-  {
-    "AID": "a123_zuihoukeyizaibaituoninyijiansh",
-    "Title": "最后可以再拜托您一件事吗",
-    "Pinyin": "zhkyzbtnyjsm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250217.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20250360253
+    "UpdateTime": 20250360253,
+    "Type": "TV"
   },
   {
     "AID": "a123_anxianlingzhudeyukuailingdifan",
@@ -1671,61 +1396,8 @@
     "Cover": "https://lain.bgm.tv/pic/cover/l/68/49/519391_h5jSj.jpg",
     "Status": "更新至12集",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20250360243
-  },
-  {
-    "AID": "a123_shuishuxingmofashi",
-    "Title": "水属性魔法使",
-    "Pinyin": "ssxmfs",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/16/e9/532403_5rfk5.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250360243
-  },
-  {
-    "AID": "a123_yishijiedeantaiquankanshechu",
-    "Title": "异世界的安泰全看社畜",
-    "Pinyin": "ysjdatqksc",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/11/3b/522370_FFyEr.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20250360243
-  },
-  {
-    "AID": "a123_shengnvyintaiguowanmeibugoukea",
-    "Title": "圣女因太过完美不够可爱而被废除婚约并卖到邻国",
-    "Pinyin": "snytgwmbgkaebfchybmdlg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250073.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250360243
-  },
-  {
-    "AID": "a123_difushaonianhuazijun2",
-    "Title": "地缚少年花子君 2",
-    "Pinyin": "dfsnhzj 2",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250171.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20250360242
-  },
-  {
-    "AID": "a123_shuangrenduziluying1",
-    "Title": "双人独自露营",
-    "Pinyin": "srdzly",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/c5/51/531344_f65f8.jpg",
-    "Status": "更新至24集",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20250360241
-  },
-  {
-    "AID": 20250188,
-    "Title": "假面骑士ZZZ",
-    "Pinyin": "jmqszzz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250188.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第44集",
-    "UpdateTime": 20250350628
+    "UpdateTime": 20250360243,
+    "Type": "TV"
   },
   {
     "AID": 20250235,
@@ -1734,7 +1406,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250235.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 20250350615
+    "UpdateTime": 20250350775,
+    "Type": "TV"
+  },
+  {
+    "AID": 20250188,
+    "Title": "假面骑士ZZZ",
+    "Pinyin": "jmqszzz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250188.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第44集",
+    "UpdateTime": 20250350628,
+    "Type": "WEB"
   },
   {
     "AID": 20250209,
@@ -1743,7 +1426,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 20250350609
+    "UpdateTime": 20250350609,
+    "Type": "TV"
   },
   {
     "AID": 20250097,
@@ -1752,7 +1436,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250097.jpg",
     "Status": "完结",
     "UpToDate": "更新至第48集",
-    "UpdateTime": 20250250617
+    "UpdateTime": 20250250617,
+    "Type": "TV"
   },
   {
     "AID": 20250231,
@@ -1761,16 +1446,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250231.jpg",
     "Status": "完结",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 20250250441
-  },
-  {
-    "AID": 20250258,
-    "Title": "终末的女武神 第三季",
-    "Pinyin": "zmdnws dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250258.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第15集",
-    "UpdateTime": 20250250408
+    "UpdateTime": 20250250441,
+    "Type": "TV"
   },
   {
     "AID": 20250259,
@@ -1779,61 +1456,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250259.jpg",
     "Status": "完结",
     "UpToDate": "更新至第14集",
-    "UpdateTime": 20250250399
-  },
-  {
-    "AID": 20250063,
-    "Title": "鬼人幻灯抄",
-    "Pinyin": "grhdc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250063.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20250250303
-  },
-  {
-    "AID": 20250162,
-    "Title": "费马的料理",
-    "Pinyin": "fmdll",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250162.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250250282
-  },
-  {
-    "AID": 20250129,
-    "Title": "盾之勇者成名录 第四季",
-    "Pinyin": "dzyzcml dsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250129.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20250250249
-  },
-  {
-    "AID": 20250220,
-    "Title": "GANGLION",
-    "Pinyin": "ganglion",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250220.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20250250230
-  },
-  {
-    "AID": 20250200,
-    "Title": "怪物弹珠 DEADVERSE RELOADED",
-    "Pinyin": "gwdz deadverse reloaded",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250200.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20250250210
-  },
-  {
-    "AID": 20250052,
-    "Title": "我独自升级 第二季 -起于暗影-",
-    "Pinyin": "wdzsj dej -qyay-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250052.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20250250182
+    "UpdateTime": 20250250399,
+    "Type": "TV"
   },
   {
     "AID": 20250041,
@@ -1842,7 +1466,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250041.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20250250171
+    "UpdateTime": 20250250171,
+    "Type": "TV"
   },
   {
     "AID": 20250139,
@@ -1851,25 +1476,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20250139.jpg",
     "Status": "完结",
     "UpToDate": "HD中字",
-    "UpdateTime": 20250250149
-  },
-  {
-    "AID": 20250076,
-    "Title": "MIRU 我们的未来",
-    "Pinyin": "miru wmdwl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250076.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20250250086
-  },
-  {
-    "AID": 20250045,
-    "Title": "0岁儿童开始冲刺的故事 第二季",
-    "Pinyin": "0setksccdgs dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20250045.jpg",
-    "Status": "未播放",
-    "UpToDate": "更新至第16集",
-    "UpdateTime": 20250250045
+    "UpdateTime": 20250250149,
+    "Type": "TV"
   },
   {
     "AID": 20240039,
@@ -1878,7 +1486,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240039.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 20240340229
+    "UpdateTime": 20240340519,
+    "Type": "TV"
   },
   {
     "AID": 20230299,
@@ -1887,25 +1496,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230299.jpg",
     "Status": "连载",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 20240330399
-  },
-  {
-    "AID": 20240172,
-    "Title": "悲喜渔生",
-    "Pinyin": "bxys",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20240172.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20240240292
-  },
-  {
-    "AID": 20240149,
-    "Title": "村井之恋",
-    "Pinyin": "cjzl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20240149.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20240240269
+    "UpdateTime": 20240330399,
+    "Type": "TV"
   },
   {
     "AID": 20240090,
@@ -1914,7 +1506,28 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240090.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20240240210
+    "UpdateTime": 20240240350,
+    "Type": "TV"
+  },
+  {
+    "AID": 20240172,
+    "Title": "悲喜渔生",
+    "Pinyin": "bxys",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20240172.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20240240292,
+    "Type": "TV"
+  },
+  {
+    "AID": 20240149,
+    "Title": "村井之恋",
+    "Pinyin": "cjzl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20240149.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20240240269,
+    "Type": "TV"
   },
   {
     "AID": 20240059,
@@ -1923,16 +1536,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20240059.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20240240179
-  },
-  {
-    "AID": "a123_fanerbujingdewobeizhuchuyongzh",
-    "Title": "泛而不精的我被逐出勇者队伍",
-    "Pinyin": "febjdwbzcyzdw",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/0b/9d/541336_oG7SO.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20240100243
+    "UpdateTime": 20240240179,
+    "Type": "TV"
   },
   {
     "AID": 20230073,
@@ -1941,7 +1546,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230073.jpg",
     "Status": "连载",
     "UpToDate": "更新至第17集",
-    "UpdateTime": 20230331493
+    "UpdateTime": 20230331493,
+    "Type": "TV"
   },
   {
     "AID": 20230091,
@@ -1950,7 +1556,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230091.jpg",
     "Status": "连载",
     "UpToDate": "更新至第08集",
-    "UpdateTime": 20230330791
+    "UpdateTime": 20230330791,
+    "Type": "TV"
   },
   {
     "AID": 20230207,
@@ -1959,7 +1566,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230207.jpg",
     "Status": "完结",
     "UpToDate": "更新至第28集",
-    "UpdateTime": 20230230487
+    "UpdateTime": 20230230487,
+    "Type": "TV"
   },
   {
     "AID": 20230209,
@@ -1968,7 +1576,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230209.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20230230449
+    "UpdateTime": 20230230449,
+    "Type": "TV"
   },
   {
     "AID": 20230225,
@@ -1977,7 +1586,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230225.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20230230355
+    "UpdateTime": 20230230355,
+    "Type": "TV"
   },
   {
     "AID": 20230085,
@@ -1986,7 +1596,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230085.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20230230215
+    "UpdateTime": 20230230215,
+    "Type": "TV"
   },
   {
     "AID": 20230072,
@@ -1995,16 +1606,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230072.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20230230202
-  },
-  {
-    "AID": 20230174,
-    "Title": "哆啦A梦：大雄与天空的理想乡",
-    "Pinyin": "dlam：dxytkdlxx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20230174.jpg",
-    "Status": "完结",
-    "UpToDate": "抢先版",
-    "UpdateTime": 20230230194
+    "UpdateTime": 20230230202,
+    "Type": "TV"
   },
   {
     "AID": 20230030,
@@ -2013,7 +1616,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20230030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20230230160
+    "UpdateTime": 20230230160,
+    "Type": "TV"
   },
   {
     "AID": 20220248,
@@ -2022,7 +1626,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220248.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20230220488
+    "UpdateTime": 20230220488,
+    "Type": "TV"
   },
   {
     "AID": 20220245,
@@ -2031,7 +1636,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220245.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20230220365
+    "UpdateTime": 20230220365,
+    "Type": "TV"
   },
   {
     "AID": 20220244,
@@ -2040,16 +1646,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220244.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20230220254
-  },
-  {
-    "AID": "a123_wodexingfuhunyue2",
-    "Title": "我的幸福婚约 2",
-    "Pinyin": "wdxfhy 2",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/5f/b1/377125_WRoZD.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20230100132
+    "UpdateTime": 20230220254,
+    "Type": "TV"
   },
   {
     "AID": 20220494,
@@ -2058,25 +1656,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220494.jpg",
     "Status": "连载",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 20220320584
+    "UpdateTime": 20220320754,
+    "Type": "TV"
   },
   {
-    "AID": 20220537,
-    "Title": "灌篮高手 The First Slam Dunk",
-    "Pinyin": "glgs the first slam dunk",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20220537.jpg",
+    "AID": 20220523,
+    "Title": "铃芽之旅",
+    "Pinyin": "lyzl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20220523.jpg",
     "Status": "完结",
-    "UpToDate": "HD中字",
-    "UpdateTime": 20220220577
-  },
-  {
-    "AID": 20220063,
-    "Title": "与变成了异世界美少女的大叔一起冒险",
-    "Pinyin": "ybclysjmsnddsyqmx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20220063.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20220220183
+    "UpToDate": "全集",
+    "UpdateTime": 20220220553,
+    "Type": "剧场版"
   },
   {
     "AID": 20220008,
@@ -2085,16 +1676,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20220008.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20220220018
-  },
-  {
-    "AID": 20210214,
-    "Title": "世界顶尖的暗杀者转生为异世界贵族",
-    "Pinyin": "sjdjdaszzswysjgz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20210214.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20210210334
+    "UpdateTime": 20220220018,
+    "Type": "剧场版"
   },
   {
     "AID": 20210240,
@@ -2103,16 +1686,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210240.jpg",
     "Status": "未播放",
     "UpToDate": "PV",
-    "UpdateTime": 20210210250
+    "UpdateTime": 20210210500,
+    "Type": "TV"
   },
   {
-    "AID": 20210034,
-    "Title": "装甲娘战机",
-    "Pinyin": "zjnzj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20210034.jpg",
+    "AID": 20210214,
+    "Title": "世界顶尖的暗杀者转生为异世界贵族",
+    "Pinyin": "sjdjdaszzswysjgz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20210214.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20210210154
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20210210334,
+    "Type": "TV"
   },
   {
     "AID": 20210134,
@@ -2121,25 +1706,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20210134.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20210210144
-  },
-  {
-    "AID": 20210020,
-    "Title": "怪病医拉姆尼",
-    "Pinyin": "gbylmn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20210020.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20210210140
-  },
-  {
-    "AID": 20210006,
-    "Title": "2.43 清阴高中男子排球部",
-    "Pinyin": "2.43 qygznzpqb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20210006.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20210210126
+    "UpdateTime": 20210210144,
+    "Type": "剧场版"
   },
   {
     "AID": 20200252,
@@ -2148,7 +1716,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200252.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20210200372
+    "UpdateTime": 20210200372,
+    "Type": "TV"
   },
   {
     "AID": 20200240,
@@ -2157,7 +1726,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200240.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20210200360
+    "UpdateTime": 20210200360,
+    "Type": "TV"
   },
   {
     "AID": 20200217,
@@ -2166,7 +1736,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200217.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 20200200477
+    "UpdateTime": 20200200477,
+    "Type": "TV"
   },
   {
     "AID": 20200313,
@@ -2175,34 +1746,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200313.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20200200433
-  },
-  {
-    "AID": 20200243,
-    "Title": "池袋西口公园",
-    "Pinyin": "cdxkgy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200243.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200363
-  },
-  {
-    "AID": 20200249,
-    "Title": "日本沉没2020",
-    "Pinyin": "rbcm2020",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200249.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第10集",
-    "UpdateTime": 20200200349
-  },
-  {
-    "AID": 20200227,
-    "Title": "成神之日",
-    "Pinyin": "cszr",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200227.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200347
+    "UpdateTime": 20200200433,
+    "Type": "TV"
   },
   {
     "AID": 20200164,
@@ -2211,7 +1756,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200164.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200274
+    "UpdateTime": 20200200274,
+    "Type": "TV"
   },
   {
     "AID": 20200128,
@@ -2220,16 +1766,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200128.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20200200258
-  },
-  {
-    "AID": 20200135,
-    "Title": "听我的电波吧",
-    "Pinyin": "twddbb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200135.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200255
+    "UpdateTime": 20200200258,
+    "Type": "TV"
   },
   {
     "AID": 20200125,
@@ -2238,52 +1776,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200125.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20200200245
-  },
-  {
-    "AID": 20200071,
-    "Title": "安达与岛村",
-    "Pinyin": "adydc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200071.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200200201
-  },
-  {
-    "AID": 20200075,
-    "Title": "放学后海堤日记",
-    "Pinyin": "fxhhdrj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200075.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200195
-  },
-  {
-    "AID": 20200067,
-    "Title": "隐瞒之事",
-    "Pinyin": "ymzs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200067.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200187
-  },
-  {
-    "AID": 20200034,
-    "Title": "别对映像研出手！",
-    "Pinyin": "bdyxycs！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200034.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200154
-  },
-  {
-    "AID": 20200023,
-    "Title": "22/7",
-    "Pinyin": "22/7",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200023.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200153
+    "UpdateTime": 20200200245,
+    "Type": "TV"
   },
   {
     "AID": 20200031,
@@ -2292,43 +1786,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20200031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200151
-  },
-  {
-    "AID": 20200029,
-    "Title": "奇幻☆怪盗",
-    "Pinyin": "qh☆gd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20200029.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200200149
-  },
-  {
-    "AID": 20190366,
-    "Title": "恋爱小行星",
-    "Pinyin": "laxxx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190366.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200190486
-  },
-  {
-    "AID": 20190119,
-    "Title": "公主连结！Re:Dive",
-    "Pinyin": "gzlj！re:dive",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190119.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20200190249
-  },
-  {
-    "AID": 20190058,
-    "Title": "思维覆写",
-    "Pinyin": "swfx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190058.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200190188
+    "UpdateTime": 20200200151,
+    "Type": "TV"
   },
   {
     "AID": 20190031,
@@ -2337,7 +1796,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190031.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20200190161
+    "UpdateTime": 20200190291,
+    "Type": "TV"
+  },
+  {
+    "AID": 20190119,
+    "Title": "公主连结！Re:Dive",
+    "Pinyin": "gzlj！re:dive",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190119.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200190249,
+    "Type": "TV"
   },
   {
     "AID": 20190126,
@@ -2346,88 +1816,238 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190126.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20200190136
+    "UpdateTime": 20200190136,
+    "Type": "剧场版"
   },
   {
-    "AID": "a123_mowangdenvertaiwenroule",
-    "Title": "魔王的女儿太温柔了！",
-    "Pinyin": "mwdnetwrl！",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b4/0f/565416_a994t.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200100243
-  },
-  {
-    "AID": "a123_zhuanshengzhihoudewobianchengl",
-    "Title": "转生之后的我变成了龙蛋",
-    "Pinyin": "zszhdwbclld",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/b7/ce/544106_L6Pj1.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200100243
-  },
-  {
-    "AID": "a123_huangquandeshizhe",
-    "Title": "黄泉的使者",
-    "Pinyin": "hqdsz",
-    "Cover": "https://i1.a123tv.com/v/0x/huangquandeshizhe.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20200100213
-  },
-  {
-    "AID": "a123_zhoushuhuizhan32",
-    "Title": "咒术回战 3",
-    "Pinyin": "zshz 3",
-    "Cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg",
-    "Status": "更新至12集",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20200100152
-  },
-  {
-    "AID": "a123_woduzishengji2",
-    "Title": "我独自升级 2",
-    "Pinyin": "wdzsj 2",
-    "Cover": "https://i1.a123tv.com/v/0x/woduzishengji2.jpg",
-    "Status": "更新至13集",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20200100132
-  },
-  {
-    "AID": 20190205,
-    "Title": "鸭子的天空",
-    "Pinyin": "yzdtk",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190205.jpg",
+    "AID": "a123_lbxx hfhy！drdgdfj",
+    "Title": "蜡笔小新 呼风唤雨！大人帝国的反击",
+    "Pinyin": "lbxx hfhy！drdgdfj",
+    "Cover": "",
     "Status": "完结",
-    "UpToDate": "更新至第50集",
-    "UpdateTime": 20190190705
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
   },
   {
-    "AID": 20190359,
-    "Title": "列比乌斯",
-    "Pinyin": "lbws",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190359.jpg",
+    "AID": "a123_hyzdmn",
+    "Title": "回忆中的玛妮",
+    "Pinyin": "hyzdmn",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_sydth",
+    "Title": "岁月的童话",
+    "Pinyin": "sydth",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_yzbd，ydddf",
+    "Title": "云之彼端，约定的地方",
+    "Pinyin": "yzbd，ydddf",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_lbxx hfhy！zgdhz",
+    "Title": "蜡笔小新 呼风唤雨！战国大合战",
+    "Pinyin": "lbxx hfhy！zgdhz",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_htzx",
+    "Title": "河童之夏",
+    "Pinyin": "htzx",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_lzymrzp",
+    "Title": "来自虞美人之坡",
+    "Pinyin": "lzymrzp",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_yxrs l",
+    "Title": "游戏人生 零",
+    "Pinyin": "yxrs l",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200000383,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_fzg",
+    "Title": "风之谷",
+    "Pinyin": "fzg",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD国语",
+    "UpdateTime": 20200000153,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mztkn：mgdszl",
+    "Title": "名侦探柯南：迷宫的十字路",
+    "Pinyin": "mztkn：mgdszl",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至日语",
+    "UpdateTime": 20200000143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mztkn：bkjdwl",
+    "Title": "名侦探柯南：贝克街的亡灵",
+    "Pinyin": "mztkn：bkjdwl",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至日语",
+    "UpdateTime": 20200000143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_tdts",
+    "Title": "听到涛声",
+    "Pinyin": "tdts",
+    "Cover": "",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190479
+    "UpdateTime": 20200000143,
+    "Type": "剧场版"
   },
   {
-    "AID": 20190210,
-    "Title": "无限之住人-IMMORTAL-",
-    "Pinyin": "wxzzr-immortal-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190210.jpg",
+    "AID": "a123_gwdhz",
+    "Title": "怪物的孩子",
+    "Pinyin": "gwdhz",
+    "Cover": "",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190450
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
   },
   {
-    "AID": 20190202,
-    "Title": "入间同学入魔了",
-    "Pinyin": "rjtxrml",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
+    "AID": "a123_jdxdxralad",
+    "Title": "借东西的小人阿莉埃蒂",
+    "Pinyin": "jdxdxralad",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_bblm",
+    "Title": "百变狸猫",
+    "Pinyin": "bblm",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至电影解说",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_qfl",
+    "Title": "起风了",
+    "Pinyin": "qfl",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_ceqt",
+    "Title": "侧耳倾听",
+    "Pinyin": "ceqt",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_dlam：bwth",
+    "Title": "哆啦A梦：伴我同行",
+    "Pinyin": "dlam：bwth",
+    "Cover": "",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190432
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mnzjb",
+    "Title": "魔女宅急便",
+    "Pinyin": "mnzjb",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_xsjfyzsjcb：p",
+    "Title": "新世纪福音战士剧场版：破",
+    "Pinyin": "xsjfyzsjcb：p",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至高清",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_mdbe",
+    "Title": "猫的报恩",
+    "Pinyin": "mdbe",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至全集",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_djjf",
+    "Title": "东京教父",
+    "Pinyin": "djjf",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_xsjfyzsjcb：z",
+    "Title": "新世纪福音战士剧场版：终",
+    "Pinyin": "xsjfyzsjcb：z",
+    "Cover": "",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
   },
   {
     "AID": 20190396,
@@ -2436,7 +2056,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190396.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20190190406
+    "UpdateTime": 20190190656,
+    "Type": "剧场版"
   },
   {
     "AID": 20190138,
@@ -2445,7 +2066,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190398
+    "UpdateTime": 20190190398,
+    "Type": "TV"
   },
   {
     "AID": 20190111,
@@ -2454,16 +2076,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190111.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20190190361
-  },
-  {
-    "AID": 20190047,
-    "Title": "在世界尽头咏唱恋曲的少女YU-NO",
-    "Pinyin": "zsjjtyclqdsnyu-no",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190047.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190307
+    "UpdateTime": 20190190361,
+    "Type": "TV"
   },
   {
     "AID": 20190165,
@@ -2472,7 +2086,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190165.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190285
+    "UpdateTime": 20190190285,
+    "Type": "TV"
   },
   {
     "AID": 20190030,
@@ -2481,7 +2096,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20190190280
+    "UpdateTime": 20190190280,
+    "Type": "TV"
   },
   {
     "AID": 20190158,
@@ -2490,16 +2106,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190158.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190278
-  },
-  {
-    "AID": 20190156,
-    "Title": "只要长得可爱，即使是变态你也喜欢吗？",
-    "Pinyin": "zyzdka，jssbtnyxhm？",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190156.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190276
+    "UpdateTime": 20190190278,
+    "Type": "TV"
   },
   {
     "AID": 20190120,
@@ -2508,16 +2116,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190120.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190240
-  },
-  {
-    "AID": 20190110,
-    "Title": "信长老师的年幼妻子",
-    "Pinyin": "xzlsdnyqz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190230
+    "UpdateTime": 20190190240,
+    "Type": "TV"
   },
   {
     "AID": 20190008,
@@ -2526,16 +2126,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第21集",
-    "UpdateTime": 20190190228
-  },
-  {
-    "AID": 20190045,
-    "Title": "不吉波普不笑",
-    "Pinyin": "bjbpbx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190045.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190225
+    "UpdateTime": 20190190228,
+    "Type": "TV"
   },
   {
     "AID": 20190092,
@@ -2544,7 +2136,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190092.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190222
+    "UpdateTime": 20190190222,
+    "Type": "TV"
   },
   {
     "AID": 20190093,
@@ -2553,7 +2146,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190093.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190213
+    "UpdateTime": 20190190213,
+    "Type": "TV"
   },
   {
     "AID": 20190090,
@@ -2562,7 +2156,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190090.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190210
+    "UpdateTime": 20190190210,
+    "Type": "TV"
   },
   {
     "AID": 20190091,
@@ -2571,25 +2166,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190091.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190201
+    "UpdateTime": 20190190201,
+    "Type": "TV"
   },
   {
-    "AID": 20190185,
-    "Title": "二之国",
-    "Pinyin": "ezg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190185.jpg",
+    "AID": 20190171,
+    "Title": "天气之子",
+    "Pinyin": "tqzz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190171.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20190190195
-  },
-  {
-    "AID": 20190174,
-    "Title": "超次元游戏 海王星～涅普的暑假～",
-    "Pinyin": "ccyyx hwx～npdsj～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190174.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20190190184
+    "UpToDate": "BD全集",
+    "UpdateTime": 20190190191,
+    "Type": "剧场版"
   },
   {
     "AID": 20190052,
@@ -2598,7 +2186,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190052.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190172
+    "UpdateTime": 20190190172,
+    "Type": "TV"
   },
   {
     "AID": 20190042,
@@ -2607,34 +2196,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190042.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190162
-  },
-  {
-    "AID": 20190038,
-    "Title": "荒野的寿飞行队",
-    "Pinyin": "hydsfxd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190038.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190158
-  },
-  {
-    "AID": 20190036,
-    "Title": "放学后桌游俱乐部",
-    "Pinyin": "fxhzyjlb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190036.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190156
-  },
-  {
-    "AID": 20190033,
-    "Title": "重来吧，魔王大人！",
-    "Pinyin": "zlb，mwdr！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190033.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190153
+    "UpdateTime": 20190190162,
+    "Type": "TV"
   },
   {
     "AID": 20190022,
@@ -2643,7 +2206,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190022.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190142
+    "UpdateTime": 20190190142,
+    "Type": "TV"
   },
   {
     "AID": 20190020,
@@ -2652,7 +2216,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20190190140
+    "UpdateTime": 20190190140,
+    "Type": "TV"
   },
   {
     "AID": 20190123,
@@ -2661,43 +2226,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20190123.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20190190133
+    "UpdateTime": 20190190133,
+    "Type": "剧场版"
   },
   {
-    "AID": 20190007,
-    "Title": "Endro~！",
-    "Pinyin": "endro~！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190007.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190127
-  },
-  {
-    "AID": 20190059,
-    "Title": "修业魔女璐璐萌 完结篇",
-    "Pinyin": "xymnllm wjp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190059.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190079
-  },
-  {
-    "AID": 20190012,
-    "Title": "城市猎人剧场版 新宿 PRIVATE EYES",
-    "Pinyin": "cslrjcb xs private eyes",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190012.jpg",
+    "AID": 20180293,
+    "Title": "莉兹与青鸟",
+    "Pinyin": "lzyqn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180293.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20190190022
-  },
-  {
-    "AID": 20190004,
-    "Title": "Love Live! Sunshine!! 剧场版 彩虹之上",
-    "Pinyin": "love live! sunshine!! jcb chzs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190004.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20190190014
+    "UpdateTime": 20180180553,
+    "Type": "剧场版"
   },
   {
     "AID": 20180220,
@@ -2706,7 +2246,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180220.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20180180500
+    "UpdateTime": 20180180500,
+    "Type": "TV"
   },
   {
     "AID": 20180246,
@@ -2715,7 +2256,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180246.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180496
+    "UpdateTime": 20180180496,
+    "Type": "TV"
   },
   {
     "AID": 20180242,
@@ -2724,7 +2266,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180242.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180482
+    "UpdateTime": 20180180482,
+    "Type": "TV"
   },
   {
     "AID": 20180358,
@@ -2733,7 +2276,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180358.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180478
+    "UpdateTime": 20180180478,
+    "Type": "TV"
   },
   {
     "AID": 20180247,
@@ -2742,7 +2286,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180247.jpg",
     "Status": "完结",
     "UpToDate": "完结",
-    "UpdateTime": 20180180367
+    "UpdateTime": 20180180367,
+    "Type": "TV"
   },
   {
     "AID": 20180230,
@@ -2751,7 +2296,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180230.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20180180360
+    "UpdateTime": 20180180360,
+    "Type": "TV"
   },
   {
     "AID": 20180229,
@@ -2760,7 +2306,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180229.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180349
+    "UpdateTime": 20180180349,
+    "Type": "TV"
   },
   {
     "AID": 20180228,
@@ -2769,25 +2316,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180228.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180348
-  },
-  {
-    "AID": 20180213,
-    "Title": "青春期笨蛋不做兔女郎学姐的梦",
-    "Pinyin": "qcqbdbztnlxjdm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180213.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180343
-  },
-  {
-    "AID": 20180081,
-    "Title": "妖怪旅馆营业中",
-    "Pinyin": "yglgyyz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180081.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180341
+    "UpdateTime": 20180180348,
+    "Type": "TV"
   },
   {
     "AID": 20180278,
@@ -2796,52 +2326,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180278.jpg",
     "Status": "完结",
     "UpToDate": "更新至第02集",
-    "UpdateTime": 20180180338
-  },
-  {
-    "AID": 20180311,
-    "Title": "夏目友人帐剧场版 ～缘结空蝉～",
-    "Pinyin": "xmyrzjcb ～yjkc～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180311.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20180180331
-  },
-  {
-    "AID": 20180042,
-    "Title": "BEATLESS -没有心跳的少女-",
-    "Pinyin": "beatless -myxtdsn-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180042.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20180180322
-  },
-  {
-    "AID": 20180189,
-    "Title": "终将成为你",
-    "Pinyin": "zjcwn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180189.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180319
-  },
-  {
-    "AID": 20180262,
-    "Title": "能继续奔跑下去真是太好了",
-    "Pinyin": "njxbpxqzsthl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180262.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180302
-  },
-  {
-    "AID": 20180176,
-    "Title": "京都寺町三条商店街的福尔摩斯",
-    "Pinyin": "jdststsdjdfems",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180176.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180296
+    "UpdateTime": 20180180338,
+    "Type": "剧场版"
   },
   {
     "AID": 20180175,
@@ -2850,7 +2336,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180175.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180295
+    "UpdateTime": 20180180295,
+    "Type": "TV"
   },
   {
     "AID": 20180132,
@@ -2859,16 +2346,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180132.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180292
-  },
-  {
-    "AID": 20180168,
-    "Title": "LORD of VERMILION 红莲之王",
-    "Pinyin": "lord of vermilion hlzw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180168.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180288
+    "UpdateTime": 20180180292,
+    "Type": "TV"
   },
   {
     "AID": 20180002,
@@ -2877,34 +2356,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180002.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20180180272
-  },
-  {
-    "AID": 20180147,
-    "Title": "千绪的通学路",
-    "Pinyin": "qxdtxl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180147.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180267
-  },
-  {
-    "AID": 20180146,
-    "Title": "遥之彼方的接发球",
-    "Pinyin": "yzbfdjfq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180266
-  },
-  {
-    "AID": 20180157,
-    "Title": "后街女孩",
-    "Pinyin": "hjnh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180157.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180257
+    "UpdateTime": 20180180272,
+    "Type": "TV"
   },
   {
     "AID": 20180236,
@@ -2913,7 +2366,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180236.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20180180246
+    "UpdateTime": 20180180246,
+    "Type": "剧场版"
   },
   {
     "AID": 20180126,
@@ -2922,7 +2376,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180126.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180246
+    "UpdateTime": 20180180246,
+    "Type": "TV"
   },
   {
     "AID": 20180111,
@@ -2931,16 +2386,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180111.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180231
-  },
-  {
-    "AID": 20180104,
-    "Title": "美男高校地球防卫部 HAPPY KISS！",
-    "Pinyin": "mngxdqfwb happy kiss！",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180104.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180224
+    "UpdateTime": 20180180231,
+    "Type": "TV"
   },
   {
     "AID": 20180093,
@@ -2949,7 +2396,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180093.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180223
+    "UpdateTime": 20180180223,
+    "Type": "TV"
   },
   {
     "AID": 20180101,
@@ -2958,7 +2406,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180101.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180221
+    "UpdateTime": 20180180221,
+    "Type": "TV"
   },
   {
     "AID": 20180099,
@@ -2967,7 +2416,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180219
+    "UpdateTime": 20180180219,
+    "Type": "TV"
   },
   {
     "AID": 20180078,
@@ -2976,34 +2426,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180078.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20180180208
+    "UpdateTime": 20180180208,
+    "Type": "TV"
   },
   {
-    "AID": 20180083,
-    "Title": "罪人与龙共舞",
-    "Pinyin": "zrylgw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180083.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180203
-  },
-  {
-    "AID": 20180188,
-    "Title": "七原罪剧场版 天空的囚徒",
-    "Pinyin": "qyzjcb tkdqt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180188.jpg",
+    "AID": 20180194,
+    "Title": "我想吃掉你的胰脏",
+    "Pinyin": "wxcdndyz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180194.jpg",
     "Status": "完结",
     "UpToDate": "HD",
-    "UpdateTime": 20180180198
-  },
-  {
-    "AID": 20180069,
-    "Title": "魔法少女俺",
-    "Pinyin": "mfsna",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180069.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180189
+    "UpdateTime": 20180180204,
+    "Type": "剧场版"
   },
   {
     "AID": 20180057,
@@ -3012,7 +2446,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180057.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180177
+    "UpdateTime": 20180180177,
+    "Type": "TV"
   },
   {
     "AID": 20180040,
@@ -3021,7 +2456,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180040.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180170
+    "UpdateTime": 20180180170,
+    "Type": "TV"
   },
   {
     "AID": 20180030,
@@ -3030,16 +2466,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20180180150
-  },
-  {
-    "AID": 20180029,
-    "Title": "原书·原书使",
-    "Pinyin": "ys·yss",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20180029.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180149
+    "UpdateTime": 20180180150,
+    "Type": "TV"
   },
   {
     "AID": 20180028,
@@ -3048,16 +2476,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20180028.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20180180148
-  },
-  {
-    "AID": 20170082,
-    "Title": "黑色五叶草",
-    "Pinyin": "hswyc",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/e5/a5/202880_f45cZ.jpg",
-    "Status": "更新至170集",
-    "UpToDate": "更新至第170集",
-    "UpdateTime": 20170271792
+    "UpdateTime": 20180180148,
+    "Type": "TV"
   },
   {
     "AID": 20170115,
@@ -3066,7 +2486,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170115.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20170170355
+    "UpdateTime": 20170170355,
+    "Type": "TV"
   },
   {
     "AID": 20170107,
@@ -3075,196 +2496,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170107.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170347
-  },
-  {
-    "AID": 20170057,
-    "Title": "妖怪公寓的幽雅日常",
-    "Pinyin": "yggydyyrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170057.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170317
-  },
-  {
-    "AID": 20170253,
-    "Title": "最游记RELOAD BLAST",
-    "Pinyin": "zyjreload blast",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170253.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170273
-  },
-  {
-    "AID": 20170030,
-    "Title": "Re:CREATORS",
-    "Pinyin": "re:creators",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170030.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20170170250
-  },
-  {
-    "AID": 20170096,
-    "Title": "少女终末旅行",
-    "Pinyin": "snzmlx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170096.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170216
-  },
-  {
-    "AID": 20170095,
-    "Title": "Just Because!",
-    "Pinyin": "just because!",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170095.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170215
-  },
-  {
-    "AID": 20170196,
-    "Title": "请问您今天要来点兔子吗？？～Dear My Sister～",
-    "Pinyin": "qwnjtyldtzm？？～dear my sister～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170196.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170206
-  },
-  {
-    "AID": 20170183,
-    "Title": "魔法科高校的劣等生剧场版 呼唤星辰的少女",
-    "Pinyin": "mfkgxdldsjcb hhxcdsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170183.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170193
-  },
-  {
-    "AID": 20170067,
-    "Title": "GAMERS电玩咖",
-    "Pinyin": "gamersdwk",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170067.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170187
-  },
-  {
-    "AID": 20170126,
-    "Title": "无论何时我们的恋情都是10厘米",
-    "Pinyin": "wlhswmdlqds10lm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170126.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第06集",
-    "UpdateTime": 20170170186
-  },
-  {
-    "AID": 20170062,
-    "Title": "NEW GAME! 第二季",
-    "Pinyin": "new game! dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170062.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170182
-  },
-  {
-    "AID": 20170060,
-    "Title": "洁癖男子！青山君",
-    "Pinyin": "jpnz！qsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170060.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170180
-  },
-  {
-    "AID": 20170064,
-    "Title": "第一次的辣妹",
-    "Pinyin": "dycdlm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170064.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20170170174
-  },
-  {
-    "AID": 20170032,
-    "Title": "月色真美",
-    "Pinyin": "yszm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170172
-  },
-  {
-    "AID": 20170046,
-    "Title": "Urara迷路帖",
-    "Pinyin": "uraramlt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170046.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170166
-  },
-  {
-    "AID": 20170044,
-    "Title": "王室教师海涅",
-    "Pinyin": "wsjshn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170044.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170164
-  },
-  {
-    "AID": 20170033,
-    "Title": "武装少女 Machiavellism",
-    "Pinyin": "wzsn machiavellism",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170033.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170163
-  },
-  {
-    "AID": 20170036,
-    "Title": "恋爱暴君",
-    "Pinyin": "labj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170036.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170156
-  },
-  {
-    "AID": 20170034,
-    "Title": "雏子的笔记",
-    "Pinyin": "czdbj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170034.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170154
-  },
-  {
-    "AID": 20170021,
-    "Title": "秋叶原之旅",
-    "Pinyin": "qyyzl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170021.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20170170151
-  },
-  {
-    "AID": 20170024,
-    "Title": "时钟机关之星",
-    "Pinyin": "szjgzx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170024.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170144
-  },
-  {
-    "AID": 20170012,
-    "Title": "亚人酱有话要说",
-    "Pinyin": "yrjyhys",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170012.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20170170142
+    "UpdateTime": 20170170347,
+    "Type": "TV"
   },
   {
     "AID": 20170018,
@@ -3273,52 +2506,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170018.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170138
-  },
-  {
-    "AID": 20170014,
-    "Title": "ACCA13区监察课",
-    "Pinyin": "acca13qjck",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170014.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170134
-  },
-  {
-    "AID": 20170011,
-    "Title": "人渣的本愿",
-    "Pinyin": "rzdby",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170011.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170131
-  },
-  {
-    "AID": 20170010,
-    "Title": "清恋",
-    "Pinyin": "ql",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170010.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20170170130
-  },
-  {
-    "AID": 20170097,
-    "Title": "结城友奈是勇者 鹫尾须美之章",
-    "Pinyin": "jcynsyz jwxmzz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170097.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170127
-  },
-  {
-    "AID": 20170071,
-    "Title": "刀剑神域剧场版 序列之争",
-    "Pinyin": "djsyjcb xlzz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170081
+    "UpdateTime": 20170170278,
+    "Type": "TV"
   },
   {
     "AID": 20170008,
@@ -3327,223 +2516,168 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20170008.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20170170018
+    "UpdateTime": 20170170268,
+    "Type": "剧场版"
   },
   {
-    "AID": 20160161,
-    "Title": "圣战刻耳柏洛斯 龙刻的灾祸",
-    "Pinyin": "szkebls lkdzh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160161.jpg",
+    "AID": 20170030,
+    "Title": "Re:CREATORS",
+    "Pinyin": "re:creators",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170030.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160681
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20170170250,
+    "Type": "TV"
   },
   {
-    "AID": 20160180,
-    "Title": "爆音少女",
-    "Pinyin": "bysn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160180.jpg",
+    "AID": 20170183,
+    "Title": "魔法科高校的劣等生剧场版 呼唤星辰的少女",
+    "Pinyin": "mfkgxdldsjcb hhxcdsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170183.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20170170193,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20170126,
+    "Title": "无论何时我们的恋情都是10厘米",
+    "Pinyin": "wlhswmdlqds10lm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170126.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第06集",
+    "UpdateTime": 20170170186,
+    "Type": "TV"
+  },
+  {
+    "AID": 20170060,
+    "Title": "洁癖男子！青山君",
+    "Pinyin": "jpnz！qsj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170060.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20160160300
+    "UpdateTime": 20170170180,
+    "Type": "TV"
   },
   {
-    "AID": 20160047,
-    "Title": "Classica Loid",
-    "Pinyin": "classica loid",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160047.jpg",
+    "AID": 20170064,
+    "Title": "第一次的辣妹",
+    "Pinyin": "dycdlm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170064.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20170170174,
+    "Type": "TV"
+  },
+  {
+    "AID": 20170032,
+    "Title": "月色真美",
+    "Pinyin": "yszm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170032.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160297
+    "UpdateTime": 20170170172,
+    "Type": "TV"
   },
   {
-    "AID": 20160158,
-    "Title": "小桃小栗 Love Love物语",
-    "Pinyin": "xtxl love lovewy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160158.jpg",
+    "AID": 20170046,
+    "Title": "Urara迷路帖",
+    "Pinyin": "uraramlt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170046.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160288
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20170170166,
+    "Type": "TV"
   },
   {
-    "AID": 20160164,
-    "Title": "魔法少女什么的已经够了啦",
-    "Pinyin": "mfsnsmdyjgll",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160164.jpg",
+    "AID": 20170036,
+    "Title": "恋爱暴君",
+    "Pinyin": "labj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170036.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160284
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20170170156,
+    "Type": "TV"
   },
   {
-    "AID": 20160152,
-    "Title": "蓝海少女",
-    "Pinyin": "lhsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160152.jpg",
+    "AID": 20170021,
+    "Title": "秋叶原之旅",
+    "Pinyin": "qyyzl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170021.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20160160282
+    "UpdateTime": 20170170151,
+    "Type": "TV"
   },
   {
-    "AID": 20160132,
-    "Title": "星期一的丰满",
-    "Pinyin": "xqydfm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160132.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第14集",
-    "UpdateTime": 20160160272
-  },
-  {
-    "AID": 20160148,
-    "Title": "时空囚徒",
-    "Pinyin": "skqt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160148.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160268
-  },
-  {
-    "AID": 20160138,
-    "Title": "无畏魔女",
-    "Pinyin": "wwmn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160138.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160258
-  },
-  {
-    "AID": 20160005,
-    "Title": "Re：从零开始的异世界生活",
-    "Pinyin": "re：clksdysjsh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160005.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20160160255
-  },
-  {
-    "AID": 20160121,
-    "Title": "只有我不在的街道",
-    "Pinyin": "zywbzdjd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160121.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160241
-  },
-  {
-    "AID": 20160094,
-    "Title": "橘色奇迹",
-    "Pinyin": "jsqj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160094.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160224
-  },
-  {
-    "AID": 20160104,
-    "Title": "田中君总是如此慵懒",
-    "Pinyin": "tzjzsrcyl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160104.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160224
-  },
-  {
-    "AID": 20160086,
-    "Title": "迷家",
-    "Pinyin": "mj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160086.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160206
-  },
-  {
-    "AID": 20160085,
-    "Title": "梦幻之星Online2",
-    "Pinyin": "mhzxonline2",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160085.jpg",
+    "AID": 20170024,
+    "Title": "时钟机关之星",
+    "Pinyin": "szjgzx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20160160205
+    "UpdateTime": 20170170144,
+    "Type": "TV"
   },
   {
-    "AID": 20160080,
-    "Title": "竞女",
-    "Pinyin": "jn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160080.jpg",
+    "AID": 20170012,
+    "Title": "亚人酱有话要说",
+    "Pinyin": "yrjyhys",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170012.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20170170142,
+    "Type": "TV"
+  },
+  {
+    "AID": 20170014,
+    "Title": "ACCA13区监察课",
+    "Pinyin": "acca13qjck",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160200
+    "UpdateTime": 20170170134,
+    "Type": "TV"
   },
   {
-    "AID": 20160061,
-    "Title": "发条精灵战记 天镜的极北之星",
-    "Pinyin": "ftjlzj tjdjbzx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160061.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160191
-  },
-  {
-    "AID": 20160035,
-    "Title": "告诉我！辣妹子酱",
-    "Pinyin": "gsw！lmzj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160035.jpg",
+    "AID": 20170011,
+    "Title": "人渣的本愿",
+    "Pinyin": "rzdby",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170011.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20160160165
+    "UpdateTime": 20170170131,
+    "Type": "TV"
   },
   {
-    "AID": 20160042,
-    "Title": "超自然9人组",
-    "Pinyin": "czr9rz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160042.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160162
-  },
-  {
-    "AID": 20160041,
-    "Title": "苍之彼方的四重奏",
-    "Pinyin": "czbfdscz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160041.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160161
-  },
-  {
-    "AID": 20160038,
-    "Title": "冰上的尤里",
-    "Pinyin": "bsdyl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160038.jpg",
+    "AID": 20170010,
+    "Title": "清恋",
+    "Pinyin": "ql",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20160160158
+    "UpdateTime": 20170170130,
+    "Type": "TV"
   },
   {
-    "AID": 20160023,
-    "Title": "路人超能100",
-    "Pinyin": "lrcn100",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160023.jpg",
+    "AID": 20170071,
+    "Title": "刀剑神域剧场版 序列之争",
+    "Pinyin": "djsyjcb xlzz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20160160143
+    "UpToDate": "全集",
+    "UpdateTime": 20170170081,
+    "Type": "剧场版"
   },
   {
-    "AID": 20160012,
-    "Title": "情热传说 the X",
-    "Pinyin": "qrcs the x",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160012.jpg",
+    "AID": 20160208,
+    "Title": "你的名字。",
+    "Pinyin": "ndmz。",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160208.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160142
-  },
-  {
-    "AID": 20160020,
-    "Title": "禁忌咒纹",
-    "Pinyin": "jjzw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160020.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20160160140
+    "UpToDate": "全集",
+    "UpdateTime": 20160160468,
+    "Type": "剧场版"
   },
   {
     "AID": 20160070,
@@ -3552,34 +2686,108 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20160160080
+    "UpdateTime": 20160160330,
+    "Type": "剧场版"
   },
   {
-    "AID": 20160039,
-    "Title": "玻璃之花与崩坏的世界",
-    "Pinyin": "blzhybhdsj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20160039.jpg",
+    "AID": 20160180,
+    "Title": "爆音少女",
+    "Pinyin": "bysn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160180.jpg",
     "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20160160049
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20160160300,
+    "Type": "TV"
   },
   {
-    "AID": "a123_reconglingkaishideyishijieshen13",
-    "Title": "Re：从零开始的异世界生活 4",
-    "Pinyin": "re：clksdysjsh 4",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg",
-    "Status": "更新至11集",
-    "UpToDate": "更新至第08集",
-    "UpdateTime": 20160100093
+    "AID": 20160152,
+    "Title": "蓝海少女",
+    "Pinyin": "lhsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160152.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20160160282,
+    "Type": "TV"
   },
   {
-    "AID": 20150002,
-    "Title": "潮与虎",
-    "Pinyin": "cyh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150002.jpg",
+    "AID": 20160005,
+    "Title": "Re：从零开始的异世界生活",
+    "Pinyin": "re：clksdysjsh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160005.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第25集",
+    "UpdateTime": 20160160255,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160086,
+    "Title": "迷家",
+    "Pinyin": "mj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160086.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150392
+    "UpdateTime": 20160160206,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160160,
+    "Title": "声之形",
+    "Pinyin": "szx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160160.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20160160180,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20160035,
+    "Title": "告诉我！辣妹子酱",
+    "Pinyin": "gsw！lmzj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160035.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20160160165,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160041,
+    "Title": "苍之彼方的四重奏",
+    "Pinyin": "czbfdscz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160041.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20160160161,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160038,
+    "Title": "冰上的尤里",
+    "Pinyin": "bsdyl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160038.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20160160158,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160023,
+    "Title": "路人超能100",
+    "Pinyin": "lrcn100",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160023.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20160160143,
+    "Type": "TV"
+  },
+  {
+    "AID": 20160012,
+    "Title": "情热传说 the X",
+    "Pinyin": "qrcs the x",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20160012.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20160160142,
+    "Type": "TV"
   },
   {
     "AID": 20150024,
@@ -3588,151 +2796,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第20241207集",
-    "UpdateTime": 20150150354
-  },
-  {
-    "AID": 20150172,
-    "Title": "旋转少女",
-    "Pinyin": "xzsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150172.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150292
-  },
-  {
-    "AID": 20150032,
-    "Title": "暗杀教室",
-    "Pinyin": "asjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20150150262
-  },
-  {
-    "AID": 20150010,
-    "Title": "机动战士高达 铁血的奥尔芬斯",
-    "Pinyin": "jdzsgd txdaefs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150010.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20150150260
-  },
-  {
-    "AID": 20150009,
-    "Title": "境界之轮回",
-    "Pinyin": "jjzlh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150009.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20150150259
-  },
-  {
-    "AID": 20150084,
-    "Title": "若叶女孩",
-    "Pinyin": "rynh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150084.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150214
-  },
-  {
-    "AID": 20150056,
-    "Title": "山田君与7人魔女",
-    "Pinyin": "stjy7rmn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150056.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20150150186
-  },
-  {
-    "AID": 20150053,
-    "Title": "枪神斯托拉塔斯",
-    "Pinyin": "qsstlts",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150053.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150173
-  },
-  {
-    "AID": 20150042,
-    "Title": "纯洁的玛利亚",
-    "Pinyin": "cjdmly",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150042.jpg",
-    "Status": "完结",
-    "UpToDate": "完结",
-    "UpdateTime": 20150150162
-  },
-  {
-    "AID": 20150041,
-    "Title": "Chaos Dragon 赤龙战役",
-    "Pinyin": "chaos dragon clzy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150041.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20150150161
-  },
-  {
-    "AID": 20150030,
-    "Title": "其实我是",
-    "Pinyin": "qsws",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150030.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20150150160
-  },
-  {
-    "AID": 20150035,
-    "Title": "御神乐学园组曲",
-    "Pinyin": "yslxyzq",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150035.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150155
-  },
-  {
-    "AID": 20150031,
-    "Title": "彗星路西法",
-    "Pinyin": "hxlxf",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150031.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150151
-  },
-  {
-    "AID": 20150014,
-    "Title": "学战都市Asterisk",
-    "Pinyin": "xzdsasterisk",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150014.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150134
-  },
-  {
-    "AID": 20150011,
-    "Title": "动画锻炼！EX",
-    "Pinyin": "dhdl！ex",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150011.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20150150131
-  },
-  {
-    "AID": 20150005,
-    "Title": "铳皇无尽的法夫纳",
-    "Pinyin": "chwjdffn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150005.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20150150125
-  },
-  {
-    "AID": 20150001,
-    "Title": "赤发白雪姬",
-    "Pinyin": "cfbxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150001.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150121
+    "UpdateTime": 20150150354,
+    "Type": "TV"
   },
   {
     "AID": 20150062,
@@ -3741,16 +2806,118 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20150150072
+    "UpdateTime": 20150150322,
+    "Type": "剧场版"
   },
   {
-    "AID": 20150019,
-    "Title": "灰色的迷宫",
-    "Pinyin": "hsdmg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150019.jpg",
+    "AID": 20150172,
+    "Title": "旋转少女",
+    "Pinyin": "xzsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150172.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20150150292,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150011,
+    "Title": "动画锻炼！EX",
+    "Pinyin": "dhdl！ex",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150011.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20150150271,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150032,
+    "Title": "暗杀教室",
+    "Pinyin": "asjs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20150150262,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150010,
+    "Title": "机动战士高达 铁血的奥尔芬斯",
+    "Pinyin": "jdzsgd txdaefs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150010.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第25集",
+    "UpdateTime": 20150150260,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150056,
+    "Title": "山田君与7人魔女",
+    "Pinyin": "stjy7rmn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150056.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20150150186,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150053,
+    "Title": "枪神斯托拉塔斯",
+    "Pinyin": "qsstlts",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150053.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20150150183,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150042,
+    "Title": "纯洁的玛利亚",
+    "Pinyin": "cjdmly",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150042.jpg",
+    "Status": "完结",
+    "UpToDate": "完结",
+    "UpdateTime": 20150150162,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150041,
+    "Title": "Chaos Dragon 赤龙战役",
+    "Pinyin": "chaos dragon clzy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150041.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20150150161,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150133,
+    "Title": "心灵想要大声呼喊",
+    "Pinyin": "xlxydshh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150133.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20150150029
+    "UpdateTime": 20150150143,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20150005,
+    "Title": "铳皇无尽的法夫纳",
+    "Pinyin": "chwjdffn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150005.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20150150125,
+    "Type": "TV"
+  },
+  {
+    "AID": 20150001,
+    "Title": "赤发白雪姬",
+    "Pinyin": "cfbxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150001.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20150150121,
+    "Type": "TV"
   },
   {
     "AID": 20140168,
@@ -3759,223 +2926,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140168.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140408
-  },
-  {
-    "AID": 20140109,
-    "Title": "白银的意志 ARGEVOLLEN",
-    "Pinyin": "bydyz argevollen",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20140140359
-  },
-  {
-    "AID": 20140086,
-    "Title": "刀剑神域 第二季",
-    "Pinyin": "djsy dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140086.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20140140336
-  },
-  {
-    "AID": 20140083,
-    "Title": "愚者信长",
-    "Pinyin": "yzxz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140083.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140323
-  },
-  {
-    "AID": 20140165,
-    "Title": "风云维新大将军",
-    "Pinyin": "fywxdjj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140165.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140285
-  },
-  {
-    "AID": 20140027,
-    "Title": "CROSS ANGE 天使与龙的轮舞",
-    "Pinyin": "cross ange tsyldlw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140027.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20140140277
-  },
-  {
-    "AID": 20140130,
-    "Title": "花舞少女",
-    "Pinyin": "hwsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140130.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140250
-  },
-  {
-    "AID": 20140122,
-    "Title": "电器街的漫画店",
-    "Pinyin": "dqjdmhd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140122.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140242
-  },
-  {
-    "AID": 20140120,
-    "Title": "爱丝卡&罗吉的炼金工房～黄昏天空之炼金术士～",
-    "Pinyin": "ask&ljdljgf～hhtkzljss～",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140120.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140240
-  },
-  {
-    "AID": 20140108,
-    "Title": "寻找失去的未来",
-    "Pinyin": "xzsqdwl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140108.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140238
-  },
-  {
-    "AID": 20140099,
-    "Title": "搞姬日常",
-    "Pinyin": "gjrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140099.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20140140229
-  },
-  {
-    "AID": 20140101,
-    "Title": "恶魔之谜",
-    "Pinyin": "emzm",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140101.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140221
-  },
-  {
-    "AID": 20140080,
-    "Title": "最近妹妹的样子有点怪",
-    "Pinyin": "zjmmdyzydg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140080.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140210
-  },
-  {
-    "AID": 20140011,
-    "Title": "灰色的果实",
-    "Pinyin": "hsdgs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140011.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20140140201
-  },
-  {
-    "AID": 20140081,
-    "Title": "RAIL WARS!",
-    "Pinyin": "rail wars!",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140201
-  },
-  {
-    "AID": 20140076,
-    "Title": "日常系的异能战斗",
-    "Pinyin": "rcxdynzd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140076.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140196
-  },
-  {
-    "AID": 20140069,
-    "Title": "一周的朋友",
-    "Pinyin": "yzdpy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140069.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140189
-  },
-  {
-    "AID": 20140059,
-    "Title": "未确认进行式",
-    "Pinyin": "wqrjxs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140189
-  },
-  {
-    "AID": 20140067,
-    "Title": "心理测量者 新编集版",
-    "Pinyin": "xlclz xbjb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140067.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20140140177
-  },
-  {
-    "AID": 20140037,
-    "Title": "中二病也要谈恋爱！ 第二季",
-    "Pinyin": "zebyytla！ dej",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20140140167
-  },
-  {
-    "AID": 20140021,
-    "Title": "甘城光辉游乐园",
-    "Pinyin": "gcghyly",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140021.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第14集",
-    "UpdateTime": 20140140161
-  },
-  {
-    "AID": 20140032,
-    "Title": "东京喰种",
-    "Pinyin": "djcz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140152
-  },
-  {
-    "AID": 20140031,
-    "Title": "属性同好会",
-    "Pinyin": "sxthh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140031.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140151
-  },
-  {
-    "AID": 20140020,
-    "Title": "巴哈姆特之怒 GENESIS",
-    "Pinyin": "bhmtzn genesis",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140020.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20140140150
-  },
-  {
-    "AID": 20140028,
-    "Title": "月刊少女野崎君",
-    "Pinyin": "yksnyqj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20140028.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20140140148
+    "UpdateTime": 20140140408,
+    "Type": "TV"
   },
   {
     "AID": 20140117,
@@ -3984,43 +2936,188 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20140117.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20140140127
+    "UpdateTime": 20140140377,
+    "Type": "剧场版"
   },
   {
-    "AID": 20130142,
-    "Title": "钻石王牌",
-    "Pinyin": "zswp",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130892
-  },
-  {
-    "AID": 20130023,
-    "Title": "进击的巨人",
-    "Pinyin": "jjdjr",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130023.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20130130273
-  },
-  {
-    "AID": 20130019,
-    "Title": "噬血狂袭",
-    "Pinyin": "sxkx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130019.jpg",
+    "AID": 20140109,
+    "Title": "白银的意志 ARGEVOLLEN",
+    "Pinyin": "bydyz argevollen",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140109.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20130130269
+    "UpdateTime": 20140140359,
+    "Type": "TV"
   },
   {
-    "AID": 20130134,
-    "Title": "裁断分离之罪恶剪刀",
-    "Pinyin": "cdflzzejd",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130134.jpg",
+    "AID": 20140086,
+    "Title": "刀剑神域 第二季",
+    "Pinyin": "djsy dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140086.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20140140346,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140081,
+    "Title": "RAIL WARS!",
+    "Pinyin": "rail wars!",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20140140341,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140083,
+    "Title": "愚者信长",
+    "Pinyin": "yzxz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140083.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20140140323,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140027,
+    "Title": "CROSS ANGE 天使与龙的轮舞",
+    "Pinyin": "cross ange tsyldlw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140027.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第25集",
+    "UpdateTime": 20140140277,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140130,
+    "Title": "花舞少女",
+    "Pinyin": "hwsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140130.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140250,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140099,
+    "Title": "搞姬日常",
+    "Pinyin": "gjrc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140099.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20130130264
+    "UpdateTime": 20140140229,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140080,
+    "Title": "最近妹妹的样子有点怪",
+    "Pinyin": "zjmmdyzydg",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140080.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140210,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140011,
+    "Title": "灰色的果实",
+    "Pinyin": "hsdgs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140011.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20140140201,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140076,
+    "Title": "日常系的异能战斗",
+    "Pinyin": "rcxdynzd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140076.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140196,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140069,
+    "Title": "一周的朋友",
+    "Pinyin": "yzdpy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140069.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140189,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140067,
+    "Title": "心理测量者 新编集版",
+    "Pinyin": "xlclz xbjb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140067.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20140140177,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140037,
+    "Title": "中二病也要谈恋爱！ 第二季",
+    "Pinyin": "zebyytla！ dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20140140167,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140021,
+    "Title": "甘城光辉游乐园",
+    "Pinyin": "gcghyly",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140021.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第14集",
+    "UpdateTime": 20140140161,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140032,
+    "Title": "东京喰种",
+    "Pinyin": "djcz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140152,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140031,
+    "Title": "属性同好会",
+    "Pinyin": "sxthh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140031.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140151,
+    "Type": "TV"
+  },
+  {
+    "AID": 20140028,
+    "Title": "月刊少女野崎君",
+    "Pinyin": "yksnyqj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20140028.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20140140148,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130193,
+    "Title": "辉夜姬物语",
+    "Pinyin": "hyjwy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130193.jpg",
+    "Status": "完结",
+    "UpToDate": "HD",
+    "UpdateTime": 20130130453,
+    "Type": "剧场版"
   },
   {
     "AID": 20130078,
@@ -4029,124 +3126,38 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130078.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20130130208
+    "UpdateTime": 20130130338,
+    "Type": "TV"
   },
   {
-    "AID": 20130076,
-    "Title": "有顶天家族",
-    "Pinyin": "ydtjz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
+    "AID": 20130023,
+    "Title": "进击的巨人",
+    "Pinyin": "jjdjr",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130023.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20130130206
+    "UpToDate": "更新至第25集",
+    "UpdateTime": 20130130273,
+    "Type": "TV"
   },
   {
-    "AID": 20130074,
-    "Title": "我要成为世界最强偶像",
-    "Pinyin": "wycwsjzqox",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130074.jpg",
+    "AID": 20130019,
+    "Title": "噬血狂袭",
+    "Pinyin": "sxkx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130019.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20130130194
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20130130269,
+    "Type": "TV"
   },
   {
-    "AID": 20130073,
-    "Title": "锁锁美同学@提不起劲",
-    "Pinyin": "ssmtx@tbqj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130073.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20130130193
-  },
-  {
-    "AID": 20130067,
-    "Title": "闪乱神乐",
-    "Pinyin": "slsl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130067.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20130130187
-  },
-  {
-    "AID": 20130054,
-    "Title": "苍翼默示录 ALTER MEMORY",
-    "Pinyin": "cymsl alter memory",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130054.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130174
-  },
-  {
-    "AID": 20130026,
-    "Title": "绝对防卫利维坦",
-    "Pinyin": "jdfwlwt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130026.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130156
-  },
-  {
-    "AID": 20130032,
-    "Title": "革命机Valvrave",
-    "Pinyin": "gmjvalvrave",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130152
-  },
-  {
-    "AID": 20130038,
-    "Title": "伽利略少女",
-    "Pinyin": "jllsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130038.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130148
-  },
-  {
-    "AID": 20130017,
-    "Title": "我女友与青梅竹马的惨烈修罗场",
-    "Pinyin": "wnyyqmzmdclxlc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130017.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130147
-  },
-  {
-    "AID": 20130006,
-    "Title": "我的青春恋爱物语果然有问题",
-    "Pinyin": "wdqclawygrywt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
+    "AID": 20130134,
+    "Title": "裁断分离之罪恶剪刀",
+    "Pinyin": "cdflzzejd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130134.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20130130136
-  },
-  {
-    "AID": 20130025,
-    "Title": "银之匙",
-    "Pinyin": "yzs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130025.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第11集",
-    "UpdateTime": 20130130135
-  },
-  {
-    "AID": 20130014,
-    "Title": "问题儿童都来自异世界？",
-    "Pinyin": "wtetdlzysj？",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130014.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130124
-  },
-  {
-    "AID": 20130042,
-    "Title": "猎天使魔女剧场版 血色命运",
-    "Pinyin": "ltsmnjcb xsmy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130042.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20130130052
+    "UpdateTime": 20130130264,
+    "Type": "TV"
   },
   {
     "AID": 20130007,
@@ -4155,25 +3166,118 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130007.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20130130017
+    "UpdateTime": 20130130257,
+    "Type": "剧场版"
   },
   {
-    "AID": "a123_zuanshiwangpai4",
-    "Title": "钻石王牌 4",
-    "Pinyin": "zswp 4",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
-    "Status": "更新至9集",
-    "UpToDate": "更新至第09集",
-    "UpdateTime": 20130100094
+    "AID": 20130076,
+    "Title": "有顶天家族",
+    "Pinyin": "ydtjz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20130130206,
+    "Type": "TV"
   },
   {
-    "AID": 20120057,
-    "Title": "足球骑士",
-    "Pinyin": "zqqs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120057.jpg",
+    "AID": 20130074,
+    "Title": "我要成为世界最强偶像",
+    "Pinyin": "wycwsjzqox",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130074.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20130130194,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130073,
+    "Title": "锁锁美同学@提不起劲",
+    "Pinyin": "ssmtx@tbqj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130073.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20130130193,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130067,
+    "Title": "闪乱神乐",
+    "Pinyin": "slsl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130067.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20130130187,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130054,
+    "Title": "苍翼默示录 ALTER MEMORY",
+    "Pinyin": "cymsl alter memory",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20120120427
+    "UpdateTime": 20130130174,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130026,
+    "Title": "绝对防卫利维坦",
+    "Pinyin": "jdfwlwt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130026.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20130130156,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130032,
+    "Title": "革命机Valvrave",
+    "Pinyin": "gmjvalvrave",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20130130152,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130038,
+    "Title": "伽利略少女",
+    "Pinyin": "jllsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130038.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20130130148,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130006,
+    "Title": "我的青春恋爱物语果然有问题",
+    "Pinyin": "wdqclawygrywt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20130130136,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130025,
+    "Title": "银之匙",
+    "Pinyin": "yzs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130025.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20130130135,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130117,
+    "Title": "言叶之庭",
+    "Pinyin": "yyzt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130117.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20130130127,
+    "Type": "剧场版"
   },
   {
     "AID": 20120040,
@@ -4182,25 +3286,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120040.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20120120290
-  },
-  {
-    "AID": 20120038,
-    "Title": "刀剑神域",
-    "Pinyin": "djsy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20120120288
-  },
-  {
-    "AID": 20120003,
-    "Title": "加速世界",
-    "Pinyin": "jssj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120003.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20120120243
+    "UpdateTime": 20120120290,
+    "Type": "TV"
   },
   {
     "AID": 20120007,
@@ -4209,7 +3296,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第22集",
-    "UpdateTime": 20120120237
+    "UpdateTime": 20120120237,
+    "Type": "TV"
   },
   {
     "AID": 20120084,
@@ -4218,7 +3306,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120084.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20120120204
+    "UpdateTime": 20120120204,
+    "Type": "TV"
   },
   {
     "AID": 20120070,
@@ -4227,7 +3316,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120070.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20120120200
+    "UpdateTime": 20120120200,
+    "Type": "TV"
   },
   {
     "AID": 20120056,
@@ -4236,7 +3326,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120056.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20120120176
+    "UpdateTime": 20120120176,
+    "Type": "TV"
   },
   {
     "AID": 20120035,
@@ -4245,7 +3336,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120035.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20120120175
+    "UpdateTime": 20120120175,
+    "Type": "TV"
   },
   {
     "AID": 20120054,
@@ -4254,7 +3346,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120054.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20120120174
+    "UpdateTime": 20120120174,
+    "Type": "TV"
   },
   {
     "AID": 20120030,
@@ -4263,16 +3356,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120030.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20120120170
-  },
-  {
-    "AID": 20120019,
-    "Title": "法外制裁者",
-    "Pinyin": "fwzcz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120019.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20120120149
+    "UpdateTime": 20120120170,
+    "Type": "TV"
   },
   {
     "AID": 20120017,
@@ -4281,7 +3366,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120017.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20120120147
+    "UpdateTime": 20120120147,
+    "Type": "TV"
   },
   {
     "AID": 20120014,
@@ -4290,16 +3376,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20120120144
+    "UpdateTime": 20120120144,
+    "Type": "TV"
   },
   {
-    "AID": 20120021,
-    "Title": "恋爱与选举与巧克力",
-    "Pinyin": "layxjyqkl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20120021.jpg",
+    "AID": 20120107,
+    "Title": "狼的孩子雨和雪",
+    "Pinyin": "ldhzyhx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20120107.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20120120141
+    "UpToDate": "BD全集",
+    "UpdateTime": 20120120137,
+    "Type": "剧场版"
   },
   {
     "AID": 20120069,
@@ -4308,16 +3396,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20120069.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20120120089
-  },
-  {
-    "AID": 20110029,
-    "Title": "女神异闻录4",
-    "Pinyin": "nsywl4",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20110029.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20110110289
+    "UpdateTime": 20120120089,
+    "Type": "OVA"
   },
   {
     "AID": 20110025,
@@ -4326,7 +3406,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20110110265
+    "UpdateTime": 20110110265,
+    "Type": "TV"
   },
   {
     "AID": 20110058,
@@ -4335,7 +3416,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110058.jpg",
     "Status": "完结",
     "UpToDate": "更新至第00集",
-    "UpdateTime": 20110110188
+    "UpdateTime": 20110110188,
+    "Type": "TV"
   },
   {
     "AID": 20110066,
@@ -4344,7 +3426,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110066.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20110110186
+    "UpdateTime": 20110110186,
+    "Type": "TV"
   },
   {
     "AID": 20110055,
@@ -4353,16 +3436,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20110110175
-  },
-  {
-    "AID": 20110031,
-    "Title": "露蒂的玩具",
-    "Pinyin": "lddwj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20110031.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20110110161
+    "UpdateTime": 20110110175,
+    "Type": "TV"
   },
   {
     "AID": 20110027,
@@ -4371,7 +3446,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20110110157
+    "UpdateTime": 20110110157,
+    "Type": "TV"
   },
   {
     "AID": 20110036,
@@ -4380,16 +3456,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110036.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20110110156
-  },
-  {
-    "AID": 20110034,
-    "Title": "我们没有翅膀",
-    "Pinyin": "wmmycb",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20110034.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20110110154
+    "UpdateTime": 20110110156,
+    "Type": "TV"
   },
   {
     "AID": 20110054,
@@ -4398,25 +3466,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20110054.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20110110064
-  },
-  {
-    "AID": 20110017,
-    "Title": "对某飞行员的追忆",
-    "Pinyin": "dmfxydzy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20110017.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20110110027
-  },
-  {
-    "AID": 20100055,
-    "Title": "食梦者",
-    "Pinyin": "smz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20100055.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20100100305
+    "UpdateTime": 20110110064,
+    "Type": "剧场版"
   },
   {
     "AID": 20100075,
@@ -4425,16 +3476,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100075.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100195
-  },
-  {
-    "AID": 20100060,
-    "Title": "荒川爆笑团",
-    "Pinyin": "hcbxt",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20100060.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20100100190
+    "UpdateTime": 20100100335,
+    "Type": "TV"
   },
   {
     "AID": 20100007,
@@ -4443,16 +3486,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20100100187
-  },
-  {
-    "AID": 20100026,
-    "Title": "我的妹妹不可能那么可爱",
-    "Pinyin": "wdmmbknnmka",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20100026.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20100100186
+    "UpdateTime": 20100100187,
+    "Type": "TV"
   },
   {
     "AID": 20100064,
@@ -4461,7 +3496,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100064.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100184
+    "UpdateTime": 20100100184,
+    "Type": "TV"
   },
   {
     "AID": 20100050,
@@ -4470,7 +3506,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100050.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100170
+    "UpdateTime": 20100100170,
+    "Type": "TV"
   },
   {
     "AID": 20100044,
@@ -4479,7 +3516,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100044.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100164
+    "UpdateTime": 20100100164,
+    "Type": "TV"
   },
   {
     "AID": 20100009,
@@ -4488,7 +3526,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100139
+    "UpdateTime": 20100100139,
+    "Type": "TV"
   },
   {
     "AID": 20100006,
@@ -4497,7 +3536,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100006.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20100100136
+    "UpdateTime": 20100100136,
+    "Type": "TV"
   },
   {
     "AID": 20100003,
@@ -4506,25 +3546,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20100003.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20100100123
+    "UpdateTime": 20100100123,
+    "Type": "TV"
   },
   {
-    "AID": 20100052,
-    "Title": "剧场版 快要坏掉的八音盒",
-    "Pinyin": "jcb kyhddbyh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
+    "AID": 20100049,
+    "Title": "凉宫春日的消失",
+    "Pinyin": "lgcrdxs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20100049.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 20100100062
-  },
-  {
-    "AID": 20090059,
-    "Title": "迦南",
-    "Pinyin": "jn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20090059.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20090090189
+    "UpdateTime": 20100100059,
+    "Type": "剧场版"
   },
   {
     "AID": 20090009,
@@ -4533,7 +3566,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20090009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20090090129
+    "UpdateTime": 20090090129,
+    "Type": "TV"
   },
   {
     "AID": 20080020,
@@ -4542,16 +3576,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080020.jpg",
     "Status": "完结",
     "UpToDate": "更新至第51集",
-    "UpdateTime": 20080080530
-  },
-  {
-    "AID": 20080060,
-    "Title": "下一站巨星",
-    "Pinyin": "xyzjx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20080060.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20080080310
+    "UpdateTime": 20080080530,
+    "Type": "TV"
   },
   {
     "AID": 20080053,
@@ -4560,7 +3586,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080053.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20080080173
+    "UpdateTime": 20080080173,
+    "Type": "TV"
   },
   {
     "AID": 20080043,
@@ -4569,16 +3596,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080043.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20080080173
-  },
-  {
-    "AID": 20080059,
-    "Title": "糖果男孩",
-    "Pinyin": "tgnh",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20080059.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20080080159
+    "UpdateTime": 20080080173,
+    "Type": "TV"
   },
   {
     "AID": 20080023,
@@ -4587,7 +3606,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20080080153
+    "UpdateTime": 20080080153,
+    "Type": "TV"
   },
   {
     "AID": 20080009,
@@ -4596,16 +3616,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080009.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20080080139
-  },
-  {
-    "AID": 20080002,
-    "Title": "夏目友人帐",
-    "Pinyin": "xmyrz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20080002.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20080080132
+    "UpdateTime": 20080080139,
+    "Type": "TV"
   },
   {
     "AID": 20080047,
@@ -4614,16 +3626,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20080047.jpg",
     "Status": "完结",
     "UpToDate": "更新至第06集",
-    "UpdateTime": 20080080107
-  },
-  {
-    "AID": 20080011,
-    "Title": "四娘物语",
-    "Pinyin": "snwy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20080011.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20080080031
+    "UpdateTime": 20080080107,
+    "Type": "TV"
   },
   {
     "AID": 20070016,
@@ -4632,7 +3636,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20070070276
+    "UpdateTime": 20070070276,
+    "Type": "TV"
   },
   {
     "AID": 20070007,
@@ -4641,7 +3646,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070007.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20070070267
+    "UpdateTime": 20070070267,
+    "Type": "TV"
   },
   {
     "AID": 20070014,
@@ -4650,16 +3656,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20070070264
+    "UpdateTime": 20070070264,
+    "Type": "TV"
   },
   {
-    "AID": 20070032,
-    "Title": "永生之酒",
-    "Pinyin": "yszj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20070032.jpg",
+    "AID": 20070004,
+    "Title": "秒速5厘米",
+    "Pinyin": "ms5lm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20070004.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20070070192
+    "UpToDate": "全集",
+    "UpdateTime": 20070070264,
+    "Type": "剧场版"
   },
   {
     "AID": 20070048,
@@ -4668,7 +3676,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070048.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20070070178
+    "UpdateTime": 20070070178,
+    "Type": "TV"
   },
   {
     "AID": 20070055,
@@ -4677,25 +3686,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070055.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20070070175
-  },
-  {
-    "AID": 20070029,
-    "Title": "钢铁神杰克",
-    "Pinyin": "gtsjk",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20070029.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20070070159
-  },
-  {
-    "AID": 20070010,
-    "Title": "悠久之翼",
-    "Pinyin": "yjzy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20070010.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20070070130
+    "UpdateTime": 20070070175,
+    "Type": "TV"
   },
   {
     "AID": 20070012,
@@ -4704,7 +3696,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20070012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第10集",
-    "UpdateTime": 20070070112
+    "UpdateTime": 20070070112,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20070068,
+    "Title": "异邦人 无皇刃谭",
+    "Pinyin": "ybr whrt",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20070068.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 20070070078,
+    "Type": "剧场版"
   },
   {
     "AID": 20060065,
@@ -4713,43 +3716,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060065.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20060060315
-  },
-  {
-    "AID": 20060037,
-    "Title": "犬神",
-    "Pinyin": "qs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20060037.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第27集",
-    "UpdateTime": 20060060297
-  },
-  {
-    "AID": 20060001,
-    "Title": "传颂之物",
-    "Pinyin": "cszw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20060060261
-  },
-  {
-    "AID": 20060014,
-    "Title": "地上最强新娘",
-    "Pinyin": "dszqxn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20060014.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20060060254
-  },
-  {
-    "AID": 20060027,
-    "Title": "夜明前的琉璃色-Crescent Love-",
-    "Pinyin": "ymqdlls-crescent love-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20060027.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20060060147
+    "UpdateTime": 20060060325,
+    "Type": "TV"
   },
   {
     "AID": 20060026,
@@ -4758,7 +3726,28 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060026.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20060060146
+    "UpdateTime": 20060060286,
+    "Type": "TV"
+  },
+  {
+    "AID": 20060014,
+    "Title": "地上最强新娘",
+    "Pinyin": "dszqxn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20060014.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20060060254,
+    "Type": "TV"
+  },
+  {
+    "AID": 20060027,
+    "Title": "夜明前的琉璃色-Crescent Love-",
+    "Pinyin": "ymqdlls-crescent love-",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20060027.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20060060147,
+    "Type": "TV"
   },
   {
     "AID": 20060010,
@@ -4767,7 +3756,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060010.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20060060140
+    "UpdateTime": 20060060140,
+    "Type": "TV"
   },
   {
     "AID": 20060005,
@@ -4776,16 +3766,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060005.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20060060125
-  },
-  {
-    "AID": 20050032,
-    "Title": "翼·年代记",
-    "Pinyin": "y·ndj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20050032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第25集",
-    "UpdateTime": 20050050292
+    "UpdateTime": 20060060125,
+    "Type": "TV"
   },
   {
     "AID": 20050024,
@@ -4794,16 +3776,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050024.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 20050050284
-  },
-  {
-    "AID": 20050016,
-    "Title": "增血鬼果林",
-    "Pinyin": "zxggl",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20050016.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20050050256
+    "UpdateTime": 20050050284,
+    "Type": "TV"
   },
   {
     "AID": 20050023,
@@ -4812,7 +3786,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20050050143
+    "UpdateTime": 20050050263,
+    "Type": "TV"
+  },
+  {
+    "AID": 20050016,
+    "Title": "增血鬼果林",
+    "Pinyin": "zxggl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20050016.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20050050256,
+    "Type": "TV"
   },
   {
     "AID": 20050018,
@@ -4821,7 +3806,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050018.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20050050138
+    "UpdateTime": 20050050138,
+    "Type": "TV"
   },
   {
     "AID": 20050027,
@@ -4830,7 +3816,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20050027.jpg",
     "Status": "完结",
     "UpToDate": "更新至第04集",
-    "UpdateTime": 20050050067
+    "UpdateTime": 20050050067,
+    "Type": "OVA"
   },
   {
     "AID": 20040001,
@@ -4839,16 +3826,18 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20040001.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20040040141
+    "UpdateTime": 20040040141,
+    "Type": "TV"
   },
   {
-    "AID": 20040002,
-    "Title": "魔法少女奈叶",
-    "Pinyin": "mfsnny",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20040002.jpg",
+    "AID": 20040030,
+    "Title": "哈尔的移动城堡",
+    "Pinyin": "hedydcb",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20040030.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20040040132
+    "UpToDate": "全集",
+    "UpdateTime": 20040040060,
+    "Type": "剧场版"
   },
   {
     "AID": 20030008,
@@ -4857,16 +3846,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20030008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第26集",
-    "UpdateTime": 20030030268
-  },
-  {
-    "AID": 20030021,
-    "Title": "爱的魔法",
-    "Pinyin": "admf",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20030021.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第27集",
-    "UpdateTime": 20030030261
+    "UpdateTime": 20030030268,
+    "Type": "TV"
   },
   {
     "AID": 20030016,
@@ -4875,7 +3856,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20030016.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20030030146
+    "UpdateTime": 20030030146,
+    "Type": "TV"
   },
   {
     "AID": 20020008,
@@ -4884,7 +3866,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020008.jpg",
     "Status": "完结",
     "UpToDate": "更新至第24集",
-    "UpdateTime": 20020020248
+    "UpdateTime": 20020020248,
+    "Type": "TV"
   },
   {
     "AID": 20020014,
@@ -4893,7 +3876,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020014.jpg",
     "Status": "完结",
     "UpToDate": "更新至第13集",
-    "UpdateTime": 20020020144
+    "UpdateTime": 20020020144,
+    "Type": "TV"
   },
   {
     "AID": 20020012,
@@ -4902,25 +3886,28 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20020012.jpg",
     "Status": "完结",
     "UpToDate": "更新至第12集",
-    "UpdateTime": 20020020142
+    "UpdateTime": 20020020142,
+    "Type": "TV"
   },
   {
-    "AID": 20010004,
-    "Title": "皇家国教骑士团",
-    "Pinyin": "hjgjqst",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20010004.jpg",
+    "AID": 20020019,
+    "Title": "星之声",
+    "Pinyin": "xzs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20020019.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第13集",
-    "UpdateTime": 20010010134
+    "UpToDate": "全集",
+    "UpdateTime": 20020020039,
+    "Type": "剧场版"
   },
   {
-    "AID": 20010006,
-    "Title": "魔力女管家",
-    "Pinyin": "mlngj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20010006.jpg",
+    "AID": 20010001,
+    "Title": "千与千寻",
+    "Pinyin": "qyqx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20010001.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20010010126
+    "UpToDate": "全集",
+    "UpdateTime": 20010010021,
+    "Type": "剧场版"
   },
   {
     "AID": 20000005,
@@ -4929,7 +3916,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000005.jpg",
     "Status": "连载",
     "UpToDate": "更新至第19集",
-    "UpdateTime": 20000112665
+    "UpdateTime": 20000112665,
+    "Type": "TV"
   },
   {
     "AID": 20000001,
@@ -4938,7 +3926,8 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg",
     "Status": "连载",
     "UpToDate": "更新至第09集",
-    "UpdateTime": 20000111711
+    "UpdateTime": 20000111711,
+    "Type": "TV"
   },
   {
     "AID": 20000025,
@@ -4947,15 +3936,37 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20000000525
+    "UpdateTime": 20000000525,
+    "Type": "TV"
   },
   {
-    "AID": 20000024,
-    "Title": "我家也有外星人",
-    "Pinyin": "wjyywxr",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20000024.jpg",
+    "AID": 20000108,
+    "Title": "萤火虫之墓",
+    "Pinyin": "yhczm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20000108.jpg",
     "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20000000154
+    "UpToDate": "全集",
+    "UpdateTime": 20000000148,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20000107,
+    "Title": "红猪",
+    "Pinyin": "hz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20000107.jpg",
+    "Status": "完结",
+    "UpToDate": "HD",
+    "UpdateTime": 19920000127,
+    "Type": "剧场版"
+  },
+  {
+    "AID": 20000056,
+    "Title": "龙猫",
+    "Pinyin": "lm",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20000056.jpg",
+    "Status": "完结",
+    "UpToDate": "全集",
+    "UpdateTime": 19880000076,
+    "Type": "剧场版"
   }
 ]

@@ -126,6 +126,56 @@
           "age_486fUST5XonjF7wiIu2yIPRiUS0zIquqWx5TUiausOFwCWe4gqZ6Jc2wQ7vvMRO4vQLJBVWexRKP0uV4x3YK8lfkvyH3rB%2FJYTtLEciS6iEnvuy4WE4",
           "https://v.cdnlz17.com/20240207/110207_8a870295/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/11974-5-1.html"
+        ],
+        [
+          "第02集",
+          "/p/11974-5-2.html"
+        ],
+        [
+          "第03集",
+          "/p/11974-5-3.html"
+        ],
+        [
+          "第04集",
+          "/p/11974-5-4.html"
+        ],
+        [
+          "第05集",
+          "/p/11974-5-5.html"
+        ],
+        [
+          "第06集",
+          "/p/11974-5-6.html"
+        ],
+        [
+          "第07集",
+          "/p/11974-5-7.html"
+        ],
+        [
+          "第08集",
+          "/p/11974-5-8.html"
+        ],
+        [
+          "第09集",
+          "/p/11974-5-9.html"
+        ],
+        [
+          "第10集",
+          "/p/11974-5-10.html"
+        ],
+        [
+          "第11集",
+          "/p/11974-5-11.html"
+        ],
+        [
+          "第12集",
+          "/p/11974-5-12.html"
+        ]
       ]
     },
     "area": "日本",
@@ -238,7 +288,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

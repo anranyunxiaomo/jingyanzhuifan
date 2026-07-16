@@ -46400,6 +46400,12 @@
           "age_3442WTZK7ybS9%2BrW1t6yfZ4nP2d1r6%2Fp8xTHhhVY%2B5zbpUZ6bHOejncYvQdhl3EkHS%2BP3OQ0XnEbqEIlZ1sAcVs4vfGe%2F4l5%2B%2BI",
           "https://hn.bfvvs.com/play/zbqv920d/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/30348-3-1.html"
+        ]
       ]
     },
     "area": "日本",
@@ -46715,7 +46721,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

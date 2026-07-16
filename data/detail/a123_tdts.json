@@ -1,0 +1,54 @@
+{
+  "video": {
+    "id": "a123_tdts",
+    "name": "听到涛声",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "yhdm_line1": [
+        [
+          "HD国语",
+          "/p/13862-1-1.html"
+        ],
+        [
+          "HD中字",
+          "/p/13862-1-2.html"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://c1.rrcdnbf6.com/video/tingdaotaosheng/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-play6.com/20221217/22082_38da0f6e/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "https://vip.lzcdn10.com/20230717/15170_6dc5d270/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/5eVWQjXa/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/QbYZ5m2d/index.m3u8"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

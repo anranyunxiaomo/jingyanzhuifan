@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_djjf",
+    "name": "东京教父",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-online2.com/share/c9f5c37976afa879c834b505e6ef3fbf"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-online2.com/20230615/39311_40c67ab0/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "HD中字",
+          "https://vip.lzcdn2.com/20220321/170_eb8fc1b3/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/QeZ6DWve/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/Le3109rb/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字版",
+          "/p/12043-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

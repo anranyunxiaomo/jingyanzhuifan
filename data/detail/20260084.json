@@ -187,6 +187,56 @@
           "https://v6.ppqrrs.com/wjv6/202606/26/EkhUpLzJCT88/video/index.m3u8"
         ]
       ],
+      "yhdm_line1": [
+        [
+          "第1集",
+          "/p/28902-1-1.html"
+        ],
+        [
+          "第2集",
+          "/p/28902-1-2.html"
+        ],
+        [
+          "第3集",
+          "/p/28902-1-3.html"
+        ],
+        [
+          "第4集",
+          "/p/28902-1-4.html"
+        ],
+        [
+          "第5集",
+          "/p/28902-1-5.html"
+        ],
+        [
+          "第6集",
+          "/p/28902-1-6.html"
+        ],
+        [
+          "第7集",
+          "/p/28902-1-7.html"
+        ],
+        [
+          "第8集",
+          "/p/28902-1-8.html"
+        ],
+        [
+          "第9集",
+          "/p/28902-1-9.html"
+        ],
+        [
+          "第10集",
+          "/p/28902-1-10.html"
+        ],
+        [
+          "第11集",
+          "/p/28902-1-11.html"
+        ],
+        [
+          "第12集",
+          "/p/28902-1-12.html"
+        ]
+      ],
       "a123_line1": [
         [
           "第01集",
@@ -351,7 +401,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

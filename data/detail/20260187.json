@@ -97,6 +97,20 @@
           "age_90e41X2Gz2wUo9lFhFFr%2BVU27eJ39ZIoWS2xEyD5C%2BPuwoqgIdLbmX6U2WUX4WFz9s75Aka7bWMnMs7e%2Fxaua4TQkRsTvxcPrWLBPRlCT%2FQV1Bvl",
           "https://v.lzcdn31.com/20260712/8333_6d9a17cb/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第1集",
+          "/p/30319-2-1.html"
+        ],
+        [
+          "第2集",
+          "/p/30319-2-2.html"
+        ],
+        [
+          "第3集",
+          "/p/30319-2-3.html"
+        ]
       ]
     },
     "area": "日本",
@@ -206,7 +220,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

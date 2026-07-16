@@ -126,6 +126,16 @@
           "age_49409KWm1X%2BPpkEAFgSPkJ12AwBa8tzZl9w%2Bt4OinJ%2FMxXg0gr4Mhoy8nfRvtd8CRUw2GhkuKpO%2FC%2BBFvrxAdtTkK8yWuf6W%2F5F0%2BTz%2FYtptkdzfSbEFWQ",
           "https://vip.lz-cdn17.com/20230522/12553_3b081caa/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第1集",
+          "/p/17508-3-1.html"
+        ],
+        [
+          "第2集",
+          "/p/17508-3-2.html"
+        ]
       ]
     },
     "area": "日本",
@@ -280,7 +290,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_dlam：bwth",
+    "name": "哆啦A梦：伴我同行",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://p.bvvvvvvvvv1f.com/video/duolaAmengbanwotongxing/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-play6.com/20221028/2415_79004fdb/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "https://v.cdnlz18.com/20231020/5786_505d8664/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/PdyPPjgb/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/6dBBBqWd/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD国语版",
+          "/p/10302-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

@@ -134,6 +134,60 @@
           "age_fcd8PsdIcwMVRHKGDGg2HSTsnnRnrivteYRkLb%2F%2F5Ya3PX7DwmPQ0i9M5BCQLa6lPkYN6v2NyM5w%2FL1akw7L89K6HICIGfXIWCtlCBBDFTCQFh0FDTe%2FG27TvBQkCIQZVplzC2eJCvrR",
           "https://c1.rrcdnbf2.com/video/caiduanfenlizhizuiejiandao/第13集/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/28997-1-1.html"
+        ],
+        [
+          "第02集",
+          "/p/28997-1-2.html"
+        ],
+        [
+          "第03集",
+          "/p/28997-1-3.html"
+        ],
+        [
+          "第04集",
+          "/p/28997-1-4.html"
+        ],
+        [
+          "第05集",
+          "/p/28997-1-5.html"
+        ],
+        [
+          "第06集",
+          "/p/28997-1-6.html"
+        ],
+        [
+          "第07集",
+          "/p/28997-1-7.html"
+        ],
+        [
+          "第08集",
+          "/p/28997-1-8.html"
+        ],
+        [
+          "第09集",
+          "/p/28997-1-9.html"
+        ],
+        [
+          "第10集",
+          "/p/28997-1-10.html"
+        ],
+        [
+          "第11集",
+          "/p/28997-1-11.html"
+        ],
+        [
+          "第12集",
+          "/p/28997-1-12.html"
+        ],
+        [
+          "第13集",
+          "/p/28997-1-13.html"
+        ]
       ]
     },
     "area": "日本",
@@ -244,7 +298,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -1,0 +1,54 @@
+{
+  "video": {
+    "id": "a123_mztkn：bkjdwl",
+    "name": "名侦探柯南：贝克街的亡灵",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "lzm3u8": [
+        [
+          "日语",
+          "https://vip1.lz-cdn.com/20221113/37842_034e24a7/index.m3u8"
+        ],
+        [
+          "国语",
+          "https://v.cdnlz19.com/20240410/27193_03f0ba93/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://c1.rrcdnbf6.com/video/mingzhentankenanbeikejiedewangling/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-online1.com/20230326/33203_190497ba/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/YerDNLbO/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/7axMNPby/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字版",
+          "/p/1311-1-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}

@@ -1474,6 +1474,12 @@
           "age_1aa6oF3N9q5sdK6LMcpNZysNrGTXBePq8MEzZ%2BCFD6%2FSPU8cz6Ox3JGC%2B9x5uKsrRJ8HR3ccqS4b7l%2BaV4weyED%2BTUMNkURq1g",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "先行版1-3集",
+          "/p/30264-2-1.html"
+        ]
       ]
     },
     "area": "日本",
@@ -1591,7 +1597,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

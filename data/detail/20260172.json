@@ -72,6 +72,16 @@
           "age_c89cLMFZRE%2FUOvrqSWU4lLMZIwdImUhWojXjsv8xVlG%2BF3ZXI9alsmygZ55Sz7a%2BrPNVlPQtwKyFOtW2V%2By81fQBCXHmKtXjEekEffdSdgafkI4I",
           "https://v.lzcdn31.com/20260714/8447_614ac521/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/12927-2-1.html"
+        ],
+        [
+          "第02集",
+          "/p/12927-2-2.html"
+        ]
       ]
     },
     "area": "",
@@ -238,7 +248,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

@@ -75,6 +75,56 @@
           "age_bdddfW%2B0gF8wk9t%2FwMNk5s%2BFSO%2FiYUWww7r9WWDktWRSV%2FEZ1c1B5nM8fjfM%2FEU2HTp%2BTPwFdbHFtomOxCmuiwJ98Q",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/2505-5-1.html"
+        ],
+        [
+          "第02集",
+          "/p/2505-5-2.html"
+        ],
+        [
+          "第03集",
+          "/p/2505-5-3.html"
+        ],
+        [
+          "第04集",
+          "/p/2505-5-4.html"
+        ],
+        [
+          "第05集",
+          "/p/2505-5-5.html"
+        ],
+        [
+          "第06集",
+          "/p/2505-5-6.html"
+        ],
+        [
+          "第07集",
+          "/p/2505-5-7.html"
+        ],
+        [
+          "第08集",
+          "/p/2505-5-8.html"
+        ],
+        [
+          "第09集",
+          "/p/2505-5-9.html"
+        ],
+        [
+          "第10集",
+          "/p/2505-5-10.html"
+        ],
+        [
+          "第11集",
+          "/p/2505-5-11.html"
+        ],
+        [
+          "第12集",
+          "/p/2505-5-12.html"
+        ]
       ]
     },
     "area": "日本",
@@ -200,7 +250,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

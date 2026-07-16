@@ -54,13 +54,15 @@ jobs:
           pip install -r requirements.txt
 
 
-      # 4b. 执行爬虫数据抓取与全局索引库重构（整合刚刚补齐的独有番剧详情）
+      # 4b. 执行爬虫数据抓取、樱花源直链对齐与全局索引库重构
       - name: Fetch and staticize anime data
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
-        timeout-minutes: 8
+        timeout-minutes: 12
         continue-on-error: true    # 数据抓取失败不阻断页面部署
         run: |
           python update_data.py
+          python scripts/yhdm_crawler.py
+          python -c "from update_data import rebuild_static_index_and_assets; rebuild_static_index_and_assets()"
 
       # 5. 安全同步并自动推回静态数据 JSON（"物理备份与强覆盖对齐" 无冲突版）
       - name: Commit and push static data changes

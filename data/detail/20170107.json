@@ -135,6 +135,20 @@
           "age_89afAaeORApd4GjGZYNIQ19U542vZ52g7XCybTnKisc7StxGEA9N5Ov7eYEEBF0jB%2Fx99s7Z98Y2iuAoqaSw3jELSQ",
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第1集",
+          "/p/27380-1-1.html"
+        ],
+        [
+          "第2集",
+          "/p/27380-1-2.html"
+        ],
+        [
+          "第3集",
+          "/p/27380-1-3.html"
+        ]
       ]
     },
     "area": "日本",
@@ -274,7 +288,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

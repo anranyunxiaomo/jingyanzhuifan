@@ -1,0 +1,50 @@
+{
+  "video": {
+    "id": "a123_mdbe",
+    "name": "猫的报恩",
+    "type": "剧场版",
+    "cover": "",
+    "status": "完结",
+    "playlists": {
+      "bfzym3u8": [
+        [
+          "全集",
+          "https://v.fengbao8.com/video/maodebaoen/全集/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-online1.com/20230102/19993_04e2a4b5/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "HD中字",
+          "https://vip.lzcdn2.com/20220604/8450_3f1129e0/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "正片",
+          "https://hn.bfvvs.com/play/DbDYNydl/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "正片",
+          "https://hd.ijycnd.com/play/QdJYDJbO/index.m3u8"
+        ]
+      ],
+      "yhdm_line1": [
+        [
+          "HD中字",
+          "/p/25085-3-1.html"
+        ]
+      ]
+    }
+  },
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
+}
