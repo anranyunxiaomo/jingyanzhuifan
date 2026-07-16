@@ -2459,10 +2459,10 @@ body {
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 推荐/最近更新：手机下改为更加大气、便于阅读的自适应 2 列并排 */
+  /* 推荐/最近更新：智能自适应列宽分配，手机端自动 3 列，小屏自适应 2 列，平板自适应更多列 */
   .grid-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 0.65rem;
   }
   /* Banner 内容调整（高度由 clamp 控制） */
   .banner-slide {
@@ -2664,26 +2664,38 @@ body {
     left: 1rem;
   }
 
-  /* 卡片网格：超紧兑1手机严格2列 */
+  /* 卡片网格及卡片精细紧凑化，提高手机端浏览效率，防止封面过大 */
   .grid-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.7rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
   }
   .anime-card {
-    padding: 6px 5px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    padding: 4px 4px 6px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+    border-radius: 6px !important;
   }
   .card-title {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
+    line-height: 1.25;
     letter-spacing: 0;
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.5em; /* 锁定两行高度，确保所有卡片高度严格一致，避免参差不齐 */
   }
   .card-update-time {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    margin-top: 2px;
   }
   .card-tag {
-    font-size: 0.62rem;
-    padding: 0.15rem 0.35rem;
+    font-size: 0.58rem;
+    padding: 0.1rem 0.25rem;
+    top: 4px;
+    right: 4px;
+    border-radius: 2px;
   }
 
   /* app-main 贴边 */
@@ -2896,14 +2908,15 @@ body {
 /* 📱 超窄屏兜底 (≤375px，适配 iPhone SE / 老款小屏安卓) */
 @media (max-width: 375px) {
   .grid-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.55rem;
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 0.45rem;
   }
   .anime-card {
-    padding: 5px 4px;
+    padding: 4px 4px 5px;
   }
   .card-title {
-    font-size: 0.76rem;
+    font-size: 0.7rem;
+    height: 2.5em;
   }
   .logo-art {
     font-size: 1.3rem;
@@ -4945,9 +4958,6 @@ body.art-fullscreen-web-active .banner-container {
   }
 }
 @media (max-width: 768px) {
-  .top-poem-banner {
-    display: none !important; /* 手机端隐藏独立的古风横幅 */
-  }
   .panoramic-hero {
     height: 280px;
   }
