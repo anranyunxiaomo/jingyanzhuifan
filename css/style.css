@@ -2690,6 +2690,7 @@ body {
     border-bottom-width: 1.5px;
     border-radius: 6px !important;
     box-sizing: border-box !important;
+    min-width: 0 !important; /* Allow grid cards to shrink without stretching the page */
   }
   .card-title {
     font-size: 0.72rem;
@@ -2946,6 +2947,7 @@ body {
   .anime-card {
     padding: 4px 4px 5px;
     box-sizing: border-box !important;
+    min-width: 0 !important; /* Allow grid cards to shrink on ultra-small viewports */
   }
   .card-title {
     font-size: 0.7rem;
@@ -4981,10 +4983,22 @@ body.art-fullscreen-web-active .banner-container {
 /* 响应式适配 */
 @media (max-width: 992px) {
   .home-main-layout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .home-main-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .home-side-col {
-    position: static;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .panoramic-hero {
     height: 340px;
