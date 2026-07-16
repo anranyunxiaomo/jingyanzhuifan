@@ -50,44 +50,63 @@
   --font-family: 'Noto Serif SC', 'Playfair Display', Georgia, "PingFang SC", serif;
   --font-sans:   'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
 
-  /* 🏮 3D 全局物理与景深光影变量 */
-  --3d-perspective:  perspective(1000px);
-  --3d-shadow:       0 16px 36px -12px rgba(255, 45, 120, 0.12),
-                     0 4px 12px -8px rgba(255, 45, 120, 0.08);
-  --3d-shadow-hover: 0 28px 56px -16px rgba(255, 45, 120, 0.22),
-                     0 12px 24px -10px rgba(255, 45, 120, 0.12),
-                     0 0 1px 1px rgba(255, 45, 120, 0.05);
-  --3d-glow-sakura:  0 0 25px rgba(255, 45, 120, 0.15);
+  /* 🏮 3D 全局物理与景深光影变量 — 强化版本 */
+  --3d-perspective:  perspective(900px);
+  --3d-shadow:       0 8px 24px -8px rgba(217, 96, 122, 0.20),
+                     0 2px 8px -4px rgba(217, 96, 122, 0.12),
+                     0 0 0 1px rgba(217, 96, 122, 0.06);
+  --3d-shadow-hover: 0 32px 64px -16px rgba(217, 96, 122, 0.40),
+                     0 16px 32px -12px rgba(217, 96, 122, 0.22),
+                     0 4px 0 rgba(255, 180, 200, 0.08),
+                     0 0 0 1.5px rgba(255, 45, 120, 0.12);
+  --3d-glow-sakura:  0 0 32px rgba(255, 45, 120, 0.28), 0 0 8px rgba(255, 45, 120, 0.14);
+  --accent-pink: #D9607A;
 }
 
-/* 🏮 3D 弥散发光星云背景与宣纸磨砂颗粒纹理系统 */
+/* 🏮 3D 弥散发光星云背景 — 强化版：真正可见的绯樱晕光 */
 .ambient-glow {
   position: fixed;
-  width: min(650px, 90vw);
-  height: min(650px, 90vw);
+  width: min(800px, 100vw);
+  height: min(800px, 100vw);
   border-radius: 50%;
-  filter: blur(180px); /* 🚀 提升模糊度，杜绝被截断的半圆斑点 bug */
-  opacity: 0.11; /* 🚀 调淡透明度，融于宣纸背景 */
+  filter: blur(160px);
+  opacity: 0.22;
   z-index: -2;
   pointer-events: none;
-  animation: driftGlow 22s infinite alternate ease-in-out;
+  animation: driftGlow 24s infinite alternate ease-in-out;
 }
 .glow-1 {
-  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
-  top: -180px;
-  left: -180px;
+  background: radial-gradient(circle, rgba(255, 45, 120, 1) 0%, rgba(255, 100, 150, 0.6) 35%, transparent 70%);
+  top: -200px;
+  left: -200px;
 }
 .glow-2 {
-  background: radial-gradient(circle, var(--tech-gold) 0%, transparent 70%);
-  bottom: -220px;
-  right: -220px;
-  animation-delay: -6s;
+  background: radial-gradient(circle, rgba(212, 175, 55, 1) 0%, rgba(255, 200, 100, 0.5) 35%, transparent 70%);
+  bottom: -250px;
+  right: -250px;
+  animation-delay: -8s;
+}
+/* 第三颗：右上角冷调紫樱晕光，形成三角形光源布局 */
+.glow-3 {
+  position: fixed;
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(200, 80, 180, 0.9) 0%, transparent 70%);
+  top: 20vh;
+  right: -100px;
+  animation: driftGlow 30s infinite alternate-reverse ease-in-out;
 }
 
 @keyframes driftGlow {
-  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-  50% { transform: translate(80px, 60px) scale(1.1) rotate(180deg); }
-  100% { transform: translate(-40px, 90px) scale(0.95) rotate(360deg); }
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(60px, 80px) scale(1.08); }
+  66%  { transform: translate(-30px, 40px) scale(0.96); }
+  100% { transform: translate(40px, -60px) scale(1.05); }
 }
 
 
@@ -165,15 +184,17 @@ body {
   overflow-x: hidden;
 }
 
-/* 🪐 浑天仪金色精密经纬网格 */
+/* 🪐 精密正交经纬网格 — 升级为正交线，形成更强烈的空间景深感 */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background-image:
-    linear-gradient(45deg, var(--tech-grid) 0.5px, transparent 0.5px),
-    linear-gradient(-45deg, var(--tech-grid) 0.5px, transparent 0.5px);
-  background-size: 48px 48px, 48px 48px;
+    linear-gradient(rgba(217, 96, 122, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 96, 122, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
   z-index: -2;
   pointer-events: none;
 }
@@ -851,14 +872,22 @@ body::after {
   max-width: 1200px;
   margin: clamp(0.5rem, 2.5vw, 2.2rem) auto;
   padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 2.5rem);
-  background: var(--bg-secondary);
-  border: 1px solid rgba(217, 96, 122, 0.25);
+  background: rgba(255, 253, 251, 0.94);
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  /* 顶部樱粉描线 + 底部金石描线，形成卷轴四边精工效果 */
+  border: 1px solid rgba(217, 96, 122, 0.18);
+  border-top: 2.5px solid rgba(217, 96, 122, 0.55);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.35);
   box-shadow:
-    0 24px 80px -20px rgba(44, 30, 32, 0.1),
-    0 0 0 1px rgba(255, 253, 251, 0.9) inset,
-    0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    /* 主体大气场景深感 */
+    0 48px 120px -24px rgba(217, 96, 122, 0.25),
+    0 20px 48px -16px rgba(44, 30, 32, 0.08),
+    /* 精致凝脂内边高光 */
+    0 0 0 1px rgba(255, 255, 255, 0.96) inset,
+    0 2px 0 rgba(255, 255, 255, 0.98) inset;
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px;
   z-index: 1;
   box-sizing: border-box;
   width: calc(100% - clamp(0.4rem, 2vw, 2rem) * 2);
@@ -952,30 +981,36 @@ body::after {
   display: none;
 }
 
-/* finesse §3 — section title: 去除 AI tell border-left，改用绝对定位 accent 点 */
+/* 版块标题 — 强化版：渐变文字 + 发光左侧双线装饰 */
 .section-title {
   font-family: 'Ma Shan Zheng', var(--font-family);
-  font-size: clamp(1.5rem, 3.2vw, 2.1rem); /* 🚀 书法体需要稍大尺寸来撑开字势 */
-  font-weight: 500; /* 毛笔书法不需要强行加粗，保持墨迹晕染感 */
-  color: var(--text-main);
-  letter-spacing: 1px;
+  font-size: clamp(1.75rem, 3.8vw, 2.6rem);
+  font-weight: 500;
+  /* 渐变文字：深红黛墨 → 绯桃粉，告别扁平单色 */
+  background: linear-gradient(135deg, var(--text-main) 0%, #D9607A 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
   line-height: 1.1;
   position: relative;
-  padding-left: 0.8rem;
+  padding-left: 1.1rem;
+  filter: drop-shadow(0 2px 8px rgba(217, 96, 122, 0.20));
 }
 
-/* finesse — 左侧精致 accent 小方块，取代粗 border-left AI tell */
+/* 左侧发光双线描边 — 比单条细线更有立体感 */
 .section-title::before {
   content: '';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 3px;
+  width: 4px;
   height: 1.1em;
-  background: var(--accent-gold);
+  background: linear-gradient(to bottom, var(--accent-gold) 0%, #D9607A 100%);
   border-radius: 2px;
-  opacity: 0.85;
+  box-shadow: 0 0 10px rgba(255, 45, 120, 0.40), 2px 0 0 rgba(212, 175, 55, 0.30);
+  opacity: 1;
 }
 
 
@@ -1083,27 +1118,28 @@ body::after {
 
 
 
-/* 🏮 挂轴画框（画轴上下轴木设计）*/
-/* finesse §3 — 卡片：移除 AI tell 侧边条，改为顶部单像素 accent 线 + 精致层次感 */
+/* 🏮 挂轴画框（画轴上下轴木设计）— 强化版 */
 .anime-card {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: #FEFBF8;
-  border: 1px solid rgba(255, 59, 95, 0.1);
-  border-top: 2px solid rgba(255, 59, 95, 0.5);
+  background: linear-gradient(160deg, #FFFCFB 0%, #FEF5F7 100%);
+  border: 1px solid rgba(217, 96, 122, 0.10);
+  border-top: 2.5px solid rgba(217, 96, 122, 0.60);
   padding: 10px 8px;
   position: relative;
   overflow: hidden;
+  /* 卡片基础状态就有明显浮空感，告别"贴地"的死板平面 */
   box-shadow:
-    0 2px 12px -4px rgba(44, 30, 32, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    0 6px 20px -6px rgba(217, 96, 122, 0.22),
+    0 2px 8px -4px rgba(44, 30, 32, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
 
   opacity: 0;
   animation: bambooCascade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
   transform-style: preserve-3d;
-  perspective: 1000px;
+  perspective: 900px;
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-silk), border-color 0.3s ease;
 }
 
@@ -1231,31 +1267,48 @@ body::after {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
 }
 
-/* 🏮 3D 晶体悬浮与空间透视 */
+/* 🏮 3D 晶体悬浮 — 强化版：三倍角度，真正的扑面而来感 */
 .anime-card:hover {
-  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) translateZ(15px);
-  border-color: rgba(255, 45, 120, 0.3);
+  transform: translateY(-16px) rotateX(12deg) rotateY(-9deg) translateZ(32px);
+  border-color: rgba(217, 96, 122, 0.65);
+  border-top-color: var(--accent-gold);
   box-shadow: var(--3d-shadow-hover);
   transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-silk), border-color 0.3s ease;
 }
 
-/* 🏮 3D 按压下陷物理回馈 */
+/* 流光扫描微动效：hover 时白光从左向右划过 */
+.anime-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 55%; height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 180, 200, 0.22) 50%, transparent);
+  transition: left 0.55s var(--ease-silk);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+.anime-card:hover::after {
+  left: 150%;
+}
+
+/* 🏮 3D 按压下陷物理回馈 — 更强的按压感 */
 .anime-card:active {
-  transform: translateY(-2px) scale(0.96) rotateX(-2deg) rotateY(2deg) translateZ(-8px);
-  box-shadow: 0 4px 12px rgba(255, 45, 120, 0.12);
-  transition: transform 0.15s var(--ease-silk);
+  transform: translateY(-3px) scale(0.96) rotateX(-3deg) rotateY(3deg) translateZ(-4px);
+  box-shadow: 0 4px 16px rgba(217, 96, 122, 0.18);
+  transition: transform 0.12s var(--ease-silk);
 }
 
 
 .anime-card:hover .card-cover-wrapper {
-  transform: translateZ(8px) scale(1.02);
-  box-shadow: 0 8px 24px -8px rgba(255, 45, 120, 0.25);
-  border-color: rgba(255, 45, 120, 0.28);
+  transform: translateZ(12px) scale(1.02);
+  box-shadow: 0 12px 32px -8px rgba(217, 96, 122, 0.32);
+  border-color: rgba(217, 96, 122, 0.35);
 }
 
 .anime-card:hover .card-cover {
   transform: scale(1.08);
-  filter: brightness(1.03) saturate(1.08);
+  filter: brightness(1.04) saturate(1.12);
   transition: transform 0.7s var(--ease-silk), filter 0.5s ease;
 }
 
@@ -1264,8 +1317,8 @@ body::after {
 }
 
 .anime-card:hover .overlay-play-icon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 12px rgba(255, 180, 200, 0.7));
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 16px rgba(255, 180, 200, 0.8));
 }
 
 .card-info {
