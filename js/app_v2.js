@@ -1885,7 +1885,7 @@ new Vue({
 
             this.dpInstance = dp;
 
-            // ─── 降级函数（复用，避免重复代码）───────────────────────
+            // ─── 备用源自愈与报错处理 ────────────────────────────────
             const fallbackToIframe = (reason) => {
               if (this._hasFallenBack) return; // 防止多次触发
               
@@ -1918,22 +1918,11 @@ new Vue({
                     return;
                   }
                 }
-                console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
-                dp.notice.show = "抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。";
               }
               
-              console.warn(`[ArtPlayer FAILBACK] Line ${this.activeLineKey} failed due to: ${reason}. Falling back to Iframe mode...`);
-              this._hasFallenBack = true;
-              if (this.dpInstance) {
-                try {
-                  this.dpInstance.destroy();
-                } catch(e) {}
-                this.dpInstance = null;
-              }
-              this.isIframeMode = true;
-              this.$nextTick(() => {
-                this.activePlayUrl = playUrl;
-              });
+              console.error("[VOD FAILBACK] All backup stream URLs exhausted.");
+              dp.notice.show = "抱歉，当前所有播放源均加载失败，视频可能已被下架或受网络限制。";
+              this.stopLoadingAnimation();
             };
 
             // 监听 ArtPlayer 的起播与就绪状态
@@ -2032,41 +2021,18 @@ new Vue({
 
             console.log(`[ArtPlayer PLAYING] ${capturedAnimeId}_${capturedEpName}`);
           } catch(e) {
-            console.error("[DPlayer Init Failed] Falling back to Iframe mode:", e);
-            this.isIframeMode = true;
-            this.$nextTick(() => {
-              this.activePlayUrl = playUrl;
-            });
+            console.error("[ArtPlayer Init Failed]:", e);
+            this.stopLoadingAnimation();
           }
           }); // 第二层 $nextTick 结束
         }); // 第一层 $nextTick 结束
         return;
       }
       
-      // 2. 无直链 → iframe 解析模式（去掉 120ms 延迟，nextTick 后立即赋值）
-      this.isIframeMode = true;
-      if (this.dpInstance) {
-        try { this.dpInstance.destroy(); } catch(e) {}
-        this.dpInstance = null;
-      }
-      this.activePlayUrl = '';
-      this.$nextTick(() => {
-        this.activePlayUrl = capturedIframeUrl;
-        this.stopLoadingAnimation(); // 💡 终极修复：iframe 模式下立即关闭外层缓冲圈，让网页露出来正常播放！
-        console.log(`[IFRAME PLAYING] URL: ${this.activePlayUrl}`);
-
-        // 💡 Iframe 播放哨兵：如果在指定时间内网页依然卡顿（例如发生了解析站内跨域或网络阻塞），
-        // 自动熔断切源重连，绝不给用户添堵，彻底无感化自动寻找可用播放源！
-        if (capturedIframeUrl) {
-          const currentSession = this.activeSessionId;
-          this.iframeTimeoutTimer = setTimeout(() => {
-            if (this.activeSessionId === currentSession && this.isIframeMode) {
-              console.warn("[Iframe Monitor] 6.5s timeout sentinel triggered! Activating auto-heal...");
-              this.autoHealIframe();
-            }
-          }, 6500);
-        }
-      });
+      // 无直链时的保底报错提示
+      console.error("[PLAY ERROR] Direct stream URL not found.");
+      this.stopLoadingAnimation();
+      alert("抱歉，该剧集未找到可用播放直链！");
     },
     
     // 播放下一集
@@ -2107,40 +2073,7 @@ new Vue({
       }
     },
 
-    // 🏮 全自动无感智能换源熔断系统 (Iframe Silent Meltdown Auto-Heal)
-    autoHealIframe() {
-      const engines = ['default', 'https://jx.xmflv.com/?url=', 'https://jx.jsonplayer.com/?url=', 'https://im1907.top/?jx='];
-      const currentIndex = engines.indexOf(this.activeEngineKey);
-      let nextIndex = currentIndex + 1;
-      
-      if (nextIndex < engines.length) {
-        // ① 还有备用解析引擎：在后台自动递增，执行重试重载 ！！！
-        const nextEngine = engines[nextIndex];
-        console.warn(`[Iframe Auto-Heal] Sentinel triggered. Quietly switching engine from ${this.activeEngineKey} to: ${nextEngine}`);
-        this.activeEngineKey = nextEngine;
-        this.rePlayCurrentEpisode();
-      } else {
-        // ② 所有解析引擎都尝试失败了：重置回 default，并跨常规线路换源 ！！！
-        console.warn("[Iframe Auto-Heal] All engines failed on this line. Swapping play line...");
-        this.activeEngineKey = 'default';
-        
-        const playlists = (this.animeDetail && this.animeDetail.playlists) || {};
-        const availableLineKeys = Object.keys(playlists).filter(key => {
-          return key !== 'anich_m3u8' && playlists[key].length > 0;
-        });
-        
-        const backupLineKey = availableLineKeys.find(k => k !== this.activeLineKey);
-        if (backupLineKey) {
-          console.warn(`[Iframe Auto-Heal] Auto switching play line to: ${backupLineKey}`);
-          this.switchLine(backupLineKey);
-          this.$nextTick(() => {
-            this.playEpisode(this.activeEpisodeIndex);
-          });
-        } else {
-          console.error("[Iframe Auto-Heal] Disaster recovery failure: no more lines or engines available.");
-        }
-      }
-    },
+
 
     // ==========================================================================
     // 📺 观看历史核心功能 (本地持久化 LocalStorage，最多 30 条)
@@ -2494,10 +2427,8 @@ new Vue({
         document.body.classList.remove('webfullscreen-active');
       }
 
-      // ─── ArtPlayer 直链模式 ─────────────────────────────────────
-      // 不使用 ArtPlayer 自带的 fullscreenWeb（其内部 CSS 会被 aspect-ratio 等限制影响）
-      // 直接在 #dplayer 上用 JS 内联样式强制 position:fixed 全屏（最高优先级，不可被任何 CSS 覆盖）
-      if (!this.isIframeMode && this.dpInstance) {
+      // ─── ArtPlayer 全屏调度 ─────────────────────────────────────
+      if (this.dpInstance) {
         const dplayerEl = document.getElementById('dplayer');
         const header = document.querySelector('.app-header');
 
@@ -2532,44 +2463,9 @@ new Vue({
         this.$nextTick(() => {
           try { this.dpInstance.resize(); } catch(e) {}
         });
-        return;
-      }
-
-      // ─── Iframe 降级模式 ────────────────────────────────────────
-      const innerContainer = document.querySelector('.player-container-inner');
-      if (!innerContainer) return;
-
-      try {
-        if (this.isWebFullscreen) {
-          if (innerContainer.requestFullscreen) {
-            innerContainer.requestFullscreen().catch(() => {});
-          } else if (innerContainer.webkitRequestFullscreen) {
-            innerContainer.webkitRequestFullscreen();
-          }
-        } else {
-          const isNativeFs = !!(document.fullscreenElement ||
-                               document.webkitFullscreenElement ||
-                               document.mozFullScreenElement);
-          if (isNativeFs) {
-            if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
-            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-          }
-        }
-      } catch (err) {
-        console.warn('[Fullscreen] Iframe fullscreen failed:', err);
       }
     },
 
-    // 💡 移动端原生 `<video>` 播放出错时的静默容灾降级自愈逻辑
-    handleNativeVideoError(e) {
-      console.warn("[NATIVE VIDEO ERROR] 原生视频播放出错，正在自动静默降级为去广告 iframe 线路自愈...", e);
-      this.isIframeMode = true;
-      const currentEp = this.activeEpisodes[this.activeEpisodeIndex];
-      const epToken = currentEp ? currentEp[1] : '';
-      const realUrl = currentEp ? currentEp[2] : '';
-      const cleanUrl = (realUrl || epToken || '').trim();
-      this.activePlayUrl = "https://jx.xmflv.com/?url=" + encodeURIComponent(cleanUrl);
-    },
     
     // 💡 路由解析服务 (全面防错、支持 Trailing Slash、Query String，正则静默提取)
     handleHashRoute() {

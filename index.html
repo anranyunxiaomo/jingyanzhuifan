@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & ArtPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/artplayer.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260716T1134">
-  <script>window.JYZF_VERSION = "20260716T1134";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260716T1140">
+  <script>window.JYZF_VERSION = "20260716T1140";</script>
 </head>
 <body class="loader-active">
 
@@ -774,57 +774,11 @@
             <template v-else>
               <div class="player-container-inner" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
                 <!-- 💡 艺术级多端自适应 H5 播放器挂载点 (PC端搭载 Worker 异步解码；移动/iPad端自动渲染高雅触屏面板) -->
-                <div :key="dplayerKey" id="dplayer" class="video-dplayer" v-if="!isIframeMode"></div>
-                
-
-                <!-- 降级 传统 Iframe 播放器 (强绑 key 以在换源/换集数时彻底重置渲染，物理隔绝进度污染) -->
-                <iframe 
-                  id="playerIFrame"
-                  v-if="isIframeMode"
-                  :src="activePlayUrl" 
-                  :key="activePlayUrl"
-                  class="video-iframe"
-                  scrolling="no" 
-                  allowfullscreen
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allow="fullscreen; autoplay; encrypted-media"
-                  frameborder="no" 
-                  allowtransparency="yes"
-                  referrerpolicy="no-referrer"
-                ></iframe>
+                <div :key="dplayerKey" id="dplayer" class="video-dplayer"></div>
               </div>
 
-              <!-- 2. 🎛️ 绝对独立的悬浮控制遮罩层（所有的 v-if 动态按钮全呆在这里，即使频繁增删也绝不会波及媒体播放层） -->
+              <!-- 2. 🎛️ 绝对独立的悬浮控制遮罩层（网页全屏退出按钮） -->
               <div class="player-controls-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2147483647;">
-                <!-- 💡 仅在 iframe 降级模式下的移动端展示悬浮画面比例控制器 -->
-                <button 
-                  v-if="isIframeMode && isMobile && !isWebFullscreen"
-                  class="iframe-fit-btn ratio-btn"
-                  @click="toggleVideoFit"
-                  style="pointer-events: auto;"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                    <line x1="9" y1="3" x2="9" y2="21"/>
-                    <line x1="15" y1="3" x2="15" y2="21"/>
-                  </svg>
-                  <span>比例: {{ videoFitMode === 'contain' ? '等比' : (videoFitMode === 'cover' ? '铺满' : '拉伸') }}</span>
-                </button>
-
-                <!-- 💡 仅在 iframe 降级模式下的移动端展示全屏控制按钮 -->
-                <button 
-                  v-if="isIframeMode && isMobile && !isWebFullscreen"
-                  class="iframe-fit-btn webfullscreen-btn"
-                  @click="toggleWebFullscreen"
-                  style="pointer-events: auto;"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;">
-                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                  </svg>
-                  <span>全屏</span>
-                </button>
-
                 <!-- 💡 网页全屏悬浮控制：退出全屏按钮 (全局网页全屏状态下对所有设备都显示) -->
                 <button 
                   class="exit-webfullscreen-btn" 
@@ -836,17 +790,6 @@
                     <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7"/>
                   </svg>
                   <span>退出全屏</span>
-                </button>
-                
-                <!-- 💡 iframe 模式下的移动端下一集悬浮按钮 -->
-                <button
-                  v-if="isIframeMode && hasNextEpisode && isMobile && !isWebFullscreen"
-                  class="iframe-fit-btn iframe-next-btn"
-                  @click="playNextEpisode"
-                  style="right: auto; left: 8px; pointer-events: auto;"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-                  <span>下一集</span>
                 </button>
               </div>
             </template>
@@ -1092,7 +1035,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260716T1134"></script>
+<script src="js/app_v2.js?v=20260716T1140"></script>
 
 </body>
 </html>
