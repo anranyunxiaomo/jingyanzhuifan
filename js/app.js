@@ -2400,6 +2400,11 @@ new Vue({
       if (!innerContainer) return;
 
       this.isWebFullscreen = !this.isWebFullscreen;
+      if (this.isWebFullscreen) {
+        document.body.classList.add('webfullscreen-active');
+      } else {
+        document.body.classList.remove('webfullscreen-active');
+      }
 
       try {
         if (this.isWebFullscreen) {

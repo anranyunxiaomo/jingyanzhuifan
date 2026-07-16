@@ -17,8 +17,8 @@
   <!-- H5 播放器 M3U8 支持 (本地化 hls.js & ArtPlayer) -->
   <script src="js/vendor/hls.min.js"></script>
   <script src="js/vendor/artplayer.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260716T1125">
-  <script>window.JYZF_VERSION = "20260716T1125";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260716T1134">
+  <script>window.JYZF_VERSION = "20260716T1134";</script>
 </head>
 <body class="loader-active">
 
@@ -1011,7 +1011,7 @@
         </div>
 
         <!-- 3.4 系列关联推荐海报墙 -->
-        <div class="related-series-panel" v-if="relatedList && relatedList.length > 0">
+        <div class="related-series-panel" v-if="relatedList && relatedList.length > 0" v-show="!isWebFullscreen">
           <div class="panel-header">
             <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="7" height="7" />
@@ -1092,7 +1092,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260716T1125"></script>
+<script src="js/app_v2.js?v=20260716T1134"></script>
 
 </body>
 </html>

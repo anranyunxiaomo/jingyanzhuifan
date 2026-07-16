@@ -2488,6 +2488,11 @@ new Vue({
     // 💡 景雁全局网页全屏控制方法（ArtPlayer CSS 网页全屏升级版：完美绕过 perspective/transform 对原生 API 的阻断）
     toggleWebFullscreen() {
       this.isWebFullscreen = !this.isWebFullscreen;
+      if (this.isWebFullscreen) {
+        document.body.classList.add('webfullscreen-active');
+      } else {
+        document.body.classList.remove('webfullscreen-active');
+      }
 
       // ─── ArtPlayer 直链模式 ─────────────────────────────────────
       // 不使用 ArtPlayer 自带的 fullscreenWeb（其内部 CSS 会被 aspect-ratio 等限制影响）
