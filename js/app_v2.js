@@ -1460,25 +1460,52 @@ new Vue({
       // 任一站成功返回直链后，升级为 ArtPlayer 原生播放，彻底脱 iframe！
       const MULTI_SNIFF_LINES = ['xigua', 'xigua_line1', 'xigua_line2', 'yhdm_line1'];
       if (MULTI_SNIFF_LINES.includes(this.activeLineKey) && epToken && (epToken.startsWith('age_') || epToken.startsWith('/p/')) && !realUrl) {
-        console.log('[MULTI-SNIFF] Sniffing line detected, calling /api/sniff for real stream...');
-        this.startLoadingAnimation('正在解析直链，请稍候...');
-        try {
-          const sniffUrl = `https://jingyanff.xyz/api/sniff?token=${encodeURIComponent(epToken)}`;
-          const sniffResp = await fetch(sniffUrl);
-          let sniffData = null;
-          try { sniffData = await sniffResp.json(); } catch(e) {}
 
-          if (sniffResp.ok && sniffData && sniffData.success && sniffData.url) {
-            console.log('[MULTI-SNIFF] Got direct stream!', sniffData.url, sniffData.cached ? '(cached)' : '(fresh)');
-            realUrl = sniffData.url;
-            ep[2] = sniffData.url; // 写入内存缓存，本次会话内重播无需再请求
-          } else {
-            console.warn('[MULTI-SNIFF] Parse failed, will fall back to iframe.');
+        // 💡 先查 localStorage 6小时缓存，命中则跳过 Worker 请求，节省免费额度
+        const sniffCacheKey = `jyzf_sniff_${epToken.substring(0, 40)}`;
+        let cachedSniff = null;
+        try {
+          const raw = localStorage.getItem(sniffCacheKey);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            // 6小时内有效（6 * 3600 * 1000 ms）
+            if (parsed.url && (Date.now() - parsed.ts) < 6 * 3600 * 1000) {
+              cachedSniff = parsed.url;
+              console.log('[MULTI-SNIFF] LocalStorage cache HIT, skip Worker request:', cachedSniff);
+            } else {
+              localStorage.removeItem(sniffCacheKey); // 过期清理
+            }
+          }
+        } catch(e) {}
+
+        if (cachedSniff) {
+          realUrl = cachedSniff;
+          ep[2] = cachedSniff;
+        } else {
+          console.log('[MULTI-SNIFF] Sniffing line detected, calling /api/sniff for real stream...');
+          this.startLoadingAnimation('正在解析直链，请稍候...');
+          try {
+            const sniffUrl = `https://jingyanff.xyz/api/sniff?token=${encodeURIComponent(epToken)}`;
+            const sniffResp = await fetch(sniffUrl);
+            let sniffData = null;
+            try { sniffData = await sniffResp.json(); } catch(e) {}
+
+            if (sniffResp.ok && sniffData && sniffData.success && sniffData.url) {
+              console.log('[MULTI-SNIFF] Got direct stream!', sniffData.url, sniffData.cached ? '(cached)' : '(fresh)');
+              realUrl = sniffData.url;
+              ep[2] = sniffData.url; // 写入内存缓存，本次会话内重播无需再请求
+              // 写入 localStorage 6小时缓存，跨页面刷新也能命中
+              try {
+                localStorage.setItem(sniffCacheKey, JSON.stringify({ url: sniffData.url, ts: Date.now() }));
+              } catch(e) {}
+            } else {
+              console.warn('[MULTI-SNIFF] Parse failed, will fall back to iframe.');
+              this.stopLoadingAnimation();
+            }
+          } catch (err) {
+            console.warn('[MULTI-SNIFF] Network error, falling back to iframe:', err);
             this.stopLoadingAnimation();
           }
-        } catch (err) {
-          console.warn('[MULTI-SNIFF] Network error, falling back to iframe:', err);
-          this.stopLoadingAnimation();
         }
       }
 
