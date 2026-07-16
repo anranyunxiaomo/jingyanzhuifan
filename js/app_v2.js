@@ -1733,7 +1733,62 @@ new Vue({
                 videoType = 'normal'; // 原生 video 模式
               } else {
                 // 💡 PC 端不支持原生 HLS，必须使用 hls.js 模拟解码，在前端实时重写所有相对路径为绝对路径
-                console.log("[SMART ROUTER] PC client detected. Downloading & rewriting playlist in frontend...");
+                // 实测：各大采集站 CDN 封锁 CF Worker 机房 IP，但对浏览器直连友好。
+                // 优化策略：先尝试直接 CORS fetch CDN URL（零 Worker 请求），成功则 Blob 播放；
+                // CORS 失败（CDN 无跨域头）则立即切 iframe，不再发起必然失败的 Worker 代理请求。
+                console.log("[SMART ROUTER] PC client detected. Trying direct CORS fetch first (save Worker quota)...");
+                let directFetchOk = false;
+                try {
+                  const directRes = await fetch(capturedRealUrl, { mode: 'cors', signal: AbortSignal.timeout(4000) });
+                  if (directRes.ok) {
+                    const directText = await directRes.text();
+                    if (directText.trimStart().startsWith('#EXTM3U') || directText.includes('#EXT-X-')) {
+                      console.log('[SMART ROUTER] Direct CORS fetch SUCCESS! CDN supports CORS, using Blob URL.');
+                      directFetchOk = true;
+                      // 直接用直连内容走 Blob 重写逻辑（跳过 Worker）
+                      const lines2 = directText.split('\n');
+                      const urlObj2 = new URL(capturedRealUrl);
+                      const basePath2 = urlObj2.href.substring(0, urlObj2.href.lastIndexOf('/') + 1);
+                      const modifiedLines2 = lines2.map(line => {
+                        line = line.trim();
+                        if (!line) return '';
+                        if (line.startsWith('#')) {
+                          if (line.includes('URI=')) {
+                            return line.replace(/URI="([^"]+)"/g, (match, keyUrl) => {
+                              let absKeyUrl = keyUrl;
+                              if (!keyUrl.startsWith('http://') && !keyUrl.startsWith('https://')) {
+                                absKeyUrl = keyUrl.startsWith('/') ? urlObj2.origin + keyUrl : basePath2 + keyUrl;
+                              }
+                              return `URI="${"https://jingyanff.xyz/?url=" + encodeURIComponent(absKeyUrl)}"`;
+                            });
+                          }
+                          return line;
+                        }
+                        let absUrl = line;
+                        if (!line.startsWith('http://') && !line.startsWith('https://')) {
+                          absUrl = line.startsWith('/') ? urlObj2.origin + line : basePath2 + line;
+                        }
+                        return absUrl;
+                      });
+                      const blob2 = new Blob([modifiedLines2.join('\n')], { type: 'application/x-mpegURL' });
+                      this.activeBlobUrl = URL.createObjectURL(blob2);
+                      finalVideoUrl = this.activeBlobUrl;
+                    }
+                  }
+                } catch (corsErr) {
+                  // CORS 失败或超时（最常见情况）→ 直接切 iframe，省掉 Worker 请求
+                  console.warn('[SMART ROUTER] Direct CORS fetch blocked/timeout. Skip Worker, go iframe directly.');
+                  if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
+                    this.stopLoadingAnimation();
+                    this.isIframeMode = true;
+                    this.activePlayUrl = capturedIframeUrl;
+                    return;
+                  }
+                }
+
+                if (!directFetchOk) {
+                  // 直连失败但无 iframe 地址时才走 Worker 代理（兜底）
+                  console.log("[SMART ROUTER] Falling back to Worker proxy as last resort...");
                 try {
                   const res = await fetch(proxyUrl);
                   if (res.ok) {
@@ -1816,6 +1871,7 @@ new Vue({
                   }
                   finalVideoUrl = proxyUrl;
                 }
+                } // end if (!directFetchOk)
               }
             }
 
