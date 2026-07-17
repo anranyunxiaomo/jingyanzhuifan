@@ -1607,6 +1607,20 @@ async def main_async():
         if not detail_data:
             print(f"  [BACKUP SEARCH] AID: {aid} not found in primary API. Searching title '{title}' on Storm CMS...")
             detail_data = fetch_from_backup_cms(title)
+
+        # 🛡️ [PV GUARD] 未播放番剧：禁止写入任何第三方 CMS 播放集数
+        # 所有 "未播放" 动漫的集数数据均为脏数据（来自旧季/其他番剧混入），
+        # 等正式开播、status 变为 "连载" 后 CI 才允许写入播放源
+        if detail_data:
+            _api_status = detail_data.get('video', {}).get('status', '')
+            if '未播放' in _api_status:
+                api_pls = detail_data.setdefault('video', {}).setdefault('playlists', {})
+                PV_KEEP_KEYS = {'bilibili', 'iqiyi', 'qq', 'youku', 'mgtv', 'xigua', 'tt', 'qiyi'}
+                stale = [k for k in list(api_pls.keys()) if k not in PV_KEEP_KEYS]
+                if stale:
+                    for k in stale:
+                        del api_pls[k]
+                    print(f"  [PV GUARD] 未播放番剧 '{title}' 已清除 CMS 集数: {stale}")
         
         if detail_data:
             video_api = detail_data.get("video", {})
@@ -1669,6 +1683,12 @@ async def main_async():
                 if max_eps <= 2:
                     needs_cms_booster = True
                     
+            # 🛡️ [PV GUARD] 未播放番剧不允许 CMS 补源，防止脏集数写入
+            _cur_status = detail_data.get('video', {}).get('status', '')
+            if needs_cms_booster and '未播放' in _cur_status:
+                needs_cms_booster = False
+                print(f"  [PV GUARD] Skipped CMS booster for 未播放 anime: '{title}'")
+
             if needs_cms_booster:
                 print(f"  [BOOSTER] Anime '{title}' lacks active direct-streams or has incomplete episodes. Querying CMS sites...")
                 cms_res = fetch_from_backup_cms(title)

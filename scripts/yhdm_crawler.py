@@ -304,6 +304,10 @@ def sync_anime_task(aid, title, force=False):
         playlists = video.get("playlists", {})
         status = video.get("status", "")
 
+        # 🛡️ [PV GUARD] 未播放番剧禁止写入樱花直链，防止旧季集数混入
+        if '未播放' in status:
+            return False
+
         # 已有樱花且是完结番 → 跳过（集数不会再变化）
         if not force and "yhdm_line1" in playlists and len(playlists["yhdm_line1"]) > 0:
             if "完结" in status or "全集" in status:

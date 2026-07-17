@@ -14,27 +14,11 @@
       "恋爱"
     ],
     "playlists": {
-      "yhdm_line1": [
-        [
-          "第01集",
-          "/p/30392-4-1.html"
-        ],
-        [
-          "第02集",
-          "/p/30392-4-2.html"
-        ]
-      ],
       "bilibili": [
         [
           "pv",
           "age_a712AtYxEO6vQBT9UhVFwsnCcv0fMKdZxzMp7HNVlNApcJPK6wkc6IAjKfvs9b%2BOxebv7VVEMqt9PWpfjSyFYzohng0L%2BeASsA",
           "https://175.178.227.159:7788/Play/adposter.mp4"
-        ]
-      ],
-      "anich_m3u8": [
-        [
-          "第01集",
-          "anich_placeholder_38368_1"
         ]
       ]
     },
