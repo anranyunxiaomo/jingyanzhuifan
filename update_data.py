@@ -946,12 +946,88 @@ def generate_healing_and_related_logic():
     print(f"[RELATED] Successfully injected related recommendations into {related_injected} detail files.\n")
 
 
+def clean_local_home_list():
+    """
+    清洗并过滤本地 home-list.json，移除非动漫、敏感动漫、未播放的PV动漫、以及无可播线路的动漫。
+    """
+    local_home_path = os.path.join(DATA_DIR, 'home-list.json')
+    if not os.path.exists(local_home_path):
+        print("[WARNING] home-list.json not found, skipping clean.")
+        return
+        
+    try:
+        with open(local_home_path, 'r', encoding='utf-8') as f:
+            home_data = json.load(f)
+            
+        PLAYABLE_KEYS_SET = {
+            'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong',
+            'subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1',
+            'hkan_line2','yhdm_line1','zjm3u8','tkm3u8'
+        }
+        
+        def should_keep_anime(aid, title):
+            if check_anime_sensitive_by_aid(aid, title):
+                return False
+            if not aid:
+                return True
+            detail_p = os.path.join(DATA_DIR, 'detail', f'{aid}.json')
+            if not os.path.exists(detail_p):
+                return True  # 没同步 detail 的暂时保留
+            try:
+                with open(detail_p, 'r', encoding='utf-8') as fd:
+                    detail = json.load(fd)
+                video = detail.get("video", {})
+                status = video.get("status", "")
+                if "未播放" in status:
+                    return False
+                playlists = video.get("playlists", {})
+                has_play = any(
+                    k in PLAYABLE_KEYS_SET and isinstance(eps, list) and len(eps) > 0
+                    for k, eps in playlists.items()
+                )
+                return has_play
+            except Exception:
+                return True
+
+        if isinstance(home_data, dict):
+            for key in ['latest', 'recommend', 'healing_list']:
+                if key in home_data and isinstance(home_data[key], list):
+                    before = len(home_data[key])
+                    home_data[key] = [
+                        x for x in home_data[key]
+                        if should_keep_anime(x.get('AID') or x.get('id'), x.get('Title') or x.get('name'))
+                    ]
+                    removed = before - len(home_data[key])
+                    if removed:
+                        print(f"  [HOME CLEAN] {key}: 移除了 {removed} 个 PV/敏感/无可播源动漫")
+            
+            if 'week_list' in home_data and isinstance(home_data['week_list'], dict):
+                for day, animes in home_data['week_list'].items():
+                    if isinstance(animes, list):
+                        before = len(animes)
+                        home_data['week_list'][day] = [
+                            x for x in animes 
+                            if should_keep_anime(x.get('id') or x.get('AID'), x.get('name') or x.get('Title'))
+                        ]
+                        removed = before - len(home_data['week_list'][day])
+                        if removed:
+                            print(f"  [HOME CLEAN] week_list[{day}]: 移除了 {removed} 个 PV/敏感/无可播源动漫")
+
+        with open(local_home_path, 'w', encoding='utf-8') as f_w:
+            json.dump(home_data, f_w, ensure_ascii=False, indent=2)
+        print("[SUCCESS] home-list.json cleaned and synchronized with local detail filters.")
+    except Exception as e:
+        print(f"[ERROR] Failed to clean home-list.json: {e}")
+
+
 def rebuild_static_index_and_assets():
     """
     一键重建 search_index.json 并更新 index.html 缓存版本号的统一函数。
     支持在不走网络的情况下，由本地自检愈合脚本或普通 push 构建时直接调用。
     在重建过程中，会强制执行 playlists 集数降序排序并回写详情。
     """
+    clean_local_home_list()
+
     print("\n[INDEX] Rebuilding search_index.json from all local details...")
     index_data = []
     seen_aids = set()
@@ -1258,78 +1334,11 @@ async def main_async():
         save_search_index(index_data)
         print(f"[SUCCESS] Rebuilt search_index.json with {len(index_data)} entries.")
 
-        
-        # 💡 本地首页列表 (home-list.json) 强制过滤重写，防止历史低幼或欧美海外动漫遗留展示
-        if os.path.exists(local_home_path):
-            try:
-                with open(local_home_path, 'r', encoding='utf-8') as f_home:
-                    home_data = json.load(f_home)
-                
-                if isinstance(home_data, dict):
-                    if "latest" in home_data and isinstance(home_data["latest"], list):
-                        home_data["latest"] = [
-                            item for item in home_data["latest"]
-                            if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
-                        ]
-                    if "recommend" in home_data and isinstance(home_data["recommend"], list):
-                        home_data["recommend"] = [
-                            item for item in home_data["recommend"]
-                            if not check_anime_sensitive_by_aid(item.get("AID"), item.get("Title"))
-                        ]
-                    if "week_list" in home_data and isinstance(home_data["week_list"], dict):
-                        cleaned_week = {}
-                        for day, animes in home_data["week_list"].items():
-                            if isinstance(animes, list):
-                                cleaned_week[day] = [
-                                    item for item in animes
-                                    if not check_anime_sensitive_by_aid(item.get("id"), item.get("name"))
-                                ]
-                            else:
-                                cleaned_week[day] = animes
-                        home_data["week_list"] = cleaned_week
-                
+        # 💡 清洗本地首页列表 (home-list.json)
+        clean_local_home_list()
+        # 💡 调用统一大增益：重建本地治愈番和关联系列数据 ！！！
+        generate_healing_and_related_logic()
 
-                # 💡 新增：过滤掉没有可播线路的动漫（只有bilibili/qq/tt等版权源，播放器无法播放）
-                PLAYABLE_KEYS = {'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong','subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1','hkan_line2'}
-                
-                def has_playable_source(aid):
-                    if not aid:
-                        return True
-                    detail_p = os.path.join(DATA_DIR, 'detail', f'{aid}.json')
-                    if not os.path.exists(detail_p):
-                        return True  # 还没同步detail的暂时保留
-                    try:
-                        with open(detail_p, 'r', encoding='utf-8') as f_d:
-                            d = json.load(f_d)
-                        pls = d.get('video', {}).get('playlists', {})
-                        return any(k in PLAYABLE_KEYS and isinstance(eps, list) and len(eps) > 0 for k, eps in pls.items())
-                    except:
-                        return True
-                
-                if isinstance(home_data, dict):
-                    for sk in ['latest', 'recommend', 'healing_list']:
-                        if sk in home_data and isinstance(home_data[sk], list):
-                            before_len = len(home_data[sk])
-                            home_data[sk] = [x for x in home_data[sk] if has_playable_source(x.get('AID') or x.get('id'))]
-                            removed = before_len - len(home_data[sk])
-                            if removed: print(f"[FILTER] {sk}: 移除 {removed} 个无可播线路动漫")
-                    if 'week_list' in home_data and isinstance(home_data['week_list'], dict):
-                        for day, animes in home_data['week_list'].items():
-                            if isinstance(animes, list):
-                                before_len = len(animes)
-                                home_data['week_list'][day] = [x for x in animes if has_playable_source(x.get('id') or x.get('AID'))]
-                                removed = before_len - len(home_data['week_list'][day])
-                                if removed: print(f"[FILTER] week_list[{day}]: 移除 {removed} 个无可播线路动漫")
-
-                with open(local_home_path, 'w', encoding='utf-8') as f_home_w:
-                    json.dump(home_data, f_home_w, ensure_ascii=False, indent=2)
-
-                print("[SUCCESS] Local home-list.json cleaned and re-written.")
-                
-                # 💡 调用统一大增益：重建本地治愈番和关联系列数据 ！！！
-                generate_healing_and_related_logic()
-            except Exception as clean_home_err:
-                print(f"[WARNING] Failed to clean local home-list.json: {clean_home_err}")
         
         # 2. 执行静态 Cache Busting
         print("\n[CACHE BUSTING] Updating index.html static assets version queries...")
@@ -1818,6 +1827,7 @@ async def main_async():
     # ==========================================================================
     # 💡 统一大增益：无论是否走网络，皆统一收集治愈番写入 home-list.json & 同系列关联匹配注入
     # ==========================================================================
+    clean_local_home_list()
     generate_healing_and_related_logic()
 
 
