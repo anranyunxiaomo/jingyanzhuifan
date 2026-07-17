@@ -354,19 +354,30 @@ new Vue({
           const firstEp = eps ? eps[0] : null;
           const hasRealUrl = Array.isArray(firstEp) && firstEp.length >= 3 && firstEp[2] && String(firstEp[2]).startsWith('http');
           
-          // 🥇 最稳定直连第一梯队：常规 M3U8 直链采集白名单、A123 极速直连源 与 AniCh 专属源，100% 稳定 DPlayer 免广告秒开
-          const STABLE_DPLAYER_KEYS = ['lzm3u8', 'wjm3u8', 'ffm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
+          // 🌸 樱花直链绝对置顶：yhdm_line1 是樱花动漫专属直链，优先级最高，永远排在第一位
+          if (line.key === 'yhdm_line1') {
+            return 20;
+          }
+          
+          // 🥇 非凡源次高优先：樱花不存在时非凡 (ffm3u8) 作为首选
+          if (line.key === 'ffm3u8') {
+            return 15;
+          }
+          
+          // 🥈 稳定直连第二梯队：其余常规 M3U8 直链采集白名单、A123 极速直连源 与 AniCh 专属源
+          const STABLE_DPLAYER_KEYS = ['lzm3u8', 'wjm3u8', 'bfzym3u8', 'hnm3u8', 'wolong', 'subm3u8', 'kym3u8', 'anich_m3u8', 'a123_line1'];
           if (STABLE_DPLAYER_KEYS.includes(line.key)) {
             return 10;
           }
           
-          // 🥈 备用直连第二梯队：西瓜 (xigua) 或其他被回填了直链但官方防盗链极严、极易报错降级 iframe 广告站的线路
+          // 🥉 备用直连：其他被回填了直链但防盗链较严的线路
           if (hasRealUrl) {
             return 5;
           }
           
-          // ⚠️ 垫底梯队：必须走 iframe 广告解析站的加密 VIP 线路
+          // ⚠️ 垫底：必须走 iframe 广告解析站的加密 VIP 线路
           return 0;
+
         };
         
         const scoreA = getScore(a);
