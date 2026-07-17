@@ -11,14 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-  <!-- Lucide 图标 本地化引入 (免疫 unpkg 挂掉/被墙隐患) -->
-  <script src="js/vendor/lucide.min.js"></script>
-
-  <!-- H5 播放器 M3U8 支持 (本地化 hls.js & ArtPlayer) -->
-  <script src="js/vendor/hls.min.js"></script>
-  <script src="js/vendor/artplayer.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=20260717T1518">
-  <script>window.JYZF_VERSION = "20260717T1518";</script>
+  <!-- 💡 hls.min.js + artplayer.js 已移至按需动态加载（playEpisode 时才引入），节省首屏 570KB 阻塞 -->
+  <!-- DNS 预连接：加速封面图片 CDN 的 TCP 握手 -->
+  <link rel="dns-prefetch" href="//cdn.aqdstatic.com">
+  <link rel="stylesheet" href="css/style.css?v=20260717T1535">
+  <script>window.JYZF_VERSION = "20260717T1535";</script>
 </head>
 <body class="loader-active">
 
@@ -496,7 +493,10 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="getProxiedImageUrl(item.Cover)" :alt="item.Title" class="card-cover" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+              <img :src="getProxiedImageUrl(item.Cover)" :alt="item.Title" class="card-cover"
+                loading="lazy" decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -556,6 +556,7 @@
                 :src="'https://cdn.aqdstatic.com:966/age/' + item.id + '.jpg'" 
                 :alt="item.name" 
                 class="card-cover"
+                loading="lazy" decoding="async"
                 onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'"
               >
             </div>
@@ -593,7 +594,9 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+              <img :src="item.PicSmall" :alt="item.Title" class="card-cover"
+                loading="lazy" decoding="async"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -628,7 +631,9 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="item.PicSmall" :alt="item.Title" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
+              <img :src="item.PicSmall" :alt="item.Title" class="card-cover"
+                loading="lazy" decoding="async"
+                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -660,7 +665,9 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="getProxiedImageUrl(item.PicSmall)" :alt="item.Title" class="card-cover" referrerpolicy="no-referrer" @error="handleImageError($event, item.AID)">
+              <img :src="getProxiedImageUrl(item.PicSmall)" :alt="item.Title" class="card-cover"
+                loading="lazy" decoding="async"
+                referrerpolicy="no-referrer" @error="handleImageError($event, item.AID)">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -700,7 +707,9 @@
                   <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
                 </svg>
               </div>
-              <img :src="getProxiedImageUrl(item.Cover || item.PicSmall)" :alt="item.Title" class="card-cover" referrerpolicy="no-referrer" @error="handleImageError($event, item.AID)">
+              <img :src="getProxiedImageUrl(item.Cover || item.PicSmall)" :alt="item.Title" class="card-cover"
+                loading="lazy" decoding="async"
+                referrerpolicy="no-referrer" @error="handleImageError($event, item.AID)">
             </div>
             <div class="card-info">
               <h3 class="card-title">{{ item.Title }}</h3>
@@ -1032,11 +1041,23 @@
   </footer>
 </div>
 
-<!-- 本地依赖引入 -->
+<!-- 非关键 JS 按顺序在底部加载（不阻塞首屏渲染） -->
+<script src="js/vendor/lucide.min.js"></script>
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260717T1518"></script>
+<script src="js/app_v2.js?v=20260717T1535"></script>
+
+<!-- Service Worker 注册（静态资源缓存，二次访问秒开） -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js')
+      .then(function(reg) { console.log('[SW] 已注册，缓存加速生效:', reg.scope); })
+      .catch(function(err) { console.warn('[SW] 注册失败（不影响使用）:', err); });
+  });
+}
+</script>
 
 </body>
 </html>

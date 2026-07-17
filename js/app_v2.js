@@ -1,4 +1,42 @@
+// ============================================================
+// 🎬 播放器库按需动态加载
+// hls.min.js (412KB) + artplayer.js (157KB) 共 570KB
+// 仅在用户首次点击播放时加载，首屏不阻塞
+// ============================================================
+const _playerLibsState = { loaded: false, loading: null };
+
+function loadPlayerLibs() {
+  if (_playerLibsState.loaded) return Promise.resolve();
+  if (_playerLibsState.loading) return _playerLibsState.loading;
+
+  function _injectScript(src) {
+    return new Promise(function(resolve, reject) {
+      // 已存在则直接 resolve
+      if (document.querySelector('script[src="' + src + '"]')) {
+        resolve(); return;
+      }
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = function() { reject(new Error('加载失败: ' + src)); };
+      document.head.appendChild(s);
+    });
+  }
+
+  _playerLibsState.loading = Promise.all([
+    _injectScript('js/vendor/hls.min.js'),
+    _injectScript('js/vendor/artplayer.js')
+  ]).then(function() {
+    _playerLibsState.loaded = true;
+    _playerLibsState.loading = null;
+    console.log('[Player] hls.js + artplayer.js 已动态加载完成');
+  });
+
+  return _playerLibsState.loading;
+}
+
 new Vue({
+
   el: '#app',
   data: {
     // 页面模式控制
@@ -1258,6 +1296,9 @@ new Vue({
     },
     
     async playEpisode(epIdx, isAutoRetry = false) {
+      // 🎬 按需加载播放器库（首次点击时才下载 hls.min.js + artplayer.js，不阻塞首屏）
+      await loadPlayerLibs();
+
       if (!isAutoRetry) {
         this._triedLines = new Set();
       }
