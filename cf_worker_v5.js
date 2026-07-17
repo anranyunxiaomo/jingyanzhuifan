@@ -107,13 +107,25 @@ export default {
           });
         }
 
-        // 获取最近的前 150 条记录
-        const list = await env.JYZF_LOGS.list({ prefix: 'log:', limit: 150 });
+        // 获取 v2log:（最新倒序排序）和传统的 log:（历史排序）
+        const v2list = await env.JYZF_LOGS.list({ prefix: 'v2log:', limit: 150 });
         const logs = [];
-        for (const key of list.keys) {
+        
+        for (const key of v2list.keys) {
           const val = await env.JYZF_LOGS.get(key.name);
           if (val) {
             logs.push(JSON.parse(val));
+          }
+        }
+        
+        // 如果 v2log: 新数据不足 150 条，用旧版的 log: 记录填补
+        if (logs.length < 150) {
+          const list = await env.JYZF_LOGS.list({ prefix: 'log:', limit: 150 - logs.length });
+          for (const key of list.keys) {
+            const val = await env.JYZF_LOGS.get(key.name);
+            if (val) {
+              logs.push(JSON.parse(val));
+            }
           }
         }
 
@@ -159,7 +171,9 @@ export default {
       const progress = url.searchParams.get('progress') || '00:00';
 
       if (client && anime && session) {
-        const logKey = `log:${session}:${client}`;
+        const sessionTimestamp = parseInt(session.split('_')[0]) || Date.now();
+        const invertedTime = 9999999999999 - sessionTimestamp;
+        const logKey = `v2log:${invertedTime}:${client}`;
         const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
         const country = request.cf ? request.cf.country : (request.headers.get('cf-ipcountry') || '');
         const region = request.cf ? request.cf.region : (request.headers.get('cf-region') || '');
@@ -544,7 +558,9 @@ export default {
     const sessionParam = url.searchParams.get('session');
 
     if (clientParam && animeParam && episodeParam && sessionParam && (targetUrlStr.includes('.m3u8') || targetUrlStr.includes('index.m3u8'))) {
-      const logKey = `log:${sessionParam}:${clientParam}`;
+      const sessionTimestamp = parseInt(sessionParam.split('_')[0]) || Date.now();
+      const invertedTime = 9999999999999 - sessionTimestamp;
+      const logKey = `v2log:${invertedTime}:${clientParam}`;
       
       const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
       const country = request.cf ? request.cf.country : (request.headers.get('cf-ipcountry') || '');
