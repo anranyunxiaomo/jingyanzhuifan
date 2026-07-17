@@ -107,26 +107,52 @@ export default {
           });
         }
 
-        // 获取 v2log:（最新倒序排序）和传统的 log:（历史排序）
-        const v2list = await env.JYZF_LOGS.list({ prefix: 'v2log:', limit: 150 });
+        // 1. 获取所有的 v2log:（最新倒序排序）
+        const v2list = await env.JYZF_LOGS.list({ prefix: 'v2log:' });
         const logs = [];
+        const keysToDelete = [];
         
-        for (const key of v2list.keys) {
-          const val = await env.JYZF_LOGS.get(key.name);
-          if (val) {
-            logs.push(JSON.parse(val));
+        for (let i = 0; i < v2list.keys.length; i++) {
+          const key = v2list.keys[i];
+          if (i < 150) {
+            const val = await env.JYZF_LOGS.get(key.name);
+            if (val) {
+              logs.push(JSON.parse(val));
+            }
+          } else {
+            // 💡 超过 150 条的冗余日志加入删除队列，保持 KV 干净
+            keysToDelete.push(key.name);
           }
         }
         
-        // 如果 v2log: 新数据不足 150 条，用旧版的 log: 记录填补
-        if (logs.length < 150) {
-          const list = await env.JYZF_LOGS.list({ prefix: 'log:', limit: 150 - logs.length });
-          for (const key of list.keys) {
+        // 2. 自动获取旧版以 log: 开头的历史旧日志，进行平滑过渡和逐步删除（每次删除最多 100 条）
+        const oldList = await env.JYZF_LOGS.list({ prefix: 'log:', limit: 100 });
+        const oldKeysToDelete = oldList.keys.map(k => k.name);
+        
+        // 如果新日志不足 150 条且我们没删完旧日志，用旧日志临时填补显示
+        if (logs.length < 150 && oldList.keys.length > 0) {
+          for (const key of oldList.keys) {
+            if (logs.length >= 150) break;
             const val = await env.JYZF_LOGS.get(key.name);
             if (val) {
               logs.push(JSON.parse(val));
             }
           }
+        }
+
+        // 3. 异步非阻塞执行 KV 数据库清理，确保数据库总容量恒定在 150 条以内
+        const allDeletes = [...keysToDelete, ...oldKeysToDelete];
+        if (allDeletes.length > 0 && env.JYZF_LOGS) {
+          ctx.waitUntil((async () => {
+            for (const kn of allDeletes) {
+              try {
+                await env.JYZF_LOGS.delete(kn);
+              } catch(e) {
+                console.error("KV Delete error:", e);
+              }
+            }
+            console.log(`[KV AUTO-CLEANUP] Successfully purged ${allDeletes.length} legacy/excess keys.`);
+          })());
         }
 
         // 按时间倒序排列 (最新的排最前)
