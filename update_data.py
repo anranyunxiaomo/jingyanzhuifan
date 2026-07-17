@@ -965,7 +965,27 @@ def rebuild_static_index_and_assets():
                             except:
                                 pass
                             continue
-                            
+
+                        # 💡 [PV FILTER] 过滤「未播放 + 纯版权源 + 无可播集数」的 PV 预告片番剧
+                        # 规则：status=未播放 AND 无任何可播直链线路 AND 总可播集数=0
+                        # 效果：detail 文件保留（CI 更新时可重新评估），但不出现在搜索结果中
+                        # 触发恢复：正式开播后 CI 拉取到真实集数，自动重新入库
+                        PLAYABLE_KEYS_SET = {
+                            'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong',
+                            'subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1',
+                            'hkan_line2','yhdm_line1','zjm3u8','tkm3u8'
+                        }
+                        _status = video.get('status', '')
+                        _playlists = video.get('playlists', {})
+                        _playable_eps = sum(
+                            len(eps) for k, eps in _playlists.items()
+                            if k in PLAYABLE_KEYS_SET and isinstance(eps, list)
+                        )
+                        if '未播放' in _status and _playable_eps == 0:
+                            print(f"  [PV SKIP] 跳过未开播PV番剧（无可播集数）: {title} ({aid_str})")
+                            continue
+
+
                         pinyin_code = get_pinyin_initials(title)
                         entry_aid = aid_str
                         if aid_str.isdigit():
