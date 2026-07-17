@@ -261,6 +261,56 @@
           "https://vip1.lz-cdn5.com/20220617/25413_b7373f9f/index.m3u8",
           "https://vip1.lz-cdn5.com/20220617/25413_b7373f9f/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第1集",
+          "https://www.yhdm666.top/p/27880-2-1.html"
+        ],
+        [
+          "第2集",
+          "https://www.yhdm666.top/p/27880-2-2.html"
+        ],
+        [
+          "第3集",
+          "https://www.yhdm666.top/p/27880-2-3.html"
+        ],
+        [
+          "第4集",
+          "https://www.yhdm666.top/p/27880-2-4.html"
+        ],
+        [
+          "第5集",
+          "https://www.yhdm666.top/p/27880-2-5.html"
+        ],
+        [
+          "第6集",
+          "https://www.yhdm666.top/p/27880-2-6.html"
+        ],
+        [
+          "第7集",
+          "https://www.yhdm666.top/p/27880-2-7.html"
+        ],
+        [
+          "第8集",
+          "https://www.yhdm666.top/p/27880-2-8.html"
+        ],
+        [
+          "第9集",
+          "https://www.yhdm666.top/p/27880-2-9.html"
+        ],
+        [
+          "第10集",
+          "https://www.yhdm666.top/p/27880-2-10.html"
+        ],
+        [
+          "第11集",
+          "https://www.yhdm666.top/p/27880-2-11.html"
+        ],
+        [
+          "第12集",
+          "https://www.yhdm666.top/p/27880-2-12.html"
+        ]
       ]
     },
     "area": "日本",
@@ -371,7 +421,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {
