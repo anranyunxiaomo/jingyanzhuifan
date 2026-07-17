@@ -2461,16 +2461,34 @@ body {
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 周表区域：Tab已改为grid布局不溢出，不需overflow裁剪 */
+  /* 周表区域：Tab 强制 Grid 7等分，从此不依赖 overflow-x:auto（会被 app-main 的 overflow-x:hidden 截断） */
   .schedule-section {
     overflow: visible;
     width: 100% !important;
     box-sizing: border-box !important;
   }
-  /* Tab 容器宽度限制 */
+  /* 📅 移动端全尺寸统一：Grid 7等分，彻底消除周日被截断的问题 */
   .week-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 4px !important;
+    overflow: visible !important;
     width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  /* Tab 按钮：去掉横向 padding，文字居中，确保在 1/7 宽度内完整显示 */
+  .tab-btn {
+    padding: 0.55rem 0 !important;
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    letter-spacing: 0;
   }
   /* 推荐/最近更新：固定3列 — 防止 minmax 临界值导致列数突变或溢出 */
   .grid-list {
@@ -2483,6 +2501,12 @@ body {
   .anime-card {
     min-width: 0 !important;
     box-sizing: border-box !important;
+    overflow: hidden !important; /* 防止卡片内容溢出裁剪相邻格 */
+  }
+  /* ✅ 修复封面裁一半：border 不再额外占用宽度，保持在卡片内 */
+  .card-cover-wrapper {
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
   /* Banner 内容调整（高度由 clamp 控制） */
   .banner-slide {
