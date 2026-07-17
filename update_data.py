@@ -1394,11 +1394,17 @@ async def main_async():
                             aid = item.get('id') or item.get('AID')
                             name = item.get('name') or item.get('Title')
                             if aid:
+                                # Bug Fix: week_list 的集数字段是 namefornew 而非 new_title/NewTitle
+                                # namefornew 格式: "22:00 第03集" 或 "第02集"，需剥离时间前缀提取纯集数
+                                raw_namefornew = item.get('namefornew') or item.get('new_title') or item.get('NewTitle') or ''
+                                ep_match = re.search(r'[第]\d+集', raw_namefornew)
+                                clean_new_title = ep_match.group() if ep_match else raw_namefornew
                                 aids_to_fetch[str(aid)] = {
                                     'title': name or '未知动漫',
-                                    'new_title': item.get('new_title') or item.get('NewTitle') or '',
+                                    'new_title': clean_new_title,
                                     'is_active': True
                                 }
+
 
         # 获取最近更新的前 15 页 (汇总包含近一个月内更新的所有最热当季新番，大约 450+ 部)
         print("Fetching update pages 1 to 15...")
@@ -1521,11 +1527,18 @@ async def main_async():
             should_skip_api = False
             new_title = info.get('new_title', '')
             
-            # 💡 完结过滤核心：如果本地已缓存详情且状态为“完结”/“已完结”/“全集”，说明不会再有更新，直接 100% 跳过 API 请求！
+            # Bug Fix: PV 陈旧强制刷新（优先级最高，在所有 skip 判断之前执行）
+            # 若本地 uptodate=PV（文件建立时仅有预告片），但 home-list 的 namefornew 已显示实际集数
+            # 说明数据严重陈旧，强制重新拉取，不走后面任何 skip 逻辑
             status_cached = video_cached.get("status", "") if isinstance(video_cached, dict) else ""
-            if "完结" in status_cached or "全集" in status_cached:
+            uptodate_cached = video_cached.get("uptodate", "") if isinstance(video_cached, dict) else ""
+            if uptodate_cached == "PV" and new_title and re.search(r'第\d+集', new_title):
+                should_skip_api = False
+                print(f"  [STALE FORCE] {title} (AID:{aid}) uptodate=PV but schedule shows {new_title}, forcing API refresh.")
+            # 完结过滤核心：状态为“完结”/“全集”，不会再更新
+            elif "完结" in status_cached or "全集" in status_cached:
                 should_skip_api = True
-            # 💡 增量核心：如果该动漫在最近更新列表里找不到，且它不是连载中状态，则 100% 跳过以节省 API 额度
+            # 增量核心：该动漫在近期更新列表里找不到，且不是连载中状态，100% 跳过以节省 API 额度
             elif aid not in recently_updated_aids and "连载" not in status_cached:
                 should_skip_api = True
             else:
