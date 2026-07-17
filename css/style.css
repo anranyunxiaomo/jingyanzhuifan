@@ -891,7 +891,7 @@ body::after {
   z-index: 1;
   box-sizing: border-box;
   width: calc(100% - clamp(0.4rem, 2vw, 2rem) * 2);
-  overflow-x: hidden;
+  overflow: clip; /* 现代裁剪：不创建 scroll 容器，不影响 sticky，仍阻断视觉溢出 */
 
   transform-origin: center;
   animation: scrollUnroll 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -2637,6 +2637,9 @@ body {
     margin-left: 0.4rem !important;
     margin-right: 0.4rem !important;
     margin-top: 0.8rem !important;
+    /* ✅ 增大水平 padding，确保最右列封面不被 overflow:clip 截断 */
+    padding-left: max(1rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right, 0px)) !important;
     padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
     box-sizing: border-box !important;
   }
@@ -2768,7 +2771,11 @@ body {
 
   /* app-main 贴边 */
   .app-main {
-    padding: 0.8rem 0.5rem !important;
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+    /* ✅ 1rem 内边距 + 安全区域：16px 确保最右列不被 clip 截断 */
+    padding-left: max(1rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right, 0px)) !important;
     margin-left: 0.25rem !important;
     margin-right: 0.25rem !important;
     margin-top: 0.5rem !important;
