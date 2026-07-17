@@ -2461,25 +2461,26 @@ body {
   .app-main::before {
     top: 4px; left: 4px; right: 4px; bottom: 4px;
   }
-  /* 周表区域：Tab 强制 Grid 7等分，从此不依赖 overflow-x:auto（会被 app-main 的 overflow-x:hidden 截断） */
+  /* 周表区域：overflow:clip 而非 visible，避免 scroll container 影响 grid track min-size */
   .schedule-section {
-    overflow: visible;
+    overflow: clip;
     width: 100% !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
   }
-  /* 📅 移动端全尺寸统一：Grid 7等分，彻底消除周日被截断的问题 */
+  /* 📅 平板端：Grid 7等分，彻底消除周日被截断 */
   .week-tabs {
     display: grid !important;
-    grid-template-columns: repeat(7, 1fr) !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
     gap: 4px !important;
-    overflow: visible !important;
+    overflow: clip !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     padding-bottom: 0.5rem !important;
     margin-bottom: 0.8rem !important;
   }
-  /* Tab 按钮：去掉横向 padding，文字居中，确保在 1/7 宽度内完整显示 */
+  /* Tab 按钮：去掉横向 padding，文字居中 */
   .tab-btn {
     padding: 0.55rem 0 !important;
     font-size: 0.8rem !important;
@@ -2487,13 +2488,13 @@ body {
     white-space: nowrap !important;
     box-sizing: border-box !important;
     min-width: 0 !important;
-    overflow: hidden !important;
+    overflow: clip !important;
     letter-spacing: 0;
   }
-  /* 推荐/最近更新：固定3列 — 防止 minmax 临界值导致列数突变或溢出 */
+  /* 平板端（769-768px）：3列布局 */
   .grid-list {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 0.55rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -2501,7 +2502,7 @@ body {
   .anime-card {
     min-width: 0 !important;
     box-sizing: border-box !important;
-    overflow: hidden !important; /* 防止卡片内容溢出裁剪相邻格 */
+    overflow: hidden !important;
   }
   /* ✅ 修复封面裁一半：border 不再额外占用宽度，保持在卡片内 */
   .card-cover-wrapper {
@@ -2731,42 +2732,43 @@ body {
   }
 
   /* 卡片网格及卡片精细紧凑化，提高手机端浏览效率，防止封面过大 */
+  /* 📱 手机端（≤480px）：2列布局 — 封面更大、更清晰，符合移动端最佳实践 */
   .grid-list {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.45rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.6rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
   .anime-card {
-    padding: 4px 4px 6px;
+    padding: 6px 6px 8px;
     border-top-width: 1.5px;
     border-bottom-width: 1.5px;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     box-sizing: border-box !important;
-    min-width: 0 !important; /* Allow grid cards to shrink without stretching the page */
+    min-width: 0 !important;
   }
   .card-title {
-    font-size: 0.72rem;
-    line-height: 1.25;
+    font-size: 0.82rem;  /* 2列时封面更宽，字体可以稍大 */
+    line-height: 1.3;
     letter-spacing: 0;
-    margin-top: 4px;
+    margin-top: 5px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    height: 2.5em; /* 锁定两行高度，确保所有卡片高度严格一致，避免参差不齐 */
+    height: 2.6em;
   }
   .card-update-time {
-    font-size: 0.65rem;
-    margin-top: 2px;
+    font-size: 0.72rem;
+    margin-top: 3px;
   }
   .card-tag {
-    font-size: 0.58rem;
-    padding: 0.1rem 0.25rem;
-    top: 4px;
-    right: 4px;
-    border-radius: 2px;
+    font-size: 0.65rem;
+    padding: 0.12rem 0.3rem;
+    top: 5px;
+    right: 5px;
+    border-radius: 3px;
   }
 
   /* app-main 贴边 */
@@ -2818,12 +2820,12 @@ body {
     width: 100%;
   }
 
-  /* 📅 480px 以下：CSS Grid 强制7等分，全部显示无需滚动 */
+  /* 📅 手机端（≤480px）：CSS Grid 强制7等分，全部显示无需滚动 */
   .week-tabs {
     display: grid !important;
-    grid-template-columns: repeat(7, 1fr) !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
     gap: 3px !important;
-    overflow: visible !important;
+    overflow: clip !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -2838,7 +2840,7 @@ body {
     white-space: nowrap !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: clip !important;
     letter-spacing: -0.02em;
   }
 
@@ -5108,18 +5110,21 @@ body.art-native-fullscreen-active .sidebar {
 /* 响应式适配 */
 @media (max-width: 992px) {
   .home-main-layout-grid {
-    grid-template-columns: 1fr !important;
+    /* ✅ 关键修复：minmax(0,1fr) 明确最小值=0，防止 auto minimum 膨胀
+       使用 overflow:clip 而非 overflow:hidden，避免创建 scroll container
+       scroll container 会让 Chrome 把 416px 滚动内容纳入 grid track 最小值 */
+    grid-template-columns: minmax(0, 1fr) !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: clip !important;
   }
   .home-main-col {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: clip !important;  /* clip 不创建 scroll container */
   }
   .home-side-col {
     position: static !important;
