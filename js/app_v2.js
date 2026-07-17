@@ -1904,7 +1904,7 @@ new Vue({
               aspectRatio: true,
               setting: true,
               pip: true,
-              fullscreen: true,    // ✅ 原生全屏 API（PC/Android Chrome/iPad 均延有）
+              fullscreen: false,   // ❌ 关闭 ArtPlayer 原生全屏按钮：iOS webkitEnterFullScreen 会进入无法退出的系统播放器
               fullscreenWeb: false, // ❌ 禁用 ArtPlayer 内置 fullscreenWeb：其 position:fixed 在 iOS 被 transform 祖先截断，改由我们自己的 DOM Teleport 方案接管
               // 💡 关闭不需要的内置功能（☢️截图、翻转等默认控件）
               screenshot: false,
@@ -2595,19 +2595,43 @@ new Vue({
         this._fsOriginalNext   = dplayerEl.nextElementSibling;
         document.body.appendChild(dplayerEl);
 
-        dplayerEl.style.cssText = [
-          'position: fixed',
-          'top: 0',
-          'left: 0',
-          'width: 100vw',
-          'height: 100vh',
-          'height: 100dvh',
-          'z-index: 2147483647',
-          'background: #000',
-          'border-radius: 0',
-          'margin: 0',
-          'padding: 0',
-        ].join(' !important; ') + ' !important;';
+        // 💡 竖屏手机：用 CSS rotate(90deg) 模拟横屏，让 16:9 视频充满屏幕
+        const isPortrait = window.innerHeight > window.innerWidth;
+        if (isPortrait) {
+          // 旋转后：元素的「宽」= 屏幕高，元素的「高」= 屏幕宽
+          // transform: translate(-50%,-50%) rotate(90deg) 让旋转后的矩形居中对齐视口
+          const sw = window.innerWidth;
+          const sh = window.innerHeight;
+          dplayerEl.style.cssText = [
+            'position: fixed',
+            `top: ${(sh - sw) / 2}px`,
+            `left: ${(sw - sh) / 2}px`,
+            `width: ${sh}px`,         // 旋转后变成视觉上的「高」= 屏幕高
+            `height: ${sw}px`,        // 旋转后变成视觉上的「宽」= 屏幕宽
+            'transform: rotate(90deg)',
+            'transform-origin: center center',
+            'z-index: 2147483647',
+            'background: #000',
+            'border-radius: 0',
+            'margin: 0',
+            'padding: 0',
+          ].join(' !important; ') + ' !important;';
+        } else {
+          // 横屏 / PC：直接铺满
+          dplayerEl.style.cssText = [
+            'position: fixed',
+            'top: 0',
+            'left: 0',
+            'width: 100vw',
+            'height: 100vh',
+            'height: 100dvh',
+            'z-index: 2147483647',
+            'background: #000',
+            'border-radius: 0',
+            'margin: 0',
+            'padding: 0',
+          ].join(' !important; ') + ' !important;';
+        }
 
         document.body.style.setProperty('overflow', 'hidden', 'important');
         document.body.classList.add('art-fullscreen-web-active');
