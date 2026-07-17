@@ -868,6 +868,14 @@ def generate_healing_and_related_logic():
         return t.strip()
 
     # 1. 扫描并缓存所有动漫的名字和 clean_title 基础特征
+    # 💡 [RELATED GUARD] 只收录有可播集数的番剧，PV 无源番不参与 related，防止断链
+    PLAYABLE_KEYS_FOR_RELATED = {
+        'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong',
+        'subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1',
+        'hkan_line2','yhdm_line1','zjm3u8','tkm3u8'
+    }
+    existing_aids = set(fn[:-5] for fn in os.listdir(DETAIL_DIR) if fn.endswith('.json'))
+
     anime_list = []
     for filename in os.listdir(DETAIL_DIR):
         if filename.endswith(".json"):
@@ -878,6 +886,15 @@ def generate_healing_and_related_logic():
                     video = json.load(f).get("video", {})
                     name = video.get("name")
                     if name:
+                        # 过滤 PV/未播放且无可播集数的番剧
+                        _status = video.get('status', '')
+                        _pls = video.get('playlists', {})
+                        _playable = sum(
+                            len(eps) for k, eps in _pls.items()
+                            if k in PLAYABLE_KEYS_FOR_RELATED and isinstance(eps, list)
+                        )
+                        if '未播放' in _status and _playable == 0:
+                            continue
                         base = get_base_title(name)
                         anime_list.append({
                             "id": aid_str,
@@ -906,6 +923,9 @@ def generate_healing_and_related_logic():
                 
             # 💡 [CRITICAL] 核心算法：互为子串（如 “名侦探柯南” 包含于 “名侦探柯南警察学校篇” ），或者清洗后拼音基准高度相似
             if base_current in base_other or base_other in base_current:
+                # [EXISTENCE CHECK] 被引用 AID 必须在磁盘实际存在，防止断链
+                if other["id"] not in existing_aids:
+                    continue
                 related.append({
                     "id": other["id"],
                     "title": other["title"],
