@@ -9,51 +9,6 @@
     "tags": "",
     "status": "更新至9集",
     "playlists": {
-      "a123_line1": [
-        [
-          "第01集",
-          "/v/caomeiaige/46z2t3hz0.html"
-        ],
-        [
-          "第02集",
-          "/v/caomeiaige/46z2t3hz1.html"
-        ],
-        [
-          "第03集",
-          "/v/caomeiaige/46z2t3hz2.html"
-        ],
-        [
-          "第04集",
-          "/v/caomeiaige/46z2t3hz3.html"
-        ],
-        [
-          "第05集",
-          "/v/caomeiaige/46z2t3hz4.html"
-        ],
-        [
-          "第06集",
-          "/v/caomeiaige/46z2t3hz5.html"
-        ],
-        [
-          "第07集",
-          "/v/caomeiaige/46z2t3hz6.html"
-        ],
-        [
-          "第08集",
-          "/v/caomeiaige/46z2t3hz7.html"
-        ],
-        [
-          "第09集",
-          "/v/caomeiaige/46z2t3hz8.html"
-        ]
-      ],
-      "bfzym3u8": [
-        [
-          "第01集",
-          "https://v.baofeng9.com/video/caomeishuaigequegenjindehuopomeimeiyuwufashihuaidegege/4b3110ec5ac7/index.m3u8",
-          "https://v.baofeng9.com/video/caomeishuaigequegenjindehuopomeimeiyuwufashihuaidegege/4b3110ec5ac7/index.m3u8"
-        ]
-      ],
       "ffm3u8": [
         [
           "第01集",
@@ -300,6 +255,51 @@
           "第12集完结",
           "https://hd.ijycnd.com/play/bo2Q17Xa/index.m3u8",
           "https://hd.ijycnd.com/play/bo2Q17Xa/index.m3u8"
+        ]
+      ],
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/caomeiaige/46z2t3hz0.html"
+        ],
+        [
+          "第02集",
+          "/v/caomeiaige/46z2t3hz1.html"
+        ],
+        [
+          "第03集",
+          "/v/caomeiaige/46z2t3hz2.html"
+        ],
+        [
+          "第04集",
+          "/v/caomeiaige/46z2t3hz3.html"
+        ],
+        [
+          "第05集",
+          "/v/caomeiaige/46z2t3hz4.html"
+        ],
+        [
+          "第06集",
+          "/v/caomeiaige/46z2t3hz5.html"
+        ],
+        [
+          "第07集",
+          "/v/caomeiaige/46z2t3hz6.html"
+        ],
+        [
+          "第08集",
+          "/v/caomeiaige/46z2t3hz7.html"
+        ],
+        [
+          "第09集",
+          "/v/caomeiaige/46z2t3hz8.html"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "https://v.baofeng9.com/video/caomeishuaigequegenjindehuopomeimeiyuwufashihuaidegege/4b3110ec5ac7/index.m3u8",
+          "https://v.baofeng9.com/video/caomeishuaigequegenjindehuopomeimeiyuwufashihuaidegege/4b3110ec5ac7/index.m3u8"
         ]
       ]
     }

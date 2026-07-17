@@ -130,63 +130,6 @@
           "https://v.baofeng9.com/video/daerwenshibian/65379041dbeb/index.m3u8"
         ]
       ],
-      "ffm3u8": [
-        [
-          "第01集",
-          "https://vip.ffzy-plays.com/20260107/49278_0e327f32/index.m3u8",
-          "https://vip.ffzy-plays.com/20260107/49278_0e327f32/index.m3u8"
-        ],
-        [
-          "第02集",
-          "https://vip.ffzy-plays.com/20260121/49657_491fdb54/index.m3u8",
-          "https://vip.ffzy-plays.com/20260121/49657_491fdb54/index.m3u8"
-        ],
-        [
-          "第03集",
-          "https://vip.ffzy-plays.com/20260121/49658_e75a95d8/index.m3u8",
-          "https://vip.ffzy-plays.com/20260121/49658_e75a95d8/index.m3u8"
-        ],
-        [
-          "第04集",
-          "https://vip.ffzy-plays.com/20260204/50189_378d7280/index.m3u8",
-          "https://vip.ffzy-plays.com/20260204/50189_378d7280/index.m3u8"
-        ],
-        [
-          "第05集",
-          "https://vip.ffzy-plays.com/20260204/50190_a9338455/index.m3u8",
-          "https://vip.ffzy-plays.com/20260204/50190_a9338455/index.m3u8"
-        ],
-        [
-          "第06集",
-          "https://vip.ffzy-plays.com/20260211/50412_8412f420/index.m3u8",
-          "https://vip.ffzy-plays.com/20260211/50412_8412f420/index.m3u8"
-        ],
-        [
-          "第07集",
-          "https://vip.ffzy-plays.com/20260304/51105_a7a468ea/index.m3u8",
-          "https://vip.ffzy-plays.com/20260304/51105_a7a468ea/index.m3u8"
-        ],
-        [
-          "第08集",
-          "https://vip.ffzy-plays.com/20260304/51106_b5d3e132/index.m3u8",
-          "https://vip.ffzy-plays.com/20260304/51106_b5d3e132/index.m3u8"
-        ],
-        [
-          "第09集",
-          "https://vip.ffzy-plays.com/20260311/51337_fcfddd32/index.m3u8",
-          "https://vip.ffzy-plays.com/20260311/51337_fcfddd32/index.m3u8"
-        ],
-        [
-          "第10集",
-          "https://vip.ffzy-plays.com/20260311/51338_b702dd32/index.m3u8",
-          "https://vip.ffzy-plays.com/20260311/51338_b702dd32/index.m3u8"
-        ],
-        [
-          "第11集",
-          "https://vip.ffzy-plays.com/20260318/51524_580710de/index.m3u8",
-          "https://vip.ffzy-plays.com/20260318/51524_580710de/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -376,6 +319,63 @@
           "第12集完结",
           "https://hd.ijycnd.com/play/dL98DnXe/index.m3u8",
           "https://hd.ijycnd.com/play/dL98DnXe/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "第01集",
+          "https://vip.ffzy-plays.com/20260107/49278_0e327f32/index.m3u8",
+          "https://vip.ffzy-plays.com/20260107/49278_0e327f32/index.m3u8"
+        ],
+        [
+          "第02集",
+          "https://vip.ffzy-plays.com/20260121/49657_491fdb54/index.m3u8",
+          "https://vip.ffzy-plays.com/20260121/49657_491fdb54/index.m3u8"
+        ],
+        [
+          "第03集",
+          "https://vip.ffzy-plays.com/20260121/49658_e75a95d8/index.m3u8",
+          "https://vip.ffzy-plays.com/20260121/49658_e75a95d8/index.m3u8"
+        ],
+        [
+          "第04集",
+          "https://vip.ffzy-plays.com/20260204/50189_378d7280/index.m3u8",
+          "https://vip.ffzy-plays.com/20260204/50189_378d7280/index.m3u8"
+        ],
+        [
+          "第05集",
+          "https://vip.ffzy-plays.com/20260204/50190_a9338455/index.m3u8",
+          "https://vip.ffzy-plays.com/20260204/50190_a9338455/index.m3u8"
+        ],
+        [
+          "第06集",
+          "https://vip.ffzy-plays.com/20260211/50412_8412f420/index.m3u8",
+          "https://vip.ffzy-plays.com/20260211/50412_8412f420/index.m3u8"
+        ],
+        [
+          "第07集",
+          "https://vip.ffzy-plays.com/20260304/51105_a7a468ea/index.m3u8",
+          "https://vip.ffzy-plays.com/20260304/51105_a7a468ea/index.m3u8"
+        ],
+        [
+          "第08集",
+          "https://vip.ffzy-plays.com/20260304/51106_b5d3e132/index.m3u8",
+          "https://vip.ffzy-plays.com/20260304/51106_b5d3e132/index.m3u8"
+        ],
+        [
+          "第09集",
+          "https://vip.ffzy-plays.com/20260311/51337_fcfddd32/index.m3u8",
+          "https://vip.ffzy-plays.com/20260311/51337_fcfddd32/index.m3u8"
+        ],
+        [
+          "第10集",
+          "https://vip.ffzy-plays.com/20260311/51338_b702dd32/index.m3u8",
+          "https://vip.ffzy-plays.com/20260311/51338_b702dd32/index.m3u8"
+        ],
+        [
+          "第11集",
+          "https://vip.ffzy-plays.com/20260318/51524_580710de/index.m3u8",
+          "https://vip.ffzy-plays.com/20260318/51524_580710de/index.m3u8"
         ]
       ]
     }

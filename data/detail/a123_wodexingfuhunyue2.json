@@ -63,13 +63,6 @@
           "/v/wodexingfuhunyue2/4uz1l58z12.html"
         ]
       ],
-      "bfzym3u8": [
-        [
-          "HD",
-          "https://c1.rrcdnbf5.com/video/wodexingfuhunyue2023/HD/index.m3u8",
-          "https://c1.rrcdnbf5.com/video/wodexingfuhunyue2023/HD/index.m3u8"
-        ]
-      ],
       "lzm3u8": [
         [
           "第01集",
@@ -135,6 +128,13 @@
           "第13集",
           "https://v.cdnlz22.com/20250418/15767_1160f0a2/index.m3u8",
           "https://v.cdnlz22.com/20250418/15767_1160f0a2/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "HD",
+          "https://c1.rrcdnbf5.com/video/wodexingfuhunyue2023/HD/index.m3u8",
+          "https://c1.rrcdnbf5.com/video/wodexingfuhunyue2023/HD/index.m3u8"
         ]
       ]
     }

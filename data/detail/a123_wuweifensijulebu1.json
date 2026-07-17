@@ -9,36 +9,6 @@
     "tags": "",
     "status": "更新至7集",
     "playlists": {
-      "a123_line1": [
-        [
-          "第01集",
-          "/v/wuweifensijulebu1/8z2umaz0.html"
-        ],
-        [
-          "第03集",
-          "/v/wuweifensijulebu1/8z2umaz1.html"
-        ],
-        [
-          "第04集",
-          "/v/wuweifensijulebu1/8z2umaz2.html"
-        ],
-        [
-          "第05集",
-          "/v/wuweifensijulebu1/8z2umaz3.html"
-        ],
-        [
-          "第06集",
-          "/v/wuweifensijulebu1/8z2umaz4.html"
-        ],
-        [
-          "第07集",
-          "/v/wuweifensijulebu1/8z2umaz5.html"
-        ],
-        [
-          "第08集",
-          "/v/wuweifensijulebu1/8z2umaz6.html"
-        ]
-      ],
       "bfzym3u8": [
         [
           "第01集",
@@ -347,6 +317,36 @@
           "第12集",
           "https://hd.ijycnd.com/play/e316x44b/index.m3u8",
           "https://hd.ijycnd.com/play/e316x44b/index.m3u8"
+        ]
+      ],
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/wuweifensijulebu1/8z2umaz0.html"
+        ],
+        [
+          "第03集",
+          "/v/wuweifensijulebu1/8z2umaz1.html"
+        ],
+        [
+          "第04集",
+          "/v/wuweifensijulebu1/8z2umaz2.html"
+        ],
+        [
+          "第05集",
+          "/v/wuweifensijulebu1/8z2umaz3.html"
+        ],
+        [
+          "第06集",
+          "/v/wuweifensijulebu1/8z2umaz4.html"
+        ],
+        [
+          "第07集",
+          "/v/wuweifensijulebu1/8z2umaz5.html"
+        ],
+        [
+          "第08集",
+          "/v/wuweifensijulebu1/8z2umaz6.html"
         ]
       ]
     }
