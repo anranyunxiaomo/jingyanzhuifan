@@ -893,8 +893,8 @@ def generate_healing_and_related_logic():
                             len(eps) for k, eps in _pls.items()
                             if k in PLAYABLE_KEYS_FOR_RELATED and isinstance(eps, list)
                         )
-                        if '未播放' in _status and _playable == 0:
-                            continue
+                        if '未播放' in _status:
+                            continue  # 全量过滤，等开播后 status 变 连载 再参与
                         base = get_base_title(name)
                         anime_list.append({
                             "id": aid_str,
@@ -1001,8 +1001,8 @@ def rebuild_static_index_and_assets():
                             len(eps) for k, eps in _playlists.items()
                             if k in PLAYABLE_KEYS_SET and isinstance(eps, list)
                         )
-                        if '未播放' in _status and _playable_eps == 0:
-                            print(f"  [PV SKIP] 跳过未开播PV番剧（无可播集数）: {title} ({aid_str})")
+                        if '未播放' in _status:
+                            print(f"  [PV SKIP] 跳过未开播番剧（status=未播放）: {title} ({aid_str})")
                             continue
 
 
