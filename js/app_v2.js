@@ -2227,9 +2227,9 @@ new Vue({
                 this.stopLoadingAnimation();
               }
               
-              // 💡 每隔 15 秒上报一次最新的播放进度打点
+              // 💡 每隔 60 秒上报一次最新的播放进度打点（大幅度节省 Cloudflare Worker 请求额度）
               const now = Date.now();
-              if (now - this.lastLogProgressTime > 15000) {
+              if (now - this.lastLogProgressTime > 60000) {
                 this.lastLogProgressTime = now;
                 try { this.reportPlaybackTrack('start', this.formatTimeText(currentTime)); } catch(e) {}
               }
