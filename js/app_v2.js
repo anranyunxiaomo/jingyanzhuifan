@@ -1155,22 +1155,49 @@ new Vue({
         }
 
         // 💾 定义后台请求数据的比对和状态刷新处理器
-        const handleFetchedDetail = (fetchedData) => {
+        // source: 'local' = 来自本地静态文件; 'api' = 来自 AGE 云端 API
+        const AGE_API_BASE = "https://api.agedm.io/v2/";
+        
+        const fetchFromAgeApi = () => {
+          const targetUrl = `${AGE_API_BASE}detail/${aid}`;
+          this.axiosGetViaProxy(targetUrl)
+            .then(response => {
+              const resData = response.data;
+              let fetchedData = null;
+              if (resData && resData.video) {
+                fetchedData = resData;
+              } else if (resData && resData.data) {
+                fetchedData = resData.data;
+              }
+              if (fetchedData) {
+                handleFetchedDetail(fetchedData, 'api');
+              }
+            })
+            .catch(apiErr => {
+              console.warn(`[AGE API FAIL] 云端刷新 (AID: ${aid}) 失败：`, apiErr);
+              if (!this.animeDetail) {
+                this.detailError = true;
+                this.$nextTick(() => {
+                  if (typeof lucide !== 'undefined') lucide.createIcons();
+                });
+              }
+            });
+        };
+
+        const handleFetchedDetail = (fetchedData, source = 'local') => {
           if (!fetchedData) return;
           const changed = this.hasDetailChanged(this.animeDetail, fetchedData);
           
           if (changed || !this.animeDetail) {
-            console.log(`[CACHE UPDATE] 动漫数据 (AID: ${aid}) 存在新变动（封面或 m3u8 地址已更新），自动刷新并存盘...`);
+            console.log(`[CACHE UPDATE] 动漫数据 (AID: ${aid}) 有变动，来源: ${source}，自动刷新并存盘...`);
             
             const prevEpIdx = this.activeEpisodeIndex;
             this.animeDetail = fetchedData;
             this.saveDetailToCache(aid, fetchedData);
             
-            // 如果用户还没有点播具体集数，则重新初始化线路
             if (prevEpIdx === -1) {
               this.initializePlayerLine();
             } else {
-              // 如果已在播放，保持当前线路选择，除非该线路被删掉了
               const lines = this.availableLines;
               if (this.activeLineKey && !lines.some(l => l.key === this.activeLineKey) && lines.length > 0) {
                 this.activeLineKey = lines[0].key;
@@ -1179,46 +1206,36 @@ new Vue({
           } else {
             console.log(`[CACHE VALID] 动漫数据 (AID: ${aid}) 未发生改变，本地缓存有效`);
           }
+
+          // ⚡ 陈旧数据自动刷新：本地静态文件可能滞后于实际播出进度
+          // 检测条件（满足任一 → 认定为陈旧，自动后台调用 AGE API 获取最新数据）：
+          //   1. uptodate === 'PV'：文件生成时只有预告，尚无正片集数
+          //   2. 所有实际可播线路（排除 bilibili/平台限定）集数合计 ≤ 1
+          if (source === 'local') {
+            const video = fetchedData.video || {};
+            const playlists = video.playlists || {};
+            // 统计所有非平台专属线路的最大集数
+            const PLATFORM_ONLY = ['bilibili', 'qiyi', 'qq', 'youku', 'mgtv', 'sohu', 'pptv', 'letv', 'migutv'];
+            const maxEpCount = Object.entries(playlists).reduce((max, [key, eps]) => {
+              if (PLATFORM_ONLY.includes(key)) return max; // 跳过平台限定线路
+              return Math.max(max, (eps || []).length);
+            }, 0);
+            const isStale = (video.uptodate === 'PV') || (maxEpCount <= 1);
+            if (isStale) {
+              console.log(`[STALE DETECT] (AID: ${aid}) 本地数据陈旧 (uptodate="${video.uptodate}", maxEp=${maxEpCount})，触发 AGE API 后台刷新...`);
+              fetchFromAgeApi();
+            }
+          }
         };
 
         // 💾 2. 后台获取最新数据以进行验证及热更新
         axios.get(`data/detail/${aid}.json?_t=` + new Date().getTime())
           .then(response => {
-            handleFetchedDetail(response.data);
+            handleFetchedDetail(response.data, 'local');
           })
           .catch(err => {
             console.warn(`[CACHE MISS] 本地详情 (AID: ${aid}) 获取失败，转入云端 API 后台拉取...`);
-            
-            const AGE_API_BASE = "https://api.agedm.io/v2/";
-            const targetUrl = `${AGE_API_BASE}detail/${aid}`;
-            this.axiosGetViaProxy(targetUrl)
-              .then(response => {
-                const resData = response.data;
-                let fetchedData = null;
-                if (resData && resData.video) {
-                  fetchedData = resData;
-                } else if (resData && resData.data) {
-                  fetchedData = resData.data;
-                }
-                
-                if (fetchedData) {
-                  handleFetchedDetail(fetchedData);
-                } else {
-                  throw new Error("云端详情接口返回的格式无效");
-                }
-              })
-              .catch(apiErr => {
-                console.error("云端详情拉取失败！", apiErr);
-                // 如果既无缓存又同步失败，则显示本页错误提示卡片而不回退首页
-                if (!this.animeDetail) {
-                  this.detailError = true;
-                  this.$nextTick(() => {
-                    if (typeof lucide !== 'undefined') {
-                      lucide.createIcons();
-                    }
-                  });
-                }
-              });
+            fetchFromAgeApi();
           });
       };
 
