@@ -232,6 +232,104 @@
           "age_49d01TX6dV7nsmmnYrH0dIU0s0k%2BJcUyqYT%2B2Bj39bNy7lXf%2F1ZGSy5iNeyATRyPvJXZYag9Nprwc%2BM8VGuuovdW2O%2Bi7Pxzpme%2FIi6EsG4xVrVKqVqrNXxopts8Fw",
           "https://c1.rrcdnbf2.com/video/huizhuanqieguan/第24集/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "/p/2451-4-1.html"
+        ],
+        [
+          "第02集",
+          "/p/2451-4-2.html"
+        ],
+        [
+          "第03集",
+          "/p/2451-4-3.html"
+        ],
+        [
+          "第04集",
+          "/p/2451-4-4.html"
+        ],
+        [
+          "第05集",
+          "/p/2451-4-5.html"
+        ],
+        [
+          "第06集",
+          "/p/2451-4-6.html"
+        ],
+        [
+          "第07集",
+          "/p/2451-4-7.html"
+        ],
+        [
+          "第08集",
+          "/p/2451-4-8.html"
+        ],
+        [
+          "第09集",
+          "/p/2451-4-9.html"
+        ],
+        [
+          "第10集",
+          "/p/2451-4-10.html"
+        ],
+        [
+          "第11集",
+          "/p/2451-4-11.html"
+        ],
+        [
+          "第12集",
+          "/p/2451-4-12.html"
+        ],
+        [
+          "第13集",
+          "/p/2451-4-13.html"
+        ],
+        [
+          "第14集",
+          "/p/2451-4-14.html"
+        ],
+        [
+          "第15集",
+          "/p/2451-4-15.html"
+        ],
+        [
+          "第16集",
+          "/p/2451-4-16.html"
+        ],
+        [
+          "第17集",
+          "/p/2451-4-17.html"
+        ],
+        [
+          "第18集",
+          "/p/2451-4-18.html"
+        ],
+        [
+          "第19集",
+          "/p/2451-4-19.html"
+        ],
+        [
+          "第20集",
+          "/p/2451-4-20.html"
+        ],
+        [
+          "第21集",
+          "/p/2451-4-21.html"
+        ],
+        [
+          "第22集",
+          "/p/2451-4-22.html"
+        ],
+        [
+          "第23集",
+          "/p/2451-4-23.html"
+        ],
+        [
+          "第24集",
+          "/p/2451-4-24.html"
+        ]
       ]
     },
     "area": "日本",
@@ -356,7 +454,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {
