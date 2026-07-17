@@ -268,6 +268,11 @@ export default {
         }
       }
 
+      // 🎬 识别 a123tv 相对路径（/v/slug/epid.html），补全完整域名后再送解析站
+      // a123tv 存储的是 /v/ 开头的相对路径，直接传给解析站会因缺少域名而失败
+      if (sniffToken.startsWith('/v/') && sniffToken.endsWith('.html')) {
+        sniffToken = 'https://a123tv.com' + sniffToken;
+      }
 
       // 💡 多解析站并发配置（按成功率降序排列）
       const PARSE_STATIONS = [
@@ -276,6 +281,7 @@ export default {
         { base: 'https://im1907.top/?jx=', referer: '' },
         { base: 'https://jx.wuzhoupai.com:8443/m3u8/?url=', referer: 'https://web.agespa-01.com:8443/' },
       ];
+
 
       /**
        * 从 HTML 中提取 <video src> 或 .m3u8/.mp4 直链
