@@ -138,6 +138,63 @@ export default {
     }
 
     // ==========================================
+    // 📈 功能 B2：客户端打点 /api/log
+    // ==========================================
+    if (url.pathname === '/api/log') {
+      if (request.method === 'OPTIONS') {
+        return new Response('', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Methods': 'GET, OPTIONS'
+          }
+        });
+      }
+
+      const client = url.searchParams.get('client') || '';
+      const anime = url.searchParams.get('anime') || '';
+      const episode = url.searchParams.get('episode') || '';
+      const session = url.searchParams.get('session') || '';
+      const status = url.searchParams.get('status') || 'start';
+      const progress = url.searchParams.get('progress') || '00:00';
+
+      if (client && anime && session) {
+        const logKey = `log:${session}:${client}`;
+        const ip = request.headers.get('CF-Connecting-IP') || '未知IP';
+        const country = request.cf ? request.cf.country : (request.headers.get('cf-ipcountry') || '');
+        const region = request.cf ? request.cf.region : (request.headers.get('cf-region') || '');
+        const city = request.cf ? request.cf.city : (request.headers.get('cf-city') || '');
+        const location = `${country} ${region} ${city}`.trim() || '本地网络';
+
+        const logData = {
+          time: Date.now(),
+          ip: ip,
+          location: location,
+          clientId: client,
+          anime: anime,
+          episode: episode,
+          progress: progress,
+          status: status
+        };
+
+        if (env.JYZF_LOGS) {
+          ctx.waitUntil(env.JYZF_LOGS.put(logKey, JSON.stringify(logData), { expirationTtl: 2592000 }));
+        }
+
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+
+      return new Response(JSON.stringify({ error: 'Missing parameters' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+      });
+    }
+
+    // ==========================================
+
     // 🚀 功能 D2：多解析站并发实时嗅探直链 (/api/sniff)
     // 专为 xigua 等只有 age_token 无直链的线路设计，在用户播放时实时解析
     // ==========================================

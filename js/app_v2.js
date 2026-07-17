@@ -556,6 +556,17 @@ new Vue({
     // 自动判定当前星期几，高亮时刻表
     const today = new Date().getDay(); // 0=周日, 1=周一...
     this.activeWeekDay = today;
+
+    // 💡 监听 beforeunload 状态，在用户关闭网页或切换离开时静默打点上报 exit 退出状态
+    window.addEventListener('beforeunload', () => {
+      try {
+        if (this.dpInstance) {
+          this.reportPlaybackTrack('exit', this.formatTimeText(this.dpInstance.currentTime || 0));
+        } else if (this.isIframeMode) {
+          this.reportPlaybackTrack('exit', '00:00 (网页)');
+        }
+      } catch(e) {}
+    });
   },
   
   mounted() {
@@ -1330,6 +1341,13 @@ new Vue({
       if (!isAutoRetry) {
         this._triedLines = new Set();
       }
+
+      // 💡 退出上一次的播放打点记录
+      if (this.dpInstance) {
+        try { this.reportPlaybackTrack('exit', this.formatTimeText(this.dpInstance.currentTime || 0)); } catch(e) {}
+      } else if (this.isIframeMode) {
+        try { this.reportPlaybackTrack('exit', '00:00 (网页)'); } catch(e) {}
+      }
       
       // 💡 强力中断上一次未完成的异步网络请求（如 A123 嗅探等），彻底切断后台带宽占用，防止切换卡顿
       if (this.activeAbortController) {
@@ -1350,6 +1368,7 @@ new Vue({
         } catch(e) {}
         this.dpInstance = null;
       }
+      this.isIframeMode = false;
       this.activePlayUrl = '';
       if (this.iframeTimeoutTimer) {
         clearTimeout(this.iframeTimeoutTimer);
@@ -1849,8 +1868,7 @@ new Vue({
                   console.warn('[SMART ROUTER] Direct CORS fetch blocked/timeout. Skip Worker, go iframe directly.');
                   if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
                     this.stopLoadingAnimation();
-                    this.isIframeMode = true;
-                    this.activePlayUrl = capturedIframeUrl;
+                    this.switchToIframeMode(capturedIframeUrl);
                     return;
                   }
                 }
@@ -1869,8 +1887,7 @@ new Vue({
                       console.warn('[SMART ROUTER] Proxy returned non-M3U8 content (likely CDN blocked Worker IP). Switching to iframe.');
                       if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
                         this.stopLoadingAnimation();
-                        this.isIframeMode = true;
-                        this.activePlayUrl = capturedIframeUrl;
+                        this.switchToIframeMode(capturedIframeUrl);
                         return;
                       }
                     }
@@ -1923,8 +1940,7 @@ new Vue({
                     console.warn(`[SMART ROUTER] Proxy fetch failed (HTTP ${res.status}). Switching to iframe fallback.`);
                     if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
                       this.stopLoadingAnimation();
-                      this.isIframeMode = true;
-                      this.activePlayUrl = capturedIframeUrl;
+                      this.switchToIframeMode(capturedIframeUrl);
                       return; // 直接退出，不初始化 ArtPlayer
                     }
                     finalVideoUrl = proxyUrl; // 无 iframe 地址时仍走 proxyUrl（保底）
@@ -1934,8 +1950,7 @@ new Vue({
                   // fetch 异常（网络超时/CORS）→ 也切 iframe
                   if (capturedIframeUrl && capturedIframeUrl.startsWith('http')) {
                     this.stopLoadingAnimation();
-                    this.isIframeMode = true;
-                    this.activePlayUrl = capturedIframeUrl;
+                    this.switchToIframeMode(capturedIframeUrl);
                     return;
                   }
                   finalVideoUrl = proxyUrl;
@@ -2132,8 +2147,7 @@ new Vue({
                   try { this.dpInstance.destroy(); } catch(e) {}
                   this.dpInstance = null;
                 }
-                this.isIframeMode = true;
-                this.activePlayUrl = capturedIframeUrl;
+                this.switchToIframeMode(capturedIframeUrl);
               } else if (dp && dp.notice) {
                 dp.notice.show = "当前视频直链播放受限，请切换其他播放线路重试。";
               }
@@ -2156,6 +2170,11 @@ new Vue({
 
             dp.on('play', () => {
               this.stopLoadingAnimation();
+              try { this.reportPlaybackTrack('start', this.formatTimeText(dp.currentTime)); } catch(e) {}
+            });
+
+            dp.on('pause', () => {
+              try { this.reportPlaybackTrack('pause', this.formatTimeText(dp.currentTime)); } catch(e) {}
             });
 
             dp.on('video:play', () => {
@@ -2177,6 +2196,7 @@ new Vue({
 
             dp.on('destroy', () => {
               this.stopLoadingAnimation();
+              try { this.reportPlaybackTrack('exit', this.formatTimeText(dp.currentTime || 0)); } catch(e) {}
               if (dp.video && dp.video.hlsInstance) {
                 try { dp.video.hlsInstance.destroy(); } catch(e) {}
                 dp.video.hlsInstance = null;
@@ -2207,6 +2227,13 @@ new Vue({
                 this.stopLoadingAnimation();
               }
               
+              // 💡 每隔 15 秒上报一次最新的播放进度打点
+              const now = Date.now();
+              if (now - this.lastLogProgressTime > 15000) {
+                this.lastLogProgressTime = now;
+                try { this.reportPlaybackTrack('start', this.formatTimeText(currentTime)); } catch(e) {}
+              }
+
               if (!hasRestoredProgress && savedTime > 3) {
                 restoreProgress();
               }
@@ -2226,6 +2253,7 @@ new Vue({
               console.log("[ArtPlayer ENDED] Playback completed.");
               const pKey = `jyzf_progress_${capturedAnimeId}_${capturedEpName}`;
               localStorage.removeItem(pKey);
+              try { this.reportPlaybackTrack('exit', this.formatTimeText(dp.duration || 0)); } catch(e) {}
               if (this.hasNextEpisode) {
                 console.log("[ArtPlayer ENDED] Auto playing next episode...");
                 this.playNextEpisode();
@@ -2257,6 +2285,42 @@ new Vue({
         const player = document.querySelector('.player-panel');
         if (player) player.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    },
+
+    // 💡 格式化播放时间为 MM:SS
+    formatTimeText(sec) {
+      if (isNaN(sec) || sec < 0) return '00:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    },
+
+    // 💡 切换为网页 iframe 播放模式，并自动上报分析打点
+    switchToIframeMode(url) {
+      this.isIframeMode = true;
+      this.activePlayUrl = url;
+      this.reportPlaybackTrack('start', '00:00 (网页)');
+    },
+
+    // 💡 景雁数据上报极简打点服务 (Telemetry Logger)
+    reportPlaybackTrack(status, progressText = '00:00') {
+      if (!this.clientId || !this.activeSessionId) return;
+      const animeName = this.animeDetail ? this.animeDetail.video.name : '';
+      const epName = this.activeEpisodes && this.activeEpisodes[this.activeEpisodeIndex] ? this.activeEpisodes[this.activeEpisodeIndex][0] : '';
+      if (!animeName || !epName) return;
+
+      const reportUrl = `https://jingyanff.xyz/api/log?client=${encodeURIComponent(this.clientId)}` +
+                        `&anime=${encodeURIComponent(animeName)}` +
+                        `&episode=${encodeURIComponent(epName)}` +
+                        `&session=${encodeURIComponent(this.activeSessionId)}` +
+                        `&status=${encodeURIComponent(status)}` +
+                        `&progress=${encodeURIComponent(progressText)}`;
+      
+      if (status === 'exit' && typeof navigator.sendBeacon === 'function') {
+        navigator.sendBeacon(reportUrl);
+      } else {
+        fetch(reportUrl, { mode: 'cors' }).catch(() => {});
+      }
     },
 
     forceResetProgressAndReplay() {
