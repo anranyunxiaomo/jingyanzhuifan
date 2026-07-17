@@ -1592,6 +1592,21 @@ async def main_async():
                             for ep in eps:
                                 if len(ep) >= 3 and ep[2]:
                                     local_cache[(pkey, ep[1])] = ep[2]
+
+                        # 💡 [CRITICAL] 保留本地专属的 yhdm_line1（樱花直链）！
+                        # AGE API 返回的 detail_data 不包含此字段，如不显式合并，
+                        # 写盘时会永久丢失之前爬取的樱花直链数据。
+                        # 保留原则：AGE 不提供的所有自定义播放源均无损合并回 API 数据。
+                        CUSTOM_PLAYLIST_KEYS = {'yhdm_line1'}
+                        api_playlists = detail_data.setdefault('video', {}).setdefault('playlists', {})
+                        api_labels = detail_data.setdefault('player_label_arr', {})
+                        old_labels = old_data.get('player_label_arr', {})
+                        for custom_key in CUSTOM_PLAYLIST_KEYS:
+                            if custom_key in old_playlists and old_playlists[custom_key]:
+                                if custom_key not in api_playlists:
+                                    api_playlists[custom_key] = old_playlists[custom_key]
+                                    api_labels[custom_key] = old_labels.get(custom_key, '樱花直链')
+                                    print(f"  [PRESERVE] Carried over local '{custom_key}' ({len(old_playlists[custom_key])} eps) → not in AGE API response")
                 except Exception:
                     pass
 
