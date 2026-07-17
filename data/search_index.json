@@ -140,6 +140,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20260210,
+    "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记",
+    "Pinyin": "ldxzdxyws dehzs，sdjzbmssmxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
+    "Status": "更新至3集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360250,
+    "Type": "TV"
+  },
+  {
     "AID": 20260230,
     "Title": "拯救替身千金的是冷酷无情冰之王子的爱",
     "Pinyin": "zjtsqjdslkwqbzwzda",
@@ -230,6 +240,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20260212,
+    "Title": "被追放的转生重骑士用游戏知识开无双",
+    "Pinyin": "bzfdzszqsyyxzskws",
+    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
+    "Status": "更新至2集",
+    "UpToDate": "更新至第23集",
+    "UpdateTime": 20260360242,
+    "Type": "TV"
+  },
+  {
     "AID": 20260101,
     "Title": "神之水滴",
     "Pinyin": "szsd",
@@ -237,16 +257,6 @@
     "Status": "连载",
     "UpToDate": "更新至第23集",
     "UpdateTime": 20260360241,
-    "Type": "TV"
-  },
-  {
-    "AID": 20260210,
-    "Title": "落第贤者的学院无双 第二回转生，S等级作弊魔术师冒险记",
-    "Pinyin": "ldxzdxyws dehzs，sdjzbmssmxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260210.jpg",
-    "Status": "更新至3集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360240,
     "Type": "TV"
   },
   {
@@ -280,16 +290,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20260212,
-    "Title": "被追放的转生重骑士用游戏知识开无双",
-    "Pinyin": "bzfdzszqsyyxzskws",
-    "Cover": "http://lain.bgm.tv/pic/cover/l/8f/47/511177_EP43p.jpg",
-    "Status": "更新至2集",
-    "UpToDate": "更新至第23集",
-    "UpdateTime": 20260360232,
-    "Type": "TV"
-  },
-  {
     "AID": 20260211,
     "Title": "世界最强的后卫 ～迷宫国的新人探索者～",
     "Pinyin": "sjzqdhw ～mggdxrtsz～",
@@ -307,6 +307,16 @@
     "Status": "连载",
     "UpToDate": "更新至第21集",
     "UpdateTime": 20260360228,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260197,
+    "Title": "少女怪兽焦糖味",
+    "Pinyin": "sngsjtw",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
+    "Status": "连载",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20260360227,
     "Type": "TV"
   },
   {
@@ -387,16 +397,6 @@
     "Status": "连载",
     "UpToDate": "更新至第00集",
     "UpdateTime": 20260360219,
-    "Type": "TV"
-  },
-  {
-    "AID": 20260197,
-    "Title": "少女怪兽焦糖味",
-    "Pinyin": "sngsjtw",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260197.jpg",
-    "Status": "连载",
-    "UpToDate": "更新至第00集",
-    "UpdateTime": 20260360217,
     "Type": "TV"
   },
   {
@@ -1070,6 +1070,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20260082,
+    "Title": "女仆小姐的贪吃日常",
+    "Pinyin": "npxjdtcrc",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20260260212,
+    "Type": "TV"
+  },
+  {
     "AID": 20260081,
     "Title": "轮回的花瓣",
     "Pinyin": "lhdhb",
@@ -1087,6 +1097,16 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20260260211,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260188,
+    "Title": "天是红河岸",
+    "Pinyin": "tshha",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260188.jpg",
+    "Status": "未播放",
+    "UpToDate": "pv",
+    "UpdateTime": 20260260208,
     "Type": "TV"
   },
   {
@@ -1127,16 +1147,6 @@
     "Status": "完结",
     "UpToDate": "更新至第13集",
     "UpdateTime": 20260260204,
-    "Type": "TV"
-  },
-  {
-    "AID": 20260082,
-    "Title": "女仆小姐的贪吃日常",
-    "Pinyin": "npxjdtcrc",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260082.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第12集",
-    "UpdateTime": 20260260202,
     "Type": "TV"
   },
   {
@@ -1187,16 +1197,6 @@
     "Status": "完结",
     "UpToDate": "更新至第11集",
     "UpdateTime": 20260260200,
-    "Type": "TV"
-  },
-  {
-    "AID": 20260188,
-    "Title": "天是红河岸",
-    "Pinyin": "tshha",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20260188.jpg",
-    "Status": "未播放",
-    "UpToDate": "pv",
-    "UpdateTime": 20260260198,
     "Type": "TV"
   },
   {
@@ -1300,6 +1300,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20260155,
+    "Title": "航海王 埃鲁巴夫篇",
+    "Pinyin": "hhw albfp",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260155.jpg",
+    "Status": "未播放",
+    "UpToDate": "PV",
+    "UpdateTime": 20260260165,
+    "Type": "剧场版"
+  },
+  {
     "AID": 20260035,
     "Title": "卡片战斗先导者 Divinez 幻真星战篇",
     "Pinyin": "kpzdxdz divinez hzxzp",
@@ -1347,6 +1357,16 @@
     "Status": "完结",
     "UpToDate": "更新至第10集",
     "UpdateTime": 20260260129,
+    "Type": "TV"
+  },
+  {
+    "AID": 20260028,
+    "Title": "决斗大师 LOST ～忘却的太阳～",
+    "Pinyin": "jdds lost ～wqdty～",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20260028.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第19集",
+    "UpdateTime": 20260260038,
     "Type": "TV"
   },
   {
@@ -1430,6 +1450,26 @@
     "Type": "TV"
   },
   {
+    "AID": 20250220,
+    "Title": "GANGLION",
+    "Pinyin": "ganglion",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250220.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第00集",
+    "UpdateTime": 20250250230,
+    "Type": "TV"
+  },
+  {
+    "AID": 20250200,
+    "Title": "怪物弹珠 DEADVERSE RELOADED",
+    "Pinyin": "gwdz deadverse reloaded",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250200.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20250250210,
+    "Type": "TV"
+  },
+  {
     "AID": 20250041,
     "Title": "不知为何我和尼特且宅的女忍者开始了同居生活",
     "Pinyin": "bzwhwhntqzdnrzksltjsh",
@@ -1447,6 +1487,16 @@
     "Status": "完结",
     "UpToDate": "HD中字",
     "UpdateTime": 20250250149,
+    "Type": "TV"
+  },
+  {
+    "AID": 20250076,
+    "Title": "MIRU 我们的未来",
+    "Pinyin": "miru wmdwl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20250076.jpg",
+    "Status": "未播放",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20250250086,
     "Type": "TV"
   },
   {
@@ -1780,6 +1830,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20200014,
+    "Title": "魔女之旅",
+    "Pinyin": "mnzl",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20200014.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200200134,
+    "Type": "TV"
+  },
+  {
     "AID": 20190031,
     "Title": "魔法纪录 魔法少女小圆外传",
     "Pinyin": "mfjl mfsnxywz",
@@ -1808,6 +1868,626 @@
     "UpToDate": "全集",
     "UpdateTime": 20200190136,
     "Type": "剧场版"
+  },
+  {
+    "AID": "a123_dujundexxjijiangbenghuai",
+    "Title": "渡君的XX即将崩坏",
+    "Pinyin": "djdxxjjbh",
+    "Cover": "https://i1.a123tv.com/v/0x/dujundexxjijiangbenghuai.jpg",
+    "Status": "更新至26集",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20200100383,
+    "Type": ""
+  },
+  {
+    "AID": "a123_guirenhuandengchao",
+    "Title": "鬼人幻灯抄",
+    "Pinyin": "grhdc",
+    "Cover": "https://i1.a123tv.com/v/0x/guirenhuandengchao.jpg",
+    "Status": "更新至24集",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20200100363,
+    "Type": ""
+  },
+  {
+    "AID": "a123_lengjinglianqu",
+    "Title": "棱镜恋曲",
+    "Pinyin": "ljlq",
+    "Cover": "https://i1.a123tv.com/v/0x/lengjinglianqu.jpg",
+    "Status": "更新至20集",
+    "UpToDate": "更新至第20集",
+    "UpdateTime": 20200100323,
+    "Type": ""
+  },
+  {
+    "AID": "a123_renyadaowudiwushi",
+    "Title": "刃牙道：无敌武士",
+    "Pinyin": "ryd：wdws",
+    "Cover": "https://i1.a123tv.com/v/0x/renyadaowudiwushi.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_feirenxueshengyuyanshijiaoshi",
+    "Title": "非人学生与厌世教师",
+    "Pinyin": "frxsyysjs",
+    "Cover": "https://i1.a123tv.com/v/0x/feirenxueshengyuyanshijiaoshi.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_shenweimozudewoxiangxiangyongz",
+    "Title": "身为魔族的我想向勇者小队的可爱女孩告白",
+    "Pinyin": "swmzdwxxyzxddkanhgb",
+    "Cover": "https://i1.a123tv.com/v/0x/shenweimozudewoxiangxiangyongz.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_daerwenshibian",
+    "Title": "达尔文事变",
+    "Pinyin": "dewsb",
+    "Cover": "https://i1.a123tv.com/v/0x/daerwenshibian.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_moshushikunuokandejianyiqie",
+    "Title": "魔术师库诺看得见一切",
+    "Pinyin": "mssknkdjyq",
+    "Cover": "https://i1.a123tv.com/v/0x/moshushikunuokandejianyiqie.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zuihoukeyizaibaituoninyijiansh",
+    "Title": "最后可以再拜托您一件事吗",
+    "Pinyin": "zhkyzbtnyjsm",
+    "Cover": "https://i1.a123tv.com/v/0x/zuihoukeyizaibaituoninyijiansh.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100253,
+    "Type": ""
+  },
+  {
+    "AID": "a123_fanerbujingdewobeizhuchuyongzh",
+    "Title": "泛而不精的我被逐出勇者队伍",
+    "Pinyin": "febjdwbzcyzdw",
+    "Cover": "https://i1.a123tv.com/v/0x/fanerbujingdewobeizhuchuyongzh.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_mogumonv",
+    "Title": "蘑菇魔女",
+    "Pinyin": "mgmn",
+    "Cover": "https://i1.a123tv.com/v/0x/mogumonv.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_shuishuxingmofashi",
+    "Title": "水属性魔法使",
+    "Pinyin": "ssxmfs",
+    "Cover": "https://i1.a123tv.com/v/0x/shuishuxingmofashi.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_siwangzhanghao",
+    "Title": "死亡账号",
+    "Pinyin": "swzh",
+    "Cover": "https://i1.a123tv.com/v/0x/siwangzhanghao.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_beilinguowangziniaidefanpainvz",
+    "Title": "被邻国王子溺爱的反派女主",
+    "Pinyin": "blgwznadfpnz",
+    "Cover": "https://i1.a123tv.com/v/0x/beilinguowangziniaidefanpainvz.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_xiangfandenihewo",
+    "Title": "相反的你和我",
+    "Pinyin": "xfdnhw",
+    "Cover": "https://i1.a123tv.com/v/0x/xiangfandenihewo.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_yingfengtongxueqingchuanshangy",
+    "Title": "鹰峰同学请穿上衣服",
+    "Pinyin": "yftxqcsyf",
+    "Cover": "https://i1.a123tv.com/v/0x/yingfengtongxueqingchuanshangy.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_elisideshengbei",
+    "Title": "厄里斯的圣杯",
+    "Pinyin": "elsdsb",
+    "Cover": "https://i1.a123tv.com/v/0x/elisideshengbei.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_xiaoshenbabukepa",
+    "Title": "小神八不可怕",
+    "Pinyin": "xsbbkp",
+    "Cover": "https://i1.a123tv.com/v/0x/xiaoshenbabukepa.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_wuyedeqingxinxuanlv",
+    "Title": "午夜的倾心旋律",
+    "Pinyin": "wydqxxl",
+    "Cover": "https://i1.a123tv.com/v/0x/wuyedeqingxinxuanlv.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_yishijiedeantaiquankanshechu",
+    "Title": "异世界的安泰全看社畜",
+    "Pinyin": "ysjdatqksc",
+    "Cover": "https://i1.a123tv.com/v/0x/yishijiedeantaiquankanshechu.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_mowangdenvertaiwenroule",
+    "Title": "魔王的女儿太温柔了！",
+    "Pinyin": "mwdnetwrl！",
+    "Cover": "https://i1.a123tv.com/v/0x/mowangdenvertaiwenroule.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_heqingmeizhumazhijianbuhuiyoul",
+    "Title": "和青梅竹马之间不会有恋爱喜剧",
+    "Pinyin": "hqmzmzjbhylaxj",
+    "Cover": "https://i1.a123tv.com/v/0x/heqingmeizhumazhijianbuhuiyoul.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_dagongzaidekaowenrichang",
+    "Title": "打工仔的拷问日常",
+    "Pinyin": "dgzdkwrc",
+    "Cover": "https://i1.a123tv.com/v/0x/dagongzaidekaowenrichang.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_aerniedeshijianbu",
+    "Title": "阿尔涅的事件簿",
+    "Pinyin": "aendsjb",
+    "Cover": "https://i1.a123tv.com/v/0x/aerniedeshijianbu.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zhuanshengzhihoudewobianchengl",
+    "Title": "转生之后的我变成了龙蛋",
+    "Pinyin": "zszhdwbclld",
+    "Cover": "https://i1.a123tv.com/v/0x/zhuanshengzhihoudewobianchengl.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_shengnvyintaiguowanmeibugoukea",
+    "Title": "圣女因太过完美不够可爱而被废除婚约并卖到邻国",
+    "Pinyin": "snytgwmbgkaebfchybmdlg",
+    "Cover": "https://i1.a123tv.com/v/0x/shengnvyintaiguowanmeibugoukea.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100243,
+    "Type": ""
+  },
+  {
+    "AID": "a123_difushaonianhuazijun2",
+    "Title": "地缚少年花子君 2",
+    "Pinyin": "dfsnhzj 2",
+    "Cover": "https://i1.a123tv.com/v/0x/difushaonianhuazijun2.jpg",
+    "Status": "更新至24集",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20200100242,
+    "Type": ""
+  },
+  {
+    "AID": "a123_shuangrenduziluying1",
+    "Title": "双人独自露营",
+    "Pinyin": "srdzly",
+    "Cover": "https://i1.a123tv.com/v/0x/shuangrenduziluying1.jpg",
+    "Status": "更新至24集",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20200100241,
+    "Type": ""
+  },
+  {
+    "AID": "a123_youyaguizudexiujiazhinan",
+    "Title": "优雅贵族的休假指南",
+    "Pinyin": "yygzdxjzn",
+    "Cover": "https://i1.a123tv.com/v/0x/youyaguizudexiujiazhinan.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20200100233,
+    "Type": ""
+  },
+  {
+    "AID": "a123_gaoxiaoqimianzu",
+    "Title": "高校奇面组",
+    "Pinyin": "gxqmz",
+    "Cover": "https://i1.a123tv.com/v/0x/gaoxiaoqimianzu.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100233,
+    "Type": ""
+  },
+  {
+    "AID": "a123_caomeiaige",
+    "Title": "草莓哀歌",
+    "Pinyin": "cmag",
+    "Cover": "https://i1.a123tv.com/v/0x/caomeiaige.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100213,
+    "Type": ""
+  },
+  {
+    "AID": "a123_huangquandeshizhe",
+    "Title": "黄泉的使者",
+    "Pinyin": "hqdsz",
+    "Cover": "https://i1.a123tv.com/v/0x/huangquandeshizhe.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100213,
+    "Type": ""
+  },
+  {
+    "AID": "a123_huiyuanjundeqingchunerzhoumu",
+    "Title": "灰原君的青春二周目",
+    "Pinyin": "hyjdqcezm",
+    "Cover": "https://i1.a123tv.com/v/0x/huiyuanjundeqingchunerzhoumu.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100213,
+    "Type": ""
+  },
+  {
+    "AID": "a123_feichaifengjiweiyuanyuqunzicha",
+    "Title": "废柴风纪委员与裙子长度不合规的JK的故事",
+    "Pinyin": "fcfjwyyqzcdbhgdjkdgs",
+    "Cover": "https://i1.a123tv.com/v/0x/feichaifengjiweiyuanyuqunzicha.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100213,
+    "Type": ""
+  },
+  {
+    "AID": "a123_heimaohemonvdeketang",
+    "Title": "黑猫和魔女的课堂",
+    "Pinyin": "hmhmndkt",
+    "Cover": "https://i1.a123tv.com/v/0x/heimaohemonvdeketang.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_jiaojieyingxiaozhiyue",
+    "Title": "皎洁迎宵之月",
+    "Pinyin": "jjyxzy",
+    "Cover": "https://i1.a123tv.com/v/0x/jiaojieyingxiaozhiyue.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_hebanshangdierkeaidenvhaiziche",
+    "Title": "和班上第二可爱的女孩子成为了朋友",
+    "Pinyin": "hbsdekadnhzcwlpy",
+    "Cover": "https://i1.a123tv.com/v/0x/hebanshangdierkeaidenvhaiziche.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_gongzhuqishishimanzudexinniang",
+    "Title": "公主骑士是蛮族的新娘",
+    "Pinyin": "gzqssmzdxn",
+    "Cover": "https://i1.a123tv.com/v/0x/gongzhuqishishimanzudexinniang.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_qingsongxiong",
+    "Title": "轻松熊",
+    "Pinyin": "qsx",
+    "Cover": "https://i1.a123tv.com/v/0x/qingsongxiong.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_niyoubeishalenezhentandaren",
+    "Title": "你又被杀了呢，侦探大人",
+    "Pinyin": "nybsln，ztdr",
+    "Cover": "https://i1.a123tv.com/v/0x/niyoubeishalenezhentandaren.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100203,
+    "Type": ""
+  },
+  {
+    "AID": "a123_daxianzheliduoerdeshijiannixin",
+    "Title": "大贤者利多尔的时间逆行",
+    "Pinyin": "dxzldedsjnx",
+    "Cover": "https://i1.a123tv.com/v/0x/daxianzheliduoerdeshijiannixin.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100193,
+    "Type": ""
+  },
+  {
+    "AID": "a123_youlingyinyuehuiyishidegequ",
+    "Title": "幽灵音乐会：遗失的歌曲",
+    "Pinyin": "ylyyh：ysdgq",
+    "Cover": "https://i1.a123tv.com/v/0x/youlingyinyuehuiyishidegequ.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第07集",
+    "UpdateTime": 20200100193,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zhongmodenvwushen3",
+    "Title": "终末的女武神 3",
+    "Pinyin": "zmdnws 3",
+    "Cover": "https://i1.a123tv.com/v/0x/zhongmodenvwushen3.jpg",
+    "Status": "更新至15集",
+    "UpToDate": "更新至第15集",
+    "UpdateTime": 20200100153,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zhoushuhuizhan32",
+    "Title": "咒术回战 3",
+    "Pinyin": "zshz 3",
+    "Cover": "https://i1.a123tv.com/v/0x/zhoushuhuizhan32.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100152,
+    "Type": ""
+  },
+  {
+    "AID": "a123_29suidanshenmaoxianjiaderichan",
+    "Title": "29岁单身冒险家的日常",
+    "Pinyin": "29sdsmxjdrc",
+    "Cover": "https://i1.a123tv.com/v/0x/29suidanshenmaoxianjiaderichan.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100149,
+    "Type": ""
+  },
+  {
+    "AID": "a123_anzhiju16",
+    "Title": "暗芝居 16",
+    "Pinyin": "azj 16",
+    "Cover": "https://i1.a123tv.com/v/0x/anzhiju16.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100146,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zhongjiuyunixianglian21",
+    "Title": "终究，与你相恋 2",
+    "Pinyin": "zj，ynxl 2",
+    "Cover": "https://i1.a123tv.com/v/0x/zhongjiuyunixianglian21.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100141,
+    "Type": ""
+  },
+  {
+    "AID": "a123_jisuchehun3",
+    "Title": "极速车魂 3",
+    "Pinyin": "jsch 3",
+    "Cover": "https://i1.a123tv.com/v/0x/jisuchehun3.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100133,
+    "Type": ""
+  },
+  {
+    "AID": "a123_woduzishengji2",
+    "Title": "我独自升级 2",
+    "Pinyin": "wdzsj 2",
+    "Cover": "https://i1.a123tv.com/v/0x/woduzishengji2.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100132,
+    "Type": ""
+  },
+  {
+    "AID": "a123_wodexingfuhunyue2",
+    "Title": "我的幸福婚约 2",
+    "Pinyin": "wdxfhy 2",
+    "Cover": "https://i1.a123tv.com/v/0x/wodexingfuhunyue2.jpg",
+    "Status": "更新至13集",
+    "UpToDate": "更新至第13集",
+    "UpdateTime": 20200100132,
+    "Type": ""
+  },
+  {
+    "AID": "a123_dunzhiyongzhechengminglu4",
+    "Title": "盾之勇者成名录 4",
+    "Pinyin": "dzyzcml 4",
+    "Cover": "https://i1.a123tv.com/v/0x/dunzhiyongzhechengminglu4.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100124,
+    "Type": ""
+  },
+  {
+    "AID": "a123_diyule2",
+    "Title": "地狱乐 2",
+    "Pinyin": "dyl 2",
+    "Cover": "https://i1.a123tv.com/v/0x/diyule2.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100122,
+    "Type": ""
+  },
+  {
+    "AID": "a123_modoujingbingdenuli2",
+    "Title": "魔都精兵的奴隶 2",
+    "Pinyin": "mdjbdnl 2",
+    "Cover": "https://i1.a123tv.com/v/0x/modoujingbingdenuli2.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100122,
+    "Type": ""
+  },
+  {
+    "AID": "a123_feimadeliaoli1",
+    "Title": "费马的料理",
+    "Pinyin": "fmdll",
+    "Cover": "https://i1.a123tv.com/v/0x/feimadeliaoli1.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100121,
+    "Type": ""
+  },
+  {
+    "AID": "a123_gongzhudarenjiexialaishikaowen1",
+    "Title": "公主大人，接下来是“拷问”时间 2",
+    "Pinyin": "gzdr，jxls“kw”sj 2",
+    "Cover": "https://i1.a123tv.com/v/0x/gongzhudarenjiexialaishikaowen1.jpg",
+    "Status": "更新至12集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100121,
+    "Type": ""
+  },
+  {
+    "AID": "a123_huayangshaonianshaonv1",
+    "Title": "花样少年少女",
+    "Pinyin": "hysnsn",
+    "Cover": "https://i1.a123tv.com/v/0x/huayangshaonianshaonv1.jpg",
+    "Status": "更新至11集",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20200100111,
+    "Type": ""
+  },
+  {
+    "AID": "a123_beidoushenquan4",
+    "Title": "北斗神拳",
+    "Pinyin": "bdsq",
+    "Cover": "https://i1.a123tv.com/v/0x/beidoushenquan4.jpg",
+    "Status": "更新至10集",
+    "UpToDate": "更新至第10集",
+    "UpdateTime": 20200100104,
+    "Type": ""
+  },
+  {
+    "AID": "a123_zuanshiwangpai4",
+    "Title": "钻石王牌 4",
+    "Pinyin": "zswp 4",
+    "Cover": "https://i1.a123tv.com/v/0x/zuanshiwangpai4.jpg",
+    "Status": "更新至9集",
+    "UpToDate": "更新至第09集",
+    "UpdateTime": 20200100094,
+    "Type": ""
+  },
+  {
+    "AID": "a123_reconglingkaishideyishijieshen13",
+    "Title": "Re：从零开始的异世界生活 4",
+    "Pinyin": "re：clksdysjsh 4",
+    "Cover": "https://i1.a123tv.com/v/0x/reconglingkaishideyishijieshen13.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100093,
+    "Type": ""
+  },
+  {
+    "AID": "a123_baiguiyexingchao1",
+    "Title": "百鬼夜行抄",
+    "Pinyin": "bgyxc",
+    "Cover": "https://i1.a123tv.com/v/0x/baiguiyexingchao1.jpg",
+    "Status": "更新至8集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100081,
+    "Type": ""
+  },
+  {
+    "AID": "a123_wuweifensijulebu1",
+    "Title": "雾尾粉丝俱乐部",
+    "Pinyin": "wwfsjlb",
+    "Cover": "https://i1.a123tv.com/v/0x/wuweifensijulebu1.jpg",
+    "Status": "更新至7集",
+    "UpToDate": "更新至第08集",
+    "UpdateTime": 20200100071,
+    "Type": ""
+  },
+  {
+    "AID": "a123_yilianxianqigeinikanpangci3",
+    "Title": "一脸嫌弃给你看胖次 3",
+    "Pinyin": "ylxqgnkpc 3",
+    "Cover": "https://i1.a123tv.com/v/0x/yilianxianqigeinikanpangci3.jpg",
+    "Status": "更新至4集",
+    "UpToDate": "更新至第05集",
+    "UpdateTime": 20200100043,
+    "Type": ""
   },
   {
     "AID": "a123_lbxx hfhy！zgdhz",
@@ -1980,6 +2660,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20190091,
+    "Title": "粉彩回忆",
+    "Pinyin": "fchy",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190091.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20190190211,
+    "Type": "TV"
+  },
+  {
     "AID": 20190090,
     "Title": "普通攻击是全体攻击而且能二次攻击的妈妈你喜欢吗？",
     "Pinyin": "ptgjsqtgjeqnecgjdmmnxhm？",
@@ -1987,16 +2677,6 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20190190210,
-    "Type": "TV"
-  },
-  {
-    "AID": 20190091,
-    "Title": "粉彩回忆",
-    "Pinyin": "fchy",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190091.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190201,
     "Type": "TV"
   },
   {
@@ -2008,16 +2688,6 @@
     "UpToDate": "BD全集",
     "UpdateTime": 20190190191,
     "Type": "剧场版"
-  },
-  {
-    "AID": 20190052,
-    "Title": "一个人的〇〇小日子",
-    "Pinyin": "ygrdllxrz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190052.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190172,
-    "Type": "TV"
   },
   {
     "AID": 20190042,
@@ -2250,6 +2920,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20180088,
+    "Title": "银河英雄传说 Die Neue These 邂逅",
+    "Pinyin": "yhyxzs die neue these xh",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20180088.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20180180208,
+    "Type": "TV"
+  },
+  {
     "AID": 20180078,
     "Title": "赛马娘 Pretty Derby",
     "Pinyin": "smn pretty derby",
@@ -2310,16 +2990,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20170115,
-    "Title": "牙狼 -VANISHING LINE-",
-    "Pinyin": "yl -vanishing line-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170115.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20170170355,
-    "Type": "TV"
-  },
-  {
     "AID": 20170107,
     "Title": "魔法使的新娘",
     "Pinyin": "mfsdxn",
@@ -2348,16 +3018,6 @@
     "UpToDate": "更新至第22集",
     "UpdateTime": 20170170250,
     "Type": "TV"
-  },
-  {
-    "AID": 20170183,
-    "Title": "魔法科高校的劣等生剧场版 呼唤星辰的少女",
-    "Pinyin": "mfkgxdldsjcb hhxcdsn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170183.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170193,
-    "Type": "剧场版"
   },
   {
     "AID": 20170126,
@@ -2480,6 +3140,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20170004,
+    "Title": "为美好的世界献上祝福！ 第二季",
+    "Pinyin": "wmhdsjxszf！ dej",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170004.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第11集",
+    "UpdateTime": 20170170114,
+    "Type": "TV"
+  },
+  {
     "AID": 20170071,
     "Title": "刀剑神域剧场版 序列之争",
     "Pinyin": "djsyjcb xlzz",
@@ -2487,16 +3157,6 @@
     "Status": "完结",
     "UpToDate": "全集",
     "UpdateTime": 20170170081,
-    "Type": "剧场版"
-  },
-  {
-    "AID": 20170008,
-    "Title": "七人魔法使剧场版 -悠久图书馆与炼金术少女-",
-    "Pinyin": "qrmfsjcb -yjtsgyljssn-",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170008.jpg",
-    "Status": "完结",
-    "UpToDate": "全集",
-    "UpdateTime": 20170170018,
     "Type": "剧场版"
   },
   {
@@ -2650,6 +3310,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20150032,
+    "Title": "暗杀教室",
+    "Pinyin": "asjs",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第22集",
+    "UpdateTime": 20150150282,
+    "Type": "TV"
+  },
+  {
     "AID": 20150011,
     "Title": "动画锻炼！EX",
     "Pinyin": "dhdl！ex",
@@ -2657,16 +3327,6 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20150150271,
-    "Type": "TV"
-  },
-  {
-    "AID": 20150032,
-    "Title": "暗杀教室",
-    "Pinyin": "asjs",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第22集",
-    "UpdateTime": 20150150262,
     "Type": "TV"
   },
   {
@@ -2986,7 +3646,17 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130023.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20130130273,
+    "UpdateTime": 20130130303,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130032,
+    "Title": "革命机Valvrave",
+    "Pinyin": "gmjvalvrave",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130032.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20130130272,
     "Type": "TV"
   },
   {
@@ -3007,6 +3677,16 @@
     "Status": "完结",
     "UpToDate": "更新至第13集",
     "UpdateTime": 20130130264,
+    "Type": "TV"
+  },
+  {
+    "AID": 20130018,
+    "Title": "青春纪行",
+    "Pinyin": "qcjx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130018.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20130130258,
     "Type": "TV"
   },
   {
@@ -3076,17 +3756,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20130026.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130156,
-    "Type": "TV"
-  },
-  {
-    "AID": 20130032,
-    "Title": "革命机Valvrave",
-    "Pinyin": "gmjvalvrave",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130032.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20130130152,
+    "UpdateTime": 20130130166,
     "Type": "TV"
   },
   {
@@ -3230,6 +3900,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20120020,
+    "Title": "谜之彼女X",
+    "Pinyin": "mzbnx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20120020.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20120120150,
+    "Type": "TV"
+  },
+  {
     "AID": 20120017,
     "Title": "Another",
     "Pinyin": "another",
@@ -3258,6 +3938,16 @@
     "UpToDate": "BD全集",
     "UpdateTime": 20120120137,
     "Type": "剧场版"
+  },
+  {
+    "AID": 20120082,
+    "Title": "鱼：毛骨悚然的蠕动",
+    "Pinyin": "y：mgsrdrd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20120082.jpg",
+    "Status": "完结",
+    "UpToDate": "OVA全集",
+    "UpdateTime": 20120120092,
+    "Type": "OVA"
   },
   {
     "AID": 20120069,
@@ -3510,6 +4200,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20070033,
+    "Title": "天元突破 红莲螺岩",
+    "Pinyin": "tytp hlly",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20070033.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第27集",
+    "UpdateTime": 20070070303,
+    "Type": "TV"
+  },
+  {
     "AID": 20070016,
     "Title": "大剑",
     "Pinyin": "dj",
@@ -3720,6 +4420,16 @@
     "Type": "TV"
   },
   {
+    "AID": 20040010,
+    "Title": "蔷薇少女",
+    "Pinyin": "qwsn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20040010.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第12集",
+    "UpdateTime": 20040040130,
+    "Type": "TV"
+  },
+  {
     "AID": 20040030,
     "Title": "哈尔的移动城堡",
     "Pinyin": "hedydcb",
@@ -3768,6 +4478,16 @@
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20030000133,
     "Type": "剧场版"
+  },
+  {
+    "AID": 20020002,
+    "Title": "鬼眼狂刀",
+    "Pinyin": "gykd",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20020002.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第26集",
+    "UpdateTime": 20020020262,
+    "Type": "TV"
   },
   {
     "AID": 20020008,

@@ -76,20 +76,6 @@
           "https://175.178.227.159:7788/Play/adposter.mp4"
         ]
       ],
-      "bfzym3u8": [
-        [
-          "HD中字",
-          "https://c1.rrcdnbf3.com/video/ACCA13qujianchakeRegards/HD中字/index.m3u8",
-          "https://c1.rrcdnbf3.com/video/ACCA13qujianchakeRegards/HD中字/index.m3u8"
-        ]
-      ],
-      "ffm3u8": [
-        [
-          "HD中字",
-          "https://vip.ffzy-online1.com/20221228/16107_1952cca0/index.m3u8",
-          "https://vip.ffzy-online1.com/20221228/16107_1952cca0/index.m3u8"
-        ]
-      ],
       "hnm3u8": [
         [
           "第1集",
@@ -212,6 +198,20 @@
           "第12集",
           "https://hd.ijycnd.com/play/xe76B1Gd/index.m3u8",
           "https://hd.ijycnd.com/play/xe76B1Gd/index.m3u8"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "HD中字",
+          "https://c1.rrcdnbf3.com/video/ACCA13qujianchakeRegards/HD中字/index.m3u8",
+          "https://c1.rrcdnbf3.com/video/ACCA13qujianchakeRegards/HD中字/index.m3u8"
+        ]
+      ],
+      "ffm3u8": [
+        [
+          "HD中字",
+          "https://vip.ffzy-online1.com/20221228/16107_1952cca0/index.m3u8",
+          "https://vip.ffzy-online1.com/20221228/16107_1952cca0/index.m3u8"
         ]
       ]
     },
