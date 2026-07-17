@@ -4363,6 +4363,38 @@ body.art-fullscreen-web-active .banner-container {
   z-index: 0 !important;
 }
 
+/* ⑥ DOM Teleport 全屏：让 ArtPlayer 内部元素撑满 #dplayer 容器 ─────────────────
+   旋转后容器尺寸为 sh×sw（landscape），需强制覆盖 ArtPlayer 的 autoSize 限制     */
+
+/* .art-video-player 撑满 #dplayer 容器 */
+body.art-fullscreen-web-active #dplayer .art-video-player {
+  width:    100% !important;
+  height:   100% !important;
+  position: absolute !important;
+  top:      0 !important;
+  left:     0 !important;
+  aspect-ratio: unset !important;  /* 取消 ArtPlayer 的 16:9 宽高比约束 */
+}
+
+/* video 元素：object-fit:cover 填满容器，消除黑边（用户明确要求"全占屏"） */
+body.art-fullscreen-web-active #dplayer .art-video-player video {
+  width:      100% !important;
+  height:     100% !important;
+  object-fit: cover !important;    /* 裁切边缘以完全填满，无黑边 */
+  position:   absolute !important;
+  top:        0 !important;
+  left:       0 !important;
+}
+
+/* 退出全屏按钮（HTML overlay 中的 .exit-webfullscreen-btn）在旋转视图里调整位置
+   旋转 90deg 后，CSS top-right 对应视觉上的右下角（横握手机时的右上角）         */
+body.art-fullscreen-web-active .exit-webfullscreen-btn {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 2147483647 !important;
+}
+
 /* ============================================================
    原生 Fullscreen API 全屏状态 CSS
    :fullscreen 伪类：浏览器进入原生全屏时自动应用

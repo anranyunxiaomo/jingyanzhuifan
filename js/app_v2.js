@@ -2562,9 +2562,9 @@ new Vue({
       document.body.classList.add('fit-' + this.videoFitMode);
     },
 
-    // 💡 全屏控制：DOM Teleport 方案
-    // 原理：把 #dplayer appendChild 到 document.body，彻底脱离所有 transform 祖先上下文
-    // 竖屏手机用标准 position:fixed + 100dvh（控制栏在底部可用），用户物理转机即横屏（YouTube/Netflix 同款做法）
+    // 💡 全屏控制：DOM Teleport + 竖屏旋转方案
+    // 竖屏：容器设为 sh×sw（landscape 尺寸）并旋转 90deg → 视觉上恰好铺满 sw×sh 屏幕
+    // 横屏/PC：直接 fixed + 100dvh 铺满，不旋转
     toggleWebFullscreen() {
       const dplayerEl = document.getElementById('dplayer');
       if (!dplayerEl || !this.dpInstance) return;
@@ -2572,13 +2572,13 @@ new Vue({
       if (!this.isWebFullscreen) {
         // ===== 进入全屏 =====
 
-        // 先尝试原生 Fullscreen API（PC / Android Chrome / iPad Safari）
+        // 非 iOS 先尝试原生 Fullscreen API（PC / Android Chrome / iPad Safari）
         const isIOS = /iPhone|iPod/.test(navigator.userAgent);
         if (!isIOS) {
           try {
             if (dplayerEl.requestFullscreen) {
               dplayerEl.requestFullscreen();
-              return; // 原生全屏由 Esc 或 fullscreen 事件自行退出
+              return; // 原生全屏由 Esc / fullscreen 事件自行退出，不需要设 isWebFullscreen
             } else if (dplayerEl.webkitRequestFullscreen) {
               dplayerEl.webkitRequestFullscreen();
               return;
@@ -2588,33 +2588,59 @@ new Vue({
           }
         }
 
-        // 降级：DOM Teleport 全屏（iOS / 原生 API 不可用）
-        // 直接移到 body 末尾，脱离所有 transform/will-change 祖先，再施加 fixed+100dvh
+        // iOS / 原生 API 不可用 → DOM Teleport 全屏
         this._fsOriginalParent = dplayerEl.parentElement;
         this._fsOriginalNext   = dplayerEl.nextElementSibling;
         document.body.appendChild(dplayerEl);
 
-        // ⚠️ 不旋转整个容器——旋转会把 ArtPlayer 控制栏转到侧边，UX 极差
-        // 竖屏手机：视频有上下黑边（与 YouTube/Netflix 一致），用户可物理旋转手机横屏
-        dplayerEl.style.position   = 'fixed';
-        dplayerEl.style.top        = '0';
-        dplayerEl.style.left       = '0';
-        dplayerEl.style.width      = '100vw';
-        dplayerEl.style.height     = '100vh';
-        dplayerEl.style.maxWidth   = '100vw';
-        dplayerEl.style.maxHeight  = '100vh';
-        dplayerEl.style.zIndex     = '2147483647';
-        dplayerEl.style.background = '#000';
-        dplayerEl.style.borderRadius = '0';
-        dplayerEl.style.margin     = '0';
-        dplayerEl.style.padding    = '0';
-        dplayerEl.style.transform  = 'none';
+        const sw = window.innerWidth;
+        const sh = window.innerHeight;
+        const isPortrait = sh > sw;
+
+        if (isPortrait) {
+          // ── 竖屏：旋转 90deg 让 16:9 视频填满更多屏幕 ──────────────────
+          // CSS box 设为 landscape 尺寸 (sh × sw)，旋转后视觉上变成 portrait (sw × sh)
+          // 居中: top = (sh-sw)/2, left = (sw-sh)/2（left 为负数，正常）
+          const top  = (sh - sw) / 2;
+          const left = (sw - sh) / 2;
+          Object.assign(dplayerEl.style, {
+            position:        'fixed',
+            top:             top + 'px',
+            left:            left + 'px',
+            width:           sh + 'px',
+            height:          sw + 'px',
+            transform:       'rotate(90deg)',
+            transformOrigin: 'center center',
+            zIndex:          '2147483647',
+            background:      '#000',
+            borderRadius:    '0',
+            margin:          '0',
+            padding:         '0',
+            overflow:        'hidden',
+          });
+        } else {
+          // ── 横屏 / PC：直接铺满，不旋转 ─────────────────────────────────
+          Object.assign(dplayerEl.style, {
+            position:     'fixed',
+            top:          '0',
+            left:         '0',
+            width:        '100vw',
+            height:       '100dvh',
+            transform:    'none',
+            zIndex:       '2147483647',
+            background:   '#000',
+            borderRadius: '0',
+            margin:       '0',
+            padding:      '0',
+            overflow:     'hidden',
+          });
+        }
 
         document.body.style.setProperty('overflow', 'hidden', 'important');
         document.body.classList.add('art-fullscreen-web-active');
         this.isWebFullscreen = true;
 
-        // 双 tick：让 Vue 更新 DOM 后再通知 ArtPlayer 重算尺寸
+        // 双 tick：让 Vue 更新 DOM → ArtPlayer 才能正确重算容器尺寸
         this.$nextTick(() => {
           this.$nextTick(() => {
             try { this.dpInstance.resize(); } catch(e) {}
@@ -2624,7 +2650,7 @@ new Vue({
       } else {
         // ===== 退出全屏 =====
 
-        // 先退出系统级原生全屏（如果有）
+        // 先退出系统级原生全屏（PC / Android 按 Esc 或此路径）
         try {
           if (document.fullscreenElement || document.webkitFullscreenElement) {
             (document.exitFullscreen || document.webkitExitFullscreen).call(document);
@@ -2632,7 +2658,7 @@ new Vue({
           }
         } catch(e) {}
 
-        // ① 清除 #dplayer 的所有内联样式
+        // ① 清除 #dplayer 上所有内联样式
         dplayerEl.removeAttribute('style');
 
         // ② 还原到原始 DOM 位置
