@@ -172,20 +172,37 @@ export default {
         }
       }
 
-      // 🌸 优先判断是否是樱花动漫播放相对路径 (Token 以 /p/ 开头)
+      // 🌸 优先判断是否是樱花动漫播放路径（支持相对路径 /p/ 或完整 URL https://yhdmXXX/p/）
+      const YHDM_DOMAINS_CF = ['www.yhdm666.top', 'yhdm6.top', 'www.yhdm.pro', 'www.yhdm10.com', 'yhdm.us', 'www.yhdmla.com'];
+      let yhdmPlayUrl = null;
       if (sniffToken.startsWith('/p/')) {
+        // 相对路径：使用主域名 yhdm666.top
+        yhdmPlayUrl = `https://www.yhdm666.top${sniffToken}`;
+      } else if (sniffToken.startsWith('http')) {
+        // 完整 URL：验证是否来自已知樱花域名，并提取播放路径
         try {
-          const playPageUrl = `https://www.yhdm666.top${sniffToken}`;
+          const tokenUrl = new URL(sniffToken);
+          if (YHDM_DOMAINS_CF.some(d => tokenUrl.hostname === d) && tokenUrl.pathname.startsWith('/p/')) {
+            yhdmPlayUrl = sniffToken; // 直接使用完整 URL
+          }
+        } catch(_) {}
+      }
+
+      if (yhdmPlayUrl) {
+        try {
+          const playPageUrl = yhdmPlayUrl;
+          const playDomain = new URL(playPageUrl).origin;
           const res = await fetch(playPageUrl, {
             headers: {
               'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1',
-              'Referer': 'https://www.yhdm666.top/'
+              'Referer': playDomain + '/'
             },
             signal: AbortSignal.timeout(8000)
           });
           if (!res.ok) {
             throw new Error(`HTTP status ${res.status}`);
           }
+
           const html = await res.text();
           
           // 💡 采用括号计数解析器代替非贪婪正则，彻底解决 player_aaaa 对象中含有 vod_data 嵌套括号导致的截断问题

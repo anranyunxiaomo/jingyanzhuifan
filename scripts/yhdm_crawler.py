@@ -26,8 +26,10 @@ DETAIL_DIR = os.path.join(DATA_DIR, "detail")
 SEARCH_INDEX_PATH = os.path.join(DATA_DIR, "search_index.json")
 
 # 💡 多域名 Fallback 列表（按优先级排序，任意一个成功即可）
+# yhdm6.top 为互联网搜索新发现的同构镜像站，内容与 yhdm666.top 相同但 ID 独立
 YHDM_DOMAINS = [
     "https://www.yhdm666.top",
+    "https://yhdm6.top",       # ✅ 新发现：与 yhdm666.top 完全同构，可用
     "https://www.yhdm.pro",
     "https://www.yhdm10.com",
     "https://yhdm.us",
@@ -223,8 +225,9 @@ def search_yhdm(keyword):
 
 def fetch_yhdm_episodes(slug):
     """
-    访问樱花动漫详情页，解析播放地址（相对路径列表）
-    返回格式: [ ["第01集", "/p/123-1-1.html"], ... ]
+    访问樱花动漫详情页，解析播放地址（完整 URL 列表）
+    返回格式: [ ["第01集", "https://www.yhdm6.top/p/12341-5-1.html"], ... ]
+    注意：存储完整 URL 而非相对路径，以便 CF Worker 路由到正确的镜像站
     """
     html = yhdm_get(f"/v/{slug}.html", timeout=12)
     if not html:
@@ -248,11 +251,14 @@ def fetch_yhdm_episodes(slug):
                      "BD" in name.upper() or "HD" in name.upper() or
                      "中字" in name or "国语" in name or "完整" in name or
                      name.isdigit())):
-                eps.append([name, href])
+                # 💡 存储完整 URL，不用相对路径，避免 CF Worker 跨域名解析失败
+                full_url = ACTIVE_DOMAIN + href
+                eps.append([name, full_url])
         if len(eps) > len(best_playlist):
             best_playlist = eps
 
     return best_playlist
+
 
 
 # ==========================================================================
