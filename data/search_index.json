@@ -2200,7 +2200,7 @@
     "Type": ""
   },
   {
-    "AID": "a123_lbxx hfhy！zgdhz",
+    "AID": "a123_lbxx_hfhy_zgdhz",
     "Title": "蜡笔小新 呼风唤雨！战国大合战",
     "Pinyin": "lbxx hfhy！zgdhz",
     "Cover": "https://img.lzipic.com/upload/vod/20221018-1/bc6fe726a41c0b2611d4ebc697c29b3f.jpg",
@@ -2210,7 +2210,17 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_lbxx hfhy！drdgdfj",
+    "AID": "a123_yzbd_ydddf",
+    "Title": "云之彼端，约定的地方",
+    "Pinyin": "yzbd，ydddf",
+    "Cover": "https://img.lzipic.com/upload/vod/20231220-1/2e7e355fc283d858ee04fe8424454d7b.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至HD中字",
+    "UpdateTime": 20200000133,
+    "Type": "剧场版"
+  },
+  {
+    "AID": "a123_lbxx_hfhy_drdgdfj",
     "Title": "蜡笔小新 呼风唤雨！大人帝国的反击",
     "Pinyin": "lbxx hfhy！drdgdfj",
     "Cover": "https://img.lzipic.com/upload/vod/20240518-1/d2b20566fdea85a5268d9c2036cc8c26.jpg",
@@ -2230,10 +2240,10 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_yzbd，ydddf",
-    "Title": "云之彼端，约定的地方",
-    "Pinyin": "yzbd，ydddf",
-    "Cover": "https://img.lzipic.com/upload/vod/20231220-1/2e7e355fc283d858ee04fe8424454d7b.jpg",
+    "AID": "a123_xsjfyzsjcb_z",
+    "Title": "新世纪福音战士剧场版：终",
+    "Pinyin": "xsjfyzsjcb：z",
+    "Cover": "https://img.lzipic.com/upload/vod/20230113-1/4d23d9a7d3243b522bdaf484772f020d.jpg",
     "Status": "完结",
     "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
@@ -2250,22 +2260,12 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_xsjfyzsjcb：p",
+    "AID": "a123_xsjfyzsjcb_p",
     "Title": "新世纪福音战士剧场版：破",
     "Pinyin": "xsjfyzsjcb：p",
     "Cover": "https://img.picbf.com/upload/vod/20260302-1/724e23b784b63f699afd51a5c8bab22b.jpg",
     "Status": "完结",
     "UpToDate": "更新至高清",
-    "UpdateTime": 20200000133,
-    "Type": "剧场版"
-  },
-  {
-    "AID": "a123_xsjfyzsjcb：z",
-    "Title": "新世纪福音战士剧场版：终",
-    "Pinyin": "xsjfyzsjcb：z",
-    "Cover": "https://img.lzipic.com/upload/vod/20230113-1/4d23d9a7d3243b522bdaf484772f020d.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至HD中字",
     "UpdateTime": 20200000133,
     "Type": "剧场版"
   },
@@ -2870,7 +2870,7 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_yxrs l",
+    "AID": "a123_yxrs_l",
     "Title": "游戏人生 零",
     "Pinyin": "yxrs l",
     "Cover": "https://image.jinyingimage.com/cover/80f7325fa857de62fafe85f7a30273cb.jpg",
@@ -3330,7 +3330,7 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_dlam：bwth",
+    "AID": "a123_dlam_bwth",
     "Title": "哆啦A梦：伴我同行",
     "Pinyin": "dlam：bwth",
     "Cover": "https://hongniuzyimage.com/upload/vod/20220630-1/880ba3b1240262440afd54c9ba155ab1.jpg",
@@ -4160,7 +4160,7 @@
     "Type": "TV"
   },
   {
-    "AID": "a123_mztkn：mgdszl",
+    "AID": "a123_mztkn_mgdszl",
     "Title": "名侦探柯南：迷宫的十字路",
     "Pinyin": "mztkn：mgdszl",
     "Cover": "https://image.jinyingimage.com/cover/69386f6bb1dfed68692a24c8686939b9.jpg",
@@ -4230,7 +4230,7 @@
     "Type": "剧场版"
   },
   {
-    "AID": "a123_mztkn：bkjdwl",
+    "AID": "a123_mztkn_bkjdwl",
     "Title": "名侦探柯南：贝克街的亡灵",
     "Pinyin": "mztkn：bkjdwl",
     "Cover": "https://image.jinyingimage.com/cover/a495eebbfa243b79c5b9b224c482d0c2.jpg",
