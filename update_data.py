@@ -1412,6 +1412,10 @@ async def main_async():
                         cleaned_week[day] = animes
                 home_data["week_list"] = cleaned_week
 
+        # 💡 根据用户要求，彻底删除并关闭“本季推荐”栏目数据源
+        if isinstance(home_data, dict):
+            home_data["recommend"] = []
+
         # 保存 home-list.json 到 data/ 目录
         with open(local_home_path, 'w', encoding='utf-8') as f:
             json.dump(home_data, f, ensure_ascii=False, indent=2)

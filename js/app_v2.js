@@ -728,11 +728,11 @@ new Vue({
       }
     },
     triggerFallbackBanners() {
-      const list = this.recommendList.slice(0, 4);
+      const list = this.latestList.slice(0, 4);
       const fallbackBanners = list.map(item => ({
         html: item.Title,
-        AID: item.AID,
-        style: item.PicSmall
+        AID: item.id || item.AID,
+        style: item.cover || item.PicSmall
       }));
       
       this.bannerList = fallbackBanners;

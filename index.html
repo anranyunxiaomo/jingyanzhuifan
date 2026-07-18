@@ -14,8 +14,8 @@
   <!-- 💡 hls.min.js + artplayer.js 已移至按需动态加载（playEpisode 时才引入），节省首屏 570KB 阻塞 -->
   <!-- DNS 预连接：加速封面图片 CDN 的 TCP 握手 -->
   <link rel="dns-prefetch" href="//cdn.aqdstatic.com">
-  <link rel="stylesheet" href="css/style.css?v=20260718T1337">
-  <script>window.JYZF_VERSION = "20260718T1337";</script>
+  <link rel="stylesheet" href="css/style.css?v=20260718T1338">
+  <script>window.JYZF_VERSION = "20260718T1338";</script>
 </head>
 <body class="loader-active">
 
@@ -605,42 +605,6 @@
         </div>
       </section>
 
-      <!-- 2.3 推荐动漫列表 -->
-      <section class="list-section">
-        <!-- 本季推荐 section -->
-        <div class="section-title-wrapper">
-          <!-- 赞图标（古风·拇指风） -->
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
-            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-          </svg>
-          <h2 class="section-title">本季推荐</h2>
-        </div>
-        <div class="grid-list">
-          <div 
-            class="anime-card" 
-            v-for="item in recommendList" 
-            :key="item.AID"
-            @click="selectAnime(item.AID)"
-          >
-            <div class="card-cover-wrapper">
-              <div class="card-tag">{{ item.NewTitle }}</div>
-              <div class="card-overlay">
-                <!-- 播放图标 -->
-                <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
-                </svg>
-              </div>
-              <img :src="item.PicSmall" :alt="item.Title" class="card-cover"
-                loading="lazy" decoding="async"
-                onerror="this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop'">
-            </div>
-            <div class="card-info">
-              <h3 class="card-title">{{ item.Title }}</h3>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- 2.4 豆瓣 9分+ 治愈系番剧大赏 section -->
       <section class="list-section" style="margin-top: 2rem;" v-if="healingList && healingList.length > 0">
@@ -1046,7 +1010,7 @@
 <script src="js/vendor/vue.min.js"></script>
 <script src="js/vendor/axios.min.js"></script>
 <!-- JS 应用逻辑 -->
-<script src="js/app_v2.js?v=20260718T1337"></script>
+<script src="js/app_v2.js?v=20260718T1338"></script>
 
 <!-- Service Worker 注册（静态资源缓存，二次访问秒开） -->
 <script>
