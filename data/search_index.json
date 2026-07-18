@@ -1560,16 +1560,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20190031,
-    "Title": "魔法纪录 魔法少女小圆外传",
-    "Pinyin": "mfjl mfsnxywz",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190031.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20200190161,
-    "Type": "TV"
-  },
-  {
     "AID": 20190126,
     "Title": "哥布林杀手剧场版 GOBLIN'S CROWN",
     "Pinyin": "gblssjcb goblin's crown",
@@ -1578,6 +1568,16 @@
     "UpToDate": "全集",
     "UpdateTime": 20200190136,
     "Type": "剧场版"
+  },
+  {
+    "AID": 20190031,
+    "Title": "魔法纪录 魔法少女小圆外传",
+    "Pinyin": "mfjl mfsnxywz",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190031.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20200190071,
+    "Type": "TV"
   },
   {
     "AID": "a123_beidoushenquan4",
@@ -2280,16 +2280,6 @@
     "Type": "剧场版"
   },
   {
-    "AID": 20190138,
-    "Title": "拾又之国",
-    "Pinyin": "syzg",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20190190398,
-    "Type": "TV"
-  },
-  {
     "AID": 20190111,
     "Title": "水果篮子",
     "Pinyin": "sglz",
@@ -2327,6 +2317,16 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20190190278,
+    "Type": "TV"
+  },
+  {
+    "AID": 20190138,
+    "Title": "拾又之国",
+    "Pinyin": "syzg",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20190190268,
     "Type": "TV"
   },
   {
@@ -2700,16 +2700,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20170107,
-    "Title": "魔法使的新娘",
-    "Pinyin": "mfsdxn",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20170107.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20170170347,
-    "Type": "TV"
-  },
-  {
     "AID": 20170030,
     "Title": "Re:CREATORS",
     "Pinyin": "re:creators",
@@ -2817,6 +2807,16 @@
     "Status": "完结",
     "UpToDate": "更新至第12集",
     "UpdateTime": 20170170138,
+    "Type": "TV"
+  },
+  {
+    "AID": 20170107,
+    "Title": "魔法使的新娘",
+    "Pinyin": "mfsdxn",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20170107.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20170170137,
     "Type": "TV"
   },
   {
@@ -3110,16 +3110,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20150001,
-    "Title": "赤发白雪姬",
-    "Pinyin": "cfbxj",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20150001.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第01集",
-    "UpdateTime": 20150150121,
-    "Type": "TV"
-  },
-  {
     "AID": 20150062,
     "Title": "约会大作战剧场版 万由里裁决",
     "Pinyin": "yhdzzjcb wylcj",
@@ -3128,6 +3118,16 @@
     "UpToDate": "全集",
     "UpdateTime": 20150150072,
     "Type": "剧场版"
+  },
+  {
+    "AID": 20150001,
+    "Title": "赤发白雪姬",
+    "Pinyin": "cfbxj",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20150001.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第01集",
+    "UpdateTime": 20150150011,
+    "Type": "TV"
   },
   {
     "AID": "a123_gwdhz",
@@ -3370,16 +3370,6 @@
     "Type": "TV"
   },
   {
-    "AID": 20130018,
-    "Title": "青春纪行",
-    "Pinyin": "qcjx",
-    "Cover": "https://cdn.aqdstatic.com:966/age/20130018.jpg",
-    "Status": "完结",
-    "UpToDate": "更新至第24集",
-    "UpdateTime": 20130130258,
-    "Type": "TV"
-  },
-  {
     "AID": 20130078,
     "Title": "空之境界(TV版)",
     "Pinyin": "kzjj(tvb)",
@@ -3498,6 +3488,16 @@
     "UpToDate": "全集",
     "UpdateTime": 20130130127,
     "Type": "剧场版"
+  },
+  {
+    "AID": 20130018,
+    "Title": "青春纪行",
+    "Pinyin": "qcjx",
+    "Cover": "https://cdn.aqdstatic.com:966/age/20130018.jpg",
+    "Status": "完结",
+    "UpToDate": "更新至第24集",
+    "UpdateTime": 20130130028,
+    "Type": "TV"
   },
   {
     "AID": 20130007,
@@ -4006,7 +4006,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20060065.jpg",
     "Status": "完结",
     "UpToDate": "更新至第25集",
-    "UpdateTime": 20060060315,
+    "UpdateTime": 20060060305,
     "Type": "TV"
   },
   {
@@ -4256,7 +4256,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000001.jpg",
     "Status": "连载",
     "UpToDate": "更新至第09集",
-    "UpdateTime": 20000111711,
+    "UpdateTime": 20000111691,
     "Type": "TV"
   },
   {
@@ -4266,7 +4266,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000025.jpg",
     "Status": "完结",
     "UpToDate": "更新至第01集",
-    "UpdateTime": 20000000525,
+    "UpdateTime": 20000000155,
     "Type": "TV"
   },
   {
@@ -4346,7 +4346,7 @@
     "Cover": "https://cdn.aqdstatic.com:966/age/20000056.jpg",
     "Status": "完结",
     "UpToDate": "全集",
-    "UpdateTime": 19880000076,
+    "UpdateTime": 19880000066,
     "Type": "剧场版"
   },
   {
