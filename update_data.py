@@ -1829,14 +1829,15 @@ async def main_async():
 
     # ==========================================================================
     # 💡 统一大增益：无论是否走网络，皆统一收集治愈番写入 home-list.json & 同系列关联匹配注入
+    # 💡 GitHub Actions 流程中，跳过第一步的提前清理与重建（避免新番因还未跑爬虫添加直链而被提早过滤）。
+    # 相关的清理与重建工作会在随后 yhdm_crawler.py 跑完后的最后一步统一调用执行。
     # ==========================================================================
-    clean_local_home_list()
-    generate_healing_and_related_logic()
-
-
-
-    # 💡 稳健大杀器：一键重建最新的 search_index.json，使本地模糊搜索能 100% 覆盖所有已缓存/同步的动漫
-    rebuild_static_index_and_assets()
+    if os.environ.get('GITHUB_ACTIONS'):
+        print("[CI] GITHUB_ACTIONS detected. Skipping early cleanup and index rebuilding, which will be handled at the very end of the workflow.")
+    else:
+        clean_local_home_list()
+        generate_healing_and_related_logic()
+        rebuild_static_index_and_assets()
 
 def main():
     asyncio.run(main_async())
