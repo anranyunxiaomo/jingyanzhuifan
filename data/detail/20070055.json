@@ -159,59 +159,8 @@
     "comment_cnt": "14",
     "collect_cnt": "911"
   },
-  "series": [
-    {
-      "AID": 20090069,
-      "Href": "/detail/20090069",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090069.jpg",
-      "Title": "神曲奏界 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220511,
-      "Href": "/detail/20220511",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220511.jpg",
-      "Title": "再见了，橡果兄弟！"
-    },
-    {
-      "AID": 20200255,
-      "Href": "/detail/20200255",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200255.jpg",
-      "Title": "风雨廊桥"
-    },
-    {
-      "AID": 20210431,
-      "Href": "/detail/20210431",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210431.jpg",
-      "Title": "动态漫画·我能看到成功率 第三季"
-    },
-    {
-      "AID": 20210219,
-      "Href": "/detail/20210219",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210219.jpg",
-      "Title": "百鬼幼儿园 第四季"
-    },
-    {
-      "AID": 20120117,
-      "Href": "/detail/20120117",
-      "NewTitle": "[BD 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120117.jpg",
-      "Title": "剑风传奇 黄金时代篇I 霸王之卵"
-    },
-    {
-      "AID": 20220119,
-      "Href": "/detail/20220119",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220119.jpg",
-      "Title": "后宫之乌"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

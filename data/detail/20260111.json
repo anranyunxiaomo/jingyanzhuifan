@@ -518,50 +518,7 @@
     "collect_cnt": "1,449"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180307,
-      "Href": "/detail/20180307",
-      "NewTitle": "第27集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180307.jpg",
-      "Title": "15岁、今天开始同居生活"
-    },
-    {
-      "AID": 20240028,
-      "Href": "/detail/20240028",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240028.jpg",
-      "Title": "身为魔王的我娶了奴隶精灵为妻，该如何表白我的爱？"
-    },
-    {
-      "AID": 20090040,
-      "Href": "/detail/20090040",
-      "NewTitle": "[TV 00-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090040.jpg",
-      "Title": "简单易懂的现代魔法"
-    },
-    {
-      "AID": 20190327,
-      "Href": "/detail/20190327",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190327.jpg",
-      "Title": "宛香"
-    },
-    {
-      "AID": 20030045,
-      "Href": "/detail/20030045",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030045.jpg",
-      "Title": "废弃公主"
-    },
-    {
-      "AID": 20220128,
-      "Href": "/detail/20220128",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220128.jpg",
-      "Title": "吸血鬼马上死 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

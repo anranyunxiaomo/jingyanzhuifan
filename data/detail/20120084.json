@@ -144,66 +144,8 @@
     "comment_cnt": "48",
     "collect_cnt": "455"
   },
-  "series": [
-    {
-      "AID": 20120085,
-      "Href": "/detail/20120085",
-      "NewTitle": "[TV 00-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120085.jpg",
-      "Title": "轮回的拉格朗日 第二季"
-    },
-    {
-      "AID": 20120086,
-      "Href": "/detail/20120086",
-      "NewTitle": "OVA全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120086.jpg",
-      "Title": "轮回的拉格朗日 鸭川日常"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180366,
-      "Href": "/detail/20180366",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180366.jpg",
-      "Title": "凸变英雄 LEAF"
-    },
-    {
-      "AID": 20230205,
-      "Href": "/detail/20230205",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230205.jpg",
-      "Title": "盾之勇者成名录 第三季"
-    },
-    {
-      "AID": 20220401,
-      "Href": "/detail/20220401",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220401.jpg",
-      "Title": "靠你啦！战神系统"
-    },
-    {
-      "AID": 20110096,
-      "Href": "/detail/20110096",
-      "NewTitle": "第146集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110096.jpg",
-      "Title": "游戏王ZEXAL"
-    },
-    {
-      "AID": 20040040,
-      "Href": "/detail/20040040",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040040.jpg",
-      "Title": "犬夜叉剧场版 红莲之蓬莱岛"
-    },
-    {
-      "AID": 20230170,
-      "Href": "/detail/20230170",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230170.jpg",
-      "Title": "镇魂街 第三季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

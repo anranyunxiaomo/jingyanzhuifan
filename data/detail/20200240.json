@@ -154,50 +154,7 @@
     "collect_cnt": "574"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20130161,
-      "Href": "/detail/20130161",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130161.jpg",
-      "Title": "现视研 二代目 OAD"
-    },
-    {
-      "AID": 20090018,
-      "Href": "/detail/20090018",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090018.jpg",
-      "Title": "七鬼神"
-    },
-    {
-      "AID": 20140097,
-      "Href": "/detail/20140097",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140097.jpg",
-      "Title": "破刃之剑"
-    },
-    {
-      "AID": 20200328,
-      "Href": "/detail/20200328",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200328.jpg",
-      "Title": "恶玉DRIVE"
-    },
-    {
-      "AID": 20210155,
-      "Href": "/detail/20210155",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210155.jpg",
-      "Title": "自称贤者弟子的贤者"
-    },
-    {
-      "AID": 20180153,
-      "Href": "/detail/20180153",
-      "NewTitle": "第26话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180153.jpg",
-      "Title": "告诉我魔法钟摆～莉露莉露妖精莉露～"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

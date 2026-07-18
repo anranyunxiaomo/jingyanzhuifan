@@ -64,59 +64,8 @@
     "comment_cnt": "189",
     "collect_cnt": "1,635"
   },
-  "series": [
-    {
-      "AID": 20160010,
-      "Href": "/detail/20160010",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160010.jpg",
-      "Title": "甲铁城的卡巴内利"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220031,
-      "Href": "/detail/20220031",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220031.jpg",
-      "Title": "平家物语"
-    },
-    {
-      "AID": 20100041,
-      "Href": "/detail/20100041",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100041.jpg",
-      "Title": "尸鬼"
-    },
-    {
-      "AID": 20170275,
-      "Href": "/detail/20170275",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170275.jpg",
-      "Title": "18：与你相连的谜题"
-    },
-    {
-      "AID": 20160128,
-      "Href": "/detail/20160128",
-      "NewTitle": "[TV 01-08]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160128.jpg",
-      "Title": "亚尔斯兰战记 第二季"
-    },
-    {
-      "AID": 20000058,
-      "Href": "/detail/20000058",
-      "NewTitle": "第52集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000058.jpg",
-      "Title": "艾斯奥特曼"
-    },
-    {
-      "AID": 20150074,
-      "Href": "/detail/20150074",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150074.jpg",
-      "Title": "新妹魔王的契约者 第二季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

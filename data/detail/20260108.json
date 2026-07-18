@@ -477,50 +477,7 @@
     "collect_cnt": "1,135"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20150090,
-      "Href": "/detail/20150090",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150090.jpg",
-      "Title": "元气少女缘结神 第二季"
-    },
-    {
-      "AID": 20180169,
-      "Href": "/detail/20180169",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180169.jpg",
-      "Title": "BanG Dream! 少女乐团派对！☆PICO"
-    },
-    {
-      "AID": 20170210,
-      "Href": "/detail/20170210",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170210.jpg",
-      "Title": "Free!-Take Your Marks-"
-    },
-    {
-      "AID": 20000275,
-      "Href": "/detail/20000275",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000275.jpg",
-      "Title": "闪电陷阱 蕾娜&莱卡"
-    },
-    {
-      "AID": 20220450,
-      "Href": "/detail/20220450",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220450.jpg",
-      "Title": "冰剑的魔术师将要统一世界"
-    },
-    {
-      "AID": 20200110,
-      "Href": "/detail/20200110",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200110.jpg",
-      "Title": "攻壳机动队 SAC_2045"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

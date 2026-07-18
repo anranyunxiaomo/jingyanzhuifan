@@ -188,22 +188,7 @@
     "comment_cnt": "404",
     "collect_cnt": "5,864"
   },
-  "series": [
-    {
-      "AID": 20150017,
-      "Href": "/detail/20150017",
-      "NewTitle": "第13话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150017.jpg",
-      "Title": "我的青春恋爱物语果然有问题 第二季"
-    },
-    {
-      "AID": 20190129,
-      "Href": "/detail/20190129",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190129.jpg",
-      "Title": "我的青春恋爱物语果然有问题 第三季"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20130006,
@@ -211,41 +196,6 @@
       "NewTitle": "第13话",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20130006.jpg",
       "Title": "我的青春恋爱物语果然有问题"
-    },
-    {
-      "AID": 20140018,
-      "Href": "/detail/20140018",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140018.jpg",
-      "Title": "野良神OAD"
-    },
-    {
-      "AID": 20180243,
-      "Href": "/detail/20180243",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180243.jpg",
-      "Title": "超时空要塞Δ 激情的女武神"
-    },
-    {
-      "AID": 20050010,
-      "Href": "/detail/20050010",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050010.jpg",
-      "Title": "AIR"
-    },
-    {
-      "AID": 20230058,
-      "Href": "/detail/20230058",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230058.jpg",
-      "Title": "德凯奥特曼最终章 向着旅途的彼岸"
-    },
-    {
-      "AID": 20200229,
-      "Href": "/detail/20200229",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200229.jpg",
-      "Title": "宝石幻想光芒重现"
     }
   ],
   "player_label_arr": {

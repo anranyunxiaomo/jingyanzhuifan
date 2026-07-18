@@ -104,50 +104,7 @@
     "collect_cnt": "1,246"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200318,
-      "Href": "/detail/20200318",
-      "NewTitle": "第12话",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200318.jpg",
-      "Title": "我为歌狂之旋律重启"
-    },
-    {
-      "AID": 20180323,
-      "Href": "/detail/20180323",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180323.jpg",
-      "Title": "秦时明月之沧海横流"
-    },
-    {
-      "AID": 20170236,
-      "Href": "/detail/20170236",
-      "NewTitle": "第36集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170236.jpg",
-      "Title": "枪神记"
-    },
-    {
-      "AID": 20220458,
-      "Href": "/detail/20220458",
-      "NewTitle": "第18集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220458.jpg",
-      "Title": "绝代双骄"
-    },
-    {
-      "AID": 20230260,
-      "Href": "/detail/20230260",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230260.jpg",
-      "Title": "金之国水之国"
-    },
-    {
-      "AID": 20220076,
-      "Href": "/detail/20220076",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220076.jpg",
-      "Title": "想成为影之实力者！"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

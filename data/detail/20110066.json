@@ -222,50 +222,7 @@
     "collect_cnt": "2,538"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20060001,
-      "Href": "/detail/20060001",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060001.jpg",
-      "Title": "传颂之物"
-    },
-    {
-      "AID": 20170179,
-      "Href": "/detail/20170179",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170179.jpg",
-      "Title": "鲁邦三世剧场版 血烟的石川五右卫门"
-    },
-    {
-      "AID": 20080092,
-      "Href": "/detail/20080092",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080092.jpg",
-      "Title": "亡念之扎姆德"
-    },
-    {
-      "AID": 20130036,
-      "Href": "/detail/20130036",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130036.jpg",
-      "Title": "超次元游戏 海王星"
-    },
-    {
-      "AID": 20210222,
-      "Href": "/detail/20210222",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210222.jpg",
-      "Title": "爱死亡和机器人 第二季"
-    },
-    {
-      "AID": 20180324,
-      "Href": "/detail/20180324",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180324.jpg",
-      "Title": "画江湖之不良人 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

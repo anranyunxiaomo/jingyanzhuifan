@@ -337,50 +337,7 @@
     "collect_cnt": "3,568"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190110,
-      "Href": "/detail/20190110",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
-      "Title": "信长老师的年幼妻子"
-    },
-    {
-      "AID": 20260002,
-      "Href": "/detail/20260002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260002.jpg",
-      "Title": "能帮我弄干净吗？"
-    },
-    {
-      "AID": 20220519,
-      "Href": "/detail/20220519",
-      "NewTitle": "第94集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220519.jpg",
-      "Title": "小可爱"
-    },
-    {
-      "AID": 20160098,
-      "Href": "/detail/20160098",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160098.jpg",
-      "Title": "ReLIFE"
-    },
-    {
-      "AID": 20190305,
-      "Href": "/detail/20190305",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190305.jpg",
-      "Title": "重生暖婚轻宠妻 第二季"
-    },
-    {
-      "AID": 20220220,
-      "Href": "/detail/20220220",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220220.jpg",
-      "Title": "动态漫画·我被困在同一天十万年 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

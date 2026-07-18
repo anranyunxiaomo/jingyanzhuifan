@@ -535,50 +535,7 @@
     "collect_cnt": "1,180"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190391,
-      "Href": "/detail/20190391",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190391.jpg",
-      "Title": "一觉醒来变成妹子"
-    },
-    {
-      "AID": 20250003,
-      "Href": "/detail/20250003",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250003.jpg",
-      "Title": "我的幸福婚姻 第二季"
-    },
-    {
-      "AID": 20220323,
-      "Href": "/detail/20220323",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220323.jpg",
-      "Title": "我的弟子都超神 动态漫"
-    },
-    {
-      "AID": 20140179,
-      "Href": "/detail/20140179",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140179.jpg",
-      "Title": "犬神同学和猫山同学"
-    },
-    {
-      "AID": 20120142,
-      "Href": "/detail/20120142",
-      "NewTitle": "[OVA 01-07]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120142.jpg",
-      "Title": "新网球王子OVA"
-    },
-    {
-      "AID": 20100074,
-      "Href": "/detail/20100074",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100074.jpg",
-      "Title": "Fate/stay night -UBW- 剧场版"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

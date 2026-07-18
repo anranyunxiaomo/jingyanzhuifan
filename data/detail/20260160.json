@@ -403,43 +403,7 @@
     "collect_cnt": "181"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190412,
-      "Href": "/detail/20190412",
-      "NewTitle": "第42集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190412.jpg",
-      "Title": "动态漫画·风姿物语"
-    },
-    {
-      "AID": 20180164,
-      "Href": "/detail/20180164",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180164.jpg",
-      "Title": "七星的昴星团"
-    },
-    {
-      "AID": 20220443,
-      "Href": "/detail/20220443",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220443.jpg",
-      "Title": "龙珠超 超级英雄"
-    },
-    {
-      "AID": 20220076,
-      "Href": "/detail/20220076",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220076.jpg",
-      "Title": "想成为影之实力者！"
-    },
-    {
-      "AID": 20240091,
-      "Href": "/detail/20240091",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240091.jpg",
-      "Title": "战国妖狐 千魔混沌篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

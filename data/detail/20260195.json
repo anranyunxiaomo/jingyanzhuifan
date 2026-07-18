@@ -126,50 +126,7 @@
     "collect_cnt": "596"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200141,
-      "Href": "/detail/20200141",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200141.jpg",
-      "Title": "战翼的希格德莉法"
-    },
-    {
-      "AID": 20020020,
-      "Href": "/detail/20020020",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020020.jpg",
-      "Title": "攻壳机动队 STAND ALONE COMPLEX"
-    },
-    {
-      "AID": 20080083,
-      "Href": "/detail/20080083",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080083.jpg",
-      "Title": "龙珠 嗨！归来的悟空和他的伙伴们"
-    },
-    {
-      "AID": 20000104,
-      "Href": "/detail/20000104",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000104.jpg",
-      "Title": "风筝"
-    },
-    {
-      "AID": 20220121,
-      "Href": "/detail/20220121",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220121.jpg",
-      "Title": "孤独摇滚！"
-    },
-    {
-      "AID": 20190082,
-      "Href": "/detail/20190082",
-      "NewTitle": "[TV 01-15]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190082.jpg",
-      "Title": "深夜的超自然公务员"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

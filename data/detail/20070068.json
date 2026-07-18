@@ -60,50 +60,7 @@
     "collect_cnt": "162"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160177,
-      "Href": "/detail/20160177",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160177.jpg",
-      "Title": "天真与闪电"
-    },
-    {
-      "AID": 20230254,
-      "Href": "/detail/20230254",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
-      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
-    },
-    {
-      "AID": 20220150,
-      "Href": "/detail/20220150",
-      "NewTitle": "第3话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220150.jpg",
-      "Title": "龙隐于雪"
-    },
-    {
-      "AID": 20200008,
-      "Href": "/detail/20200008",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200008.jpg",
-      "Title": "因为太怕痛就全点防御力了"
-    },
-    {
-      "AID": 20250042,
-      "Href": "/detail/20250042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250042.jpg",
-      "Title": "金牌得主"
-    },
-    {
-      "AID": 20220533,
-      "Href": "/detail/20220533",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220533.jpg",
-      "Title": "镜之孤城"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

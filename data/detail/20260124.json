@@ -316,50 +316,7 @@
     "collect_cnt": "85"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20080041,
-      "Href": "/detail/20080041",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080041.jpg",
-      "Title": "初音岛 if"
-    },
-    {
-      "AID": 20140141,
-      "Href": "/detail/20140141",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140141.jpg",
-      "Title": "告白实行委员会 嫉忌的答复"
-    },
-    {
-      "AID": 20120112,
-      "Href": "/detail/20120112",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120112.jpg",
-      "Title": "向阳素描×蜂窝"
-    },
-    {
-      "AID": 20110114,
-      "Href": "/detail/20110114",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110114.jpg",
-      "Title": "旋风管家 HEAVEN IS A PLACE ON EARTH"
-    },
-    {
-      "AID": 20170098,
-      "Href": "/detail/20170098",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170098.jpg",
-      "Title": "结城友奈是勇者 第二季(鹫尾须美之章&勇者之章)"
-    },
-    {
-      "AID": 20220302,
-      "Href": "/detail/20220302",
-      "NewTitle": "第86集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220302.jpg",
-      "Title": "剑仙在此"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

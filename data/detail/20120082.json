@@ -59,73 +59,8 @@
     "comment_cnt": "125",
     "collect_cnt": "436"
   },
-  "series": [
-    {
-      "AID": 20180039,
-      "Href": "/detail/20180039",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180039.jpg",
-      "Title": "伊藤润二惊选集"
-    },
-    {
-      "AID": 20220258,
-      "Href": "/detail/20220258",
-      "NewTitle": "第04集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220258.jpg",
-      "Title": "漩涡"
-    },
-    {
-      "AID": 20230037,
-      "Href": "/detail/20230037",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230037.jpg",
-      "Title": "伊藤润二《狂热集》"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180363,
-      "Href": "/detail/20180363",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180363.jpg",
-      "Title": "欧布奥特曼 英雄传"
-    },
-    {
-      "AID": 20190219,
-      "Href": "/detail/20190219",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190219.jpg",
-      "Title": "非枪人生"
-    },
-    {
-      "AID": 20000132,
-      "Href": "/detail/20000132",
-      "NewTitle": "[OVA 01-11]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000132.jpg",
-      "Title": "乱马1/2 OVA"
-    },
-    {
-      "AID": 20260206,
-      "Href": "/detail/20260206",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260206.jpg",
-      "Title": "乙女游戏世界对路人角色很不友好 第二季"
-    },
-    {
-      "AID": 20150065,
-      "Href": "/detail/20150065",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150065.jpg",
-      "Title": "希德尼娅的骑士剧场版"
-    },
-    {
-      "AID": 20190413,
-      "Href": "/detail/20190413",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190413.jpg",
-      "Title": "海兽之子"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -62,20 +62,6 @@
   },
   "series": [
     {
-      "AID": 20140141,
-      "Href": "/detail/20140141",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140141.jpg",
-      "Title": "告白实行委员会 嫉忌的答复"
-    },
-    {
-      "AID": 20160210,
-      "Href": "/detail/20160210",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160210.jpg",
-      "Title": "告白实行委员会剧场版 喜欢上你的那个瞬间"
-    },
-    {
       "AID": 20170126,
       "Href": "/detail/20170126",
       "NewTitle": "第6集(完结)",
@@ -83,50 +69,7 @@
       "Title": "无论何时我们的恋情都是10厘米"
     }
   ],
-  "similar": [
-    {
-      "AID": 20070023,
-      "Href": "/detail/20070023",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070023.jpg",
-      "Title": "南家三姐妹"
-    },
-    {
-      "AID": 20210312,
-      "Href": "/detail/20210312",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210312.jpg",
-      "Title": "动态漫画·快意十三刀"
-    },
-    {
-      "AID": 20080071,
-      "Href": "/detail/20080071",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080071.jpg",
-      "Title": "犬夜叉OVA 黑色铁碎牙"
-    },
-    {
-      "AID": 20160120,
-      "Href": "/detail/20160120",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160120.jpg",
-      "Title": "终末的伊泽塔"
-    },
-    {
-      "AID": 20110125,
-      "Href": "/detail/20110125",
-      "NewTitle": "第77集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110125.jpg",
-      "Title": "学园救援团"
-    },
-    {
-      "AID": 20250155,
-      "Href": "/detail/20250155",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250155.jpg",
-      "Title": "Silent Witch 沉默魔女的秘密"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

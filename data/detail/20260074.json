@@ -469,50 +469,7 @@
     "collect_cnt": "361"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220421,
-      "Href": "/detail/20220421",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220421.jpg",
-      "Title": "斗罗大陆4终极斗罗 动态漫"
-    },
-    {
-      "AID": 20200006,
-      "Href": "/detail/20200006",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200006.jpg",
-      "Title": "鬼灭之刃剧场版 无限列车篇"
-    },
-    {
-      "AID": 20240192,
-      "Href": "/detail/20240192",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240192.jpg",
-      "Title": "喂！蜻蜓 第二季"
-    },
-    {
-      "AID": 20220340,
-      "Href": "/detail/20220340",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220340.jpg",
-      "Title": "圣墟 动态漫"
-    },
-    {
-      "AID": 20180238,
-      "Href": "/detail/20180238",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180238.jpg",
-      "Title": "RErideD-穿越时空的德里达-"
-    },
-    {
-      "AID": 20240047,
-      "Href": "/detail/20240047",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240047.jpg",
-      "Title": "夜晚的水母不会游泳"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

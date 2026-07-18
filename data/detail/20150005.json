@@ -289,50 +289,7 @@
     "collect_cnt": "1,829"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20070052,
-      "Href": "/detail/20070052",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070052.jpg",
-      "Title": "剑豪生死斗"
-    },
-    {
-      "AID": 20180265,
-      "Href": "/detail/20180265",
-      "NewTitle": "[TV 01-55]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180265.jpg",
-      "Title": "闪亮幸福 开启吧！COCOTAMA"
-    },
-    {
-      "AID": 20180129,
-      "Href": "/detail/20180129",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180129.jpg",
-      "Title": "东京喰种:RE 第二季"
-    },
-    {
-      "AID": 20210265,
-      "Href": "/detail/20210265",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210265.jpg",
-      "Title": "源神浩劫"
-    },
-    {
-      "AID": 20160046,
-      "Href": "/detail/20160046",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160046.jpg",
-      "Title": "从前有座灵剑山"
-    },
-    {
-      "AID": 20180073,
-      "Href": "/detail/20180073",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180073.jpg",
-      "Title": "ALICE or ALICE"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

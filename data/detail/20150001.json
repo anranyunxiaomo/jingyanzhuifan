@@ -52,64 +52,14 @@
     "comment_cnt": "58",
     "collect_cnt": "1,325"
   },
-  "series": [
-    {
-      "AID": 20160048,
-      "Href": "/detail/20160048",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160048.jpg",
-      "Title": "赤发白雪姬 第二季"
-    },
-    {
-      "AID": 20160049,
-      "Href": "/detail/20160049",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160049.jpg",
-      "Title": "赤发白雪姬OAD"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20170025,
-      "Href": "/detail/20170025",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170025.jpg",
-      "Title": "爱丽丝与藏六"
-    },
-    {
-      "AID": 20130124,
-      "Href": "/detail/20130124",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130124.jpg",
-      "Title": "女皇之刃 战败女王"
-    },
-    {
-      "AID": 20190125,
-      "Href": "/detail/20190125",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190125.jpg",
-      "Title": "新石纪"
-    },
     {
       "AID": 20260093,
       "Href": "/detail/20260093",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260093.jpg",
       "Title": "自称恶役大小姐的婚约者观察记录。"
-    },
-    {
-      "AID": 20190066,
-      "Href": "/detail/20190066",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190066.jpg",
-      "Title": "BanG Dream! 第二季"
-    },
-    {
-      "AID": 20180131,
-      "Href": "/detail/20180131",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180131.jpg",
-      "Title": "烤肉店战国"
     }
   ],
   "player_label_arr": {

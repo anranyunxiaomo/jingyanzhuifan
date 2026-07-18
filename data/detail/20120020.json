@@ -156,50 +156,7 @@
     "collect_cnt": "2,677"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220375,
-      "Href": "/detail/20220375",
-      "NewTitle": "第08集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220375.jpg",
-      "Title": "上海故事"
-    },
-    {
-      "AID": 20200238,
-      "Href": "/detail/20200238",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200238.jpg",
-      "Title": "全职法师 第四季"
-    },
-    {
-      "AID": 20130051,
-      "Href": "/detail/20130051",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130051.jpg",
-      "Title": "苍蓝钢铁的琶音"
-    },
-    {
-      "AID": 20210353,
-      "Href": "/detail/20210353",
-      "NewTitle": "全3话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210353.jpg",
-      "Title": "薄樱鬼OVA"
-    },
-    {
-      "AID": 20160099,
-      "Href": "/detail/20160099",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160099.jpg",
-      "Title": "魔法少女奈叶ViVid Strike!"
-    },
-    {
-      "AID": 20210291,
-      "Href": "/detail/20210291",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210291.jpg",
-      "Title": "灵云代码"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

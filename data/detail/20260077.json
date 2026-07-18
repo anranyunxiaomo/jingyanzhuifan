@@ -506,59 +506,8 @@
     "comment_cnt": "307",
     "collect_cnt": "2,539"
   },
-  "series": [
-    {
-      "AID": 20220143,
-      "Href": "/detail/20220143",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220143.jpg",
-      "Title": "关于邻家的天使大人不知不觉把我惯成了废人这档子事"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20160176,
-      "Href": "/detail/20160176",
-      "NewTitle": "[TV 01-11]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160176.jpg",
-      "Title": "野球少年"
-    },
-    {
-      "AID": 20210127,
-      "Href": "/detail/20210127",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210127.jpg",
-      "Title": "迷情"
-    },
-    {
-      "AID": 20140073,
-      "Href": "/detail/20140073",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140073.jpg",
-      "Title": "魔法科高校的劣等生"
-    },
-    {
-      "AID": 20060057,
-      "Href": "/detail/20060057",
-      "NewTitle": "第24话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060057.jpg",
-      "Title": "我的女神 缤纷之翼"
-    },
-    {
-      "AID": 20220530,
-      "Href": "/detail/20220530",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220530.jpg",
-      "Title": "致深爱你的那个我"
-    },
-    {
-      "AID": 20260062,
-      "Href": "/detail/20260062",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260062.jpg",
-      "Title": "为了我最爱的义兄，我要长命百岁！"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

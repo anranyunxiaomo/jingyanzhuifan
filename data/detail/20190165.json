@@ -210,50 +210,7 @@
     "collect_cnt": "3,429"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200309,
-      "Href": "/detail/20200309",
-      "NewTitle": "第156集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200309.jpg",
-      "Title": "逆天剑神"
-    },
-    {
-      "AID": 20220233,
-      "Href": "/detail/20220233",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220233.jpg",
-      "Title": "生而为狗 我很幸福"
-    },
-    {
-      "AID": 20200035,
-      "Href": "/detail/20200035",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200035.jpg",
-      "Title": "异种族风俗娘评鉴指南"
-    },
-    {
-      "AID": 20060058,
-      "Href": "/detail/20060058",
-      "NewTitle": "第185集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060058.jpg",
-      "Title": "精灵宝可梦 第三季"
-    },
-    {
-      "AID": 20040039,
-      "Href": "/detail/20040039",
-      "NewTitle": "第03集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040039.jpg",
-      "Title": "欢乐课程 The Final"
-    },
-    {
-      "AID": 20120097,
-      "Href": "/detail/20120097",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120097.jpg",
-      "Title": "魔法少女小圆剧场版 [前篇] 起始的物语"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -507,57 +507,14 @@
     "comment_cnt": "627",
     "collect_cnt": "2,381"
   },
-  "series": [
-    {
-      "AID": 20240119,
-      "Href": "/detail/20240119",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240119.jpg",
-      "Title": "杖与剑的魔剑谭"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20220378,
-      "Href": "/detail/20220378",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220378.jpg",
-      "Title": "某天早上变成人头麦克风的我君的人生"
-    },
-    {
-      "AID": 20050008,
-      "Href": "/detail/20050008",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050008.jpg",
-      "Title": "海贼王剧场版 祭典男爵与神秘岛"
-    },
-    {
-      "AID": 20200007,
-      "Href": "/detail/20200007",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200007.jpg",
-      "Title": "突击莉莉 BOUQUET"
-    },
     {
       "AID": 20130018,
       "Href": "/detail/20130018",
       "NewTitle": "第24集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20130018.jpg",
       "Title": "青春纪行"
-    },
-    {
-      "AID": 20220538,
-      "Href": "/detail/20220538",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220538.jpg",
-      "Title": "我们的黎明"
-    },
-    {
-      "AID": 20180042,
-      "Href": "/detail/20180042",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180042.jpg",
-      "Title": "BEATLESS -没有心跳的少女-"
     }
   ],
   "player_label_arr": {

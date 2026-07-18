@@ -143,50 +143,7 @@
     "collect_cnt": "155"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220219,
-      "Href": "/detail/20220219",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220219.jpg",
-      "Title": "特利迦奥特曼 Episode Z"
-    },
-    {
-      "AID": 20250033,
-      "Href": "/detail/20250033",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250033.jpg",
-      "Title": "虽然是公会的前台小姐，因为讨厌加班，所以打算自己讨伐boss"
-    },
-    {
-      "AID": 20070011,
-      "Href": "/detail/20070011",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070011.jpg",
-      "Title": "黑之契约者"
-    },
-    {
-      "AID": 20200297,
-      "Href": "/detail/20200297",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200297.jpg",
-      "Title": "Jose与虎与鱼们"
-    },
-    {
-      "AID": 20120067,
-      "Href": "/detail/20120067",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120067.jpg",
-      "Title": "偶像活动"
-    },
-    {
-      "AID": 20170041,
-      "Href": "/detail/20170041",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170041.jpg",
-      "Title": "笨女孩"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

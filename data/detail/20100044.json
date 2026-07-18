@@ -210,50 +210,7 @@
     "collect_cnt": "1,622"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20040045,
-      "Href": "/detail/20040045",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040045.jpg",
-      "Title": "星空防卫队 CODE:X"
-    },
-    {
-      "AID": 20220073,
-      "Href": "/detail/20220073",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220073.jpg",
-      "Title": "Love Live! Superstar!! 第二季"
-    },
-    {
-      "AID": 20230232,
-      "Href": "/detail/20230232",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230232.jpg",
-      "Title": "超超超超喜欢你的100个女孩子"
-    },
-    {
-      "AID": 20150097,
-      "Href": "/detail/20150097",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150097.jpg",
-      "Title": "骇客娃娃"
-    },
-    {
-      "AID": 20250184,
-      "Href": "/detail/20250184",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250184.jpg",
-      "Title": "奉子成婚"
-    },
-    {
-      "AID": 20160088,
-      "Href": "/detail/20160088",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160088.jpg",
-      "Title": "魔法少女育成计划"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

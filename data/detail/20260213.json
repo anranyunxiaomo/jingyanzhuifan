@@ -120,50 +120,7 @@
     "collect_cnt": "632"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20040028,
-      "Href": "/detail/20040028",
-      "NewTitle": "已完结, 第26话",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040028.jpg",
-      "Title": "苍穹之法芙娜"
-    },
-    {
-      "AID": 20160055,
-      "Href": "/detail/20160055",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160055.jpg",
-      "Title": "DAYS"
-    },
-    {
-      "AID": 20190032,
-      "Href": "/detail/20190032",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190032.jpg",
-      "Title": "多罗罗"
-    },
-    {
-      "AID": 20160222,
-      "Href": "/detail/20160222",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160222.jpg",
-      "Title": "太乙仙魔录之灵飞纪"
-    },
-    {
-      "AID": 20230291,
-      "Href": "/detail/20230291",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230291.jpg",
-      "Title": "指尖相触，恋恋不舍"
-    },
-    {
-      "AID": 20210038,
-      "Href": "/detail/20210038",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210038.jpg",
-      "Title": "大人的防具店 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

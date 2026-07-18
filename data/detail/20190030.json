@@ -357,51 +357,8 @@
     "collect_cnt": "3,789",
     "related": []
   },
-  "series": [
-    {
-      "AID": 20210133,
-      "Href": "/detail/20210133",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210133.jpg",
-      "Title": "盾之勇者成名录 第二季"
-    },
-    {
-      "AID": 20230205,
-      "Href": "/detail/20230205",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230205.jpg",
-      "Title": "盾之勇者成名录 第三季"
-    },
-    {
-      "AID": 20250129,
-      "Href": "/detail/20250129",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250129.jpg",
-      "Title": "盾之勇者成名录 第四季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20110128,
-      "Href": "/detail/20110128",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110128.jpg",
-      "Title": "神样DOLLS"
-    },
-    {
-      "AID": 20250187,
-      "Href": "/detail/20250187",
-      "NewTitle": "第08集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250187.jpg",
-      "Title": "只能触摸一分钟哦 合租房的秘密规则"
-    },
-    {
-      "AID": 20160247,
-      "Href": "/detail/20160247",
-      "NewTitle": "第52集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160247.jpg",
-      "Title": "数码宝贝宇宙 应用怪兽"
-    },
     {
       "AID": 20180126,
       "Href": "/detail/20180126",
@@ -415,13 +372,6 @@
       "NewTitle": "[TV 01-13]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20190138.jpg",
       "Title": "拾又之国"
-    },
-    {
-      "AID": 20210420,
-      "Href": "/detail/20210420",
-      "NewTitle": "第156集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210420.jpg",
-      "Title": "冰火魔厨"
     }
   ],
   "player_label_arr": {

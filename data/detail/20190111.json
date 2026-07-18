@@ -684,65 +684,8 @@
     "comment_cnt": "116",
     "collect_cnt": "1,200"
   },
-  "series": [
-    {
-      "AID": 20010019,
-      "Href": "/detail/20010019",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010019.jpg",
-      "Title": "水果篮子(2001)"
-    },
-    {
-      "AID": 20200158,
-      "Href": "/detail/20200158",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200158.jpg",
-      "Title": "水果篮子 第二季"
-    },
-    {
-      "AID": 20210112,
-      "Href": "/detail/20210112",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210112.jpg",
-      "Title": "水果篮子 最终季"
-    },
-    {
-      "AID": 20220004,
-      "Href": "/detail/20220004",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220004.jpg",
-      "Title": "水果篮子 -prelude-"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20170219,
-      "Href": "/detail/20170219",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170219.jpg",
-      "Title": "斗破苍穹"
-    },
-    {
-      "AID": 20210295,
-      "Href": "/detail/20210295",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210295.jpg",
-      "Title": "全职法师 第五季"
-    },
-    {
-      "AID": 20230196,
-      "Href": "/detail/20230196",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230196.jpg",
-      "Title": "魔法使的新娘 第二季 第2部分"
-    },
-    {
-      "AID": 20160207,
-      "Href": "/detail/20160207",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160207.jpg",
-      "Title": "RWBY Chibi"
-    },
     {
       "AID": 20260247,
       "Href": "/detail/20260247",

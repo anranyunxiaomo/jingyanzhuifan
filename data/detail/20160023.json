@@ -223,72 +223,8 @@
     "comment_cnt": "145",
     "collect_cnt": "3,038"
   },
-  "series": [
-    {
-      "AID": 20180068,
-      "Href": "/detail/20180068",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180068.jpg",
-      "Title": "路人超能100 REIGEN～不为人知的奇迹灵能者～"
-    },
-    {
-      "AID": 20190051,
-      "Href": "/detail/20190051",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190051.jpg",
-      "Title": "路人超能100 第二季"
-    },
-    {
-      "AID": 20190300,
-      "Href": "/detail/20190300",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190300.jpg",
-      "Title": "路人超能100 第一次灵能咨询所员工旅游～舒缓心灵的疗愈之旅～"
-    },
-    {
-      "AID": 20220066,
-      "Href": "/detail/20220066",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220066.jpg",
-      "Title": "路人超能100 第三季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20230208,
-      "Href": "/detail/20230208",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230208.jpg",
-      "Title": "催眠麦克风 第二季"
-    },
-    {
-      "AID": 20220529,
-      "Href": "/detail/20220529",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220529.jpg",
-      "Title": "BanG Dream! Morfonication"
-    },
-    {
-      "AID": 20220453,
-      "Href": "/detail/20220453",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220453.jpg",
-      "Title": "仙王的日常生活 第三季"
-    },
-    {
-      "AID": 20230192,
-      "Href": "/detail/20230192",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230192.jpg",
-      "Title": "赛马娘 Pretty Derby 第三季"
-    },
-    {
-      "AID": 20170274,
-      "Href": "/detail/20170274",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170274.jpg",
-      "Title": "宇宙警探elDLIVE"
-    },
     {
       "AID": 20120014,
       "Href": "/detail/20120014",

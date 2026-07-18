@@ -289,50 +289,7 @@
     "collect_cnt": "902"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220058,
-      "Href": "/detail/20220058",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220058.jpg",
-      "Title": "黑岩射手 DAWN FALL"
-    },
-    {
-      "AID": 20130112,
-      "Href": "/detail/20130112",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130112.jpg",
-      "Title": "尸体派对 Tortured Souls"
-    },
-    {
-      "AID": 20190370,
-      "Href": "/detail/20190370",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190370.jpg",
-      "Title": "茶叶少女"
-    },
-    {
-      "AID": 20000022,
-      "Href": "/detail/20000022",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000022.jpg",
-      "Title": "东京巴比伦"
-    },
-    {
-      "AID": 20190039,
-      "Href": "/detail/20190039",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190039.jpg",
-      "Title": "暗黑破坏神在身边"
-    },
-    {
-      "AID": 20220172,
-      "Href": "/detail/20220172",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220172.jpg",
-      "Title": "机甲少女爱丽丝"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

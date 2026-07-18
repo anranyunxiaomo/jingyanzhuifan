@@ -58,50 +58,7 @@
     "collect_cnt": "3,255"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210213,
-      "Href": "/detail/20210213",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210213.jpg",
-      "Title": "绝世武神 第三季"
-    },
-    {
-      "AID": 20230305,
-      "Href": "/detail/20230305",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230305.jpg",
-      "Title": "外科医生爱丽丝"
-    },
-    {
-      "AID": 20200094,
-      "Href": "/detail/20200094",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200094.jpg",
-      "Title": "少女☆歌剧 Revue Starlight RONDO·RONDO·RONDO"
-    },
-    {
-      "AID": 20210048,
-      "Href": "/detail/20210048",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210048.jpg",
-      "Title": "圣女魔力无所不能"
-    },
-    {
-      "AID": 20200302,
-      "Href": "/detail/20200302",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200302.jpg",
-      "Title": "公主连结！Re:Dive 第二季"
-    },
-    {
-      "AID": 20230103,
-      "Href": "/detail/20230103",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230103.jpg",
-      "Title": "爱上她的理由"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

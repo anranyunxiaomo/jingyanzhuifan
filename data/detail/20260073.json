@@ -503,50 +503,7 @@
     "collect_cnt": "794"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220440,
-      "Href": "/detail/20220440",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220440.jpg",
-      "Title": "阿松～希皮波族与闪耀果实～"
-    },
-    {
-      "AID": 20220458,
-      "Href": "/detail/20220458",
-      "NewTitle": "第18集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220458.jpg",
-      "Title": "绝代双骄"
-    },
-    {
-      "AID": 20130010,
-      "Href": "/detail/20130010",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130010.jpg",
-      "Title": "变态王子与不笑猫"
-    },
-    {
-      "AID": 20220379,
-      "Href": "/detail/20220379",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220379.jpg",
-      "Title": "Delicious Party 光之美少女 梦想的儿童餐"
-    },
-    {
-      "AID": 20130115,
-      "Href": "/detail/20130115",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130115.jpg",
-      "Title": "银魂剧场版 直到永远的万事屋"
-    },
-    {
-      "AID": 20130118,
-      "Href": "/detail/20130118",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130118.jpg",
-      "Title": "花开伊吕波剧场版 HOME SWEET HOME"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

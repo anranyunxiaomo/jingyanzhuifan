@@ -64,50 +64,7 @@
     "collect_cnt": "2,757"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20140114,
-      "Href": "/detail/20140114",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140114.jpg",
-      "Title": "噬魂师NOT！"
-    },
-    {
-      "AID": 20200338,
-      "Href": "/detail/20200338",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200338.jpg",
-      "Title": "约战狂三外传 红或白篇"
-    },
-    {
-      "AID": 20190226,
-      "Href": "/detail/20190226",
-      "NewTitle": "[WEB 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190226.jpg",
-      "Title": "泰迦奥特曼"
-    },
-    {
-      "AID": 20170137,
-      "Href": "/detail/20170137",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170137.jpg",
-      "Title": "咕噜咕噜魔法阵(2017)"
-    },
-    {
-      "AID": 20200238,
-      "Href": "/detail/20200238",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200238.jpg",
-      "Title": "全职法师 第四季"
-    },
-    {
-      "AID": 20250170,
-      "Href": "/detail/20250170",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250170.jpg",
-      "Title": "公爵千金的家庭教师"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

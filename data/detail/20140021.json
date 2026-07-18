@@ -330,50 +330,7 @@
     "collect_cnt": "3,497"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200385,
-      "Href": "/detail/20200385",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200385.jpg",
-      "Title": "鬼灭之刃特别编集版 那田蜘蛛山篇"
-    },
-    {
-      "AID": 20220250,
-      "Href": "/detail/20220250",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220250.jpg",
-      "Title": "RWBY 冰雪帝国"
-    },
-    {
-      "AID": 20110038,
-      "Href": "/detail/20110038",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110038.jpg",
-      "Title": "认真和我恋爱"
-    },
-    {
-      "AID": 20200154,
-      "Href": "/detail/20200154",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200154.jpg",
-      "Title": "择天记 第五季"
-    },
-    {
-      "AID": 20240095,
-      "Href": "/detail/20240095",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240095.jpg",
-      "Title": "拉面红猫"
-    },
-    {
-      "AID": 20010026,
-      "Href": "/detail/20010026",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010026.jpg",
-      "Title": "ONE～辉之季节～"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

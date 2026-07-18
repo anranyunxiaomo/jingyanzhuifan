@@ -228,50 +228,7 @@
     "collect_cnt": "3,318"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230013,
-      "Href": "/detail/20230013",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230013.jpg",
-      "Title": "转生贵族的异世界冒险录～不知自重的诸神的使徒～"
-    },
-    {
-      "AID": 20160207,
-      "Href": "/detail/20160207",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160207.jpg",
-      "Title": "RWBY Chibi"
-    },
-    {
-      "AID": 20260045,
-      "Href": "/detail/20260045",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260045.jpg",
-      "Title": "皎洁迎宵之月"
-    },
-    {
-      "AID": 20230255,
-      "Href": "/detail/20230255",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230255.jpg",
-      "Title": "拾荒者的统治"
-    },
-    {
-      "AID": 20080004,
-      "Href": "/detail/20080004",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080004.jpg",
-      "Title": "狼与香辛料"
-    },
-    {
-      "AID": 20040052,
-      "Href": "/detail/20040052",
-      "NewTitle": "第49集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040052.jpg",
-      "Title": "光之美少女"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -170,50 +170,7 @@
     "collect_cnt": "699"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200351,
-      "Href": "/detail/20200351",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200351.jpg",
-      "Title": "画江湖之轨夜行"
-    },
-    {
-      "AID": 20220473,
-      "Href": "/detail/20220473",
-      "NewTitle": "第68集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220473.jpg",
-      "Title": "最终魂意 动态漫"
-    },
-    {
-      "AID": 20140038,
-      "Href": "/detail/20140038",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140038.jpg",
-      "Title": "七人魔法使"
-    },
-    {
-      "AID": 20250200,
-      "Href": "/detail/20250200",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250200.jpg",
-      "Title": "怪物弹珠 DEADVERSE RELOADED"
-    },
-    {
-      "AID": 20220196,
-      "Href": "/detail/20220196",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220196.jpg",
-      "Title": "王者天下 第四季"
-    },
-    {
-      "AID": 20200089,
-      "Href": "/detail/20200089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200089.jpg",
-      "Title": "前说！"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

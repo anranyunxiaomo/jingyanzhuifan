@@ -427,59 +427,8 @@
     "comment_cnt": "363",
     "collect_cnt": "2,597"
   },
-  "series": [
-    {
-      "AID": 20230019,
-      "Href": "/detail/20230019",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230019.jpg",
-      "Title": "异世界悠闲农家"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20060042,
-      "Href": "/detail/20060042",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060042.jpg",
-      "Title": "女生爱女生"
-    },
-    {
-      "AID": 20150029,
-      "Href": "/detail/20150029",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150029.jpg",
-      "Title": "干支魂"
-    },
-    {
-      "AID": 20110091,
-      "Href": "/detail/20110091",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110091.jpg",
-      "Title": "迷糊软网社"
-    },
-    {
-      "AID": 20260026,
-      "Href": "/detail/20260026",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260026.jpg",
-      "Title": "终究、与你相恋。 第二季"
-    },
-    {
-      "AID": 20220087,
-      "Href": "/detail/20220087",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220087.jpg",
-      "Title": "总之就是非常可爱 第二季"
-    },
-    {
-      "AID": 20230273,
-      "Href": "/detail/20230273",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230273.jpg",
-      "Title": "弱角友崎同学 第二季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

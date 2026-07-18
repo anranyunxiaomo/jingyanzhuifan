@@ -250,50 +250,7 @@
     "collect_cnt": "1,623"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20150025,
-      "Href": "/detail/20150025",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150025.jpg",
-      "Title": "空战魔导士候补生的教官"
-    },
-    {
-      "AID": 20140017,
-      "Href": "/detail/20140017",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140017.jpg",
-      "Title": "野良神"
-    },
-    {
-      "AID": 20100088,
-      "Href": "/detail/20100088",
-      "NewTitle": "第11集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100088.jpg",
-      "Title": "海月姬"
-    },
-    {
-      "AID": 20210233,
-      "Href": "/detail/20210233",
-      "NewTitle": "第157集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210233.jpg",
-      "Title": "星河至尊"
-    },
-    {
-      "AID": 20190440,
-      "Href": "/detail/20190440",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190440.jpg",
-      "Title": "神巫奇才"
-    },
-    {
-      "AID": 20220235,
-      "Href": "/detail/20220235",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220235.jpg",
-      "Title": "武映三千道"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

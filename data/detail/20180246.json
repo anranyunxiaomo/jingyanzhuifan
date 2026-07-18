@@ -185,20 +185,6 @@
   },
   "series": [
     {
-      "AID": 20120038,
-      "Href": "/detail/20120038",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
-      "Title": "刀剑神域"
-    },
-    {
-      "AID": 20130137,
-      "Href": "/detail/20130137",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130137.jpg",
-      "Title": "刀剑神域 Extra Edition"
-    },
-    {
       "AID": 20140086,
       "Href": "/detail/20140086",
       "NewTitle": "第24集(完结)",
@@ -211,94 +197,9 @@
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
       "Title": "刀剑神域剧场版 序列之争"
-    },
-    {
-      "AID": 20170140,
-      "Href": "/detail/20170140",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170140.jpg",
-      "Title": "刀剑神域外传 Gun Gale Online"
-    },
-    {
-      "AID": 20190181,
-      "Href": "/detail/20190181",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190181.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld"
-    },
-    {
-      "AID": 20200123,
-      "Href": "/detail/20200123",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200123.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld 第二季"
-    },
-    {
-      "AID": 20210026,
-      "Href": "/detail/20210026",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210026.jpg",
-      "Title": "刀剑神域 进击篇 无星之夜的咏叹调"
-    },
-    {
-      "AID": 20220085,
-      "Href": "/detail/20220085",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220085.jpg",
-      "Title": "刀剑神域 进击篇 黯淡黄昏的谐谑曲"
-    },
-    {
-      "AID": 20230254,
-      "Href": "/detail/20230254",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
-      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
     }
   ],
-  "similar": [
-    {
-      "AID": 20190298,
-      "Href": "/detail/20190298",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190298.jpg",
-      "Title": "宠婚来袭"
-    },
-    {
-      "AID": 20070070,
-      "Href": "/detail/20070070",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070070.jpg",
-      "Title": "奇诺之旅 疾病之国 -为了你-"
-    },
-    {
-      "AID": 20050011,
-      "Href": "/detail/20050011",
-      "NewTitle": "[SP 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050011.jpg",
-      "Title": "AIR 夏季篇"
-    },
-    {
-      "AID": 20200382,
-      "Href": "/detail/20200382",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200382.jpg",
-      "Title": "假面骑士01剧场版 真实×时间"
-    },
-    {
-      "AID": 20180225,
-      "Href": "/detail/20180225",
-      "NewTitle": "[WEB 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180225.jpg",
-      "Title": "机器人少女NEO"
-    },
-    {
-      "AID": 20020017,
-      "Href": "/detail/20020017",
-      "NewTitle": "第03集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020017.jpg",
-      "Title": "头文字D Battle Stage"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

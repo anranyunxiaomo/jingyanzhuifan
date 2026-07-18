@@ -78,92 +78,7 @@
       "Title": "少女怪兽焦糖味"
     }
   ],
-  "recommend": [
-    {
-      "AID": 20120013,
-      "Href": "/detail/20120013",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120013.jpg",
-      "Title": "织田信奈的野望"
-    },
-    {
-      "AID": 20100035,
-      "Href": "/detail/20100035",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100035.jpg",
-      "Title": "传说中勇者的传说"
-    },
-    {
-      "AID": 20130002,
-      "Href": "/detail/20130002",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130002.jpg",
-      "Title": "弹丸论破 希望学园与绝望高中生"
-    },
-    {
-      "AID": 20170073,
-      "Href": "/detail/20170073",
-      "NewTitle": "全集2",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170073.jpg",
-      "Title": "龙的牙医"
-    },
-    {
-      "AID": 20170175,
-      "Href": "/detail/20170175",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170175.jpg",
-      "Title": "活击/刀剑乱舞"
-    },
-    {
-      "AID": 20160168,
-      "Href": "/detail/20160168",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160168.jpg",
-      "Title": "噬血狂袭 第二季"
-    },
-    {
-      "AID": 20110011,
-      "Href": "/detail/20110011",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110011.jpg",
-      "Title": "龙之界点"
-    },
-    {
-      "AID": 20160011,
-      "Href": "/detail/20160011",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160011.jpg",
-      "Title": "双星之阴阳师"
-    },
-    {
-      "AID": 20150009,
-      "Href": "/detail/20150009",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150009.jpg",
-      "Title": "境界之轮回"
-    },
-    {
-      "AID": 20180146,
-      "Href": "/detail/20180146",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
-      "Title": "遥之彼方的接发球"
-    },
-    {
-      "AID": 20160042,
-      "Href": "/detail/20160042",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160042.jpg",
-      "Title": "超自然9人组"
-    },
-    {
-      "AID": 20150080,
-      "Href": "/detail/20150080",
-      "NewTitle": "[TV 01-16+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150080.jpg",
-      "Title": "长门有希酱的消失"
-    }
-  ],
+  "recommend": [],
   "week_list": {
     "1": [
       {
@@ -279,14 +194,6 @@
         "name": "攻壳机动队 THE GHOST IN THE SHELL",
         "mtime": "2026-07-15 00:42:22",
         "namefornew": "22:00 第02集"
-      },
-      {
-        "isnew": 0,
-        "id": 20260224,
-        "wd": 2,
-        "name": "底牌很多的维多利亚",
-        "mtime": "2026-07-14 23:57:01",
-        "namefornew": "23:00 第02集"
       }
     ],
     "3": [
@@ -321,14 +228,6 @@
         "name": "Re：从零开始的异世界生活 第四季 丧失篇",
         "mtime": "2026-06-17 23:57:26",
         "namefornew": "第11集(完结)"
-      },
-      {
-        "isnew": 0,
-        "id": 20260198,
-        "wd": 3,
-        "name": "不虐待我的继母与继姐",
-        "mtime": "2026-07-15 23:55:42",
-        "namefornew": "22:30 第02集"
       },
       {
         "isnew": 0,
@@ -681,14 +580,6 @@
         "name": "夜樱家的大作战 第二季",
         "mtime": "2026-06-29 00:56:05",
         "namefornew": "第12集(完结)"
-      },
-      {
-        "isnew": 0,
-        "id": 20250045,
-        "wd": 0,
-        "name": "0岁儿童开始冲刺的故事 第二季",
-        "mtime": "2024-12-24 17:11:35",
-        "namefornew": "16:55 PV"
       },
       {
         "isnew": 0,

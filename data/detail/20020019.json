@@ -72,50 +72,7 @@
     "collect_cnt": "335"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20260245,
-      "Href": "/detail/20260245",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260245.jpg",
-      "Title": "暗芝居 第十七季"
-    },
-    {
-      "AID": 20260134,
-      "Href": "/detail/20260134",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260134.jpg",
-      "Title": "剧场版 物怪 蛇神"
-    },
-    {
-      "AID": 20070027,
-      "Href": "/detail/20070027",
-      "NewTitle": "SP1全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070027.jpg",
-      "Title": "DEATH NOTE 幻影之神"
-    },
-    {
-      "AID": 20220088,
-      "Href": "/detail/20220088",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220088.jpg",
-      "Title": "狂赌之渊 双"
-    },
-    {
-      "AID": 20130065,
-      "Href": "/detail/20130065",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130065.jpg",
-      "Title": "魔界王子 devils and realist"
-    },
-    {
-      "AID": 20260135,
-      "Href": "/detail/20260135",
-      "NewTitle": "第PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260135.jpg",
-      "Title": "剧场版 魔法科高校的劣等生 四叶继承篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

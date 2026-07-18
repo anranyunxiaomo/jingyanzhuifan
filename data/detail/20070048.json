@@ -182,46 +182,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20140201,
-      "Href": "/detail/20140201",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140201.jpg",
-      "Title": "战国无双SP 真田之章"
-    },
-    {
       "AID": 20170071,
       "Href": "/detail/20170071",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20170071.jpg",
       "Title": "刀剑神域剧场版 序列之争"
-    },
-    {
-      "AID": 20030033,
-      "Href": "/detail/20030033",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030033.jpg",
-      "Title": "新撰组异闻录 铁"
-    },
-    {
-      "AID": 20060058,
-      "Href": "/detail/20060058",
-      "NewTitle": "第185集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060058.jpg",
-      "Title": "精灵宝可梦 第三季"
-    },
-    {
-      "AID": 20260154,
-      "Href": "/detail/20260154",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260154.jpg",
-      "Title": "电影秘密的偶像公主"
-    },
-    {
-      "AID": 20140202,
-      "Href": "/detail/20140202",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140202.jpg",
-      "Title": "信长协奏曲"
     }
   ],
   "player_label_arr": {

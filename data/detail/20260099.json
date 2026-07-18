@@ -453,50 +453,7 @@
     "collect_cnt": "656"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240108,
-      "Href": "/detail/20240108",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240108.jpg",
-      "Title": "卡片战斗先导者 DivineZ 第二季"
-    },
-    {
-      "AID": 20200119,
-      "Href": "/detail/20200119",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200119.jpg",
-      "Title": "邪神与厨二病少女 第二季"
-    },
-    {
-      "AID": 20220134,
-      "Href": "/detail/20220134",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220134.jpg",
-      "Title": "异世界舅舅"
-    },
-    {
-      "AID": 20190317,
-      "Href": "/detail/20190317",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190317.jpg",
-      "Title": "名侦探柯南剧场版 绀青之拳"
-    },
-    {
-      "AID": 20000072,
-      "Href": "/detail/20000072",
-      "NewTitle": "第64集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000072.jpg",
-      "Title": "龙珠GT"
-    },
-    {
-      "AID": 20150008,
-      "Href": "/detail/20150008",
-      "NewTitle": "第05集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150008.jpg",
-      "Title": "食戟之灵OAD"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

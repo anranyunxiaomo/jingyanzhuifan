@@ -211,73 +211,8 @@
     "comment_cnt": "26",
     "collect_cnt": "93"
   },
-  "series": [
-    {
-      "AID": 20200050,
-      "Href": "/detail/20200050",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200050.jpg",
-      "Title": "八十龟酱观察日记 第二季"
-    },
-    {
-      "AID": 20210041,
-      "Href": "/detail/20210041",
-      "NewTitle": "第7集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210041.jpg",
-      "Title": "八十龟酱观察日记 第三季"
-    },
-    {
-      "AID": 20220117,
-      "Href": "/detail/20220117",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220117.jpg",
-      "Title": "八十龟酱观察日记 第四季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180177,
-      "Href": "/detail/20180177",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180177.jpg",
-      "Title": "深夜！天才傻鹏"
-    },
-    {
-      "AID": 20060031,
-      "Href": "/detail/20060031",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060031.jpg",
-      "Title": "贫穷姐妹物语"
-    },
-    {
-      "AID": 20130133,
-      "Href": "/detail/20130133",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130133.jpg",
-      "Title": "魔王勇者"
-    },
-    {
-      "AID": 20200181,
-      "Href": "/detail/20200181",
-      "NewTitle": "第13话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200181.jpg",
-      "Title": "嗜谎之神"
-    },
-    {
-      "AID": 20200094,
-      "Href": "/detail/20200094",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200094.jpg",
-      "Title": "少女☆歌剧 Revue Starlight RONDO·RONDO·RONDO"
-    },
-    {
-      "AID": 20170235,
-      "Href": "/detail/20170235",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170235.jpg",
-      "Title": "怪怪守护神"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

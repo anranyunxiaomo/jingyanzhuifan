@@ -227,50 +227,7 @@
     "collect_cnt": "2,306"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180061,
-      "Href": "/detail/20180061",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180061.jpg",
-      "Title": "七美德"
-    },
-    {
-      "AID": 20160058,
-      "Href": "/detail/20160058",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160058.jpg",
-      "Title": "刀剑乱舞-花丸-"
-    },
-    {
-      "AID": 20220197,
-      "Href": "/detail/20220197",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220197.jpg",
-      "Title": "足球风云 Goal to the Future"
-    },
-    {
-      "AID": 20220359,
-      "Href": "/detail/20220359",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220359.jpg",
-      "Title": "最强仙界朋友圈 动态漫"
-    },
-    {
-      "AID": 20170074,
-      "Href": "/detail/20170074",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170074.jpg",
-      "Title": "地狱少女 第四季"
-    },
-    {
-      "AID": 20210266,
-      "Href": "/detail/20210266",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210266.jpg",
-      "Title": "搜玄录之宸灵纪"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

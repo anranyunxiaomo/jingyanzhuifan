@@ -365,57 +365,14 @@
     "comment_cnt": "34",
     "collect_cnt": "466"
   },
-  "series": [
-    {
-      "AID": 20030010,
-      "Href": "/detail/20030010",
-      "NewTitle": "[DVD 01-12+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030010.jpg",
-      "Title": "青出于蓝～缘～"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20230254,
-      "Href": "/detail/20230254",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
-      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
-    },
-    {
-      "AID": 20220338,
-      "Href": "/detail/20220338",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220338.jpg",
-      "Title": "新干线变形机器人 辛卡利欧Z"
-    },
-    {
-      "AID": 20190079,
-      "Href": "/detail/20190079",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190079.jpg",
-      "Title": "来自深渊 漂泊的黄昏"
-    },
-    {
-      "AID": 20130100,
-      "Href": "/detail/20130100",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130100.jpg",
-      "Title": "只有神知道的世界 第三季(女神篇)"
-    },
     {
       "AID": 20260175,
       "Href": "/detail/20260175",
       "NewTitle": "PV",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260175.jpg",
       "Title": "碧蓝之海 第三季"
-    },
-    {
-      "AID": 20220483,
-      "Href": "/detail/20220483",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220483.jpg",
-      "Title": "本剑仙绝不为奴 动态漫"
     }
   ],
   "player_label_arr": {

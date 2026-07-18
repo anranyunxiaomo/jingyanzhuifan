@@ -72,50 +72,7 @@
     "collect_cnt": "566"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220270,
-      "Href": "/detail/20220270",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220270.jpg",
-      "Title": "寻剑"
-    },
-    {
-      "AID": 20000052,
-      "Href": "/detail/20000052",
-      "NewTitle": "第08集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000052.jpg",
-      "Title": "数码宝贝剧场版合集"
-    },
-    {
-      "AID": 20190301,
-      "Href": "/detail/20190301",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190301.jpg",
-      "Title": "请问您今天要来点兔子吗？？～Sing for You～"
-    },
-    {
-      "AID": 20180145,
-      "Href": "/detail/20180145",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180145.jpg",
-      "Title": "Angolmois 元寇合战记"
-    },
-    {
-      "AID": 20210213,
-      "Href": "/detail/20210213",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210213.jpg",
-      "Title": "绝世武神 第三季"
-    },
-    {
-      "AID": 20170043,
-      "Href": "/detail/20170043",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170043.jpg",
-      "Title": "捏造陷阱-NTR-"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

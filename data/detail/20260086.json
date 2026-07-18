@@ -455,50 +455,7 @@
     "collect_cnt": "2,112"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160121,
-      "Href": "/detail/20160121",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160121.jpg",
-      "Title": "只有我不在的街道"
-    },
-    {
-      "AID": 20190215,
-      "Href": "/detail/20190215",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190215.jpg",
-      "Title": "XL上司。"
-    },
-    {
-      "AID": 20250151,
-      "Href": "/detail/20250151",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250151.jpg",
-      "Title": "桃源暗鬼"
-    },
-    {
-      "AID": 20200225,
-      "Href": "/detail/20200225",
-      "NewTitle": "第100集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200225.jpg",
-      "Title": "异世界中药铺"
-    },
-    {
-      "AID": 20190110,
-      "Href": "/detail/20190110",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
-      "Title": "信长老师的年幼妻子"
-    },
-    {
-      "AID": 20150210,
-      "Href": "/detail/20150210",
-      "NewTitle": "第06集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150210.jpg",
-      "Title": "维纳斯计划 CLIMAX"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -1606,50 +1606,7 @@
     "collect_cnt": "607"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20130147,
-      "Href": "/detail/20130147",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130147.jpg",
-      "Title": "向阳素描 沙英・寻 毕业篇"
-    },
-    {
-      "AID": 20200331,
-      "Href": "/detail/20200331",
-      "NewTitle": "第253集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200331.jpg",
-      "Title": "神武天尊"
-    },
-    {
-      "AID": 20260007,
-      "Href": "/detail/20260007",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260007.jpg",
-      "Title": "身为魔族的我想向勇者小队的可爱女孩告白。"
-    },
-    {
-      "AID": 20190109,
-      "Href": "/detail/20190109",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190109.jpg",
-      "Title": "7SEEDS"
-    },
-    {
-      "AID": 20170109,
-      "Href": "/detail/20170109",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170109.jpg",
-      "Title": "血界战线 第二季"
-    },
-    {
-      "AID": 20190034,
-      "Href": "/detail/20190034",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190034.jpg",
-      "Title": "女子高中生(2019)"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

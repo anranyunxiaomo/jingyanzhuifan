@@ -179,73 +179,8 @@
     "comment_cnt": "114",
     "collect_cnt": "1,821"
   },
-  "series": [
-    {
-      "AID": 20150099,
-      "Href": "/detail/20150099",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150099.jpg",
-      "Title": "少女与战车剧场版"
-    },
-    {
-      "AID": 20170242,
-      "Href": "/detail/20170242",
-      "NewTitle": "第04集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170242.jpg",
-      "Title": "少女与战车 最终章"
-    },
-    {
-      "AID": 20260142,
-      "Href": "/detail/20260142",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260142.jpg",
-      "Title": "少女与战车 lovelove大作战！ 第4幕"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20170045,
-      "Href": "/detail/20170045",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170045.jpg",
-      "Title": "重启咲良田"
-    },
-    {
-      "AID": 20190088,
-      "Href": "/detail/20190088",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190088.jpg",
-      "Title": "约会大作战 第三季"
-    },
-    {
-      "AID": 20120124,
-      "Href": "/detail/20120124",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120124.jpg",
-      "Title": "被狙击的学园"
-    },
-    {
-      "AID": 20150132,
-      "Href": "/detail/20150132",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150132.jpg",
-      "Title": "花与爱丽丝杀人事件"
-    },
-    {
-      "AID": 20190330,
-      "Href": "/detail/20190330",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190330.jpg",
-      "Title": "腹黑少爷小甜妻 第二季"
-    },
-    {
-      "AID": 20060042,
-      "Href": "/detail/20060042",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060042.jpg",
-      "Title": "女生爱女生"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

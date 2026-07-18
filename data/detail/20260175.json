@@ -85,66 +85,8 @@
     "collect_cnt": "498",
     "related": []
   },
-  "series": [
-    {
-      "AID": 20180161,
-      "Href": "/detail/20180161",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180161.jpg",
-      "Title": "碧蓝之海"
-    },
-    {
-      "AID": 20250119,
-      "Href": "/detail/20250119",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250119.jpg",
-      "Title": "碧蓝之海 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20170002,
-      "Href": "/detail/20170002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170002.jpg",
-      "Title": "政宗君的复仇"
-    },
-    {
-      "AID": 20100055,
-      "Href": "/detail/20100055",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100055.jpg",
-      "Title": "食梦者"
-    },
-    {
-      "AID": 20220122,
-      "Href": "/detail/20220122",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220122.jpg",
-      "Title": "DEEMO 樱花之音 -你弹奏的声音，至今仍在回响-"
-    },
-    {
-      "AID": 20000021,
-      "Href": "/detail/20000021",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000021.jpg",
-      "Title": "天空之城"
-    },
-    {
-      "AID": 20150067,
-      "Href": "/detail/20150067",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150067.jpg",
-      "Title": "学园孤岛"
-    },
-    {
-      "AID": 20230315,
-      "Href": "/detail/20230315",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230315.jpg",
-      "Title": "假如…？ 第二季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

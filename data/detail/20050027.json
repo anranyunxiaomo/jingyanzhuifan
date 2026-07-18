@@ -90,59 +90,8 @@
     "comment_cnt": "38",
     "collect_cnt": "1,242"
   },
-  "series": [
-    {
-      "AID": 20070044,
-      "Href": "/detail/20070044",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070044.jpg",
-      "Title": "扑杀天使朵库萝2"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20140196,
-      "Href": "/detail/20140196",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140196.jpg",
-      "Title": "玉响～more aggressive～ OVA"
-    },
-    {
-      "AID": 20220079,
-      "Href": "/detail/20220079",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220079.jpg",
-      "Title": "BIRDIE WING -Golf Girls' Story-"
-    },
-    {
-      "AID": 20130051,
-      "Href": "/detail/20130051",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130051.jpg",
-      "Title": "苍蓝钢铁的琶音"
-    },
-    {
-      "AID": 20120138,
-      "Href": "/detail/20120138",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120138.jpg",
-      "Title": "阿修罗"
-    },
-    {
-      "AID": 20160178,
-      "Href": "/detail/20160178",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160178.jpg",
-      "Title": "红伤骑士X"
-    },
-    {
-      "AID": 20240188,
-      "Href": "/detail/20240188",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240188.jpg",
-      "Title": "偶像大师 闪耀色彩 第二季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

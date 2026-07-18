@@ -479,50 +479,7 @@
     "collect_cnt": "1,757"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20260040,
-      "Href": "/detail/20260040",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260040.jpg",
-      "Title": "死亡账号"
-    },
-    {
-      "AID": 20120037,
-      "Href": "/detail/20120037",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120037.jpg",
-      "Title": "青之驱魔师剧场版"
-    },
-    {
-      "AID": 20110035,
-      "Href": "/detail/20110035",
-      "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110035.jpg",
-      "Title": "歌牌情缘"
-    },
-    {
-      "AID": 20140115,
-      "Href": "/detail/20140115",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140115.jpg",
-      "Title": "黑执事 马戏团篇"
-    },
-    {
-      "AID": 20070003,
-      "Href": "/detail/20070003",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070003.jpg",
-      "Title": "School Days"
-    },
-    {
-      "AID": 20140131,
-      "Href": "/detail/20140131",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140131.jpg",
-      "Title": "樱Trick"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

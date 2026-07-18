@@ -279,50 +279,7 @@
     "collect_cnt": "1,216"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20050029,
-      "Href": "/detail/20050029",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050029.jpg",
-      "Title": "恋恋七人组"
-    },
-    {
-      "AID": 20140081,
-      "Href": "/detail/20140081",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
-      "Title": "RAIL WARS!"
-    },
-    {
-      "AID": 20190045,
-      "Href": "/detail/20190045",
-      "NewTitle": "[TV 01-18]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190045.jpg",
-      "Title": "不吉波普不笑"
-    },
-    {
-      "AID": 20110119,
-      "Href": "/detail/20110119",
-      "NewTitle": "第147集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110119.jpg",
-      "Title": "美食的俘虏"
-    },
-    {
-      "AID": 20190260,
-      "Href": "/detail/20190260",
-      "NewTitle": "第130集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190260.jpg",
-      "Title": "书灵记"
-    },
-    {
-      "AID": 20230077,
-      "Href": "/detail/20230077",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230077.jpg",
-      "Title": "我推的孩子"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

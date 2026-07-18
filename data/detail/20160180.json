@@ -222,59 +222,8 @@
     "comment_cnt": "39",
     "collect_cnt": "680"
   },
-  "series": [
-    {
-      "AID": 20160040,
-      "Href": "/detail/20160040",
-      "NewTitle": "[OAD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160040.jpg",
-      "Title": "爆音少女OAD"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20210384,
-      "Href": "/detail/20210384",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210384.jpg",
-      "Title": "人间最得意"
-    },
-    {
-      "AID": 20180146,
-      "Href": "/detail/20180146",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180146.jpg",
-      "Title": "遥之彼方的接发球"
-    },
-    {
-      "AID": 20050054,
-      "Href": "/detail/20050054",
-      "NewTitle": "[BD 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050054.jpg",
-      "Title": "伊里野的天空、UFO的夏天"
-    },
-    {
-      "AID": 20160008,
-      "Href": "/detail/20160008",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160008.jpg",
-      "Title": "境界之轮回 第二季"
-    },
-    {
-      "AID": 20250130,
-      "Href": "/detail/20250130",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250130.jpg",
-      "Title": "转生成自动贩卖机的我今天也在迷宫徘徊 第二季"
-    },
-    {
-      "AID": 20160126,
-      "Href": "/detail/20160126",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160126.jpg",
-      "Title": "忧郁的物怪庵"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

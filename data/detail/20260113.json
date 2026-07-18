@@ -458,50 +458,7 @@
     "collect_cnt": "2,920"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230100,
-      "Href": "/detail/20230100",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230100.jpg",
-      "Title": "赘婿"
-    },
-    {
-      "AID": 20140204,
-      "Href": "/detail/20140204",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140204.jpg",
-      "Title": "TIGER & BUNNY -The Rising-"
-    },
-    {
-      "AID": 20180200,
-      "Href": "/detail/20180200",
-      "NewTitle": "[TV 354-367]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180200.jpg",
-      "Title": "银魂. 银之魂篇 第二季 (354-367)"
-    },
-    {
-      "AID": 20190152,
-      "Href": "/detail/20190152",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190152.jpg",
-      "Title": "七原罪 第三季(诸神的逆鳞)"
-    },
-    {
-      "AID": 20000063,
-      "Href": "/detail/20000063",
-      "NewTitle": "第95集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000063.jpg",
-      "Title": "浪客剑心"
-    },
-    {
-      "AID": 20190280,
-      "Href": "/detail/20190280",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190280.jpg",
-      "Title": "玲珑狼心"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

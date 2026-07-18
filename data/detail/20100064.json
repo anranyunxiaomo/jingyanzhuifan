@@ -221,64 +221,14 @@
     "comment_cnt": "43",
     "collect_cnt": "1,532"
   },
-  "series": [
-    {
-      "AID": 20110086,
-      "Href": "/detail/20110086",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110086.jpg",
-      "Title": "侵略！乌贼娘 第二季"
-    },
-    {
-      "AID": 20120108,
-      "Href": "/detail/20120108",
-      "NewTitle": "[OAD 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120108.jpg",
-      "Title": "侵略！！乌贼娘 OAD"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20120055,
-      "Href": "/detail/20120055",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120055.jpg",
-      "Title": "最强会长黑神 第二季"
-    },
-    {
-      "AID": 20060011,
-      "Href": "/detail/20060011",
-      "NewTitle": "[TV 001-201]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060011.jpg",
-      "Title": "银魂 (001-201)"
-    },
     {
       "AID": 20260219,
       "Href": "/detail/20260219",
       "NewTitle": "PV",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260219.jpg",
       "Title": "女主角？圣女？不，我是杂役女仆（自豪）！"
-    },
-    {
-      "AID": 20260003,
-      "Href": "/detail/20260003",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260003.jpg",
-      "Title": "正义使者 -我的英雄学院之非法英雄- 第二季"
-    },
-    {
-      "AID": 20240121,
-      "Href": "/detail/20240121",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240121.jpg",
-      "Title": "妖精的尾巴 百年任务"
-    },
-    {
-      "AID": 20170173,
-      "Href": "/detail/20170173",
-      "NewTitle": "[TV 01-23]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170173.jpg",
-      "Title": "银之守墓人"
     }
   ],
   "player_label_arr": {

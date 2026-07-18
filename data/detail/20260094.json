@@ -427,50 +427,7 @@
     "collect_cnt": "2,157"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20110005,
-      "Href": "/detail/20110005",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110005.jpg",
-      "Title": "绯弹的亚里亚"
-    },
-    {
-      "AID": 20200370,
-      "Href": "/detail/20200370",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200370.jpg",
-      "Title": "数码宝贝20周年 纪念故事"
-    },
-    {
-      "AID": 20210220,
-      "Href": "/detail/20210220",
-      "NewTitle": "第4话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210220.jpg",
-      "Title": "伊甸"
-    },
-    {
-      "AID": 20160119,
-      "Href": "/detail/20160119",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160119.jpg",
-      "Title": "装神少女小缠"
-    },
-    {
-      "AID": 20190386,
-      "Href": "/detail/20190386",
-      "NewTitle": "[WEB 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190386.jpg",
-      "Title": "少女前线 人形小剧场 日语版"
-    },
-    {
-      "AID": 20180007,
-      "Href": "/detail/20180007",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180007.jpg",
-      "Title": "Slow Start"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -160,50 +160,7 @@
     "collect_cnt": "1,113"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220513,
-      "Href": "/detail/20220513",
-      "NewTitle": "全集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220513.jpg",
-      "Title": "擅长捉弄的高木同学剧场版"
-    },
-    {
-      "AID": 20070087,
-      "Href": "/detail/20070087",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070087.jpg",
-      "Title": "君吻"
-    },
-    {
-      "AID": 20250102,
-      "Href": "/detail/20250102",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250102.jpg",
-      "Title": "受到猩猩神的庇护的大小姐在王立骑士团受到宠爱"
-    },
-    {
-      "AID": 20130139,
-      "Href": "/detail/20130139",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130139.jpg",
-      "Title": "囮物语"
-    },
-    {
-      "AID": 20210198,
-      "Href": "/detail/20210198",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210198.jpg",
-      "Title": "见面5秒开始战斗"
-    },
-    {
-      "AID": 20230327,
-      "Href": "/detail/20230327",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230327.jpg",
-      "Title": "伍六七之暗影宿命"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

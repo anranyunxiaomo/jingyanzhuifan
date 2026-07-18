@@ -356,50 +356,7 @@
     "comment_cnt": "242",
     "collect_cnt": "4,131"
   },
-  "series": [
-    {
-      "AID": 20130008,
-      "Href": "/detail/20130008",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130008.jpg",
-      "Title": "暗杀教室 修学旅行篇"
-    },
-    {
-      "AID": 20160031,
-      "Href": "/detail/20160031",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160031.jpg",
-      "Title": "暗杀教室剧场版 365日倒计时"
-    },
-    {
-      "AID": 20160167,
-      "Href": "/detail/20160167",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160167.jpg",
-      "Title": "暗杀教室 第二季"
-    },
-    {
-      "AID": 20160216,
-      "Href": "/detail/20160216",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160216.jpg",
-      "Title": "暗杀教室 第二季 课外授课篇"
-    },
-    {
-      "AID": 20160258,
-      "Href": "/detail/20160258",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160258.jpg",
-      "Title": "暗杀教室Q"
-    },
-    {
-      "AID": 20260133,
-      "Href": "/detail/20260133",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260133.jpg",
-      "Title": "剧场版 暗杀教室 大家的时间"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20220116,
@@ -407,41 +364,6 @@
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20220116.jpg",
       "Title": "尖帽子的魔法工坊"
-    },
-    {
-      "AID": 20120037,
-      "Href": "/detail/20120037",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120037.jpg",
-      "Title": "青之驱魔师剧场版"
-    },
-    {
-      "AID": 20020021,
-      "Href": "/detail/20020021",
-      "NewTitle": "第50集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020021.jpg",
-      "Title": "数码宝贝04 无限地带"
-    },
-    {
-      "AID": 20200358,
-      "Href": "/detail/20200358",
-      "NewTitle": "第230集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200358.jpg",
-      "Title": "吞噬星空"
-    },
-    {
-      "AID": 20240121,
-      "Href": "/detail/20240121",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240121.jpg",
-      "Title": "妖精的尾巴 百年任务"
-    },
-    {
-      "AID": 20190277,
-      "Href": "/detail/20190277",
-      "NewTitle": "第34集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190277.jpg",
-      "Title": "阿衰"
     }
   ],
   "player_label_arr": {

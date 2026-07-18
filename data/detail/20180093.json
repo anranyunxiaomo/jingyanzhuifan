@@ -178,50 +178,7 @@
     "collect_cnt": "818"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20100002,
-      "Href": "/detail/20100002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100002.jpg",
-      "Title": "天降之物 第二季"
-    },
-    {
-      "AID": 20040021,
-      "Href": "/detail/20040021",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040021.jpg",
-      "Title": "最游记RELOAD GUNLOCK"
-    },
-    {
-      "AID": 20160269,
-      "Href": "/detail/20160269",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160269.jpg",
-      "Title": "怪盗Joker 第四季"
-    },
-    {
-      "AID": 20220016,
-      "Href": "/detail/20220016",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220016.jpg",
-      "Title": "杀爱"
-    },
-    {
-      "AID": 20110039,
-      "Href": "/detail/20110039",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110039.jpg",
-      "Title": "魔剑姬"
-    },
-    {
-      "AID": 20250022,
-      "Href": "/detail/20250022",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250022.jpg",
-      "Title": "不幸职业【鉴定士】实则最强"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

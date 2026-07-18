@@ -67,57 +67,7 @@
     "comment_cnt": "224",
     "collect_cnt": "714"
   },
-  "series": [
-    {
-      "AID": 20110050,
-      "Href": "/detail/20110050",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110050.jpg",
-      "Title": "魔法少女小圆"
-    },
-    {
-      "AID": 20120097,
-      "Href": "/detail/20120097",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120097.jpg",
-      "Title": "魔法少女小圆剧场版 [前篇] 起始的物语"
-    },
-    {
-      "AID": 20120098,
-      "Href": "/detail/20120098",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120098.jpg",
-      "Title": "魔法少女小圆剧场版 [后篇] 永远的物语"
-    },
-    {
-      "AID": 20130126,
-      "Href": "/detail/20130126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130126.jpg",
-      "Title": "魔法少女小圆剧场版 [新篇] 叛逆的物语"
-    },
-    {
-      "AID": 20200236,
-      "Href": "/detail/20200236",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200236.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 第二季 -觉醒前夜-"
-    },
-    {
-      "AID": 20220021,
-      "Href": "/detail/20220021",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220021.jpg",
-      "Title": "魔法少女小圆剧场版 魔女之夜的回天"
-    },
-    {
-      "AID": 20220171,
-      "Href": "/detail/20220171",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220171.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 最终季 -浅梦之晓-"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20120070,
@@ -125,41 +75,6 @@
       "NewTitle": "[TV 01-12+OVA]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20120070.jpg",
       "Title": "三人行必有我妹"
-    },
-    {
-      "AID": 20260022,
-      "Href": "/detail/20260022",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260022.jpg",
-      "Title": "透明男与人类女～不久成为夫妇的二人～"
-    },
-    {
-      "AID": 20110113,
-      "Href": "/detail/20110113",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110113.jpg",
-      "Title": "战场女武神3 为了谁所受的枪伤"
-    },
-    {
-      "AID": 20260014,
-      "Href": "/detail/20260014",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260014.jpg",
-      "Title": "魔王的女儿太温柔了！！"
-    },
-    {
-      "AID": 20200167,
-      "Href": "/detail/20200167",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200167.jpg",
-      "Title": "转生史莱姆日记"
-    },
-    {
-      "AID": 20050032,
-      "Href": "/detail/20050032",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050032.jpg",
-      "Title": "翼·年代记"
     }
   ],
   "player_label_arr": {

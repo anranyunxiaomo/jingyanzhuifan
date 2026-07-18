@@ -73,50 +73,7 @@
     "collect_cnt": "248"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250184,
-      "Href": "/detail/20250184",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250184.jpg",
-      "Title": "奉子成婚"
-    },
-    {
-      "AID": 20180020,
-      "Href": "/detail/20180020",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180020.jpg",
-      "Title": "三颗星彩色冒险"
-    },
-    {
-      "AID": 20120136,
-      "Href": "/detail/20120136",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120136.jpg",
-      "Title": "To Heart2 迷宫旅人"
-    },
-    {
-      "AID": 20170260,
-      "Href": "/detail/20170260",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170260.jpg",
-      "Title": "快盗天使BREAK"
-    },
-    {
-      "AID": 20160141,
-      "Href": "/detail/20160141",
-      "NewTitle": "[TV 01-11+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160141.jpg",
-      "Title": "夏目友人帐 第五季"
-    },
-    {
-      "AID": 20140190,
-      "Href": "/detail/20140190",
-      "NewTitle": "第61集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140190.jpg",
-      "Title": "龙珠改 魔人布欧篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

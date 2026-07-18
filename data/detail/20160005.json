@@ -493,87 +493,8 @@
       }
     ]
   },
-  "series": [
-    {
-      "AID": 20180193,
-      "Href": "/detail/20180193",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180193.jpg",
-      "Title": "Re：从零开始的异世界生活 Memory Snow"
-    },
-    {
-      "AID": 20190127,
-      "Href": "/detail/20190127",
-      "NewTitle": "[TV 01-25+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190127.jpg",
-      "Title": "Re：从零开始的异世界生活 第二季"
-    },
-    {
-      "AID": 20190128,
-      "Href": "/detail/20190128",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190128.jpg",
-      "Title": "Re：从零开始的异世界生活 冰结之绊"
-    },
-    {
-      "AID": 20200068,
-      "Href": "/detail/20200068",
-      "NewTitle": "[BD 01-13+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200068.jpg",
-      "Title": "Re：从零开始的异世界生活 新编集版"
-    },
-    {
-      "AID": 20250012,
-      "Href": "/detail/20250012",
-      "NewTitle": "第08集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250012.jpg",
-      "Title": "Re：从零开始的异世界生活 第三季 反击篇"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180308,
-      "Href": "/detail/20180308",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180308.jpg",
-      "Title": "小小的英雄-螃蟹与蛋与透明人-"
-    },
-    {
-      "AID": 20090063,
-      "Href": "/detail/20090063",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090063.jpg",
-      "Title": "翼·年代记 春雷记"
-    },
-    {
-      "AID": 20220243,
-      "Href": "/detail/20220243",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220243.jpg",
-      "Title": "圣女魔力无所不能 第二季"
-    },
-    {
-      "AID": 20140078,
-      "Href": "/detail/20140078",
-      "NewTitle": "[TV 01-12+OAD+SP",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140078.jpg",
-      "Title": "魔女的使命"
-    },
-    {
-      "AID": 20220091,
-      "Href": "/detail/20220091",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220091.jpg",
-      "Title": "彻夜之歌"
-    },
-    {
-      "AID": 20000141,
-      "Href": "/detail/20000141",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000141.jpg",
-      "Title": "下级生"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

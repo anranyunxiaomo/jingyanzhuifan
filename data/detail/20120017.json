@@ -181,50 +181,7 @@
     ]
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250051,
-      "Href": "/detail/20250051",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250051.jpg",
-      "Title": "动物狂想曲 最终季 第一部分"
-    },
-    {
-      "AID": 20220325,
-      "Href": "/detail/20220325",
-      "NewTitle": "第48集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220325.jpg",
-      "Title": "史上最强男主角"
-    },
-    {
-      "AID": 20030013,
-      "Href": "/detail/20030013",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030013.jpg",
-      "Title": "神枪少女"
-    },
-    {
-      "AID": 20200261,
-      "Href": "/detail/20200261",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200261.jpg",
-      "Title": "天宝伏妖录"
-    },
-    {
-      "AID": 20230196,
-      "Href": "/detail/20230196",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230196.jpg",
-      "Title": "魔法使的新娘 第二季 第2部分"
-    },
-    {
-      "AID": 20130056,
-      "Href": "/detail/20130056",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130056.jpg",
-      "Title": "战勇。 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

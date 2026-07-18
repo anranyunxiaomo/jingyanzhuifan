@@ -170,50 +170,7 @@
     "collect_cnt": "1,419"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20050052,
-      "Href": "/detail/20050052",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050052.jpg",
-      "Title": "To Heart2"
-    },
-    {
-      "AID": 20200297,
-      "Href": "/detail/20200297",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200297.jpg",
-      "Title": "Jose与虎与鱼们"
-    },
-    {
-      "AID": 20210212,
-      "Href": "/detail/20210212",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210212.jpg",
-      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～ OVA"
-    },
-    {
-      "AID": 20200371,
-      "Href": "/detail/20200371",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200371.jpg",
-      "Title": "氪金玩家"
-    },
-    {
-      "AID": 20200296,
-      "Href": "/detail/20200296",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200296.jpg",
-      "Title": "泰迦奥特曼剧场版 新生代之巅 普通话版"
-    },
-    {
-      "AID": 20220075,
-      "Href": "/detail/20220075",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220075.jpg",
-      "Title": "五等分的新娘剧场版"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -212,50 +212,7 @@
     "collect_cnt": "253"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230327,
-      "Href": "/detail/20230327",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230327.jpg",
-      "Title": "伍六七之暗影宿命"
-    },
-    {
-      "AID": 20230191,
-      "Href": "/detail/20230191",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230191.jpg",
-      "Title": "绊之Allele 第二季"
-    },
-    {
-      "AID": 20150015,
-      "Href": "/detail/20150015",
-      "NewTitle": "[TV 13-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150015.jpg",
-      "Title": "ALDNOAH.ZERO 第二季"
-    },
-    {
-      "AID": 20210389,
-      "Href": "/detail/20210389",
-      "NewTitle": "第328集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210389.jpg",
-      "Title": "妖神记 第五季"
-    },
-    {
-      "AID": 20050042,
-      "Href": "/detail/20050042",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050042.jpg",
-      "Title": "苍穹之法芙娜 RIGHT OF LEFT"
-    },
-    {
-      "AID": 20160131,
-      "Href": "/detail/20160131",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160131.jpg",
-      "Title": "在下坂本，有何贵干？"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

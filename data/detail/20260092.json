@@ -462,50 +462,7 @@
     "collect_cnt": "1,848"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160056,
-      "Href": "/detail/20160056",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160056.jpg",
-      "Title": "大叔与棉花糖"
-    },
-    {
-      "AID": 20180267,
-      "Href": "/detail/20180267",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180267.jpg",
-      "Title": "女皇之刃 UNLIMITED"
-    },
-    {
-      "AID": 20230317,
-      "Href": "/detail/20230317",
-      "NewTitle": "第149集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230317.jpg",
-      "Title": "仙逆"
-    },
-    {
-      "AID": 20120053,
-      "Href": "/detail/20120053",
-      "NewTitle": "[TV 01-17]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120053.jpg",
-      "Title": "恋爱随意链接"
-    },
-    {
-      "AID": 20210295,
-      "Href": "/detail/20210295",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210295.jpg",
-      "Title": "全职法师 第五季"
-    },
-    {
-      "AID": 20240199,
-      "Href": "/detail/20240199",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240199.jpg",
-      "Title": "青之驱魔师 雪之尽头篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -163,50 +163,7 @@
     "collect_cnt": "2,100"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180033,
-      "Href": "/detail/20180033",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180033.jpg",
-      "Title": "gdgd men's party"
-    },
-    {
-      "AID": 20130016,
-      "Href": "/detail/20130016",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130016.jpg",
-      "Title": "机巧少女不会受伤"
-    },
-    {
-      "AID": 20210120,
-      "Href": "/detail/20210120",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210120.jpg",
-      "Title": "魔法科高校的劣等生 追忆篇"
-    },
-    {
-      "AID": 20080036,
-      "Href": "/detail/20080036",
-      "NewTitle": "[BD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080036.jpg",
-      "Title": "十字架与吸血鬼 CAPU2"
-    },
-    {
-      "AID": 20190710,
-      "Href": "/detail/20190710",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190710.jpg",
-      "Title": "人生一串 第二季"
-    },
-    {
-      "AID": 20190436,
-      "Href": "/detail/20190436",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190436.jpg",
-      "Title": "瑞克和莫蒂 第四季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

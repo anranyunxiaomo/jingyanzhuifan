@@ -547,50 +547,7 @@
     "collect_cnt": "502"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210271,
-      "Href": "/detail/20210271",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210271.jpg",
-      "Title": "橘色荣耀！"
-    },
-    {
-      "AID": 20180341,
-      "Href": "/detail/20180341",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180341.jpg",
-      "Title": "无节操☆Bitch社"
-    },
-    {
-      "AID": 20140087,
-      "Href": "/detail/20140087",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140087.jpg",
-      "Title": "魔笛MAGI OAD"
-    },
-    {
-      "AID": 20220125,
-      "Href": "/detail/20220125",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220125.jpg",
-      "Title": "新石纪 龙水"
-    },
-    {
-      "AID": 20170164,
-      "Href": "/detail/20170164",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170164.jpg",
-      "Title": "RWBY 第五季"
-    },
-    {
-      "AID": 20190010,
-      "Href": "/detail/20190010",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190010.jpg",
-      "Title": "一弦定音！"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -762,13 +762,6 @@
   },
   "series": [
     {
-      "AID": 20220529,
-      "Href": "/detail/20220529",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220529.jpg",
-      "Title": "BanG Dream! Morfonication"
-    },
-    {
       "AID": 20260169,
       "Href": "/detail/20260169",
       "NewTitle": "第04集",
@@ -776,50 +769,7 @@
       "Title": "BanG Dream! YUME∞MITA"
     }
   ],
-  "similar": [
-    {
-      "AID": 20250077,
-      "Href": "/detail/20250077",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250077.jpg",
-      "Title": "忍者与杀手二人组的日常生活"
-    },
-    {
-      "AID": 20190348,
-      "Href": "/detail/20190348",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190348.jpg",
-      "Title": "初恋微甜"
-    },
-    {
-      "AID": 20000104,
-      "Href": "/detail/20000104",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000104.jpg",
-      "Title": "风筝"
-    },
-    {
-      "AID": 20220250,
-      "Href": "/detail/20220250",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220250.jpg",
-      "Title": "RWBY 冰雪帝国"
-    },
-    {
-      "AID": 20170199,
-      "Href": "/detail/20170199",
-      "NewTitle": "[TV 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170199.jpg",
-      "Title": "扩张少女系三重奏"
-    },
-    {
-      "AID": 20210070,
-      "Href": "/detail/20210070",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210070.jpg",
-      "Title": "终末的后宫"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

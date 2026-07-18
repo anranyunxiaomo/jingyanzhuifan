@@ -477,50 +477,7 @@
     "collect_cnt": "1,416"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180130,
-      "Href": "/detail/20180130",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180130.jpg",
-      "Title": "我的英雄学院剧场版 两个英雄"
-    },
-    {
-      "AID": 20240215,
-      "Href": "/detail/20240215",
-      "NewTitle": "第21集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240215.jpg",
-      "Title": "航海王：鱼人岛篇特别编辑版"
-    },
-    {
-      "AID": 20200265,
-      "Href": "/detail/20200265",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200265.jpg",
-      "Title": "阿松 第三季"
-    },
-    {
-      "AID": 20220128,
-      "Href": "/detail/20220128",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220128.jpg",
-      "Title": "吸血鬼马上死 第二季"
-    },
-    {
-      "AID": 20220323,
-      "Href": "/detail/20220323",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220323.jpg",
-      "Title": "我的弟子都超神 动态漫"
-    },
-    {
-      "AID": 20210297,
-      "Href": "/detail/20210297",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210297.jpg",
-      "Title": "我是大还丹"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

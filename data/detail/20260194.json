@@ -96,50 +96,7 @@
     "collect_cnt": "633"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20010026,
-      "Href": "/detail/20010026",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010026.jpg",
-      "Title": "ONE～辉之季节～"
-    },
-    {
-      "AID": 20260051,
-      "Href": "/detail/20260051",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260051.jpg",
-      "Title": "异国日记"
-    },
-    {
-      "AID": 20190134,
-      "Href": "/detail/20190134",
-      "NewTitle": "[TV 40-52+WEB]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190134.jpg",
-      "Title": "偶像大师 灰姑娘女孩剧场 第四季"
-    },
-    {
-      "AID": 20200173,
-      "Href": "/detail/20200173",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200173.jpg",
-      "Title": "SHOW BY ROCK!! STARS!"
-    },
-    {
-      "AID": 20220261,
-      "Href": "/detail/20220261",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220261.jpg",
-      "Title": "星际一游"
-    },
-    {
-      "AID": 20130003,
-      "Href": "/detail/20130003",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130003.jpg",
-      "Title": "我的朋友很少 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -287,66 +287,8 @@
     "comment_cnt": "46",
     "collect_cnt": "646"
   },
-  "series": [
-    {
-      "AID": 20190094,
-      "Href": "/detail/20190094",
-      "NewTitle": "[TV 00-10+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190094.jpg",
-      "Title": "迷你刀使"
-    },
-    {
-      "AID": 20200316,
-      "Href": "/detail/20200316",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200316.jpg",
-      "Title": "刀使巫女 刻印一闪的灯火"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180316,
-      "Href": "/detail/20180316",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180316.jpg",
-      "Title": "海贼王TV版特别篇 空岛之章"
-    },
-    {
-      "AID": 20000011,
-      "Href": "/detail/20000011",
-      "NewTitle": "[TV 001-141]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000011.jpg",
-      "Title": "樱桃小丸子"
-    },
-    {
-      "AID": 20180249,
-      "Href": "/detail/20180249",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180249.jpg",
-      "Title": "噬神者 共鸣作战"
-    },
-    {
-      "AID": 20040035,
-      "Href": "/detail/20040035",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040035.jpg",
-      "Title": "仙境传说"
-    },
-    {
-      "AID": 20220037,
-      "Href": "/detail/20220037",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220037.jpg",
-      "Title": "相合之物"
-    },
-    {
-      "AID": 20160248,
-      "Href": "/detail/20160248",
-      "NewTitle": "[OAD 01-10]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160248.jpg",
-      "Title": "妖精的尾巴OAD"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -224,50 +224,7 @@
     "collect_cnt": "3,592"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160045,
-      "Href": "/detail/20160045",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160045.jpg",
-      "Title": "初恋Monster"
-    },
-    {
-      "AID": 20090050,
-      "Href": "/detail/20090050",
-      "NewTitle": "[BD 01-27]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090050.jpg",
-      "Title": "战斗司书"
-    },
-    {
-      "AID": 20220334,
-      "Href": "/detail/20220334",
-      "NewTitle": "第80集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220334.jpg",
-      "Title": "从姑获鸟开始：龙城争霸·动态漫"
-    },
-    {
-      "AID": 20260158,
-      "Href": "/detail/20260158",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260158.jpg",
-      "Title": "转生了的大圣女，拼死隐瞒自己身为圣女"
-    },
-    {
-      "AID": 20210019,
-      "Href": "/detail/20210019",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210019.jpg",
-      "Title": "堀与宫村"
-    },
-    {
-      "AID": 20180081,
-      "Href": "/detail/20180081",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180081.jpg",
-      "Title": "妖怪旅馆营业中"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

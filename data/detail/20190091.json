@@ -236,50 +236,7 @@
     "collect_cnt": "100"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250194,
-      "Href": "/detail/20250194",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250194.jpg",
-      "Title": "异世界四重奏 第三季"
-    },
-    {
-      "AID": 20150048,
-      "Href": "/detail/20150048",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150048.jpg",
-      "Title": "ISUCA依丝卡"
-    },
-    {
-      "AID": 20240033,
-      "Href": "/detail/20240033",
-      "NewTitle": "第72集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240033.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第三季"
-    },
-    {
-      "AID": 20250229,
-      "Href": "/detail/20250229",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250229.jpg",
-      "Title": "末世二轮之旅"
-    },
-    {
-      "AID": 20140202,
-      "Href": "/detail/20140202",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140202.jpg",
-      "Title": "信长协奏曲"
-    },
-    {
-      "AID": 20190407,
-      "Href": "/detail/20190407",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190407.jpg",
-      "Title": "怪怪守护神OVA"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

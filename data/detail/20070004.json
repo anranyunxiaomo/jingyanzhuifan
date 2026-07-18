@@ -78,50 +78,7 @@
     "collect_cnt": "2,189"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220485,
-      "Href": "/detail/20220485",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220485.jpg",
-      "Title": "我靠bug上王者 动态漫"
-    },
-    {
-      "AID": 20210030,
-      "Href": "/detail/20210030",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210030.jpg",
-      "Title": "悠哉日常大王 第三季"
-    },
-    {
-      "AID": 20230164,
-      "Href": "/detail/20230164",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230164.jpg",
-      "Title": "全职法师 第六季"
-    },
-    {
-      "AID": 20180174,
-      "Href": "/detail/20180174",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180174.jpg",
-      "Title": "索斯机兽 荒野纪"
-    },
-    {
-      "AID": 20160145,
-      "Href": "/detail/20160145",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160145.jpg",
-      "Title": "圣洁天使"
-    },
-    {
-      "AID": 20190094,
-      "Href": "/detail/20190094",
-      "NewTitle": "[TV 00-10+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190094.jpg",
-      "Title": "迷你刀使"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

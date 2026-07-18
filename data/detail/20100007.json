@@ -330,50 +330,7 @@
     "collect_cnt": "1,742"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160249,
-      "Href": "/detail/20160249",
-      "NewTitle": "第10集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160249.jpg",
-      "Title": "超神学院 第四季(黑甲)"
-    },
-    {
-      "AID": 20130145,
-      "Href": "/detail/20130145",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130145.jpg",
-      "Title": "我们仍未知道那天所看见的花的名字 剧场版"
-    },
-    {
-      "AID": 20180212,
-      "Href": "/detail/20180212",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180212.jpg",
-      "Title": "怪物弹珠新系列 路西法 反叛的堕天使"
-    },
-    {
-      "AID": 20250031,
-      "Href": "/detail/20250031",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250031.jpg",
-      "Title": "魔域英雄传说"
-    },
-    {
-      "AID": 20110074,
-      "Href": "/detail/20110074",
-      "NewTitle": "[TV 01-11]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110074.jpg",
-      "Title": "金钱掌控"
-    },
-    {
-      "AID": 20260157,
-      "Href": "/detail/20260157",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260157.jpg",
-      "Title": "超级马力欧银河大电影"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

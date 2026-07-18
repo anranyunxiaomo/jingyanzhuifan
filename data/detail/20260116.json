@@ -398,50 +398,7 @@
     ]
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190212,
-      "Href": "/detail/20190212",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190212.jpg",
-      "Title": "机甲英雄 机斗勇者"
-    },
-    {
-      "AID": 20160002,
-      "Href": "/detail/20160002",
-      "NewTitle": "[TV 01-10+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160002.jpg",
-      "Title": "Big Order"
-    },
-    {
-      "AID": 20150102,
-      "Href": "/detail/20150102",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150102.jpg",
-      "Title": "飙速宅男剧场版(2015)"
-    },
-    {
-      "AID": 20180215,
-      "Href": "/detail/20180215",
-      "NewTitle": "[TV 01-10]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180215.jpg",
-      "Title": "我喜欢的是妹妹但不是妹妹"
-    },
-    {
-      "AID": 20140059,
-      "Href": "/detail/20140059",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140059.jpg",
-      "Title": "未确认进行式"
-    },
-    {
-      "AID": 20220474,
-      "Href": "/detail/20220474",
-      "NewTitle": "第288集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220474.jpg",
-      "Title": "末世超级系统 动态漫"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

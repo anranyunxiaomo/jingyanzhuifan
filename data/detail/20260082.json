@@ -497,50 +497,7 @@
     "collect_cnt": "389"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180352,
-      "Href": "/detail/20180352",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180352.jpg",
-      "Title": "星辰变"
-    },
-    {
-      "AID": 20150004,
-      "Href": "/detail/20150004",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150004.jpg",
-      "Title": "GATE 奇幻自卫队"
-    },
-    {
-      "AID": 20030002,
-      "Href": "/detail/20030002",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030002.jpg",
-      "Title": "海贼王TV版特别篇 父亲宏大的理想"
-    },
-    {
-      "AID": 20200233,
-      "Href": "/detail/20200233",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200233.jpg",
-      "Title": "绝世武神"
-    },
-    {
-      "AID": 20150136,
-      "Href": "/detail/20150136",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150136.jpg",
-      "Title": "绝命制裁X OAD"
-    },
-    {
-      "AID": 20240167,
-      "Href": "/detail/20240167",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240167.jpg",
-      "Title": "重生大小姐正在攻略龙帝殿下"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

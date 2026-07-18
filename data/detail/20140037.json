@@ -200,66 +200,9 @@
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20120014.jpg",
       "Title": "中二病也要谈恋爱！"
-    },
-    {
-      "AID": 20130021,
-      "Href": "/detail/20130021",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130021.jpg",
-      "Title": "中二病也要谈恋爱！剧场版 小鸟游六花改"
-    },
-    {
-      "AID": 20180203,
-      "Href": "/detail/20180203",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180203.jpg",
-      "Title": "中二病也要谈恋爱！剧场版 -Take On Me-"
     }
   ],
-  "similar": [
-    {
-      "AID": 20180143,
-      "Href": "/detail/20180143",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180143.jpg",
-      "Title": "钱进球场 第二季"
-    },
-    {
-      "AID": 20210392,
-      "Href": "/detail/20210392",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210392.jpg",
-      "Title": "万族之劫"
-    },
-    {
-      "AID": 20190426,
-      "Href": "/detail/20190426",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190426.jpg",
-      "Title": "百鬼幼儿园 第二季"
-    },
-    {
-      "AID": 20170156,
-      "Href": "/detail/20170156",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170156.jpg",
-      "Title": "时间飞船 逆袭的三恶人"
-    },
-    {
-      "AID": 20140132,
-      "Href": "/detail/20140132",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140132.jpg",
-      "Title": "情热传说 导师的黎明"
-    },
-    {
-      "AID": 20180179,
-      "Href": "/detail/20180179",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180179.jpg",
-      "Title": "进击的巨人 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

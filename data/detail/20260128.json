@@ -446,59 +446,8 @@
     "comment_cnt": "134",
     "collect_cnt": "951"
   },
-  "series": [
-    {
-      "AID": 20200030,
-      "Href": "/detail/20200030",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200030.jpg",
-      "Title": "异兽魔都"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20190257,
-      "Href": "/detail/20190257",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190257.jpg",
-      "Title": "影后谋略"
-    },
-    {
-      "AID": 20250224,
-      "Href": "/detail/20250224",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250224.jpg",
-      "Title": "无口的柏田小姐与元气的太田君"
-    },
-    {
-      "AID": 20120018,
-      "Href": "/detail/20120018",
-      "NewTitle": "[TV 01-22]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120018.jpg",
-      "Title": "机器人笔记"
-    },
-    {
-      "AID": 20160096,
-      "Href": "/detail/20160096",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160096.jpg",
-      "Title": "QUALIDEA CODE"
-    },
-    {
-      "AID": 20190006,
-      "Href": "/detail/20190006",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190006.jpg",
-      "Title": "魔法少女特殊战明日香"
-    },
-    {
-      "AID": 20130109,
-      "Href": "/detail/20130109",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130109.jpg",
-      "Title": "全职猎人剧场版 绯色的幻影"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

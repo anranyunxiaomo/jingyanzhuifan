@@ -130,46 +130,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20200229,
-      "Href": "/detail/20200229",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200229.jpg",
-      "Title": "宝石幻想光芒重现"
-    },
-    {
-      "AID": 20190414,
-      "Href": "/detail/20190414",
-      "NewTitle": "[WEB 01-20]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190414.jpg",
-      "Title": "玄界之门"
-    },
-    {
-      "AID": 20170282,
-      "Href": "/detail/20170282",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170282.jpg",
-      "Title": "灵域 第五季"
-    },
-    {
       "AID": 20230225,
       "Href": "/detail/20230225",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20230225.jpg",
       "Title": "偶像大师 百万现场"
-    },
-    {
-      "AID": 20250051,
-      "Href": "/detail/20250051",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250051.jpg",
-      "Title": "动物狂想曲 最终季 第一部分"
-    },
-    {
-      "AID": 20050061,
-      "Href": "/detail/20050061",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050061.jpg",
-      "Title": "蜂蜜与四叶草"
     }
   ],
   "player_label_arr": {

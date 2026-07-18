@@ -400,50 +400,7 @@
     "collect_cnt": "3,240"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180269,
-      "Href": "/detail/20180269",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180269.jpg",
-      "Title": "恶魔偶像"
-    },
-    {
-      "AID": 20250057,
-      "Href": "/detail/20250057",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250057.jpg",
-      "Title": "直至魔女消逝"
-    },
-    {
-      "AID": 20240139,
-      "Href": "/detail/20240139",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240139.jpg",
-      "Title": "四处贴上吧！小狗 第二季"
-    },
-    {
-      "AID": 20220261,
-      "Href": "/detail/20220261",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220261.jpg",
-      "Title": "星际一游"
-    },
-    {
-      "AID": 20200269,
-      "Href": "/detail/20200269",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200269.jpg",
-      "Title": "有药"
-    },
-    {
-      "AID": 20210292,
-      "Href": "/detail/20210292",
-      "NewTitle": "第55集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210292.jpg",
-      "Title": "铁姬钢兵 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

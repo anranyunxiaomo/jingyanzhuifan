@@ -104,57 +104,14 @@
     "comment_cnt": "10",
     "collect_cnt": "221"
   },
-  "series": [
-    {
-      "AID": 20210294,
-      "Href": "/detail/20210294",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210294.jpg",
-      "Title": "百万吨级武藏"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20220450,
-      "Href": "/detail/20220450",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220450.jpg",
-      "Title": "冰剑的魔术师将要统一世界"
-    },
-    {
-      "AID": 20210257,
-      "Href": "/detail/20210257",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210257.jpg",
-      "Title": "龙王殿"
-    },
     {
       "AID": 20180057,
       "Href": "/detail/20180057",
       "NewTitle": "[TV 01-12]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180057.jpg",
       "Title": "Comic Girls"
-    },
-    {
-      "AID": 20050020,
-      "Href": "/detail/20050020",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050020.jpg",
-      "Title": "蔷薇少女 梦之终结"
-    },
-    {
-      "AID": 20170205,
-      "Href": "/detail/20170205",
-      "NewTitle": "[BDRIP Vol.1-3]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170205.jpg",
-      "Title": "偶像大师 灰姑娘女孩剧场"
-    },
-    {
-      "AID": 20250260,
-      "Href": "/detail/20250260",
-      "NewTitle": "第49集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250260.jpg",
-      "Title": "头号战队豪兽者"
     }
   ],
   "player_label_arr": {

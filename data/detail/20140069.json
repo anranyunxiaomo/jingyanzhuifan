@@ -112,50 +112,7 @@
     "collect_cnt": "917"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200038,
-      "Href": "/detail/20200038",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200038.jpg",
-      "Title": "家有圆圆？！～我家的圆圆你知道吗～"
-    },
-    {
-      "AID": 20210434,
-      "Href": "/detail/20210434",
-      "NewTitle": "第116集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210434.jpg",
-      "Title": "我从诸天万界归来"
-    },
-    {
-      "AID": 20190402,
-      "Href": "/detail/20190402",
-      "NewTitle": "第42集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190402.jpg",
-      "Title": "武庚纪 第三季"
-    },
-    {
-      "AID": 20080066,
-      "Href": "/detail/20080066",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080066.jpg",
-      "Title": "俗·再见！绝望老师"
-    },
-    {
-      "AID": 20050011,
-      "Href": "/detail/20050011",
-      "NewTitle": "[SP 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050011.jpg",
-      "Title": "AIR 夏季篇"
-    },
-    {
-      "AID": 20250089,
-      "Href": "/detail/20250089",
-      "NewTitle": "第08集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250089.jpg",
-      "Title": "罪恶装备 奋战: 两位裁决者"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

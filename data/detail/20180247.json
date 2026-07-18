@@ -171,66 +171,8 @@
     "comment_cnt": "227",
     "collect_cnt": "1,941"
   },
-  "series": [
-    {
-      "AID": 20210108,
-      "Href": "/detail/20210108",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210108.jpg",
-      "Title": "佐贺偶像是传奇 卷土重来"
-    },
-    {
-      "AID": 20250268,
-      "Href": "/detail/20250268",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250268.jpg",
-      "Title": "佐贺偶像是传奇 梦想银河乐园"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20190317,
-      "Href": "/detail/20190317",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190317.jpg",
-      "Title": "名侦探柯南剧场版 绀青之拳"
-    },
-    {
-      "AID": 20250234,
-      "Href": "/detail/20250234",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250234.jpg",
-      "Title": "乱马1/2 第二季"
-    },
-    {
-      "AID": 20210156,
-      "Href": "/detail/20210156",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210156.jpg",
-      "Title": "我的英雄学院 第五季"
-    },
-    {
-      "AID": 20210395,
-      "Href": "/detail/20210395",
-      "NewTitle": "第64集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210395.jpg",
-      "Title": "动态漫画·斗罗大陆3 龙王传说 第二季"
-    },
-    {
-      "AID": 20180079,
-      "Href": "/detail/20180079",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180079.jpg",
-      "Title": "多田君不恋爱"
-    },
-    {
-      "AID": 20180350,
-      "Href": "/detail/20180350",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180350.jpg",
-      "Title": "妖神记之影妖篇"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

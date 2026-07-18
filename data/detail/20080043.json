@@ -350,50 +350,7 @@
     "collect_cnt": "1,638"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20140188,
-      "Href": "/detail/20140188",
-      "NewTitle": "第11集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140188.jpg",
-      "Title": "夏恋战机"
-    },
-    {
-      "AID": 20190047,
-      "Href": "/detail/20190047",
-      "NewTitle": "[TV 01-26.5]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190047.jpg",
-      "Title": "在世界尽头咏唱恋曲的少女YU-NO"
-    },
-    {
-      "AID": 20130012,
-      "Href": "/detail/20130012",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130012.jpg",
-      "Title": "东京暗鸦"
-    },
-    {
-      "AID": 20170076,
-      "Href": "/detail/20170076",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170076.jpg",
-      "Title": "我的英雄学院 第二季"
-    },
-    {
-      "AID": 20170238,
-      "Href": "/detail/20170238",
-      "NewTitle": "第OVA1话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170238.jpg",
-      "Title": "巴加的工作室"
-    },
-    {
-      "AID": 20160195,
-      "Href": "/detail/20160195",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160195.jpg",
-      "Title": "银魂 爱染香篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

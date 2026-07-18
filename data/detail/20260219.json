@@ -131,50 +131,7 @@
     "collect_cnt": "497"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20130035,
-      "Href": "/detail/20130035",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130035.jpg",
-      "Title": "恶魔幸存者2"
-    },
-    {
-      "AID": 20260058,
-      "Href": "/detail/20260058",
-      "NewTitle": "第05集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260058.jpg",
-      "Title": "我们不可能成为恋人！绝对不行。 (※似乎可行？) 〜再次闪耀！〜"
-    },
-    {
-      "AID": 20150115,
-      "Href": "/detail/20150115",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150115.jpg",
-      "Title": "请问您今天要来点兔子吗？ 第二季"
-    },
-    {
-      "AID": 20180347,
-      "Href": "/detail/20180347",
-      "NewTitle": "第96集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180347.jpg",
-      "Title": "非人哉"
-    },
-    {
-      "AID": 20190324,
-      "Href": "/detail/20190324",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190324.jpg",
-      "Title": "漫动画·十万个谐音梗"
-    },
-    {
-      "AID": 20210034,
-      "Href": "/detail/20210034",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210034.jpg",
-      "Title": "装甲娘战机"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -355,59 +355,8 @@
     "comment_cnt": "74",
     "collect_cnt": "783"
   },
-  "series": [
-    {
-      "AID": 20130033,
-      "Href": "/detail/20130033",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130033.jpg",
-      "Title": "革命机Valvrave 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20200028,
-      "Href": "/detail/20200028",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200028.jpg",
-      "Title": "索玛丽与森林之神"
-    },
-    {
-      "AID": 20190145,
-      "Href": "/detail/20190145",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190145.jpg",
-      "Title": "KING OF PRISM -Shiny Seven Stars-"
-    },
-    {
-      "AID": 20230282,
-      "Href": "/detail/20230282",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230282.jpg",
-      "Title": "秒杀外挂太强了，异世界的家伙们根本就不是对手"
-    },
-    {
-      "AID": 20220300,
-      "Href": "/detail/20220300",
-      "NewTitle": "第23集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220300.jpg",
-      "Title": "福星小子"
-    },
-    {
-      "AID": 20250203,
-      "Href": "/detail/20250203",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250203.jpg",
-      "Title": "矢野同学的普通日常"
-    },
-    {
-      "AID": 20180098,
-      "Href": "/detail/20180098",
-      "NewTitle": "[TV 14-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180098.jpg",
-      "Title": "鬼灯的冷彻 第二季 其二"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

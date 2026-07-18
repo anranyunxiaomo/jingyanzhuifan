@@ -384,55 +384,6 @@
   },
   "series": [
     {
-      "AID": 20190173,
-      "Href": "/detail/20190173",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190173.jpg",
-      "Title": "关于我转生变成史莱姆这档事OAD"
-    },
-    {
-      "AID": 20200003,
-      "Href": "/detail/20200003",
-      "NewTitle": "第26话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200003.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第二季"
-    },
-    {
-      "AID": 20200167,
-      "Href": "/detail/20200167",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200167.jpg",
-      "Title": "转生史莱姆日记"
-    },
-    {
-      "AID": 20220046,
-      "Href": "/detail/20220046",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220046.jpg",
-      "Title": "关于我转生变成史莱姆这档事 红莲之绊篇"
-    },
-    {
-      "AID": 20220251,
-      "Href": "/detail/20220251",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220251.jpg",
-      "Title": "拯救拉米莉丝"
-    },
-    {
-      "AID": 20230256,
-      "Href": "/detail/20230256",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230256.jpg",
-      "Title": "关于我转生变成史莱姆这档事 彩叶草之梦"
-    },
-    {
-      "AID": 20240033,
-      "Href": "/detail/20240033",
-      "NewTitle": "第72集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240033.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第三季"
-    },
-    {
       "AID": 20260098,
       "Href": "/detail/20260098",
       "NewTitle": "第12集",
@@ -447,50 +398,7 @@
       "Title": "剧场版 关于我转生变成史莱姆这档事 苍海之泪篇"
     }
   ],
-  "similar": [
-    {
-      "AID": 20070087,
-      "Href": "/detail/20070087",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070087.jpg",
-      "Title": "君吻"
-    },
-    {
-      "AID": 20130152,
-      "Href": "/detail/20130152",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130152.jpg",
-      "Title": "夜樱四重奏 花之歌"
-    },
-    {
-      "AID": 20150046,
-      "Href": "/detail/20150046",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150046.jpg",
-      "Title": "OVERLORD"
-    },
-    {
-      "AID": 20190399,
-      "Href": "/detail/20190399",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190399.jpg",
-      "Title": "今天开始做明星"
-    },
-    {
-      "AID": 20250149,
-      "Href": "/detail/20250149",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250149.jpg",
-      "Title": "为丑女献上花束。"
-    },
-    {
-      "AID": 20120132,
-      "Href": "/detail/20120132",
-      "NewTitle": "第52集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120132.jpg",
-      "Title": "熊出没"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

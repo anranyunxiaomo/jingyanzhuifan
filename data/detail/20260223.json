@@ -128,50 +128,7 @@
     "collect_cnt": "369"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190021,
-      "Href": "/detail/20190021",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190021.jpg",
-      "Title": "格林笔记"
-    },
-    {
-      "AID": 20180080,
-      "Href": "/detail/20180080",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180080.jpg",
-      "Title": "甜蜜惩罚"
-    },
-    {
-      "AID": 20210381,
-      "Href": "/detail/20210381",
-      "NewTitle": "第22集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210381.jpg",
-      "Title": "本剑仙绝不吃软饭"
-    },
-    {
-      "AID": 20190430,
-      "Href": "/detail/20190430",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190430.jpg",
-      "Title": "武动乾坤"
-    },
-    {
-      "AID": 20090067,
-      "Href": "/detail/20090067",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090067.jpg",
-      "Title": "小鸠"
-    },
-    {
-      "AID": 20200093,
-      "Href": "/detail/20200093",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200093.jpg",
-      "Title": "言语如苏打般涌现"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

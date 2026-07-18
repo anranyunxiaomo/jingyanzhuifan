@@ -172,50 +172,7 @@
     "collect_cnt": "2,088"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20260204,
-      "Href": "/detail/20260204",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260204.jpg",
-      "Title": "声称不爱我的下任公爵为何会溺爱我"
-    },
-    {
-      "AID": 20210212,
-      "Href": "/detail/20210212",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210212.jpg",
-      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～ OVA"
-    },
-    {
-      "AID": 20260154,
-      "Href": "/detail/20260154",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260154.jpg",
-      "Title": "电影秘密的偶像公主"
-    },
-    {
-      "AID": 20150145,
-      "Href": "/detail/20150145",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150145.jpg",
-      "Title": "东京喰种 PINTO"
-    },
-    {
-      "AID": 20240189,
-      "Href": "/detail/20240189",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240189.jpg",
-      "Title": "到了联谊会上发现连一个女生都没有"
-    },
-    {
-      "AID": 20190110,
-      "Href": "/detail/20190110",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190110.jpg",
-      "Title": "信长老师的年幼妻子"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -1051,20 +1051,6 @@
   },
   "series": [
     {
-      "AID": 20200012,
-      "Href": "/detail/20200012",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200012.jpg",
-      "Title": "无职转生 ～在异世界认真地活下去～"
-    },
-    {
-      "AID": 20210327,
-      "Href": "/detail/20210327",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210327.jpg",
-      "Title": "无职转生～到了异世界就拿出真本事～ 第2部分"
-    },
-    {
       "AID": 20260205,
       "Href": "/detail/20260205",
       "NewTitle": "PV",
@@ -1072,50 +1058,7 @@
       "Title": "无职转生Ⅲ 到了异世界就拿出真本事"
     }
   ],
-  "similar": [
-    {
-      "AID": 20130093,
-      "Href": "/detail/20130093",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130093.jpg",
-      "Title": "战姬绝唱SYMPHOGEAR 第二季"
-    },
-    {
-      "AID": 20110035,
-      "Href": "/detail/20110035",
-      "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110035.jpg",
-      "Title": "歌牌情缘"
-    },
-    {
-      "AID": 20210103,
-      "Href": "/detail/20210103",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210103.jpg",
-      "Title": "DOTA：龙之血"
-    },
-    {
-      "AID": 20210446,
-      "Href": "/detail/20210446",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210446.jpg",
-      "Title": "群马酱"
-    },
-    {
-      "AID": 20180141,
-      "Href": "/detail/20180141",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180141.jpg",
-      "Title": "中间管理录利根川"
-    },
-    {
-      "AID": 20220249,
-      "Href": "/detail/20220249",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220249.jpg",
-      "Title": "pop子和pipi美的日常 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

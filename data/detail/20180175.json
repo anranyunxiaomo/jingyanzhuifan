@@ -162,50 +162,7 @@
     "collect_cnt": "3,630"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200347,
-      "Href": "/detail/20200347",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200347.jpg",
-      "Title": "修真聊天群 动态漫"
-    },
-    {
-      "AID": 20220131,
-      "Href": "/detail/20220131",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220131.jpg",
-      "Title": "地球外少年少女"
-    },
-    {
-      "AID": 20170234,
-      "Href": "/detail/20170234",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170234.jpg",
-      "Title": "吹响！上低音号剧场版 ～想要传达的旋律～"
-    },
-    {
-      "AID": 20230176,
-      "Href": "/detail/20230176",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230176.jpg",
-      "Title": "帕底亚的课后时光"
-    },
-    {
-      "AID": 20180092,
-      "Href": "/detail/20180092",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180092.jpg",
-      "Title": "魔法少女网站"
-    },
-    {
-      "AID": 20220356,
-      "Href": "/detail/20220356",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220356.jpg",
-      "Title": "秋叶原女仆战争"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

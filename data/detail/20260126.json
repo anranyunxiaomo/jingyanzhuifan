@@ -425,50 +425,7 @@
     "collect_cnt": "145"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20060067,
-      "Href": "/detail/20060067",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060067.jpg",
-      "Title": "梦比优斯奥特曼"
-    },
-    {
-      "AID": 20130062,
-      "Href": "/detail/20130062",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130062.jpg",
-      "Title": "黑白小姐"
-    },
-    {
-      "AID": 20170180,
-      "Href": "/detail/20170180",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170180.jpg",
-      "Title": "全金属狂潮(总集篇1) Boy Meets Girl"
-    },
-    {
-      "AID": 20230203,
-      "Href": "/detail/20230203",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230203.jpg",
-      "Title": "地下忍者"
-    },
-    {
-      "AID": 20140030,
-      "Href": "/detail/20140030",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140030.jpg",
-      "Title": "排球少年"
-    },
-    {
-      "AID": 20160198,
-      "Href": "/detail/20160198",
-      "NewTitle": "[TV 090-140]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160198.jpg",
-      "Title": "美妙天堂 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

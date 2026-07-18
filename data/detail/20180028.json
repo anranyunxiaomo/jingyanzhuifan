@@ -171,80 +171,8 @@
     "comment_cnt": "228",
     "collect_cnt": "4,787"
   },
-  "series": [
-    {
-      "AID": 20190072,
-      "Href": "/detail/20190072",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190072.jpg",
-      "Title": "摇曳露营△ 第二季"
-    },
-    {
-      "AID": 20200049,
-      "Href": "/detail/20200049",
-      "NewTitle": "[TV 01-12+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200049.jpg",
-      "Title": "房间露营△"
-    },
-    {
-      "AID": 20220507,
-      "Href": "/detail/20220507",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220507.jpg",
-      "Title": "摇曳露营△剧场版"
-    },
-    {
-      "AID": 20240024,
-      "Href": "/detail/20240024",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240024.jpg",
-      "Title": "摇曳露营△ 第三季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20000094,
-      "Href": "/detail/20000094",
-      "NewTitle": "[OVA 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000094.jpg",
-      "Title": "高智能方程式：SIN"
-    },
-    {
-      "AID": 20180284,
-      "Href": "/detail/20180284",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180284.jpg",
-      "Title": "新撰组异闻录 铁 剧场版(后篇) ～友命～"
-    },
-    {
-      "AID": 20250100,
-      "Href": "/detail/20250100",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250100.jpg",
-      "Title": "干杂活我乃最强～关于原英雄队伍的杂役人员，实际上除了战斗能力外全是SSS的故事～"
-    },
-    {
-      "AID": 20170044,
-      "Href": "/detail/20170044",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170044.jpg",
-      "Title": "王室教师海涅"
-    },
-    {
-      "AID": 20150120,
-      "Href": "/detail/20150120",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150120.jpg",
-      "Title": "阿松"
-    },
-    {
-      "AID": 20140125,
-      "Href": "/detail/20140125",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140125.jpg",
-      "Title": "Wake Up, Girl ZOO!"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

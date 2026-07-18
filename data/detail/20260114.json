@@ -393,50 +393,7 @@
     "collect_cnt": "785"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240074,
-      "Href": "/detail/20240074",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240074.jpg",
-      "Title": "深夜冲击"
-    },
-    {
-      "AID": 20190397,
-      "Href": "/detail/20190397",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190397.jpg",
-      "Title": "精灵宝可梦剧场版 超梦的逆袭 EVOLUTION"
-    },
-    {
-      "AID": 20190376,
-      "Href": "/detail/20190376",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190376.jpg",
-      "Title": "恋爱私有物"
-    },
-    {
-      "AID": 20180158,
-      "Href": "/detail/20180158",
-      "NewTitle": "[TV 01-16]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180158.jpg",
-      "Title": "杀戮天使"
-    },
-    {
-      "AID": 20000013,
-      "Href": "/detail/20000013",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000013.jpg",
-      "Title": "樱桃小丸子剧场版 我喜欢的歌"
-    },
-    {
-      "AID": 20060032,
-      "Href": "/detail/20060032",
-      "NewTitle": "[DVD 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060032.jpg",
-      "Title": "我的裘可妹妹"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

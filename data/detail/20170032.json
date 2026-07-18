@@ -122,50 +122,7 @@
     "collect_cnt": "3,503"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180298,
-      "Href": "/detail/20180298",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180298.jpg",
-      "Title": "RWBY Chibi 第三季"
-    },
-    {
-      "AID": 20140126,
-      "Href": "/detail/20140126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140126.jpg",
-      "Title": "Wake Up, Girls! 七人的偶像"
-    },
-    {
-      "AID": 20000039,
-      "Href": "/detail/20000039",
-      "NewTitle": "第51集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000039.jpg",
-      "Title": "四驱兄弟 第三季"
-    },
-    {
-      "AID": 20170003,
-      "Href": "/detail/20170003",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170003.jpg",
-      "Title": "从前有座灵剑山 第二季"
-    },
-    {
-      "AID": 20170238,
-      "Href": "/detail/20170238",
-      "NewTitle": "第OVA1话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170238.jpg",
-      "Title": "巴加的工作室"
-    },
-    {
-      "AID": 20220160,
-      "Href": "/detail/20220160",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220160.jpg",
-      "Title": "晶翠仙尊"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

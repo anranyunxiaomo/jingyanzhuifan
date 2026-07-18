@@ -161,87 +161,8 @@
     "comment_cnt": "19",
     "collect_cnt": "225"
   },
-  "series": [
-    {
-      "AID": 20140005,
-      "Href": "/detail/20140005",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140005.jpg",
-      "Title": "选择感染者WIXOSS"
-    },
-    {
-      "AID": 20140006,
-      "Href": "/detail/20140006",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140006.jpg",
-      "Title": "选择扩散者WIXOSS"
-    },
-    {
-      "AID": 20160114,
-      "Href": "/detail/20160114",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160114.jpg",
-      "Title": "失忆煽动WIXOSS"
-    },
-    {
-      "AID": 20160115,
-      "Href": "/detail/20160115",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160115.jpg",
-      "Title": "选择破坏者WIXOSS"
-    },
-    {
-      "AID": 20210037,
-      "Href": "/detail/20210037",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210037.jpg",
-      "Title": "WIXOSS DIVA(A)LIVE"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20200120,
-      "Href": "/detail/20200120",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200120.jpg",
-      "Title": "座敷童子榻榻米酱"
-    },
-    {
-      "AID": 20220380,
-      "Href": "/detail/20220380",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220380.jpg",
-      "Title": "苍兰诀"
-    },
-    {
-      "AID": 20240219,
-      "Href": "/detail/20240219",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240219.jpg",
-      "Title": "五等分的新娘＊"
-    },
-    {
-      "AID": 20100063,
-      "Href": "/detail/20100063",
-      "NewTitle": "[BD 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100063.jpg",
-      "Title": "壳中少女 压缩"
-    },
-    {
-      "AID": 20210252,
-      "Href": "/detail/20210252",
-      "NewTitle": "第72集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210252.jpg",
-      "Title": "只好背叛地球了"
-    },
-    {
-      "AID": 20160065,
-      "Href": "/detail/20160065",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160065.jpg",
-      "Title": "鬼牌游戏"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

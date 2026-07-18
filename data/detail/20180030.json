@@ -163,50 +163,7 @@
     "collect_cnt": "3,093"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160203,
-      "Href": "/detail/20160203",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160203.jpg",
-      "Title": "在这世界的角落"
-    },
-    {
-      "AID": 20220069,
-      "Href": "/detail/20220069",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220069.jpg",
-      "Title": "女忍者椿的心事"
-    },
-    {
-      "AID": 20210295,
-      "Href": "/detail/20210295",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210295.jpg",
-      "Title": "全职法师 第五季"
-    },
-    {
-      "AID": 20140023,
-      "Href": "/detail/20140023",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140023.jpg",
-      "Title": "魔法战争"
-    },
-    {
-      "AID": 20000133,
-      "Href": "/detail/20000133",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000133.jpg",
-      "Title": "宇宙战舰大和号"
-    },
-    {
-      "AID": 20000021,
-      "Href": "/detail/20000021",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000021.jpg",
-      "Title": "天空之城"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -198,59 +198,8 @@
     "comment_cnt": "54",
     "collect_cnt": "528"
   },
-  "series": [
-    {
-      "AID": 20140050,
-      "Href": "/detail/20140050",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140050.jpg",
-      "Title": "银之匙 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180331,
-      "Href": "/detail/20180331",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180331.jpg",
-      "Title": "精灵梦叶罗丽 第六季"
-    },
-    {
-      "AID": 20080046,
-      "Href": "/detail/20080046",
-      "NewTitle": "[DVD 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080046.jpg",
-      "Title": "恶作剧之吻"
-    },
-    {
-      "AID": 20060021,
-      "Href": "/detail/20060021",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060021.jpg",
-      "Title": "惊爆草莓"
-    },
-    {
-      "AID": 20230203,
-      "Href": "/detail/20230203",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230203.jpg",
-      "Title": "地下忍者"
-    },
-    {
-      "AID": 20250214,
-      "Href": "/detail/20250214",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250214.jpg",
-      "Title": "百姓贵族 第三季"
-    },
-    {
-      "AID": 20190193,
-      "Href": "/detail/20190193",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190193.jpg",
-      "Title": "TRY KNIGHTS"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

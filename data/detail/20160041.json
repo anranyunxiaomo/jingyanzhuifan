@@ -104,50 +104,7 @@
     "collect_cnt": "608"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20020025,
-      "Href": "/detail/20020025",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020025.jpg",
-      "Title": "犬夜叉 镜中的梦幻城"
-    },
-    {
-      "AID": 20170083,
-      "Href": "/detail/20170083",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170083.jpg",
-      "Title": "妄想学生会剧场版"
-    },
-    {
-      "AID": 20190148,
-      "Href": "/detail/20190148",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190148.jpg",
-      "Title": "鬼灯的冷彻 第二季 OAD"
-    },
-    {
-      "AID": 20180119,
-      "Href": "/detail/20180119",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180119.jpg",
-      "Title": "SWORD GAI 装刀凯"
-    },
-    {
-      "AID": 20220021,
-      "Href": "/detail/20220021",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220021.jpg",
-      "Title": "魔法少女小圆剧场版 魔女之夜的回天"
-    },
-    {
-      "AID": 20220455,
-      "Href": "/detail/20220455",
-      "NewTitle": "第17集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220455.jpg",
-      "Title": "IDOLiSH7-偶像星愿- Third BEAT! 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

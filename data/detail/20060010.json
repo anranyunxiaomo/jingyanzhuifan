@@ -170,22 +170,7 @@
     "comment_cnt": "127",
     "collect_cnt": "1,166"
   },
-  "series": [
-    {
-      "AID": 20120081,
-      "Href": "/detail/20120081",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120081.jpg",
-      "Title": "少女爱上姐姐2 二人的ELDER"
-    },
-    {
-      "AID": 20220210,
-      "Href": "/detail/20220210",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220210.jpg",
-      "Title": "少女爱上姐姐 三颗闪耀之星"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20260212,
@@ -193,41 +178,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260212.jpg",
       "Title": "被追放的转生重骑士用游戏知识开无双"
-    },
-    {
-      "AID": 20210101,
-      "Href": "/detail/20210101",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210101.jpg",
-      "Title": "异世界魔王与召唤少女的奴隶魔术 第二季"
-    },
-    {
-      "AID": 20250028,
-      "Href": "/detail/20250028",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250028.jpg",
-      "Title": "魔农传记"
-    },
-    {
-      "AID": 20180196,
-      "Href": "/detail/20180196",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180196.jpg",
-      "Title": "肆式青春"
-    },
-    {
-      "AID": 20090068,
-      "Href": "/detail/20090068",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090068.jpg",
-      "Title": "对学生会长的忠告"
-    },
-    {
-      "AID": 20220171,
-      "Href": "/detail/20220171",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220171.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 最终季 -浅梦之晓-"
     }
   ],
   "player_label_arr": {

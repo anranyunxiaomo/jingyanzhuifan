@@ -391,59 +391,8 @@
       }
     ]
   },
-  "series": [
-    {
-      "AID": 20240145,
-      "Href": "/detail/20240145",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240145.jpg",
-      "Title": "Re：从零开始的异世界生活 第三季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20100065,
-      "Href": "/detail/20100065",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100065.jpg",
-      "Title": "死神剧场版4 地狱篇"
-    },
-    {
-      "AID": 20220142,
-      "Href": "/detail/20220142",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220142.jpg",
-      "Title": "Lycoris Recoil"
-    },
-    {
-      "AID": 20230251,
-      "Href": "/detail/20230251",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230251.jpg",
-      "Title": "蓝色巨星"
-    },
-    {
-      "AID": 20230141,
-      "Href": "/detail/20230141",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230141.jpg",
-      "Title": "拳愿阿修罗 Season2"
-    },
-    {
-      "AID": 20010030,
-      "Href": "/detail/20010030",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010030.jpg",
-      "Title": "黑街二人组"
-    },
-    {
-      "AID": 20010012,
-      "Href": "/detail/20010012",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010012.jpg",
-      "Title": "高斯奥特曼"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

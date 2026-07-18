@@ -413,50 +413,7 @@
     "collect_cnt": "1,308"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20000072,
-      "Href": "/detail/20000072",
-      "NewTitle": "第64集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000072.jpg",
-      "Title": "龙珠GT"
-    },
-    {
-      "AID": 20110124,
-      "Href": "/detail/20110124",
-      "NewTitle": "第11集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110124.jpg",
-      "Title": "UN-GO"
-    },
-    {
-      "AID": 20200311,
-      "Href": "/detail/20200311",
-      "NewTitle": "第126集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200311.jpg",
-      "Title": "仙尊奶爸当赘婿"
-    },
-    {
-      "AID": 20030022,
-      "Href": "/detail/20030022",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030022.jpg",
-      "Title": "星空清理者"
-    },
-    {
-      "AID": 20190142,
-      "Href": "/detail/20190142",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190142.jpg",
-      "Title": "RobiHachi"
-    },
-    {
-      "AID": 20210165,
-      "Href": "/detail/20210165",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210165.jpg",
-      "Title": "扰乱 THE PRINCESS OF SNOW AND BLOOD"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

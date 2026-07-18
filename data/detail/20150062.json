@@ -61,99 +61,14 @@
     "comment_cnt": "85",
     "collect_cnt": "1,661"
   },
-  "series": [
-    {
-      "AID": 20130009,
-      "Href": "/detail/20130009",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130009.jpg",
-      "Title": "约会大作战"
-    },
-    {
-      "AID": 20140034,
-      "Href": "/detail/20140034",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140034.jpg",
-      "Title": "约会大作战 第二季"
-    },
-    {
-      "AID": 20190088,
-      "Href": "/detail/20190088",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190088.jpg",
-      "Title": "约会大作战 第三季"
-    },
-    {
-      "AID": 20200245,
-      "Href": "/detail/20200245",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200245.jpg",
-      "Title": "约战狂三外传 虚或实篇"
-    },
-    {
-      "AID": 20200338,
-      "Href": "/detail/20200338",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200338.jpg",
-      "Title": "约战狂三外传 红或白篇"
-    },
-    {
-      "AID": 20210129,
-      "Href": "/detail/20210129",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210129.jpg",
-      "Title": "约会大作战 第四季"
-    },
-    {
-      "AID": 20240021,
-      "Href": "/detail/20240021",
-      "NewTitle": "第20240411期",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240021.jpg",
-      "Title": "约会大作战 第五季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20200317,
-      "Href": "/detail/20200317",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200317.jpg",
-      "Title": "大贵族"
-    },
     {
       "AID": 20130076,
       "Href": "/detail/20130076",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20130076.jpg",
       "Title": "有顶天家族"
-    },
-    {
-      "AID": 20160135,
-      "Href": "/detail/20160135",
-      "NewTitle": "第12集+OVA(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160135.jpg",
-      "Title": "文豪野犬 第二季"
-    },
-    {
-      "AID": 20200147,
-      "Href": "/detail/20200147",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200147.jpg",
-      "Title": "里世界郊游"
-    },
-    {
-      "AID": 20170127,
-      "Href": "/detail/20170127",
-      "NewTitle": "第58话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170127.jpg",
-      "Title": "未来卡 搭档对战 第四季"
-    },
-    {
-      "AID": 20240015,
-      "Href": "/detail/20240015",
-      "NewTitle": "第08集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240015.jpg",
-      "Title": "刀剑乱舞 回 -虚传 燃烧的本能寺-"
     }
   ],
   "player_label_arr": {

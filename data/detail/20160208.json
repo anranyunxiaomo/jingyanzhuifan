@@ -84,50 +84,7 @@
     "collect_cnt": "3,304"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180026,
-      "Href": "/detail/20180026",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180026.jpg",
-      "Title": "齐木楠雄的灾难 第二季"
-    },
-    {
-      "AID": 20210237,
-      "Href": "/detail/20210237",
-      "NewTitle": "第28集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210237.jpg",
-      "Title": "动态漫画·神印王座"
-    },
-    {
-      "AID": 20190213,
-      "Href": "/detail/20190213",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190213.jpg",
-      "Title": "战×恋"
-    },
-    {
-      "AID": 20230123,
-      "Href": "/detail/20230123",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230123.jpg",
-      "Title": "白圣女与黑牧师"
-    },
-    {
-      "AID": 20160009,
-      "Href": "/detail/20160009",
-      "NewTitle": "[TV 26-50]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160009.jpg",
-      "Title": "机动战士高达 铁血的奥尔芬斯 第二季"
-    },
-    {
-      "AID": 20220325,
-      "Href": "/detail/20220325",
-      "NewTitle": "第48集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220325.jpg",
-      "Title": "史上最强男主角"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

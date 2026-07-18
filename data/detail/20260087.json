@@ -391,50 +391,7 @@
     "collect_cnt": "125"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230076,
-      "Href": "/detail/20230076",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230076.jpg",
-      "Title": "邻人似银河"
-    },
-    {
-      "AID": 20220493,
-      "Href": "/detail/20220493",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220493.jpg",
-      "Title": "Exception"
-    },
-    {
-      "AID": 20200256,
-      "Href": "/detail/20200256",
-      "NewTitle": "[WEB 01-28]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200256.jpg",
-      "Title": "泽塔奥特曼"
-    },
-    {
-      "AID": 20140134,
-      "Href": "/detail/20140134",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140134.jpg",
-      "Title": "信长之枪"
-    },
-    {
-      "AID": 20150059,
-      "Href": "/detail/20150059",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150059.jpg",
-      "Title": "排球少年 第二季"
-    },
-    {
-      "AID": 20260234,
-      "Href": "/detail/20260234",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260234.jpg",
-      "Title": "不知火"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

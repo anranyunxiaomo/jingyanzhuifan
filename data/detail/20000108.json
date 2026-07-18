@@ -66,50 +66,7 @@
     "collect_cnt": "228"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240130,
-      "Href": "/detail/20240130",
-      "NewTitle": "第29集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240130.jpg",
-      "Title": "亚刻奥特曼"
-    },
-    {
-      "AID": 20170083,
-      "Href": "/detail/20170083",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170083.jpg",
-      "Title": "妄想学生会剧场版"
-    },
-    {
-      "AID": 20100046,
-      "Href": "/detail/20100046",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100046.jpg",
-      "Title": "秋日天空 ～梦之中～"
-    },
-    {
-      "AID": 20120116,
-      "Href": "/detail/20120116",
-      "NewTitle": "[BD 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120116.jpg",
-      "Title": "京骚戏画(2012)"
-    },
-    {
-      "AID": 20210393,
-      "Href": "/detail/20210393",
-      "NewTitle": "第9集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210393.jpg",
-      "Title": "英雄联盟：双城之战"
-    },
-    {
-      "AID": 20130030,
-      "Href": "/detail/20130030",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130030.jpg",
-      "Title": "悠哉日常大王"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

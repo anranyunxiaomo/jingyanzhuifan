@@ -120,50 +120,7 @@
     "collect_cnt": "807"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170245,
-      "Href": "/detail/20170245",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170245.jpg",
-      "Title": "择天记 第三季"
-    },
-    {
-      "AID": 20000079,
-      "Href": "/detail/20000079",
-      "NewTitle": "第76集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000079.jpg",
-      "Title": "果酱男孩"
-    },
-    {
-      "AID": 20190333,
-      "Href": "/detail/20190333",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190333.jpg",
-      "Title": "全职高手 第二季"
-    },
-    {
-      "AID": 20220139,
-      "Href": "/detail/20220139",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220139.jpg",
-      "Title": "夏日口袋"
-    },
-    {
-      "AID": 20240065,
-      "Href": "/detail/20240065",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240065.jpg",
-      "Title": "假面骑士极狐 邪魔徒·觉醒"
-    },
-    {
-      "AID": 20080062,
-      "Href": "/detail/20080062",
-      "NewTitle": "第51集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080062.jpg",
-      "Title": "绝对可怜小孩"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

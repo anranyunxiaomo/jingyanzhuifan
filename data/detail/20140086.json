@@ -298,20 +298,6 @@
   },
   "series": [
     {
-      "AID": 20120038,
-      "Href": "/detail/20120038",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
-      "Title": "刀剑神域"
-    },
-    {
-      "AID": 20130137,
-      "Href": "/detail/20130137",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130137.jpg",
-      "Title": "刀剑神域 Extra Edition"
-    },
-    {
       "AID": 20170071,
       "Href": "/detail/20170071",
       "NewTitle": "全集",
@@ -319,99 +305,14 @@
       "Title": "刀剑神域剧场版 序列之争"
     },
     {
-      "AID": 20170140,
-      "Href": "/detail/20170140",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170140.jpg",
-      "Title": "刀剑神域外传 Gun Gale Online"
-    },
-    {
       "AID": 20180246,
       "Href": "/detail/20180246",
       "NewTitle": "[TV 01-24]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180246.jpg",
       "Title": "刀剑神域 Alicization篇"
-    },
-    {
-      "AID": 20190181,
-      "Href": "/detail/20190181",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190181.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld"
-    },
-    {
-      "AID": 20200123,
-      "Href": "/detail/20200123",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200123.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld 第二季"
-    },
-    {
-      "AID": 20210026,
-      "Href": "/detail/20210026",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210026.jpg",
-      "Title": "刀剑神域 进击篇 无星之夜的咏叹调"
-    },
-    {
-      "AID": 20220085,
-      "Href": "/detail/20220085",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220085.jpg",
-      "Title": "刀剑神域 进击篇 黯淡黄昏的谐谑曲"
-    },
-    {
-      "AID": 20230254,
-      "Href": "/detail/20230254",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
-      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
     }
   ],
-  "similar": [
-    {
-      "AID": 20210218,
-      "Href": "/detail/20210218",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210218.jpg",
-      "Title": "鲁邦三世 PART6"
-    },
-    {
-      "AID": 20210246,
-      "Href": "/detail/20210246",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210246.jpg",
-      "Title": "黄金拼图 Thank you!!"
-    },
-    {
-      "AID": 20140064,
-      "Href": "/detail/20140064",
-      "NewTitle": "[TV 01-13+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140064.jpg",
-      "Title": "天体的秩序"
-    },
-    {
-      "AID": 20130173,
-      "Href": "/detail/20130173",
-      "NewTitle": "第20集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130173.jpg",
-      "Title": "黑塔利亚 第五季"
-    },
-    {
-      "AID": 20130123,
-      "Href": "/detail/20130123",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130123.jpg",
-      "Title": "当不成勇者的我，只好认真找工作了。"
-    },
-    {
-      "AID": 20230130,
-      "Href": "/detail/20230130",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230130.jpg",
-      "Title": "庙不可言"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

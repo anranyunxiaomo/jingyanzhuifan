@@ -445,73 +445,8 @@
       }
     ]
   },
-  "series": [
-    {
-      "AID": 20130142,
-      "Href": "/detail/20130142",
-      "NewTitle": "[BD 01-75]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130142.jpg",
-      "Title": "钻石王牌"
-    },
-    {
-      "AID": 20140166,
-      "Href": "/detail/20140166",
-      "NewTitle": "[BD 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140166.jpg",
-      "Title": "钻石王牌OAD"
-    },
-    {
-      "AID": 20190133,
-      "Href": "/detail/20190133",
-      "NewTitle": "[TV 01-52]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190133.jpg",
-      "Title": "钻石王牌 act2"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180369,
-      "Href": "/detail/20180369",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180369.jpg",
-      "Title": "我是江小白 第二季"
-    },
-    {
-      "AID": 20180225,
-      "Href": "/detail/20180225",
-      "NewTitle": "[WEB 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180225.jpg",
-      "Title": "机器人少女NEO"
-    },
-    {
-      "AID": 20110061,
-      "Href": "/detail/20110061",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110061.jpg",
-      "Title": "海贼王剧场版 追寻草帽"
-    },
-    {
-      "AID": 20160157,
-      "Href": "/detail/20160157",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160157.jpg",
-      "Title": "信长的忍者"
-    },
-    {
-      "AID": 20210030,
-      "Href": "/detail/20210030",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210030.jpg",
-      "Title": "悠哉日常大王 第三季"
-    },
-    {
-      "AID": 20080098,
-      "Href": "/detail/20080098",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080098.jpg",
-      "Title": "破天荒游戏"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -102,50 +102,7 @@
     "collect_cnt": "250"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250103,
-      "Href": "/detail/20250103",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250103.jpg",
-      "Title": "LAZARUS"
-    },
-    {
-      "AID": 20140182,
-      "Href": "/detail/20140182",
-      "NewTitle": "HD",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140182.jpg",
-      "Title": "头文字D剧场版 Legend1 -觉醒-"
-    },
-    {
-      "AID": 20240032,
-      "Href": "/detail/20240032",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240032.jpg",
-      "Title": "星际庄的恋爱日记"
-    },
-    {
-      "AID": 20180195,
-      "Href": "/detail/20180195",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180195.jpg",
-      "Title": "企鹅高速公路"
-    },
-    {
-      "AID": 20150187,
-      "Href": "/detail/20150187",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150187.jpg",
-      "Title": "台风的诺尔达"
-    },
-    {
-      "AID": 20210215,
-      "Href": "/detail/20210215",
-      "NewTitle": "第22集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210215.jpg",
-      "Title": "三国演义之前传"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

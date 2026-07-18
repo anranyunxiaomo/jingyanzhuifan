@@ -437,59 +437,8 @@
     "comment_cnt": "37",
     "collect_cnt": "762"
   },
-  "series": [
-    {
-      "AID": 20240054,
-      "Href": "/detail/20240054",
-      "NewTitle": "第27集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240054.jpg",
-      "Title": "夜樱家的大作战"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20230182,
-      "Href": "/detail/20230182",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230182.jpg",
-      "Title": "川越 Boys Sing"
-    },
-    {
-      "AID": 20250153,
-      "Href": "/detail/20250153",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250153.jpg",
-      "Title": "明日方舟：焰烬曙明"
-    },
-    {
-      "AID": 20190150,
-      "Href": "/detail/20190150",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190150.jpg",
-      "Title": "荒野的寿飞行队外传 天空的春风飞行队"
-    },
-    {
-      "AID": 20110030,
-      "Href": "/detail/20110030",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110030.jpg",
-      "Title": "轻音少女剧场版"
-    },
-    {
-      "AID": 20240052,
-      "Href": "/detail/20240052",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240052.jpg",
-      "Title": "战队大失格"
-    },
-    {
-      "AID": 20220139,
-      "Href": "/detail/20220139",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220139.jpg",
-      "Title": "夏日口袋"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

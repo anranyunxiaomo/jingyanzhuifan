@@ -511,50 +511,7 @@
     "collect_cnt": "127"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210198,
-      "Href": "/detail/20210198",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210198.jpg",
-      "Title": "见面5秒开始战斗"
-    },
-    {
-      "AID": 20200351,
-      "Href": "/detail/20200351",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200351.jpg",
-      "Title": "画江湖之轨夜行"
-    },
-    {
-      "AID": 20190439,
-      "Href": "/detail/20190439",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190439.jpg",
-      "Title": "白蛇：缘起"
-    },
-    {
-      "AID": 20180253,
-      "Href": "/detail/20180253",
-      "NewTitle": "第39集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180253.jpg",
-      "Title": "JOJO的奇妙冒险 第五部(黄金之风)"
-    },
-    {
-      "AID": 20200270,
-      "Href": "/detail/20200270",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200270.jpg",
-      "Title": "元龙"
-    },
-    {
-      "AID": 20190129,
-      "Href": "/detail/20190129",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190129.jpg",
-      "Title": "我的青春恋爱物语果然有问题 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

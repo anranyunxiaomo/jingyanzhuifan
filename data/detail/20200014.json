@@ -152,46 +152,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20090104,
-      "Href": "/detail/20090104",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090104.jpg",
-      "Title": "文学少女OAD"
-    },
-    {
       "AID": 20150062,
       "Href": "/detail/20150062",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
       "Title": "约会大作战剧场版 万由里裁决"
-    },
-    {
-      "AID": 20210413,
-      "Href": "/detail/20210413",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210413.jpg",
-      "Title": "纳尤古传奇 动态漫"
-    },
-    {
-      "AID": 20220031,
-      "Href": "/detail/20220031",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220031.jpg",
-      "Title": "平家物语"
-    },
-    {
-      "AID": 20110127,
-      "Href": "/detail/20110127",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110127.jpg",
-      "Title": "幸福小镇"
-    },
-    {
-      "AID": 20040006,
-      "Href": "/detail/20040006",
-      "NewTitle": "[TV 14-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040006.jpg",
-      "Title": "杀戮都市 第二季"
     }
   ],
   "player_label_arr": {

@@ -65,71 +65,14 @@
     "comment_cnt": "115",
     "collect_cnt": "1,508"
   },
-  "series": [
-    {
-      "AID": 20110006,
-      "Href": "/detail/20110006",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110006.jpg",
-      "Title": "命运石之门"
-    },
-    {
-      "AID": 20140014,
-      "Href": "/detail/20140014",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140014.jpg",
-      "Title": "命运石之门 聪明睿智的认知计算"
-    },
-    {
-      "AID": 20180112,
-      "Href": "/detail/20180112",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180112.jpg",
-      "Title": "命运石之门0"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20120136,
-      "Href": "/detail/20120136",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120136.jpg",
-      "Title": "To Heart2 迷宫旅人"
-    },
-    {
-      "AID": 20200047,
-      "Href": "/detail/20200047",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200047.jpg",
-      "Title": "KING OF PRISM ALL STARS -Prism Show☆Best Ten-"
-    },
-    {
-      "AID": 20170248,
-      "Href": "/detail/20170248",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170248.jpg",
-      "Title": "独占我的英雄"
-    },
     {
       "AID": 20180175,
       "Href": "/detail/20180175",
       "NewTitle": "[TV 01-12]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180175.jpg",
       "Title": "春原庄的管理人小姐"
-    },
-    {
-      "AID": 20090099,
-      "Href": "/detail/20090099",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090099.jpg",
-      "Title": "圣斗士星矢 THE LOST CANVAS 冥王神话"
-    },
-    {
-      "AID": 20120150,
-      "Href": "/detail/20120150",
-      "NewTitle": "[WEB 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120150.jpg",
-      "Title": "蟑螂娘"
     }
   ],
   "player_label_arr": {

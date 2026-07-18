@@ -126,50 +126,7 @@
     "collect_cnt": "569"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170088,
-      "Href": "/detail/20170088",
-      "NewTitle": "[TV 01-13+14]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170088.jpg",
-      "Title": "品酒要在成为夫妻后"
-    },
-    {
-      "AID": 20120121,
-      "Href": "/detail/20120121",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120121.jpg",
-      "Title": "少年同盟 第二季"
-    },
-    {
-      "AID": 20000094,
-      "Href": "/detail/20000094",
-      "NewTitle": "[OVA 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000094.jpg",
-      "Title": "高智能方程式：SIN"
-    },
-    {
-      "AID": 20260191,
-      "Href": "/detail/20260191",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
-      "Title": "Let's Go 怪奇组"
-    },
-    {
-      "AID": 20190105,
-      "Href": "/detail/20190105",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190105.jpg",
-      "Title": "交锋联盟 机巧一族"
-    },
-    {
-      "AID": 20190314,
-      "Href": "/detail/20190314",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190314.jpg",
-      "Title": "万界仙踪 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

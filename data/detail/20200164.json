@@ -124,66 +124,8 @@
     "comment_cnt": "278",
     "collect_cnt": "1,578"
   },
-  "series": [
-    {
-      "AID": 20210152,
-      "Href": "/detail/20210152",
-      "NewTitle": "第24话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210152.jpg",
-      "Title": "忧国的莫里亚蒂 第二季"
-    },
-    {
-      "AID": 20220411,
-      "Href": "/detail/20220411",
-      "NewTitle": "第2集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220411.jpg",
-      "Title": "忧国的莫里亚蒂～百合的追忆～"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20170074,
-      "Href": "/detail/20170074",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170074.jpg",
-      "Title": "地狱少女 第四季"
-    },
-    {
-      "AID": 20170241,
-      "Href": "/detail/20170241",
-      "NewTitle": "[WEB 01-07]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170241.jpg",
-      "Title": "头条都是他"
-    },
-    {
-      "AID": 20130150,
-      "Href": "/detail/20130150",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130150.jpg",
-      "Title": "濒危物种少女"
-    },
-    {
-      "AID": 20170066,
-      "Href": "/detail/20170066",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170066.jpg",
-      "Title": "野良与皇女与流浪猫之心"
-    },
-    {
-      "AID": 20200095,
-      "Href": "/detail/20200095",
-      "NewTitle": "第67集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200095.jpg",
-      "Title": "数码宝贝(2020)"
-    },
-    {
-      "AID": 20000006,
-      "Href": "/detail/20000006",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000006.jpg",
-      "Title": "海贼王特别篇 打倒海贼强萨克！"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -283,85 +283,14 @@
     "comment_cnt": "719",
     "collect_cnt": "4,481"
   },
-  "series": [
-    {
-      "AID": 20200015,
-      "Href": "/detail/20200015",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200015.jpg",
-      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～ 第二季"
-    },
-    {
-      "AID": 20210022,
-      "Href": "/detail/20210022",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210022.jpg",
-      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～ 第三季"
-    },
-    {
-      "AID": 20210212,
-      "Href": "/detail/20210212",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210212.jpg",
-      "Title": "辉夜大小姐想让我告白～天才们的恋爱头脑战～ OVA"
-    },
-    {
-      "AID": 20230092,
-      "Href": "/detail/20230092",
-      "NewTitle": "第04集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230092.jpg",
-      "Title": "辉夜大小姐想让我告白-初吻不会结束-"
-    },
-    {
-      "AID": 20260057,
-      "Href": "/detail/20260057",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260057.jpg",
-      "Title": "辉夜大小姐想让我告白 通往大人的阶梯"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20210415,
-      "Href": "/detail/20210415",
-      "NewTitle": "第41集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210415.jpg",
-      "Title": "动态漫画·三体"
-    },
-    {
-      "AID": 20200090,
-      "Href": "/detail/20200090",
-      "NewTitle": "第7话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200090.jpg",
-      "Title": "破晓之翼"
-    },
-    {
-      "AID": 20140065,
-      "Href": "/detail/20140065",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140065.jpg",
-      "Title": "健全机斗士"
-    },
-    {
-      "AID": 20180032,
-      "Href": "/detail/20180032",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180032.jpg",
-      "Title": "豆猫"
-    },
     {
       "AID": 20120107,
       "Href": "/detail/20120107",
       "NewTitle": "BD全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20120107.jpg",
       "Title": "狼的孩子雨和雪"
-    },
-    {
-      "AID": 20180065,
-      "Href": "/detail/20180065",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180065.jpg",
-      "Title": "牵牛花与加濑同学"
     }
   ],
   "player_label_arr": {

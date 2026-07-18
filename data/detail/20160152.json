@@ -218,15 +218,7 @@
     "comment_cnt": "27",
     "collect_cnt": "247"
   },
-  "series": [
-    {
-      "AID": 20180072,
-      "Href": "/detail/20180072",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180072.jpg",
-      "Title": "蓝海少女 第二季"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20100075,
@@ -234,41 +226,6 @@
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20100075.jpg",
       "Title": "大神与七位伙伴"
-    },
-    {
-      "AID": 20170086,
-      "Href": "/detail/20170086",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170086.jpg",
-      "Title": "URAHARA"
-    },
-    {
-      "AID": 20110064,
-      "Href": "/detail/20110064",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110064.jpg",
-      "Title": "女皇之刃 叛乱 OVA"
-    },
-    {
-      "AID": 20200236,
-      "Href": "/detail/20200236",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200236.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 第二季 -觉醒前夜-"
-    },
-    {
-      "AID": 20230205,
-      "Href": "/detail/20230205",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230205.jpg",
-      "Title": "盾之勇者成名录 第三季"
-    },
-    {
-      "AID": 20180315,
-      "Href": "/detail/20180315",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180315.jpg",
-      "Title": "全职法师 第三季"
     }
   ],
   "player_label_arr": {

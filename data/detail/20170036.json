@@ -211,59 +211,8 @@
     "comment_cnt": "216",
     "collect_cnt": "1,806"
   },
-  "series": [
-    {
-      "AID": 20100086,
-      "Href": "/detail/20100086",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100086.jpg",
-      "Title": "恋爱暴君OVA"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20210196,
-      "Href": "/detail/20210196",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210196.jpg",
-      "Title": "酷大叔的恋爱物语"
-    },
-    {
-      "AID": 20190011,
-      "Href": "/detail/20190011",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190011.jpg",
-      "Title": "笨拙之极的上野"
-    },
-    {
-      "AID": 20150003,
-      "Href": "/detail/20150003",
-      "NewTitle": "[TV 01-13+OVA+SP",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150003.jpg",
-      "Title": "吹响！上低音号"
-    },
-    {
-      "AID": 20120031,
-      "Href": "/detail/20120031",
-      "NewTitle": "[TV 01-13+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120031.jpg",
-      "Title": "只要你说你爱我"
-    },
-    {
-      "AID": 20150144,
-      "Href": "/detail/20150144",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150144.jpg",
-      "Title": "Love Live! The School Idol Movie"
-    },
-    {
-      "AID": 20170057,
-      "Href": "/detail/20170057",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170057.jpg",
-      "Title": "妖怪公寓的幽雅日常"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -363,66 +363,8 @@
     "comment_cnt": "74",
     "collect_cnt": "1,389"
   },
-  "series": [
-    {
-      "AID": 20220418,
-      "Href": "/detail/20220418",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220418.jpg",
-      "Title": "回转企鹅罐剧场版 前篇"
-    },
-    {
-      "AID": 20220525,
-      "Href": "/detail/20220525",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220525.jpg",
-      "Title": "回转企鹅罐剧场版 后篇"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20150038,
-      "Href": "/detail/20150038",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150038.jpg",
-      "Title": "绝命制裁X"
-    },
-    {
-      "AID": 20210089,
-      "Href": "/detail/20210089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210089.jpg",
-      "Title": "关于前辈很烦人的事"
-    },
-    {
-      "AID": 20230252,
-      "Href": "/detail/20230252",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230252.jpg",
-      "Title": "古立特宇宙"
-    },
-    {
-      "AID": 20220252,
-      "Href": "/detail/20220252",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220252.jpg",
-      "Title": "剑与远征-伊索米亚的那些事儿"
-    },
-    {
-      "AID": 20140033,
-      "Href": "/detail/20140033",
-      "NewTitle": "第23集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140033.jpg",
-      "Title": "上课小动作"
-    },
-    {
-      "AID": 20250218,
-      "Href": "/detail/20250218",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250218.jpg",
-      "Title": "猫眼三姐妹"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

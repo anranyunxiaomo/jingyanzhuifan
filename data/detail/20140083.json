@@ -268,50 +268,7 @@
     "collect_cnt": "365"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200274,
-      "Href": "/detail/20200274",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200274.jpg",
-      "Title": "时之歌：花与焰的狂想诗"
-    },
-    {
-      "AID": 20200325,
-      "Href": "/detail/20200325",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200325.jpg",
-      "Title": "无颜之月"
-    },
-    {
-      "AID": 20220337,
-      "Href": "/detail/20220337",
-      "NewTitle": "第06集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220337.jpg",
-      "Title": "五亿年按扭"
-    },
-    {
-      "AID": 20210412,
-      "Href": "/detail/20210412",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210412.jpg",
-      "Title": "水星领航员 The BENEDIZIONE"
-    },
-    {
-      "AID": 20260039,
-      "Href": "/detail/20260039",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260039.jpg",
-      "Title": "Fate/strange Fake"
-    },
-    {
-      "AID": 20160124,
-      "Href": "/detail/20160124",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160124.jpg",
-      "Title": "月歌。"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

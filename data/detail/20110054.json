@@ -63,99 +63,14 @@
     "comment_cnt": "6",
     "collect_cnt": "129"
   },
-  "series": [
-    {
-      "AID": 20050005,
-      "Href": "/detail/20050005",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050005.jpg",
-      "Title": "魔法老师"
-    },
-    {
-      "AID": 20060012,
-      "Href": "/detail/20060012",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060012.jpg",
-      "Title": "魔法老师 第二季"
-    },
-    {
-      "AID": 20060013,
-      "Href": "/detail/20060013",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060013.jpg",
-      "Title": "魔法老师 春/夏"
-    },
-    {
-      "AID": 20080024,
-      "Href": "/detail/20080024",
-      "NewTitle": "[OVA 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080024.jpg",
-      "Title": "魔法老师！～白色之翼 ALA ALBA～"
-    },
-    {
-      "AID": 20090019,
-      "Href": "/detail/20090019",
-      "NewTitle": "[OVA 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090019.jpg",
-      "Title": "魔法老师！～另一个世界～"
-    },
-    {
-      "AID": 20170078,
-      "Href": "/detail/20170078",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170078.jpg",
-      "Title": "悠久持有者！～魔法老师! 2～"
-    },
-    {
-      "AID": 20170080,
-      "Href": "/detail/20170080",
-      "NewTitle": "[OAD 01-03]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170080.jpg",
-      "Title": "悠久持有者！OAD"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20190309,
-      "Href": "/detail/20190309",
-      "NewTitle": "第53集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190309.jpg",
-      "Title": "天价宠妻：总裁夫人休想逃"
-    },
     {
       "AID": 20020014,
       "Href": "/detail/20020014",
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20020014.jpg",
       "Title": "最终兵器彼女"
-    },
-    {
-      "AID": 20220255,
-      "Href": "/detail/20220255",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220255.jpg",
-      "Title": "我的美好婚事"
-    },
-    {
-      "AID": 20250016,
-      "Href": "/detail/20250016",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250016.jpg",
-      "Title": "魔法制造者 ～异世界魔法的制作方法～"
-    },
-    {
-      "AID": 20190033,
-      "Href": "/detail/20190033",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190033.jpg",
-      "Title": "重来吧，魔王大人！"
-    },
-    {
-      "AID": 20260241,
-      "Href": "/detail/20260241",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260241.jpg",
-      "Title": "电影 吉伊卡哇: 人鱼之岛的秘密"
     }
   ],
   "player_label_arr": {

@@ -213,79 +213,8 @@
     "comment_cnt": "219",
     "collect_cnt": "1,477"
   },
-  "series": [
-    {
-      "AID": 20190125,
-      "Href": "/detail/20190125",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190125.jpg",
-      "Title": "新石纪"
-    },
-    {
-      "AID": 20200070,
-      "Href": "/detail/20200070",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200070.jpg",
-      "Title": "新石纪 第二季"
-    },
-    {
-      "AID": 20220125,
-      "Href": "/detail/20220125",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220125.jpg",
-      "Title": "新石纪 龙水"
-    },
-    {
-      "AID": 20220126,
-      "Href": "/detail/20220126",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220126.jpg",
-      "Title": "新石纪 NEW WORLD"
-    },
-    {
-      "AID": 20250141,
-      "Href": "/detail/20250141",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250141.jpg",
-      "Title": "石纪元 科学与未来 第2部分"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20240068,
-      "Href": "/detail/20240068",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240068.jpg",
-      "Title": "假面骑士极狐 外传 假面骑士谛睨"
-    },
-    {
-      "AID": 20070009,
-      "Href": "/detail/20070009",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070009.jpg",
-      "Title": "蓝兰岛漂流记"
-    },
-    {
-      "AID": 20110102,
-      "Href": "/detail/20110102",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110102.jpg",
-      "Title": "追逐繁星的孩子"
-    },
-    {
-      "AID": 20230103,
-      "Href": "/detail/20230103",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230103.jpg",
-      "Title": "爱上她的理由"
-    },
-    {
-      "AID": 20220227,
-      "Href": "/detail/20220227",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220227.jpg",
-      "Title": "神渣☆偶像"
-    },
     {
       "AID": 20260215,
       "Href": "/detail/20260215",

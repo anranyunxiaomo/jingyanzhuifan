@@ -127,59 +127,8 @@
     "comment_cnt": "65",
     "collect_cnt": "958"
   },
-  "series": [
-    {
-      "AID": 20210180,
-      "Href": "/detail/20210180",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210180.jpg",
-      "Title": "骸骨骑士大人异世界冒险中"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20190336,
-      "Href": "/detail/20190336",
-      "NewTitle": "第15集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190336.jpg",
-      "Title": "梦幻书院"
-    },
-    {
-      "AID": 20150135,
-      "Href": "/detail/20150135",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150135.jpg",
-      "Title": "七原罪OAD"
-    },
-    {
-      "AID": 20190326,
-      "Href": "/detail/20190326",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190326.jpg",
-      "Title": "拐个兰陵王做影帝"
-    },
-    {
-      "AID": 20060002,
-      "Href": "/detail/20060002",
-      "NewTitle": "第13话",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060002.jpg",
-      "Title": "零之使魔"
-    },
-    {
-      "AID": 20250122,
-      "Href": "/detail/20250122",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250122.jpg",
-      "Title": "杜鹃的婚约 第二季"
-    },
-    {
-      "AID": 20140161,
-      "Href": "/detail/20140161",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140161.jpg",
-      "Title": "世界第一初恋〜横泽隆史的场合〜"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

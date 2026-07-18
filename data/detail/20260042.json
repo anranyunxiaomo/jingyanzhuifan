@@ -968,50 +968,7 @@
     "collect_cnt": "992"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20020013,
-      "Href": "/detail/20020013",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020013.jpg",
-      "Title": "推理之绊"
-    },
-    {
-      "AID": 20000004,
-      "Href": "/detail/20000004",
-      "NewTitle": "第1140话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000004.jpg",
-      "Title": "樱桃小丸子 第二季"
-    },
-    {
-      "AID": 20170009,
-      "Href": "/detail/20170009",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170009.jpg",
-      "Title": "风夏"
-    },
-    {
-      "AID": 20130139,
-      "Href": "/detail/20130139",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130139.jpg",
-      "Title": "囮物语"
-    },
-    {
-      "AID": 20200184,
-      "Href": "/detail/20200184",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200184.jpg",
-      "Title": "因为太怕痛就全点防御力了 第二季"
-    },
-    {
-      "AID": 20200162,
-      "Href": "/detail/20200162",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200162.jpg",
-      "Title": "Love Live! 虹咲学园校园偶像同好会"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

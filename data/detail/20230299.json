@@ -148,50 +148,7 @@
     "collect_cnt": "312"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220470,
-      "Href": "/detail/20220470",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220470.jpg",
-      "Title": "VAZZROCK THE ANIMATION"
-    },
-    {
-      "AID": 20230127,
-      "Href": "/detail/20230127",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230127.jpg",
-      "Title": "圣者无双～上班族、在异世界的存活之道～"
-    },
-    {
-      "AID": 20220160,
-      "Href": "/detail/20220160",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220160.jpg",
-      "Title": "晶翠仙尊"
-    },
-    {
-      "AID": 20220171,
-      "Href": "/detail/20220171",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220171.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 最终季 -浅梦之晓-"
-    },
-    {
-      "AID": 20050065,
-      "Href": "/detail/20050065",
-      "NewTitle": "[OVA 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050065.jpg",
-      "Title": "鸦 -KARAS-"
-    },
-    {
-      "AID": 20180044,
-      "Href": "/detail/20180044",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180044.jpg",
-      "Title": "DARLING in the FRANXX"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

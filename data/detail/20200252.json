@@ -177,50 +177,7 @@
     "collect_cnt": "410"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190296,
-      "Href": "/detail/20190296",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190296.jpg",
-      "Title": "忘忧铃"
-    },
-    {
-      "AID": 20210151,
-      "Href": "/detail/20210151",
-      "NewTitle": "第15集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210151.jpg",
-      "Title": "寒蝉鸣泣之时 卒"
-    },
-    {
-      "AID": 20190401,
-      "Href": "/detail/20190401",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190401.jpg",
-      "Title": "剑网3·侠肝义胆沈剑心 第二季"
-    },
-    {
-      "AID": 20200343,
-      "Href": "/detail/20200343",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200343.jpg",
-      "Title": "战双帕尼尼"
-    },
-    {
-      "AID": 20050061,
-      "Href": "/detail/20050061",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050061.jpg",
-      "Title": "蜂蜜与四叶草"
-    },
-    {
-      "AID": 20230193,
-      "Href": "/detail/20230193",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230193.jpg",
-      "Title": "16bit的感动 ANOTHER LAYER"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

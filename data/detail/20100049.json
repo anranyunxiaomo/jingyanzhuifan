@@ -55,73 +55,8 @@
     "comment_cnt": "84",
     "collect_cnt": "927"
   },
-  "series": [
-    {
-      "AID": 20060018,
-      "Href": "/detail/20060018",
-      "NewTitle": "[TV 01-14]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060018.jpg",
-      "Title": "凉宫春日的忧郁"
-    },
-    {
-      "AID": 20090039,
-      "Href": "/detail/20090039",
-      "NewTitle": "[TV 01-28]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090039.jpg",
-      "Title": "凉宫春日的忧郁(2009)"
-    },
-    {
-      "AID": 20150080,
-      "Href": "/detail/20150080",
-      "NewTitle": "[TV 01-16+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150080.jpg",
-      "Title": "长门有希酱的消失"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20240047,
-      "Href": "/detail/20240047",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240047.jpg",
-      "Title": "夜晚的水母不会游泳"
-    },
-    {
-      "AID": 20190246,
-      "Href": "/detail/20190246",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190246.jpg",
-      "Title": "大主宰"
-    },
-    {
-      "AID": 20110099,
-      "Href": "/detail/20110099",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110099.jpg",
-      "Title": "xxxHOLiC 笼 徒梦"
-    },
-    {
-      "AID": 20160071,
-      "Href": "/detail/20160071",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160071.jpg",
-      "Title": "动画锻炼！XX"
-    },
-    {
-      "AID": 20060046,
-      "Href": "/detail/20060046",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060046.jpg",
-      "Title": "家庭教师"
-    },
-    {
-      "AID": 20250145,
-      "Href": "/detail/20250145",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250145.jpg",
-      "Title": "胆大党 第二季"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

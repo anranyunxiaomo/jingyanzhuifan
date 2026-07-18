@@ -163,87 +163,8 @@
     "comment_cnt": "52",
     "collect_cnt": "613"
   },
-  "series": [
-    {
-      "AID": 20110014,
-      "Href": "/detail/20110014",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110014.jpg",
-      "Title": "青之驱魔师"
-    },
-    {
-      "AID": 20120037,
-      "Href": "/detail/20120037",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120037.jpg",
-      "Title": "青之驱魔师剧场版"
-    },
-    {
-      "AID": 20230294,
-      "Href": "/detail/20230294",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230294.jpg",
-      "Title": "青之驱魔师 岛根启明结社篇"
-    },
-    {
-      "AID": 20240199,
-      "Href": "/detail/20240199",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240199.jpg",
-      "Title": "青之驱魔师 雪之尽头篇"
-    },
-    {
-      "AID": 20250054,
-      "Href": "/detail/20250054",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250054.jpg",
-      "Title": "青之驱魔师 终夜篇"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20050068,
-      "Href": "/detail/20050068",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050068.jpg",
-      "Title": "绝对正义vs外道少女队"
-    },
-    {
-      "AID": 20190314,
-      "Href": "/detail/20190314",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190314.jpg",
-      "Title": "万界仙踪 第二季"
-    },
-    {
-      "AID": 20190114,
-      "Href": "/detail/20190114",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190114.jpg",
-      "Title": "大人的防具店(里面)"
-    },
-    {
-      "AID": 20190207,
-      "Href": "/detail/20190207",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190207.jpg",
-      "Title": "Fairy gone 第二季"
-    },
-    {
-      "AID": 20210406,
-      "Href": "/detail/20210406",
-      "NewTitle": "第60集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210406.jpg",
-      "Title": "神医九小姐"
-    },
-    {
-      "AID": 20090086,
-      "Href": "/detail/20090086",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090086.jpg",
-      "Title": "豹头王传说"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

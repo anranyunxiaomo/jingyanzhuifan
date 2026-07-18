@@ -223,50 +223,7 @@
     "collect_cnt": "694"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210285,
-      "Href": "/detail/20210285",
-      "NewTitle": "第527集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210285.jpg",
-      "Title": "逆天至尊"
-    },
-    {
-      "AID": 20190205,
-      "Href": "/detail/20190205",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190205.jpg",
-      "Title": "鸭子的天空"
-    },
-    {
-      "AID": 20110018,
-      "Href": "/detail/20110018",
-      "NewTitle": "[TV 01-08]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110018.jpg",
-      "Title": "超元气三姐妹 第二季"
-    },
-    {
-      "AID": 20210260,
-      "Href": "/detail/20210260",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210260.jpg",
-      "Title": "生化危机 无尽黑暗"
-    },
-    {
-      "AID": 20240138,
-      "Href": "/detail/20240138",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240138.jpg",
-      "Title": "邂逅她的少女时代"
-    },
-    {
-      "AID": 20190326,
-      "Href": "/detail/20190326",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190326.jpg",
-      "Title": "拐个兰陵王做影帝"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

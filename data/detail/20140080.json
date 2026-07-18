@@ -166,50 +166,7 @@
     "collect_cnt": "3,777"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180023,
-      "Href": "/detail/20180023",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180023.jpg",
-      "Title": "25岁的女高中生"
-    },
-    {
-      "AID": 20010004,
-      "Href": "/detail/20010004",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010004.jpg",
-      "Title": "皇家国教骑士团"
-    },
-    {
-      "AID": 20170283,
-      "Href": "/detail/20170283",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170283.jpg",
-      "Title": "冰海精灵的灯光"
-    },
-    {
-      "AID": 20150137,
-      "Href": "/detail/20150137",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150137.jpg",
-      "Title": "小魔女学园剧场版 魔法游行"
-    },
-    {
-      "AID": 20190035,
-      "Href": "/detail/20190035",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190035.jpg",
-      "Title": "家有女友"
-    },
-    {
-      "AID": 20090077,
-      "Href": "/detail/20090077",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090077.jpg",
-      "Title": "幻灵镇魂曲"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

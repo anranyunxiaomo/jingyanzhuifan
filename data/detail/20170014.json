@@ -185,59 +185,8 @@
     "comment_cnt": "63",
     "collect_cnt": "823"
   },
-  "series": [
-    {
-      "AID": 20200126,
-      "Href": "/detail/20200126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200126.jpg",
-      "Title": "ACCA13区监察课 Regards"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220171,
-      "Href": "/detail/20220171",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220171.jpg",
-      "Title": "魔法纪录 魔法少女小圆外传 最终季 -浅梦之晓-"
-    },
-    {
-      "AID": 20200271,
-      "Href": "/detail/20200271",
-      "NewTitle": "第70集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200271.jpg",
-      "Title": "仙风剑雨录"
-    },
-    {
-      "AID": 20150046,
-      "Href": "/detail/20150046",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150046.jpg",
-      "Title": "OVERLORD"
-    },
-    {
-      "AID": 20000042,
-      "Href": "/detail/20000042",
-      "NewTitle": "第04集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000042.jpg",
-      "Title": "青之6号"
-    },
-    {
-      "AID": 20130037,
-      "Href": "/detail/20130037",
-      "NewTitle": "[Movie 01-04]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130037.jpg",
-      "Title": "女神异闻录3 剧场版 第一章 春生"
-    },
-    {
-      "AID": 20080082,
-      "Href": "/detail/20080082",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080082.jpg",
-      "Title": "底特律金属城"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

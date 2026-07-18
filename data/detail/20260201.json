@@ -106,13 +106,6 @@
   "series": [],
   "similar": [
     {
-      "AID": 20170128,
-      "Href": "/detail/20170128",
-      "NewTitle": "第07集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170128.jpg",
-      "Title": "终物语 第二季"
-    },
-    {
       "AID": 20180030,
       "Href": "/detail/20180030",
       "NewTitle": "[TV 01-12]",
@@ -120,32 +113,11 @@
       "Title": "爆肝工程师的异世界狂想曲"
     },
     {
-      "AID": 20250251,
-      "Href": "/detail/20250251",
-      "NewTitle": "第39集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250251.jpg",
-      "Title": "会动的！从前从前有只猫 世界喵童话"
-    },
-    {
-      "AID": 20260059,
-      "Href": "/detail/20260059",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260059.jpg",
-      "Title": "暗芝居 第十六季"
-    },
-    {
       "AID": 20110055,
       "Href": "/detail/20110055",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20110055.jpg",
       "Title": "摇曳百合"
-    },
-    {
-      "AID": 20230137,
-      "Href": "/detail/20230137",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230137.jpg",
-      "Title": "浪客剑心 －明治剑客浪漫谭－"
     }
   ],
   "player_label_arr": {

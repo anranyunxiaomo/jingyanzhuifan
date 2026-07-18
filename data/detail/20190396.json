@@ -63,64 +63,14 @@
     "comment_cnt": "336",
     "collect_cnt": "2,947"
   },
-  "series": [
-    {
-      "AID": 20180027,
-      "Href": "/detail/20180027",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180027.jpg",
-      "Title": "紫罗兰永恒花园"
-    },
-    {
-      "AID": 20190002,
-      "Href": "/detail/20190002",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190002.jpg",
-      "Title": "紫罗兰永恒花园剧场版"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20200271,
-      "Href": "/detail/20200271",
-      "NewTitle": "第70集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200271.jpg",
-      "Title": "仙风剑雨录"
-    },
     {
       "AID": 20200217,
       "Href": "/detail/20200217",
       "NewTitle": "第26集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20200217.jpg",
       "Title": "王之逆袭 意志的继承者"
-    },
-    {
-      "AID": 20230219,
-      "Href": "/detail/20230219",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230219.jpg",
-      "Title": "堤亚穆帝国物语～从断头台开始，公主重生后的逆转人生～"
-    },
-    {
-      "AID": 20200299,
-      "Href": "/detail/20200299",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200299.jpg",
-      "Title": "镜·双城 风起篇"
-    },
-    {
-      "AID": 20180214,
-      "Href": "/detail/20180214",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180214.jpg",
-      "Title": "政宗君的复仇OAD"
-    },
-    {
-      "AID": 20230295,
-      "Href": "/detail/20230295",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230295.jpg",
-      "Title": "最强肉盾的迷宫攻略～拥有稀少技能体力9999的肉盾，被勇者队伍辞退了～"
     }
   ],
   "player_label_arr": {

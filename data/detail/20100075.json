@@ -219,50 +219,7 @@
     "collect_cnt": "931"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180082,
-      "Href": "/detail/20180082",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180082.jpg",
-      "Title": "Megalo Box"
-    },
-    {
-      "AID": 20000052,
-      "Href": "/detail/20000052",
-      "NewTitle": "第08集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000052.jpg",
-      "Title": "数码宝贝剧场版合集"
-    },
-    {
-      "AID": 20210280,
-      "Href": "/detail/20210280",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210280.jpg",
-      "Title": "红荒"
-    },
-    {
-      "AID": 20160171,
-      "Href": "/detail/20160171",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160171.jpg",
-      "Title": "WWW.迷糊餐厅"
-    },
-    {
-      "AID": 20250121,
-      "Href": "/detail/20250121",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250121.jpg",
-      "Title": "活死喵之夜"
-    },
-    {
-      "AID": 20140164,
-      "Href": "/detail/20140164",
-      "NewTitle": "[OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140164.jpg",
-      "Title": "樱花树下的时间胶囊"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

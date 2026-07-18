@@ -236,50 +236,7 @@
     "collect_cnt": "180"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190270,
-      "Href": "/detail/20190270",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190270.jpg",
-      "Title": "霹雳靖玄录"
-    },
-    {
-      "AID": 20150092,
-      "Href": "/detail/20150092",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150092.jpg",
-      "Title": "小森同学拒绝不了"
-    },
-    {
-      "AID": 20090048,
-      "Href": "/detail/20090048",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090048.jpg",
-      "Title": "天元突破剧场版 螺岩篇"
-    },
-    {
-      "AID": 20190402,
-      "Href": "/detail/20190402",
-      "NewTitle": "第42集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190402.jpg",
-      "Title": "武庚纪 第三季"
-    },
-    {
-      "AID": 20220379,
-      "Href": "/detail/20220379",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220379.jpg",
-      "Title": "Delicious Party 光之美少女 梦想的儿童餐"
-    },
-    {
-      "AID": 20160156,
-      "Href": "/detail/20160156",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160156.jpg",
-      "Title": "加速世界剧场版 INFINITE BURST"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -403,43 +403,14 @@
     "comment_cnt": "148",
     "collect_cnt": "1,459"
   },
-  "series": [
-    {
-      "AID": 20250042,
-      "Href": "/detail/20250042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250042.jpg",
-      "Title": "金牌得主"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20180328,
-      "Href": "/detail/20180328",
-      "NewTitle": "第78集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180328.jpg",
-      "Title": "雪鹰领主"
-    },
-    {
-      "AID": 20150096,
-      "Href": "/detail/20150096",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150096.jpg",
-      "Title": "洲崎西"
-    },
     {
       "AID": 20260112,
       "Href": "/detail/20260112",
       "NewTitle": "第13集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260112.jpg",
       "Title": "摩绪"
-    },
-    {
-      "AID": 20220151,
-      "Href": "/detail/20220151",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220151.jpg",
-      "Title": "影之诗 第二季"
     },
     {
       "AID": 20260211,

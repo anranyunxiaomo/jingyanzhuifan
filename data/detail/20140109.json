@@ -395,50 +395,7 @@
     "collect_cnt": "145"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20260191,
-      "Href": "/detail/20260191",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260191.jpg",
-      "Title": "Let's Go 怪奇组"
-    },
-    {
-      "AID": 20070039,
-      "Href": "/detail/20070039",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070039.jpg",
-      "Title": "死神剧场版2 钻石星尘的反叛 另一个冰轮丸"
-    },
-    {
-      "AID": 20180076,
-      "Href": "/detail/20180076",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180076.jpg",
-      "Title": "立花馆恋爱三角铃"
-    },
-    {
-      "AID": 20210371,
-      "Href": "/detail/20210371",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210371.jpg",
-      "Title": "爸妈来自二次元"
-    },
-    {
-      "AID": 20220391,
-      "Href": "/detail/20220391",
-      "NewTitle": "第12集，完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220391.jpg",
-      "Title": "名侦探柯南 犯人犯泽先生"
-    },
-    {
-      "AID": 20160195,
-      "Href": "/detail/20160195",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160195.jpg",
-      "Title": "银魂 爱染香篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

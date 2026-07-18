@@ -285,46 +285,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20190099,
-      "Href": "/detail/20190099",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190099.jpg",
-      "Title": "烟草"
-    },
-    {
-      "AID": 20130137,
-      "Href": "/detail/20130137",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130137.jpg",
-      "Title": "刀剑神域 Extra Edition"
-    },
-    {
       "AID": 20110027,
       "Href": "/detail/20110027",
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20110027.jpg",
       "Title": "电波女与青春男"
-    },
-    {
-      "AID": 20150023,
-      "Href": "/detail/20150023",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150023.jpg",
-      "Title": "伪恋 第二季"
-    },
-    {
-      "AID": 20160110,
-      "Href": "/detail/20160110",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160110.jpg",
-      "Title": "三者三叶"
-    },
-    {
-      "AID": 20190050,
-      "Href": "/detail/20190050",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190050.jpg",
-      "Title": "钢琴之森 第二季"
     }
   ],
   "player_label_arr": {

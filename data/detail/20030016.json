@@ -187,99 +187,14 @@
     "comment_cnt": "32",
     "collect_cnt": "2,060"
   },
-  "series": [
-    {
-      "AID": 20070049,
-      "Href": "/detail/20070049",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070049.jpg",
-      "Title": "一骑当千 第二季"
-    },
-    {
-      "AID": 20080057,
-      "Href": "/detail/20080057",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080057.jpg",
-      "Title": "一骑当千 Great Guardians"
-    },
-    {
-      "AID": 20100072,
-      "Href": "/detail/20100072",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100072.jpg",
-      "Title": "一骑当千 XTREME XECUTOR"
-    },
-    {
-      "AID": 20110090,
-      "Href": "/detail/20110090",
-      "NewTitle": "OVA全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110090.jpg",
-      "Title": "一骑当千 集锷斗士血风录"
-    },
-    {
-      "AID": 20140176,
-      "Href": "/detail/20140176",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140176.jpg",
-      "Title": "一骑当千 Extravaganza Epoch"
-    },
-    {
-      "AID": 20190065,
-      "Href": "/detail/20190065",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190065.jpg",
-      "Title": "一骑当千 Western Wolves"
-    },
-    {
-      "AID": 20220006,
-      "Href": "/detail/20220006",
-      "NewTitle": "第03集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220006.jpg",
-      "Title": "真·一骑当千"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20230075,
-      "Href": "/detail/20230075",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230075.jpg",
-      "Title": "世界巨星"
-    },
     {
       "AID": 20250209,
       "Href": "/detail/20250209",
       "NewTitle": "第40集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20250209.jpg",
       "Title": "元祖！BanG Dream Chan"
-    },
-    {
-      "AID": 20140166,
-      "Href": "/detail/20140166",
-      "NewTitle": "[BD 01-05]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140166.jpg",
-      "Title": "钻石王牌OAD"
-    },
-    {
-      "AID": 20220516,
-      "Href": "/detail/20220516",
-      "NewTitle": "第28集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220516.jpg",
-      "Title": "我与机器子"
-    },
-    {
-      "AID": 20210415,
-      "Href": "/detail/20210415",
-      "NewTitle": "第41集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210415.jpg",
-      "Title": "动态漫画·三体"
-    },
-    {
-      "AID": 20100020,
-      "Href": "/detail/20100020",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100020.jpg",
-      "Title": "魔法禁书目录 第二季"
     }
   ],
   "player_label_arr": {

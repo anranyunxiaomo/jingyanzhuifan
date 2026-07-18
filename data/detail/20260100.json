@@ -553,50 +553,7 @@
     "collect_cnt": "903"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210393,
-      "Href": "/detail/20210393",
-      "NewTitle": "第9集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210393.jpg",
-      "Title": "英雄联盟：双城之战"
-    },
-    {
-      "AID": 20180204,
-      "Href": "/detail/20180204",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180204.jpg",
-      "Title": "文豪野犬剧场版 DEAD APPLE"
-    },
-    {
-      "AID": 20150183,
-      "Href": "/detail/20150183",
-      "NewTitle": "第39集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150183.jpg",
-      "Title": "尸兄 第二季"
-    },
-    {
-      "AID": 20220432,
-      "Href": "/detail/20220432",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220432.jpg",
-      "Title": "被解雇的暗黑士兵(30岁)慢生活的第二人生"
-    },
-    {
-      "AID": 20200311,
-      "Href": "/detail/20200311",
-      "NewTitle": "第126集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200311.jpg",
-      "Title": "仙尊奶爸当赘婿"
-    },
-    {
-      "AID": 20230058,
-      "Href": "/detail/20230058",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230058.jpg",
-      "Title": "德凯奥特曼最终章 向着旅途的彼岸"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

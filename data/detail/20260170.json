@@ -120,69 +120,6 @@
   },
   "series": [
     {
-      "AID": 20030001,
-      "Href": "/detail/20030001",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030001.jpg",
-      "Title": "三角心～Sweet Songs Forever～"
-    },
-    {
-      "AID": 20040002,
-      "Href": "/detail/20040002",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040002.jpg",
-      "Title": "魔法少女奈叶"
-    },
-    {
-      "AID": 20050007,
-      "Href": "/detail/20050007",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050007.jpg",
-      "Title": "魔法少女奈叶A's"
-    },
-    {
-      "AID": 20070017,
-      "Href": "/detail/20070017",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070017.jpg",
-      "Title": "魔法少女奈叶StrikerS"
-    },
-    {
-      "AID": 20100037,
-      "Href": "/detail/20100037",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100037.jpg",
-      "Title": "魔法少女奈叶 The MOVIE 1st"
-    },
-    {
-      "AID": 20120089,
-      "Href": "/detail/20120089",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120089.jpg",
-      "Title": "魔法少女奈叶 The MOVIE 2nd A's"
-    },
-    {
-      "AID": 20150143,
-      "Href": "/detail/20150143",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150143.jpg",
-      "Title": "魔法少女奈叶ViVid"
-    },
-    {
-      "AID": 20160099,
-      "Href": "/detail/20160099",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160099.jpg",
-      "Title": "魔法少女奈叶ViVid Strike!"
-    },
-    {
-      "AID": 20170217,
-      "Href": "/detail/20170217",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170217.jpg",
-      "Title": "魔法少女奈叶 Reflection"
-    },
-    {
       "AID": 20180236,
       "Href": "/detail/20180236",
       "NewTitle": "全集",
@@ -190,50 +127,7 @@
       "Title": "魔法少女奈叶 Detonation"
     }
   ],
-  "similar": [
-    {
-      "AID": 20250078,
-      "Href": "/detail/20250078",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250078.jpg",
-      "Title": "瞬间治疗却被视为无用而被流放的天才治疗师，以暗黑治疗师的身份幸福地生活着"
-    },
-    {
-      "AID": 20260003,
-      "Href": "/detail/20260003",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260003.jpg",
-      "Title": "正义使者 -我的英雄学院之非法英雄- 第二季"
-    },
-    {
-      "AID": 20180162,
-      "Href": "/detail/20180162",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180162.jpg",
-      "Title": "One Room 第二季"
-    },
-    {
-      "AID": 20220270,
-      "Href": "/detail/20220270",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220270.jpg",
-      "Title": "寻剑"
-    },
-    {
-      "AID": 20240043,
-      "Href": "/detail/20240043",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240043.jpg",
-      "Title": "怪兽8号"
-    },
-    {
-      "AID": 20230002,
-      "Href": "/detail/20230002",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230002.jpg",
-      "Title": "为美好的世界献上祝福！第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

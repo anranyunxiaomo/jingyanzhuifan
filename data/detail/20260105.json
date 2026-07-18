@@ -458,50 +458,7 @@
     "collect_cnt": "1,130"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20120077,
-      "Href": "/detail/20120077",
-      "NewTitle": "[TV 01-12+SP]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120077.jpg",
-      "Title": "男子高中生的日常"
-    },
-    {
-      "AID": 20210271,
-      "Href": "/detail/20210271",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210271.jpg",
-      "Title": "橘色荣耀！"
-    },
-    {
-      "AID": 20060013,
-      "Href": "/detail/20060013",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060013.jpg",
-      "Title": "魔法老师 春/夏"
-    },
-    {
-      "AID": 20200115,
-      "Href": "/detail/20200115",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200115.jpg",
-      "Title": "数码宝贝 LAST EVOLUTION 绊"
-    },
-    {
-      "AID": 20030002,
-      "Href": "/detail/20030002",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030002.jpg",
-      "Title": "海贼王TV版特别篇 父亲宏大的理想"
-    },
-    {
-      "AID": 20220175,
-      "Href": "/detail/20220175",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220175.jpg",
-      "Title": "大雪海的凯纳"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -237,51 +237,8 @@
     "comment_cnt": "1,867",
     "collect_cnt": "1,943"
   },
-  "series": [
-    {
-      "AID": 20200302,
-      "Href": "/detail/20200302",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200302.jpg",
-      "Title": "公主连结！Re:Dive 第二季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20180032,
-      "Href": "/detail/20180032",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180032.jpg",
-      "Title": "豆猫"
-    },
-    {
-      "AID": 20100088,
-      "Href": "/detail/20100088",
-      "NewTitle": "第11集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100088.jpg",
-      "Title": "海月姬"
-    },
-    {
-      "AID": 20220426,
-      "Href": "/detail/20220426",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220426.jpg",
-      "Title": "飙速宅男 LIMIT BREAK"
-    },
-    {
-      "AID": 20140118,
-      "Href": "/detail/20140118",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140118.jpg",
-      "Title": "Wake Up, Girls!"
-    },
-    {
-      "AID": 20160065,
-      "Href": "/detail/20160065",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160065.jpg",
-      "Title": "鬼牌游戏"
-    },
     {
       "AID": 20070012,
       "Href": "/detail/20070012",

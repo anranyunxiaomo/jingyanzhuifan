@@ -152,73 +152,8 @@
     "comment_cnt": "37",
     "collect_cnt": "300"
   },
-  "series": [
-    {
-      "AID": 20190311,
-      "Href": "/detail/20190311",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190311.jpg",
-      "Title": "银河英雄传说 Die Neue These 星乱"
-    },
-    {
-      "AID": 20220218,
-      "Href": "/detail/20220218",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220218.jpg",
-      "Title": "银河英雄传说 Die Neue These 激突"
-    },
-    {
-      "AID": 20220454,
-      "Href": "/detail/20220454",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220454.jpg",
-      "Title": "银河英雄传说 Die Neue These 策谋"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20140162,
-      "Href": "/detail/20140162",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140162.jpg",
-      "Title": "圣诞老人公司"
-    },
-    {
-      "AID": 20100052,
-      "Href": "/detail/20100052",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100052.jpg",
-      "Title": "剧场版 快要坏掉的八音盒"
-    },
-    {
-      "AID": 20160157,
-      "Href": "/detail/20160157",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160157.jpg",
-      "Title": "信长的忍者"
-    },
-    {
-      "AID": 20180034,
-      "Href": "/detail/20180034",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180034.jpg",
-      "Title": "A.I.C.O. -Incarnation-"
-    },
-    {
-      "AID": 20130004,
-      "Href": "/detail/20130004",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130004.jpg",
-      "Title": "潜行吧！奈亚子 第二季"
-    },
-    {
-      "AID": 20140205,
-      "Href": "/detail/20140205",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140205.jpg",
-      "Title": "怪盗Joker"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

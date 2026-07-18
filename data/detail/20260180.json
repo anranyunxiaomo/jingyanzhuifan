@@ -133,50 +133,7 @@
     "collect_cnt": "44"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190156,
-      "Href": "/detail/20190156",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190156.jpg",
-      "Title": "只要长得可爱，即使是变态你也喜欢吗？"
-    },
-    {
-      "AID": 20160016,
-      "Href": "/detail/20160016",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160016.jpg",
-      "Title": "亚人OAD"
-    },
-    {
-      "AID": 20250026,
-      "Href": "/detail/20250026",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250026.jpg",
-      "Title": "终究、与你相恋。"
-    },
-    {
-      "AID": 20200375,
-      "Href": "/detail/20200375",
-      "NewTitle": "第13话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200375.jpg",
-      "Title": "阿萨里尔未来的民间故事"
-    },
-    {
-      "AID": 20130138,
-      "Href": "/detail/20130138",
-      "NewTitle": "[TV 01-04]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130138.jpg",
-      "Title": "倾物语"
-    },
-    {
-      "AID": 20190256,
-      "Href": "/detail/20190256",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190256.jpg",
-      "Title": "捡到一个女杀手"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

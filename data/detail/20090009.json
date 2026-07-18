@@ -162,50 +162,7 @@
     "collect_cnt": "915"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20110020,
-      "Href": "/detail/20110020",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110020.jpg",
-      "Title": "A频道"
-    },
-    {
-      "AID": 20220124,
-      "Href": "/detail/20220124",
-      "NewTitle": "先行PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220124.jpg",
-      "Title": "旅途甜心"
-    },
-    {
-      "AID": 20170130,
-      "Href": "/detail/20170130",
-      "NewTitle": "[TV 01-12+13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170130.jpg",
-      "Title": "我是江小白"
-    },
-    {
-      "AID": 20160255,
-      "Href": "/detail/20160255",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160255.jpg",
-      "Title": "假面骑士艾克赛德"
-    },
-    {
-      "AID": 20200230,
-      "Href": "/detail/20200230",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200230.jpg",
-      "Title": "总之就是非常可爱"
-    },
-    {
-      "AID": 20190418,
-      "Href": "/detail/20190418",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190418.jpg",
-      "Title": "动态漫画·斗破苍穹"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

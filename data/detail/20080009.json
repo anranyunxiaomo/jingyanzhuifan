@@ -117,50 +117,7 @@
     "collect_cnt": "717"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240213,
-      "Href": "/detail/20240213",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240213.jpg",
-      "Title": "蓦然回首"
-    },
-    {
-      "AID": 20220036,
-      "Href": "/detail/20220036",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220036.jpg",
-      "Title": "碧蓝航线 Queen's Orders"
-    },
-    {
-      "AID": 20260198,
-      "Href": "/detail/20260198",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260198.jpg",
-      "Title": "不虐待我的继母与继姐"
-    },
-    {
-      "AID": 20190244,
-      "Href": "/detail/20190244",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190244.jpg",
-      "Title": "怪医乱神"
-    },
-    {
-      "AID": 20200073,
-      "Href": "/detail/20200073",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200073.jpg",
-      "Title": "鸣鸟不飞 The clouds gather"
-    },
-    {
-      "AID": 20060036,
-      "Href": "/detail/20060036",
-      "NewTitle": "[BD 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060036.jpg",
-      "Title": "翼·年代记 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

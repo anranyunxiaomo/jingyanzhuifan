@@ -163,37 +163,8 @@
     "comment_cnt": "243",
     "collect_cnt": "4,793"
   },
-  "series": [
-    {
-      "AID": 20130079,
-      "Href": "/detail/20130079",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130079.jpg",
-      "Title": "无限斯特拉托斯 第二季"
-    },
-    {
-      "AID": 20140156,
-      "Href": "/detail/20140156",
-      "NewTitle": "HD",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140156.jpg",
-      "Title": "无限斯特拉托斯 第二季 世界清洗篇"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20190377,
-      "Href": "/detail/20190377",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190377.jpg",
-      "Title": "锁龙"
-    },
-    {
-      "AID": 20200159,
-      "Href": "/detail/20200159",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200159.jpg",
-      "Title": "宇崎酱想要玩耍！"
-    },
     {
       "AID": 20120007,
       "Href": "/detail/20120007",
@@ -207,20 +178,6 @@
       "NewTitle": "[TV 01-12]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180111.jpg",
       "Title": "最终休止符～无止境的螺旋物语～"
-    },
-    {
-      "AID": 20220249,
-      "Href": "/detail/20220249",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220249.jpg",
-      "Title": "pop子和pipi美的日常 第二季"
-    },
-    {
-      "AID": 20120073,
-      "Href": "/detail/20120073",
-      "NewTitle": "[OAD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120073.jpg",
-      "Title": "滑头鬼之孙OAD"
     }
   ],
   "player_label_arr": {

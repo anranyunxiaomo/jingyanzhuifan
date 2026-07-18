@@ -71,73 +71,8 @@
       }
     ]
   },
-  "series": [
-    {
-      "AID": 20190070,
-      "Href": "/detail/20190070",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190070.jpg",
-      "Title": "异世界四重奏"
-    },
-    {
-      "AID": 20200033,
-      "Href": "/detail/20200033",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200033.jpg",
-      "Title": "异世界四重奏 第二季"
-    },
-    {
-      "AID": 20250194,
-      "Href": "/detail/20250194",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250194.jpg",
-      "Title": "异世界四重奏 第三季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20100035,
-      "Href": "/detail/20100035",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100035.jpg",
-      "Title": "传说中勇者的传说"
-    },
-    {
-      "AID": 20210372,
-      "Href": "/detail/20210372",
-      "NewTitle": "第7集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210372.jpg",
-      "Title": "鬼灭之刃 无限列车篇(TV版)"
-    },
-    {
-      "AID": 20190089,
-      "Href": "/detail/20190089",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190089.jpg",
-      "Title": "路人女主的养成方法 Fine"
-    },
-    {
-      "AID": 20110024,
-      "Href": "/detail/20110024",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110024.jpg",
-      "Title": "七合圣石战记"
-    },
-    {
-      "AID": 20140070,
-      "Href": "/detail/20140070",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140070.jpg",
-      "Title": "K剧场版 失落之王"
-    },
-    {
-      "AID": 20130126,
-      "Href": "/detail/20130126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130126.jpg",
-      "Title": "魔法少女小圆剧场版 [新篇] 叛逆的物语"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

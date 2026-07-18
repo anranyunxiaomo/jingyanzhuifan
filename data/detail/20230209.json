@@ -755,59 +755,8 @@
     "comment_cnt": "1,038",
     "collect_cnt": "1.42w"
   },
-  "series": [
-    {
-      "AID": 20250261,
-      "Href": "/detail/20250261",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250261.jpg",
-      "Title": "不死不幸 冬季篇"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20030022,
-      "Href": "/detail/20030022",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030022.jpg",
-      "Title": "星空清理者"
-    },
-    {
-      "AID": 20200064,
-      "Href": "/detail/20200064",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200064.jpg",
-      "Title": "怪怪守护神 第二季"
-    },
-    {
-      "AID": 20030014,
-      "Href": "/detail/20030014",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030014.jpg",
-      "Title": "圆盘皇女 十二月的夜想曲"
-    },
-    {
-      "AID": 20200008,
-      "Href": "/detail/20200008",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200008.jpg",
-      "Title": "因为太怕痛就全点防御力了"
-    },
-    {
-      "AID": 20260055,
-      "Href": "/detail/20260055",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260055.jpg",
-      "Title": "地狱乐 第二季"
-    },
-    {
-      "AID": 20180356,
-      "Href": "/detail/20180356",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180356.jpg",
-      "Title": "B：起点"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

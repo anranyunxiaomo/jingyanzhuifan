@@ -128,50 +128,7 @@
     "collect_cnt": "908"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170272,
-      "Href": "/detail/20170272",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170272.jpg",
-      "Title": "MARGINAL#4 从KISS开始创造Big Bang"
-    },
-    {
-      "AID": 20190398,
-      "Href": "/detail/20190398",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190398.jpg",
-      "Title": "镇魂街 第二季"
-    },
-    {
-      "AID": 20190244,
-      "Href": "/detail/20190244",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190244.jpg",
-      "Title": "怪医乱神"
-    },
-    {
-      "AID": 20220293,
-      "Href": "/detail/20220293",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220293.jpg",
-      "Title": "仙帝归来"
-    },
-    {
-      "AID": 20120102,
-      "Href": "/detail/20120102",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120102.jpg",
-      "Title": "Fate/Zero Remix"
-    },
-    {
-      "AID": 20190233,
-      "Href": "/detail/20190233",
-      "NewTitle": "第24话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190233.jpg",
-      "Title": "漫动画·拯救世界吧大叔"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

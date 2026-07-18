@@ -336,50 +336,7 @@
     "collect_cnt": "3,914"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200195,
-      "Href": "/detail/20200195",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200195.jpg",
-      "Title": "大理寺日志"
-    },
-    {
-      "AID": 20080012,
-      "Href": "/detail/20080012",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080012.jpg",
-      "Title": "女神异闻录 圣洁之魂"
-    },
-    {
-      "AID": 20200156,
-      "Href": "/detail/20200156",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200156.jpg",
-      "Title": "顺其自然的日子"
-    },
-    {
-      "AID": 20210321,
-      "Href": "/detail/20210321",
-      "NewTitle": "第23集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210321.jpg",
-      "Title": "精灵梦叶罗丽X冰莲花"
-    },
-    {
-      "AID": 20140016,
-      "Href": "/detail/20140016",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140016.jpg",
-      "Title": "寄生兽 生命的准则"
-    },
-    {
-      "AID": 20230176,
-      "Href": "/detail/20230176",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230176.jpg",
-      "Title": "帕底亚的课后时光"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

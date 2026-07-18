@@ -407,50 +407,7 @@
     "collect_cnt": "1,044"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160210,
-      "Href": "/detail/20160210",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160210.jpg",
-      "Title": "告白实行委员会剧场版 喜欢上你的那个瞬间"
-    },
-    {
-      "AID": 20060068,
-      "Href": "/detail/20060068",
-      "NewTitle": "[DVD 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060068.jpg",
-      "Title": "仰望半月的夜空"
-    },
-    {
-      "AID": 20150126,
-      "Href": "/detail/20150126",
-      "NewTitle": "[17-32]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150126.jpg",
-      "Title": "未来卡 搭档对战 第二季"
-    },
-    {
-      "AID": 20150207,
-      "Href": "/detail/20150207",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150207.jpg",
-      "Title": "吸血鬼福尔摩斯"
-    },
-    {
-      "AID": 20060060,
-      "Href": "/detail/20060060",
-      "NewTitle": "第04集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060060.jpg",
-      "Title": "舞-乙HiME Zwei"
-    },
-    {
-      "AID": 20170229,
-      "Href": "/detail/20170229",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170229.jpg",
-      "Title": "风灵玉秀"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

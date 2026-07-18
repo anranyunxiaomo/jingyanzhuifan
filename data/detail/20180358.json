@@ -158,50 +158,7 @@
     "collect_cnt": "263"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20120134,
-      "Href": "/detail/20120134",
-      "NewTitle": "[TV 01-10+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120134.jpg",
-      "Title": "枪械少女"
-    },
-    {
-      "AID": 20160207,
-      "Href": "/detail/20160207",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160207.jpg",
-      "Title": "RWBY Chibi"
-    },
-    {
-      "AID": 20220403,
-      "Href": "/detail/20220403",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220403.jpg",
-      "Title": "黑暗集会"
-    },
-    {
-      "AID": 20260006,
-      "Href": "/detail/20260006",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260006.jpg",
-      "Title": "和青梅竹马之间不会有恋爱喜剧"
-    },
-    {
-      "AID": 20260165,
-      "Href": "/detail/20260165",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260165.jpg",
-      "Title": "躲在超市后门抽烟的两人"
-    },
-    {
-      "AID": 20260129,
-      "Href": "/detail/20260129",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260129.jpg",
-      "Title": "前臀侠"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

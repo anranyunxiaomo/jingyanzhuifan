@@ -276,73 +276,8 @@
     "comment_cnt": "89",
     "collect_cnt": "1,817"
   },
-  "series": [
-    {
-      "AID": 20130089,
-      "Href": "/detail/20130089",
-      "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130089.jpg",
-      "Title": "魔笛MAGI 第二季"
-    },
-    {
-      "AID": 20140087,
-      "Href": "/detail/20140087",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140087.jpg",
-      "Title": "魔笛MAGI OAD"
-    },
-    {
-      "AID": 20160024,
-      "Href": "/detail/20160024",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160024.jpg",
-      "Title": "魔笛MAGI 辛巴德的冒险"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220030,
-      "Href": "/detail/20220030",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220030.jpg",
-      "Title": "前进吧！登山少女 第四季"
-    },
-    {
-      "AID": 20130174,
-      "Href": "/detail/20130174",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130174.jpg",
-      "Title": "你好七叶 第二季"
-    },
-    {
-      "AID": 20240142,
-      "Href": "/detail/20240142",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240142.jpg",
-      "Title": "时光巡逻队 第二季"
-    },
-    {
-      "AID": 20190386,
-      "Href": "/detail/20190386",
-      "NewTitle": "[WEB 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190386.jpg",
-      "Title": "少女前线 人形小剧场 日语版"
-    },
-    {
-      "AID": 20230137,
-      "Href": "/detail/20230137",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230137.jpg",
-      "Title": "浪客剑心 －明治剑客浪漫谭－"
-    },
-    {
-      "AID": 20180243,
-      "Href": "/detail/20180243",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180243.jpg",
-      "Title": "超时空要塞Δ 激情的女武神"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

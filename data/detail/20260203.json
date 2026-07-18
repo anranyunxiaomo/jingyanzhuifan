@@ -128,50 +128,7 @@
     "collect_cnt": "623"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180119,
-      "Href": "/detail/20180119",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180119.jpg",
-      "Title": "SWORD GAI 装刀凯"
-    },
-    {
-      "AID": 20160084,
-      "Href": "/detail/20160084",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160084.jpg",
-      "Title": "为美好的世界献上祝福！OAD"
-    },
-    {
-      "AID": 20140052,
-      "Href": "/detail/20140052",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140052.jpg",
-      "Title": "旋风管家OAD"
-    },
-    {
-      "AID": 20050017,
-      "Href": "/detail/20050017",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050017.jpg",
-      "Title": "女生万岁 第二季"
-    },
-    {
-      "AID": 20230128,
-      "Href": "/detail/20230128",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230128.jpg",
-      "Title": "僵尸百分百～变成僵尸之前想做的100件事～"
-    },
-    {
-      "AID": 20170168,
-      "Href": "/detail/20170168",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170168.jpg",
-      "Title": "银魂 精选集"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

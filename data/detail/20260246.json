@@ -94,55 +94,6 @@
       "Title": "关于我转生变成史莱姆这档事"
     },
     {
-      "AID": 20190173,
-      "Href": "/detail/20190173",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190173.jpg",
-      "Title": "关于我转生变成史莱姆这档事OAD"
-    },
-    {
-      "AID": 20200003,
-      "Href": "/detail/20200003",
-      "NewTitle": "第26话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200003.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第二季"
-    },
-    {
-      "AID": 20200167,
-      "Href": "/detail/20200167",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200167.jpg",
-      "Title": "转生史莱姆日记"
-    },
-    {
-      "AID": 20220046,
-      "Href": "/detail/20220046",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220046.jpg",
-      "Title": "关于我转生变成史莱姆这档事 红莲之绊篇"
-    },
-    {
-      "AID": 20220251,
-      "Href": "/detail/20220251",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220251.jpg",
-      "Title": "拯救拉米莉丝"
-    },
-    {
-      "AID": 20230256,
-      "Href": "/detail/20230256",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230256.jpg",
-      "Title": "关于我转生变成史莱姆这档事 彩叶草之梦"
-    },
-    {
-      "AID": 20240033,
-      "Href": "/detail/20240033",
-      "NewTitle": "第72集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240033.jpg",
-      "Title": "关于我转生变成史莱姆这档事 第三季"
-    },
-    {
       "AID": 20260098,
       "Href": "/detail/20260098",
       "NewTitle": "第12集",
@@ -150,50 +101,7 @@
       "Title": "关于我转生变成史莱姆这档事 第四季"
     }
   ],
-  "similar": [
-    {
-      "AID": 20140045,
-      "Href": "/detail/20140045",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140045.jpg",
-      "Title": "结城友奈是勇者"
-    },
-    {
-      "AID": 20250211,
-      "Href": "/detail/20250211",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250211.jpg",
-      "Title": "笨拙之极的前辈。"
-    },
-    {
-      "AID": 20130113,
-      "Href": "/detail/20130113",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130113.jpg",
-      "Title": "前进吧！登山少女"
-    },
-    {
-      "AID": 20210328,
-      "Href": "/detail/20210328",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210328.jpg",
-      "Title": "打火机与公主裙"
-    },
-    {
-      "AID": 20220389,
-      "Href": "/detail/20220389",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220389.jpg",
-      "Title": "动态漫画·元尊 第三季"
-    },
-    {
-      "AID": 20170042,
-      "Href": "/detail/20170042",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170042.jpg",
-      "Title": "徒然喜欢你"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

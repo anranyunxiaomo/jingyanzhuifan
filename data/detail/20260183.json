@@ -132,50 +132,7 @@
     "collect_cnt": "246"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230018,
-      "Href": "/detail/20230018",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230018.jpg",
-      "Title": "祭品公主与兽之王"
-    },
-    {
-      "AID": 20190060,
-      "Href": "/detail/20190060",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190060.jpg",
-      "Title": "贤者之孙"
-    },
-    {
-      "AID": 20190039,
-      "Href": "/detail/20190039",
-      "NewTitle": "[WEB 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190039.jpg",
-      "Title": "暗黑破坏神在身边"
-    },
-    {
-      "AID": 20220522,
-      "Href": "/detail/20220522",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220522.jpg",
-      "Title": "赛马娘四格 第二季"
-    },
-    {
-      "AID": 20230130,
-      "Href": "/detail/20230130",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230130.jpg",
-      "Title": "庙不可言"
-    },
-    {
-      "AID": 20220441,
-      "Href": "/detail/20220441",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220441.jpg",
-      "Title": "魔法使的新娘 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

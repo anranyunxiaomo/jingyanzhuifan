@@ -532,46 +532,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20120141,
-      "Href": "/detail/20120141",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120141.jpg",
-      "Title": "新网球王子"
-    },
-    {
-      "AID": 20000122,
-      "Href": "/detail/20000122",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000122.jpg",
-      "Title": "守护月天OVA"
-    },
-    {
-      "AID": 20090087,
-      "Href": "/detail/20090087",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090087.jpg",
-      "Title": "海物语～有你陪伴～"
-    },
-    {
-      "AID": 20190050,
-      "Href": "/detail/20190050",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190050.jpg",
-      "Title": "钢琴之森 第二季"
-    },
-    {
       "AID": 20240090,
       "Href": "/detail/20240090",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20240090.jpg",
       "Title": "恋爱没法用双子除尽"
-    },
-    {
-      "AID": 20120106,
-      "Href": "/detail/20120106",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120106.jpg",
-      "Title": "七合圣石战记 银月之翼"
     }
   ],
   "player_label_arr": {

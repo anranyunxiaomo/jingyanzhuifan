@@ -239,50 +239,7 @@
     "collect_cnt": "643"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170102,
-      "Href": "/detail/20170102",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170102.jpg",
-      "Title": "Classica Loid 第二季"
-    },
-    {
-      "AID": 20060071,
-      "Href": "/detail/20060071",
-      "NewTitle": "第06集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060071.jpg",
-      "Title": "死神的歌谣"
-    },
-    {
-      "AID": 20070002,
-      "Href": "/detail/20070002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070002.jpg",
-      "Title": "零之使魔 第二季"
-    },
-    {
-      "AID": 20220149,
-      "Href": "/detail/20220149",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220149.jpg",
-      "Title": "暗芝居 第十季"
-    },
-    {
-      "AID": 20220491,
-      "Href": "/detail/20220491",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220491.jpg",
-      "Title": "相亲式修真道侣 动态漫"
-    },
-    {
-      "AID": 20140102,
-      "Href": "/detail/20140102",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140102.jpg",
-      "Title": "关于完全听不懂老公在说什么的事"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -294,50 +294,7 @@
     "collect_cnt": "2,803"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190341,
-      "Href": "/detail/20190341",
-      "NewTitle": "全84集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190341.jpg",
-      "Title": "霹雳靖玄录下阕"
-    },
-    {
-      "AID": 20230069,
-      "Href": "/detail/20230069",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230069.jpg",
-      "Title": "和山田谈场Lv999的恋爱"
-    },
-    {
-      "AID": 20190255,
-      "Href": "/detail/20190255",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190255.jpg",
-      "Title": "我被爱豆不可描述了"
-    },
-    {
-      "AID": 20170275,
-      "Href": "/detail/20170275",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170275.jpg",
-      "Title": "18：与你相连的谜题"
-    },
-    {
-      "AID": 20180092,
-      "Href": "/detail/20180092",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180092.jpg",
-      "Title": "魔法少女网站"
-    },
-    {
-      "AID": 20170249,
-      "Href": "/detail/20170249",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170249.jpg",
-      "Title": "万古仙穹"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

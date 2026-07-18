@@ -61,66 +61,8 @@
     "comment_cnt": "615",
     "collect_cnt": "2,428"
   },
-  "series": [
-    {
-      "AID": 20180245,
-      "Href": "/detail/20180245",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180245.jpg",
-      "Title": "哥布林杀手"
-    },
-    {
-      "AID": 20210076,
-      "Href": "/detail/20210076",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210076.jpg",
-      "Title": "哥布林杀手 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20150155,
-      "Href": "/detail/20150155",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150155.jpg",
-      "Title": "精灵梦叶罗丽 第二季"
-    },
-    {
-      "AID": 20000124,
-      "Href": "/detail/20000124",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000124.jpg",
-      "Title": "傀儡公主"
-    },
-    {
-      "AID": 20220445,
-      "Href": "/detail/20220445",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220445.jpg",
-      "Title": "独行月球"
-    },
-    {
-      "AID": 20120111,
-      "Href": "/detail/20120111",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120111.jpg",
-      "Title": "黑岩射手"
-    },
-    {
-      "AID": 20220287,
-      "Href": "/detail/20220287",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220287.jpg",
-      "Title": "我才不会被女孩子欺负呢 动态漫"
-    },
-    {
-      "AID": 20000009,
-      "Href": "/detail/20000009",
-      "NewTitle": "[SP合集]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000009.jpg",
-      "Title": "海贼王SP合集"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

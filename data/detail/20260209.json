@@ -252,15 +252,7 @@
     "comment_cnt": "69",
     "collect_cnt": "726"
   },
-  "series": [
-    {
-      "AID": 20260033,
-      "Href": "/detail/20260033",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260033.jpg",
-      "Title": "地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20130193,
@@ -268,41 +260,6 @@
       "NewTitle": "HD",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20130193.jpg",
       "Title": "辉夜姬物语"
-    },
-    {
-      "AID": 20180311,
-      "Href": "/detail/20180311",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180311.jpg",
-      "Title": "夏目友人帐剧场版 ～缘结空蝉～"
-    },
-    {
-      "AID": 20200371,
-      "Href": "/detail/20200371",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200371.jpg",
-      "Title": "氪金玩家"
-    },
-    {
-      "AID": 20170251,
-      "Href": "/detail/20170251",
-      "NewTitle": "第50集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170251.jpg",
-      "Title": "偶像活动Stars 第二季"
-    },
-    {
-      "AID": 20220318,
-      "Href": "/detail/20220318",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220318.jpg",
-      "Title": "团团奇米莫"
-    },
-    {
-      "AID": 20220314,
-      "Href": "/detail/20220314",
-      "NewTitle": "第36集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220314.jpg",
-      "Title": "重回末世当大佬 第三季"
     }
   ],
   "player_label_arr": {

@@ -164,59 +164,8 @@
     "comment_cnt": "42",
     "collect_cnt": "506"
   },
-  "series": [
-    {
-      "AID": 20170069,
-      "Href": "/detail/20170069",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170069.jpg",
-      "Title": "有顶天家族 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20140102,
-      "Href": "/detail/20140102",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140102.jpg",
-      "Title": "关于完全听不懂老公在说什么的事"
-    },
-    {
-      "AID": 20230317,
-      "Href": "/detail/20230317",
-      "NewTitle": "第147集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230317.jpg",
-      "Title": "仙逆"
-    },
-    {
-      "AID": 20180047,
-      "Href": "/detail/20180047",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180047.jpg",
-      "Title": "博多豚骨拉面团"
-    },
-    {
-      "AID": 20230223,
-      "Href": "/detail/20230223",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230223.jpg",
-      "Title": "靠着魔法药水在异世界活下去！"
-    },
-    {
-      "AID": 20250073,
-      "Href": "/detail/20250073",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250073.jpg",
-      "Title": "圣女因太过完美不够可爱而被废除婚约并卖到邻国"
-    },
-    {
-      "AID": 20230242,
-      "Href": "/detail/20230242",
-      "NewTitle": "第05集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230242.jpg",
-      "Title": "不忍！加密忍者咲耶"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

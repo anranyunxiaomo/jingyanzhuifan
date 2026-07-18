@@ -483,71 +483,14 @@
     "collect_cnt": "1,543",
     "related": []
   },
-  "series": [
-    {
-      "AID": 20190202,
-      "Href": "/detail/20190202",
-      "NewTitle": "[TV 01-23]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190202.jpg",
-      "Title": "入间同学入魔了"
-    },
-    {
-      "AID": 20210146,
-      "Href": "/detail/20210146",
-      "NewTitle": "第21话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210146.jpg",
-      "Title": "入间同学入魔了 第二季"
-    },
-    {
-      "AID": 20220034,
-      "Href": "/detail/20220034",
-      "NewTitle": "第21集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220034.jpg",
-      "Title": "入间同学入魔了 第三季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20150188,
-      "Href": "/detail/20150188",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150188.jpg",
-      "Title": "快盗天使 新OVA"
-    },
-    {
-      "AID": 20210318,
-      "Href": "/detail/20210318",
-      "NewTitle": "第35集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210318.jpg",
-      "Title": "魔道祖师 完结篇"
-    },
-    {
-      "AID": 20160089,
-      "Href": "/detail/20160089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160089.jpg",
-      "Title": "魔法少女伊莉雅 第四季"
-    },
     {
       "AID": 20210134,
       "Href": "/detail/20210134",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20210134.jpg",
       "Title": "七原罪剧场版 被光诅咒的众人"
-    },
-    {
-      "AID": 20180144,
-      "Href": "/detail/20180144",
-      "NewTitle": "[TV 01-12 ]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180144.jpg",
-      "Title": "ISLAND"
-    },
-    {
-      "AID": 20220067,
-      "Href": "/detail/20220067",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220067.jpg",
-      "Title": "圣剑学院的魔剑使"
     }
   ],
   "player_label_arr": {

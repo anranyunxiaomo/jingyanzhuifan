@@ -251,64 +251,14 @@
     "comment_cnt": "137",
     "collect_cnt": "2,328"
   },
-  "series": [
-    {
-      "AID": 20110008,
-      "Href": "/detail/20110008",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110008.jpg",
-      "Title": "笨蛋测验召唤兽 第二季"
-    },
-    {
-      "AID": 20110009,
-      "Href": "/detail/20110009",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110009.jpg",
-      "Title": "笨蛋测验召唤兽～祭～"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20120148,
-      "Href": "/detail/20120148",
-      "NewTitle": "HD",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120148.jpg",
-      "Title": "无敌破坏王"
-    },
-    {
-      "AID": 20250155,
-      "Href": "/detail/20250155",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250155.jpg",
-      "Title": "Silent Witch 沉默魔女的秘密"
-    },
-    {
-      "AID": 20250020,
-      "Href": "/detail/20250020",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250020.jpg",
-      "Title": "石纪元 科学与未来"
-    },
     {
       "AID": 20170014,
       "Href": "/detail/20170014",
       "NewTitle": "[TV 01-12]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20170014.jpg",
       "Title": "ACCA13区监察课"
-    },
-    {
-      "AID": 20220397,
-      "Href": "/detail/20220397",
-      "NewTitle": "第36集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220397.jpg",
-      "Title": "石少侠感觉好孤单"
-    },
-    {
-      "AID": 20200042,
-      "Href": "/detail/20200042",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200042.jpg",
-      "Title": "音乐"
     }
   ],
   "player_label_arr": {

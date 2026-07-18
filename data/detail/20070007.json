@@ -154,50 +154,7 @@
     "collect_cnt": "839"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240161,
-      "Href": "/detail/20240161",
-      "NewTitle": "第04集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240161.jpg",
-      "Title": "放学后少年花子君 续篇"
-    },
-    {
-      "AID": 20130116,
-      "Href": "/detail/20130116",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130116.jpg",
-      "Title": "RWBY"
-    },
-    {
-      "AID": 20260059,
-      "Href": "/detail/20260059",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260059.jpg",
-      "Title": "暗芝居 第十六季"
-    },
-    {
-      "AID": 20190386,
-      "Href": "/detail/20190386",
-      "NewTitle": "[WEB 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190386.jpg",
-      "Title": "少女前线 人形小剧场 日语版"
-    },
-    {
-      "AID": 20120081,
-      "Href": "/detail/20120081",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120081.jpg",
-      "Title": "少女爱上姐姐2 二人的ELDER"
-    },
-    {
-      "AID": 20250149,
-      "Href": "/detail/20250149",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250149.jpg",
-      "Title": "为丑女献上花束。"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

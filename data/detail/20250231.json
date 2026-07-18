@@ -808,50 +808,7 @@
     "collect_cnt": "1,645"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250148,
-      "Href": "/detail/20250148",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250148.jpg",
-      "Title": "双人单身露营"
-    },
-    {
-      "AID": 20160193,
-      "Href": "/detail/20160193",
-      "NewTitle": "[TV 01-12+番外]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160193.jpg",
-      "Title": "女生宿舍日常"
-    },
-    {
-      "AID": 20220155,
-      "Href": "/detail/20220155",
-      "NewTitle": "第150集，完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220155.jpg",
-      "Title": "混沌丹神 动态漫"
-    },
-    {
-      "AID": 20210269,
-      "Href": "/detail/20210269",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210269.jpg",
-      "Title": "春秋封神"
-    },
-    {
-      "AID": 20120019,
-      "Href": "/detail/20120019",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120019.jpg",
-      "Title": "法外制裁者"
-    },
-    {
-      "AID": 20170242,
-      "Href": "/detail/20170242",
-      "NewTitle": "第04集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170242.jpg",
-      "Title": "少女与战车 最终章"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

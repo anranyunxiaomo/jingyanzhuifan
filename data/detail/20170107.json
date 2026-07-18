@@ -61,80 +61,8 @@
     "comment_cnt": "196",
     "collect_cnt": "3,748"
   },
-  "series": [
-    {
-      "AID": 20160188,
-      "Href": "/detail/20160188",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160188.jpg",
-      "Title": "魔法使的新娘OAD"
-    },
-    {
-      "AID": 20210142,
-      "Href": "/detail/20210142",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210142.jpg",
-      "Title": "魔法使的新娘 西之少年与青岚的骑士"
-    },
-    {
-      "AID": 20220441,
-      "Href": "/detail/20220441",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220441.jpg",
-      "Title": "魔法使的新娘 第二季"
-    },
-    {
-      "AID": 20230196,
-      "Href": "/detail/20230196",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230196.jpg",
-      "Title": "魔法使的新娘 第二季 第2部分"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20250005,
-      "Href": "/detail/20250005",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250005.jpg",
-      "Title": "上班族转生异世界当上了四天王不是很正常吗"
-    },
-    {
-      "AID": 20210080,
-      "Href": "/detail/20210080",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210080.jpg",
-      "Title": "战斗员派遣中！"
-    },
-    {
-      "AID": 20110051,
-      "Href": "/detail/20110051",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110051.jpg",
-      "Title": "恶魔阿萨谢尔在召唤你"
-    },
-    {
-      "AID": 20130156,
-      "Href": "/detail/20130156",
-      "NewTitle": "第41集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130156.jpg",
-      "Title": "尸兄"
-    },
-    {
-      "AID": 20150119,
-      "Href": "/detail/20150119",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150119.jpg",
-      "Title": "无头骑士异闻录×2 转"
-    },
-    {
-      "AID": 20190374,
-      "Href": "/detail/20190374",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190374.jpg",
-      "Title": "时光沙漏"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

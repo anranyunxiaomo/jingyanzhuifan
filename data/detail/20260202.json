@@ -106,50 +106,7 @@
     "collect_cnt": "186"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220443,
-      "Href": "/detail/20220443",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220443.jpg",
-      "Title": "龙珠超 超级英雄"
-    },
-    {
-      "AID": 20210096,
-      "Href": "/detail/20210096",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210096.jpg",
-      "Title": "变成黑皮辣妹后和朋友做了"
-    },
-    {
-      "AID": 20240208,
-      "Href": "/detail/20240208",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240208.jpg",
-      "Title": "可爱史莱姆噗尼露"
-    },
-    {
-      "AID": 20200180,
-      "Href": "/detail/20200180",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200180.jpg",
-      "Title": "致不灭的你"
-    },
-    {
-      "AID": 20170089,
-      "Href": "/detail/20170089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170089.jpg",
-      "Title": "此花亭奇谭"
-    },
-    {
-      "AID": 20150031,
-      "Href": "/detail/20150031",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150031.jpg",
-      "Title": "彗星路西法"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

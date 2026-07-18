@@ -377,58 +377,8 @@
     "comment_cnt": "171",
     "collect_cnt": "2,018"
   },
-  "series": [
-    {
-      "AID": 20080038,
-      "Href": "/detail/20080038",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080038.jpg",
-      "Title": "天元突破剧场版 红莲篇"
-    },
-    {
-      "AID": 20090048,
-      "Href": "/detail/20090048",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090048.jpg",
-      "Title": "天元突破剧场版 螺岩篇"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20120136,
-      "Href": "/detail/20120136",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120136.jpg",
-      "Title": "To Heart2 迷宫旅人"
-    },
-    {
-      "AID": 20190050,
-      "Href": "/detail/20190050",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190050.jpg",
-      "Title": "钢琴之森 第二季"
-    },
-    {
-      "AID": 20250229,
-      "Href": "/detail/20250229",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250229.jpg",
-      "Title": "末世二轮之旅"
-    },
-    {
-      "AID": 20090001,
-      "Href": "/detail/20090001",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090001.jpg",
-      "Title": "夏目友人帐 第二季"
-    },
-    {
-      "AID": 20260152,
-      "Href": "/detail/20260152",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260152.jpg",
-      "Title": "烟囱小镇的普佩 〜约定的钟楼〜"
-    },
     {
       "AID": 20070016,
       "Href": "/detail/20070016",

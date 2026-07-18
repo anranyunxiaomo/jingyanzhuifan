@@ -975,50 +975,7 @@
     "collect_cnt": "851"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20260005,
-      "Href": "/detail/20260005",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260005.jpg",
-      "Title": "公主大人“拷问”的时间到了 第二季"
-    },
-    {
-      "AID": 20210394,
-      "Href": "/detail/20210394",
-      "NewTitle": "第66集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210394.jpg",
-      "Title": "盖世帝尊"
-    },
-    {
-      "AID": 20130135,
-      "Href": "/detail/20130135",
-      "NewTitle": "OVA全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130135.jpg",
-      "Title": "魔法少女STAR花音100%"
-    },
-    {
-      "AID": 20180213,
-      "Href": "/detail/20180213",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180213.jpg",
-      "Title": "青春期笨蛋不做兔女郎学姐的梦"
-    },
-    {
-      "AID": 20190344,
-      "Href": "/detail/20190344",
-      "NewTitle": "第48集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190344.jpg",
-      "Title": "万界仙踪 第三季"
-    },
-    {
-      "AID": 20220123,
-      "Href": "/detail/20220123",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220123.jpg",
-      "Title": "白领羽球部"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

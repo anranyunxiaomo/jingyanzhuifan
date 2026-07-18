@@ -235,50 +235,7 @@
     "collect_cnt": "4,535"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20000129,
-      "Href": "/detail/20000129",
-      "NewTitle": "HD",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000129.jpg",
-      "Title": "幽灵公主"
-    },
-    {
-      "AID": 20220376,
-      "Href": "/detail/20220376",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220376.jpg",
-      "Title": "奇巧计程车 In The Woods"
-    },
-    {
-      "AID": 20220074,
-      "Href": "/detail/20220074",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220074.jpg",
-      "Title": "SHINE POST"
-    },
-    {
-      "AID": 20190012,
-      "Href": "/detail/20190012",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190012.jpg",
-      "Title": "城市猎人剧场版 新宿 PRIVATE EYES"
-    },
-    {
-      "AID": 20240010,
-      "Href": "/detail/20240010",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240010.jpg",
-      "Title": "末班列车去哪里？"
-    },
-    {
-      "AID": 20170169,
-      "Href": "/detail/20170169",
-      "NewTitle": "第51话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170169.jpg",
-      "Title": "战斗陀螺 爆烈 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

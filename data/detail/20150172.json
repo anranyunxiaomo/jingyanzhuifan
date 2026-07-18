@@ -110,50 +110,7 @@
     "collect_cnt": "473"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20000053,
-      "Href": "/detail/20000053",
-      "NewTitle": "第51集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000053.jpg",
-      "Title": "戴拿奥特曼"
-    },
-    {
-      "AID": 20060080,
-      "Href": "/detail/20060080",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060080.jpg",
-      "Title": "完美小姐进化论"
-    },
-    {
-      "AID": 20260231,
-      "Href": "/detail/20260231",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260231.jpg",
-      "Title": "研讨同组的染谷同学原来是女优这事"
-    },
-    {
-      "AID": 20260034,
-      "Href": "/detail/20260034",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260034.jpg",
-      "Title": "炎炎消防队 三之章 第2部分"
-    },
-    {
-      "AID": 20070034,
-      "Href": "/detail/20070034",
-      "NewTitle": "[BD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070034.jpg",
-      "Title": "初音岛2"
-    },
-    {
-      "AID": 20160090,
-      "Href": "/detail/20160090",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160090.jpg",
-      "Title": "命运九重奏"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

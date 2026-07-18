@@ -431,20 +431,6 @@
   "series": [],
   "similar": [
     {
-      "AID": 20220148,
-      "Href": "/detail/20220148",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220148.jpg",
-      "Title": "Delicious Party 光之美少女"
-    },
-    {
-      "AID": 20190318,
-      "Href": "/detail/20190318",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190318.jpg",
-      "Title": "干霄之风起"
-    },
-    {
       "AID": 20140067,
       "Href": "/detail/20140067",
       "NewTitle": "第11集(完结)",
@@ -452,25 +438,11 @@
       "Title": "心理测量者 新编集版"
     },
     {
-      "AID": 20150163,
-      "Href": "/detail/20150163",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150163.jpg",
-      "Title": "SHOW BY ROCK!!"
-    },
-    {
       "AID": 20030008,
       "Href": "/detail/20030008",
       "NewTitle": "第26集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20030008.jpg",
       "Title": "初音岛"
-    },
-    {
-      "AID": 20140110,
-      "Href": "/detail/20140110",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140110.jpg",
-      "Title": "虫师 第二季"
     }
   ],
   "player_label_arr": {

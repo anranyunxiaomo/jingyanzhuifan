@@ -145,50 +145,7 @@
     "collect_cnt": "364"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250020,
-      "Href": "/detail/20250020",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250020.jpg",
-      "Title": "石纪元 科学与未来"
-    },
-    {
-      "AID": 20160145,
-      "Href": "/detail/20160145",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160145.jpg",
-      "Title": "圣洁天使"
-    },
-    {
-      "AID": 20120125,
-      "Href": "/detail/20120125",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120125.jpg",
-      "Title": "鲁邦三世 名为峰不二子的女人"
-    },
-    {
-      "AID": 20200383,
-      "Href": "/detail/20200383",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200383.jpg",
-      "Title": "怪物弹珠 THE MOVIE 路西法 绝望的黎明"
-    },
-    {
-      "AID": 20180152,
-      "Href": "/detail/20180152",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180152.jpg",
-      "Title": "天才玩偶"
-    },
-    {
-      "AID": 20230206,
-      "Href": "/detail/20230206",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230206.jpg",
-      "Title": "经验丰富的你和经验为零的我交往的故事"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

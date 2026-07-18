@@ -288,50 +288,7 @@
     "collect_cnt": "545"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20080082,
-      "Href": "/detail/20080082",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080082.jpg",
-      "Title": "底特律金属城"
-    },
-    {
-      "AID": 20170237,
-      "Href": "/detail/20170237",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170237.jpg",
-      "Title": "漫研部 第三季"
-    },
-    {
-      "AID": 20160276,
-      "Href": "/detail/20160276",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160276.jpg",
-      "Title": "歌之王子殿下 真爱LEGEND STAR"
-    },
-    {
-      "AID": 20140125,
-      "Href": "/detail/20140125",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140125.jpg",
-      "Title": "Wake Up, Girl ZOO!"
-    },
-    {
-      "AID": 20200285,
-      "Href": "/detail/20200285",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200285.jpg",
-      "Title": "雾山五行"
-    },
-    {
-      "AID": 20210042,
-      "Href": "/detail/20210042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210042.jpg",
-      "Title": "暗芝居 第八季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

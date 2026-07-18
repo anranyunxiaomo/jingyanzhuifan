@@ -972,7 +972,7 @@ def clean_local_home_list():
                 return True
             detail_p = os.path.join(DATA_DIR, 'detail', f'{aid}.json')
             if not os.path.exists(detail_p):
-                return True  # 没同步 detail 的暂时保留
+                return False  # 本地不存在详情 JSON 的番剧一律过滤清除
             try:
                 with open(detail_p, 'r', encoding='utf-8') as fd:
                     detail = json.load(fd)

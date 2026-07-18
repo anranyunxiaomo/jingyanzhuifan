@@ -167,50 +167,7 @@
     "comment_cnt": "117",
     "collect_cnt": "3,116"
   },
-  "series": [
-    {
-      "AID": 20200223,
-      "Href": "/detail/20200223",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200223.jpg",
-      "Title": "赛马娘四格"
-    },
-    {
-      "AID": 20210015,
-      "Href": "/detail/20210015",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210015.jpg",
-      "Title": "赛马娘 Pretty Derby 第二季"
-    },
-    {
-      "AID": 20230066,
-      "Href": "/detail/20230066",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230066.jpg",
-      "Title": "赛马娘 Pretty Derby Road to the Top"
-    },
-    {
-      "AID": 20230192,
-      "Href": "/detail/20230192",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230192.jpg",
-      "Title": "赛马娘 Pretty Derby 第三季"
-    },
-    {
-      "AID": 20240218,
-      "Href": "/detail/20240218",
-      "NewTitle": "HD中字",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240218.jpg",
-      "Title": "赛马娘 Pretty Derby 新时代之门"
-    },
-    {
-      "AID": 20250098,
-      "Href": "/detail/20250098",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250098.jpg",
-      "Title": "赛马娘 芦毛灰姑娘"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20180230,
@@ -218,41 +175,6 @@
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180230.jpg",
       "Title": "来自多彩世界的明天"
-    },
-    {
-      "AID": 20190150,
-      "Href": "/detail/20190150",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190150.jpg",
-      "Title": "荒野的寿飞行队外传 天空的春风飞行队"
-    },
-    {
-      "AID": 20160071,
-      "Href": "/detail/20160071",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160071.jpg",
-      "Title": "动画锻炼！XX"
-    },
-    {
-      "AID": 20250152,
-      "Href": "/detail/20250152",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250152.jpg",
-      "Title": "彻夜之歌 第二季"
-    },
-    {
-      "AID": 20030022,
-      "Href": "/detail/20030022",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030022.jpg",
-      "Title": "星空清理者"
-    },
-    {
-      "AID": 20260024,
-      "Href": "/detail/20260024",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260024.jpg",
-      "Title": "咒术回战 死灭回游 前篇"
     }
   ],
   "player_label_arr": {

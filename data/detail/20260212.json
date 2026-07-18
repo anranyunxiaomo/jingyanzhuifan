@@ -89,50 +89,7 @@
     "collect_cnt": "190"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230196,
-      "Href": "/detail/20230196",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230196.jpg",
-      "Title": "魔法使的新娘 第二季 第2部分"
-    },
-    {
-      "AID": 20090050,
-      "Href": "/detail/20090050",
-      "NewTitle": "[BD 01-27]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090050.jpg",
-      "Title": "战斗司书"
-    },
-    {
-      "AID": 20210019,
-      "Href": "/detail/20210019",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210019.jpg",
-      "Title": "堀与宫村"
-    },
-    {
-      "AID": 20210227,
-      "Href": "/detail/20210227",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210227.jpg",
-      "Title": "叫我对大哥"
-    },
-    {
-      "AID": 20090004,
-      "Href": "/detail/20090004",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090004.jpg",
-      "Title": "好想告诉你"
-    },
-    {
-      "AID": 20000078,
-      "Href": "/detail/20000078",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000078.jpg",
-      "Title": "遗迹守护者"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

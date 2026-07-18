@@ -54,50 +54,7 @@
     "collect_cnt": "1,697"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230257,
-      "Href": "/detail/20230257",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230257.jpg",
-      "Title": "不死者之王 想要成为影之实力者 联动动画"
-    },
-    {
-      "AID": 20080085,
-      "Href": "/detail/20080085",
-      "NewTitle": "超清",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080085.jpg",
-      "Title": "少女杀手"
-    },
-    {
-      "AID": 20170256,
-      "Href": "/detail/20170256",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170256.jpg",
-      "Title": "生死一剑"
-    },
-    {
-      "AID": 20200264,
-      "Href": "/detail/20200264",
-      "NewTitle": "[WEB 13-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200264.jpg",
-      "Title": "武动乾坤 第二季"
-    },
-    {
-      "AID": 20220136,
-      "Href": "/detail/20220136",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220136.jpg",
-      "Title": "小小世界"
-    },
-    {
-      "AID": 20130098,
-      "Href": "/detail/20130098",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130098.jpg",
-      "Title": "High School D×D 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

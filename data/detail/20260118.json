@@ -437,50 +437,7 @@
     "collect_cnt": "691"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190192,
-      "Href": "/detail/20190192",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190192.jpg",
-      "Title": "少女☆寸剧 All Starlight"
-    },
-    {
-      "AID": 20210342,
-      "Href": "/detail/20210342",
-      "NewTitle": "50集第",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210342.jpg",
-      "Title": "假面骑士Revice"
-    },
-    {
-      "AID": 20240101,
-      "Href": "/detail/20240101",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240101.jpg",
-      "Title": "2.5次元的诱惑"
-    },
-    {
-      "AID": 20220259,
-      "Href": "/detail/20220259",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220259.jpg",
-      "Title": "开局一座山"
-    },
-    {
-      "AID": 20230176,
-      "Href": "/detail/20230176",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230176.jpg",
-      "Title": "帕底亚的课后时光"
-    },
-    {
-      "AID": 20210339,
-      "Href": "/detail/20210339",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210339.jpg",
-      "Title": "夏日幽灵"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

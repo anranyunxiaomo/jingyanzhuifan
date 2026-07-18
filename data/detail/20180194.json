@@ -76,50 +76,7 @@
     "collect_cnt": "4,244"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220302,
-      "Href": "/detail/20220302",
-      "NewTitle": "第86集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220302.jpg",
-      "Title": "剑仙在此"
-    },
-    {
-      "AID": 20230159,
-      "Href": "/detail/20230159",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230159.jpg",
-      "Title": "终末的女武神Ⅱ 后篇"
-    },
-    {
-      "AID": 20130122,
-      "Href": "/detail/20130122",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130122.jpg",
-      "Title": "海贼王TV版特别篇 梅利篇 另一名同伴的故事"
-    },
-    {
-      "AID": 20210055,
-      "Href": "/detail/20210055",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210055.jpg",
-      "Title": "文豪野犬 汪！"
-    },
-    {
-      "AID": 20120112,
-      "Href": "/detail/20120112",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120112.jpg",
-      "Title": "向阳素描×蜂窝"
-    },
-    {
-      "AID": 20160092,
-      "Href": "/detail/20160092",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160092.jpg",
-      "Title": "NEW GAME!"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

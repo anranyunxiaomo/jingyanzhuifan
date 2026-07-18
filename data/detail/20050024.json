@@ -180,50 +180,7 @@
     "collect_cnt": "435"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20120034,
-      "Href": "/detail/20120034",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120034.jpg",
-      "Title": "心理测量者"
-    },
-    {
-      "AID": 20170163,
-      "Href": "/detail/20170163",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170163.jpg",
-      "Title": "妖神记"
-    },
-    {
-      "AID": 20250201,
-      "Href": "/detail/20250201",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250201.jpg",
-      "Title": "跨越种族与你相恋"
-    },
-    {
-      "AID": 20230034,
-      "Href": "/detail/20230034",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230034.jpg",
-      "Title": "KJ FILE 续篇"
-    },
-    {
-      "AID": 20220051,
-      "Href": "/detail/20220051",
-      "NewTitle": "第12集，完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220051.jpg",
-      "Title": "因为是反派大小姐所以养了魔王"
-    },
-    {
-      "AID": 20070088,
-      "Href": "/detail/20070088",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070088.jpg",
-      "Title": "光明之泪X风"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

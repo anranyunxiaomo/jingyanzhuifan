@@ -273,50 +273,7 @@
     "collect_cnt": "4,114"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180300,
-      "Href": "/detail/20180300",
-      "NewTitle": "全集(后篇)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180300.jpg",
-      "Title": "笑对昙天 <外传> 后篇 ～樱华、天望的架桥～"
-    },
-    {
-      "AID": 20190368,
-      "Href": "/detail/20190368",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190368.jpg",
-      "Title": "疯狂梦幻城"
-    },
-    {
-      "AID": 20190266,
-      "Href": "/detail/20190266",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190266.jpg",
-      "Title": "独步星海"
-    },
-    {
-      "AID": 20170244,
-      "Href": "/detail/20170244",
-      "NewTitle": "[WEB 01-21]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170244.jpg",
-      "Title": "妖怪名单 第二季"
-    },
-    {
-      "AID": 20180127,
-      "Href": "/detail/20180127",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180127.jpg",
-      "Title": "高分少女"
-    },
-    {
-      "AID": 20250128,
-      "Href": "/detail/20250128",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250128.jpg",
-      "Title": "克雷瓦提斯-魔兽之王与婴儿与尸之勇者-"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

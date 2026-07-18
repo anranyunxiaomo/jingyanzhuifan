@@ -209,59 +209,8 @@
     "comment_cnt": "26",
     "collect_cnt": "556"
   },
-  "series": [
-    {
-      "AID": 20120055,
-      "Href": "/detail/20120055",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120055.jpg",
-      "Title": "最强会长黑神 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180347,
-      "Href": "/detail/20180347",
-      "NewTitle": "第96集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180347.jpg",
-      "Title": "非人哉"
-    },
-    {
-      "AID": 20120124,
-      "Href": "/detail/20120124",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120124.jpg",
-      "Title": "被狙击的学园"
-    },
-    {
-      "AID": 20190046,
-      "Href": "/detail/20190046",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190046.jpg",
-      "Title": "青春期笨蛋不做怀梦少女的梦"
-    },
-    {
-      "AID": 20190049,
-      "Href": "/detail/20190049",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190049.jpg",
-      "Title": "revisions"
-    },
-    {
-      "AID": 20200373,
-      "Href": "/detail/20200373",
-      "NewTitle": "第6话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200373.jpg",
-      "Title": "天地无用! 魉皇鬼 第五季"
-    },
-    {
-      "AID": 20220042,
-      "Href": "/detail/20220042",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220042.jpg",
-      "Title": "新人炼金术师的店铺经营"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -326,50 +326,7 @@
     "collect_cnt": "238"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190063,
-      "Href": "/detail/20190063",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190063.jpg",
-      "Title": "中学毕业劳动者开始高中生活"
-    },
-    {
-      "AID": 20150174,
-      "Href": "/detail/20150174",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150174.jpg",
-      "Title": "红壳的潘多拉剧场版"
-    },
-    {
-      "AID": 20130070,
-      "Href": "/detail/20130070",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130070.jpg",
-      "Title": "琴浦小姐"
-    },
-    {
-      "AID": 20120147,
-      "Href": "/detail/20120147",
-      "NewTitle": "第60集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120147.jpg",
-      "Title": "黑魔女学园"
-    },
-    {
-      "AID": 20210083,
-      "Href": "/detail/20210083",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210083.jpg",
-      "Title": "七骑士 革命 -英雄的继承者-"
-    },
-    {
-      "AID": 20200359,
-      "Href": "/detail/20200359",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200359.jpg",
-      "Title": "动态漫画·斗破苍穹 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

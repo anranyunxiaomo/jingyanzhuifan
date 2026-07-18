@@ -107,71 +107,14 @@
   },
   "series": [
     {
-      "AID": 20140141,
-      "Href": "/detail/20140141",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140141.jpg",
-      "Title": "告白实行委员会 嫉忌的答复"
-    },
-    {
       "AID": 20160070,
       "Href": "/detail/20160070",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20160070.jpg",
       "Title": "告白实行委员会剧场版 从很久以前就喜欢你了"
-    },
-    {
-      "AID": 20160210,
-      "Href": "/detail/20160210",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160210.jpg",
-      "Title": "告白实行委员会剧场版 喜欢上你的那个瞬间"
     }
   ],
-  "similar": [
-    {
-      "AID": 20230006,
-      "Href": "/detail/20230006",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230006.jpg",
-      "Title": "小鸟之翼 高尔夫少女 第二季"
-    },
-    {
-      "AID": 20200072,
-      "Href": "/detail/20200072",
-      "NewTitle": "第12集第",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200072.jpg",
-      "Title": "SSSS.DYNAZENON"
-    },
-    {
-      "AID": 20170029,
-      "Href": "/detail/20170029",
-      "NewTitle": "[TV 01-25]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170029.jpg",
-      "Title": "小魔女学园"
-    },
-    {
-      "AID": 20190192,
-      "Href": "/detail/20190192",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190192.jpg",
-      "Title": "少女☆寸剧 All Starlight"
-    },
-    {
-      "AID": 20220517,
-      "Href": "/detail/20220517",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220517.jpg",
-      "Title": "两不疑 第二季"
-    },
-    {
-      "AID": 20120028,
-      "Href": "/detail/20120028",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120028.jpg",
-      "Title": "来自新世界"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

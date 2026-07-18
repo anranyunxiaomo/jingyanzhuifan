@@ -262,71 +262,14 @@
   },
   "series": [
     {
-      "AID": 20130021,
-      "Href": "/detail/20130021",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130021.jpg",
-      "Title": "中二病也要谈恋爱！剧场版 小鸟游六花改"
-    },
-    {
       "AID": 20140037,
       "Href": "/detail/20140037",
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20140037.jpg",
       "Title": "中二病也要谈恋爱！ 第二季"
-    },
-    {
-      "AID": 20180203,
-      "Href": "/detail/20180203",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180203.jpg",
-      "Title": "中二病也要谈恋爱！剧场版 -Take On Me-"
     }
   ],
-  "similar": [
-    {
-      "AID": 20180055,
-      "Href": "/detail/20180055",
-      "NewTitle": "[TV 01-11]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180055.jpg",
-      "Title": "动态漫画·X-龙时代"
-    },
-    {
-      "AID": 20180147,
-      "Href": "/detail/20180147",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180147.jpg",
-      "Title": "千绪的通学路"
-    },
-    {
-      "AID": 20210194,
-      "Href": "/detail/20210194",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210194.jpg",
-      "Title": "武士弥助"
-    },
-    {
-      "AID": 20180341,
-      "Href": "/detail/20180341",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180341.jpg",
-      "Title": "无节操☆Bitch社"
-    },
-    {
-      "AID": 20090103,
-      "Href": "/detail/20090103",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090103.jpg",
-      "Title": "轻声密语"
-    },
-    {
-      "AID": 20190041,
-      "Href": "/detail/20190041",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190041.jpg",
-      "Title": "B-PROJECT 第二季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

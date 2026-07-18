@@ -374,50 +374,7 @@
     "collect_cnt": "1,354"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220161,
-      "Href": "/detail/20220161",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220161.jpg",
-      "Title": "生死诀 动态漫"
-    },
-    {
-      "AID": 20210154,
-      "Href": "/detail/20210154",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210154.jpg",
-      "Title": "异世界迷宫黑心企业"
-    },
-    {
-      "AID": 20120085,
-      "Href": "/detail/20120085",
-      "NewTitle": "[TV 00-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120085.jpg",
-      "Title": "轮回的拉格朗日 第二季"
-    },
-    {
-      "AID": 20130139,
-      "Href": "/detail/20130139",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130139.jpg",
-      "Title": "囮物语"
-    },
-    {
-      "AID": 20150083,
-      "Href": "/detail/20150083",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150083.jpg",
-      "Title": "DOG DAYS 第三季"
-    },
-    {
-      "AID": 20250158,
-      "Href": "/detail/20250158",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250158.jpg",
-      "Title": "拔作岛"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

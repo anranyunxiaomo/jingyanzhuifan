@@ -533,57 +533,14 @@
     "comment_cnt": "13",
     "collect_cnt": "95"
   },
-  "series": [
-    {
-      "AID": 20240193,
-      "Href": "/detail/20240193",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240193.jpg",
-      "Title": "青之壬生浪"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20130169,
-      "Href": "/detail/20130169",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130169.jpg",
-      "Title": "爱杀宝贝OVA"
-    },
-    {
-      "AID": 20190124,
-      "Href": "/detail/20190124",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190124.jpg",
-      "Title": "梦幻之星online2 EPISODE ORACLE"
-    },
-    {
-      "AID": 20220442,
-      "Href": "/detail/20220442",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220442.jpg",
-      "Title": "赛博朋克：边缘行者"
-    },
-    {
-      "AID": 20190065,
-      "Href": "/detail/20190065",
-      "NewTitle": "第3集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190065.jpg",
-      "Title": "一骑当千 Western Wolves"
-    },
     {
       "AID": 20170030,
       "Href": "/detail/20170030",
       "NewTitle": "第22集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20170030.jpg",
       "Title": "Re:CREATORS"
-    },
-    {
-      "AID": 20120135,
-      "Href": "/detail/20120135",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120135.jpg",
-      "Title": "坂道上的阿波罗"
     }
   ],
   "player_label_arr": {

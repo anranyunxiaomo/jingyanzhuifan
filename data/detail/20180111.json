@@ -284,50 +284,7 @@
     "collect_cnt": "314"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20110005,
-      "Href": "/detail/20110005",
-      "NewTitle": "[BD 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110005.jpg",
-      "Title": "绯弹的亚里亚"
-    },
-    {
-      "AID": 20160058,
-      "Href": "/detail/20160058",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160058.jpg",
-      "Title": "刀剑乱舞-花丸-"
-    },
-    {
-      "AID": 20230223,
-      "Href": "/detail/20230223",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230223.jpg",
-      "Title": "靠着魔法药水在异世界活下去！"
-    },
-    {
-      "AID": 20200152,
-      "Href": "/detail/20200152",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200152.jpg",
-      "Title": "动态漫画·斗破苍穹 第二季"
-    },
-    {
-      "AID": 20190307,
-      "Href": "/detail/20190307",
-      "NewTitle": "第114集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190307.jpg",
-      "Title": "系统逼我做皇后"
-    },
-    {
-      "AID": 20200248,
-      "Href": "/detail/20200248",
-      "NewTitle": "第09集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200248.jpg",
-      "Title": "巨人族的新娘"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -66,50 +66,7 @@
     "collect_cnt": "598"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170111,
-      "Href": "/detail/20170111",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170111.jpg",
-      "Title": "如果有妹妹就好了"
-    },
-    {
-      "AID": 20150101,
-      "Href": "/detail/20150101",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150101.jpg",
-      "Title": "K 第二季"
-    },
-    {
-      "AID": 20170042,
-      "Href": "/detail/20170042",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170042.jpg",
-      "Title": "徒然喜欢你"
-    },
-    {
-      "AID": 20180122,
-      "Href": "/detail/20180122",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180122.jpg",
-      "Title": "一脸嫌弃表情的妹子给你看胖次"
-    },
-    {
-      "AID": 20230162,
-      "Href": "/detail/20230162",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230162.jpg",
-      "Title": "画江湖之不良人 第六季"
-    },
-    {
-      "AID": 20130005,
-      "Href": "/detail/20130005",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130005.jpg",
-      "Title": "我的脑内恋碍选项"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

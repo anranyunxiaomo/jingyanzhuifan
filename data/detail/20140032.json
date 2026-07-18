@@ -231,87 +231,8 @@
     "comment_cnt": "720",
     "collect_cnt": "1.05w"
   },
-  "series": [
-    {
-      "AID": 20150060,
-      "Href": "/detail/20150060",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150060.jpg",
-      "Title": "东京喰种 第二季"
-    },
-    {
-      "AID": 20150061,
-      "Href": "/detail/20150061",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150061.jpg",
-      "Title": "东京喰种 JACK"
-    },
-    {
-      "AID": 20150145,
-      "Href": "/detail/20150145",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150145.jpg",
-      "Title": "东京喰种 PINTO"
-    },
-    {
-      "AID": 20180077,
-      "Href": "/detail/20180077",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180077.jpg",
-      "Title": "东京喰种:RE"
-    },
-    {
-      "AID": 20180129,
-      "Href": "/detail/20180129",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180129.jpg",
-      "Title": "东京喰种:RE 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220284,
-      "Href": "/detail/20220284",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220284.jpg",
-      "Title": "勇者死了！"
-    },
-    {
-      "AID": 20120135,
-      "Href": "/detail/20120135",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120135.jpg",
-      "Title": "坂道上的阿波罗"
-    },
-    {
-      "AID": 20170043,
-      "Href": "/detail/20170043",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170043.jpg",
-      "Title": "捏造陷阱-NTR-"
-    },
-    {
-      "AID": 20230160,
-      "Href": "/detail/20230160",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230160.jpg",
-      "Title": "时光代理人 第二季"
-    },
-    {
-      "AID": 20200287,
-      "Href": "/detail/20200287",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200287.jpg",
-      "Title": "剃须。然后捡到女高中生"
-    },
-    {
-      "AID": 20190153,
-      "Href": "/detail/20190153",
-      "NewTitle": "第7集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190153.jpg",
-      "Title": "怪物弹珠新系列 亚瑟王 骑士王的觉醒"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

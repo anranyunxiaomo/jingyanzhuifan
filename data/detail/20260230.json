@@ -128,50 +128,7 @@
     "collect_cnt": "86"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210095,
-      "Href": "/detail/20210095",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210095.jpg",
-      "Title": "女帝的后宫"
-    },
-    {
-      "AID": 20240135,
-      "Href": "/detail/20240135",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240135.jpg",
-      "Title": "棉花糖女孩遇上闷骚男孩"
-    },
-    {
-      "AID": 20160236,
-      "Href": "/detail/20160236",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160236.jpg",
-      "Title": "择天记 第二季"
-    },
-    {
-      "AID": 20120045,
-      "Href": "/detail/20120045",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120045.jpg",
-      "Title": "军火女王 第二季"
-    },
-    {
-      "AID": 20220109,
-      "Href": "/detail/20220109",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220109.jpg",
-      "Title": "组长女儿与照料专员"
-    },
-    {
-      "AID": 20150022,
-      "Href": "/detail/20150022",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150022.jpg",
-      "Title": "干物妹！小埋"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

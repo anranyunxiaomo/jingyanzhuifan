@@ -275,57 +275,14 @@
     "comment_cnt": "215",
     "collect_cnt": "3,445"
   },
-  "series": [
-    {
-      "AID": 20190003,
-      "Href": "/detail/20190003",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190003.jpg",
-      "Title": "冰上的尤里剧场版 ICE ADOLESCENCE"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20140164,
-      "Href": "/detail/20140164",
-      "NewTitle": "[OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140164.jpg",
-      "Title": "樱花树下的时间胶囊"
-    },
-    {
-      "AID": 20160136,
-      "Href": "/detail/20160136",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160136.jpg",
-      "Title": "舞武器舞乱伎"
-    },
-    {
-      "AID": 20210042,
-      "Href": "/detail/20210042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210042.jpg",
-      "Title": "暗芝居 第八季"
-    },
     {
       "AID": 20200252,
       "Href": "/detail/20200252",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20200252.jpg",
       "Title": "VLAD LOVE"
-    },
-    {
-      "AID": 20110071,
-      "Href": "/detail/20110071",
-      "NewTitle": "[TV 01-11]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110071.jpg",
-      "Title": "未来都市NO.6"
-    },
-    {
-      "AID": 20210298,
-      "Href": "/detail/20210298",
-      "NewTitle": "第21集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210298.jpg",
-      "Title": "猫灵相册"
     }
   ],
   "player_label_arr": {

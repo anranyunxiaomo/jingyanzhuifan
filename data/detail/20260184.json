@@ -119,99 +119,14 @@
     "comment_cnt": "5",
     "collect_cnt": "82"
   },
-  "series": [
-    {
-      "AID": 20160134,
-      "Href": "/detail/20160134",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160134.jpg",
-      "Title": "文豪野犬"
-    },
-    {
-      "AID": 20160135,
-      "Href": "/detail/20160135",
-      "NewTitle": "第12集+OVA(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160135.jpg",
-      "Title": "文豪野犬 第二季"
-    },
-    {
-      "AID": 20180204,
-      "Href": "/detail/20180204",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180204.jpg",
-      "Title": "文豪野犬剧场版 DEAD APPLE"
-    },
-    {
-      "AID": 20190005,
-      "Href": "/detail/20190005",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190005.jpg",
-      "Title": "文豪野犬 第三季"
-    },
-    {
-      "AID": 20210055,
-      "Href": "/detail/20210055",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210055.jpg",
-      "Title": "文豪野犬 汪！"
-    },
-    {
-      "AID": 20230010,
-      "Href": "/detail/20230010",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230010.jpg",
-      "Title": "文豪野犬 第四季"
-    },
-    {
-      "AID": 20230136,
-      "Href": "/detail/20230136",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230136.jpg",
-      "Title": "文豪野犬 第五季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20130155,
-      "Href": "/detail/20130155",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130155.jpg",
-      "Title": "独眼巨人少女斎枫"
-    },
-    {
-      "AID": 20210266,
-      "Href": "/detail/20210266",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210266.jpg",
-      "Title": "搜玄录之宸灵纪"
-    },
     {
       "AID": 20260091,
       "Href": "/detail/20260091",
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260091.jpg",
       "Title": "租借女友 第五季"
-    },
-    {
-      "AID": 20220372,
-      "Href": "/detail/20220372",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220372.jpg",
-      "Title": "剑网3·侠肝义胆沈剑心 第三季"
-    },
-    {
-      "AID": 20170111,
-      "Href": "/detail/20170111",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170111.jpg",
-      "Title": "如果有妹妹就好了"
-    },
-    {
-      "AID": 20040055,
-      "Href": "/detail/20040055",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040055.jpg",
-      "Title": "幸福花园"
     }
   ],
   "player_label_arr": {

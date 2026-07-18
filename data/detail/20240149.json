@@ -582,46 +582,11 @@
   "series": [],
   "similar": [
     {
-      "AID": 20250116,
-      "Href": "/detail/20250116",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250116.jpg",
-      "Title": "明天，美食广场见。"
-    },
-    {
-      "AID": 20130143,
-      "Href": "/detail/20130143",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130143.jpg",
-      "Title": "超神游戏"
-    },
-    {
-      "AID": 20150188,
-      "Href": "/detail/20150188",
-      "NewTitle": "[OVA 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150188.jpg",
-      "Title": "快盗天使 新OVA"
-    },
-    {
-      "AID": 20070018,
-      "Href": "/detail/20070018",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070018.jpg",
-      "Title": "海贼王剧场版 沙漠的王女与海贼们"
-    },
-    {
       "AID": 20260067,
       "Href": "/detail/20260067",
       "NewTitle": "第12集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260067.jpg",
       "Title": "北斗神拳 -FIST OF THE NORTH STAR-"
-    },
-    {
-      "AID": 20010003,
-      "Href": "/detail/20010003",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20010003.jpg",
-      "Title": "星际牛仔 天国之扉"
     }
   ],
   "player_label_arr": {

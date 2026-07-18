@@ -520,50 +520,7 @@
     "collect_cnt": "140"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170061,
-      "Href": "/detail/20170061",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170061.jpg",
-      "Title": "裙子里面是野兽"
-    },
-    {
-      "AID": 20220180,
-      "Href": "/detail/20220180",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220180.jpg",
-      "Title": "天籁人偶"
-    },
-    {
-      "AID": 20130102,
-      "Href": "/detail/20130102",
-      "NewTitle": "第26集+3OVA(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130102.jpg",
-      "Title": "虫奉行"
-    },
-    {
-      "AID": 20220209,
-      "Href": "/detail/20220209",
-      "NewTitle": "第60集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220209.jpg",
-      "Title": "我的修真靠抽卡 第二季"
-    },
-    {
-      "AID": 20210400,
-      "Href": "/detail/20210400",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210400.jpg",
-      "Title": "KAGARI HIBANA"
-    },
-    {
-      "AID": 20120063,
-      "Href": "/detail/20120063",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120063.jpg",
-      "Title": "TARI TARI"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

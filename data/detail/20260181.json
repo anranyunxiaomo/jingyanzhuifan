@@ -138,59 +138,8 @@
       }
     ]
   },
-  "series": [
-    {
-      "AID": 20260046,
-      "Href": "/detail/20260046",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260046.jpg",
-      "Title": "相反的你和我"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20170212,
-      "Href": "/detail/20170212",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170212.jpg",
-      "Title": "境界之轮回 第三季"
-    },
-    {
-      "AID": 20250037,
-      "Href": "/detail/20250037",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250037.jpg",
-      "Title": "嘻嘻嘻嘻吸血鬼"
-    },
-    {
-      "AID": 20100018,
-      "Href": "/detail/20100018",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100018.jpg",
-      "Title": "黑礁 第三季"
-    },
-    {
-      "AID": 20200170,
-      "Href": "/detail/20200170",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200170.jpg",
-      "Title": "星游记之风暴法米拉2"
-    },
-    {
-      "AID": 20210020,
-      "Href": "/detail/20210020",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210020.jpg",
-      "Title": "怪病医拉姆尼"
-    },
-    {
-      "AID": 20170283,
-      "Href": "/detail/20170283",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170283.jpg",
-      "Title": "冰海精灵的灯光"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

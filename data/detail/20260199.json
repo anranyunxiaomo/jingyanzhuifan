@@ -118,50 +118,7 @@
     "collect_cnt": "167"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210342,
-      "Href": "/detail/20210342",
-      "NewTitle": "50集第",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210342.jpg",
-      "Title": "假面骑士Revice"
-    },
-    {
-      "AID": 20250225,
-      "Href": "/detail/20250225",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250225.jpg",
-      "Title": "婚戒物语 第二季"
-    },
-    {
-      "AID": 20100073,
-      "Href": "/detail/20100073",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100073.jpg",
-      "Title": "魔晶石☆魔法少女"
-    },
-    {
-      "AID": 20250086,
-      "Href": "/detail/20250086",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250086.jpg",
-      "Title": "炎炎消防队 三之章"
-    },
-    {
-      "AID": 20080091,
-      "Href": "/detail/20080091",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080091.jpg",
-      "Title": "幻影少年"
-    },
-    {
-      "AID": 20250150,
-      "Href": "/detail/20250150",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250150.jpg",
-      "Title": "气绝勇者与暗杀公主"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

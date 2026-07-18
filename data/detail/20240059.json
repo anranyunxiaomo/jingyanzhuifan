@@ -529,59 +529,8 @@
     "comment_cnt": "1,105",
     "collect_cnt": "6,763"
   },
-  "series": [
-    {
-      "AID": 20240207,
-      "Href": "/detail/20240207",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240207.jpg",
-      "Title": "转生贵族凭鉴定技能扭转人生 第二季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20180364,
-      "Href": "/detail/20180364",
-      "NewTitle": "第36集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180364.jpg",
-      "Title": "萌妻食神"
-    },
-    {
-      "AID": 20250042,
-      "Href": "/detail/20250042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250042.jpg",
-      "Title": "金牌得主"
-    },
-    {
-      "AID": 20240008,
-      "Href": "/detail/20240008",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240008.jpg",
-      "Title": "怪异与少女与神隐"
-    },
-    {
-      "AID": 20160275,
-      "Href": "/detail/20160275",
-      "NewTitle": "第11集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160275.jpg",
-      "Title": "我的三体之罗辑传"
-    },
-    {
-      "AID": 20080029,
-      "Href": "/detail/20080029",
-      "NewTitle": "第18集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080029.jpg",
-      "Title": "秦时明月之夜尽天明"
-    },
-    {
-      "AID": 20040054,
-      "Href": "/detail/20040054",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040054.jpg",
-      "Title": "亲爱一族"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

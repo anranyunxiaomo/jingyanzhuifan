@@ -121,59 +121,8 @@
     "comment_cnt": "5",
     "collect_cnt": "240"
   },
-  "series": [
-    {
-      "AID": 20050035,
-      "Href": "/detail/20050035",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050035.jpg",
-      "Title": "最终兵器彼女 Another love song"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220037,
-      "Href": "/detail/20220037",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220037.jpg",
-      "Title": "相合之物"
-    },
-    {
-      "AID": 20200047,
-      "Href": "/detail/20200047",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200047.jpg",
-      "Title": "KING OF PRISM ALL STARS -Prism Show☆Best Ten-"
-    },
-    {
-      "AID": 20190135,
-      "Href": "/detail/20190135",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190135.jpg",
-      "Title": "BAKUMATSU CRISIS"
-    },
-    {
-      "AID": 20200275,
-      "Href": "/detail/20200275",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200275.jpg",
-      "Title": "你是彼方"
-    },
-    {
-      "AID": 20220312,
-      "Href": "/detail/20220312",
-      "NewTitle": "第12话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220312.jpg",
-      "Title": "攻壳机动队 SAC_2045 第二季"
-    },
-    {
-      "AID": 20140012,
-      "Href": "/detail/20140012",
-      "NewTitle": "[TV 01-20]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140012.jpg",
-      "Title": "伪恋"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

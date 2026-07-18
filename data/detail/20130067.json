@@ -190,57 +190,14 @@
     "comment_cnt": "42",
     "collect_cnt": "1,481"
   },
-  "series": [
-    {
-      "AID": 20180219,
-      "Href": "/detail/20180219",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180219.jpg",
-      "Title": "闪乱神乐 第二季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20000057,
-      "Href": "/detail/20000057",
-      "NewTitle": "第24集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000057.jpg",
-      "Title": "钢铁天使久留美"
-    },
-    {
-      "AID": 20130181,
-      "Href": "/detail/20130181",
-      "NewTitle": "第10集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130181.jpg",
-      "Title": "馒头日记"
-    },
     {
       "AID": 20050016,
       "Href": "/detail/20050016",
       "NewTitle": "第24集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20050016.jpg",
       "Title": "增血鬼果林"
-    },
-    {
-      "AID": 20240129,
-      "Href": "/detail/20240129",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240129.jpg",
-      "Title": "高尔夫物语 第一季"
-    },
-    {
-      "AID": 20200156,
-      "Href": "/detail/20200156",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200156.jpg",
-      "Title": "顺其自然的日子"
-    },
-    {
-      "AID": 20150200,
-      "Href": "/detail/20150200",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150200.jpg",
-      "Title": "女高中生给你做饭了！"
     }
   ],
   "player_label_arr": {

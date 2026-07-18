@@ -90,20 +90,6 @@
   },
   "series": [
     {
-      "AID": 20200012,
-      "Href": "/detail/20200012",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200012.jpg",
-      "Title": "无职转生 ～在异世界认真地活下去～"
-    },
-    {
-      "AID": 20210327,
-      "Href": "/detail/20210327",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210327.jpg",
-      "Title": "无职转生～到了异世界就拿出真本事～ 第2部分"
-    },
-    {
       "AID": 20220248,
       "Href": "/detail/20220248",
       "NewTitle": "第12集(完结)",
@@ -111,50 +97,7 @@
       "Title": "无职转生Ⅱ ～到了异世界就拿出真本事～"
     }
   ],
-  "similar": [
-    {
-      "AID": 20160088,
-      "Href": "/detail/20160088",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160088.jpg",
-      "Title": "魔法少女育成计划"
-    },
-    {
-      "AID": 20150200,
-      "Href": "/detail/20150200",
-      "NewTitle": "第26集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150200.jpg",
-      "Title": "女高中生给你做饭了！"
-    },
-    {
-      "AID": 20030046,
-      "Href": "/detail/20030046",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030046.jpg",
-      "Title": "星星公主"
-    },
-    {
-      "AID": 20250262,
-      "Href": "/detail/20250262",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250262.jpg",
-      "Title": "远井同学想度过青春！"
-    },
-    {
-      "AID": 20220087,
-      "Href": "/detail/20220087",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220087.jpg",
-      "Title": "总之就是非常可爱 第二季"
-    },
-    {
-      "AID": 20200114,
-      "Href": "/detail/20200114",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200114.jpg",
-      "Title": "Healin' Good 光之美少女"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

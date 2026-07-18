@@ -172,50 +172,7 @@
     "collect_cnt": "445"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20130090,
-      "Href": "/detail/20130090",
-      "NewTitle": "[TV 00-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130090.jpg",
-      "Title": "境界的彼方"
-    },
-    {
-      "AID": 20150171,
-      "Href": "/detail/20150171",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150171.jpg",
-      "Title": "摇曳百合 夏日时光！+"
-    },
-    {
-      "AID": 20200042,
-      "Href": "/detail/20200042",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200042.jpg",
-      "Title": "音乐"
-    },
-    {
-      "AID": 20170245,
-      "Href": "/detail/20170245",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170245.jpg",
-      "Title": "择天记 第三季"
-    },
-    {
-      "AID": 20200316,
-      "Href": "/detail/20200316",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200316.jpg",
-      "Title": "刀使巫女 刻印一闪的灯火"
-    },
-    {
-      "AID": 20220445,
-      "Href": "/detail/20220445",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220445.jpg",
-      "Title": "独行月球"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

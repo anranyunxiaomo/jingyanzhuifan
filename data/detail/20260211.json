@@ -118,50 +118,7 @@
     "collect_cnt": "555"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20060009,
-      "Href": "/detail/20060009",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060009.jpg",
-      "Title": "Fate/stay night"
-    },
-    {
-      "AID": 20200121,
-      "Href": "/detail/20200121",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200121.jpg",
-      "Title": "王者天下 第三季"
-    },
-    {
-      "AID": 20220256,
-      "Href": "/detail/20220256",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220256.jpg",
-      "Title": "神印王座外传大龟甲师 动态漫"
-    },
-    {
-      "AID": 20120129,
-      "Href": "/detail/20120129",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120129.jpg",
-      "Title": "妖精的尾巴剧场版 凤凰巫女"
-    },
-    {
-      "AID": 20050007,
-      "Href": "/detail/20050007",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050007.jpg",
-      "Title": "魔法少女奈叶A's"
-    },
-    {
-      "AID": 20200187,
-      "Href": "/detail/20200187",
-      "NewTitle": "第148话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200187.jpg",
-      "Title": "闪亮美妙☆频道 第三季"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -159,66 +159,8 @@
     "comment_cnt": "119",
     "collect_cnt": "4,231"
   },
-  "series": [
-    {
-      "AID": 20060006,
-      "Href": "/detail/20060006",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060006.jpg",
-      "Title": "黑礁 第二季"
-    },
-    {
-      "AID": 20100018,
-      "Href": "/detail/20100018",
-      "NewTitle": "第5集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100018.jpg",
-      "Title": "黑礁 第三季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20090096,
-      "Href": "/detail/20090096",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090096.jpg",
-      "Title": "大正野球娘。"
-    },
-    {
-      "AID": 20180168,
-      "Href": "/detail/20180168",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180168.jpg",
-      "Title": "LORD of VERMILION 红莲之王"
-    },
-    {
-      "AID": 20220385,
-      "Href": "/detail/20220385",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220385.jpg",
-      "Title": "彼得·格里尔的贤者时间 第二季"
-    },
-    {
-      "AID": 20170089,
-      "Href": "/detail/20170089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170089.jpg",
-      "Title": "此花亭奇谭"
-    },
-    {
-      "AID": 20170260,
-      "Href": "/detail/20170260",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170260.jpg",
-      "Title": "快盗天使BREAK"
-    },
-    {
-      "AID": 20130192,
-      "Href": "/detail/20130192",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130192.jpg",
-      "Title": "AURA ～魔龙院光牙最后的战斗～"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

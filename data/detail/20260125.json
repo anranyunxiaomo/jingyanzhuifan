@@ -374,50 +374,7 @@
     "collect_cnt": "509"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20090017,
-      "Href": "/detail/20090017",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090017.jpg",
-      "Title": "游魂 -Kiss on my Deity-"
-    },
-    {
-      "AID": 20150106,
-      "Href": "/detail/20150106",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150106.jpg",
-      "Title": "黑白小姐 第二季"
-    },
-    {
-      "AID": 20160082,
-      "Href": "/detail/20160082",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160082.jpg",
-      "Title": "幸运逻辑"
-    },
-    {
-      "AID": 20230071,
-      "Href": "/detail/20230071",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230071.jpg",
-      "Title": "小哥斯拉的逆袭"
-    },
-    {
-      "AID": 20200088,
-      "Href": "/detail/20200088",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200088.jpg",
-      "Title": "缘结熊本"
-    },
-    {
-      "AID": 20210058,
-      "Href": "/detail/20210058",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210058.jpg",
-      "Title": "武动乾坤 九重符塔"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

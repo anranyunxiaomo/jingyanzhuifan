@@ -126,50 +126,7 @@
     "collect_cnt": "104"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20170054,
-      "Href": "/detail/20170054",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170054.jpg",
-      "Title": "骑士&魔法"
-    },
-    {
-      "AID": 20230326,
-      "Href": "/detail/20230326",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230326.jpg",
-      "Title": "剧场版 间谍过家家 代号：白"
-    },
-    {
-      "AID": 20070010,
-      "Href": "/detail/20070010",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070010.jpg",
-      "Title": "悠久之翼"
-    },
-    {
-      "AID": 20200152,
-      "Href": "/detail/20200152",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200152.jpg",
-      "Title": "动态漫画·斗破苍穹 第二季"
-    },
-    {
-      "AID": 20060051,
-      "Href": "/detail/20060051",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060051.jpg",
-      "Title": "穿越时空的少女"
-    },
-    {
-      "AID": 20000088,
-      "Href": "/detail/20000088",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000088.jpg",
-      "Title": "攻壳机动队"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

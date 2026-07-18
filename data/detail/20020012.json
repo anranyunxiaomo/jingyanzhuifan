@@ -197,78 +197,14 @@
     "comment_cnt": "18",
     "collect_cnt": "748"
   },
-  "series": [
-    {
-      "AID": 20030014,
-      "Href": "/detail/20030014",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030014.jpg",
-      "Title": "圆盘皇女 十二月的夜想曲"
-    },
-    {
-      "AID": 20030015,
-      "Href": "/detail/20030015",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030015.jpg",
-      "Title": "圆盘皇女 乱七八糟新娘训练"
-    },
-    {
-      "AID": 20050028,
-      "Href": "/detail/20050028",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050028.jpg",
-      "Title": "圆盘皇女 星灵节的新娘"
-    },
-    {
-      "AID": 20060030,
-      "Href": "/detail/20060030",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060030.jpg",
-      "Title": "圆盘皇女 时空与梦与银河之宴"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20230255,
-      "Href": "/detail/20230255",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230255.jpg",
-      "Title": "拾荒者的统治"
-    },
-    {
-      "AID": 20250156,
-      "Href": "/detail/20250156",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250156.jpg",
-      "Title": "渡君的xx即将崩坏"
-    },
-    {
-      "AID": 20150107,
-      "Href": "/detail/20150107",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150107.jpg",
-      "Title": "黑白小姐 第三季"
-    },
-    {
-      "AID": 20150098,
-      "Href": "/detail/20150098",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150098.jpg",
-      "Title": "心理测量者剧场版"
-    },
     {
       "AID": 20120070,
       "Href": "/detail/20120070",
       "NewTitle": "[TV 01-12+OVA]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20120070.jpg",
       "Title": "三人行必有我妹"
-    },
-    {
-      "AID": 20170076,
-      "Href": "/detail/20170076",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170076.jpg",
-      "Title": "我的英雄学院 第二季"
     }
   ],
   "player_label_arr": {

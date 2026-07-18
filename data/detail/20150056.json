@@ -192,15 +192,7 @@
     "comment_cnt": "213",
     "collect_cnt": "2,369"
   },
-  "series": [
-    {
-      "AID": 20140019,
-      "Href": "/detail/20140019",
-      "NewTitle": "[OAD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140019.jpg",
-      "Title": "山田君与7人魔女OAD"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20190123,
@@ -215,34 +207,6 @@
       "NewTitle": "PV",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260181.jpg",
       "Title": "相反的你和我 第二季"
-    },
-    {
-      "AID": 20240064,
-      "Href": "/detail/20240064",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240064.jpg",
-      "Title": "圣斗士星矢：黄道十二宫战士 战斗圣域 Part 2"
-    },
-    {
-      "AID": 20240013,
-      "Href": "/detail/20240013",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240013.jpg",
-      "Title": "我回来了，欢迎回来"
-    },
-    {
-      "AID": 20180351,
-      "Href": "/detail/20180351",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180351.jpg",
-      "Title": "万古仙穹 第二季"
-    },
-    {
-      "AID": 20190052,
-      "Href": "/detail/20190052",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190052.jpg",
-      "Title": "一个人的〇〇小日子"
     }
   ],
   "player_label_arr": {

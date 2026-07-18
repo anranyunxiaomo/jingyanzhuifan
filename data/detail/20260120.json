@@ -431,58 +431,8 @@
     "comment_cnt": "96",
     "collect_cnt": "334"
   },
-  "series": [
-    {
-      "AID": 20230122,
-      "Href": "/detail/20230122",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230122.jpg",
-      "Title": "转生成自动贩卖机的我今天也在迷宫徘徊"
-    },
-    {
-      "AID": 20250130,
-      "Href": "/detail/20250130",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250130.jpg",
-      "Title": "转生成自动贩卖机的我今天也在迷宫徘徊 第二季"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20260012,
-      "Href": "/detail/20260012",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260012.jpg",
-      "Title": "阿尔涅的事件簿"
-    },
-    {
-      "AID": 20250244,
-      "Href": "/detail/20250244",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250244.jpg",
-      "Title": "迪士尼扭曲仙境"
-    },
-    {
-      "AID": 20090074,
-      "Href": "/detail/20090074",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090074.jpg",
-      "Title": "忏·再见！绝望老师 番外地"
-    },
-    {
-      "AID": 20150164,
-      "Href": "/detail/20150164",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150164.jpg",
-      "Title": "百花缭乱 SAMURAI AFTER"
-    },
-    {
-      "AID": 20200140,
-      "Href": "/detail/20200140",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200140.jpg",
-      "Title": "名侦探柯南剧场版 绯色的弹丸"
-    },
     {
       "AID": 20130006,
       "Href": "/detail/20130006",

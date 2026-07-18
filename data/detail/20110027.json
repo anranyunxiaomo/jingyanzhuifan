@@ -174,50 +174,7 @@
     "collect_cnt": "2,784"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190302,
-      "Href": "/detail/20190302",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190302.jpg",
-      "Title": "巨虫列岛OAD"
-    },
-    {
-      "AID": 20200174,
-      "Href": "/detail/20200174",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200174.jpg",
-      "Title": "刃牙 第二季"
-    },
-    {
-      "AID": 20200158,
-      "Href": "/detail/20200158",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200158.jpg",
-      "Title": "水果篮子 第二季"
-    },
-    {
-      "AID": 20220287,
-      "Href": "/detail/20220287",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220287.jpg",
-      "Title": "我才不会被女孩子欺负呢 动态漫"
-    },
-    {
-      "AID": 20120139,
-      "Href": "/detail/20120139",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120139.jpg",
-      "Title": "模型姐妹"
-    },
-    {
-      "AID": 20000017,
-      "Href": "/detail/20000017",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000017.jpg",
-      "Title": "新世纪福音战士"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -536,50 +536,7 @@
     "collect_cnt": "197"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20140203,
-      "Href": "/detail/20140203",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140203.jpg",
-      "Title": "眷恋你的温柔"
-    },
-    {
-      "AID": 20210431,
-      "Href": "/detail/20210431",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210431.jpg",
-      "Title": "动态漫画·我能看到成功率 第三季"
-    },
-    {
-      "AID": 20210316,
-      "Href": "/detail/20210316",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210316.jpg",
-      "Title": "蓝色时期"
-    },
-    {
-      "AID": 20040035,
-      "Href": "/detail/20040035",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040035.jpg",
-      "Title": "仙境传说"
-    },
-    {
-      "AID": 20220414,
-      "Href": "/detail/20220414",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220414.jpg",
-      "Title": "明日方舟 黎明前奏"
-    },
-    {
-      "AID": 20150028,
-      "Href": "/detail/20150028",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150028.jpg",
-      "Title": "对魔导学园35试验小队"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

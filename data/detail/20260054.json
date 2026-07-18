@@ -468,50 +468,7 @@
     "collect_cnt": "139"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240017,
-      "Href": "/detail/20240017",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240017.jpg",
-      "Title": "无名记忆"
-    },
-    {
-      "AID": 20200296,
-      "Href": "/detail/20200296",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200296.jpg",
-      "Title": "泰迦奥特曼剧场版 新生代之巅 普通话版"
-    },
-    {
-      "AID": 20130188,
-      "Href": "/detail/20130188",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130188.jpg",
-      "Title": "革神语"
-    },
-    {
-      "AID": 20000089,
-      "Href": "/detail/20000089",
-      "NewTitle": "第39集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000089.jpg",
-      "Title": "蓝宝石之谜"
-    },
-    {
-      "AID": 20050025,
-      "Href": "/detail/20050025",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050025.jpg",
-      "Title": "出云战记"
-    },
-    {
-      "AID": 20190421,
-      "Href": "/detail/20190421",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190421.jpg",
-      "Title": "歌之王子殿下 真爱王国"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

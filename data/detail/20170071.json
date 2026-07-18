@@ -77,20 +77,6 @@
   },
   "series": [
     {
-      "AID": 20120038,
-      "Href": "/detail/20120038",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120038.jpg",
-      "Title": "刀剑神域"
-    },
-    {
-      "AID": 20130137,
-      "Href": "/detail/20130137",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130137.jpg",
-      "Title": "刀剑神域 Extra Edition"
-    },
-    {
       "AID": 20140086,
       "Href": "/detail/20140086",
       "NewTitle": "第24集(完结)",
@@ -98,97 +84,20 @@
       "Title": "刀剑神域 第二季"
     },
     {
-      "AID": 20170140,
-      "Href": "/detail/20170140",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170140.jpg",
-      "Title": "刀剑神域外传 Gun Gale Online"
-    },
-    {
       "AID": 20180246,
       "Href": "/detail/20180246",
       "NewTitle": "[TV 01-24]",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20180246.jpg",
       "Title": "刀剑神域 Alicization篇"
-    },
-    {
-      "AID": 20190181,
-      "Href": "/detail/20190181",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190181.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld"
-    },
-    {
-      "AID": 20200123,
-      "Href": "/detail/20200123",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200123.jpg",
-      "Title": "刀剑神域 Alicization篇 War of Underworld 第二季"
-    },
-    {
-      "AID": 20210026,
-      "Href": "/detail/20210026",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210026.jpg",
-      "Title": "刀剑神域 进击篇 无星之夜的咏叹调"
-    },
-    {
-      "AID": 20220085,
-      "Href": "/detail/20220085",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220085.jpg",
-      "Title": "刀剑神域 进击篇 黯淡黄昏的谐谑曲"
-    },
-    {
-      "AID": 20230254,
-      "Href": "/detail/20230254",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230254.jpg",
-      "Title": "刀剑神域10周年纪念 Sword Art Online -FULLDIVE-"
     }
   ],
   "similar": [
-    {
-      "AID": 20200376,
-      "Href": "/detail/20200376",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200376.jpg",
-      "Title": "西行纪之再见悟空"
-    },
     {
       "AID": 20140099,
       "Href": "/detail/20140099",
       "NewTitle": "第13集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20140099.jpg",
       "Title": "搞姬日常"
-    },
-    {
-      "AID": 20110014,
-      "Href": "/detail/20110014",
-      "NewTitle": "第25集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110014.jpg",
-      "Title": "青之驱魔师"
-    },
-    {
-      "AID": 20170043,
-      "Href": "/detail/20170043",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170043.jpg",
-      "Title": "捏造陷阱-NTR-"
-    },
-    {
-      "AID": 20230052,
-      "Href": "/detail/20230052",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230052.jpg",
-      "Title": "伸向天空！光之美少女"
-    },
-    {
-      "AID": 20240160,
-      "Href": "/detail/20240160",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240160.jpg",
-      "Title": "殿下与狗"
     }
   ],
   "player_label_arr": {

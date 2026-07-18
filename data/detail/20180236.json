@@ -63,69 +63,6 @@
   },
   "series": [
     {
-      "AID": 20030001,
-      "Href": "/detail/20030001",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030001.jpg",
-      "Title": "三角心～Sweet Songs Forever～"
-    },
-    {
-      "AID": 20040002,
-      "Href": "/detail/20040002",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040002.jpg",
-      "Title": "魔法少女奈叶"
-    },
-    {
-      "AID": 20050007,
-      "Href": "/detail/20050007",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050007.jpg",
-      "Title": "魔法少女奈叶A's"
-    },
-    {
-      "AID": 20070017,
-      "Href": "/detail/20070017",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070017.jpg",
-      "Title": "魔法少女奈叶StrikerS"
-    },
-    {
-      "AID": 20100037,
-      "Href": "/detail/20100037",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100037.jpg",
-      "Title": "魔法少女奈叶 The MOVIE 1st"
-    },
-    {
-      "AID": 20120089,
-      "Href": "/detail/20120089",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120089.jpg",
-      "Title": "魔法少女奈叶 The MOVIE 2nd A's"
-    },
-    {
-      "AID": 20150143,
-      "Href": "/detail/20150143",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150143.jpg",
-      "Title": "魔法少女奈叶ViVid"
-    },
-    {
-      "AID": 20160099,
-      "Href": "/detail/20160099",
-      "NewTitle": "[TV 01-12+OVA]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160099.jpg",
-      "Title": "魔法少女奈叶ViVid Strike!"
-    },
-    {
-      "AID": 20170217,
-      "Href": "/detail/20170217",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170217.jpg",
-      "Title": "魔法少女奈叶 Reflection"
-    },
-    {
       "AID": 20260170,
       "Href": "/detail/20260170",
       "NewTitle": "第01集",
@@ -140,41 +77,6 @@
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20170046.jpg",
       "Title": "Urara迷路帖"
-    },
-    {
-      "AID": 20160078,
-      "Href": "/detail/20160078",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160078.jpg",
-      "Title": "羁绊者"
-    },
-    {
-      "AID": 20260137,
-      "Href": "/detail/20260137",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260137.jpg",
-      "Title": "名侦探柯南 高速公路的堕天使"
-    },
-    {
-      "AID": 20160044,
-      "Href": "/detail/20160044",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160044.jpg",
-      "Title": "春&夏推理事件簿～春太与千夏的青春～"
-    },
-    {
-      "AID": 20210300,
-      "Href": "/detail/20210300",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210300.jpg",
-      "Title": "Healin' Good 光之美少女 梦想的小镇心动不已！GoGo！大变身！！"
-    },
-    {
-      "AID": 20180339,
-      "Href": "/detail/20180339",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180339.jpg",
-      "Title": "四海鲸骑"
     }
   ],
   "player_label_arr": {

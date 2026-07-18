@@ -212,50 +212,7 @@
     "collect_cnt": "3,248"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20220275,
-      "Href": "/detail/20220275",
-      "NewTitle": "第26话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220275.jpg",
-      "Title": "动态漫画·斗罗大陆2 绝世唐门 第四季"
-    },
-    {
-      "AID": 20250050,
-      "Href": "/detail/20250050",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250050.jpg",
-      "Title": "全修。"
-    },
-    {
-      "AID": 20170089,
-      "Href": "/detail/20170089",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170089.jpg",
-      "Title": "此花亭奇谭"
-    },
-    {
-      "AID": 20210213,
-      "Href": "/detail/20210213",
-      "NewTitle": "第60集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210213.jpg",
-      "Title": "绝世武神 第三季"
-    },
-    {
-      "AID": 20250101,
-      "Href": "/detail/20250101",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250101.jpg",
-      "Title": "前桥魔女"
-    },
-    {
-      "AID": 20210420,
-      "Href": "/detail/20210420",
-      "NewTitle": "第156集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210420.jpg",
-      "Title": "冰火魔厨"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

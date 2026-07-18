@@ -1793,50 +1793,7 @@
     "collect_cnt": "394"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210071,
-      "Href": "/detail/20210071",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210071.jpg",
-      "Title": "伍六七之玄武国篇"
-    },
-    {
-      "AID": 20130017,
-      "Href": "/detail/20130017",
-      "NewTitle": "[TV 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130017.jpg",
-      "Title": "我女友与青梅竹马的惨烈修罗场"
-    },
-    {
-      "AID": 20230055,
-      "Href": "/detail/20230055",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230055.jpg",
-      "Title": "群马酱 第二季"
-    },
-    {
-      "AID": 20210048,
-      "Href": "/detail/20210048",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210048.jpg",
-      "Title": "圣女魔力无所不能"
-    },
-    {
-      "AID": 20000004,
-      "Href": "/detail/20000004",
-      "NewTitle": "第1140话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000004.jpg",
-      "Title": "樱桃小丸子 第二季"
-    },
-    {
-      "AID": 20060002,
-      "Href": "/detail/20060002",
-      "NewTitle": "第13话",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060002.jpg",
-      "Title": "零之使魔"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

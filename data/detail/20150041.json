@@ -161,50 +161,7 @@
     "collect_cnt": "541"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230055,
-      "Href": "/detail/20230055",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230055.jpg",
-      "Title": "群马酱 第二季"
-    },
-    {
-      "AID": 20260145,
-      "Href": "/detail/20260145",
-      "NewTitle": "暂缺",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260145.jpg",
-      "Title": "百姓贵族 第四季"
-    },
-    {
-      "AID": 20170145,
-      "Href": "/detail/20170145",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170145.jpg",
-      "Title": "分解世界 第二季(49%的灵魂)"
-    },
-    {
-      "AID": 20190342,
-      "Href": "/detail/20190342",
-      "NewTitle": "[TV 01-48]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190342.jpg",
-      "Title": "超级小白"
-    },
-    {
-      "AID": 20210064,
-      "Href": "/detail/20210064",
-      "NewTitle": "第7集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210064.jpg",
-      "Title": "魁拔之殊途"
-    },
-    {
-      "AID": 20200012,
-      "Href": "/detail/20200012",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200012.jpg",
-      "Title": "无职转生 ～在异世界认真地活下去～"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

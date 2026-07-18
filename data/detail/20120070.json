@@ -170,50 +170,7 @@
     "collect_cnt": "3,421"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230240,
-      "Href": "/detail/20230240",
-      "NewTitle": "PV",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230240.jpg",
-      "Title": "全力兔子"
-    },
-    {
-      "AID": 20040050,
-      "Href": "/detail/20040050",
-      "NewTitle": "[DVD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040050.jpg",
-      "Title": "向北"
-    },
-    {
-      "AID": 20210292,
-      "Href": "/detail/20210292",
-      "NewTitle": "第55集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210292.jpg",
-      "Title": "铁姬钢兵 第二季"
-    },
-    {
-      "AID": 20220405,
-      "Href": "/detail/20220405",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220405.jpg",
-      "Title": "食草老龙被冠以恶龙之名"
-    },
-    {
-      "AID": 20120136,
-      "Href": "/detail/20120136",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120136.jpg",
-      "Title": "To Heart2 迷宫旅人"
-    },
-    {
-      "AID": 20060084,
-      "Href": "/detail/20060084",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060084.jpg",
-      "Title": "Happiness!"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

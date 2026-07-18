@@ -426,57 +426,14 @@
     "comment_cnt": "141",
     "collect_cnt": "637"
   },
-  "series": [
-    {
-      "AID": 20230133,
-      "Href": "/detail/20230133",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230133.jpg",
-      "Title": "身为悲剧始作俑者的最强邪恶BOSS女王为民竭心尽力。"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20160114,
-      "Href": "/detail/20160114",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160114.jpg",
-      "Title": "失忆煽动WIXOSS"
-    },
-    {
-      "AID": 20070013,
-      "Href": "/detail/20070013",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070013.jpg",
-      "Title": "赌博默示录"
-    },
     {
       "AID": 20220523,
       "Href": "/detail/20220523",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20220523.jpg",
       "Title": "铃芽之旅"
-    },
-    {
-      "AID": 20150170,
-      "Href": "/detail/20150170",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150170.jpg",
-      "Title": "摇曳百合 夏日时光！"
-    },
-    {
-      "AID": 20210234,
-      "Href": "/detail/20210234",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210234.jpg",
-      "Title": "眷思量"
-    },
-    {
-      "AID": 20060035,
-      "Href": "/detail/20060035",
-      "NewTitle": "第05集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060035.jpg",
-      "Title": "圣母在上 第三季"
     }
   ],
   "player_label_arr": {

@@ -84,50 +84,7 @@
     "collect_cnt": "2,914"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20250039,
-      "Href": "/detail/20250039",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250039.jpg",
-      "Title": "喜欢的冲绳妹说方言"
-    },
-    {
-      "AID": 20110128,
-      "Href": "/detail/20110128",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110128.jpg",
-      "Title": "神样DOLLS"
-    },
-    {
-      "AID": 20140081,
-      "Href": "/detail/20140081",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140081.jpg",
-      "Title": "RAIL WARS!"
-    },
-    {
-      "AID": 20190345,
-      "Href": "/detail/20190345",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190345.jpg",
-      "Title": "墨生的地心世界"
-    },
-    {
-      "AID": 20190141,
-      "Href": "/detail/20190141",
-      "NewTitle": "[TV 52-102]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190141.jpg",
-      "Title": "闪亮美妙☆频道 第二季"
-    },
-    {
-      "AID": 20140196,
-      "Href": "/detail/20140196",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140196.jpg",
-      "Title": "玉响～more aggressive～ OVA"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

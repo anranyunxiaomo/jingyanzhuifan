@@ -108,50 +108,7 @@
     "collect_cnt": "304"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20210279,
-      "Href": "/detail/20210279",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210279.jpg",
-      "Title": "Visual Prison"
-    },
-    {
-      "AID": 20170201,
-      "Href": "/detail/20170201",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170201.jpg",
-      "Title": "兽娘动物园"
-    },
-    {
-      "AID": 20180125,
-      "Href": "/detail/20180125",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180125.jpg",
-      "Title": "骸骨书店员本田君"
-    },
-    {
-      "AID": 20180350,
-      "Href": "/detail/20180350",
-      "NewTitle": "第40集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180350.jpg",
-      "Title": "妖神记之影妖篇"
-    },
-    {
-      "AID": 20190340,
-      "Href": "/detail/20190340",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190340.jpg",
-      "Title": "嚣张狂妃"
-    },
-    {
-      "AID": 20250260,
-      "Href": "/detail/20250260",
-      "NewTitle": "第49集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250260.jpg",
-      "Title": "头号战队豪兽者"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

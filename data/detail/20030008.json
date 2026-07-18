@@ -419,99 +419,14 @@
     "comment_cnt": "73",
     "collect_cnt": "1,249"
   },
-  "series": [
-    {
-      "AID": 20050014,
-      "Href": "/detail/20050014",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050014.jpg",
-      "Title": "初音岛 第二季"
-    },
-    {
-      "AID": 20070034,
-      "Href": "/detail/20070034",
-      "NewTitle": "[BD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070034.jpg",
-      "Title": "初音岛2"
-    },
-    {
-      "AID": 20080039,
-      "Href": "/detail/20080039",
-      "NewTitle": "[BD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080039.jpg",
-      "Title": "初音岛2 S.S."
-    },
-    {
-      "AID": 20080041,
-      "Href": "/detail/20080041",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080041.jpg",
-      "Title": "初音岛 if"
-    },
-    {
-      "AID": 20100056,
-      "Href": "/detail/20100056",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100056.jpg",
-      "Title": "初音岛I&II P.S.P. RE-ANIMATED"
-    },
-    {
-      "AID": 20110082,
-      "Href": "/detail/20110082",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110082.jpg",
-      "Title": "T.P.樱"
-    },
-    {
-      "AID": 20130136,
-      "Href": "/detail/20130136",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130136.jpg",
-      "Title": "初音岛3"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20120044,
-      "Href": "/detail/20120044",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120044.jpg",
-      "Title": "军火女王"
-    },
-    {
-      "AID": 20130126,
-      "Href": "/detail/20130126",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130126.jpg",
-      "Title": "魔法少女小圆剧场版 [新篇] 叛逆的物语"
-    },
-    {
-      "AID": 20180347,
-      "Href": "/detail/20180347",
-      "NewTitle": "第96集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180347.jpg",
-      "Title": "非人哉"
-    },
     {
       "AID": 20150062,
       "Href": "/detail/20150062",
       "NewTitle": "全集",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20150062.jpg",
       "Title": "约会大作战剧场版 万由里裁决"
-    },
-    {
-      "AID": 20120105,
-      "Href": "/detail/20120105",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120105.jpg",
-      "Title": "境界线上的地平线 第二季"
-    },
-    {
-      "AID": 20000120,
-      "Href": "/detail/20000120",
-      "NewTitle": "第03集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000120.jpg",
-      "Title": "诅咒的连衣裙"
     }
   ],
   "player_label_arr": {

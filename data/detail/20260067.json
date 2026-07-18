@@ -506,41 +506,6 @@
   },
   "series": [
     {
-      "AID": 20000102,
-      "Href": "/detail/20000102",
-      "NewTitle": "第152集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000102.jpg",
-      "Title": "北斗神拳"
-    },
-    {
-      "AID": 20080078,
-      "Href": "/detail/20080078",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080078.jpg",
-      "Title": "北斗神拳拉欧外传-天之霸王"
-    },
-    {
-      "AID": 20180087,
-      "Href": "/detail/20180087",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180087.jpg",
-      "Title": "苍天之拳 REGENESIS"
-    },
-    {
-      "AID": 20180240,
-      "Href": "/detail/20180240",
-      "NewTitle": "第14集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180240.jpg",
-      "Title": "苍天之拳 REGENESIS 第二季"
-    },
-    {
-      "AID": 20260001,
-      "Href": "/detail/20260001",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260001.jpg",
-      "Title": "北斗神拳 拳王军杂兵们的挽歌"
-    },
-    {
       "AID": 20260232,
       "Href": "/detail/20260232",
       "NewTitle": "第02集",
@@ -548,50 +513,7 @@
       "Title": "北斗神拳 拳王军杂兵们的挽歌 第2季"
     }
   ],
-  "similar": [
-    {
-      "AID": 20250062,
-      "Href": "/detail/20250062",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250062.jpg",
-      "Title": "正义使者 -我的英雄学院之非法英雄-"
-    },
-    {
-      "AID": 20190254,
-      "Href": "/detail/20190254",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190254.jpg",
-      "Title": "银翼战刃"
-    },
-    {
-      "AID": 20210205,
-      "Href": "/detail/20210205",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210205.jpg",
-      "Title": "迦希女王不会放弃"
-    },
-    {
-      "AID": 20210087,
-      "Href": "/detail/20210087",
-      "NewTitle": "第78集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210087.jpg",
-      "Title": "逆天邪神 第二季"
-    },
-    {
-      "AID": 20200111,
-      "Href": "/detail/20200111",
-      "NewTitle": "[WEB 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200111.jpg",
-      "Title": "解药"
-    },
-    {
-      "AID": 20190021,
-      "Href": "/detail/20190021",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190021.jpg",
-      "Title": "格林笔记"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

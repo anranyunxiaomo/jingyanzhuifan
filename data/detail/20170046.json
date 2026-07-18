@@ -162,50 +162,7 @@
     "collect_cnt": "1,904"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200111,
-      "Href": "/detail/20200111",
-      "NewTitle": "[WEB 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200111.jpg",
-      "Title": "解药"
-    },
-    {
-      "AID": 20220229,
-      "Href": "/detail/20220229",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220229.jpg",
-      "Title": "幕末替身传说"
-    },
-    {
-      "AID": 20160255,
-      "Href": "/detail/20160255",
-      "NewTitle": "第45集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160255.jpg",
-      "Title": "假面骑士艾克赛德"
-    },
-    {
-      "AID": 20120128,
-      "Href": "/detail/20120128",
-      "NewTitle": "第39集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120128.jpg",
-      "Title": "卡片战斗先导者 第二季"
-    },
-    {
-      "AID": 20180060,
-      "Href": "/detail/20180060",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180060.jpg",
-      "Title": "废柴王子"
-    },
-    {
-      "AID": 20200007,
-      "Href": "/detail/20200007",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200007.jpg",
-      "Title": "突击莉莉 BOUQUET"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

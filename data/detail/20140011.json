@@ -329,80 +329,8 @@
     "comment_cnt": "389",
     "collect_cnt": "6,338"
   },
-  "series": [
-    {
-      "AID": 20150019,
-      "Href": "/detail/20150019",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150019.jpg",
-      "Title": "灰色的迷宫"
-    },
-    {
-      "AID": 20150020,
-      "Href": "/detail/20150020",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150020.jpg",
-      "Title": "灰色的乐园"
-    },
-    {
-      "AID": 20180142,
-      "Href": "/detail/20180142",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180142.jpg",
-      "Title": "灰色幻影扳机"
-    },
-    {
-      "AID": 20200266,
-      "Href": "/detail/20200266",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200266.jpg",
-      "Title": "灰色幻影扳机 STARGAZER"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20220203,
-      "Href": "/detail/20220203",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220203.jpg",
-      "Title": "鬼灭之刃 第三季(锻刀村篇)"
-    },
-    {
-      "AID": 20190041,
-      "Href": "/detail/20190041",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190041.jpg",
-      "Title": "B-PROJECT 第二季"
-    },
-    {
-      "AID": 20110129,
-      "Href": "/detail/20110129",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110129.jpg",
-      "Title": "森田同学很沉默"
-    },
-    {
-      "AID": 20210388,
-      "Href": "/detail/20210388",
-      "NewTitle": "第46集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210388.jpg",
-      "Title": "炼体十万层：都市篇 动态漫画"
-    },
-    {
-      "AID": 20220383,
-      "Href": "/detail/20220383",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220383.jpg",
-      "Title": "4个人各自有着自己的秘密"
-    },
-    {
-      "AID": 20220192,
-      "Href": "/detail/20220192",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220192.jpg",
-      "Title": "海岬的迷家"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

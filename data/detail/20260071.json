@@ -397,50 +397,7 @@
     "collect_cnt": "1,314"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20180269,
-      "Href": "/detail/20180269",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180269.jpg",
-      "Title": "恶魔偶像"
-    },
-    {
-      "AID": 20210205,
-      "Href": "/detail/20210205",
-      "NewTitle": "第20集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210205.jpg",
-      "Title": "迦希女王不会放弃"
-    },
-    {
-      "AID": 20220280,
-      "Href": "/detail/20220280",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220280.jpg",
-      "Title": "动态漫画·炼气练了三千年 第二季"
-    },
-    {
-      "AID": 20210389,
-      "Href": "/detail/20210389",
-      "NewTitle": "第328集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210389.jpg",
-      "Title": "妖神记 第五季"
-    },
-    {
-      "AID": 20190133,
-      "Href": "/detail/20190133",
-      "NewTitle": "[TV 01-52]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190133.jpg",
-      "Title": "钻石王牌 act2"
-    },
-    {
-      "AID": 20220315,
-      "Href": "/detail/20220315",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220315.jpg",
-      "Title": "西行纪 动态漫"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

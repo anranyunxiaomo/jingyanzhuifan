@@ -201,57 +201,14 @@
     "comment_cnt": "298",
     "collect_cnt": "6,515"
   },
-  "series": [
-    {
-      "AID": 20180133,
-      "Href": "/detail/20180133",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180133.jpg",
-      "Title": "摇曳庄的幽奈小姐OAD"
-    }
-  ],
+  "series": [],
   "similar": [
-    {
-      "AID": 20180119,
-      "Href": "/detail/20180119",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180119.jpg",
-      "Title": "SWORD GAI 装刀凯"
-    },
     {
       "AID": 20260232,
       "Href": "/detail/20260232",
       "NewTitle": "PV",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260232.jpg",
       "Title": "北斗神拳 拳王军杂兵们的挽歌 第2季"
-    },
-    {
-      "AID": 20140127,
-      "Href": "/detail/20140127",
-      "NewTitle": "[TV 01-10+OAD]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140127.jpg",
-      "Title": "恋爱舞台"
-    },
-    {
-      "AID": 20220200,
-      "Href": "/detail/20220200",
-      "NewTitle": "第16集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220200.jpg",
-      "Title": "令和的Di Gi Charat"
-    },
-    {
-      "AID": 20250108,
-      "Href": "/detail/20250108",
-      "NewTitle": "第1集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250108.jpg",
-      "Title": "双胞胎阳奈妃莉"
-    },
-    {
-      "AID": 20180202,
-      "Href": "/detail/20180202",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180202.jpg",
-      "Title": "学园BASARA"
     }
   ],
   "player_label_arr": {

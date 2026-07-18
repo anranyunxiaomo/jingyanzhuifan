@@ -95,29 +95,7 @@
     "comment_cnt": "25",
     "collect_cnt": "1,161"
   },
-  "series": [
-    {
-      "AID": 20050020,
-      "Href": "/detail/20050020",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050020.jpg",
-      "Title": "蔷薇少女 梦之终结"
-    },
-    {
-      "AID": 20060023,
-      "Href": "/detail/20060023",
-      "NewTitle": "第2集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060023.jpg",
-      "Title": "蔷薇少女 序曲"
-    },
-    {
-      "AID": 20130144,
-      "Href": "/detail/20130144",
-      "NewTitle": "[BD 01-13]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130144.jpg",
-      "Title": "蔷薇少女(2013)"
-    }
-  ],
+  "series": [],
   "similar": [
     {
       "AID": 20260102,
@@ -125,41 +103,6 @@
       "NewTitle": "第12集(完结)",
       "PicSmall": "https://cdn.aqdstatic.com:966/age/20260102.jpg",
       "Title": "当前、正被打扰中！"
-    },
-    {
-      "AID": 20110059,
-      "Href": "/detail/20110059",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110059.jpg",
-      "Title": "日常"
-    },
-    {
-      "AID": 20210339,
-      "Href": "/detail/20210339",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210339.jpg",
-      "Title": "夏日幽灵"
-    },
-    {
-      "AID": 20220255,
-      "Href": "/detail/20220255",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220255.jpg",
-      "Title": "我的美好婚事"
-    },
-    {
-      "AID": 20260217,
-      "Href": "/detail/20260217",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260217.jpg",
-      "Title": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～"
-    },
-    {
-      "AID": 20020003,
-      "Href": "/detail/20020003",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20020003.jpg",
-      "Title": "海贼王剧场版 珍兽岛之乔巴王国"
     }
   ],
   "player_label_arr": {

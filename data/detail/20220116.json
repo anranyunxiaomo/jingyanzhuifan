@@ -518,50 +518,7 @@
     "collect_cnt": "2,347"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20110110,
-      "Href": "/detail/20110110",
-      "NewTitle": "第33集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110110.jpg",
-      "Title": "超兽武装之仁者无敌"
-    },
-    {
-      "AID": 20150094,
-      "Href": "/detail/20150094",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150094.jpg",
-      "Title": "魔鬼恋人OAD"
-    },
-    {
-      "AID": 20190351,
-      "Href": "/detail/20190351",
-      "NewTitle": "第54集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190351.jpg",
-      "Title": "漫动画·食色大陆"
-    },
-    {
-      "AID": 20210299,
-      "Href": "/detail/20210299",
-      "NewTitle": "第42集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210299.jpg",
-      "Title": "霹雳兵烽决之碧血玄黄"
-    },
-    {
-      "AID": 20200369,
-      "Href": "/detail/20200369",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200369.jpg",
-      "Title": "鬼灭之刃特别编集版 柱合会议・蝶屋敷篇"
-    },
-    {
-      "AID": 20210131,
-      "Href": "/detail/20210131",
-      "NewTitle": "HD",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210131.jpg",
-      "Title": "新・福音战士剧场版：终"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

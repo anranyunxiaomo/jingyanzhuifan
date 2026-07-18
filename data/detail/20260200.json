@@ -87,50 +87,7 @@
     "collect_cnt": "149"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160249,
-      "Href": "/detail/20160249",
-      "NewTitle": "第10集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160249.jpg",
-      "Title": "超神学院 第四季(黑甲)"
-    },
-    {
-      "AID": 20210438,
-      "Href": "/detail/20210438",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210438.jpg",
-      "Title": "手机里的浣熊小镇"
-    },
-    {
-      "AID": 20120143,
-      "Href": "/detail/20120143",
-      "NewTitle": "第13集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120143.jpg",
-      "Title": "爱杀宝贝"
-    },
-    {
-      "AID": 20260123,
-      "Href": "/detail/20260123",
-      "NewTitle": "第06集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260123.jpg",
-      "Title": "一脸嫌弃表情的妹子给你看胖次R"
-    },
-    {
-      "AID": 20210316,
-      "Href": "/detail/20210316",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210316.jpg",
-      "Title": "蓝色时期"
-    },
-    {
-      "AID": 20220194,
-      "Href": "/detail/20220194",
-      "NewTitle": "第22话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220194.jpg",
-      "Title": "快穿之顶级反派要洗白 动态漫"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

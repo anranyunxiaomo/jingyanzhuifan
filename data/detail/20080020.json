@@ -514,59 +514,8 @@
     "comment_cnt": "95",
     "collect_cnt": "2,762"
   },
-  "series": [
-    {
-      "AID": 20140114,
-      "Href": "/detail/20140114",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140114.jpg",
-      "Title": "噬魂师NOT！"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20060048,
-      "Href": "/detail/20060048",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20060048.jpg",
-      "Title": "不要撒娇呦!! 喝!!"
-    },
-    {
-      "AID": 20190302,
-      "Href": "/detail/20190302",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190302.jpg",
-      "Title": "巨虫列岛OAD"
-    },
-    {
-      "AID": 20000275,
-      "Href": "/detail/20000275",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000275.jpg",
-      "Title": "闪电陷阱 蕾娜&莱卡"
-    },
-    {
-      "AID": 20200120,
-      "Href": "/detail/20200120",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200120.jpg",
-      "Title": "座敷童子榻榻米酱"
-    },
-    {
-      "AID": 20200141,
-      "Href": "/detail/20200141",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200141.jpg",
-      "Title": "战翼的希格德莉法"
-    },
-    {
-      "AID": 20110002,
-      "Href": "/detail/20110002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110002.jpg",
-      "Title": "我的朋友很少"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

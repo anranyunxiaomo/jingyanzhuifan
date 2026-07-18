@@ -481,50 +481,7 @@
     "collect_cnt": "2,368"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20030003,
-      "Href": "/detail/20030003",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030003.jpg",
-      "Title": "海贼王剧场版 死亡尽头的冒险"
-    },
-    {
-      "AID": 20180149,
-      "Href": "/detail/20180149",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180149.jpg",
-      "Title": "战栗杀机"
-    },
-    {
-      "AID": 20190186,
-      "Href": "/detail/20190186",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190186.jpg",
-      "Title": "BEM"
-    },
-    {
-      "AID": 20220530,
-      "Href": "/detail/20220530",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220530.jpg",
-      "Title": "致深爱你的那个我"
-    },
-    {
-      "AID": 20230146,
-      "Href": "/detail/20230146",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230146.jpg",
-      "Title": "谎言游戏"
-    },
-    {
-      "AID": 20190131,
-      "Href": "/detail/20190131",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190131.jpg",
-      "Title": "七人魔法使剧场版 -天空图书馆与真红的魔王-"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

@@ -106,50 +106,7 @@
     "collect_cnt": "417"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20190262,
-      "Href": "/detail/20190262",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190262.jpg",
-      "Title": "天华百剑 ～欢迎来到铭治馆！～"
-    },
-    {
-      "AID": 20200019,
-      "Href": "/detail/20200019",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200019.jpg",
-      "Title": "Fate/stay night Heaven's Feel III.spring song"
-    },
-    {
-      "AID": 20220429,
-      "Href": "/detail/20220429",
-      "NewTitle": "已完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220429.jpg",
-      "Title": "非人哉 第二季"
-    },
-    {
-      "AID": 20240129,
-      "Href": "/detail/20240129",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240129.jpg",
-      "Title": "高尔夫物语 第一季"
-    },
-    {
-      "AID": 20200202,
-      "Href": "/detail/20200202",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200202.jpg",
-      "Title": "恋与制作人"
-    },
-    {
-      "AID": 20210379,
-      "Href": "/detail/20210379",
-      "NewTitle": "第41集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210379.jpg",
-      "Title": "不白吃话山海经"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

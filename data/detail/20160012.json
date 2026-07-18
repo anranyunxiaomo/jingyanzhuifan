@@ -114,73 +114,8 @@
     "comment_cnt": "56",
     "collect_cnt": "341"
   },
-  "series": [
-    {
-      "AID": 20140132,
-      "Href": "/detail/20140132",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140132.jpg",
-      "Title": "情热传说 导师的黎明"
-    },
-    {
-      "AID": 20170005,
-      "Href": "/detail/20170005",
-      "NewTitle": "[TV 14-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170005.jpg",
-      "Title": "情热传说 the X 第二季"
-    },
-    {
-      "AID": 20180210,
-      "Href": "/detail/20180210",
-      "NewTitle": "第05集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180210.jpg",
-      "Title": "班会传说"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20190173,
-      "Href": "/detail/20190173",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190173.jpg",
-      "Title": "关于我转生变成史莱姆这档事OAD"
-    },
-    {
-      "AID": 20220339,
-      "Href": "/detail/20220339",
-      "NewTitle": "第30集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220339.jpg",
-      "Title": "虫生 动态漫"
-    },
-    {
-      "AID": 20180080,
-      "Href": "/detail/20180080",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180080.jpg",
-      "Title": "甜蜜惩罚"
-    },
-    {
-      "AID": 20190057,
-      "Href": "/detail/20190057",
-      "NewTitle": "[TV 01-24]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190057.jpg",
-      "Title": "歌牌情缘 第三季"
-    },
-    {
-      "AID": 20030042,
-      "Href": "/detail/20030042",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20030042.jpg",
-      "Title": "暗与帽子与书之旅人"
-    },
-    {
-      "AID": 20160260,
-      "Href": "/detail/20160260",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160260.jpg",
-      "Title": "伯纳德小姐说。"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

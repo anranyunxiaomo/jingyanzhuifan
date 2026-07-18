@@ -155,13 +155,6 @@
   },
   "series": [
     {
-      "AID": 20220529,
-      "Href": "/detail/20220529",
-      "NewTitle": "第02集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220529.jpg",
-      "Title": "BanG Dream! Morfonication"
-    },
-    {
       "AID": 20250209,
       "Href": "/detail/20250209",
       "NewTitle": "第40集",
@@ -169,50 +162,7 @@
       "Title": "元祖！BanG Dream Chan"
     }
   ],
-  "similar": [
-    {
-      "AID": 20140128,
-      "Href": "/detail/20140128",
-      "NewTitle": "第4集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140128.jpg",
-      "Title": "凭物语"
-    },
-    {
-      "AID": 20210015,
-      "Href": "/detail/20210015",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210015.jpg",
-      "Title": "赛马娘 Pretty Derby 第二季"
-    },
-    {
-      "AID": 20170264,
-      "Href": "/detail/20170264",
-      "NewTitle": "第49集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170264.jpg",
-      "Title": "假面骑士创骑"
-    },
-    {
-      "AID": 20100086,
-      "Href": "/detail/20100086",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100086.jpg",
-      "Title": "恋爱暴君OVA"
-    },
-    {
-      "AID": 20210342,
-      "Href": "/detail/20210342",
-      "NewTitle": "50集第",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210342.jpg",
-      "Title": "假面骑士Revice"
-    },
-    {
-      "AID": 20140090,
-      "Href": "/detail/20140090",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140090.jpg",
-      "Title": "元气囝仔"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

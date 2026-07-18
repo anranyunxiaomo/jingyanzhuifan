@@ -457,50 +457,7 @@
       "Title": "葬送的芙莉莲"
     }
   ],
-  "similar": [
-    {
-      "AID": 20220448,
-      "Href": "/detail/20220448",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220448.jpg",
-      "Title": "剑风传奇 黄金时代篇 MEMORIAL EDITION"
-    },
-    {
-      "AID": 20240105,
-      "Href": "/detail/20240105",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240105.jpg",
-      "Title": "古连泰沙U"
-    },
-    {
-      "AID": 20200310,
-      "Href": "/detail/20200310",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200310.jpg",
-      "Title": "黄金神威 第三季"
-    },
-    {
-      "AID": 20220150,
-      "Href": "/detail/20220150",
-      "NewTitle": "第3话(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220150.jpg",
-      "Title": "龙隐于雪"
-    },
-    {
-      "AID": 20190332,
-      "Href": "/detail/20190332",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190332.jpg",
-      "Title": "全职高手之巅峰荣耀"
-    },
-    {
-      "AID": 20230083,
-      "Href": "/detail/20230083",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230083.jpg",
-      "Title": "绊之Allele"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

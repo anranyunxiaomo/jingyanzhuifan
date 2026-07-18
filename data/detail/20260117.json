@@ -520,50 +520,7 @@
     "collect_cnt": "386"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20230119,
-      "Href": "/detail/20230119",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230119.jpg",
-      "Title": "幻日的夜羽"
-    },
-    {
-      "AID": 20230116,
-      "Href": "/detail/20230116",
-      "NewTitle": "完结",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230116.jpg",
-      "Title": "公司的小小前辈"
-    },
-    {
-      "AID": 20200193,
-      "Href": "/detail/20200193",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200193.jpg",
-      "Title": "妖神记之黑狱篇"
-    },
-    {
-      "AID": 20050034,
-      "Href": "/detail/20050034",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050034.jpg",
-      "Title": "七彩的素描"
-    },
-    {
-      "AID": 20230122,
-      "Href": "/detail/20230122",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230122.jpg",
-      "Title": "转生成自动贩卖机的我今天也在迷宫徘徊"
-    },
-    {
-      "AID": 20190358,
-      "Href": "/detail/20190358",
-      "NewTitle": "第6集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20190358.jpg",
-      "Title": "齐木楠雄的灾难 始动篇"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

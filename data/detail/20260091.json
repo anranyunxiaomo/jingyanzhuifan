@@ -476,80 +476,8 @@
     "comment_cnt": "291",
     "collect_cnt": "1,240"
   },
-  "series": [
-    {
-      "AID": 20200137,
-      "Href": "/detail/20200137",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200137.jpg",
-      "Title": "租借女友"
-    },
-    {
-      "AID": 20220002,
-      "Href": "/detail/20220002",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220002.jpg",
-      "Title": "租借女友 第二季"
-    },
-    {
-      "AID": 20230118,
-      "Href": "/detail/20230118",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230118.jpg",
-      "Title": "租借女友 第三季"
-    },
-    {
-      "AID": 20250159,
-      "Href": "/detail/20250159",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20250159.jpg",
-      "Title": "租借女友 第四季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20100070,
-      "Href": "/detail/20100070",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20100070.jpg",
-      "Title": "向阳素描×☆☆☆ 特别篇"
-    },
-    {
-      "AID": 20260138,
-      "Href": "/detail/20260138",
-      "NewTitle": "第1集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260138.jpg",
-      "Title": "在异世界获得超强能力的我，在现实世界照样无敌～等级提升改变人生命运～ SP"
-    },
-    {
-      "AID": 20160145,
-      "Href": "/detail/20160145",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160145.jpg",
-      "Title": "圣洁天使"
-    },
-    {
-      "AID": 20140009,
-      "Href": "/detail/20140009",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20140009.jpg",
-      "Title": "ALDNOAH.ZERO"
-    },
-    {
-      "AID": 20150192,
-      "Href": "/detail/20150192",
-      "NewTitle": "第22集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20150192.jpg",
-      "Title": "精灵宝可梦剧场版合集"
-    },
-    {
-      "AID": 20160256,
-      "Href": "/detail/20160256",
-      "NewTitle": "暂无",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160256.jpg",
-      "Title": "怪物弹珠 THE MOVIE 前往起始之地"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

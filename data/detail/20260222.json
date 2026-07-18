@@ -90,50 +90,7 @@
     "collect_cnt": "61"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20130170,
-      "Href": "/detail/20130170",
-      "NewTitle": "第12集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130170.jpg",
-      "Title": "玉响～more aggressive～"
-    },
-    {
-      "AID": 20220085,
-      "Href": "/detail/20220085",
-      "NewTitle": "全集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220085.jpg",
-      "Title": "刀剑神域 进击篇 黯淡黄昏的谐谑曲"
-    },
-    {
-      "AID": 20230138,
-      "Href": "/detail/20230138",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230138.jpg",
-      "Title": "政宗君的复仇R"
-    },
-    {
-      "AID": 20070095,
-      "Href": "/detail/20070095",
-      "NewTitle": "第26集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20070095.jpg",
-      "Title": "小女神花铃"
-    },
-    {
-      "AID": 20260027,
-      "Href": "/detail/20260027",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260027.jpg",
-      "Title": "蘑菇魔女"
-    },
-    {
-      "AID": 20240197,
-      "Href": "/detail/20240197",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240197.jpg",
-      "Title": "魔王2099"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

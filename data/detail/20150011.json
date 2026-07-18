@@ -209,59 +209,8 @@
     "comment_cnt": "30",
     "collect_cnt": "544"
   },
-  "series": [
-    {
-      "AID": 20160071,
-      "Href": "/detail/20160071",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160071.jpg",
-      "Title": "动画锻炼！XX"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20120023,
-      "Href": "/detail/20120023",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20120023.jpg",
-      "Title": "元气少女缘结神"
-    },
-    {
-      "AID": 20170091,
-      "Href": "/detail/20170091",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170091.jpg",
-      "Title": "TSUKIPRO THE ANIMATION"
-    },
-    {
-      "AID": 20110107,
-      "Href": "/detail/20110107",
-      "NewTitle": "[OVA 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110107.jpg",
-      "Title": "薄樱鬼 雪华录"
-    },
-    {
-      "AID": 20220059,
-      "Href": "/detail/20220059",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220059.jpg",
-      "Title": "魔法使黎明期"
-    },
-    {
-      "AID": 20230247,
-      "Href": "/detail/20230247",
-      "NewTitle": "第83集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230247.jpg",
-      "Title": "沧元图"
-    },
-    {
-      "AID": 20220315,
-      "Href": "/detail/20220315",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220315.jpg",
-      "Title": "西行纪 动态漫"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

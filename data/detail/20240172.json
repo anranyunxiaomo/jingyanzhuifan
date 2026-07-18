@@ -532,50 +532,7 @@
     "collect_cnt": "1,641"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20240064,
-      "Href": "/detail/20240064",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240064.jpg",
-      "Title": "圣斗士星矢：黄道十二宫战士 战斗圣域 Part 2"
-    },
-    {
-      "AID": 20220135,
-      "Href": "/detail/20220135",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220135.jpg",
-      "Title": "世界尽头的圣骑士 第二季"
-    },
-    {
-      "AID": 20040025,
-      "Href": "/detail/20040025",
-      "NewTitle": "第153集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20040025.jpg",
-      "Title": "游戏王 怪兽之决斗GX"
-    },
-    {
-      "AID": 20240021,
-      "Href": "/detail/20240021",
-      "NewTitle": "第20240411期",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240021.jpg",
-      "Title": "约会大作战 第五季"
-    },
-    {
-      "AID": 20130125,
-      "Href": "/detail/20130125",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20130125.jpg",
-      "Title": "有你的小镇"
-    },
-    {
-      "AID": 20110125,
-      "Href": "/detail/20110125",
-      "NewTitle": "第77集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20110125.jpg",
-      "Title": "学园救援团"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

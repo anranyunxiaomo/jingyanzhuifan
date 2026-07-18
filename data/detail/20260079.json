@@ -642,73 +642,8 @@
     "comment_cnt": "470",
     "collect_cnt": "3,583"
   },
-  "series": [
-    {
-      "AID": 20170065,
-      "Href": "/detail/20170065",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170065.jpg",
-      "Title": "欢迎来到实力至上主义的教室"
-    },
-    {
-      "AID": 20220212,
-      "Href": "/detail/20220212",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220212.jpg",
-      "Title": "欢迎来到实力至上主义教室 第二季"
-    },
-    {
-      "AID": 20230274,
-      "Href": "/detail/20230274",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230274.jpg",
-      "Title": "欢迎来到实力至上主义教室 第三季"
-    }
-  ],
-  "similar": [
-    {
-      "AID": 20230215,
-      "Href": "/detail/20230215",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230215.jpg",
-      "Title": "希望的力量～大人光之美少女'23～"
-    },
-    {
-      "AID": 20090057,
-      "Href": "/detail/20090057",
-      "NewTitle": "[BD 01-02]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20090057.jpg",
-      "Title": "向阳素描×365 特别篇"
-    },
-    {
-      "AID": 20160018,
-      "Href": "/detail/20160018",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160018.jpg",
-      "Title": "黑色残骸"
-    },
-    {
-      "AID": 20050017,
-      "Href": "/detail/20050017",
-      "NewTitle": "第13集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050017.jpg",
-      "Title": "女生万岁 第二季"
-    },
-    {
-      "AID": 20210059,
-      "Href": "/detail/20210059",
-      "NewTitle": "第10集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20210059.jpg",
-      "Title": "IDOLLS"
-    },
-    {
-      "AID": 20230196,
-      "Href": "/detail/20230196",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230196.jpg",
-      "Title": "魔法使的新娘 第二季 第2部分"
-    }
-  ],
+  "series": [],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

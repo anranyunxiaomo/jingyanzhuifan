@@ -69,50 +69,7 @@
     "collect_cnt": "1,391"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20160216,
-      "Href": "/detail/20160216",
-      "NewTitle": "第8集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20160216.jpg",
-      "Title": "暗杀教室 第二季 课外授课篇"
-    },
-    {
-      "AID": 20000102,
-      "Href": "/detail/20000102",
-      "NewTitle": "第152集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20000102.jpg",
-      "Title": "北斗神拳"
-    },
-    {
-      "AID": 20240044,
-      "Href": "/detail/20240044",
-      "NewTitle": "第11集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20240044.jpg",
-      "Title": "黑执事 -寄宿学校篇-"
-    },
-    {
-      "AID": 20230171,
-      "Href": "/detail/20230171",
-      "NewTitle": "第01集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20230171.jpg",
-      "Title": "小鲨鱼去郊游"
-    },
-    {
-      "AID": 20080077,
-      "Href": "/detail/20080077",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20080077.jpg",
-      "Title": "ToHeart2 ad"
-    },
-    {
-      "AID": 20180291,
-      "Href": "/detail/20180291",
-      "NewTitle": "[OVA 01-06]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180291.jpg",
-      "Title": "幽游白书 完全新作动画"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",

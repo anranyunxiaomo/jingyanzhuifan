@@ -120,50 +120,7 @@
     "collect_cnt": "3,567"
   },
   "series": [],
-  "similar": [
-    {
-      "AID": 20200048,
-      "Href": "/detail/20200048",
-      "NewTitle": "第12集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20200048.jpg",
-      "Title": "number24"
-    },
-    {
-      "AID": 20050048,
-      "Href": "/detail/20050048",
-      "NewTitle": "第52集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20050048.jpg",
-      "Title": "极速方程式"
-    },
-    {
-      "AID": 20220202,
-      "Href": "/detail/20220202",
-      "NewTitle": "第24集(完结)",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20220202.jpg",
-      "Title": "BASTARD！！暗黑破坏神"
-    },
-    {
-      "AID": 20170227,
-      "Href": "/detail/20170227",
-      "NewTitle": "第72集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170227.jpg",
-      "Title": "快把我哥带走！"
-    },
-    {
-      "AID": 20170152,
-      "Href": "/detail/20170152",
-      "NewTitle": "[TV 01-26]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20170152.jpg",
-      "Title": "漫威未来复仇者"
-    },
-    {
-      "AID": 20180117,
-      "Href": "/detail/20180117",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180117.jpg",
-      "Title": "甘粕与玛索丹"
-    }
-  ],
+  "similar": [],
   "player_label_arr": {
     "qiyi": "爱奇艺",
     "qq": "腾讯",
