@@ -1062,10 +1062,9 @@ def rebuild_static_index_and_assets():
                                 pass
                             continue
 
-                        # 💡 [PV FILTER] 过滤「未播放 + 纯版权源 + 无可播集数」的 PV 预告片番剧
-                        # 规则：status=未播放 AND 无任何可播直链线路 AND 总可播集数=0
-                        # 效果：detail 文件保留（CI 更新时可重新评估），但不出现在搜索结果中
-                        # 触发恢复：正式开播后 CI 拉取到真实集数，自动重新入库
+                        # 💡 [PV & UNPLAYABLE FILTER] 过滤「未播放」或者「无任何可播放集数」的番剧
+                        # 规则：status为“未播放” OR 无任何可播直链线路且总可播集数=0
+                        # 效果：detail 文件保留，但不出现在搜索及首页结果中
                         PLAYABLE_KEYS_SET = {
                             'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong',
                             'subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1',
@@ -1077,8 +1076,8 @@ def rebuild_static_index_and_assets():
                             len(eps) for k, eps in _playlists.items()
                             if k in PLAYABLE_KEYS_SET and isinstance(eps, list)
                         )
-                        if '未播放' in _status:
-                            print(f"  [PV SKIP] 跳过未开播番剧（status=未播放）: {title} ({aid_str})")
+                        if '未播放' in _status or _playable_eps == 0:
+                            print(f"  [FILTER SKIP] 跳过不可播或未开播番剧: {title} ({aid_str}) (status={_status}, playable_eps={_playable_eps})")
                             continue
 
 
