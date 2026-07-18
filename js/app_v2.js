@@ -87,6 +87,7 @@ new Vue({
     detailTransitionClass: '',      // 3D 画轴拉开转场类
     isTransitioning: false,         // 转场防重入锁标记
     detailError: false, // 💡 新增：详情加载错误状态标记
+    detailErrorMsg: '', // 💡 新增：详情加载错误信息说明
     isWebFullscreen: false, // 💡 新增：是否处于全局网页全屏状态
     activeLineKey: '', // 当前选中的播放线路
     activeEpisodeIndex: -1, // 当前选中的集数索引
@@ -1147,6 +1148,7 @@ new Vue({
         console.log('[DEBUG ROUTER] selectAnime() actual load. aid:', aid, 'skipHashUpdate:', skipHashUpdate);
         this.currentAnimeId = aid;
         this.detailError = false; // 💡 重置错误状态
+        this.detailErrorMsg = ''; // 💡 重置错误提示信息
         
         try {
           localStorage.setItem('jyzf_last_page', 'detail/' + aid); // 💾 同步更新本地路由缓存
@@ -1208,6 +1210,30 @@ new Vue({
 
         const handleFetchedDetail = (fetchedData, source = 'local') => {
           if (!fetchedData) return;
+
+          // 💡 客户端播放源物理拦截屏障：如果一部动漫没有任何可播直链线路，直接拦截渲染并提示已下线
+          const video = fetchedData.video || {};
+          const playlists = video.playlists || {};
+          const PLAYABLE_KEYS_SET = [
+            'lzm3u8','wjm3u8','ffm3u8','bfzym3u8','hnm3u8','wolong',
+            'subm3u8','kym3u8','anich_m3u8','a123_line1','hkan_line1',
+            'hkan_line2','yhdm_line1','zjm3u8','tkm3u8'
+          ];
+          const hasPlay = Object.entries(playlists).some(([k, eps]) => 
+            PLAYABLE_KEYS_SET.includes(k) && Array.isArray(eps) && eps.length > 0
+          );
+
+          if (!hasPlay) {
+            console.warn(`[CLIENT INTERCEPT] 动漫 (AID: ${aid}) 无有效播放线路，已自动屏蔽！`);
+            this.detailError = true;
+            this.detailErrorMsg = '抱歉，該動漫暫無可播放的直鏈解析線路，已自動下架。';
+            this.animeDetail = null;
+            this.$nextTick(() => {
+              if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+            return;
+          }
+
           const changed = this.hasDetailChanged(this.animeDetail, fetchedData);
           
           if (changed || !this.animeDetail) {
