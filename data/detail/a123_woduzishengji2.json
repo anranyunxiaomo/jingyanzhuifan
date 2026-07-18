@@ -196,9 +196,66 @@
           "https://v.cdnlz22.com/20250330/14840_9a4ebae2/index.m3u8",
           "https://v.cdnlz22.com/20250330/14840_9a4ebae2/index.m3u8"
         ]
+      ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "https://www.yhdm666.top/p/24100-4-1.html"
+        ],
+        [
+          "第02集",
+          "https://www.yhdm666.top/p/24100-4-2.html"
+        ],
+        [
+          "第03集",
+          "https://www.yhdm666.top/p/24100-4-3.html"
+        ],
+        [
+          "第04集",
+          "https://www.yhdm666.top/p/24100-4-4.html"
+        ],
+        [
+          "第05集",
+          "https://www.yhdm666.top/p/24100-4-5.html"
+        ],
+        [
+          "第06集",
+          "https://www.yhdm666.top/p/24100-4-6.html"
+        ],
+        [
+          "第07集",
+          "https://www.yhdm666.top/p/24100-4-7.html"
+        ],
+        [
+          "第08集",
+          "https://www.yhdm666.top/p/24100-4-8.html"
+        ],
+        [
+          "第09集",
+          "https://www.yhdm666.top/p/24100-4-9.html"
+        ],
+        [
+          "第10集",
+          "https://www.yhdm666.top/p/24100-4-10.html"
+        ],
+        [
+          "第11集",
+          "https://www.yhdm666.top/p/24100-4-11.html"
+        ],
+        [
+          "第12集",
+          "https://www.yhdm666.top/p/24100-4-12.html"
+        ],
+        [
+          "第13集",
+          "https://www.yhdm666.top/p/24100-4-13.html"
+        ]
       ]
     }
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
 }

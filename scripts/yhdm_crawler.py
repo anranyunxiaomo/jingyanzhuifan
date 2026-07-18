@@ -374,21 +374,24 @@ def main():
         print("[MODE] Force mode enabled: will re-fetch all anime including already-matched ones.")
 
     # 3. 构建同步队列
-    if not os.path.exists(SEARCH_INDEX_PATH):
-        print("[ERROR] search_index.json not found! Run update_data.py first.")
-        return
-
-    with open(SEARCH_INDEX_PATH, 'r', encoding='utf-8') as f:
-        search_index = json.load(f)
-
+    # 💡 核心对齐：不依赖 search_index.json (防止被过滤隐藏的零集数/VIP限定番剧再也无法被爬虫检索修复)
+    # 我们直接扫描 data/detail 目录下的所有本地详情文件来构建同步队列
     sync_queue = []
-    for item in search_index:
-        aid = str(item.get("AID", ""))
-        title = item.get("Title", "")
-        if aid and title:
-            sync_queue.append((aid, title))
+    for filename in os.listdir(DETAIL_DIR):
+        if filename.endswith(".json"):
+            aid = filename[:-5]
+            detail_path = os.path.join(DETAIL_DIR, filename)
+            try:
+                with open(detail_path, 'r', encoding='utf-8') as fr:
+                    detail = json.load(fr)
+                video = detail.get("video", {})
+                title = video.get("name", "")
+                if aid and title:
+                    sync_queue.append((aid, title))
+            except Exception as read_err:
+                print(f"  [WARN] Failed to read {filename} for sync queue: {read_err}")
 
-    print(f"[INFO] Sync queue: {len(sync_queue)} anime")
+    print(f"[INFO] Sync queue (scanned from details): {len(sync_queue)} anime")
 
     # 4. 多线程并发同步（8 线程）
     success_count = 0
