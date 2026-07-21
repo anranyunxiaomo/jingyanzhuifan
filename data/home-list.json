@@ -1,6 +1,48 @@
 {
   "latest": [
     {
+      "AID": 20260224,
+      "Href": "/detail/20260224",
+      "NewTitle": "第03集",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260224.jpg",
+      "Title": "底牌很多的维多利亚"
+    },
+    {
+      "AID": 20260221,
+      "Href": "/detail/20260221",
+      "NewTitle": "第04集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260221.jpg",
+      "Title": "无自觉圣女今天也无意识地释放力量"
+    },
+    {
+      "AID": 20260203,
+      "Href": "/detail/20260203",
+      "NewTitle": "第03集",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260203.jpg",
+      "Title": "与你相恋到生命尽头"
+    },
+    {
+      "AID": 20260230,
+      "Href": "/detail/20260230",
+      "NewTitle": "第03集",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260230.jpg",
+      "Title": "拯救替身千金的是冷酷无情冰之王子的爱"
+    },
+    {
+      "AID": 20260201,
+      "Href": "/detail/20260201",
+      "NewTitle": "第03集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260201.jpg",
+      "Title": "感谢对战 大小姐才不玩格斗游戏"
+    },
+    {
+      "AID": 20260096,
+      "Href": "/detail/20260096",
+      "NewTitle": "第16集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260096.jpg",
+      "Title": "欺诈游戏"
+    },
+    {
       "AID": 20260175,
       "Href": "/detail/20260175",
       "NewTitle": "第03集",
@@ -41,48 +83,6 @@
       "NewTitle": "第01集",
       "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260245.jpg",
       "Title": "暗芝居 第十七季"
-    },
-    {
-      "AID": 20260220,
-      "Href": "/detail/20260220",
-      "NewTitle": "第03集",
-      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260220.jpg",
-      "Title": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车"
-    },
-    {
-      "AID": 20260189,
-      "Href": "/detail/20260189",
-      "NewTitle": "第04集",
-      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260189.jpg",
-      "Title": "世界在起舞"
-    },
-    {
-      "AID": 20260227,
-      "Href": "/detail/20260227",
-      "NewTitle": "第03集",
-      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260227.jpg",
-      "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱"
-    },
-    {
-      "AID": 20260208,
-      "Href": "/detail/20260208",
-      "NewTitle": "第03集",
-      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260208.jpg",
-      "Title": "骸骨骑士大人异世界冒险中 第二季"
-    },
-    {
-      "AID": 20260191,
-      "Href": "/detail/20260191",
-      "NewTitle": "第03集",
-      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260191.jpg",
-      "Title": "Let's Go 怪奇组"
-    },
-    {
-      "AID": 20260183,
-      "Href": "/detail/20260183",
-      "NewTitle": "第03集",
-      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260183.jpg",
-      "Title": "碧蓝航线 微速前行 第二季"
     }
   ],
   "recommend": [],
@@ -97,7 +97,7 @@
         "namefornew": "第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260183,
         "wd": 1,
         "name": "碧蓝航线 微速前行 第二季",
@@ -113,7 +113,7 @@
         "namefornew": "12:00 第16集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260216,
         "wd": 1,
         "name": "最强出涸皇子的暗跃帝位争夺",
@@ -121,7 +121,7 @@
         "namefornew": "20:30 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260208,
         "wd": 1,
         "name": "骸骨骑士大人异世界冒险中 第二季",
@@ -129,7 +129,7 @@
         "namefornew": "21:00 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260189,
         "wd": 1,
         "name": "世界在起舞",
@@ -137,7 +137,7 @@
         "namefornew": "22:00 第04集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260227,
         "wd": 1,
         "name": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
@@ -145,7 +145,7 @@
         "namefornew": "20:30 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260217,
         "wd": 1,
         "name": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～",
@@ -153,7 +153,7 @@
         "namefornew": "21:30 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260226,
         "wd": 1,
         "name": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
@@ -161,7 +161,7 @@
         "namefornew": "23:00 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260220,
         "wd": 1,
         "name": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车",
@@ -169,7 +169,7 @@
         "namefornew": "22:00 第03集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260185,
         "wd": 1,
         "name": "斗球儿弹子",
@@ -177,17 +177,17 @@
         "namefornew": "22:00 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260096,
         "wd": 1,
         "name": "欺诈游戏",
-        "mtime": "2026-07-15 00:46:26",
+        "mtime": "2026-07-21 20:43:11",
         "namefornew": "23:00 第16集"
       }
     ],
     "2": [
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260175,
         "wd": 2,
         "name": "碧蓝之海 第三季",
@@ -195,36 +195,36 @@
         "namefornew": "00:00 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260201,
         "wd": 2,
         "name": "感谢对战 大小姐才不玩格斗游戏",
-        "mtime": "2026-07-14 20:00:52",
-        "namefornew": "20:30 第02集"
+        "mtime": "2026-07-21 20:43:59",
+        "namefornew": "20:30 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-15 00:38:51",
-        "namefornew": "20:30 第02集"
+        "mtime": "2026-07-22 00:52:53",
+        "namefornew": "20:30 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260230,
         "wd": 2,
         "name": "拯救替身千金的是冷酷无情冰之王子的爱",
-        "mtime": "2026-07-14 23:56:10",
-        "namefornew": "20:55 第02集"
+        "mtime": "2026-07-21 21:08:58",
+        "namefornew": "20:55 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260221,
         "wd": 2,
         "name": "无自觉圣女今天也无意识地释放力量",
-        "mtime": "2026-07-15 00:43:03",
-        "namefornew": "21:00 第03集"
+        "mtime": "2026-07-22 00:53:53",
+        "namefornew": "21:00 第04集"
       },
       {
         "isnew": 0,
@@ -235,12 +235,12 @@
         "namefornew": "22:00 PV"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260172,
         "wd": 2,
         "name": "攻壳机动队 THE GHOST IN THE SHELL",
-        "mtime": "2026-07-15 00:42:22",
-        "namefornew": "22:00 第02集"
+        "mtime": "2026-07-22 01:26:11",
+        "namefornew": "22:00 第03集"
       },
       {
         "isnew": 0,
@@ -248,15 +248,15 @@
         "wd": 2,
         "name": "铠真传 武士军团 第2部分",
         "mtime": "2026-07-15 22:40:48",
-        "namefornew": "22:30 第02集"
+        "namefornew": "22:30 第03集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260224,
         "wd": 2,
         "name": "底牌很多的维多利亚",
-        "mtime": "2026-07-14 23:57:01",
-        "namefornew": "23:00 第02集"
+        "mtime": "2026-07-22 00:55:01",
+        "namefornew": "23:00 第03集"
       }
     ],
     "3": [
@@ -521,12 +521,12 @@
         "namefornew": "23:00 第15集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-15 00:38:51",
-        "namefornew": "20:30 第02集"
+        "mtime": "2026-07-22 00:52:53",
+        "namefornew": "20:30 第03集"
       },
       {
         "isnew": 0,
@@ -781,7 +781,7 @@
         "namefornew": "09:30 第1169集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260191,
         "wd": 0,
         "name": "Let's Go 怪奇组",
