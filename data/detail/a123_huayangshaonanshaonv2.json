@@ -1,0 +1,34 @@
+{
+  "video": {
+    "id": "a123_huayangshaonanshaonv2",
+    "name": "花样少男少女 2",
+    "cover": "https://i1.a123tv.com/v/0x/huayangshaonanshaonv2.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至4集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/huayangshaonanshaonv2/8z2y1uz0.html"
+        ],
+        [
+          "第02集",
+          "/v/huayangshaonanshaonv2/8z2y1uz1.html"
+        ],
+        [
+          "第03集",
+          "/v/huayangshaonanshaonv2/8z2y1uz2.html"
+        ],
+        [
+          "第04集",
+          "/v/huayangshaonanshaonv2/8z2y1uz3.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}

@@ -1,0 +1,30 @@
+{
+  "video": {
+    "id": "a123_miaohuizhizhishengmingjintou",
+    "name": "描绘直至生命尽头",
+    "cover": "https://i1.a123tv.com/v/0x/miaohuizhizhishengmingjintou.jpg",
+    "pic": "",
+    "plot": "日韩动漫",
+    "plot_arr": [],
+    "tags": "",
+    "status": "更新至3集",
+    "playlists": {
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/miaohuizhizhishengmingjintou/8z2y3dz0.html"
+        ],
+        [
+          "第02集",
+          "/v/miaohuizhizhishengmingjintou/8z2y3dz1.html"
+        ],
+        [
+          "第03集",
+          "/v/miaohuizhizhishengmingjintou/8z2y3dz2.html"
+        ]
+      ]
+    }
+  },
+  "player_vip": "",
+  "player_jx": {}
+}
