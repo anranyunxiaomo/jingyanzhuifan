@@ -1,6 +1,48 @@
 {
   "latest": [
     {
+      "AID": 20260221,
+      "Href": "/detail/20260221",
+      "NewTitle": "第06集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260221.jpg",
+      "Title": "无自觉圣女今天也无意识地释放力量"
+    },
+    {
+      "AID": 20260224,
+      "Href": "/detail/20260224",
+      "NewTitle": "第05集",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260224.jpg",
+      "Title": "底牌很多的维多利亚"
+    },
+    {
+      "AID": 20260230,
+      "Href": "/detail/20260230",
+      "NewTitle": "第05集",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260230.jpg",
+      "Title": "拯救替身千金的是冷酷无情冰之王子的爱"
+    },
+    {
+      "AID": 20260203,
+      "Href": "/detail/20260203",
+      "NewTitle": "第05集",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260203.jpg",
+      "Title": "与你相恋到生命尽头"
+    },
+    {
+      "AID": 20260201,
+      "Href": "/detail/20260201",
+      "NewTitle": "第05集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260201.jpg",
+      "Title": "感谢对战 大小姐才不玩格斗游戏"
+    },
+    {
+      "AID": 20260096,
+      "Href": "/detail/20260096",
+      "NewTitle": "第18集",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260096.jpg",
+      "Title": "欺诈游戏"
+    },
+    {
       "AID": 20260175,
       "Href": "/detail/20260175",
       "NewTitle": "第05集",
@@ -41,48 +83,6 @@
       "NewTitle": "第05集",
       "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260216.jpg",
       "Title": "最强出涸皇子的暗跃帝位争夺"
-    },
-    {
-      "AID": 20260189,
-      "Href": "/detail/20260189",
-      "NewTitle": "第06集",
-      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260189.jpg",
-      "Title": "世界在起舞"
-    },
-    {
-      "AID": 20260208,
-      "Href": "/detail/20260208",
-      "NewTitle": "第05集",
-      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260208.jpg",
-      "Title": "骸骨骑士大人异世界冒险中 第二季"
-    },
-    {
-      "AID": 20260227,
-      "Href": "/detail/20260227",
-      "NewTitle": "第05集",
-      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260227.jpg",
-      "Title": "与奔跑在透明之夜的你，谈一场看不见的恋爱"
-    },
-    {
-      "AID": 20260232,
-      "Href": "/detail/20260232",
-      "NewTitle": "第05集",
-      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260232.jpg",
-      "Title": "北斗神拳 拳王军杂兵们的挽歌 第2季"
-    },
-    {
-      "AID": 20190015,
-      "Href": "/detail/20190015",
-      "NewTitle": "第05集",
-      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20190015.jpg",
-      "Title": "二十世纪电气目录"
-    },
-    {
-      "AID": 20260183,
-      "Href": "/detail/20260183",
-      "NewTitle": "第5集",
-      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2F20260183.jpg",
-      "Title": "碧蓝航线 微速前行 第二季"
     }
   ],
   "recommend": [],
@@ -97,7 +97,7 @@
         "namefornew": "第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260183,
         "wd": 1,
         "name": "碧蓝航线 微速前行 第二季",
@@ -113,7 +113,7 @@
         "namefornew": "12:00 第18集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260216,
         "wd": 1,
         "name": "最强出涸皇子的暗跃帝位争夺",
@@ -121,7 +121,7 @@
         "namefornew": "20:30 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260208,
         "wd": 1,
         "name": "骸骨骑士大人异世界冒险中 第二季",
@@ -129,7 +129,7 @@
         "namefornew": "21:00 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260189,
         "wd": 1,
         "name": "世界在起舞",
@@ -137,7 +137,7 @@
         "namefornew": "22:00 第06集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260227,
         "wd": 1,
         "name": "与奔跑在透明之夜的你，谈一场看不见的恋爱",
@@ -145,7 +145,7 @@
         "namefornew": "20:30 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260217,
         "wd": 1,
         "name": "暴走千金立誓复仇。～用魔导书之力碾碎祖国～",
@@ -153,7 +153,7 @@
         "namefornew": "21:30 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260226,
         "wd": 1,
         "name": "转学后班上的清纯可爱美少女 竟是小时候玩在一起的哥们",
@@ -161,7 +161,7 @@
         "namefornew": "23:00 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260220,
         "wd": 1,
         "name": "被遗弃圣女的异世界美食之旅 用隐藏技能召唤了露营车",
@@ -169,7 +169,7 @@
         "namefornew": "22:00 第05集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260185,
         "wd": 1,
         "name": "斗球儿弹子",
@@ -177,17 +177,17 @@
         "namefornew": "22:00 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260096,
         "wd": 1,
         "name": "欺诈游戏",
-        "mtime": "2026-07-28 20:30:39",
+        "mtime": "2026-08-04 20:57:29",
         "namefornew": "23:00 第18集"
       }
     ],
     "2": [
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260175,
         "wd": 2,
         "name": "碧蓝之海 第三季",
@@ -195,36 +195,36 @@
         "namefornew": "00:00 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260201,
         "wd": 2,
         "name": "感谢对战 大小姐才不玩格斗游戏",
-        "mtime": "2026-07-28 20:33:33",
-        "namefornew": "20:30 第04集"
+        "mtime": "2026-08-04 20:58:08",
+        "namefornew": "19:30 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-28 22:26:12",
-        "namefornew": "20:30 第04集"
+        "mtime": "2026-08-04 20:58:56",
+        "namefornew": "20:30 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260230,
         "wd": 2,
         "name": "拯救替身千金的是冷酷无情冰之王子的爱",
-        "mtime": "2026-07-28 22:25:30",
-        "namefornew": "20:55 第04集"
+        "mtime": "2026-08-04 22:52:44",
+        "namefornew": "20:55 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260221,
         "wd": 2,
         "name": "无自觉圣女今天也无意识地释放力量",
-        "mtime": "2026-07-29 00:11:57",
-        "namefornew": "21:00 第05集"
+        "mtime": "2026-08-04 23:17:28",
+        "namefornew": "21:00 第06集"
       },
       {
         "isnew": 0,
@@ -235,12 +235,12 @@
         "namefornew": "22:00 PV"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260172,
         "wd": 2,
         "name": "攻壳机动队 THE GHOST IN THE SHELL",
-        "mtime": "2026-07-29 00:29:07",
-        "namefornew": "22:00 第04集"
+        "mtime": "2026-08-04 23:55:29",
+        "namefornew": "22:00 第05集"
       },
       {
         "isnew": 0,
@@ -248,15 +248,15 @@
         "wd": 2,
         "name": "铠真传 武士军团 第2部分",
         "mtime": "2026-07-29 20:34:54",
-        "namefornew": "22:30 第04集"
+        "namefornew": "22:30 第05集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260224,
         "wd": 2,
         "name": "底牌很多的维多利亚",
-        "mtime": "2026-07-29 00:12:40",
-        "namefornew": "23:00 第04集"
+        "mtime": "2026-08-04 23:16:41",
+        "namefornew": "23:00 第05集"
       }
     ],
     "3": [
@@ -521,12 +521,12 @@
         "namefornew": "23:00 第16集"
       },
       {
-        "isnew": 0,
+        "isnew": 1,
         "id": 20260203,
         "wd": 5,
         "name": "与你相恋到生命尽头",
-        "mtime": "2026-07-28 22:26:12",
-        "namefornew": "20:30 第04集"
+        "mtime": "2026-08-04 20:58:56",
+        "namefornew": "20:30 第05集"
       },
       {
         "isnew": 0,
@@ -603,7 +603,7 @@
         "namefornew": "18:55 第18集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20260205,
         "wd": 6,
         "name": "无职转生Ⅲ 到了异世界就拿出真本事",
@@ -837,7 +837,7 @@
         "namefornew": "22:00 第5集"
       },
       {
-        "isnew": 1,
+        "isnew": 0,
         "id": 20190015,
         "wd": 0,
         "name": "二十世纪电气目录",
