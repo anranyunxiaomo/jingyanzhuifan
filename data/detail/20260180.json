@@ -130,7 +130,14 @@
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "4",
-    "collect_cnt": "44"
+    "collect_cnt": "44",
+    "related": [
+      {
+        "id": "a123_huayangshaonanshaonv2",
+        "title": "花样少男少女 2",
+        "cover": "https://i1.a123tv.com/v/0x/huayangshaonanshaonv2.jpg"
+      }
+    ]
   },
   "series": [],
   "similar": [],

@@ -42584,7 +42584,19 @@
     "cpraid": 1,
     "comments_status": 1,
     "comment_cnt": "1,396",
-    "collect_cnt": "4,919"
+    "collect_cnt": "4,919",
+    "related": [
+      {
+        "id": "a123_mztkn_mgdszl",
+        "title": "名侦探柯南：迷宫的十字路",
+        "cover": "https://image.jinyingimage.com/cover/69386f6bb1dfed68692a24c8686939b9.jpg"
+      },
+      {
+        "id": "a123_mztkn_bkjdwl",
+        "title": "名侦探柯南：贝克街的亡灵",
+        "cover": "https://image.jinyingimage.com/cover/a495eebbfa243b79c5b9b224c482d0c2.jpg"
+      }
+    ]
   },
   "series": [],
   "similar": [],

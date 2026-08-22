@@ -369,7 +369,14 @@
           "https://hd.ijycnd.com/play/bmZQ9O0d/index.m3u8"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20260181",
+        "title": "相反的你和我 第二季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260181.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

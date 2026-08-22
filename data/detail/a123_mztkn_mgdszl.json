@@ -61,7 +61,14 @@
     "star": 4,
     "year": 2003,
     "season": 0,
-    "premiere": ""
+    "premiere": "",
+    "related": [
+      {
+        "id": "20000005",
+        "title": "名侦探柯南",
+        "cover": "https://cdn.aqdstatic.com:966/age/20000005.jpg"
+      }
+    ]
   },
   "player_label_arr": {
     "yhdm_line1": "樱花直链"

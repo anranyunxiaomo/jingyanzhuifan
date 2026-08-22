@@ -987,6 +987,64 @@
           "https://hd.ijycnd.com/play/dL9ZqOAe/index.m3u8"
         ]
       ],
+      "a123_line1": [
+        [
+          "第01集",
+          "/v/beidoushenquan4/4oz3a3hz0.html"
+        ],
+        [
+          "第02集",
+          "/v/beidoushenquan4/4oz3a3hz1.html"
+        ],
+        [
+          "第03集",
+          "/v/beidoushenquan4/4oz3a3hz2.html"
+        ],
+        [
+          "第04集",
+          "/v/beidoushenquan4/4oz3a3hz3.html"
+        ],
+        [
+          "第05集",
+          "/v/beidoushenquan4/4oz3a3hz4.html"
+        ],
+        [
+          "第06集",
+          "/v/beidoushenquan4/4oz3a3hz5.html"
+        ],
+        [
+          "第07集",
+          "/v/beidoushenquan4/4oz3a3hz6.html"
+        ],
+        [
+          "第08集",
+          "/v/beidoushenquan4/4oz3a3hz7.html"
+        ],
+        [
+          "第09集",
+          "/v/beidoushenquan4/4oz3a3hz8.html"
+        ],
+        [
+          "第10集",
+          "/v/beidoushenquan4/4oz3a3hz9.html"
+        ],
+        [
+          "第11集",
+          "/v/beidoushenquan4/4oz3a3hz10.html"
+        ],
+        [
+          "第12集",
+          "/v/beidoushenquan4/4oz3a3hz11.html"
+        ],
+        [
+          "第13集",
+          "/v/beidoushenquan4/4oz3a3hz12.html"
+        ],
+        [
+          "第14集",
+          "/v/beidoushenquan4/4oz3a3hz13.html"
+        ]
+      ],
       "ffm3u8": [
         [
           "第01集",
@@ -1053,66 +1111,20 @@
           "https://vip.ffzy-plays.com/20260623/55085_4fa5ffb9/index.m3u8",
           "https://vip.ffzy-plays.com/20260623/55085_4fa5ffb9/index.m3u8"
         ]
-      ],
-      "a123_line1": [
-        [
-          "第01集",
-          "/v/beidoushenquan4/4oz3a3hz0.html"
-        ],
-        [
-          "第02集",
-          "/v/beidoushenquan4/4oz3a3hz1.html"
-        ],
-        [
-          "第03集",
-          "/v/beidoushenquan4/4oz3a3hz2.html"
-        ],
-        [
-          "第04集",
-          "/v/beidoushenquan4/4oz3a3hz3.html"
-        ],
-        [
-          "第05集",
-          "/v/beidoushenquan4/4oz3a3hz4.html"
-        ],
-        [
-          "第06集",
-          "/v/beidoushenquan4/4oz3a3hz5.html"
-        ],
-        [
-          "第07集",
-          "/v/beidoushenquan4/4oz3a3hz6.html"
-        ],
-        [
-          "第08集",
-          "/v/beidoushenquan4/4oz3a3hz7.html"
-        ],
-        [
-          "第09集",
-          "/v/beidoushenquan4/4oz3a3hz8.html"
-        ],
-        [
-          "第10集",
-          "/v/beidoushenquan4/4oz3a3hz9.html"
-        ],
-        [
-          "第11集",
-          "/v/beidoushenquan4/4oz3a3hz10.html"
-        ],
-        [
-          "第12集",
-          "/v/beidoushenquan4/4oz3a3hz11.html"
-        ],
-        [
-          "第13集",
-          "/v/beidoushenquan4/4oz3a3hz12.html"
-        ],
-        [
-          "第14集",
-          "/v/beidoushenquan4/4oz3a3hz13.html"
-        ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20260067",
+        "title": "北斗神拳 -FIST OF THE NORTH STAR-",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260067.jpg"
+      },
+      {
+        "id": "20260232",
+        "title": "北斗神拳 拳王军杂兵们的挽歌 第2季",
+        "cover": "https://cdn.aqdstatic.com:966/age/20260232.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}

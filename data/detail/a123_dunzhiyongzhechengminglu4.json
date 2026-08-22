@@ -183,7 +183,14 @@
           "https://v.cdnlz22.com/20250924/23179_552f8092/index.m3u8"
         ]
       ]
-    }
+    },
+    "related": [
+      {
+        "id": "20190030",
+        "title": "盾之勇者成名录",
+        "cover": "https://cdn.aqdstatic.com:966/age/20190030.jpg"
+      }
+    ]
   },
   "player_vip": "",
   "player_jx": {}
