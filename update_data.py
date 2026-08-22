@@ -2,11 +2,15 @@ import os
 import re
 import json
 import time
+import datetime
+import subprocess
 import requests
 import urllib3
+import urllib.parse
 import asyncio
 import sys
-from urllib.parse import urljoin
+from urllib.parse import urljoin, parse_qs
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 禁用 SSL 证书安全警告
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -277,8 +281,6 @@ def get_session():
 
 session = get_session()
 
-from concurrent.futures import ThreadPoolExecutor
-
 # 💡 多解析站备用链配置（按稳定性与速度排序）
 # 对于 xigua 等只有 age_token 没有直链的线路，我们会轮流对每个解析站发起并发请求，哪个先返回直链就用哪个
 AGE_PARSE_STATIONS = [
@@ -348,8 +350,6 @@ class AgeM3u8Sniffer:
         同时向所有解析站发起请求，哪个先返回有效直链就采纳，其余取消。
         比单站串行速度快 3~5 倍，成功率接近各站最高值的并集。
         """
-        from concurrent.futures import ThreadPoolExecutor, as_completed
-
         def try_station(base_url):
             parse_url = base_url + ep_token
             try:
@@ -671,8 +671,6 @@ def fetch_api_base():
 
 API_BASE = fetch_api_base()
 print(f"[INFO] Using API Base URL: {API_BASE}")
-
-import urllib.parse
 
 def request_api(path, params=None):
     """请求 API 封装"""
@@ -1113,11 +1111,9 @@ def rebuild_static_index_and_assets():
             with open(index_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            import datetime
             tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
             now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
             
-            import re
             content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
             content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
             content = re.sub(r'window\.JYZF_VERSION\s*=\s*["\'][0-9a-zA-Z_]+["\']', f'window.JYZF_VERSION = "{now_str}"', content)
@@ -1346,10 +1342,8 @@ async def main_async():
             if os.path.exists(index_path):
                 with open(index_path, 'r', encoding='utf-8') as f:
                     content = f.read()
-                import datetime
                 tz_utc8 = datetime.timezone(datetime.timedelta(hours=8))
                 now_str = datetime.datetime.now(tz_utc8).strftime("%Y%m%dT%H%M")
-                import re
                 content = re.sub(r'css/style\.css\?v=[0-9a-zA-Z_]+', f'css/style.css?v={now_str}', content)
                 content = re.sub(r'js/app_v2\.js\?v=[0-9a-zA-Z_]+', f'js/app_v2.js?v={now_str}', content)
                 with open(index_path, 'w', encoding='utf-8') as f:
@@ -1366,7 +1360,6 @@ async def main_async():
     # 💡 触发 A123TV 爬取与对齐合并脚本，增量注入 A123TV 独占番及直连线路
     print("\n[A123TV INTEGRATION] Triggering A123TV crawler and data alignment...")
     try:
-        import subprocess
         crawler_path = os.path.join(BASE_DIR, "scripts", "a123_crawler.py")
         subprocess.run([sys.executable, crawler_path], check=True)
         print("[A123TV INTEGRATION] Successfully integrated A123TV data!\n")

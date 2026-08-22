@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import sys
 import time
@@ -64,7 +65,6 @@ def fix_posters():
                     clean_title = title.replace(" ", "").replace("-", "").replace("：", "").replace(":", "")
                     
                     # 💡 强力后缀清洗（如“第二季”、“第二期”等常见季数后缀，增加对齐几率）
-                    import re
                     clean_title = re.sub(r'(第[一二三四五六七八九十0-9]+季|第[一二三四五六七八九十0-9]+部分|第[一二三四五六七八九十0-9]+期|act2|Ⅱ|Ⅲ|Ⅳ|Ⅴ|\d+)$', '', clean_title, flags=re.IGNORECASE).strip()
                     
                     for name_key, cover_val in local_age_covers.items():

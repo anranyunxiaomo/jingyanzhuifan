@@ -29,7 +29,6 @@ def curl_bgm_json(url):
 
 def search_bangumi(keyword):
     """搜索 Bangumi 上的动漫项目"""
-    import urllib.parse
     encoded = urllib.parse.quote(keyword)
     url = f"https://api.bgm.tv/search/subject/{encoded}?type=2"
     

@@ -4,6 +4,7 @@ import requests
 import time
 import re
 import urllib.parse
+import subprocess
 
 # 设置基础目录
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,7 +153,6 @@ def direct_request_api(path, params=None):
     绕开 Python requests 库的 TLS JA3/JA4 握手特征识别阻断，
     强力获取官方 API 的 JSON 数据。
     """
-    import subprocess
     url = f"https://api.agedm.io/v2/{path}"
     cmd = [
         "curl",
