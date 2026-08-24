@@ -183,6 +183,56 @@
           "https://hd.ijycnd.com/play/qaQ323Md/index.m3u8"
         ]
       ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "https://yhdm6.top/p/25428-3-1.html"
+        ],
+        [
+          "第02集",
+          "https://yhdm6.top/p/25428-3-2.html"
+        ],
+        [
+          "第03集",
+          "https://yhdm6.top/p/25428-3-3.html"
+        ],
+        [
+          "第04集",
+          "https://yhdm6.top/p/25428-3-4.html"
+        ],
+        [
+          "第05集",
+          "https://yhdm6.top/p/25428-3-5.html"
+        ],
+        [
+          "第06集",
+          "https://yhdm6.top/p/25428-3-6.html"
+        ],
+        [
+          "第07集",
+          "https://yhdm6.top/p/25428-3-7.html"
+        ],
+        [
+          "第08集",
+          "https://yhdm6.top/p/25428-3-8.html"
+        ],
+        [
+          "第09集",
+          "https://yhdm6.top/p/25428-3-9.html"
+        ],
+        [
+          "第10集",
+          "https://yhdm6.top/p/25428-3-10.html"
+        ],
+        [
+          "第11集",
+          "https://yhdm6.top/p/25428-3-11.html"
+        ],
+        [
+          "第12集",
+          "https://yhdm6.top/p/25428-3-12.html"
+        ]
+      ],
       "bfzym3u8": [
         [
           "第01集",
@@ -342,5 +392,8 @@
     }
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
 }

@@ -63,13 +63,25 @@
       "xigua": [
         [
           "第01集(生肉)",
-          "age_9655D11FSOJexjTb2mcrcCuWE5JbBnbGyUT8k3YJQ37QPVB0YHbvbhsZW39EBP2yKv%2Fn0mAPkiZceksW3YlA%2B8FAYg",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
+          "age_6e16qwgE03zHYRB7VOVpSg787Sji4zurQ6ph6uUIS%2Feis0hOxY8lxlCNyE0g16Lii6X9tZehDHX08HWyVD6NM9ghpw"
         ],
         [
           "第02集(生肉)",
-          "age_d0b2l%2FVwPU1mSZuM%2FTpdLgJkTlfT9UfBx7%2BEnOshTiYzmEbbqz%2FlYFTfNh%2BgPW4Bq6nEnufM0c%2Bx%2BXMAvLUpzOGvqQ",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
+          "age_57afby9uLopCB4%2FKKxguVvqjNYyi9DH3OU5SomY9llV%2BjZSbwdxtai8SEMCS0MsUhkbHQ70%2FL%2B1UXr6r4rSOSgTD8w"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "全集完结",
+          "https://hn.bfvvs.com/play/bYE5Zm9b/index.m3u8",
+          "https://hn.bfvvs.com/play/bYE5Zm9b/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "全集完结",
+          "https://hd.ijycnd.com/play/b2kWXNPd/index.m3u8",
+          "https://hd.ijycnd.com/play/b2kWXNPd/index.m3u8"
         ]
       ]
     },
@@ -97,21 +109,64 @@
     "year": 2022,
     "season": 10,
     "premiere": "2022-10-07",
-    "rank_cnt": "9,875",
-    "cover": "https://cdn.aqdstatic.com:966/age/20220494.jpg",
+    "rank_cnt": "9,998",
+    "cover": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20220494.jpg",
     "cpraid": 0,
     "comments_status": 1,
     "comment_cnt": "10",
-    "collect_cnt": "221"
+    "collect_cnt": "226"
   },
-  "series": [],
+  "series": [
+    {
+      "AID": 20210294,
+      "Href": "/detail/20210294",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20210294.jpg",
+      "Title": "百万吨级武藏"
+    }
+  ],
   "similar": [
     {
-      "AID": 20180057,
-      "Href": "/detail/20180057",
-      "NewTitle": "[TV 01-12]",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20180057.jpg",
-      "Title": "Comic Girls"
+      "AID": 20200383,
+      "Href": "/detail/20200383",
+      "NewTitle": "全集",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20200383.jpg",
+      "Title": "怪物弹珠 THE MOVIE 路西法 绝望的黎明"
+    },
+    {
+      "AID": 20180035,
+      "Href": "/detail/20180035",
+      "NewTitle": "04无字幕",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20180035.jpg",
+      "Title": "按一按发明 PIKACHIN-KIT"
+    },
+    {
+      "AID": 20160035,
+      "Href": "/detail/20160035",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20160035.jpg",
+      "Title": "告诉我！辣妹子酱"
+    },
+    {
+      "AID": 20220228,
+      "Href": "/detail/20220228",
+      "NewTitle": "第14话(完结)",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20220228.jpg",
+      "Title": "是王者啊？"
+    },
+    {
+      "AID": 20230205,
+      "Href": "/detail/20230205",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20230205.jpg",
+      "Title": "盾之勇者成名录 第三季"
+    },
+    {
+      "AID": 20160052,
+      "Href": "/detail/20160052",
+      "NewTitle": "[TV 01-13+SP]",
+      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20160052.jpg",
+      "Title": "吹响！上低音号 第二季"
     }
   ],
   "player_label_arr": {
@@ -145,8 +200,7 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片",
-    "yhdm_line1": "樱花直链"
+    "tpm3u8": "淘片"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

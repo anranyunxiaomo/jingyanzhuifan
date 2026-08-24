@@ -23,8 +23,8 @@ SEARCH_INDEX_PATH = os.path.join(DATA_DIR, 'search_index.json')
 
 os.makedirs(DETAIL_DIR, exist_ok=True)
 
-# ScraperAPI 配置 (每月免费 5000 次额度，自动实现国内住宅代理、过 CF 5秒盾及 JS 动态渲染)
-SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "9b5919ce9fcc48b957baf6c205188173")
+# ScraperAPI 配置 (支持环境变量配置 SCRAPER_API_KEY，默认直连嗅探防长超时阻塞)
+SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "")
 
 def fetch_html_via_scraper_api(url):
     """通过 ScraperAPI 抓取并渲染动态网页（带 JS 渲染与防 CF 盾，强制分配中国内地 IP 出口）"""
@@ -38,8 +38,8 @@ def fetch_html_via_scraper_api(url):
             'country_code': 'cn'    # 💡 强制分配中国大陆境内的 IP 访问，彻底绕过海外 IP 版权限制
         }
         print(f"  [SCRAPER_API] Sending request with JS rendering (CN Proxy) for: {url}")
-        # ScraperAPI 响应慢，超时时间设为 60 秒
-        r = requests.get('https://api.scraperapi.com/', params=payload, timeout=60)
+        # 优化超时时间为 10 秒，防止因第三方宕机导致任务无限阻塞
+        r = requests.get('https://api.scraperapi.com/', params=payload, timeout=10)
         if r.status_code == 200:
             return r.text
         else:
@@ -320,7 +320,7 @@ class AgeM3u8Sniffer:
         """用单个解析站 URL 嗅探直链（原有接口保持兼容）"""
         # 1. 优先普通 GET 直连
         try:
-            r = session.get(parse_url, headers=cls.headers, timeout=8)
+            r = session.get(parse_url, headers=cls.headers, timeout=4)
             if r.status_code == 200:
                 result = cls._extract_stream_from_html(r.text)
                 if result:
@@ -353,7 +353,7 @@ class AgeM3u8Sniffer:
         def try_station(base_url):
             parse_url = base_url + ep_token
             try:
-                r = session.get(parse_url, headers=cls.headers, timeout=10)
+                r = session.get(parse_url, headers=cls.headers, timeout=4)
                 if r.status_code == 200:
                     result = cls._extract_stream_from_html(r.text)
                     if result:
@@ -1618,8 +1618,13 @@ async def main_async():
         # 等正式开播、status 变为 "连载" 后 CI 才允许写入播放源
         if detail_data:
             _api_status = detail_data.get('video', {}).get('status', '')
+            api_video = detail_data.setdefault('video', {})
+            api_pls = api_video.get('playlists', {})
+            if not isinstance(api_pls, dict):
+                api_pls = {}
+                api_video['playlists'] = api_pls
+
             if '未播放' in _api_status:
-                api_pls = detail_data.setdefault('video', {}).setdefault('playlists', {})
                 PV_KEEP_KEYS = {'bilibili', 'iqiyi', 'qq', 'youku', 'mgtv', 'xigua', 'tt', 'qiyi'}
                 stale = [k for k in list(api_pls.keys()) if k not in PV_KEEP_KEYS]
                 if stale:
@@ -1647,17 +1652,24 @@ async def main_async():
                     with open(detail_path, 'r', encoding='utf-8') as f:
                         old_data = json.load(f)
                         old_playlists = old_data.get('video', {}).get('playlists', {})
+                        if not isinstance(old_playlists, dict):
+                            old_playlists = {}
                         for pkey, eps in old_playlists.items():
-                            for ep in eps:
-                                if len(ep) >= 3 and ep[2]:
-                                    local_cache[(pkey, ep[1])] = ep[2]
+                            if isinstance(eps, list):
+                                for ep in eps:
+                                    if len(ep) >= 3 and ep[2]:
+                                        local_cache[(pkey, ep[1])] = ep[2]
 
                         # 💡 [CRITICAL] 保留本地专属的 yhdm_line1（樱花直链）！
                         # AGE API 返回的 detail_data 不包含此字段，如不显式合并，
                         # 写盘时会永久丢失之前爬取的樱花直链数据。
                         # 保留原则：AGE 不提供的所有自定义播放源均无损合并回 API 数据。
                         CUSTOM_PLAYLIST_KEYS = {'yhdm_line1'}
-                        api_playlists = detail_data.setdefault('video', {}).setdefault('playlists', {})
+                        api_video = detail_data.setdefault('video', {})
+                        api_playlists = api_video.get('playlists', {})
+                        if not isinstance(api_playlists, dict):
+                            api_playlists = {}
+                            api_video['playlists'] = api_playlists
                         api_labels = detail_data.setdefault('player_label_arr', {})
                         old_labels = old_data.get('player_label_arr', {})
                         for custom_key in CUSTOM_PLAYLIST_KEYS:

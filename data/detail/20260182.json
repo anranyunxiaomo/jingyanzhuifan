@@ -15,126 +15,182 @@
       "日常"
     ],
     "playlists": {
-      "lzm3u8": [
-        [
-          "第01集",
-          "age_e0de1Juz8Jn49PABIyFxHCBQ5lgCHY4SfHCse4STfn%2FmO6WRR%2F3lBgD9rZpTW2keB3ZruvZ3HHiesgmkwjVgWFPP5Lb6QTd2mXm2unfjNgFDtzR5",
-          "https://v.lzcdn31.com/20260705/8046_57efdaec/index.m3u8"
-        ],
-        [
-          "第02集",
-          "age_5dddUF09MfhjTrMVGC5PwbaVB4B%2FaGJiD%2FznSRz2IxwXVI%2FjaNkXC09XSjdOMQzHQawnh4R4XTyzz5k%2Fz8lPnztZRlxbzorLG3cMZ1bslrpsRerM",
-          "https://v.lzcdn31.com/20260712/8384_c36dac4e/index.m3u8"
-        ],
-        [
-          "第03集",
-          "https://v.cdnlz14.com/20231022/30831_fb37089e/index.m3u8",
-          "https://v.cdnlz14.com/20231022/30831_fb37089e/index.m3u8"
-        ],
-        [
-          "第04集",
-          "https://v.cdnlz14.com/20231030/31033_d3b64998/index.m3u8",
-          "https://v.cdnlz14.com/20231030/31033_d3b64998/index.m3u8"
-        ],
-        [
-          "第05集",
-          "https://v.cdnlz14.com/20231106/31285_751bd5ae/index.m3u8",
-          "https://v.cdnlz14.com/20231106/31285_751bd5ae/index.m3u8"
-        ],
-        [
-          "第06集",
-          "https://v.cdnlz14.com/20231112/31487_5ea90989/index.m3u8",
-          "https://v.cdnlz14.com/20231112/31487_5ea90989/index.m3u8"
-        ],
-        [
-          "第07集",
-          "https://v.cdnlz14.com/20231119/31792_c5b3a3b5/index.m3u8",
-          "https://v.cdnlz14.com/20231119/31792_c5b3a3b5/index.m3u8"
-        ],
-        [
-          "第08集",
-          "https://v.cdnlz14.com/20231127/32054_18aef89d/index.m3u8",
-          "https://v.cdnlz14.com/20231127/32054_18aef89d/index.m3u8"
-        ],
-        [
-          "第09集",
-          "https://v.cdnlz14.com/20231203/32288_0a656103/index.m3u8",
-          "https://v.cdnlz14.com/20231203/32288_0a656103/index.m3u8"
-        ],
-        [
-          "第10集",
-          "https://v.cdnlz14.com/20231211/32580_99f82ec4/index.m3u8",
-          "https://v.cdnlz14.com/20231211/32580_99f82ec4/index.m3u8"
-        ],
-        [
-          "第11集",
-          "https://v.cdnlz14.com/20231217/32848_392fe851/index.m3u8",
-          "https://v.cdnlz14.com/20231217/32848_392fe851/index.m3u8"
-        ],
-        [
-          "第12集",
-          "https://v.cdnlz14.com/20231224/33078_1f51cec2/index.m3u8",
-          "https://v.cdnlz14.com/20231224/33078_1f51cec2/index.m3u8"
-        ]
-      ],
       "xigua": [
         [
           "第01集",
-          "age_cf0478ZHLNvyEitwX8RCFwQf93RaE6P3inW3oWtJ6AfF8pc27TBvW3QQ24aeXgTfTKdBoV2HIZz4pDou%2Fpb5eNdM",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
+          "age_4a06rtz%2BJxJVhXMzbcS4nZDhJB%2BWA%2BvVcWxAG1CFjpPQCkR0MfbxaB%2F8%2FwlbxOGY6EeokN%2FpC37eNGLkVU7tJrI8"
         ],
         [
           "第02集",
-          "age_bd4bfbLtvVPplfprHXA5w8t6RBq0DkCn7uZEclMKoa5XUONxopNSPS7jNKV7IoOH434V%2F3%2BMRXILhZPQeLbA%2Bv9l",
-          "https://175.178.227.159:7788/Play/adposter.mp4"
+          "age_79dfpLA9kkRVqJRkBb2O%2Be5H36i6DLIqG3zy%2FXxESRNPxqTtukejx%2BxLi8Aaxpawmp14%2BbP3L%2FAcT847lADmxd9T"
+        ],
+        [
+          "第03集",
+          "age_a7cdRd8fW4Cy6ojRV2cVKZALUPmEe79wvQyV8%2BKQSwHZ%2B8QgiobIz0TjXpc74eZx8ZRvQPX8E76K5nEPGUhaGsMN"
+        ],
+        [
+          "第04集",
+          "age_de754lXriwUTTyJGo2L2g8FDIOkvSfGtnkqcs1LVfo0Z9pE5BJ3wvWE4TbL6BiyRL09kF93ptMnDHDt51RO1J%2FcB"
+        ],
+        [
+          "第05集",
+          "age_b227a6JzFNpNL7U9m0XqmkVMqmM8rnyael01ILaF2myaxCAR4kKPRMD%2B0PBxIPmsEDk0k4urjSOhKDH8DVy1%2FyYh"
+        ],
+        [
+          "第06集",
+          "age_58aa8SUfVCLyOz%2FuuZpz5LHv1U87N%2FpvUNbyUdlOcV2dtkkCCEG7zKFNN3zCixg8BAWGitb6vCxmeND0CtujeNO3"
+        ],
+        [
+          "第07集",
+          "age_fae10bq0cGCxa4s7WdEomtfcgRk%2FpjR4JJWfddRqMTaoS8dy5lVZSEXy1CEMNAS6jtE6q7YGdI6YMT9EbZY4mDeb"
         ]
       ],
       "ffm3u8": [
         [
           "第01集",
-          "age_5978%2BEf%2BJkk6%2FGujTIl0%2F%2Fx%2BTooGTKIAdbMsrWSRYfn9s3DWGQhxTYSRELUx1Q14ppKQX1Ofyly9S4sy%2BY4zmEYRjsubmd31PNqdmA8oeGnqA5wgEi%2Bpf0Fj",
+          "age_acd9F9b93aMMist1vJS9RQeRnHi1U1JewNjdC%2FXVyIDsRTycz1wa%2FUfhlikNOtw5Ry4ktJ%2F3M4p3XHBgSV5YM8Rs86b1LWDDJ3TPUnAIFjcvtf6fIEGq5lnH",
           "https://vip.ffzy-plays.com/20260705/55443_00d7b8bb/index.m3u8"
         ],
         [
           "第02集",
-          "age_8746OyQgUfCYIm6wO48ZH%2FGj1eN8lTqlbWstj%2B9PvIXpJAuBJ6Uv0sixzSmuR9%2F%2BjxB1KdAyiJpz%2FdB9nnUueE%2BrROelpsSnurlvuVOqcybSpoYfXnNQYJCa",
+          "age_2471rBhFo8U3sA%2F60SS9kV%2FAlDXbX7gLCxlD6cC%2BqPtm5jOKaN0JYomY35uMi828186aG1bERCrZuN54qXdeUVlmqj%2FMPUEHi2WaFy1G0p5LlNAo7Yf27YZy",
           "https://vip.ffzy-plays.com/20260712/55672_47041c80/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_ac3dks7Mowmaiyt6CMHYtyHntJ8ojU%2F5CIHGhrCE%2BtT00uhTYomyPSFL54Q7MbW9QDU3cYlFymnATA%2BXEwEG5ZAK5hul6nT5GxrNND5V275I8%2BuT7S5Hp0q1",
+          "https://vip.ffzy-plays.com/20260719/55976_3a2815d4/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_98afkYSt%2BPKUZhC65TOOMCeBpIxOru9lVTL4tFpMcW0k2vIMmJiRBrqGwuNbfh7BYjxvVEV04B%2FgVcMD3KapVMJpeg3QlfvnU%2Bm8hqw2niGdOEEn%2B2Vmmm5p",
+          "https://vip.ffzy-plays.com/20260726/56275_af54f6cb/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_e480uEsRiclOBjaXa0sxCOS4cwBRGlC1uH3Haee21a8t%2FJc%2B9OhjStxhSh10xCoNzAohs%2F3W8usH9civsAE4WGqyfPHYRHLxdmIQYssrTEsAD517LlHWssoi",
+          "https://vip.ffzy-plays.com/20260802/56592_968d65fb/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_d61eqCTvOCdpoOJGdaUrPatFYot1uTBIjr0h0PJuLhtdZEZqFb1KXNomZcicA9iwE%2BBeCByFoVYim2NB2l58TRdVoe%2FiSUTKKjL9H2JLcv5o6yyzvRUT4Lid",
+          "https://vip.ffzy-plays.com/20260809/56877_99d0a716/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_894aKLyH7kA7y2IMy0eYpjuXiXS54twwD0S%2FnnJ4T2U0vC9J5%2FL5ZGmaAlZ2mAZjMgbifSz35TOZtFHTxtOGuzipWICXXlRGKaRP7vfCgBtZAx%2FMDin9tmnA",
+          "https://vip.ffzy-plays.com/20260816/57167_d65dcb7e/index.m3u8"
         ]
       ],
       "bfzym3u8": [
         [
           "第1集",
-          "age_7f7aCNZ12tNZ7vg2a9jl66qSvANkshwUAhGOZ5BWB2EvXDxF3nCI3rfJY%2FTl3cf5FgnG9%2B72EJyLzxDnASLvdmgJRcuX8Nn21gAwxBde4Au0b5brAkALNTNgwgn1xfxvKULZQ5%2Fnd7EFm3Jp8q1qfcbouHaP5KBy3Nmr96CViMWezA",
+          "age_3abeoRBtb86IIIC8r5vNiqQU%2B%2FdbPVbnNmFzJGxlujpKpoh7g5pHCYXfYi6dYUbzentV7cyBpJ7QV6oXzxKlif3U3zMnMsOjCatwK2uhxwSMqDNBcafr6RPpsXr22ziwOQ7yeP8qJIb%2FGILxOG7l45X31MJYW8MANALkP62Ly6haYw",
           "https://v.fengbao11.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/46764adf14ae/index.m3u8"
         ],
         [
           "第2集",
-          "age_37f92blI5L43jCsF%2FrglekUyJQGw4PEaBMLYXXKjdAcggRohXewncDpKrC6CWo8o2ugnqf%2F6ZbxrVKdGoixD2IgSu4K4wtLBRtE2J1du3bdjqUHOGbn8Qcinii0SmrD1tAUy%2BS4ygz8BBQW%2FNQp%2BDXGBuVM9n4d5fSQ4338me7pWGg",
+          "age_95a4FUU%2FQrpKwg%2B9%2FQR4qRv1hefNrcLL%2FIgYvqLbA8eHUpDDS992jvL2o7Z9Uk1rJE%2BCFA0G8JfGPXIW7Ilbn2ZUcAfVkyJrL750%2B%2Fbi1vB8Z6kM7YH8zZsZyCXT8jBA3M%2FFgfArFIHGrhWUWW4xLU%2B6E2T2YGNlDOHyKgPnA5mllg",
           "https://v.fengbao11.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/f987c5c8b8e4/index.m3u8"
+        ],
+        [
+          "第3集",
+          "age_b457QlyoQb7lupcm4r4rOd51E3brHROTbx0a4qmd3RLBJgFFiA1pNj45dHK%2F1bo%2Bc0uDnP8Dxp%2FALDX1ZBwDK5L%2BEVm7873O2IBbHeU3UZ3eMy6RN6NABmW6EepqBmuD2d3rqZr%2BK2NnA23TfqB4CNUYRb4qQmvFVb6AZ8BdECtmaw",
+          "https://v.fengbao11.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/0bf6d4ec66c7/index.m3u8"
+        ],
+        [
+          "第4集",
+          "age_cff8Bjgv83aeQKnN6hX0g6oh6lyQJI2Km4jGefPOYPibdMmEJaJpDvQr0In3gIyzVL01LMoB7XImZQDe3C4Uy%2Fdq0xJjPysAhl6b5NIuiL9UpbTnx4EznuRox4%2BVjDyNS2Z2ybzWZYscK7oRbiBcQECKeKWPgMr9u2Ypu2uiXJos",
+          "https://v.baofeng9.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/7afab59ec85e/index.m3u8"
+        ],
+        [
+          "第5集",
+          "age_a8f7MuaT9gLGgcGphAhL01pZl21n6TLD7pAFloZfFQqDxa3D5nLlzVnsjZfYRU4dGfFkxEnzl5nl%2BePVRaGOcCOflmHXouh1GYehZsyh%2FbX0z5vrRt%2F8i1PgQwR0UHmnvrDJr7dFsX9usyzzAA8d7XTQolmF0NMjg38JxkaKoVG4zg",
+          "https://v.fengbao11.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/db6cde01fd70/index.m3u8"
+        ],
+        [
+          "第6集",
+          "age_9b1e0gZIBMSbiDx0IB5du%2F6ZzB7zHaqAruooaU4dj61m%2B%2BEWMQeOrLvZfuy7UEfpqMDcdP6VNIXkUTePHJ1uHSD9QAzdEKWVM5VscymugDmRmJ1C3V9nJeA76Xt40PSN4BM1gFKatX0kxZeXYzZIHLwmWuRYzLqMeHUYQJ%2BLkcHdyQ",
+          "https://v.fengbao11.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/cf8ce1cc39d5/index.m3u8"
+        ],
+        [
+          "第7集",
+          "age_7087HdyXAZ%2BQEWqcSfodujIhmPr4fFOnqfyKhQiLfpV86Jsk%2Fhp8d7thHoYtvz6tOl5I%2F6B%2FXZyFlq7g4vtGe2T63iAkNjR6U5JUgeXga89ShmPnpVCN3Dmdw%2FMrni4%2BcNqF1PL8%2BjuXG9uUaBPQoIZwH9QuKCzO7a%2F%2BCsLBUoY",
+          "https://fengbao12.com/video/chaochaochaochaoxihuannide100genvpengyoudisanji/2006c7c3695a/index.m3u8"
         ]
       ],
       "wjm3u8": [
         [
           "第01集",
-          "age_b0223s53q%2FOj9pIOZ7HTz17IhSU0H4fqJX4gPucMRMD0xLkIIjQDUfJYhR9v7KxcohB%2BsZ%2FlegtkFgqGORNzZ0l%2FXS6KvhpA%2Blu4i7TKpOjR1mY9surT2%2BPG3OXO9axzxw",
+          "age_738ahmTe6vkrkR9MrlNwA%2BXXmY8od%2FhMeIjqKGYFfpKmSVE7IM8%2B1Kp2dXcdZ7wlARHeXTKFBKQFct6xjo2hGIRej2tt5N2xWl5sfla6IRfGzaRZb9Obt5eKHOITjHD6oQ",
           "https://v12.ppqrrs.com/wjv12/202607/04/Us4gKNbhm992/video/index.m3u8"
         ],
         [
           "第02集",
-          "age_0b77Eec9hHz98Wq77Bu%2BdYXPHFKRCkRwQUp%2BECRRDAw9pHsMXMWhTK1iSgsDmQzfsd7AL1Lm%2FvY0ccWqf%2F81bFY32v%2FUhI6mGtJCtlh76%2BFTjkjYurcepfXbd6swi7c",
+          "age_7a41GzEdwDJrxIvCycYFeal65jQ%2FXsDD1lNY0Ph7ZmnnrGKwmG%2F4RqHMWz2qPugPDV1PvpCJ65IBrio%2BEklvAQQEB2jwl7IbngugYh4B5rJirTyMrZz0uiVF3dfBywI",
           "https://v4.ppqrrs.com/wjv4/202607/12/v51FGTzYEa95/video/index.m3u8"
-        ]
-      ],
-      "hnm3u8": [
-        [
-          "第1集",
-          "https://hn.bfvvs.com/play/epYZOAQa/index.m3u8",
-          "https://hn.bfvvs.com/play/epYZOAQa/index.m3u8"
         ],
         [
-          "第2集",
-          "https://hn.bfvvs.com/play/dwpKkzwe/index.m3u8",
-          "https://hn.bfvvs.com/play/dwpKkzwe/index.m3u8"
+          "第03集",
+          "age_019d04ndt9LxDOPZyKx24VkVL0KOdpRGhcrKacghVxTg8igX06yutphinPTUsu3vxZm5IJygwmGsFdSvgDHTsC5QSWLttL5meErOi3dvmHEWrS20wO60ihCHzqMnAeI",
+          "https://v2.ppqrrs.com/wjv2/202607/19/1EtGCr0Usx86/video/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_1258P13Z8cLVcRhE1RaeUSZGGB6ot0xQFjJiZxKfAq2znpMYRKFsx4zWSXkRBjZi7MzPhrLiQ%2BPTSStzSou%2BUXGBnGFv7mFnbksrrZI2VUqC%2FEaPkqU5QBfn6WJeHkw",
+          "https://v7.ppqrrs.com/wjv7/202607/26/Zf4x6CyzvR92/video/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_4814yq0rMOjRrHw7VVPdype%2Bo4XiYgM39OQb2%2FWMXbgqcrI%2Bwhv2g4fiYstbUWQAgnT1PAXD5eKgKgfbMw4BTxlrnSGHViqgf%2Fo6A31Mg4e0S3aIQZN9KVnocl5lxt0",
+          "https://v8.ppqrrs.com/wjv8/202608/02/XsQZQXpbWy95/video/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_ff04WJgmeif17Lrk1wPXwVWPbk0L6riPTTgiMhL8DPZ%2BUt%2Bvg3rF6%2FMpRpQ3rzmakiNpygfL8z%2Fzc0kL6MCNUBHbSStb%2BYNwgky7e1nMuEAvJSWvT3fxQOeWGXwza2Q",
+          "https://v3.ppqrrs.com/wjv3/202608/09/5DBYkMrwHf95/video/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_7592oQMiRWKsHwWM%2BIhUws%2F08jjmFd429aFB5l1x%2BAoH6uiSnie9XbafIH0%2BubJpfyTzg2%2FbY6fw%2FFZJnlncHDHilOe2CTunnAFZUIfeTlHaqeq%2FRKxwX9fEQYpiRd8",
+          "https://v3.ppqrrs.com/wjv3/202608/16/wQnVbuQEDP91/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_5cd4o9kiTovm1Vv4RA%2FdTkiTBMWuucdryDDB35XHe2EXAjChO1Ji59TfmKnvPEhNR5Xn3XkSjXPMKct0H6sfDwwf9w%2FwPD5V9eR%2BkSmEhdm2jVle",
+          "https://v.lzcdn31.com/20260705/8046_57efdaec/index.m3u8"
+        ],
+        [
+          "第02集",
+          "age_54aeLGD0W1w04lKf%2BSV%2F2GGX6bq%2F6%2BmntiMzgAORuKapl30WY7DjYQQ8q3KIdiYBaDoG%2F01Uv6d4fi%2B7EKSckDuAjV9hpI4Xr%2FuHoa63NUVbfDjC",
+          "https://v.lzcdn31.com/20260712/8384_c36dac4e/index.m3u8"
+        ],
+        [
+          "第03集",
+          "age_a1d9Sqa%2BcoIU54q8V7b1evl7hXjJlYhdX9ix2fEm6yAKZSxwzwxr9Qh7D7C5It4DdC8RI62kIpejz0M0pSG6jwmFDwHKujGOXN8toy01MCTIIMQr",
+          "https://v.lzcdn31.com/20260719/8673_74752e3c/index.m3u8"
+        ],
+        [
+          "第04集",
+          "age_fc02LgV%2B04a8YNm7KURMBJJvIMwr6S%2BVFw%2FKBOzugEb5brNg9KFSxm%2BgE0LTVADcYGDw3ShgH%2B971N1qERVPtozN%2FX3sQqqW6XvdjHp1f9uhXpIa",
+          "https://v.lzcdn31.com/20260726/8968_f35dbe25/index.m3u8"
+        ],
+        [
+          "第05集",
+          "age_0361J2kcCPfwovljnDegapDJCFOiahs9HST6hE7WEhGfyqICGPbBfMt9pVXSLa%2F0MwMgZbM%2BrNloqRttl7LxDx2pzgygZTmO%2BrD5kwhqvtbGWc6y",
+          "https://v.lzcdn31.com/20260802/9305_50faf01b/index.m3u8"
+        ],
+        [
+          "第06集",
+          "age_9a670U3os7kL%2FG50OFD4F%2FHN4xWMuH1i2%2FuMRXVrc4ZTJi8ghBPhni4NBRMMcj2O4GK2l26pv7gW3e8HlmvF6IqNzIcFATCfr3obGJMfN1L17Tjf",
+          "https://v.lzcdn31.com/20260809/9628_cef2622d/index.m3u8"
+        ],
+        [
+          "第07集",
+          "age_8deahv9EA73eeSPzO11sVyEPgGmp4RXXwnz9FWJR%2F7idXH1Nu1qvuGfqC%2BLNy4OeMd8l0D7NDLvTgBFQDYBNJSMUDcrSLJ%2BVYkM2ZuBDXGGMZeyO",
+          "https://v.lzcdn31.com/20260816/9927_618132b6/index.m3u8"
         ]
       ],
       "yhdm_line1": [
@@ -153,11 +209,11 @@
     "website": "暂缺",
     "star": 0,
     "status": "连载",
-    "uptodate": "21:30 第2集",
-    "time_format_1": "20260712224434",
-    "time_format_2": "2026-07-12",
-    "time_format_3": "2026-07-12 22:44:34",
-    "time": 1783867474,
+    "uptodate": "22:00 第7集",
+    "time_format_1": "20260816230627",
+    "time_format_2": "2026-08-16",
+    "time_format_3": "2026-08-16 23:06:27",
+    "time": 1786892787,
     "tags": "搞笑 校园 恋爱 日常",
     "tags_arr": [
       "搞笑",
@@ -174,21 +230,64 @@
     "year": 2026,
     "season": 7,
     "premiere": "2026-07-05",
-    "rank_cnt": "2.60w",
-    "cover": "https://cdn.aqdstatic.com:966/age/20260182.jpg",
+    "rank_cnt": "10.9w",
+    "cover": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20260182.jpg",
     "cpraid": 0,
     "comments_status": 1,
-    "comment_cnt": "68",
-    "collect_cnt": "777"
+    "comment_cnt": "147",
+    "collect_cnt": "1,308"
   },
-  "series": [],
+  "series": [
+    {
+      "AID": 20250047,
+      "Href": "/detail/20250047",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20250047.jpg",
+      "Title": "超超超超超喜欢你的100个女朋友 第二季"
+    }
+  ],
   "similar": [
     {
-      "AID": 20260192,
-      "Href": "/detail/20260192",
-      "NewTitle": "第02集",
-      "PicSmall": "https://cdn.aqdstatic.com:966/age/20260192.jpg",
-      "Title": "岩元前辈的推荐"
+      "AID": 20210280,
+      "Href": "/detail/20210280",
+      "NewTitle": "第13集",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20210280.jpg",
+      "Title": "红荒"
+    },
+    {
+      "AID": 20050017,
+      "Href": "/detail/20050017",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20050017.jpg",
+      "Title": "女生万岁 第二季"
+    },
+    {
+      "AID": 20260179,
+      "Href": "/detail/20260179",
+      "NewTitle": "第07集",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20260179.jpg",
+      "Title": "柔光魔女股份有限公司 第二季"
+    },
+    {
+      "AID": 20210095,
+      "Href": "/detail/20210095",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20210095.jpg",
+      "Title": "女帝的后宫"
+    },
+    {
+      "AID": 20220371,
+      "Href": "/detail/20220371",
+      "NewTitle": "第60集(完结)",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20220371.jpg",
+      "Title": "绝世古尊 动态漫 第二季"
+    },
+    {
+      "AID": 20200283,
+      "Href": "/detail/20200283",
+      "NewTitle": "第188集",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20200283.jpg",
+      "Title": "凡人修仙传"
     }
   ],
   "player_label_arr": {

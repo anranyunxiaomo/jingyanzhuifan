@@ -13,6 +13,60 @@
       "恋爱"
     ],
     "playlists": {
+      "yhdm_line1": [
+        [
+          "第01集",
+          "https://yhdm6.top/p/29201-4-1.html"
+        ],
+        [
+          "第02集",
+          "https://yhdm6.top/p/29201-4-2.html"
+        ],
+        [
+          "第03集",
+          "https://yhdm6.top/p/29201-4-3.html"
+        ],
+        [
+          "第04集",
+          "https://yhdm6.top/p/29201-4-4.html"
+        ],
+        [
+          "第05集",
+          "https://yhdm6.top/p/29201-4-5.html"
+        ],
+        [
+          "第06集",
+          "https://yhdm6.top/p/29201-4-6.html"
+        ],
+        [
+          "第07集",
+          "https://yhdm6.top/p/29201-4-7.html"
+        ],
+        [
+          "第08集",
+          "https://yhdm6.top/p/29201-4-8.html"
+        ],
+        [
+          "第09集",
+          "https://yhdm6.top/p/29201-4-9.html"
+        ],
+        [
+          "第10集",
+          "https://yhdm6.top/p/29201-4-10.html"
+        ],
+        [
+          "第11集",
+          "https://yhdm6.top/p/29201-4-11.html"
+        ],
+        [
+          "第12集",
+          "https://yhdm6.top/p/29201-4-12.html"
+        ],
+        [
+          "第13集",
+          "https://yhdm6.top/p/29201-4-13.html"
+        ]
+      ],
       "xigua": [
         [
           "第01集",
@@ -424,7 +478,8 @@
     "kbm3u8": "快播",
     "bjm3u8": "八戒",
     "xkm3u8": "想看",
-    "tpm3u8": "淘片"
+    "tpm3u8": "淘片",
+    "yhdm_line1": "樱花直链"
   },
   "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
   "player_jx": {

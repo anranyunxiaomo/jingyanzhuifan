@@ -319,6 +319,56 @@
           "https://hd.ijycnd.com/play/e316x44b/index.m3u8"
         ]
       ],
+      "yhdm_line1": [
+        [
+          "第01集",
+          "https://yhdm6.top/p/29092-2-1.html"
+        ],
+        [
+          "第02集",
+          "https://yhdm6.top/p/29092-2-2.html"
+        ],
+        [
+          "第03集",
+          "https://yhdm6.top/p/29092-2-3.html"
+        ],
+        [
+          "第04集",
+          "https://yhdm6.top/p/29092-2-4.html"
+        ],
+        [
+          "第05集",
+          "https://yhdm6.top/p/29092-2-5.html"
+        ],
+        [
+          "第06集",
+          "https://yhdm6.top/p/29092-2-6.html"
+        ],
+        [
+          "第07集",
+          "https://yhdm6.top/p/29092-2-7.html"
+        ],
+        [
+          "第08集",
+          "https://yhdm6.top/p/29092-2-8.html"
+        ],
+        [
+          "第09集",
+          "https://yhdm6.top/p/29092-2-9.html"
+        ],
+        [
+          "第10集",
+          "https://yhdm6.top/p/29092-2-10.html"
+        ],
+        [
+          "第11集",
+          "https://yhdm6.top/p/29092-2-11.html"
+        ],
+        [
+          "第12集",
+          "https://yhdm6.top/p/29092-2-12.html"
+        ]
+      ],
       "a123_line1": [
         [
           "第01集",
@@ -368,5 +418,8 @@
     }
   },
   "player_vip": "",
-  "player_jx": {}
+  "player_jx": {},
+  "player_label_arr": {
+    "yhdm_line1": "樱花直链"
+  }
 }

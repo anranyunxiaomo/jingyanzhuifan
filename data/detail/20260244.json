@@ -1,0 +1,182 @@
+{
+  "video": {
+    "id": 20260244,
+    "name_other": "暂缺",
+    "company": "東映アニメーション",
+    "name": "航海王 女英雄们的故事",
+    "type": "剧场版",
+    "writer": "尾田栄一郎",
+    "name_original": "ONE PIECE HEROINES",
+    "plot": "热血 战斗 冒险",
+    "plot_arr": [
+      "热血",
+      "战斗",
+      "冒险"
+    ],
+    "playlists": {
+      "xigua": [
+        [
+          "全集",
+          "age_bd6fJnK3iXGJ7sPEOnpWf3g3MJUqWDmTYDOcC5SQk0P6XW2rbJO6TEo7UuJ8JnR36Vhp16gantia4rv3Ro3P1kqu"
+        ]
+      ],
+      "bfzym3u8": [
+        [
+          "第01集",
+          "age_967boE5PakrIHN2EZIf0BHGJOoO%2BEsRbGfF5%2B%2BIGdBP87bqyZN9bDLNUhxEW%2BpE5ptPg%2BJEfsZxPDlh48Uc%2BUn0BnLqa9kDLxRnCjlSP7kwaN4ZFrKCqEwZmjSbAeNvph4Wl8bdz4fZvqcTfZHOmVXWU",
+          "https://v.baofeng11.com/video/haizeiwangnvyingxiongmendegushi/bd7836797f96/index.m3u8"
+        ]
+      ],
+      "wjm3u8": [
+        [
+          "第01集",
+          "age_4aeenYgfY9Mdr80CAEgy81pHEf1tPkKUJ3N0rHt8q5r7ha2rCuaexYpmMs57dRtnFEf3QG3zkFRGOuFEmBwZCdtncAqxr37TZRkrOaqfkVZ5BRSfRmF64RVMOmFGLqM",
+          "https://v7.ppqrrs.com/wjv7/202607/06/q51Brp1SMV90/video/index.m3u8"
+        ]
+      ],
+      "lzm3u8": [
+        [
+          "第01集",
+          "age_c1e0zb0MnIzRDzlh%2BCIqplxZIyAzxt8ij6ebkQxb02a1skdw1rKLygLcIRTgeUvFR6%2BCW4701j%2Fzu8s7mTkpYwlP5VDNAZ6tTGYP6MA30w7ReoHa",
+          "https://v.lzcdn31.com/20260706/8051_144198e9/index.m3u8"
+        ]
+      ],
+      "hnm3u8": [
+        [
+          "第1集",
+          "https://hn.bfvvs.com/play/aM8ZO63e/index.m3u8",
+          "https://hn.bfvvs.com/play/aM8ZO63e/index.m3u8"
+        ]
+      ]
+    },
+    "area": "日本",
+    "letter": "H",
+    "website": "暂缺",
+    "star": 0,
+    "status": "完结",
+    "uptodate": "全集",
+    "time_format_1": "20260709000338",
+    "time_format_2": "2026-07-09",
+    "time_format_3": "2026-07-09 00:03:38",
+    "time": 1783526618,
+    "tags": "热血 战斗 冒险",
+    "tags_arr": [
+      "热血",
+      "战斗",
+      "冒险"
+    ],
+    "intro": "《海贼王》短篇小说集《海贼王 女英雄们的故事》宣布动画化，原作剧情包括时装秀登台的娜美、协助克尔拉和萨博解读黏土板的罗宾、因一封情书而盛传谣言的薇薇、与米霍克争夺红酒的佩罗娜等，将通过本篇中未曾描绘的故事展现她们的个性与魅力",
+    "intro_html": "《海贼王》短篇小说集《海贼王 女英雄们的故事》宣布动画化，原作剧情包括时装秀登台的娜美、协助克尔拉和萨博解读黏土板的罗宾、因一封情书而盛传谣言的薇薇、与米霍克争夺红酒的佩罗娜等，将通过本篇中未曾描绘的故事展现她们的个性与魅力",
+    "intro_clean": "《海贼王》短篇小说集《海贼王 女英雄们的故事》宣布动画化，原作剧情包括时装秀登台的娜美、协助克尔拉和萨博解读黏土板的罗宾、因一封情书而盛传谣言的薇薇、与米霍克争夺红酒的佩罗娜等，将通过本篇中未曾描绘的故事展现她们的个性与魅力",
+    "series": "航海王",
+    "net_disk": null,
+    "resource": "",
+    "year": 2026,
+    "season": 7,
+    "premiere": "2026-07-05",
+    "rank_cnt": "9,219",
+    "cover": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20260244.jpg",
+    "cpraid": 0,
+    "comments_status": 1,
+    "comment_cnt": "25",
+    "collect_cnt": "114"
+  },
+  "series": [
+    {
+      "AID": 20250109,
+      "Href": "/detail/20250109",
+      "NewTitle": "第02集",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20250109.jpg",
+      "Title": "航海王谈恋爱"
+    },
+    {
+      "AID": 20260155,
+      "Href": "/detail/20260155",
+      "NewTitle": "PV",
+      "PicSmall": "https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20260155.jpg",
+      "Title": "航海王 埃鲁巴夫篇"
+    }
+  ],
+  "similar": [
+    {
+      "AID": 20110077,
+      "Href": "/detail/20110077",
+      "NewTitle": "[TV 01-60]",
+      "PicSmall": "https://gimg2.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20110077.jpg",
+      "Title": "恶魔奶爸"
+    },
+    {
+      "AID": 20220288,
+      "Href": "/detail/20220288",
+      "NewTitle": "第20集(完结)",
+      "PicSmall": "https://gimg3.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20220288.jpg",
+      "Title": "我才不会被女孩子欺负呢 动态漫 第二季"
+    },
+    {
+      "AID": 20070021,
+      "Href": "/detail/20070021",
+      "NewTitle": "第1集(完结)",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20070021.jpg",
+      "Title": "水星领航员 OVA"
+    },
+    {
+      "AID": 20260121,
+      "Href": "/detail/20260121",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg1.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20260121.jpg",
+      "Title": "大贤者利多尔的时间逆行"
+    },
+    {
+      "AID": 20200274,
+      "Href": "/detail/20200274",
+      "NewTitle": "第13集(完结)",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20200274.jpg",
+      "Title": "时之歌：花与焰的狂想诗"
+    },
+    {
+      "AID": 20210159,
+      "Href": "/detail/20210159",
+      "NewTitle": "第12集(完结)",
+      "PicSmall": "https://gimg4.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=https%3A%2F%2Fcdn.aqdstatic.com%3A966%2Fage%2Fcovers%2F20210159.jpg",
+      "Title": "女友成双"
+    }
+  ],
+  "player_label_arr": {
+    "qiyi": "爱奇艺",
+    "qq": "腾讯",
+    "youku": "优酷",
+    "mgtv": "芒果",
+    "bilibili": "B站",
+    "baba": "巴巴云",
+    "qiqi": "七七云",
+    "sohu": "搜狐",
+    "tt": "TT云",
+    "panda": "熊猫",
+    "pptv": "PPTV",
+    "letv": "乐视",
+    "xigua": "西瓜",
+    "migutv": "咪咕",
+    "my": "蚂蚁云",
+    "wy": "微软云",
+    "baidu": "千度云",
+    "zjm3u8": "自建云",
+    "99m3u8": "九九云",
+    "tkm3u8": "天空",
+    "ffm3u8": "非凡",
+    "bfzym3u8": "暴风",
+    "wjm3u8": "无尽",
+    "hnm3u8": "红牛",
+    "lzm3u8": "计算云",
+    "wolong": "凤雏云",
+    "sdm3u8": "闪电",
+    "kbm3u8": "快播",
+    "bjm3u8": "八戒",
+    "xkm3u8": "想看",
+    "tpm3u8": "淘片"
+  },
+  "player_vip": "qq,youku,mgtv,qiyi,tt,iqiyi,baba,qiqi,panda,sohu,letv,pptv,xigua,wy,migutv,bilibili,appvip,zjm3u8",
+  "player_jx": {
+    "vip": "https://jx.wuzhoupai.com:8443/vip/?url=",
+    "zj": "https://jx.wuzhoupai.com:8443/m3u8/?url="
+  }
+}
