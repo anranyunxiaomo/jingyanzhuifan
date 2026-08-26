@@ -7,8 +7,8 @@ on:
     paths-ignore:
       - 'data/**'
   schedule:
-    # 北京时间每天 05:25, 11:25, 17:25, 23:25 自动运行（避开 UTC 整点排队拥堵，高频覆盖全天番剧更新）
-    - cron: '25 21,3,9,15 * * *'
+    # 北京时间每天凌晨 03:25 (UTC 19:25) 自动运行一次（夜间跑批，避开整点排队拥堵）
+    - cron: '25 19 * * *'
   workflow_dispatch:
     # 支持在 GitHub 仓库后台一键手动运行
   repository_dispatch:
