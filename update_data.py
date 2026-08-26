@@ -1265,11 +1265,10 @@ async def main_async():
     # 或者是本地开发环境且显式带上 FORCE_NETWORK=true 时，才激活网络并去拉取 API！
     # 如果是日常普通的 push 代码构建，强制直接降级为纯本地静态 VOD 更新，API 请求数 100% 锁死为 0！
     run_network = False
-    if is_github_actions:
-        if event_name in ["schedule", "workflow_dispatch"]:
-            run_network = True
-    else:
-        if force_network:
+    if force_network:
+        run_network = True
+    elif is_github_actions:
+        if event_name in ["schedule", "workflow_dispatch", "repository_dispatch"]:
             run_network = True
 
     # 💡 提前拦截退出的静态更新模式（不走网络，零 API 消耗）

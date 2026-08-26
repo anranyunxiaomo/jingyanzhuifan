@@ -7,8 +7,8 @@ on:
     paths-ignore:
       - 'data/**'
   schedule:
-    # 北京时间每天凌晨 05:00 自动运行一次 (UTC 21:00)，避免多次请求消耗
-    - cron: '0 21 * * *'
+    # 北京时间每天 05:25, 11:25, 17:25, 23:25 自动运行（避开 UTC 整点排队拥堵，高频覆盖全天番剧更新）
+    - cron: '25 21,3,9,15 * * *'
   workflow_dispatch:
     # 支持在 GitHub 仓库后台一键手动运行
   repository_dispatch:
@@ -31,7 +31,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20   # 整个 job 最多跑 20 分钟，防止脚本挂死永不结束
+    timeout-minutes: 25   # 整个 job 最多跑 25 分钟，防止脚本挂死永不结束
 
     steps:
       # 1. 签出当前仓库代码
@@ -57,14 +57,17 @@ jobs:
       # 4b. 执行爬虫数据抓取、樱花源直链对齐与全局索引库重构
       - name: Fetch and staticize anime data
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
-        timeout-minutes: 12
+        timeout-minutes: 15
         continue-on-error: true    # 数据抓取失败不阻断页面部署
+        env:
+          FORCE_NETWORK: "true"
+          PYTHONUNBUFFERED: "1"
         run: |
           python update_data.py
           python scripts/yhdm_crawler.py
           python -c "from update_data import rebuild_static_index_and_assets; rebuild_static_index_and_assets()"
 
-      # 5. 安全同步并自动推回静态数据 JSON（"物理备份与强覆盖对齐" 无冲突版）
+      # 5. 安全同步并自动推回静态数据 JSON 与版本戳（"物理备份与强覆盖对齐" 无冲突版）
       - name: Commit and push static data changes
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         run: |
@@ -72,12 +75,13 @@ jobs:
           git checkout -B main
           
           # B. 检查是否有数据改动，若有则进行备份和无冲突拉取
-          if [ -n "$(git status --porcelain data/)" ]; then
-            echo "[INFO] Detected data changes. Backing up locally modified JSONs..."
+          if [ -n "$(git status --porcelain data/ index.html)" ]; then
+            echo "[INFO] Detected data/index changes. Backing up locally modified files..."
             
-            # 1. 物理备份本地的 data/ 目录
+            # 1. 物理备份本地的 data/ 目录与 index.html
             mkdir -p /tmp/data_backup
             cp -r data/* /tmp/data_backup/
+            cp index.html /tmp/index_backup.html
             
             # 2. 强行重置本地，使工作区回归 pristine 状态 (保证 pull 绝对不报 unstaged changes)
             git reset --hard HEAD
@@ -87,11 +91,12 @@ jobs:
             
             # 4. 将刚才爬好的最新数据强行覆盖回来！
             cp -r /tmp/data_backup/* data/
+            cp /tmp/index_backup.html index.html
             
             # 5. 执行常规提交与推送
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git add data/
+            git add data/ index.html
             
             # 💡 强力保险：在 commit 前，再次检查 pull --rebase 后是否还有真正发生改变的 Diff
             if ! git diff --cached --quiet; then
